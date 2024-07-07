@@ -1,0 +1,140 @@
+﻿.top-sec {
+    display:block;
+    width:auto;
+    margin-left:50px;
+    margin-right:50px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.top-sec .slider {
+    width: 45%;
+    height: auto;
+    align-self:flex-start;
+    margin-right:15px;
+}
+
+    .top-sec .notice-section {
+        width: 45%;
+        vertical-align: top;
+        align-self:flex-end;
+        margin-left:15px;
+    }
+
+.top-sec .slider,
+.top-sec .notice-section {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    justify-content:space-around;
+    padding: 20px;
+    max-width:640px;
+    max-height:480px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.top-sec .notice-section .notice-board {
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    height:auto;
+    background-color: #F0F0F0;
+    padding-bottom:2px;
+}
+
+.tabs {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content:space-around;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.tabs .tab-link {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    border-radius: 10px 10px 0 0;
+    width: -webkit-fill-available;
+    text-align: center;
+}
+
+.tabs .tab-link:hover {
+    background-color: #ddd;
+}
+
+.tabs .tab-link.active {
+    background-color: #ccc;
+}
+
+.tab-content {
+    display: none;
+    padding-top: 6px;
+    border-top: none;
+}
+
+.marquee {
+    overflow: hidden;
+}
+
+.notice {
+    margin: 10px 0;
+    border: 2px solid grey;
+    padding:5px;
+}
+
+.notice a {
+    text-decoration:none;
+    color:Black;
+}
+
+.notice a:hover {
+    text-decoration:underline;
+}
+
+.notice a:after {
+    content: url('../img/gif/newanim.gif');
+    display: inline-block;
+    margin-left: 5px;
+}
+
+@media screen and (max-width:1024px) {
+    .top-sec {
+        margin: 0px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .top-sec .slider,
+    .top-sec .notice-section {
+        margin-left:0px;
+        margin-right:0px;
+    }
+
+}
+@media screen and (max-width:768px) {
+    .top-sec {
+        margin-top:20px;
+        margin-bottom:10px;
+    }
+    
+    .top-sec .slider,
+    .top-sec .notice-section {
+        display:block;
+        width:100%;
+        margin-left:0px;
+        margin-right:0px;
+    } 
+  
+    .top-sec .notice-section {
+        margin-top:20px;
+        max-width:none;
+    }
+}

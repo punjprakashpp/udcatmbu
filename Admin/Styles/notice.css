@@ -1,0 +1,58 @@
+﻿label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    input[type="text"], input[type="date"], input[type="file"] {
+        width: calc(50%);
+        padding: 8px 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .aspCheckBox {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .aspCheckBox label {
+        margin: 0;
+        margin-left: 10px;
+        font-weight: normal;
+    }
+
+    .aspCheckBox input {
+        margin: 0;
+    }
+
+    .buttonContainer {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    input[type="submit"], button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover, button:hover {
+        background-color: #0056b3;
+    }
+
+    .messageLabel {
+        text-align: center;
+        color: #28a745;
+        font-weight: bold;
+        margin-top: 20px;
+    }

@@ -1,0 +1,31 @@
+.marquee-links 
+{
+    width:100%;
+    background:#f2f2f2;
+    height:30px;
+}
+
+.marquee-links marquee {
+  display: block;
+}
+
+.marquee-links marquee a
+{
+  height:100;
+  text-decoration: none;
+  margin-top:2px;
+  padding:5px;
+  color:#001f44;
+}
+
+.marquee-links marquee a:before{
+    content: url('../img/gif/newanim.gif');
+    display: inline-block; /* Ensures the image appears after the link */
+    margin-right: 5px; /* Adjust as needed to add spacing between the link and image */
+}
+
+.marquee-links marquee a:hover{
+  text-decoration: underline;
+  background:#bababa;
+  font-size: 1.25em;  /* Increase font size on hover (adjust percentage as needed) */
+}

@@ -1,0 +1,99 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <link href="~/Admin/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="~/img/logo/logo-small.png" type="image" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>UDCA WEBSITE ADMINISTRATOR PORTAL</h1>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Admin/Default.aspx" Text="Dashboard"/>
+<asp:MenuItem Text="Account" Value="Account">
+    <asp:MenuItem NavigateUrl="~/Admin/Register.aspx" Text="Add Other Users" Value="Users"></asp:MenuItem>
+<asp:MenuItem NavigateUrl="~/Admin/Change.aspx" Text="Change Password" 
+        Value="Change Password"></asp:MenuItem>
+</asp:MenuItem>
+                        <asp:MenuItem Text="Add" Value="Add">
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/AddLinks.aspx" Text="Home Links" 
+                                Value="Links"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/AddButton.aspx" Text="Home Buttons" 
+                                Value="Buttons"></asp:MenuItem>
+<asp:MenuItem NavigateUrl="~/Admin/pages/AddSliderImage.aspx" Text="Slider Image" Value="Department Slider"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/UploadGalleryImage.aspx" Text="Image Gallery" Value="Gallery image"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/AddNewspaper.aspx" Text="News Gallery" Value="News Gallery"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/AddVideoLinks.aspx" Text="Video Gallery" Value="Video Gallery"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Update" Value="Update">
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/UpdateFeeStructure.aspx" 
+                                Text="Fee Structure" Value="Fee Structure"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/UpdateAdministration.aspx" 
+                                Text="Administration" Value="Administration"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/UpdateImportantDates.aspx" 
+                                Text="Important dates" Value="Important dates"></asp:MenuItem>
+                            <asp:MenuItem Text="Profile Details PDF" Value="Profile PDF" 
+                                NavigateUrl="~/Admin/pages/UpdateProfilePDF.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/UpdateOtherPDF.aspx" Text="Course Related PDF" 
+                                Value="Other Pdf Update"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Manage" Value="Manage">
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/AddFaculty.aspx" 
+                                Text="Faculty Member" Value="Add Faculty Member"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/AddGuestFaculty.aspx" 
+                                Text="Guest Faculty" Value="Add Guest Faculty">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/AddOfficeStaff.aspx" 
+                                Text="Office Staff" Value="Add Office Staff"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/AddSupportingStaff.aspx" 
+                                Text="Suppoting Staff" Value="Add Suppoting Staff"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/ViewAlumni.aspx" 
+                                Text="View Registered Alumni" Value="View Alumni"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/DeleteAlumni.aspx" 
+                                Text="Delete Registered Alumni" Value="Delete Alumni">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Upload" Value="Upload">
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/UploadNews.aspx" Text="News" 
+                                Value="News"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/UploadNotice.aspx" Text="Notice" 
+                                Value="Notice"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/UploadTender.aspx" Text="Tender" 
+                                Value="Tender"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/UploadFiles.aspx" 
+                                Text="Documents Upload" Value="Downloads Upload"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/pages/UploadAffReg.aspx" 
+                                Text="Affilations &amp; Regulations" Value="Affilations &amp; Regulations">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Admin/Logout.aspx" Text="Log Out" Value="Log Out">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer" style="width:960px;">
+        <h2><i>developed by</i> <u><b>Punj Prakash</b></u> for <i>University Department of Computer Applications</i></h2>
+    </div>
+    </form>
+</body>
+</html>
+
+
+

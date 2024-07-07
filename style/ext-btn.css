@@ -1,0 +1,61 @@
+.ext-btn {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-color: #fff; /* Dark Slate Blue */
+    padding: 20px 0;
+}
+
+.ext-btn .panel {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel .info-btn {
+    color: #FFFFFF; /* White */
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    background: #00BFFF; /* Deep Sky Blue */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.panel .info-btn:hover {
+    background: #4169E1; /* Royal Blue */
+}
+
+@media (max-width: 880px) {
+    .ext-btn .panel {
+        flex-direction: column;
+    }
+    
+    .panel .info-btn {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        padding: 15px 20px;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .panel .info-btn {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        padding: 20px;
+        font-size: 14px;
+    }
+}
