@@ -1,17 +1,38 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Web.Configuration;
 
 public partial class Library_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        lbl.Text = "";
+        if (!IsPostBack)
+        {
+            lbl.Text = "";
+            // Display the visitor count
+            lblVisitorCount.Text = GetVisitorCount().ToString();
+            lblyear.Text = DateTime.Now.Year.ToString();
+        }
+    }
+
+    private int GetVisitorCount()
+    {
+        int count = 0;
+        string connectionString = WebConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            SqlCommand command = new SqlCommand("SELECT Count FROM Visit WHERE ID = 1", connection);
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read())
+            {
+                count = reader.GetInt32(0);
+            }
+        }
+
+        return count;
     }
 
     protected void btnAbout_Click(object sender, EventArgs e)
