@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>File Upload</title>
     <link rel="stylesheet" type="text/css" href="Styles/upload.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/managefaculty.css" />
     <script type="text/javascript">
         function toggleSessionDropdown() {
             var ddlSemester = document.getElementById('<%= ddlSemester.ClientID %>');

@@ -125,7 +125,6 @@
                 <a href="CCDC.aspx"><i class="fa fa-user"></i>CCDC</a>
                 <a href="Registrar.aspx"><i class="fa fa-user"></i>Registrar</a> 
                 <a href="AffiliationRegulation.aspx"><i class="fa fa-file"></i>Affiliations & Regulations</a> 
-                <a href="Login.aspx"><i class="fa fa-sign-in"></i>Administrator Login</a>
             </div>
         </div>
         <div class="subnav">
@@ -173,6 +172,7 @@
         <a href="Notice.aspx"><i class="fa fa-bell"></i>Notice</a> 
         <a href="News.aspx"><i class="fa fa-newspaper-o"></i>News</a> 
         <a href="Tender.aspx"><i class="fa fa-info"></i>Tender</a>
+        <a href="Login.aspx"><i class="fa fa-sign-in"></i>Login</a>
     </nav>
     <script src="script/menu.js"></script>
     

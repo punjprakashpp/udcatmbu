@@ -27,7 +27,7 @@
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <center>
-    <h2><u>Welcome to UDCA Website Administrator Portal's <b>Dashboard</b></u></h2>
+    <h2><u><b>Welcome</b> to UDCA TMBU Website Management Portal's <b>Dashboard</b></u></h2>
     <div class="data">
         <p>Account Menu Options:</p>
         <ul>

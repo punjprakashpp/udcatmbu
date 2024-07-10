@@ -12,15 +12,6 @@
             position: relative;
             overflow: hidden;
         }
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        h2 {
-            color: #333;
-        }
 
         /* Table Styles */
         table {
@@ -33,6 +24,7 @@
         table td {
             padding: 10px;
             vertical-align: top;
+            font-size:16px;
         }
 
         table td:first-child {
