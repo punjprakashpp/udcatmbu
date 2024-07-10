@@ -196,7 +196,7 @@
         <div class="container">
             <div class="title"><h2>University Hostel</h2></div>
             <div class="tagline">Your Home Away From Home</div>
-            <img class="image" src="img/facilities/Boys Hostel.jpg" alt="Boys Hostel"><br />
+            <img class="image" src="img/Dept/Boys Hostel.jpg" alt="Boys Hostel"><br />
             <br />
             <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;T.M. Bhagalpur University offers segregated hostel accommodations for both male and female students. Availability of seats is limited, with allocations made based on university regulations. The hostel charges amount to ₹3800 annually for a double bedroom. These accommodations serve as a conducive living environment for students, fostering a sense of community and providing essential amenities. With a focus on student welfare, the university ensures fair allocation procedures and maintains reasonable pricing, facilitating an enriching academic experience for residents.</p>
             <div class="note">

@@ -76,7 +76,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="cont">
         <div class="title header"><h2>Central Library </h2></div>
-        <img class="library-image" src="img/facilities/central library.jpg" alt="Central Library">
+        <img class="library-image" src="img/Dept/central library.jpg" alt="Central Library">
         <p class="description">
             The <span style="color: #ff0000;">CENTRAL LIBRARY ,</span>  designated as the <b>APEX BODY</b> of Tilka Manjhi Bhagalpur University's library system, serves as the cornerstone of academic resources. It stands as the primary repository for all publications affiliated with the institution, housing an extensive collection of books, journals, and printed materials. Beyond its comprehensive offerings, the library boasts a collection of rare documents, carefully preserved for posterity. Situated amidst a picturesque 4-acre expanse within the University's administrative campus, it not only collects and disseminates printed material but also serves as a hub for scholarly engagement and preservation efforts.
         </p>

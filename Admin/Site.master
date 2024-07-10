@@ -21,16 +21,19 @@
                         <Items>
                             <asp:MenuItem NavigateUrl="~/Admin/Default.aspx" Text="Dashboard" />
                             <asp:MenuItem Text="Account" Value="Account">
-                                <asp:MenuItem NavigateUrl="~/Admin/RegisterOtherUser.aspx" Text="Add Other Users" Value="Add Users"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/ChangePassword.aspx" Text="Change Password" Value="Change Password"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/RegisterOtherUser.aspx" Text="Register Other Users" Value="Add Users"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/RemoveOtherUser.aspx" Text="Remove Other Users" Value="Remove Users"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="Add" Value="Add">
+                                <asp:MenuItem NavigateUrl="~/Admin/AddVideoLinks.aspx" Text="Video Links" Value="Video Links"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/AddHomeLinks.aspx" Text="Home Links" Value="Links"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/AddHomeButton.aspx" Text="Home Buttons" Value="Buttons"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/AddSliderImage.aspx" Text="Slider Image" Value="Slider"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadGalleryImage.aspx" Text="Image Gallery" Value="Image Gallery"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadNewspaper.aspx" Text="News Gallery" Value="News Gallery"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/AddVideoLinks.aspx" Text="Video Gallery" Value="Video Gallery"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/AddFaculty.aspx" Text="Faculty Member" Value="Faculty Member"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/AddGuestFaculty.aspx" Text="Guest Faculty" Value="Guest Faculty"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/AddOfficeStaff.aspx" Text="Office Staff" Value="Office Staff"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/AddSupportingStaff.aspx" Text="Suppoting Staff" Value="Suppoting Staff"></asp:MenuItem>
+                                
                             </asp:MenuItem>
                             <asp:MenuItem Text="Update" Value="Update">
                                 <asp:MenuItem NavigateUrl="~/Admin/UpdateFeeStructure.aspx" Text="Fee Structure" Value="Fee Structure"></asp:MenuItem>
@@ -39,26 +42,34 @@
                                 <asp:MenuItem NavigateUrl="~/Admin/UpdateProfilePDF.aspx" Text="Profile Details PDF" Value="Profile PDF"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/UpdateCoursePDF.aspx" Text="Course Related PDF" Value="Course PDF"></asp:MenuItem>
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Manage" Value="Manage">
-                                <asp:MenuItem NavigateUrl="~/Admin/AddFaculty.aspx" Text="Faculty Member" Value="Faculty Member"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/AddGuestFaculty.aspx" Text="Guest Faculty" Value="Guest Faculty"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/AddOfficeStaff.aspx" Text="Office Staff" Value="Office Staff"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/AddSupportingStaff.aspx" Text="Suppoting Staff" Value="Suppoting Staff"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/DeleteAlumni.aspx" Text="Registered Alumni" Value="Delete Alumni"></asp:MenuItem>
-                            </asp:MenuItem>
                             <asp:MenuItem Text="Upload" Value="Upload">
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadNews.aspx" Text="News" Value="News"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/UploadNotice.aspx" Text="Notice" Value="Notice"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/UploadNews.aspx" Text="News" Value="News"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/UploadTender.aspx" Text="Tender" Value="Tender"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/UploadFiles.aspx" Text="Documents" Value="Documents"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/AddSliderImage.aspx" Text="Slider Image" Value="Slider Image"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/UploadGalleryImage.aspx" Text="Gallery Image " Value="Gallery Image"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/UploadNewspaper.aspx" Text="Newspaper Image" Value="Newspaper Image"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/UploadAffReg.aspx" Text="Affilations &amp; Regulations" Value="Affilations &amp; Regulations"></asp:MenuItem>
                             </asp:MenuItem>
+                            <asp:MenuItem Text="Manage" Value="Manage">
+                                <asp:MenuItem NavigateUrl="~/Admin/ManageNotice.aspx" Text="Notice" Value="Notice"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/ManageNews.aspx" Text="News" Value="News"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/ManageTender.aspx" Text="Tender" Value="Tender"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/DeleteFiles.aspx" Text="Documents" Value="Documents"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/ManageFaculty.aspx" Text="Faculty Member" Value="Faculty Member"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/ManageGuestFaculty.aspx" Text="Guest Faculty" Value="Guest Faculty"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/ManageOfficeStaff.aspx" Text="Office Staff" Value="Office Staff"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/ManageSupportingStaff.aspx" Text="Suppoting Staff" Value="Suppoting Staff"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/DeleteAlumni.aspx" Text="Registered Alumni" Value="Delete Alumni"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/ManageAffReg.aspx" Text="Affilations &amp; Regulations" Value="Affilations &amp; Regulations"></asp:MenuItem>
+                            </asp:MenuItem>
                             <asp:MenuItem Text="View" Value="View">
-                                <asp:MenuItem NavigateUrl="~/Admin/ViewAlumni.aspx" Text="Alumni" Value="View Alumni"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/ViewFaculty.aspx" Text="Faculty Members" Value="Faculty Members"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/ViewGuestFaculty.aspx" Text="Guest Faculty" Value="Guest Faculty"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/ViewOfficeStaff.aspx" Text="Office Staff" Value="Office Staff"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/ViewSupportingStaff.aspx" Text="Supporting Staff" Value="Supporting Staff"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/ViewAlumni.aspx" Text="Registered Alumni" Value="View Alumni"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/ViewFeeStructure.aspx" Text="Fee Structure" Value="Fee Structure"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/ViewImportantDates.aspx" Text="Important Dates" Value="Important Dates"></asp:MenuItem>
                             </asp:MenuItem>

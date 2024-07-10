@@ -19,7 +19,7 @@
     width: 200px;
     height: 50px;
     margin: 10px;
-    background: #00BFFF; /* Deep Sky Blue */
+    background: #4169E1; /* Royal Blue */
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 500;
@@ -33,7 +33,7 @@
 }
 
 .panel .info-btn:hover {
-    background: #4169E1; /* Royal Blue */
+    background: #00BFFF; /* Deep Sky Blue */
 }
 
 @media (max-width: 880px) {

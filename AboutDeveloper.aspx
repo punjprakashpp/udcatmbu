@@ -116,7 +116,7 @@
                 <p>
                     Session:&nbsp;&nbsp;<b>2022-2024</b><br />
                     Work:&nbsp;&nbsp;<b>Front-End, Back-End and Database</b><br />
-                    Phone No.:&nbsp;&nbsp;<b><a href="tel:+91 9060311534">+91 9060311534</a></b><br />
+                    Phone/Whatsapp No.:&nbsp;&nbsp;<b><a href="tel:+91 9060311534">+91 9060311534</a></b><br />
                     E-Mail Id.:&nbsp;&nbsp;<b><a href="mailto:punjprakashpp@gmail.com">punjprakashpp@gmail.com</a></b><br />
                     Social Links:
                     &nbsp;&nbsp;<a href="https://www.facebook.com/punjprakashop" target="_blank"><i class="fa fa-facebook"></i></a>

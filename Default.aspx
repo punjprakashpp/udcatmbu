@@ -82,7 +82,7 @@
     </div>
     <div class="person">
         <div class="card">
-            <a href="pages/Chancellor.aspx">
+            <a href="Chancellor.aspx">
                 <div class="box">
                     <h3 align="center">
                         <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label></h3>
@@ -93,7 +93,7 @@
             </a>
         </div>
         <div class="card">
-            <a href="pages/ViceChancellor.aspx">
+            <a href="ViceChancellor.aspx">
                 <div class="box">
                     <h3 align="center">
                         <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label></h3>
@@ -104,7 +104,7 @@
             </a>
         </div>
         <div class="card">
-            <a href="pages/ProViceChancellor.aspx">
+            <a href="ProViceChancellor.aspx">
                 <div class="box">
                     <h3 align="center">
                         <asp:Label ID="lblProViceChancellor" runat="server" Text="Pro-Vice-Chancellor of T.M.B.U"></asp:Label></h3>
@@ -115,7 +115,7 @@
             </a>
         </div>
         <div class="card">
-            <a href="pages/Director.aspx">
+            <a href="Director.aspx">
                 <div class="box">
                     <h3 align="center">
                         <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label></h3>
@@ -126,9 +126,7 @@
             </a>
         </div>
     </div>
-    <div style="height: 20px">
-    </div>
-    <br />
+    <br /><br />
     <div class="mid-sec">
         <div class="sec">
             <div class="labels">
@@ -144,7 +142,7 @@
                 the best administrative component of there academic career
             </p>
             <p style="text-align: right;">
-                <a href="pages/Director.aspx">Read More...</a>
+                <a href="Director.aspx">Read More...</a>
             </p>
         </div>
         <div class="sec">
@@ -162,7 +160,7 @@
                 New Delhi.
             </p>
             <p style="text-align: right;">
-                <a href="pages/UDCA.aspx">Read More...</a>
+                <a href="AboutUDCA.aspx">Read More...</a>
             </p>
         </div>
         <div class="sec">

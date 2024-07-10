@@ -79,7 +79,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="cont">
         <h1 style="text-align: center; padding: 20px 0; background-color: #369; color: white; font-size: 1.8em; font-weight: bold; text-align: center; text-transform: uppercase; margin-bottom: 20px; border-top-left-radius: 10px; border-top-right-radius: 10px;">Health Center </h1>
-        <img src="img/facilities/Health Centre.jpg" alt="Health Center Image" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+        <img src="img/Dept/Health Centre.jpg" alt="Health Center Image" style="max-width: 100%; height: auto; margin-bottom: 20px;">
         
         <table class="info-table">
             <tr><th colspan="2">Health Center Information.</th></tr>
