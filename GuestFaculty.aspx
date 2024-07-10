@@ -1,8 +1,8 @@
-<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true"
-    CodeFile="Faculty.aspx.cs" Inherits="pages_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true"
+    CodeFile="GuestFaculty.aspx.cs" Inherits="pages_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Faculty Members</title>
+    <title>Guest Faculty Members</title>
     <link rel="stylesheet" href="style/faculty.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -10,7 +10,7 @@
         <div class="container">
             <div class="header">
                 <h1>
-                    Meet Our Faculty Members</h1>
+                    Meet Our Guest Faculty Members</h1>
             </div>
             <asp:Repeater ID="facultyRepeater" runat="server">
                 <ItemTemplate>
@@ -39,7 +39,7 @@
             </asp:Repeater>
             <div class="header">
                 <h1>
-                    Our Former Faculty Members</h1>
+                    Our Former Guest Faculty Members</h1>
             </div>
             <asp:Repeater ID="FormerRepeater" runat="server">
                 <ItemTemplate>

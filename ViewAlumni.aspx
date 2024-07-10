@@ -1,5 +1,5 @@
 <%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true"
-    CodeFile="Alumni.aspx.cs" Inherits="pages_Default" %>
+    CodeFile="ViewAlumni.aspx.cs" Inherits="pages_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Our Alumni</title>

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true"
-    CodeFile="AffReg.aspx.cs" Inherits="pages_AffReg" %>
+    CodeFile="AffiliationRegulation.aspx.cs" Inherits="pages_AffReg" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Affiliations & Regulations</title>

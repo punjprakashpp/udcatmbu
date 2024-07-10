@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="Eligiblity.aspx.cs" Inherits="Acedemic_Eligiblity" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="EligiblityCriteria.aspx.cs" Inherits="Acedemic_Eligiblity" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Admission Eligibility Criteria</title>
