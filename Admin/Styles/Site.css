@@ -124,6 +124,7 @@ first child of the left and right table columns */
 div.hideSkiplink {
     background-color: #3a4f63;
     width: 100%;
+    font-size: large;
 }
 
 div.menu {
@@ -262,6 +263,9 @@ div.accountInfo {
         font-size: 1em;
         padding: 10px;
     }
+    body {
+        width:95%;
+    }
 
     .header h1 {
         font-size: 1.5em;
@@ -306,5 +310,58 @@ div.accountInfo {
 
     h1, h2, h3, h4, h5, h6 {
         font-size: 1.2em;
+    }
+}
+
+/* MOBILE CSS FOR SCREEN WIDTHS BELOW 480PX */
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 0.9em;
+    }
+
+    .page {
+        padding: 10px;
+        border: none;
+        box-shadow: none;
+    }
+
+    .header h1 {
+        font-size: 1.2em;
+        text-align: center;
+        padding-left: 0;
+        line-height: 1.5em;
+    }
+
+    .main {
+        margin: 8px 0;
+        padding: 0 8px;
+    }
+
+    .leftCol {
+        margin: 0 0 8px 0;
+    }
+
+    .footer {
+        font-size: 0.8em;
+    }
+
+    .menu ul li a, .menu ul li a:visited {
+        padding: 6px 8px;
+        font-size: 0.9em;
+    }
+
+    .loginDisplay {
+        font-size: 0.9em;
+        padding: 8px 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1em;
+    }
+
+    .submitButton {
+        text-align: center;
+        padding-right: 0;
     }
 }

@@ -82,16 +82,6 @@
         </div>
         <div class="subnav">
             <button class="subnavbtn" onclick="toggleDropdown(this)">
-                <i class="fa fa-book"></i>Course Offered <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="subnav-content">
-                <a href="CourseStructure.aspx"><i class="fa fa-list"></i>Course Structure</a>
-                <a href="FeeStructure.aspx"><i class="fa fa-money"></i>Fee Structure</a> 
-                <a href="CourseSyllabus.aspx"><i class="fa fa-file-text"></i>Course Syllabus</a>
-            </div>
-        </div>
-        <div class="subnav">
-            <button class="subnavbtn" onclick="toggleDropdown(this)">
                 <i class="fa fa-university"></i>Admission <i class="fa fa-caret-down"></i>
             </button>
             <div class="subnav-content">
@@ -99,6 +89,16 @@
                 <a href="EnteranceTest.aspx"><i class="fa fa-pencil"></i>Entrance Test</a> 
                 <a href="EligiblityCriteria.aspx"><i class="fa fa-list-alt"></i>Eligibility Criteria</a> 
                 <a href="ImportantDates.aspx"><i class="fa fa-calendar-check-o"></i>Important Dates</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn" onclick="toggleDropdown(this)">
+                <i class="fa fa-book"></i>Course Offered <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+                <a href="CourseStructure.aspx"><i class="fa fa-list"></i>Course Structure</a>
+                <a href="FeeStructure.aspx"><i class="fa fa-money"></i>Fee Structure</a> 
+                <a href="CourseSyllabus.aspx"><i class="fa fa-file-text"></i>Course Syllabus</a>
             </div>
         </div>
         <div class="subnav">
@@ -145,7 +145,6 @@
             <div class="subnav-content">
                 <a href="UniversityHostel.aspx"><i class="fa fa-bed"></i>University Hostel</a> 
                 <a href="CentralLibrary.aspx"><i class="fa fa-book"></i>Central Library</a> 
-                <a href="Library/Default.aspx"><i class="fa fa-book"></i>UDCA Library</a> 
                 <a href="MedicalFacility.aspx"><i class="fa fa-medkit"></i>Medical Facilities</a>
             </div>
         </div>
@@ -168,6 +167,7 @@
                 <a href="NewsGallery.aspx"><i class="fa fa-newspaper-o"></i>News Gallery</a>
             </div>
         </div>
+        <a href="Library/Default.aspx"><i class="fa fa-book"></i>UDCA Library</a>
         <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a> 
         <a href="Notice.aspx"><i class="fa fa-bell"></i>Notice</a> 
         <a href="News.aspx"><i class="fa fa-newspaper-o"></i>News</a> 

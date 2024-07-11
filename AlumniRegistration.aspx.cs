@@ -15,12 +15,13 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
         {
             // Populate Session dropdown
             PopulateSessionDropdown();
+            // Save the data to the database or perform any other required operations
         }
     }
 
     private void PopulateSessionDropdown()
     {
-        ddlSession.Items.Add(new ListItem("-Select-Session-", string.Empty));
+        ddlSession.Items.Add(new ListItem("--- Select Session ---", string.Empty));
         int currentYear = DateTime.Now.Year;
         for (int year = 2002; year <= currentYear; year++)
         {
@@ -36,6 +37,9 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
         if (!Page.IsValid) return;
 
         string imagePath = "img/default/default.jpg"; // Default image path
+
+        // Prefix the phone number with "+91 "
+        txtPhone.Text = "+91 " + txtPhone.Text;
 
         if (fileUpload.HasFile)
         {
@@ -99,6 +103,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 lblMessage.Text = "Alumni details saved successfully!";
+                lblmsg.Text = "Alumni details saved successfully!";
             }
         }
 

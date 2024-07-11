@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true"
-    CodeFile="AlumniRegistration.aspx.cs" Inherits="pages_AlumniRegister" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="AlumniRegistration.aspx.cs" Inherits="pages_AlumniRegister" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Alumni Registration</title>
@@ -23,8 +22,11 @@
             <img src="../img/other/white.png" style="width:100px;" />
             <h2>Alumni Registration</h2>
         </center>
-        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
         <table>
+            <tr>
+                <td></td>
+                <td><asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></td>
+            </tr>
             <tr>
                 <td>
                     Session:
@@ -41,9 +43,11 @@
                     Registration No:
                 </td>
                 <td>
-                    <asp:TextBox ID="txtRegistrationNo" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtRegistrationNo" placeholder="e.g. 184630004" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvRegistrationNo" runat="server" ControlToValidate="txtRegistrationNo"
                         ErrorMessage="Registration No is required." ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revRegistrationNo" runat="server" ControlToValidate="txtRegistrationNo"
+                        ErrorMessage="Registration No should be only numerals." ForeColor="Red" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -51,7 +55,7 @@
                     Registration Year:
                 </td>
                 <td>
-                    <asp:TextBox ID="txtRegistrationYear" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtRegistrationYear" placeholder="e.g. 2018" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvRegistrationYear" runat="server" ControlToValidate="txtRegistrationYear"
                         ErrorMessage="Registration Year is required." ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="revRegistrationYear" runat="server" ControlToValidate="txtRegistrationYear"
@@ -63,9 +67,11 @@
                     Roll No:
                 </td>
                 <td>
-                    <asp:TextBox ID="txtRollNo" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtRollNo" placeholder="e.g. 2210" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvRollNo" runat="server" ControlToValidate="txtRollNo"
                         ErrorMessage="Roll No is required." ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revRollNo" runat="server" ControlToValidate="txtRollNo"
+                        ErrorMessage="Roll No should be only numerals." ForeColor="Red" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -73,7 +79,7 @@
                     Name:
                 </td>
                 <td>
-                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtName" placeholder="e.g. Punj Prakash" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName"
                         ErrorMessage="Name is required." ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
@@ -83,7 +89,7 @@
                     Qualification:
                 </td>
                 <td>
-                    <asp:TextBox ID="txtQualification" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtQualification" placeholder="e.g. MCA" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -91,7 +97,7 @@
                     Occupation / Job:
                 </td>
                 <td>
-                    <asp:TextBox ID="txtOccupation" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtOccupation" placeholder="e.g. Full Stack Developer" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -99,7 +105,7 @@
                     Work Location / Company:
                 </td>
                 <td>
-                    <asp:TextBox ID="txtCompany" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCompany" placeholder="e.g. Bhagalpur" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -107,7 +113,9 @@
                     Phone No:
                 </td>
                 <td>
-                    <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtPhone" placeholder="e.g. 9060311534  Don't add +91 or 0 before it" runat="server"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revPhoneNo" runat="server" ControlToValidate="txtPhone"
+                        ErrorMessage="Phone No should be 10 digits." ForeColor="Red" ValidationExpression="^\d{10}$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -115,7 +123,9 @@
                     Email Id:
                 </td>
                 <td>
-                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" placeholder="e.g. punjprakashpp@gmail.com" runat="server"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
+                        ErrorMessage="Invalid Email format." ForeColor="Red" ValidationExpression="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -123,7 +133,7 @@
                     Linkedin Id: @
                 </td>
                 <td>
-                    <asp:TextBox ID="txtLinkedIn" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtLinkedIn" placeholder="e.g. punjprakashpp" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -131,7 +141,7 @@
                     Facebook Id: @
                 </td>
                 <td>
-                    <asp:TextBox ID="txtFacebook" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtFacebook" placeholder="e.g. punjprakashop" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -139,7 +149,7 @@
                     Instagram Id: @
                 </td>
                 <td>
-                    <asp:TextBox ID="txtInstagram" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtInstagram" placeholder="e.g. punjprakashpp" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -147,7 +157,7 @@
                     Twitter / X Id: @
                 </td>
                 <td>
-                    <asp:TextBox ID="txtTwitter" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTwitter" placeholder="e.g. punjprakashpp" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <!-- Image Upload -->
@@ -181,6 +191,10 @@
                     <asp:CustomValidator ID="cvDuplicateCheck" runat="server" ErrorMessage="User already exists." 
                         ForeColor="Red" OnServerValidate="cvDuplicateCheck_ServerValidate"></asp:CustomValidator>
                 </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><asp:Label ID="lblmsg" runat="server" ForeColor="Green"></asp:Label></td>
             </tr>
         </table>
     </div>

@@ -13,7 +13,7 @@
         <div class="page">
             <div class="header">
                 <div class="title">
-                    <h1>UDCA TMBU WEBSITE MANAGEMENT PORTAL</h1>
+                    <h1><asp:Image ID="Image1" runat="server" Width="20" Height="20" ImageUrl="~/Admin/logo/logo.png" />&nbsp;UDCA TMBU WEBSITE MANAGEMENT PORTAL&nbsp;<asp:Image ID="Image2" runat="server" Width="20" Height="20" ImageUrl="~/Admin/logo/logo.png" /></h1>
                 </div>
                 <div class="clear hideSkiplink">
                     <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu"
@@ -37,10 +37,10 @@
                             </asp:MenuItem>
                             <asp:MenuItem Text="Update" Value="Update">
                                 <asp:MenuItem NavigateUrl="~/Admin/UpdateFeeStructure.aspx" Text="Fee Structure" Value="Fee Structure"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UpdateAdministration.aspx" Text="Administration" Value="Administration"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/UpdateImportantDates.aspx" Text="Important dates" Value="Important dates"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UpdateProfilePDF.aspx" Text="Profile Details PDF" Value="Profile PDF"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Admin/UpdateCoursePDF.aspx" Text="Course Related PDF" Value="Course PDF"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/UpdateAdministration.aspx" Text="Administration Detail" Value="Administration"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Admin/UpdateProfilePDF.aspx" Text="Administration Profile PDF" Value="Profile PDF"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="Upload" Value="Upload">
                                 <asp:MenuItem NavigateUrl="~/Admin/UploadNotice.aspx" Text="Notice" Value="Notice"></asp:MenuItem>
@@ -84,7 +84,7 @@
             <div class="clear">
             </div>
         </div>
-        <div class="footer" style="width: 960px;">
+        <div class="footer">
             <h2><i>developed by</i> <u><b>Punj Prakash</b></u> for <i>University Department of Computer Applications</i></h2>
         </div>
     </form>
