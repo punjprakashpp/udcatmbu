@@ -52,7 +52,7 @@ public partial class Admin_Account_ChangePassword : System.Web.UI.Page
 
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string sql = "SELECT PasswordHash, PasswordSalt FROM Users WHERE UserName = @UserName";
+            string sql = "SELECT PasswordHash, PasswordSalt FROM Admin WHERE UserName = @UserName";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@UserName", userName);
 
@@ -80,7 +80,7 @@ public partial class Admin_Account_ChangePassword : System.Web.UI.Page
 
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string sql = "UPDATE Users SET PasswordHash = @PasswordHash, PasswordSalt = @PasswordSalt WHERE UserName = @UserName";
+            string sql = "UPDATE Admin SET PasswordHash = @PasswordHash, PasswordSalt = @PasswordSalt WHERE UserName = @UserName";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@PasswordHash", newHash);

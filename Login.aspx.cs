@@ -44,7 +44,7 @@ public partial class Login : System.Web.UI.Page
 
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string sql = "SELECT PasswordHash, PasswordSalt FROM Users WHERE UserName = @UserName";
+            string sql = "SELECT PasswordHash, PasswordSalt FROM Admin WHERE UserName = @UserName";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@UserName", userName);
 

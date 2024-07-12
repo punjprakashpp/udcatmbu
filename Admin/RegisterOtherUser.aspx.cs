@@ -21,7 +21,6 @@ public partial class Admin_Register : System.Web.UI.Page
         if (Page.IsValid)
         {
             string userName = txtUserName.Text;
-            string userType = ddlUserType.SelectedValue;
             string email = txtEmail.Text;
             string password = txtPassword.Text;
 
@@ -38,11 +37,10 @@ public partial class Admin_Register : System.Web.UI.Page
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string sql = "INSERT INTO Users (UserName, UserType, Email, PasswordHash, PasswordSalt, CreatedDate) VALUES (@UserName, @UserType, @Email, @PasswordHash, @PasswordSalt, @CreatedDate)";
+                string sql = "INSERT INTO Admin (UserName, Email, PasswordHash, PasswordSalt, CreatedDate) VALUES (@UserName, @Email, @PasswordHash, @PasswordSalt, @CreatedDate)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@UserName", userName);
-                cmd.Parameters.AddWithValue("@UserType", userType);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@PasswordHash", passwordHash);
                 cmd.Parameters.AddWithValue("@PasswordSalt", passwordSalt);
@@ -63,7 +61,7 @@ public partial class Admin_Register : System.Web.UI.Page
 
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string sql = "SELECT COUNT(*) FROM Users WHERE UserName = @UserName OR Email = @Email";
+            string sql = "SELECT COUNT(*) FROM Admin WHERE UserName = @UserName OR Email = @Email";
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@UserName", userName);

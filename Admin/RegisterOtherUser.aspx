@@ -21,17 +21,6 @@
             </tr>
             <tr>
                 <td>
-                    User Type:
-                </td>
-                <td>
-                    <asp:DropDownList ID="ddlUserType" runat="server">
-                        <asp:ListItem Text="Administrator" Value="Administrator"></asp:ListItem>
-                        <asp:ListItem Text="Manager" Value="Manager"></asp:ListItem>
-                    </asp:DropDownList>
-                </td>
-            </tr>
-            <tr>
-                <td>
                     Email:
                 </td>
                 <td>

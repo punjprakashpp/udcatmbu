@@ -47,7 +47,7 @@ public partial class Admin_RemoveOtherUser : System.Web.UI.Page
 
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string sql = "SELECT UserName FROM Users WHERE UserName != @CurrentUserName";
+            string sql = "SELECT UserName FROM Admin WHERE UserName != @CurrentUserName";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@CurrentUserName", currentUser);
 
@@ -68,7 +68,7 @@ public partial class Admin_RemoveOtherUser : System.Web.UI.Page
 
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string sql = "DELETE FROM Users WHERE UserName = @UserName";
+            string sql = "DELETE FROM Admin WHERE UserName = @UserName";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@UserName", userName);
 
