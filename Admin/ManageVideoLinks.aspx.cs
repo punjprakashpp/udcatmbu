@@ -32,7 +32,7 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             string query = "SELECT * FROM " +
-                           "(SELECT ROW_NUMBER() OVER (ORDER BY VideoID) AS RowNum, LinkID, LinkText, LinkURL " +
+                           "(SELECT ROW_NUMBER() OVER (ORDER BY LinkID) AS RowNum, LinkID, LinkText, LinkURL " +
                            "FROM Links WHERE Type = @Type";
             string whereClause = "";
             if (!string.IsNullOrEmpty(txtSearchVideoLabel.Text))

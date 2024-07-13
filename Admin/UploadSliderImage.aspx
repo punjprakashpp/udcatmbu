@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AddSliderImage.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="UploadSliderImage.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Add Slider image</title>
@@ -17,7 +17,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container">
-        <h2>Add Slider image</h2>
+        <h2>Upload Slider image</h2>
         <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
         <table>
             <tr>

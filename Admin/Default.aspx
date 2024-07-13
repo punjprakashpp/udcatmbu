@@ -37,16 +37,16 @@
         </ul>
         <p>Manage Menu Options:</p>
         <ul>
+            <li> <a href="ManageHomeButton.aspx">Home Button</a></li>
+            <li> <a href="ManageHomeLinks.aspx">Home Links</a></li>
+            <li> <a href="ManageVideoLinks.aspx">Video Links</a></li>
+            <li> <a href="ManageSliderImage.aspx">Slider Image</a></li>
             <li><a href="ManageNotice.aspx">Manage Notice</a></li>
             <li><a href="ManageNews.aspx">Manage News</a></li>
             <li><a href="ManageTender.aspx">Manage Tender</a></li>
-            <li><a href="DeleteFiles.aspx">Delete Documents Files</a></li>
-            <li><a href="DeleteAlumni.aspx">Delete Registered Alumni</a></li>
-            <li><a href="ManageFaculty.aspx">Manage Faculty Member</a></li>
-            <li><a href="ManageGuestFaculty.aspx">Manage Guest Faculty</a></li>
-            <li><a href="ManageOfficeStaff.aspx">Manage Office Staff</a></li>
-            <li><a href="ManageSupportingStaff.aspx">Manage Supporting Staff</a></li>
-            <li><a href="ManageAffReg.aspx">Manage Affiliations & Regulations</a></li>
+            <li><a href="ManageFaculty.aspx">Faculty & Guest Faculty</a></li>
+            <li><a href="ManageStaff.aspx">Office & Supporting Staff</a></li>
+            <li><a href="ManageAffReg.aspx">Affiliations & Regulations</a></li>
         </ul>
     </div>
     <div class="data">
@@ -55,20 +55,15 @@
             <li><a href="AddVideoLinks.aspx">Add Video Links</a></li>
             <li><a href="AddHomeLinks.aspx">Add Home Links</a></li>
             <li><a href="AddHomeButton.aspx">Add Home Buttons</a></li>
-            <li><a href="AddFaculty.aspx">Add Faculty Member</a></li>
-            <li><a href="AddGuestFaculty.aspx">Add Guest Faculty</a></li>
-            <li><a href="AddOfficeStaff.aspx">Add Office Staff</a></li>
-            <li><a href="AddSupportingStaff.aspx">Add Supporting Staff</a></li>
+            <li><a href="AddFaculty.aspx">Add Faculty & Guest Faculty</a></li>
+            <li><a href="AddStaff.aspx">Add Office & Supporting Staff</a></li>
         </ul>
-        <p>View Menu Options:</p>
-        <ul>            
-            <li><a href="ViewFeeStructure.aspx">View Fee Structure</a></li>
-            <li><a href="ViewImportantDates.aspx">View Important Dates</a></li>
-            <li><a href="ViewFaculty.aspx">View Faculty Members</a></li>
-            <li><a href="ViewGuestFaculty.aspx">View Guest Faculty</a></li>
-            <li><a href="ViewOfficeStaff.aspx">View Office Staff</a></li>
-            <li><a href="ViewSupportingStaff.aspx">View Supporting Staff</a></li>
-            <li><a href="ViewAlumni.aspx">View Registered Alumni</a></li>
+        <p>Delete Menu Options:</p>
+        <ul>
+            <li><a href="DeleteGalleryImage.aspx">Delete Gallery Image</a></li>
+            <li><a href="DeleteNewspaper.aspx">Delete Newspaper Image</a></li>
+            <li><a href="DeleteFiles.aspx">Delete Documents Files</a></li>
+            <li><a href="DeleteAlumni.aspx">Delete Registered Alumni</a></li>
         </ul>
     </div>
     <div class="data">
