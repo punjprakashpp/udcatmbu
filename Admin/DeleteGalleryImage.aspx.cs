@@ -21,10 +21,10 @@ public partial class Admin_pages_DeleteGalleryImage : Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ID, Occasion, '../' + ImagePath AS ImagePath FROM Gallery";
+            string query = "SELECT ID, Title, '../' + ImagePath AS ImagePath FROM Image WHERE Type = 'Gallery'";
             if (!string.IsNullOrEmpty(searchQuery))
             {
-                query += " WHERE Occasion LIKE @SearchQuery";
+                query += " AND Title LIKE @SearchQuery";
             }
 
             using (SqlDataAdapter da = new SqlDataAdapter(query, conn))
@@ -61,7 +61,7 @@ public partial class Admin_pages_DeleteGalleryImage : Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ImagePath FROM Gallery WHERE ID = @ID";
+            string query = "SELECT ImagePath FROM Image WHERE ID = @ID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@ID", id);
@@ -74,7 +74,7 @@ public partial class Admin_pages_DeleteGalleryImage : Page
                 reader.Close();
             }
 
-            query = "DELETE FROM Gallery WHERE ID = @ID";
+            query = "DELETE FROM Image WHERE ID = @ID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@ID", id);

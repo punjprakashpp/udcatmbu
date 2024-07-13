@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -26,14 +25,14 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT FacultyId, Name FROM Faculty";
+            string query = "SELECT MID, Name FROM Member WHERE Type = 'Faculty' OR Type = 'Guest'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 ddlFaculties.DataSource = reader;
                 ddlFaculties.DataTextField = "Name";
-                ddlFaculties.DataValueField = "FacultyId";
+                ddlFaculties.DataValueField = "MID";
                 ddlFaculties.DataBind();
                 ddlFaculties.Items.Insert(0, new ListItem("--Select Faculty--", ""));
                 reader.Close();
@@ -46,7 +45,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT * FROM Faculty WHERE FacultyId = @FacultyId";
+            string query = "SELECT * FROM Member WHERE MID = @FacultyId";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@FacultyId", facultyId);
@@ -55,6 +54,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                 if (reader.Read())
                 {
                     ddlType.SelectedValue = reader["Type"].ToString();
+                    ddlStatus.SelectedValue = reader["Status"].ToString();
                     txtName.Text = reader["Name"].ToString();
                     txtQualification.Text = reader["Qualification"].ToString();
                     txtPosition.Text = reader["Position"].ToString();
@@ -92,7 +92,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                 con.Open();
 
 
-                string selectImagePathQuery = "SELECT ImagePath FROM Faculty WHERE FacultyId = @FacultyId";
+                string selectImagePathQuery = "SELECT ImagePath FROM Member WHERE MID = @FacultyId";
                 using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, con))
                 {
                     selectImagePathCmd.Parameters.AddWithValue("@FacultyId", facultyId);
@@ -103,6 +103,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
             bool newFileUploaded = fileUpload.HasFile;
             string oldImagePath = imagePath; // Store the current image path
             string type = ddlType.SelectedValue;
+            string status = ddlStatus.SelectedValue;
             if (newFileUploaded)
             {
                 string fileExtension = Path.GetExtension(fileUpload.FileName).ToLower();
@@ -159,11 +160,12 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    string query = "UPDATE Faculty SET Type = @Type, Name = @Name, Qualification = @Qualification, Position = @Position, Phone = @Phone, Email = @Email, ImagePath = @ImagePath WHERE FacultyId = @FacultyId";
+                    string query = "UPDATE Member SET Type = @Type, Status = @Status, Name = @Name, Qualification = @Qualification, Position = @Position, Phone = @Phone, Email = @Email, ImagePath = @ImagePath WHERE MID = @FacultyId";
                     
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Type", type);
+                        cmd.Parameters.AddWithValue("@Status", status);
                         cmd.Parameters.AddWithValue("@Name", txtName.Text);
                         cmd.Parameters.AddWithValue("@Qualification", txtQualification.Text);
                         cmd.Parameters.AddWithValue("@Position", txtPosition.Text);
@@ -204,14 +206,14 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                     conn.Open();
 
                     string imagePath = "";
-                    string selectImagePathQuery = "SELECT ImagePath FROM Faculty WHERE FacultyId = @FacultyId";
+                    string selectImagePathQuery = "SELECT ImagePath FROM Member WHERE MID = @FacultyId";
                     using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, conn))
                     {
                         selectImagePathCmd.Parameters.AddWithValue("@FacultyId", facultyId);
                         imagePath = selectImagePathCmd.ExecuteScalar() as string;
                     }
 
-                    string deleteFacultyQuery = "DELETE FROM Faculty WHERE FacultyId = @FacultyId";
+                    string deleteFacultyQuery = "DELETE FROM Member WHERE MID = @FacultyId";
                     using (SqlCommand deleteFacultyCmd = new SqlCommand(deleteFacultyQuery, conn))
                     {
                         deleteFacultyCmd.Parameters.AddWithValue("@FacultyId", facultyId);
@@ -249,6 +251,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
     private void ClearForm()
     {
         ddlType.SelectedIndex = 0;
+        ddlStatus.SelectedIndex = 0;
         txtName.Text = string.Empty;
         fileUpload.Attributes.Clear();
         txtQualification.Text = string.Empty;

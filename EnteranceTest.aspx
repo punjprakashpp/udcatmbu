@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="EnteranceTest.aspx.cs" Inherits="Acedemic_Enterance" %>
+﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Admission Entrance Test Syllabus</title>

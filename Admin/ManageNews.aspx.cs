@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
@@ -45,15 +44,16 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
             string query = @"
                 WITH News_CTE AS (
                     SELECT 
-                        NewsID, 
+                        BID, 
                         Title, 
-                        NewsDate, 
+                        Date, 
                         FilePath,
-                        ROW_NUMBER() OVER (ORDER BY NewsDate) AS RowNum
+                        ROW_NUMBER() OVER (ORDER BY Date) AS RowNum
                     FROM 
-                        News
+                        Board
                     WHERE
-                        (@NewsDate IS NULL OR CONVERT(VARCHAR, NewsDate, 105) = @NewsDate)
+                        Type = 'News'
+                        AND (@NewsDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @NewsDate)
                 )
                 SELECT * FROM News_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow";
@@ -182,7 +182,7 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "UPDATE News SET Title=@Title, NewsDate=@NewsDate, FilePath=@FilePath WHERE NewsID=@NewsID";
+            string query = "UPDATE Board SET Title=@Title, Date=@NewsDate, FilePath=@FilePath WHERE BID=@NewsID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Title", title);
@@ -212,7 +212,7 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             // Retrieve the file path to delete the file
-            string query = "SELECT FilePath FROM News WHERE NewsID=@NewsID";
+            string query = "SELECT FilePath FROM Board WHERE BID=@NewsID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@NewsID", newsID);
@@ -225,7 +225,7 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
             }
 
             // Delete the record from the database
-            query = "DELETE FROM News WHERE NewsID=@NewsID";
+            query = "DELETE FROM Board WHERE BID=@NewsID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@NewsID", newsID);

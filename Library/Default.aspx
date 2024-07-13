@@ -128,8 +128,7 @@
                 <a href="../Director.aspx"><i class="fa fa-user"></i>Director</a> 
                 <a href="../DSW.aspx"><i class="fa fa-user"></i>DSW</a> 
                 <a href="../CCDC.aspx"><i class="fa fa-user"></i>CCDC</a>
-                <a href="../Registrar.aspx"><i class="fa fa-user"></i>Registrar</a> 
-                <a href="../AffiliationRegulation.aspx"><i class="fa fa-file"></i>Affiliations & Regulations</a>                
+                <a href="../Registrar.aspx"><i class="fa fa-user"></i>Registrar</a>                
             </div>
         </div>
         <div class="subnav">
@@ -137,8 +136,7 @@
                 <i class="fa fa-group"></i>Faculty & Staffs <i class="fa fa-caret-down"></i>
             </button>
             <div class="subnav-content">
-                <a href="../FacultyMember.aspx"><i class="fa fa-users"></i>Faculty Member</a> 
-                <a href="../GuestFaculty.aspx"><i class="fa fa-user"></i>Guest Faculty</a> 
+                <a href="../FacultyMember.aspx"><i class="fa fa-users"></i>Faculty Member</a>  
                 <a href="../OfficeStaff.aspx"><i class="fa fa-briefcase"></i>Office Staffs</a> 
                 <a href="../SupportingStaff.aspx"><i class="fa fa-user-secret"></i>Supporting Staffs</a>
             </div>
@@ -148,6 +146,7 @@
                 <i class="fa fa-building"></i>Amenities <i class="fa fa-caret-down"></i>
             </button>
             <div class="subnav-content">
+                <a href="../Library/Default.aspx"><i class="fa fa-book"></i>UDCA Library</a>
                 <a href="../UniversityHostel.aspx"><i class="fa fa-bed"></i>University Hostel</a> 
                 <a href="../CentralLibrary.aspx"><i class="fa fa-book"></i>Central Library</a> 
                 <a href="../MedicalFacility.aspx"><i class="fa fa-medkit"></i>Medical Facilities</a>
@@ -171,12 +170,19 @@
                 <a href="../VideoGallery.aspx"><i class="fa fa-video-camera"></i>Video Gallery</a>
                 <a href="../NewsGallery.aspx"><i class="fa fa-newspaper-o"></i>News Gallery</a>
             </div>
-        </div>
-        <a href="../Library/Default.aspx"><i class="fa fa-book"></i>UDCA Library</a> 
+        </div> 
+        <div class="subnav">
+            <button class="subnavbtn" onclick="toggleDropdown(this)">
+                <i class="fa fa-info-circle"></i>Information <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+                <a href="../Notice.aspx"><i class="fa fa-bell"></i>Notice</a> 
+                <a href="../News.aspx"><i class="fa fa-newspaper-o"></i>News</a> 
+                <a href="../Tender.aspx"><i class="fa fa-info"></i>Tender</a>
+                <a href="../AffiliationRegulation.aspx"><i class="fa fa-file"></i>Affiliations & Regulations</a>
+            </div>
+        </div> 
         <a href="../Downloads.aspx"><i class="fa fa-download"></i>Downloads</a> 
-        <a href="../Notice.aspx"><i class="fa fa-bell"></i>Notice</a> 
-        <a href="../News.aspx"><i class="fa fa-newspaper-o"></i>News</a> 
-        <a href="../Tender.aspx"><i class="fa fa-info"></i>Tender</a>
         <a href="../Login.aspx"><i class="fa fa-sign-in"></i>Login</a>
     </nav>
     

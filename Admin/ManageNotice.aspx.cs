@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
@@ -43,19 +42,20 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             string query = @"
-                WITH Notices_CTE AS (
+                WITH Notice_CTE AS (
                     SELECT 
-                        NoticeID, 
+                        BID, 
                         Title, 
-                        NoticeDate, 
+                        Date, 
                         FilePath,
-                        ROW_NUMBER() OVER (ORDER BY NoticeDate) AS RowNum
+                        ROW_NUMBER() OVER (ORDER BY Date) AS RowNum
                     FROM 
-                        Notices
+                        Board
                     WHERE
-                        (@NoticeDate IS NULL OR CONVERT(VARCHAR, NoticeDate, 105) = @NoticeDate)
+                        Type = 'Notice'
+                        AND (@NoticeDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @NoticeDate)
                 )
-                SELECT * FROM Notices_CTE
+                SELECT * FROM Notice_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow";
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -182,7 +182,7 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "UPDATE Notices SET Title=@Title, NoticeDate=@NoticeDate, FilePath=@FilePath WHERE NoticeID=@NoticeID";
+            string query = "UPDATE Board SET Title=@Title, Date=@NoticeDate, FilePath=@FilePath WHERE BID=@NoticeID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Title", title);
@@ -212,7 +212,7 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             // Retrieve the file path to delete the file
-            string query = "SELECT FilePath FROM Notices WHERE NoticeID=@NoticeID";
+            string query = "SELECT FilePath FROM Board WHERE BID=@NoticeID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@NoticeID", noticeID);
@@ -225,7 +225,7 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
             }
 
             // Delete the record from the database
-            query = "DELETE FROM Notices WHERE NoticeID=@NoticeID";
+            query = "DELETE FROM Board WHERE BID=@NoticeID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@NoticeID", noticeID);

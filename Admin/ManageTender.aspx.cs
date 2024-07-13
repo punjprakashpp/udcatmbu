@@ -45,15 +45,16 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
             string query = @"
                 WITH Tender_CTE AS (
                     SELECT 
-                        TenderID, 
+                        BID, 
                         Title, 
-                        TenderDate, 
+                        Date, 
                         FilePath,
-                        ROW_NUMBER() OVER (ORDER BY TenderDate) AS RowNum
+                        ROW_NUMBER() OVER (ORDER BY Date) AS RowNum
                     FROM 
-                        Tender
+                        Board
                     WHERE
-                        (@TenderDate IS NULL OR CONVERT(VARCHAR, TenderDate, 105) = @TenderDate)
+                        Type = 'Tender'
+                        AND (@TenderDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @TenderDate)
                 )
                 SELECT * FROM Tender_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow";
@@ -182,7 +183,7 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "UPDATE Tender SET Title=@Title, TenderDate=@TenderDate, FilePath=@FilePath WHERE TenderID=@TenderID";
+            string query = "UPDATE Board SET Title=@Title, Date=@TenderDate, FilePath=@FilePath WHERE BID=@TenderID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Title", title);
@@ -212,7 +213,7 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             // Retrieve the file path to delete the file
-            string query = "SELECT FilePath FROM Tender WHERE TenderID=@TenderID";
+            string query = "SELECT FilePath FROM Board WHERE BID=@TenderID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@TenderID", tenderID);
@@ -225,7 +226,7 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
             }
 
             // Delete the record from the database
-            query = "DELETE FROM Tender WHERE TenderID=@TenderID";
+            query = "DELETE FROM Board WHERE BID=@TenderID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@TenderID", tenderID);

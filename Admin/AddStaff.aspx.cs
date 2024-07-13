@@ -1,27 +1,21 @@
 ﻿using System;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class Admin_pages_AddFaculty : System.Web.UI.Page
 {
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-        Response.Redirect("ManageSupportingStaff.aspx");
+        Response.Redirect("ManageStaff.aspx");
     }
 
     protected void btnSave_Click(object sender, EventArgs e)
     {
         string imagePath = "img/default/default.jpg"; // Default image path
-
+        string type = ddlType.SelectedValue;
         if (fileUpload.HasFile)
         {
             // Check if the file is an image
@@ -29,7 +23,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
             if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
             {
                 string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                string folderPath = Server.MapPath("../img/staff/");
+                string folderPath = Server.MapPath("../img/Staff/");
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
@@ -48,7 +42,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
                         bmp.Save(fullPath, ImageFormat.Png);
                     }
                 }
-                imagePath = "img/staff/" + fileName;
+                imagePath = "img/Staff/" + fileName;
             }
             else
             {
@@ -60,9 +54,11 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                string query = "INSERT INTO Staff (Name, Qualification, Position, Phone, Email, ImagePath) VALUES (@Name, @Qualification, @Position, @Phone, @Email, @ImagePath)";
+                string query = "INSERT INTO Member (Type, Status, Name, Qualification, Position, Phone, Email, ImagePath) VALUES (@Type, @Status, @Name, @Qualification, @Position, @Phone, @Email, @ImagePath)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@Type", type);
+                    cmd.Parameters.AddWithValue("@Status", string.Empty);
                     cmd.Parameters.AddWithValue("@Name", txtName.Text);
                     cmd.Parameters.AddWithValue("@Qualification", txtQualification.Text);
                     cmd.Parameters.AddWithValue("@Position", txtPosition.Text);
@@ -74,7 +70,6 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
                     lblMessage.Text = "Staff details saved successfully!";
                 }
             }
-
             ClearForm();
     }
 
@@ -86,5 +81,6 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
         txtPosition.Text = string.Empty;
         txtPhone.Text= string.Empty;
         txtEmail.Text = string.Empty;
+        ddlType.SelectedIndex = 0;
     }
 }

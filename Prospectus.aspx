@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="Prospectus.aspx.cs" Inherits="pages_Prospectus" %>
+﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Prospectus | UDCA</title>

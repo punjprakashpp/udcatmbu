@@ -32,12 +32,12 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             string query = "SELECT * FROM " +
-                           "(SELECT ROW_NUMBER() OVER (ORDER BY VideoID) AS RowNum, VideoID, VideoText, VideoURL " +
-                           "FROM Video";
+                           "(SELECT ROW_NUMBER() OVER (ORDER BY VideoID) AS RowNum, LinkID, LinkText, LinkURL " +
+                           "FROM Links WHERE Type = @Type";
             string whereClause = "";
             if (!string.IsNullOrEmpty(txtSearchVideoLabel.Text))
             {
-                whereClause = " WHERE VideoText LIKE @SearchText";
+                whereClause = " AND LinkText LIKE @SearchText";
             }
 
             query += whereClause + ") AS RowConstrainedResult WHERE RowNum >= @StartRow AND RowNum < @EndRow ORDER BY RowNum";
@@ -48,7 +48,7 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
                 {
                     cmd.Parameters.AddWithValue("@SearchText", "%" + txtSearchVideoLabel.Text + "%");
                 }
-
+                cmd.Parameters.AddWithValue("@Type", "Video");
                 int startRow = CurrentPage * PageSize + 1;
                 int endRow = startRow + PageSize;
 
@@ -113,12 +113,12 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "UPDATE Video SET VideoText=@VideoText, VideoURL=@VideoURL WHERE VideoID=@VideoID";
+            string query = "UPDATE Links SET LinkText=@LinkText, LinkURL=@LinkURL WHERE LinkID=@LinkID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@VideoText", VideoText);
-                cmd.Parameters.AddWithValue("@VideoURL", VideoURL);
-                cmd.Parameters.AddWithValue("@VideoID", VideoID);
+                cmd.Parameters.AddWithValue("@LinkText", VideoText);
+                cmd.Parameters.AddWithValue("@LinkURL", VideoURL);
+                cmd.Parameters.AddWithValue("@LinkID", VideoID);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -141,10 +141,10 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "DELETE FROM Video WHERE VideoID=@VideoID";
+            string query = "DELETE FROM Links WHERE LinkID=@LinkID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@VideoID", VideoID);
+                cmd.Parameters.AddWithValue("@LinkID", VideoID);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 BindGridView();

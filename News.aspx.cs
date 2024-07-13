@@ -2,10 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class pages_News : System.Web.UI.Page
@@ -47,19 +43,20 @@ public partial class pages_News : System.Web.UI.Page
             string query = @"
                 WITH News_CTE AS (
                     SELECT 
-                        NewsID, 
+                        BID, 
                         Title, 
-                        NewsDate, 
+                        Date, 
                         FilePath,
-                        ROW_NUMBER() OVER (ORDER BY NewsDate DESC) AS RowNum
+                        ROW_NUMBER() OVER (ORDER BY Date DESC) AS RowNum
                     FROM 
-                        News
+                        Board
                     WHERE
-                        (@NewsDate IS NULL OR CONVERT(VARCHAR, NewsDate, 105) = @NewsDate)
+                        Type = 'News'
+                        AND (@NewsDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @NewsDate)
                 )
                 SELECT * FROM News_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow
-                ORDER BY NewsDate DESC";
+                ORDER BY Date DESC";
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {

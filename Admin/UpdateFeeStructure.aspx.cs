@@ -79,11 +79,6 @@ public partial class Admin_pages_UpdateFeeStructure : System.Web.UI.Page
         }
     }
 
-    protected void btnSubmit_View(object sender, EventArgs e)
-    {
-        Response.Redirect("ViewFeeStructure.aspx");
-    }
-
     protected void clear_text()
     {
         txtAdmission.Text = "";

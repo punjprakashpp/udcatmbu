@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="CampusMap.aspx.cs" Inherits="pages_CampusMap" %>
+﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Campus Map | UDCA</title>

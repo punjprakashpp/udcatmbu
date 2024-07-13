@@ -2,8 +2,6 @@
 using System.IO;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Collections.Generic;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Admin_pages_UploadMarqueeLinks : System.Web.UI.Page
@@ -21,7 +19,7 @@ public partial class Admin_pages_UploadMarqueeLinks : System.Web.UI.Page
         ddlLinkPicker.Items.Clear(); // Clear existing items
 
         string[] filePaths = Directory.GetFiles(Server.MapPath("~/"), "*.aspx", SearchOption.TopDirectoryOnly);
-        ddlLinkPicker.Items.Add(new ListItem("--Select Link--", string.Empty));
+        ddlLinkPicker.Items.Add(new ListItem("--- Select Link ---", string.Empty));
         // Add more predefined links as needed
 
         foreach (string filePath in filePaths)
@@ -55,9 +53,10 @@ public partial class Admin_pages_UploadMarqueeLinks : System.Web.UI.Page
             string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                string query = "INSERT INTO Links (LinkText, LinkURL) VALUES (@LinkText, @LinkURL)";
+                string query = "INSERT INTO Links (Type, LinkText, LinkURL) VALUES (@Type, @LinkText, @LinkURL)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@Type", "Link");
                     cmd.Parameters.AddWithValue("@LinkText", linkText);
                     cmd.Parameters.AddWithValue("@LinkURL", linkURL);
 

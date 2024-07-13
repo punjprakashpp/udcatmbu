@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class pages_Notice : System.Web.UI.Page
@@ -42,21 +41,22 @@ public partial class pages_Notice : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             string query = @"
-                WITH Notices_CTE AS (
+                WITH Notice_CTE AS (
                     SELECT 
-                        NoticeID, 
+                        BID, 
                         Title, 
-                        NoticeDate, 
+                        Date, 
                         FilePath,
-                        ROW_NUMBER() OVER (ORDER BY NoticeDate DESC) AS RowNum
+                        ROW_NUMBER() OVER (ORDER BY Date DESC) AS RowNum
                     FROM 
-                        Notices
+                        Board
                     WHERE
-                        (@NoticeDate IS NULL OR CONVERT(VARCHAR, NoticeDate, 105) = @NoticeDate)
+                        Type = 'Notice'
+                        AND (@NoticeDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @NoticeDate)
                 )
-                SELECT * FROM Notices_CTE
+                SELECT * FROM Notice_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow
-                ORDER BY NoticeDate DESC";
+                ORDER BY Date DESC";
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {

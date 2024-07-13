@@ -14,11 +14,11 @@ public partial class pages_VideoGallery : System.Web.UI.Page
             BindGallery();
         }
 
-        if (!string.IsNullOrEmpty(Request.QueryString["occasion"]))
+        if (!string.IsNullOrEmpty(Request.QueryString["Title"]))
         {
-            string occasion = Request.QueryString["occasion"];
+            string title = Request.QueryString["Title"];
             Response.Clear();
-            Response.Write(GetModalContent(occasion));
+            Response.Write(GetModalContent(title));
             Response.End();
         }
     }
@@ -31,14 +31,16 @@ public partial class pages_VideoGallery : System.Web.UI.Page
             string query = @"
                 WITH GalleryCTE AS (
                     SELECT 
-                        Occasion, 
+                        Title, 
                         ImagePath,
-                        ROW_NUMBER() OVER(PARTITION BY Occasion ORDER BY ImagePath) AS RowNum
+                        ROW_NUMBER() OVER(PARTITION BY Title ORDER BY ImagePath) AS RowNum
                     FROM 
-                        Gallery
+                        Image 
+                    WHERE 
+                        Type = 'Gallery'
                 )
                 SELECT 
-                    Occasion,
+                    Title,
                     ImagePath
                 FROM 
                     GalleryCTE
@@ -54,14 +56,14 @@ public partial class pages_VideoGallery : System.Web.UI.Page
         }
     }
 
-    private string GetModalContent(string occasion)
+    private string GetModalContent(string title)
     {
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ImagePath FROM Gallery WHERE Occasion = @Occasion";
+            string query = "SELECT ImagePath FROM Image WHERE Title = @Title AND Type = 'Gallery'";
             SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@Occasion", occasion);
+            cmd.Parameters.AddWithValue("@Title", title);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

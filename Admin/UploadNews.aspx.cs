@@ -24,6 +24,7 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
     {
         string newsTitle = txtLinkText.Text.Trim();
         DateTime newsDate;
+        string imp = "no";
         string filePath = null;
 
         if (!string.IsNullOrEmpty(newsTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out newsDate))
@@ -35,6 +36,14 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
                 {
                     try
                     {
+                        if (ImpChkbox.Checked == true)
+                        {
+                            imp = "yes";
+                        }
+                        else
+                        {
+                            imp = "no";
+                        }
                         string fileName = Path.GetFileName(fileUpload.FileName);
                         string uploadFolder = Server.MapPath("../doc/news/");
                         if (!Directory.Exists(uploadFolder))
@@ -50,11 +59,13 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
                         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                         using (SqlConnection conn = new SqlConnection(connStr))
                         {
-                            string query = "INSERT INTO News (Title, NewsDate, FilePath) VALUES (@Title, @NewsDate, @FilePath)";
+                            string query = "INSERT INTO Board (Type, Title, Date, Important, FilePath) VALUES (@Type, @Title, @Date, @Important, @FilePath)";
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
+                                cmd.Parameters.AddWithValue("@Type", "News");
                                 cmd.Parameters.AddWithValue("@Title", newsTitle);
-                                cmd.Parameters.AddWithValue("@NewsDate", newsDate);
+                                cmd.Parameters.AddWithValue("@Date", newsDate);
+                                cmd.Parameters.AddWithValue("@Important", imp);
                                 cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
 
                                 conn.Open();

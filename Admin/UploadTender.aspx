@@ -22,6 +22,8 @@
             <asp:TextBox ID="txtLinkText" runat="server"></asp:TextBox><br /><br />
             <asp:Label ID="lblLinkDate" runat="server" Text="Tender Date:"></asp:Label>
             <asp:TextBox ID="txtLinkDate" runat="server"></asp:TextBox><br /><br />
+            <asp:Label ID="lblImportant" runat="server" Text="Important Notice:"></asp:Label>
+            <asp:CheckBox ID="ImpChkbox" runat="server" /><br /><br />
             <asp:Label ID="lblFileUpload" runat="server" Text="Upload Tender PDF:"></asp:Label>
             <asp:FileUpload ID="fileUpload" runat="server" /><br /><br />
             <asp:Button ID="ButtonLink" runat="server" Text="Manage Tender" OnClick="btnSubmit_Edit" />

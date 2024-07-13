@@ -34,11 +34,11 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
         {
             string query = "SELECT * FROM " +
                            "(SELECT ROW_NUMBER() OVER (ORDER BY LinkID) AS RowNum, LinkID, LinkText, LinkURL " +
-                           "FROM Links";
+                           "FROM Links WHERE Type = @Type";
             string whereClause = "";
             if (!string.IsNullOrEmpty(txtSearchLinkText.Text))
             {
-                whereClause = " WHERE LinkText LIKE @SearchText";
+                whereClause = " AND LinkText LIKE @SearchText";
             }
 
             query += whereClause + ") AS RowConstrainedResult WHERE RowNum >= @StartRow AND RowNum < @EndRow ORDER BY RowNum";
@@ -50,6 +50,7 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
                     cmd.Parameters.AddWithValue("@SearchText", "%" + txtSearchLinkText.Text + "%");
                 }
 
+                cmd.Parameters.AddWithValue("@Type", "Link");
                 int startRow = CurrentPage * PageSize + 1;
                 int endRow = startRow + PageSize;
 

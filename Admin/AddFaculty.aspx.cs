@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class Admin_pages_AddFaculty : System.Web.UI.Page
 {
@@ -22,6 +16,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
     {
         string imagePath = "img/default/default.jpg"; // Default image path
         string type = ddlType.SelectedValue;
+        string status = ddlStatus.SelectedValue;
         if (fileUpload.HasFile)
         {
             // Check if the file is an image
@@ -60,10 +55,11 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                string query = "INSERT INTO Faculty (Type, Name, Qualification, Position, Phone, Email, ImagePath) VALUES (@Type, @Name, @Qualification, @Position, @Phone, @Email, @ImagePath)";
+                string query = "INSERT INTO Member (Type, Status, Name, Qualification, Position, Phone, Email, ImagePath) VALUES (@Type, @Status, @Name, @Qualification, @Position, @Phone, @Email, @ImagePath)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Type", type);
+                    cmd.Parameters.AddWithValue("@Status", status);
                     cmd.Parameters.AddWithValue("@Name", txtName.Text);
                     cmd.Parameters.AddWithValue("@Qualification", txtQualification.Text);
                     cmd.Parameters.AddWithValue("@Position", txtPosition.Text);

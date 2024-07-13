@@ -1,10 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
@@ -50,11 +45,13 @@ public partial class Admin_pages_UploadAffReg : System.Web.UI.Page
                         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                         using (SqlConnection conn = new SqlConnection(connStr))
                         {
-                            string query = "INSERT INTO AffReg (Title, AffRegDate, FilePath) VALUES (@Title, @AffRegDate, @FilePath)";
+                            string query = "INSERT INTO Board (Type, Title, Date, Important, FilePath) VALUES (@Type, @Title, @AffRegDate, @Important, @FilePath)";
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
+                                cmd.Parameters.AddWithValue("@Type", "AffReg");
                                 cmd.Parameters.AddWithValue("@Title", affregTitle);
                                 cmd.Parameters.AddWithValue("@AffRegDate", affregDate);
+                                cmd.Parameters.AddWithValue("@Important", "no");
                                 cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
 
                                 conn.Open();

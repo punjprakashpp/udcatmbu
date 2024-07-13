@@ -35,16 +35,16 @@
             <asp:Button ID="btnPrevious" runat="server" Text="Previous" OnClick="btnPrevious_Click" CssClass="btn" />
             <asp:Button ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" CssClass="btn" />
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="NoticeID" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowDeleting="GridView1_RowDeleting" OnRowCancelingEdit="GridView1_RowCancelingEdit">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="BID" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowDeleting="GridView1_RowDeleting" OnRowCancelingEdit="GridView1_RowCancelingEdit">
             <Columns>
-                <asp:BoundField DataField="NoticeID" HeaderText="Notice ID" ReadOnly="True" SortExpression="NoticeID" Visible="False" />
+                <asp:BoundField DataField="BID" HeaderText="Notice ID" ReadOnly="True" SortExpression="BID" Visible="False" />
                 <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
                 <asp:TemplateField HeaderText="Notice Date">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txtNoticeDate" runat="server" CssClass="datepicker" Text='<%# Bind("NoticeDate", "{0:dd-MM-yyyy}") %>'></asp:TextBox>
+                        <asp:TextBox ID="txtNoticeDate" runat="server" CssClass="datepicker" Text='<%# Bind("Date", "{0:dd-MM-yyyy}") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID="lblNoticeDate" runat="server" Text='<%# Eval("NoticeDate", "{0:dd-MM-yyyy}") %>'></asp:Label>
+                        <asp:Label ID="lblNoticeDate" runat="server" Text='<%# Eval("Date", "{0:dd-MM-yyyy}") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="File Path">

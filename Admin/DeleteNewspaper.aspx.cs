@@ -3,7 +3,6 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
@@ -21,10 +20,10 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT NID, NDesc, '../' + ImagePath AS ImagePath FROM Newspaper";
+            string query = "SELECT ID, Title, '../' + ImagePath AS ImagePath FROM Image WHERE Type = 'News'";
             if (!string.IsNullOrEmpty(searchQuery))
             {
-                query += " WHERE NDesc LIKE @SearchQuery";
+                query += " AND Title LIKE @SearchQuery";
             }
 
             using (SqlDataAdapter da = new SqlDataAdapter(query, conn))
@@ -61,7 +60,7 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ImagePath FROM Newspaper WHERE NID = @ID";
+            string query = "SELECT ImagePath FROM Image WHERE ID = @ID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@ID", id);
@@ -74,7 +73,7 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
                 reader.Close();
             }
 
-            query = "DELETE FROM Newspaper WHERE NID = @ID";
+            query = "DELETE FROM Image WHERE ID = @ID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@ID", id);

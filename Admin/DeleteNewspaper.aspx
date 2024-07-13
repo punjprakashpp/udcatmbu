@@ -17,8 +17,8 @@
             AllowPaging="True" PageSize="25" OnPageIndexChanging="gvNewspapers_PageIndexChanging" 
             OnRowDeleting="gvNewspapers_RowDeleting">
             <Columns>
-                <asp:BoundField DataField="NID" HeaderText="ID" ReadOnly="True" Visible="False" />
-                <asp:BoundField DataField="NDesc" HeaderText="Description" />
+                <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" Visible="False" />
+                <asp:BoundField DataField="Title" HeaderText="Description" />
                 <asp:ImageField DataImageUrlField="ImagePath" HeaderText="Image" ControlStyle-Height="100px" ControlStyle-Width="150px">
                     <ControlStyle Height="100px" Width="150px" />
                 </asp:ImageField>

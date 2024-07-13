@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
@@ -45,15 +44,16 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
             string query = @"
                 WITH AffReg_CTE AS (
                     SELECT 
-                        AffRegID, 
+                        BID, 
                         Title, 
-                        AffRegDate, 
+                        Date, 
                         FilePath,
-                        ROW_NUMBER() OVER (ORDER BY AffRegDate) AS RowNum
+                        ROW_NUMBER() OVER (ORDER BY Date) AS RowNum
                     FROM 
-                        AffReg
+                        Board
                     WHERE
-                        (@AffRegDate IS NULL OR CONVERT(VARCHAR, AffRegDate, 105) = @AffRegDate)
+                        Type = 'AffReg'
+                        AND (@AffRegDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @AffRegDate)
                 )
                 SELECT * FROM AffReg_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow";
@@ -182,7 +182,7 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "UPDATE AffReg SET Title=@Title, AffRegDate=@AffRegDate, FilePath=@FilePath WHERE AffRegID=@AffRegID";
+            string query = "UPDATE Board SET Title=@Title, Date=@AffRegDate, FilePath=@FilePath WHERE BID=@AffRegID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Title", title);
@@ -212,7 +212,7 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             // Retrieve the file path to delete the file
-            string query = "SELECT FilePath FROM AffReg WHERE AffRegID=@AffRegID";
+            string query = "SELECT FilePath FROM Board WHERE BID=@AffRegID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@AffRegID", affregID);
@@ -225,7 +225,7 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
             }
 
             // Delete the record from the database
-            query = "DELETE FROM AffReg WHERE AffRegID=@AffRegID";
+            query = "DELETE FROM Board WHERE BID=@AffRegID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@AffRegID", affregID);

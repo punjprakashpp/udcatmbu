@@ -61,14 +61,15 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                string query = "INSERT INTO Newspaper (NDesc, ImagePath) VALUES (@Name, @ImagePath)";
+                string query = "INSERT INTO Image (Type, Title, ImagePath) VALUES (@Type, @Name, @ImagePath)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@Type", "News");
                     cmd.Parameters.AddWithValue("@Name", txtName.Text);
                     cmd.Parameters.AddWithValue("@ImagePath", imagePath);
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    lblMessage.Text = "Slider Image Uploaded successfully!";
+                    lblMessage.Text = "Newspaper Image Uploaded successfully!";
                 }
             }
 

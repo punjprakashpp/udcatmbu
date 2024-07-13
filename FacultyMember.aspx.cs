@@ -2,11 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class pages_Default : System.Web.UI.Page
 {
@@ -15,6 +10,7 @@ public partial class pages_Default : System.Web.UI.Page
         if (!IsPostBack)
         {
             LoadFacultyDetails();
+            LoadGuestDetails();
             LoadFormerDetails();
         }
     }
@@ -24,7 +20,7 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Faculty WHERE Type = 'Current'";
+            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Member WHERE Type = 'Faculty' AND Status ='Current'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -40,12 +36,33 @@ public partial class pages_Default : System.Web.UI.Page
         }
     }
 
+    private void LoadGuestDetails()
+    {
+        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+        using (SqlConnection conn = new SqlConnection(connStr))
+        {
+            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Member WHERE Type = 'Guest' AND Status ='Current'";
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    GuestRepeater.DataSource = dt;
+                    GuestRepeater.DataBind();
+                }
+            }
+        }
+    }
+
     private void LoadFormerDetails()
     {
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Faculty WHERE Type = 'Former'";
+            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Member WHERE Status = 'Former'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();

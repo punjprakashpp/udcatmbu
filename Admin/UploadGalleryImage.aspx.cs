@@ -57,10 +57,11 @@ public partial class Admin_pages_UploadGalleryImage : Page
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "INSERT INTO Gallery (Occasion, ImagePath) VALUES (@Occasion, @ImagePath)";
+            string query = "INSERT INTO Image (Type, Title, ImagePath) VALUES (@Type, @Occasion, @ImagePath)";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
+                command.Parameters.AddWithValue("@Type", "Gallery");
                 command.Parameters.AddWithValue("@Occasion", occasion);
                 command.Parameters.AddWithValue("@ImagePath", imagePath);
 

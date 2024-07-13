@@ -2,10 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class pages_Tender : System.Web.UI.Page
@@ -47,19 +43,20 @@ public partial class pages_Tender : System.Web.UI.Page
             string query = @"
                 WITH Tender_CTE AS (
                     SELECT 
-                        TenderID, 
+                        BID, 
                         Title, 
-                        TenderDate, 
+                        Date, 
                         FilePath,
-                        ROW_NUMBER() OVER (ORDER BY TenderDate DESC) AS RowNum
+                        ROW_NUMBER() OVER (ORDER BY Date DESC) AS RowNum
                     FROM 
-                        Tender
+                        Board
                     WHERE
-                        (@TenderDate IS NULL OR CONVERT(VARCHAR, TenderDate, 105) = @TenderDate)
+                        Type = 'Tender'
+                        AND (@TenderDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @TenderDate)
                 )
                 SELECT * FROM Tender_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow
-                ORDER BY TenderDate DESC";
+                ORDER BY Date DESC";
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {

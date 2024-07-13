@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AddSupportingStaff.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="ManageStaff.aspx.cs" Inherits="Admin_pages_EditFaculty" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Add Supporting Staffs</title>
+    <title>Edit/Delete Faculty</title>
     <link rel="stylesheet" href="Styles/managefaculty.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
@@ -17,9 +17,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container">
-        <h2>Add Supporting Staffs</h2>
+        <h2>Manage Staff</h2>
         <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
         <table>
+            <tr>
+                <td>Select Staff:</td>
+                <td>
+                    <asp:DropDownList ID="ddlFaculties" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlFaculties_SelectedIndexChanged"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Staff Type:</td>
+                <td>
+                    <asp:DropDownList ID="ddlType" runat="server">
+                        <asp:ListItem Text="Office Staff" Value="Office"></asp:ListItem>
+                        <asp:ListItem Text="Supporting Staff" Value="Support"></asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
             <tr>
                 <td>Name:</td>
                 <td><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
@@ -46,6 +61,7 @@
                     <asp:FileUpload ID="fileUpload" runat="server" />
                     <asp:Label ID="lblFileTypeError" runat="server" ForeColor="Red" Visible="false">Invalid file type. Only .jpg, .jpeg, .png files are allowed.</asp:Label>
                     <div>
+                        <img id="currentImage" src="#" alt="Current Image" runat="server" style="display: none; max-width: 225px; max-height: 225px;" />
                         <asp:HiddenField ID="imagePreviewBase64" runat="server" />
                         <div id="cropperContainer" class="cropper-container" style="display: none;">
                             <img id="cropperImage" src="#" alt="Image for cropping"/>
@@ -55,8 +71,12 @@
                 </td>
             </tr>
             <tr>
-                <td><asp:Button ID="btnEdit" runat="server" Text="Manage" OnClick="btnEdit_Click" /></td>
-                <td><asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" /></td>
+                <td></td>
+                <td>
+                    <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
+                </td>
             </tr>
         </table>
     </div>

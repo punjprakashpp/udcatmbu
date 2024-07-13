@@ -59,11 +59,12 @@ public partial class Admin_pages_UploadNotice : System.Web.UI.Page
                         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                         using (SqlConnection conn = new SqlConnection(connStr))
                         {
-                            string query = "INSERT INTO Notices (Title, NoticeDate, Important, FilePath) VALUES (@Title, @NoticeDate, @Important, @FilePath)";
+                            string query = "INSERT INTO Board (Type, Title, Date, Important, FilePath) VALUES (@Type, @Title, @Date, @Important, @FilePath)";
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
+                                cmd.Parameters.AddWithValue("@Type", "Notice");
                                 cmd.Parameters.AddWithValue("@Title", noticeTitle);
-                                cmd.Parameters.AddWithValue("@NoticeDate", noticeDate);
+                                cmd.Parameters.AddWithValue("@Date", noticeDate);
                                 cmd.Parameters.AddWithValue("@Important", imp);
                                 cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
 

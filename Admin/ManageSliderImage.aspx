@@ -19,10 +19,11 @@
     <div class="container">
         <h2>Manage Slider Image</h2>
         <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
-        <div>
-            <asp:DropDownList ID="ddlFaculties" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlFaculties_SelectedIndexChanged"></asp:DropDownList>
-        </div>
         <table>
+            <tr>
+                <td>Select Image:</td>
+                <td><asp:DropDownList ID="ddlFaculties" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlFaculties_SelectedIndexChanged"></asp:DropDownList></td>
+            </tr>
             <tr>
                 <td>Image Description:</td>
                 <td><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>

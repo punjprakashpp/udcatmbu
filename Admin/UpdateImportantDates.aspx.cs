@@ -96,8 +96,4 @@ public partial class Admin_pages_UpdateFeeStructure : System.Web.UI.Page
         }
     }
 
-    protected void btnSubmit_View(object sender, EventArgs e)
-    {
-        Response.Redirect("ViewImportantDates.aspx");
-    }
 }

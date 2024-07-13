@@ -26,14 +26,14 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT SliderID, Title FROM Slider";
+            string query = "SELECT ID, Title FROM Image Where Type ='Slider'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 ddlFaculties.DataSource = reader;
                 ddlFaculties.DataTextField = "Title";
-                ddlFaculties.DataValueField = "SliderID";
+                ddlFaculties.DataValueField = "ID";
                 ddlFaculties.DataBind();
                 ddlFaculties.Items.Insert(0, new ListItem("--Select Slider Image--", ""));
                 reader.Close();
@@ -46,7 +46,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT * FROM Slider WHERE SliderID = @SliderID";
+            string query = "SELECT * FROM Image WHERE ID = @SliderID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@SliderID", facultyId);
@@ -55,7 +55,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                 if (reader.Read())
                 {
                     txtName.Text = reader["Title"].ToString();
-                    currentImage.Src = ResolveUrl("../" + reader["FilePath"].ToString());
+                    currentImage.Src = ResolveUrl("../" + reader["ImagePath"].ToString());
                     currentImage.Style["display"] = "block";
                 }
                 reader.Close();
@@ -87,7 +87,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                 con.Open();
 
 
-                string selectImagePathQuery = "SELECT FilePath FROM Slider WHERE SliderID = @SliderID";
+                string selectImagePathQuery = "SELECT ImagePath FROM Image WHERE ID = @SliderID";
                 using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, con))
                 {
                     selectImagePathCmd.Parameters.AddWithValue("@SliderID", facultyId);
@@ -154,7 +154,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    string query = "UPDATE Slider SET Title = @Title, FilePath = @FilePath WHERE SliderID = @SliderID";
+                    string query = "UPDATE Image SET Title = @Title, ImagePath = @FilePath WHERE ID = @SliderID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -194,14 +194,14 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                     conn.Open();
 
                     string imagePath = "";
-                    string selectImagePathQuery = "SELECT FilePath FROM Slider WHERE SliderID = @SliderID";
+                    string selectImagePathQuery = "SELECT ImagePath FROM Image WHERE ID = @SliderID";
                     using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, conn))
                     {
                         selectImagePathCmd.Parameters.AddWithValue("@SliderID", facultyId);
                         imagePath = selectImagePathCmd.ExecuteScalar() as string;
                     }
 
-                    string deleteFacultyQuery = "DELETE FROM Slider WHERE SliderID = @SliderID";
+                    string deleteFacultyQuery = "DELETE FROM Image WHERE ID = @SliderID";
                     using (SqlCommand deleteFacultyCmd = new SqlCommand(deleteFacultyQuery, conn))
                     {
                         deleteFacultyCmd.Parameters.AddWithValue("@SliderID", facultyId);

@@ -20,7 +20,7 @@
             OnPageIndexChanging="gvGallery_PageIndexChanging">
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" Visible="False" />
-                <asp:BoundField DataField="Occasion" HeaderText="Occasion" />
+                <asp:BoundField DataField="Title" HeaderText="Occasion" />
                 <asp:ImageField DataImageUrlField="ImagePath" HeaderText="Image" ControlStyle-Height="100px" ControlStyle-Width="150px">
                     <ControlStyle Height="100px" Width="150px" />
                 </asp:ImageField>

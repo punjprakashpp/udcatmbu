@@ -110,8 +110,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="ButtonLink" runat="server" Text="View Dates" OnClick="btnSubmit_View" />
-                </td>
+                    &nbsp;</td>
                 <td>
                     <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
                 </td>

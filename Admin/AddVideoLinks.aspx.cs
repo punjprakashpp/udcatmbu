@@ -37,11 +37,12 @@ public partial class Admin_pages_UploadMarqueeVideos : System.Web.UI.Page
             string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                string query = "INSERT INTO Video (VideoText, VideoURL) VALUES (@VideoText, @VideoURL)";
+                string query = "INSERT INTO Links (Type, LinkText, LinkURL) VALUES (@Type, @LinkText, @LinkText)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@VideoText", VideoText);
-                    cmd.Parameters.AddWithValue("@VideoURL", VideoURL);
+                    cmd.Parameters.AddWithValue("@Type", "Video");
+                    cmd.Parameters.AddWithValue("@LinkText", VideoText);
+                    cmd.Parameters.AddWithValue("@LinkText", VideoURL);
 
                     try
                     {

@@ -21,15 +21,24 @@
         <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
         <table>
             <tr>
-                <td></td>
+                <td>Select Faculty:</td>
                 <td>
                     <asp:DropDownList ID="ddlFaculties" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlFaculties_SelectedIndexChanged"></asp:DropDownList>
                 </td>
             </tr>
             <tr>
-                <td>Faculty Status:</td>
+                <td>Faculty Type:</td>
                 <td>
                     <asp:DropDownList ID="ddlType" runat="server">
+                        <asp:ListItem Text="Faculty Member" Value="Faculty"></asp:ListItem>
+                        <asp:ListItem Text="Guest Faculty" Value="Guest"></asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Faculty Status:</td>
+                <td>
+                    <asp:DropDownList ID="ddlStatus" runat="server">
                         <asp:ListItem Text="Current" Value="Current"></asp:ListItem>
                         <asp:ListItem Text="Former" Value="Former"></asp:ListItem>
                     </asp:DropDownList>

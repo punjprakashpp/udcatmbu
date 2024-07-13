@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="Styles/table.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-<div>
+    <div>
     <h2>Update Fee Structure</h2>
     <table style="width: 50%;">
         <tr>
@@ -71,8 +71,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="ButtonLink" runat="server" Text="View Fee Structure" OnClick="btnSubmit_View" />
-            </td>
+                &nbsp;</td>
             <td>
                 <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
             </td>

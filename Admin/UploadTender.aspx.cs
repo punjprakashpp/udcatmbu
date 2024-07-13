@@ -24,6 +24,7 @@ public partial class Admin_pages_UploadTender : System.Web.UI.Page
     {
         string tenderTitle = txtLinkText.Text.Trim();
         DateTime tenderDate;
+        string imp = "no";
         string filePath = null;
 
         if (!string.IsNullOrEmpty(tenderTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out tenderDate))
@@ -35,6 +36,14 @@ public partial class Admin_pages_UploadTender : System.Web.UI.Page
                 {
                     try
                     {
+                        if (ImpChkbox.Checked == true)
+                        {
+                            imp = "yes";
+                        }
+                        else
+                        {
+                            imp = "no";
+                        }
                         string fileName = Path.GetFileName(fileUpload.FileName);
                         string uploadFolder = Server.MapPath("../doc/tender/");
                         if (!Directory.Exists(uploadFolder))
@@ -50,11 +59,13 @@ public partial class Admin_pages_UploadTender : System.Web.UI.Page
                         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                         using (SqlConnection conn = new SqlConnection(connStr))
                         {
-                            string query = "INSERT INTO Tender (Title, TenderDate, FilePath) VALUES (@Title, @TenderDate, @FilePath)";
+                            string query = "INSERT INTO Board (Type, Title, Date, FilePath) VALUES (@Type, @Title, @TenderDate, @FilePath)";
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
+                                cmd.Parameters.AddWithValue("@Type", "Tender");
                                 cmd.Parameters.AddWithValue("@Title", tenderTitle);
                                 cmd.Parameters.AddWithValue("@TenderDate", tenderDate);
+                                cmd.Parameters.AddWithValue("@Important", imp);
                                 cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
 
                                 conn.Open();

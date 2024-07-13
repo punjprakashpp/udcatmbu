@@ -4,6 +4,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Tenders</title>
     <link rel="stylesheet" href="style/table.css">
+    <link rel="stylesheet" href="style/alumni.css">
+    <link rel="stylesheet" href="style/download.css">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -17,7 +19,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container">
-        <h1 style="text-align: center; padding: 20px 0; background-color: #369; color: white; font-size: 1.8em; font-weight: bold; text-align: center; text-transform: uppercase; margin-top: 20px; margin-bottom: 20px; border-top-left-radius: 10px; border-top-right-radius: 10px;">Tenders</h1>
+        <h1 style="text-align: center; padding: 20px 0; background-color: #369; color: white; font-size: 1.8em; font-weight: bold; text-transform: uppercase; margin-top: 20px; margin-bottom: 20px; border-top-left-radius: 10px; border-top-right-radius: 10px;">Tenders</h1>
         <div class="search-bar">
             <label>
                 Tender Date:
@@ -35,13 +37,10 @@
             <asp:Button ID="btnPrevious" runat="server" Text="Previous" OnClick="btnPrevious_Click" CssClass="btn" />
             <asp:Button ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" CssClass="btn" />
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="TenderID"
-            OnRowDataBound="GridView1_RowDataBound">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="BID" OnRowDataBound="GridView1_RowDataBound">
             <Columns>
-                <asp:BoundField DataField="TenderID" HeaderText="Tender ID" SortExpression="NoticeID"
-                    Visible="False" />
-                <asp:BoundField DataField="TenderDate" HeaderText="Date" SortExpression="TenderDate"
-                    DataFormatString="{0:dd-MM-yyyy}" />
+                <asp:BoundField DataField="BID" HeaderText="Tender ID" SortExpression="BID" Visible="False" />
+                <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" DataFormatString="{0:dd-MM-yyyy}" />
                 <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
                 <asp:TemplateField HeaderText="File">
                     <ItemTemplate>

@@ -26,16 +26,16 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT OfficeId, Name FROM Office";
+            string query = "SELECT MID, Name FROM Member WHERE Type = 'Office' OR Type = 'Support'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 ddlFaculties.DataSource = reader;
                 ddlFaculties.DataTextField = "Name";
-                ddlFaculties.DataValueField = "OfficeId";
+                ddlFaculties.DataValueField = "MID";
                 ddlFaculties.DataBind();
-                ddlFaculties.Items.Insert(0, new ListItem("--Select Office--", ""));
+                ddlFaculties.Items.Insert(0, new ListItem("--- Select Staff ---", ""));
                 reader.Close();
             }
         }
@@ -46,14 +46,15 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT * FROM Office WHERE OfficeId = @OfficeId";
+            string query = "SELECT * FROM Member WHERE MID = @FacultyId";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@OfficeId", facultyId);
+                cmd.Parameters.AddWithValue("@FacultyId", facultyId);
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
+                    ddlType.SelectedValue = reader["Type"].ToString();
                     txtName.Text = reader["Name"].ToString();
                     txtQualification.Text = reader["Qualification"].ToString();
                     txtPosition.Text = reader["Position"].ToString();
@@ -91,24 +92,24 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                 con.Open();
 
 
-                string selectImagePathQuery = "SELECT ImagePath FROM Office WHERE OfficeId = @OfficeId";
+                string selectImagePathQuery = "SELECT ImagePath FROM Member WHERE MID = @FacultyId";
                 using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, con))
                 {
-                    selectImagePathCmd.Parameters.AddWithValue("@OfficeId", facultyId);
+                    selectImagePathCmd.Parameters.AddWithValue("@FacultyId", facultyId);
                     imagePath = selectImagePathCmd.ExecuteScalar() as string;
                 }
             }
 
             bool newFileUploaded = fileUpload.HasFile;
             string oldImagePath = imagePath; // Store the current image path
-
+            string type = ddlType.SelectedValue;
             if (newFileUploaded)
             {
                 string fileExtension = Path.GetExtension(fileUpload.FileName).ToLower();
                 if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
                 {
                     string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                    string folderPath = Server.MapPath("~/img/office/");
+                    string folderPath = Server.MapPath("~/img/staff/");
                     string fullPath = Path.Combine(folderPath, fileName);
 
                     try
@@ -129,7 +130,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                                 bmp.Save(fullPath, ImageFormat.Png);
                             }
                         }
-                        imagePath = "img/office/" + fileName;
+                        imagePath = "img/staff/" + fileName;
 
                         // Delete the old file
                         if (!string.IsNullOrEmpty(oldImagePath))
@@ -158,17 +159,19 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    string query = "UPDATE Office SET Name = @Name, Qualification = @Qualification, Position = @Position, Phone = @Phone, Email = @Email, ImagePath = @ImagePath WHERE OfficeId = @OfficeId";
-
+                    string query = "UPDATE Member SET Type = @Type, Status = @Status, Name = @Name, Qualification = @Qualification, Position = @Position, Phone = @Phone, Email = @Email, ImagePath = @ImagePath WHERE MID = @FacultyId";
+                    
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@Type", type);
+                        cmd.Parameters.AddWithValue("@Status", string.Empty);
                         cmd.Parameters.AddWithValue("@Name", txtName.Text);
                         cmd.Parameters.AddWithValue("@Qualification", txtQualification.Text);
                         cmd.Parameters.AddWithValue("@Position", txtPosition.Text);
                         cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                         cmd.Parameters.AddWithValue("@ImagePath", imagePath);
-                        cmd.Parameters.AddWithValue("@OfficeId", ddlFaculties.SelectedValue);
+                        cmd.Parameters.AddWithValue("@FacultyId", ddlFaculties.SelectedValue);
                         conn.Open();
                         cmd.ExecuteNonQuery();
                         lblMessage.Text = "Staff details updated successfully!";
@@ -177,12 +180,12 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "Error updating faculty details: " + ex.Message;
+                lblMessage.Text = "Error updating Staff details: " + ex.Message;
             }
         }
         else
         {
-            lblMessage.Text = "Please select a faculty.";
+            lblMessage.Text = "Please select a Staff.";
         }
 
         ClearForm();
@@ -202,17 +205,17 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                     conn.Open();
 
                     string imagePath = "";
-                    string selectImagePathQuery = "SELECT ImagePath FROM Office WHERE OfficeId = @OfficeId";
+                    string selectImagePathQuery = "SELECT ImagePath FROM Member WHERE MID = @FacultyId";
                     using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, conn))
                     {
-                        selectImagePathCmd.Parameters.AddWithValue("@OfficeId", facultyId);
+                        selectImagePathCmd.Parameters.AddWithValue("@FacultyId", facultyId);
                         imagePath = selectImagePathCmd.ExecuteScalar() as string;
                     }
 
-                    string deleteFacultyQuery = "DELETE FROM Office WHERE OfficeId = @OfficeId";
+                    string deleteFacultyQuery = "DELETE FROM Member WHERE MID = @FacultyId";
                     using (SqlCommand deleteFacultyCmd = new SqlCommand(deleteFacultyQuery, conn))
                     {
-                        deleteFacultyCmd.Parameters.AddWithValue("@OfficeId", facultyId);
+                        deleteFacultyCmd.Parameters.AddWithValue("@FacultyId", facultyId);
                         int rowsAffected = deleteFacultyCmd.ExecuteNonQuery();
                         if (rowsAffected > 0 && !string.IsNullOrEmpty(imagePath))
                         {
@@ -235,7 +238,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblMessage.Text = "Error deleting faculty: " + ex.Message;
+                lblMessage.Text = "Error deleting Staff: " + ex.Message;
             }
         }
         else
@@ -246,6 +249,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
 
     private void ClearForm()
     {
+        ddlType.SelectedIndex = 0;
         txtName.Text = string.Empty;
         fileUpload.Attributes.Clear();
         txtQualification.Text = string.Empty;

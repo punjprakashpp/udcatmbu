@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>News</title>
     <link rel="stylesheet" href="style/table.css">
+    <link rel="stylesheet" href="style/alumni.css">
     <link rel="stylesheet" href="style/download.css">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -39,12 +40,12 @@
                 CssClass="btn" />
             <asp:Button ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" CssClass="btn" />
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="NewsID"
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="BID"
             OnRowDataBound="GridView1_RowDataBound">
             <Columns>
-                <asp:BoundField DataField="NewsID" HeaderText="News ID" SortExpression="NoticeID"
+                <asp:BoundField DataField="BID" HeaderText="News ID" SortExpression="BID"
                     Visible="False" />
-                <asp:BoundField DataField="NewsDate" HeaderText="Date" SortExpression="NewsDate"
+                <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date"
                     DataFormatString="{0:dd-MM-yyyy}" />
                 <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
                 <asp:TemplateField HeaderText="File">

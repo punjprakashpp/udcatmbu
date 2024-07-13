@@ -21,7 +21,7 @@ public partial class pages_VideoGallery : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT VideoText, VideoURL FROM Video";
+            string query = "SELECT LinkText, LinkURL FROM Links WHERE Type = 'Video'";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);

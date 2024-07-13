@@ -23,7 +23,7 @@ public partial class pages_OfficeStaff : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Office";
+            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Member WHERE Type = 'Office'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();

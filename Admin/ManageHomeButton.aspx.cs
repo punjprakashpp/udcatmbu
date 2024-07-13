@@ -34,11 +34,11 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
         {
             string query = "SELECT * FROM " +
                            "(SELECT ROW_NUMBER() OVER (ORDER BY LinkID) AS RowNum, LinkID, LinkText, LinkURL " +
-                           "FROM Button";
+                           "FROM Links WHERE Type = @Type";
             string whereClause = "";
             if (!string.IsNullOrEmpty(txtSearchButtonLabel.Text))
             {
-                whereClause = " WHERE LinkText LIKE @SearchText";
+                whereClause = " AND LinkText LIKE @SearchText";
             }
 
             query += whereClause + ") AS RowConstrainedResult WHERE RowNum >= @StartRow AND RowNum < @EndRow ORDER BY RowNum";
@@ -49,7 +49,7 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
                 {
                     cmd.Parameters.AddWithValue("@SearchText", "%" + txtSearchButtonLabel.Text + "%");
                 }
-
+                cmd.Parameters.AddWithValue("@Type", "Button");
                 int startRow = CurrentPage * PageSize + 1;
                 int endRow = startRow + PageSize;
 
@@ -120,7 +120,7 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "UPDATE Button SET LinkText=@LinkText, LinkURL=@LinkURL WHERE LinkID=@LinkID";
+            string query = "UPDATE Links SET LinkText=@LinkText, LinkURL=@LinkURL WHERE LinkID=@LinkID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@LinkText", linkText);
@@ -148,7 +148,7 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "DELETE FROM Button WHERE LinkID=@LinkID";
+            string query = "DELETE FROM Links WHERE LinkID=@LinkID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@LinkID", linkID);

@@ -2,10 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class pages_AffReg : System.Web.UI.Page
@@ -47,19 +43,20 @@ public partial class pages_AffReg : System.Web.UI.Page
             string query = @"
                 WITH AffReg_CTE AS (
                     SELECT 
-                        AffRegID, 
+                        BID, 
                         Title, 
-                        AffRegDate, 
+                        Date, 
                         FilePath,
-                        ROW_NUMBER() OVER (ORDER BY AffRegDate DESC) AS RowNum
+                        ROW_NUMBER() OVER (ORDER BY Date DESC) AS RowNum
                     FROM 
-                        AffReg
+                        Board
                     WHERE
-                        (@AffRegDate IS NULL OR CONVERT(VARCHAR, AffRegDate, 105) = @AffRegDate)
+                        Type = 'AffReg'
+                        AND (@AffRegDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @AffRegDate)
                 )
                 SELECT * FROM AffReg_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow
-                ORDER BY AffRegDate DESC";
+                ORDER BY Date DESC";
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {

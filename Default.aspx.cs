@@ -16,13 +16,13 @@ public partial class _Default : System.Web.UI.Page
         
         if (!IsPostBack)
         {
-            BindMarquee();
+            BindSlider();
+            BindLinks();
             BindButton();
             BindNotice();
             BindNews();
             BindTender();
             LoadPersons();
-            BindSlider();
         }
     }
 
@@ -31,7 +31,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, FilePath FROM Slider";
+            string query = "SELECT Title, ImagePath FROM Image WHERE Type ='Slider'";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -41,12 +41,12 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    private void BindMarquee()
+    private void BindLinks()
     {
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT LinkText, LinkURL FROM Links";
+            string query = "SELECT LinkText, LinkURL FROM Links WHERE Type = 'Link'";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -61,7 +61,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT LinkText, LinkURL FROM Button";
+            string query = "SELECT LinkText, LinkURL FROM Links WHERE Type = 'Button'";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -76,7 +76,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, NoticeDate, FilePath FROM Notices WHERE Important='yes'";
+            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'Notice'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -107,7 +107,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, NewsDate, FilePath FROM News";
+            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'News'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -138,7 +138,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, TenderDate, FilePath FROM Tender";
+            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'Tender'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();

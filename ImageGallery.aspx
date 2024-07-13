@@ -1,11 +1,11 @@
 <%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true"
-CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
+    CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Image Gallery | UDCA</title>
     <link rel="stylesheet" href="style/video.css">
     <style>
-        .video
-        {
+        .video {
             flex: 1 1 calc(33.33% - 40px);
             margin: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -14,13 +14,12 @@ CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
             background-color: #fff;
         }
         
-        @media (max-width: 768px)
-        {
-            .video
-            {
+        @media (max-width: 768px) {
+            .video {
                 flex: 1 1 100%;
             }
         }
+
         /* Modal styles */
         .modal {
             display: none;
@@ -88,9 +87,10 @@ CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
         .prev:hover, .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
         .thumb {
-            width:-webkit-fill-available;
-            height:-webkit-fill-available;
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
         }
     </style>
 </asp:Content>
@@ -103,12 +103,12 @@ CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
     <div class="cont">
         <asp:Repeater ID="GalleryRepeater" runat="server">
             <ItemTemplate>
-                <div class="gallery video" width="600" height="400px" >
-                    <a class="openModal" href="#" data-occasion='<%# Eval("Occasion") %>' data-index='<%# Container.ItemIndex %>'>
-                        <img class="thumb" src='<%# Eval("ImagePath") %>' alt='<%# Eval("Occasion") %>' width="600" height="400" >
+                <div class="gallery video" width="600" height="400px">
+                    <a class="openModal" href="#" data-Title='<%# Eval("Title") %>' data-index='<%# Container.ItemIndex %>'>
+                        <img class="thumb" src='<%# Eval("ImagePath") %>' alt='<%# Eval("Title") %>' width="600" height="400">
                     </a>
                     <div class="desc">
-                        <h2><%# Eval("Occasion") %></h2>
+                        <h2><%# Eval("Title") %></h2>
                     </div>
                 </div>
             </ItemTemplate>
@@ -157,9 +157,9 @@ CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
             document.querySelectorAll('.openModal').forEach(function (element) {
                 element.onclick = function (event) {
                     event.preventDefault();
-                    const occasion = element.getAttribute('data-occasion');
+                    const Title = element.getAttribute('data-Title');
                     const index = element.getAttribute('data-index');
-                    fetchModalContent(occasion, index);
+                    fetchModalContent(Title, index);
                 };
             });
 
@@ -174,10 +174,10 @@ CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
             };
         });
 
-        function fetchModalContent(occasion, index) {
+        function fetchModalContent(Title, index) {
             const modalContent = document.getElementById("modalContent");
             const xhr = new XMLHttpRequest();
-            xhr.open("GET", "ImageGallery.aspx?occasion=" + encodeURIComponent(occasion), true);
+            xhr.open("GET", "ImageGallery.aspx?Title=" + encodeURIComponent(Title), true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     modalContent.innerHTML = xhr.responseText + modalContent.innerHTML;
@@ -189,4 +189,3 @@ CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
         }
     </script>
 </asp:Content>
-
