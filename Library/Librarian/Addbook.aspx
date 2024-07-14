@@ -42,7 +42,7 @@
             <td class="tblhead">ADD NEW BOOK</td>
         </tr>
         <tr>
-            <td><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Library/Librarian/UploadBookData.aspx">Click here to upload book data using excel file</asp:HyperLink></td>
+            <td><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="UploadBookData.aspx">Click here to upload book data using excel file</asp:HyperLink></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -93,7 +93,7 @@
                             <asp:TextBox ID="txtPublication" runat="server" CssClass="txt"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
                                 ControlToValidate="txtPublication" ErrorMessage="Publication is required" ForeColor="Red" 
-                                InitialValue="SELECT" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                                SetFocusOnError="True"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -102,7 +102,7 @@
                             <asp:TextBox ID="txtPubDate" runat="server" CssClass="txt"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                                 ControlToValidate="txtPubDate" ErrorMessage="Publication Date is required" ForeColor="Red" 
-                                InitialValue="SELECT" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                                SetFocusOnError="True"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -121,6 +121,7 @@
                         <td class="style4">Book Photo :</td>
                         <td>
                             <asp:FileUpload ID="FileUpload1" runat="server" CssClass="txt" />
+                            <asp:Label ID="lblFileTypeError" runat="server" ForeColor="Red" Visible="false">Invalid file type. Only .jpg, .jpeg, .png files are allowed.</asp:Label>
                         </td>
                     </tr>
                     <tr>

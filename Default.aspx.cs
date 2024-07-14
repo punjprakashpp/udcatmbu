@@ -76,7 +76,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'Notice'";
+            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'Notice' ORDER BY Date DESC";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -87,7 +87,7 @@ public partial class _Default : System.Web.UI.Page
                     while (reader.Read())
                     {
                         string title = reader["Title"].ToString();
-                        DateTime noticeDate = Convert.ToDateTime(reader["NoticeDate"]);
+                        DateTime noticeDate = Convert.ToDateTime(reader["Date"]);
                         string filePath = reader["FilePath"].ToString();
 
                         marqueeContent.Append("<div class='notice'>");
@@ -107,7 +107,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'News'";
+            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'News' ORDER BY Date DESC";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -118,7 +118,7 @@ public partial class _Default : System.Web.UI.Page
                     while (reader.Read())
                     {
                         string title = reader["Title"].ToString();
-                        DateTime newsDate = Convert.ToDateTime(reader["NewsDate"]);
+                        DateTime newsDate = Convert.ToDateTime(reader["Date"]);
                         string filePath = reader["FilePath"].ToString();
 
                         marqueeContent.Append("<div class='notice'>");
@@ -138,7 +138,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'Tender'";
+            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'Tender' ORDER BY Date DESC";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -149,7 +149,7 @@ public partial class _Default : System.Web.UI.Page
                     while (reader.Read())
                     {
                         string title = reader["Title"].ToString();
-                        DateTime tenderDate = Convert.ToDateTime(reader["TenderDate"]);
+                        DateTime tenderDate = Convert.ToDateTime(reader["Date"]);
                         string filePath = reader["FilePath"].ToString();
 
                         marqueeContent.Append("<div class='notice'>");

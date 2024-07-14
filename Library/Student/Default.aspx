@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Student_Default" %>
+﻿<%@ Page MasterPageFile="MasterPage.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -12,7 +12,7 @@
         </tr>
         <tr>
             <td bgcolor="White" style="text-align: center">
-                <asp:Image ID="Image4" runat="server" ImageUrl="~/Library/img/logo/logo-lib-std.png" Width="640px" />
+                <asp:Image ID="Image4" runat="server" ImageUrl="../img/logo/logo-lib-std.png" Width="640px" />
             </td>
         </tr>
     </table>

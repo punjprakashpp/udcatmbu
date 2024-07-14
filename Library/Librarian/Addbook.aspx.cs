@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
-using System.Web.UI.WebControls;
 
 public partial class Addbook : System.Web.UI.Page
 {
@@ -19,8 +17,20 @@ public partial class Addbook : System.Web.UI.Page
     {
         if (FileUpload1.HasFile)
         {
-            string filePath = Server.MapPath("~/Library/img/book/") + FileUpload1.FileName;
-            FileUpload1.SaveAs(filePath);
+            string filePath = "~/Library/img/book/book.jpg";
+            string fileExtension = System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
+            string[] allowedExtensions = { ".jpg", ".jpeg", ".png" };
+
+            if (Array.Exists(allowedExtensions, ext => ext == fileExtension))
+            {
+                filePath = "~/Library/img/book/" + FileUpload1.FileName;
+                FileUpload1.SaveAs(Server.MapPath(filePath));
+            }
+            else
+            {
+                lblFileTypeError.Visible = true;
+                return;
+            }
             string imagePath = "~/Library/img/book/" + FileUpload1.FileName;
 
             string query = "INSERT INTO Book (BookNo, BookName, Author, Detail, Publication, PubDate, Price, ImagePath) " +

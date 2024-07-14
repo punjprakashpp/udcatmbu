@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Library/Librarian/MasterPage.master" AutoEventWireup="true" CodeFile="UploadStudentData.aspx.cs" Inherits="Library_Librarian_UploadStudentData" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="UploadStudentData.aspx.cs" Inherits="Library_Librarian_UploadStudentData" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Upload Student Data</title>

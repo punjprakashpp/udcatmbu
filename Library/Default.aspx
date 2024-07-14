@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="../style/menu.css">
     <link rel="stylesheet" type="text/css" href="../style/footer.css">
     <link rel="stylesheet" type="text/css" href="../style/header.css">
-    <link rel="stylesheet" type="text/css" href="Styles.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/Styles.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -98,7 +98,7 @@
         </div>
         <div class="subnav">
             <button class="subnavbtn" onclick="toggleDropdown(this)">
-                <i class="fa fa-book"></i>Course Offered <i class="fa fa-caret-down"></i>
+                <i class="fa fa-book"></i>Course <i class="fa fa-caret-down"></i>
             </button>
             <div class="subnav-content">
                 <a href="../CourseStructure.aspx"><i class="fa fa-list"></i>Course Structure</a>
@@ -133,16 +133,6 @@
         </div>
         <div class="subnav">
             <button class="subnavbtn" onclick="toggleDropdown(this)">
-                <i class="fa fa-group"></i>Faculty & Staffs <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="subnav-content">
-                <a href="../FacultyMember.aspx"><i class="fa fa-users"></i>Faculty Member</a>  
-                <a href="../OfficeStaff.aspx"><i class="fa fa-briefcase"></i>Office Staffs</a> 
-                <a href="../SupportingStaff.aspx"><i class="fa fa-user-secret"></i>Supporting Staffs</a>
-            </div>
-        </div>
-        <div class="subnav">
-            <button class="subnavbtn" onclick="toggleDropdown(this)">
                 <i class="fa fa-building"></i>Amenities <i class="fa fa-caret-down"></i>
             </button>
             <div class="subnav-content">
@@ -150,6 +140,15 @@
                 <a href="../UniversityHostel.aspx"><i class="fa fa-bed"></i>University Hostel</a> 
                 <a href="../CentralLibrary.aspx"><i class="fa fa-book"></i>Central Library</a> 
                 <a href="../MedicalFacility.aspx"><i class="fa fa-medkit"></i>Medical Facilities</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn" onclick="toggleDropdown(this)">
+                <i class="fa fa-group"></i>Faculty & Staffs <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content">
+                <a href="../FacultyMember.aspx"><i class="fa fa-users"></i>Faculties & Guest Faculties</a>  
+                <a href="../OfficeStaff.aspx"><i class="fa fa-briefcase"></i>Office & Supporting Staffs</a>
             </div>
         </div>
         <div class="subnav">

@@ -33,7 +33,7 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
         {
             string query = "SELECT * FROM " +
                            "(SELECT ROW_NUMBER() OVER (ORDER BY LinkID) AS RowNum, LinkID, LinkText, LinkURL " +
-                           "FROM Links WHERE Type = @Type";
+                           "FROM Links WHERE Type = 'Video'";
             string whereClause = "";
             if (!string.IsNullOrEmpty(txtSearchVideoLabel.Text))
             {
@@ -48,7 +48,7 @@ public partial class Admin_pages_EditDeleteMarqueeLinks : System.Web.UI.Page
                 {
                     cmd.Parameters.AddWithValue("@SearchText", "%" + txtSearchVideoLabel.Text + "%");
                 }
-                cmd.Parameters.AddWithValue("@Type", "Video");
+
                 int startRow = CurrentPage * PageSize + 1;
                 int endRow = startRow + PageSize;
 

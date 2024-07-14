@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <style>
@@ -81,7 +81,7 @@
             <li><a href="UploadNews.aspx">Upload News PDF</a></li>
             <li><a href="UploadTender.aspx">Upload Tender PDF</a></li>
             <li><a href="UploadFiles.aspx">Upload Documents Files</a></li>
-            <li><a href="AddSliderImage.aspx">Upload Slider Image</a></li>
+            <li><a href="UploadSliderImage.aspx">Upload Slider Image</a></li>
             <li><a href="UploadGalleryImage.aspx">Upload Gallery Image</a></li>
             <li><a href="UploadNewspaper.aspx">Upload Newspaper Image</a></li>
             <li><a href="UploadAffReg.aspx">Upload Affiliations & Regulations PDF</a></li>

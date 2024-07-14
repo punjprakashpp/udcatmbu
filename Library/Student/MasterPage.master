@@ -4,21 +4,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/StyleSheet.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="header">
-        <asp:Image ID="Image1" runat="server" ImageUrl="~/Library/img/logo/logo-head-lib.png" />
+        <asp:Image ID="Image1" runat="server" ImageUrl="../img/logo/logo-head-lib.png" />
     </div>
     <div id="main">
         <div id="menu">
             <table style="width: 100%; border-right-style: solid; border-right-width: thin; border-right-color: #007bff;">
                 <tr>
                     <td class="tblhead">
-                        welcome
+                        Welcome
                     </td>
                 </tr>
                 <tr>
@@ -33,26 +33,26 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="Button1" runat="server" CssClass="btnmenu" Text="MY ACCOUNT" PostBackUrl="~/Library/Student/MyAccount.aspx"
+                        <asp:Button ID="Button1" runat="server" CssClass="btnmenu" Text="MY ACCOUNT" PostBackUrl="MyAccount.aspx"
                             CausesValidation="False" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="Button2" runat="server" CssClass="btnmenu" Text="MY Report" PostBackUrl="~/Library/Student/MyBook.aspx"
+                        <asp:Button ID="Button2" runat="server" CssClass="btnmenu" Text="MY BOOKS" PostBackUrl="MyBook.aspx"
                             CausesValidation="False" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="Button3" runat="server" CssClass="btnmenu" Text="PENALTY Report"
-                            CausesValidation="False" PostBackUrl="~/Library/Student/MyPenalty.aspx" />
+                        <asp:Button ID="Button3" runat="server" CssClass="btnmenu" Text="MY PENALTY"
+                            CausesValidation="False" PostBackUrl="MyPenalty.aspx" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="Button4" runat="server" CssClass="btnmenu" Text="BOOK Report" CausesValidation="False"
-                            PostBackUrl="~/Library/Student/bookreport.aspx" />
+                        <asp:Button ID="Button4" runat="server" CssClass="btnmenu" Text="VIEW BOOKS" CausesValidation="False"
+                            PostBackUrl="ViewBooks.aspx"/>
                     </td>
                 </tr>
                 <tr>

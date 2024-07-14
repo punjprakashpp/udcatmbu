@@ -21,7 +21,7 @@
                     <div class="ws_images">
                         <ul>
                             <asp:Repeater ID="SliderRepeater" runat="server"><ItemTemplate>
-                                <li><img src="<%# Eval("FilePath") %>" title="<%# Eval("Title") %>" /></li>
+                                <li><img src="<%# Eval("ImagePath") %>" title="<%# Eval("Title") %>" /></li>
                             </ItemTemplate></asp:Repeater>
                         </ul>
                     </div>

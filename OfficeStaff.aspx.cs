@@ -15,6 +15,7 @@ public partial class pages_OfficeStaff : System.Web.UI.Page
         if (!IsPostBack)
         {
             LoadFacultyDetails();
+            LoadSupportDetails();
         }
     }
 
@@ -34,6 +35,26 @@ public partial class pages_OfficeStaff : System.Web.UI.Page
 
                     facultyRepeater.DataSource = dt;
                     facultyRepeater.DataBind();
+                }
+            }
+        }
+    }
+    private void LoadSupportDetails()
+    {
+        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+        using (SqlConnection conn = new SqlConnection(connStr))
+        {
+            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Member WHERE Type = 'Support'";
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    SupportRepeater.DataSource = dt;
+                    SupportRepeater.DataBind();
                 }
             }
         }

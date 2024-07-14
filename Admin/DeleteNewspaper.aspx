@@ -13,7 +13,7 @@
             <asp:TextBox ID="txtSearch" runat="server" Placeholder="Search by Description"></asp:TextBox>
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
         </div>
-        <asp:GridView ID="gvNewspapers" runat="server" AutoGenerateColumns="False" DataKeyNames="NID"
+        <asp:GridView ID="gvNewspapers" runat="server" AutoGenerateColumns="False" DataKeyNames="ID"
             AllowPaging="True" PageSize="25" OnPageIndexChanging="gvNewspapers_PageIndexChanging" 
             OnRowDeleting="gvNewspapers_RowDeleting">
             <Columns>

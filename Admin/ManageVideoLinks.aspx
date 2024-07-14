@@ -25,26 +25,26 @@
             <asp:Button ID="btnPrevious" runat="server" Text="Previous" OnClick="btnPrevious_Click" CssClass="btn" />
             <asp:Button ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" CssClass="btn" />
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="VideoID"
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="LinkID"
             OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
             OnRowDeleting="GridView1_RowDeleting" OnRowCancelingEdit="GridView1_RowCancelingEdit"
             OnRowDataBound="GridView1_RowDataBound">
             <Columns>
-                <asp:BoundField DataField="VideoID" HeaderText="Video ID" ReadOnly="True" SortExpression="VideoID" Visible="False" />
+                <asp:BoundField DataField="LinkID" HeaderText="Video ID" ReadOnly="True" SortExpression="LinkID" Visible="False" />
                 <asp:TemplateField HeaderText="Video Label">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txtVideoText" runat="server" Text='<%# Bind("VideoText") %>'></asp:TextBox>
+                        <asp:TextBox ID="txtVideoText" runat="server" Text='<%# Bind("LinkText") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID="lblVideoText" runat="server" Text='<%# Eval("VideoText") %>'></asp:Label>
+                        <asp:Label ID="lblVideoText" runat="server" Text='<%# Eval("LinkText") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Video URL">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txtVideoURL" runat="server" Text='<%# Bind("VideoURL") %>'></asp:TextBox>
+                        <asp:TextBox ID="txtVideoURL" runat="server" Text='<%# Bind("LinkURL") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID="lblVideoURL" runat="server" Text='<%# Eval("VideoURL") %>'></asp:Label>
+                        <asp:Label ID="lblVideoURL" runat="server" Text='<%# Eval("LinkURL") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />

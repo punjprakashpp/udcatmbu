@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="bookreport.aspx.cs" Inherits="bookreport" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="BookReport.aspx.cs" Inherits="bookreport" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">
         .style1 { width: 100%; }
-        .style2 { text-align: right; color: Green; width: 362px; }
+        .style2 { text-align: left; color: Green; }
         .style4 { width: 717px; }
         .style5 { font-weight: 700; }
         .style6 { width: 216px; }
@@ -17,22 +17,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table class="tbl">
         <tr>
-            <td class="tblhead">VIEW BOOK</td>
+            <td class="tblhead">BOOK REPORT</td>
         </tr>
         <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td><asp:Label ID="Label1" runat="server" Text="Search for Book via:-"></asp:Label></td>
+
+        </tr>
         <tr>
             <td>
                 <table class="style1" align="center">
                     <tr>
                         <td class="style2">
                             <asp:RadioButton ID="rdBookNo" runat="server" Text="Book No :" GroupName="ViewOption" />
-                            <asp:TextBox ID="txtBookNo" runat="server" CssClass="txt"></asp:TextBox>
-                        </td>
-                        <td class="style2">
                             <asp:RadioButton ID="rdBookName" runat="server" Text="Book Name :" GroupName="ViewOption" />
-                            <asp:TextBox ID="txtBookName" runat="server" CssClass="txt"></asp:TextBox>
+                            <asp:RadioButton ID="rdAuthor" runat="server" Text="Author :" GroupName="ViewOption" />
+                            <asp:RadioButton ID="rdPublication" runat="server" Text="Publication :" GroupName="ViewOption" />
                         </td>
                         <td>
+                            <asp:TextBox ID="txtSearch" runat="server" CssClass="txt"></asp:TextBox>
                             <asp:Button ID="btnView" runat="server" CssClass="btn" Text="View" OnClick="btnView_Click" />
                         </td>
                     </tr>

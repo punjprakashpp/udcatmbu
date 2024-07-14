@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Home" %>
+﻿<%@ Page MasterPageFile="MasterPage.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
@@ -14,12 +14,12 @@
         </tr>
         <tr>
             <td style="text-align: center">
-                <asp:Image ID="Image2" runat="server" ImageUrl="~/Library/img/logo/logo-lib-back.png" />
+                <asp:Image ID="Image2" runat="server" ImageUrl="../img/logo/logo-lib-back.png" />
             </td>
         </tr>
         <tr>
             <td style="text-align: center">
-                <asp:Button ID="btnChangePassword" runat="server" CssClass="btnmenu" Width="300" Text="Click here to change password" PostBackUrl="~/Library/Librarian/Change.aspx"
+                <asp:Button ID="btnChangePassword" runat="server" CssClass="btnmenu" Width="300" Text="Click here to change password" PostBackUrl="ChangePassword.aspx"
                     CausesValidation="False" />
             </td>
         </tr>
