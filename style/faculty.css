@@ -134,3 +134,9 @@
         .cont .container .faculty-member:nth-child(even) {
             background-color: #fdf1f1;
         }
+
+@media (max-width: 600px) {
+    .cont .container .faculty-member {
+        flex-direction:column;
+    }
+}

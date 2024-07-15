@@ -116,14 +116,14 @@
                 <p>
                     Session:&nbsp;&nbsp;<b>2022-2024</b><br />
                     Work:&nbsp;&nbsp;<b>Front-End, Back-End and Database</b><br />
-                    Phone/Whatsapp No.:&nbsp;&nbsp;<b><a href="tel:+91 9060311534">+91 9060311534</a></b><br />
+                    Phone / Whatsapp No.:&nbsp;&nbsp;<b><a href="tel:+91 9060311534">+91 9060311534</a></b><br />
                     E-Mail Id.:&nbsp;&nbsp;<b><a href="mailto:punjprakashpp@gmail.com">punjprakashpp@gmail.com</a></b><br />
                     Social Links:
                     &nbsp;&nbsp;<a href="https://www.facebook.com/punjprakashop" target="_blank"><i class="fa fa-facebook"></i></a>
                     &nbsp;&nbsp;<a href="https://www.instagram.com/punjprakashpp" target="_blank"><i class="fa fa-instagram"></i></a>
                     &nbsp;&nbsp;<a href="https://x.com/punjprakashpp" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a>
-                    &nbsp;&nbsp;<a href="https://www.linkedin.com/in/punjprakashpp" target="_blank"><i class="fa fa-linkedin"></i></a>
                     &nbsp;&nbsp;<a href="https://github.com/punjprakashpp" target="_blank"><i class="fa fa-github"></i></a>
+                    &nbsp;&nbsp;<a href="https://www.linkedin.com/in/punjprakashpp" target="_blank"><i class="fa fa-linkedin"></i></a>
                 </p>
             </div>
         </div>
@@ -138,7 +138,13 @@
                     Session:&nbsp;&nbsp;<b>2022-2024</b><br />
                     Work:&nbsp;&nbsp;<b>Front-End & Photography</b><br />
                     Phone No.:&nbsp;&nbsp;<a href="tel:+918434032071"><b>+91 8434032071</b></a><br />
-                    E-Mail Id.:&nbsp;&nbsp;<b><a href="mailto:yadavnmol@gmail.com">yadavnmol@gmail.com</a></b>
+                    E-Mail Id.:&nbsp;&nbsp;<b><a href="mailto:yadavnmol@gmail.com">yadavnmol@gmail.com</a></b><br />
+                    Social Links:
+                    &nbsp;&nbsp;<a href="https://www.facebook.com/Yadavnmol" target="_blank"><i class="fa fa-facebook"></i></a>
+                    &nbsp;&nbsp;<a href="https://www.instagram.com/anmol_king" target="_blank"><i class="fa fa-instagram"></i></a>
+                    &nbsp;&nbsp;<a href="https://x.com/AnmolKing03" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a>
+                    &nbsp;&nbsp;<a href="https://github.com/AnmolKing03" target="_blank"><i class="fa fa-github"></i></a>
+                    &nbsp;&nbsp;<a href="https://www.linkedin.com/in/#" target="_blank"><i class="fa fa-linkedin"></i></a>
                 </p>
             </div>
         </div>
@@ -201,3 +207,4 @@
         </div>
     </div>
 </asp:Content>
+
