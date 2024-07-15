@@ -7,8 +7,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="cont">
         <div class="container">
-            <h1 style="text-align: center; padding: 20px 0; background-color: #369; color: white; font-size: 1.8em; font-weight: bold; text-align: center; text-transform: uppercase; margin-bottom: 20px; border-top-left-radius: 10px; border-top-right-radius: 10px;">UDCA Campus Map</h1>
-            <iframe id="pdf-viewer" src="doc/Uploads/CampusMap.pdf" type="application/pdf" style="height: 100vh; width: 100%;"></iframe>
+            <h1 class="my-h1">Campus Map:</h1>
+            <div id="pdf-viewer" data-url="doc/Uploads/CampusMap.pdf">
+                <!-- Canvases will be dynamically added here -->
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+            <script src="script/PdfViewer.js"></script>
         </div>
     </div>
 </asp:Content>
