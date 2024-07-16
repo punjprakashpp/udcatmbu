@@ -6,11 +6,11 @@
     <link rel="stylesheet" type="text/css" href="style/slider.css" />
     <script type="text/javascript" src="script/jquery.js"></script>
     <!-- End WOWSlider.com HEAD section -->
-    <link rel="stylesheet" type="text/css" href="style/marquee-links.css">
+    <link rel="stylesheet" type="text/css" href="style/links.css">
     <link rel="stylesheet" type="text/css" href="style/top-sec.css">
     <link rel="stylesheet" type="text/css" href="style/mid-sec.css">
     <link rel="stylesheet" type="text/css" href="style/person.css">
-    <link rel="stylesheet" type="text/css" href="style/ext-btn.css">
+    <link rel="stylesheet" type="text/css" href="style/down-sec.css">
     <title>UDCA | TMBU</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -71,7 +71,7 @@
             </div>
         </div>
     </section>
-    <script type="text/javascript" src="script/marquee-tabs.js"></script>
+    <script type="text/javascript" src="script/tabs.js"></script>
     <div class="marquee-links">
         <marquee behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
 		<asp:Repeater ID="linksRepeater" runat="server">
@@ -187,7 +187,9 @@
                 <ItemTemplate>
                     <div class="panel">
                         <a class="info-btn" href='<%# Eval("LinkURL") %>'>
-                            <%# Eval("LinkText") %></a>
+                            <img src="img/logo/logo-small.png"/>
+                            <p>&nbsp;<%# Eval("LinkText") %></p>
+                        </a>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>

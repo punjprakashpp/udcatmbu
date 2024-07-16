@@ -285,14 +285,6 @@
             </ul>
         </div>
         <div class="footer-center-right">
-            <h2>Useful Websites</h2>
-            <ul class="footer-links">
-                <li><a href="https://swayam.gov.in/" target="new">SWAYAM Portal</a></li>
-                <li><a href="http://www.freshersworld.com/" target="new">Freshers World</a></li>
-                <li><a href="https://internshala.com/" target="new">InternShala</a></li>                
-            </ul>
-        </div>
-        <div class="footer-right">
             <h2>Quick Links</h2>
             <ul class="footer-links">
                 <li><a href="../Downloads.aspx">Downloads</a></li>
@@ -301,6 +293,14 @@
                 <li><a href="../ImageGallery.aspx">Image Gallery</a></li>
                 <li><a href="../AlumniRegistration.aspx">Alumni Registration</a></li>
                 <li><a href="../Library/Default.aspx">UDCA Automated Library</a></li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <h2>Useful Websites</h2>
+            <ul class="footer-links">
+                <li><a href="https://swayam.gov.in/" target="new">SWAYAM Portal</a></li>
+                <li><a href="http://www.freshersworld.com/" target="new">Freshers World</a></li>
+                <li><a href="https://internshala.com/" target="new">InternShala</a></li>                
             </ul>
         </div>
         <hr />
