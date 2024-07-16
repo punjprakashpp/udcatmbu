@@ -46,7 +46,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT LinkText, LinkURL FROM Links WHERE Type = 'Link'";
+            string query = "SELECT LinkText, LinkURL FROM Links WHERE Type = 'Link' ORDER BY LinkID DESC";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
