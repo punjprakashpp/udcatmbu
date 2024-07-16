@@ -51,7 +51,6 @@
     }
     
     .panel .info-btn {
-        width: 100%; /* Full width for buttons */
         max-width: 300px; /* Max width for buttons */
         height: auto; /* Auto height */
         padding: 15px 20px; /* Padding inside the buttons */

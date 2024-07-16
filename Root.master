@@ -59,12 +59,12 @@
                 <i class="fa fa-info-circle"></i>About <i class="fa fa-caret-down"></i>
             </button>
             <div class="subnav-content">
-                <a href="AboutUDCA.aspx"><i class="fa fa-university"></i>About UDCA</a> 
-                <a href="AboutTMBU.aspx"><i class="fa fa-university"></i>About TMBU</a> 
-                <a href="AboutComputerCenter.aspx"><i class="fa fa-desktop"></i>Computer Center</a> 
-                <a href="Director.aspx"><i class="fa fa-user"></i>Director's Message</a> 
-                <a href="HowToReach.aspx"><i class="fa fa-map-marker"></i>How to Reach Here</a> 
-                <a href="CampusMap.aspx"><i class="fa fa-map"></i>Campus Map</a> 
+                <a href="AboutUDCA.aspx"><i class="fa fa-university"></i>About UDCA</a>
+                <a href="AboutTMBU.aspx"><i class="fa fa-university"></i>About TMBU</a>
+                <a href="AboutComputerCenter.aspx"><i class="fa fa-desktop"></i>Computer Center</a>
+                <a href="Director.aspx"><i class="fa fa-user"></i>Director's Message</a>
+                <a href="HowToReach.aspx"><i class="fa fa-map-marker"></i>How to Reach Here</a>
+                <a href="CampusMap.aspx"><i class="fa fa-map"></i>Campus Map</a>
                 <a href="ContactUs.aspx"><i class="fa fa-phone"></i>Contact Us</a>
                 <a href="AboutDeveloper.aspx"><i class="fa fa-code"></i>About Developers</a>
             </div>
@@ -75,8 +75,8 @@
             </button>
             <div class="subnav-content">
                 <a href="AcademicCalender.aspx"><i class="fa fa-calendar"></i>Academic Calendar</a>
-                <a href="Prospectus.aspx"><i class="fa fa-book"></i>Prospectus</a> 
-                <a href="TimeTable.aspx"><i class="fa fa-clock-o"></i>Time Table</a> 
+                <a href="Prospectus.aspx"><i class="fa fa-book"></i>Prospectus</a>
+                <a href="TimeTable.aspx"><i class="fa fa-clock-o"></i>Time Table</a>
                 <a href="HolidayList.aspx"><i class="fa fa-sun-o"></i>Holiday List</a>
             </div>
         </div>
@@ -86,8 +86,8 @@
             </button>
             <div class="subnav-content">
                 <a href="SelectionProcedure.aspx"><i class="fa fa-check-circle"></i>Selection Procedure</a>
-                <a href="EnteranceTest.aspx"><i class="fa fa-pencil"></i>Entrance Test</a> 
-                <a href="EligiblityCriteria.aspx"><i class="fa fa-list-alt"></i>Eligibility Criteria</a> 
+                <a href="EnteranceTest.aspx"><i class="fa fa-pencil"></i>Entrance Test</a>
+                <a href="EligiblityCriteria.aspx"><i class="fa fa-list-alt"></i>Eligibility Criteria</a>
                 <a href="ImportantDates.aspx"><i class="fa fa-calendar-check-o"></i>Important Dates</a>
             </div>
         </div>
@@ -97,7 +97,7 @@
             </button>
             <div class="subnav-content">
                 <a href="CourseStructure.aspx"><i class="fa fa-list"></i>Course Structure</a>
-                <a href="FeeStructure.aspx"><i class="fa fa-money"></i>Fee Structure</a> 
+                <a href="FeeStructure.aspx"><i class="fa fa-money"></i>Fee Structure</a>
                 <a href="CourseSyllabus.aspx"><i class="fa fa-file-text"></i>Course Syllabus</a>
             </div>
         </div>
@@ -107,8 +107,8 @@
             </button>
             <div class="subnav-content">
                 <a href="AttendenceProtocol.aspx"><i class="fa fa-calendar"></i>Attendance Protocol</a>
-                <a href="AntiRagging.aspx"><i class="fa fa-ban"></i>Anti-Ragging</a> 
-                <a href="DressCode.aspx"><i class="fa fa-shirtsinbulk"></i>Dress Code</a> 
+                <a href="AntiRagging.aspx"><i class="fa fa-ban"></i>Anti-Ragging</a>
+                <a href="DressCode.aspx"><i class="fa fa-shirtsinbulk"></i>Dress Code</a>
                 <a href="Decipline.aspx"><i class="fa fa-balance-scale"></i>Discipline</a>
             </div>
         </div>
@@ -117,13 +117,13 @@
                 <i class="fa fa-cogs"></i>Administration <i class="fa fa-caret-down"></i>
             </button>
             <div class="subnav-content">
-                <a href="Chancellor.aspx"><i class="fa fa-user"></i>Chancellor</a> 
-                <a href="ViceChancellor.aspx"><i class="fa fa-user"></i>Vice-Chancellor</a> 
-                <a href="ProViceChancellor.aspx"><i class="fa fa-user"></i>Pro-Vice-Chancellor</a> 
-                <a href="Director.aspx"><i class="fa fa-user"></i>Director</a> 
-                <a href="DSW.aspx"><i class="fa fa-user"></i>DSW</a> 
+                <a href="Chancellor.aspx"><i class="fa fa-user"></i>Chancellor</a>
+                <a href="ViceChancellor.aspx"><i class="fa fa-user"></i>Vice-Chancellor</a>
+                <a href="ProViceChancellor.aspx"><i class="fa fa-user"></i>Pro-Vice-Chancellor</a>
+                <a href="Director.aspx"><i class="fa fa-user"></i>Director</a>
+                <a href="DSW.aspx"><i class="fa fa-user"></i>DSW</a>
                 <a href="CCDC.aspx"><i class="fa fa-user"></i>CCDC</a>
-                <a href="Registrar.aspx"><i class="fa fa-user"></i>Registrar</a> 
+                <a href="Registrar.aspx"><i class="fa fa-user"></i>Registrar</a>
             </div>
         </div>
         <div class="subnav">
@@ -132,8 +132,8 @@
             </button>
             <div class="subnav-content">
                 <a href="Library/Default.aspx"><i class="fa fa-book"></i>UDCA Library</a>
-                <a href="UniversityHostel.aspx"><i class="fa fa-bed"></i>University Hostel</a> 
-                <a href="CentralLibrary.aspx"><i class="fa fa-book"></i>Central Library</a> 
+                <a href="UniversityHostel.aspx"><i class="fa fa-bed"></i>University Hostel</a>
+                <a href="CentralLibrary.aspx"><i class="fa fa-book"></i>Central Library</a>
                 <a href="MedicalFacility.aspx"><i class="fa fa-medkit"></i>Medical Facilities</a>
             </div>
         </div>
@@ -142,7 +142,7 @@
                 <i class="fa fa-group"></i>Faculty & Staffs <i class="fa fa-caret-down"></i>
             </button>
             <div class="subnav-content">
-                <a href="FacultyMember.aspx"><i class="fa fa-users"></i>Faculties & Guest Faculties</a> 
+                <a href="FacultyMember.aspx"><i class="fa fa-users"></i>Faculties & Guest Faculties</a>
                 <a href="OfficeStaff.aspx"><i class="fa fa-briefcase"></i>Office & Supporting Staffs</a>
             </div>
         </div>
@@ -151,7 +151,7 @@
                 <i class="fa fa-users"></i>Alumni <i class="fa fa-caret-down"></i>
             </button>
             <div class="subnav-content">
-                <a href="ViewAlumni.aspx"><i class="fa fa-user"></i>View Our Almuni</a> 
+                <a href="ViewAlumni.aspx"><i class="fa fa-user"></i>View Our Almuni</a>
                 <a href="AlumniRegistration.aspx"><i class="fa fa-sign-in"></i>Alumni Registration</a>
             </div>
         </div>
@@ -170,17 +170,17 @@
                 <i class="fa fa-info-circle"></i>Information <i class="fa fa-caret-down"></i>
             </button>
             <div class="subnav-content">
-                <a href="Notice.aspx"><i class="fa fa-bell"></i>Notice</a> 
-                <a href="News.aspx"><i class="fa fa-newspaper-o"></i>News</a> 
+                <a href="Notice.aspx"><i class="fa fa-bell"></i>Notice</a>
+                <a href="News.aspx"><i class="fa fa-newspaper-o"></i>News</a>
                 <a href="Tender.aspx"><i class="fa fa-info"></i>Tender</a>
                 <a href="AffiliationRegulation.aspx"><i class="fa fa-file"></i>Affiliations & Regulations</a>
             </div>
-        </div> 
-        <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a> 
+        </div>
+        <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a>
         <a href="Login.aspx"><i class="fa fa-sign-in"></i>Login</a>
     </nav>
     <script src="script/menu.js"></script>
-    
+
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -203,12 +203,10 @@
             <ul class="footer-links">
                 <li><a href="http://tmbuniv.ac.in" target="_blank">Tilka Manjhi Bhagalpur University</a></li>
                 <li><a href="https://www.ugc.ac.in/" target="_blank">University Grant Commission</a></li>
-                <li><a href="https://www.aicte-india.org/" target="_blank">All India Council of Technical
-                    Education</a></li>
-                <li><a href="https://bhagalpur.nic.in/" target="_blank">Bhagalpur Official Website</a></li>
+                <li><a href="https://www.aicte-india.org/" target="_blank">All India Council of Technical Education</a></li>
                 <li><a href="https://governor.bih.nic.in/" target="_blank">Raj Bhavan Bihar Website</a></li>
-                <li><a href="https://state.bihar.gov.in/" target="_blank">Bihar Government Official
-                    Website</a></li>
+                <li><a href="https://bhagalpur.nic.in/" target="_blank">Bhagalpur Official Website</a></li>
+                <li><a href="https://state.bihar.gov.in/" target="_blank">Bihar Government Official Website</a></li>
             </ul>
         </div>
         <div class="footer-center-right">
@@ -229,16 +227,22 @@
                 <li><a href="http://www.freshersworld.com/" target="new">Freshers World</a></li>
                 <li><a href="https://internshala.com/" target="new">InternShala</a></li>
             </ul>
+            <h2>Read Website in </h2>
+            <div id="google_translate_element"></div>
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                }
+            </script>
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         </div>
         <hr />
         <div class="footer-copyright">
-            <p>Copyright &copy; 2024 - <asp:Label ID="lblyear" runat="server"></asp:Label> UDCA TMBU | All Rights Reserved ! | Developed & Managed by UDCA TMBU | Visitor Count : <asp:Label ID="lblVisitorCount" runat="server" ForeColor="Red" /></p>
+            <p>Copyright &copy; 2024 -
+                <asp:Label ID="lblyear" runat="server"></asp:Label>
+                UDCA TMBU | All Rights Reserved ! | Developed & Managed by UDCA TMBU | Visitor Count :
+                <asp:Label ID="lblVisitorCount" runat="server" ForeColor="Red" /></p>
         </div>
     </footer>
 </body>
 </html>
-
-
-
-
-

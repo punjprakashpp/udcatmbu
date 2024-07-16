@@ -272,16 +272,13 @@
             </p>
         </div>
         <div class="footer-center-left">
-            <h2>Important Links</h2>
             <ul class="footer-links">
                 <li><a href="http://tmbuniv.ac.in" target="_blank">Tilka Manjhi Bhagalpur University</a></li>
                 <li><a href="https://www.ugc.ac.in/" target="_blank">University Grant Commission</a></li>
-                <li><a href="https://www.aicte-india.org/" target="_blank">All India Council of Technical
-                    Education</a></li>
-                <li><a href="https://bhagalpur.nic.in/" target="_blank">Bhagalpur Official Website</a></li>
+                <li><a href="https://www.aicte-india.org/" target="_blank">All India Council of Technical Education</a></li>
                 <li><a href="https://governor.bih.nic.in/" target="_blank">Raj Bhavan Bihar Website</a></li>
-                <li><a href="https://state.bihar.gov.in/" target="_blank">Bihar Government Official
-                    Website</a></li>
+                <li><a href="https://bhagalpur.nic.in/" target="_blank">Bhagalpur Official Website</a></li>
+                <li><a href="https://state.bihar.gov.in/" target="_blank">Bihar Government Official Website</a></li>
             </ul>
         </div>
         <div class="footer-center-right">
@@ -300,8 +297,16 @@
             <ul class="footer-links">
                 <li><a href="https://swayam.gov.in/" target="new">SWAYAM Portal</a></li>
                 <li><a href="http://www.freshersworld.com/" target="new">Freshers World</a></li>
-                <li><a href="https://internshala.com/" target="new">InternShala</a></li>                
+                <li><a href="https://internshala.com/" target="new">InternShala</a></li>
             </ul>
+            <h2>Read Website in </h2>
+            <div id="google_translate_element"></div>
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                }
+            </script>
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         </div>
         <hr />
         <div class="footer-copyright">
