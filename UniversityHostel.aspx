@@ -194,7 +194,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="cont">
         <div class="container">
-            <div class="title"><h2>University Hostel</h2></div>
+            <div class="title">
+                <h2>University Hostel</h2>
+            </div>
             <div class="tagline">Your Home Away From Home</div>
             <img class="image" src="img/Dept/Boys Hostel.jpg" alt="Boys Hostel"><br />
             <br />
@@ -224,6 +226,6 @@
                 </ul>
             </div>
         </div>
-        <div>
+    </div>
 </asp:Content>
 
