@@ -2,8 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Registrar of TMBU</title>
-   <link rel="stylesheet" type="text/css" href="style/pages.css">
-   <link rel="stylesheet" type="text/css" href="style/adm.css">
+    <link rel="stylesheet" type="text/css" href="style/Syllabus.css">
+    <link rel="stylesheet" type="text/css" href="style/pages.css">
+    <link rel="stylesheet" type="text/css" href="style/adm.css">
+    <link rel="stylesheet" type="text/css" href="style/lightbox.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="cont" align="center">
@@ -14,7 +16,7 @@
                 <h2 align="center" style="color:Red;"><asp:Label ID="lblName" runat="server" /></h2>
                 <h3 >Registrar of <b>TMBU</b></h3>
                 <p>Phone No.:&nbsp;&nbsp;<b>+91 9534675123</b><br />E-Mail Id.:<b><a href="mailto:registrar@tmbuniv.ac.in" target="_blank">registrar@tmbuniv.ac.in</a></b></p>
-                <h5 align="left">To know more about Registrar <a href="doc/Profile/RegistrarProfile.pdf" target="_blank"> Click here</a></h5>
+                <h5 align="left">To know more about Registrar <a href="#" id="openPdfLink">Click here</a></h5>
             </div> 
             <div class="dev-des" align="right">
                 <h2><b>Registrar's Message</b></h2>
@@ -23,6 +25,16 @@
                 <p>Our faculty and students are constantly pushing boundaries to advance computer science. I invite you to join us in our journey as we propel the Computer Science Department to new heights. In conclusion, I extend my best wishes to all students and faculty for a rewarding academic journey.</p>
             </div>   
         </div>
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <span class="close">&times;</span>
+                <div id="pdf-viewer" data-url="doc/Profile/RegistrarProfile.pdf">
+                    <!-- Canvases will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+        <script src="script/PdfViewerLightbox.js"></script>
     </div>
 </asp:Content>
 

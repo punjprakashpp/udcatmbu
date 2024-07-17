@@ -2,8 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Director's Message</title>
+    <link rel="stylesheet" type="text/css" href="style/Syllabus.css">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
     <link rel="stylesheet" type="text/css" href="style/adm.css">
+    <link rel="stylesheet" type="text/css" href="style/lightbox.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="cont" align="center">
@@ -14,7 +16,7 @@
                 <h2 align="center" style="color:Red;"><asp:Label ID="lblName" runat="server" /></h2>
                 <h3 >Director of <b>UDCA</b></h3>
                 <p>Phone No.:&nbsp;&nbsp;<b>+91 6412501290</b><br />E-Mail Id.:<b><a href="mailto:director_udca@tmbuniv.ac.in" target="_blank">director_udca@tmbuniv.ac.in</a></b></p>
-                <h5 align="left">To know more about Director <a href="doc/Profile/DirectorProfile.pdf" target="_blank"> Click here</a></h5>
+                <h5 align="left">To know more about Director <a href="#" id="openPdfLink">Click here</a></h5>
             </div> 
             <div class="dev-des" align="right">
                 <h2><b>Director's Message</b></h2>
@@ -25,6 +27,16 @@
                 <p>With great pleasure, I welcome you to the University Department of Computer Applications—a place where knowledge meets opportunity, and dreams find wings to soar.</p> 
             </div>   
         </div>
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <span class="close">&times;</span>
+                <div id="pdf-viewer" data-url="doc/Profile/DirectorProfile.pdf">
+                    <!-- Canvases will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+        <script src="script/PdfViewerLightbox.js"></script>
     </div>
 </asp:Content>
 
