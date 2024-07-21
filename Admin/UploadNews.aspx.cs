@@ -45,7 +45,7 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
                             imp = "no";
                         }
                         string fileName = Path.GetFileName(fileUpload.FileName);
-                        string uploadFolder = Server.MapPath("../doc/news/");
+                        string uploadFolder = Server.MapPath("../docs/news/");
                         if (!Directory.Exists(uploadFolder))
                         {
                             Directory.CreateDirectory(uploadFolder);
@@ -54,7 +54,7 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
                         fileUpload.SaveAs(filePath);
 
                         // Store the relative path to the database
-                        string relativeFilePath = "doc/news/" + fileName;
+                        string relativeFilePath = "docs/news/" + fileName;
 
                         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                         using (SqlConnection conn = new SqlConnection(connStr))

@@ -30,7 +30,7 @@
         <div id="lightbox" class="lightbox">
             <div class="lightbox-content">
                 <span class="close">&times;</span>
-                <div id="pdf-viewer" data-url="doc/Profile/DirectorProfile.pdf">
+                <div id="pdf-viewer" data-url="docs/Profile/DirectorProfile.pdf">
                     <!-- Canvases will be dynamically added here -->
                 </div>
             </div>

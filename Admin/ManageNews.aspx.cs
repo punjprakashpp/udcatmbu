@@ -147,7 +147,7 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
                 try
                 {
                     string fileName = Path.GetFileName(fileUpload.FileName);
-                    string uploadFolder = Server.MapPath("../doc/news/");
+                    string uploadFolder = Server.MapPath("../docs/news/");
                     if (!Directory.Exists(uploadFolder))
                     {
                         Directory.CreateDirectory(uploadFolder);
@@ -162,7 +162,7 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
                     }
 
                     // Store the relative path to the database
-                    newFilePath = "doc/news/" + fileName;
+                    newFilePath = "docs/news/" + fileName;
                 }
                 catch (Exception ex)
                 {

@@ -148,7 +148,7 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
                 try
                 {
                     string fileName = Path.GetFileName(fileUpload.FileName);
-                    string uploadFolder = Server.MapPath("../doc/tender/");
+                    string uploadFolder = Server.MapPath("../docs/tender/");
                     if (!Directory.Exists(uploadFolder))
                     {
                         Directory.CreateDirectory(uploadFolder);
@@ -163,7 +163,7 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
                     }
 
                     // Store the relative path to the database
-                    newFilePath = "doc/tender/" + fileName;
+                    newFilePath = "docs/tender/" + fileName;
                 }
                 catch (Exception ex)
                 {

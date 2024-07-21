@@ -1,11 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true"
-    CodeFile="Tender.aspx.cs" Inherits="pages_Tender" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="Tender.aspx.cs" Inherits="pages_Tender" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Tenders</title>
     <link rel="stylesheet" href="style/table.css">
     <link rel="stylesheet" href="style/alumni.css">
     <link rel="stylesheet" href="style/download.css">
+    <link rel="stylesheet" href="style/lightbox.css">
+    <link rel="stylesheet" href="style/Syllabus.css">
+    <link rel="stylesheet" href="style/PdfViewerGrid.css">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -17,9 +19,10 @@
         });
     </script>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container">
-        <h1 style="text-align: center; padding: 20px 0; background-color: #369; color: white; font-size: 1.8em; font-weight: bold; text-transform: uppercase; margin-top: 20px; margin-bottom: 20px; border-top-left-radius: 10px; border-top-right-radius: 10px;">Tenders</h1>
+        <h1 class="my-h1" style="margin-top:20px;">Tenders</h1>
         <div class="search-bar">
             <label>
                 Tender Date:
@@ -44,11 +47,21 @@
                 <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
                 <asp:TemplateField HeaderText="File">
                     <ItemTemplate>
-                        <a href='<%# Eval("FilePath") %>' target="_blank">View</a>
+                        <a href='<%# Eval("FilePath") %>' class="open-pdf" data-url='<%# Eval("FilePath") %>' target="_blank">View</a>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
         <br />
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <span class="close">&times;</span>
+                <div id="pdf-viewer">
+                    <!-- Canvases will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+        <script src="script/PdfViewerGrid.js"></script>
     </div>
 </asp:Content>

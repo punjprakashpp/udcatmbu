@@ -28,7 +28,7 @@
         <div id="lightbox" class="lightbox">
             <div class="lightbox-content">
                 <span class="close">&times;</span>
-                <div id="pdf-viewer" data-url="doc/Profile/PVCProfile.pdf">
+                <div id="pdf-viewer" data-url="docs/Profile/PVCProfile.pdf">
                     <!-- Canvases will be dynamically added here -->
                 </div>
             </div>

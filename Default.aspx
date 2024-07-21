@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="style/mid-sec.css">
     <link rel="stylesheet" type="text/css" href="style/person.css">
     <link rel="stylesheet" type="text/css" href="style/down-sec.css">
+    <link rel="stylesheet" type="text/css" href="style/lightbox.css">
     <title>UDCA | TMBU</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -31,6 +32,7 @@
             <script type="text/javascript" src="script/slider.js"></script>
         </div>
         <div class="notice-section">
+            <!-- Tabs -->
             <div class="tabs">
                 <div class="tab-link active" onclick="openTab(event, 'Notices')">
                     Notices
@@ -42,34 +44,48 @@
                     Tender
                 </div>
             </div>
+            <!-- Notices Tab -->
             <div id="Notices" class="tab-content" style="display: block;">
                 <div class="notice-board">
                     <div class="notice-links">
-                        <marquee class="marquee" id="marq1" direction="up" scrollamount="2" onmouseover="this.stop();"
-                            onmouseout="this.start();">
-                            <asp:Literal ID="LiteralNotices" runat="server"></asp:Literal></marquee>
+                        <marquee class="marquee" id="marq1" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                            <asp:Literal ID="LiteralNotices" runat="server"></asp:Literal>
+                        </marquee>
                     </div>
                 </div>
             </div>
+            <!-- News Tab -->
             <div id="News" class="tab-content">
                 <div class="notice-board">
                     <div class="notice-links">
-                        <marquee class="marquee" id="marq2" direction="up" scrollamount="2" onmouseover="this.stop();"
-                            onmouseout="this.start();">
-                            <asp:Literal ID="LiteralNews" runat="server"></asp:Literal></marquee>
+                        <marquee class="marquee" id="marq2" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                            <asp:Literal ID="LiteralNews" runat="server"></asp:Literal>
+                        </marquee>
                     </div>
                 </div>
             </div>
+            <!-- Tender Tab -->
             <div id="Tender" class="tab-content">
                 <div class="notice-board">
                     <div class="notice-links">
-                        <marquee class="marquee" id="marq3" direction="up" scrollamount="2" onmouseover="this.stop();"
-                            onmouseout="this.start();">
-                            <asp:Literal ID="LiteralTender" runat="server"></asp:Literal></marquee>
+                        <marquee class="marquee" id="marq3" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                            <asp:Literal ID="LiteralTender" runat="server"></asp:Literal>
+                        </marquee>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Lightbox for PDF Viewer -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <span class="close">&times;</span>
+                <div id="pdf-viewer">
+                    <!-- Canvases will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+        <script src="script/PdfViewerGrid.js"></script>
     </section>
     <script type="text/javascript" src="script/tabs.js"></script>
     <div class="marquee-links">
@@ -126,7 +142,8 @@
             </a>
         </div>
     </div>
-    <br /><br />
+    <br />
+    <br />
     <div class="mid-sec">
         <div class="sec">
             <div class="labels">
@@ -187,7 +204,7 @@
                 <ItemTemplate>
                     <div class="panel">
                         <a class="info-btn" href='<%# Eval("LinkURL") %>'>
-                            <img src="img/logo/logo-small.png"/>
+                            <img src="img/logo/logo-small.png" />
                             <p>&nbsp;<%# Eval("LinkText") %></p>
                         </a>
                     </div>

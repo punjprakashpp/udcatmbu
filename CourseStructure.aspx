@@ -8,7 +8,7 @@
     <div class="cont">
         <div class="container">
             <h1 class="my-h1">MCA Course Structure:</h1>
-            <div id="pdf-viewer" data-url="doc/Uploads/CourseStructure.pdf">
+            <div id="pdf-viewer" data-url="docs/Uploads/CourseStructure.pdf">
                 <!-- Canvases will be dynamically added here -->
             </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>

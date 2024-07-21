@@ -53,8 +53,8 @@
     <nav class="navbar" id="navbar">
         <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><i class="fa fa-bars"></i></a>
         <div class="subnav home-link">
+            <a href="Default.aspx"><i class="fa fa-home"></i>Home</a>
         </div>
-        <a href="Default.aspx"><i class="fa fa-home"></i>Home</a>
         <div class="subnav">
             <button class="subnavbtn" onclick="toggleDropdown(this)">
                 <i class="fa fa-info-circle"></i>About <i class="fa fa-caret-down"></i>
@@ -179,8 +179,17 @@
         </div>
         <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a>
         <a href="Login.aspx"><i class="fa fa-sign-in"></i>Login</a>
+        <div class="subnav">
+            <button class="subnavbtn" onclick="toggleDropdown(this)">
+                <i class="fa fa-search"></i>Search
+            </button>
+            <div class="subnav-content search">
+                <div class="gcse-search"></div>
+            </div>
+        </div>
     </nav>
     <script src="script/menu.js"></script>
+    <script async src="https://cse.google.com/cse.js?cx=138dc528670d44e49"></script>
 
     <form id="form1" runat="server">
         <div>
@@ -188,6 +197,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
     <footer class="footer-distributed">
         <div class="footer-left">
             <span><a href="Default.aspx">
@@ -228,7 +238,7 @@
                 <li><a href="http://www.freshersworld.com/" target="new">Freshers World</a></li>
                 <li><a href="https://internshala.com/" target="new">InternShala</a></li>
             </ul>
-            <h2>Read Website in </h2>
+            <h2>View Website in </h2>
             <div id="google_translate_element"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit() {
@@ -239,10 +249,12 @@
         </div>
         <hr />
         <div class="footer-copyright">
-            <p>Copyright &copy; 2024 -
+            <p>
+                Copyright &copy; 2024 -
                 <asp:Label ID="lblyear" runat="server"></asp:Label>
                 UDCA TMBU | All Rights Reserved ! | Developed & Managed by UDCA TMBU | Visitor Count :
-                <asp:Label ID="lblVisitorCount" runat="server" ForeColor="Red" /></p>
+                <asp:Label ID="lblVisitorCount" runat="server" ForeColor="Red" />
+            </p>
         </div>
     </footer>
 </body>
