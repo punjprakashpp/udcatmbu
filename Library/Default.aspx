@@ -274,10 +274,12 @@
                     <span><a href="../Default.aspx">
                         <img src="../img/logo/logo-head.png" alt="logo-head"></a></span>
                     <p style="font-size: 14px; line-height: 1.8em; padding-left: 10px;">
-                        <b>Location:</b> <a href="https://maps.app.goo.gl/Zv7E8aFZ3hYQ1ZMf6" target="_blank">Computer Center,</a> TMBU, Bhagalpur, Bihar, 812007<br><b>Phone:</b> <a href="tel:0641250040">0641-250040</a></br>
+                        <b>Location:</b> <a href="https://maps.app.goo.gl/Zv7E8aFZ3hYQ1ZMf6" target="_blank">Computer Center,</a> TMBU,<br />
+                        Bhagalpur, Bihar, 812007<br />
+                        <b>Phone:</b> <a href="tel:0641250040">0641-250040</a><br />
                         <b>Website:</b> <a href="http://udcatmbu.org">udcatmbu.org</a><br>
                         <b>Email:</b> <a href="mailto:udcatmbu.bgp@gmail.com">udcatmbu.bgp@gmail.com</a><br>
-                        <b>Click to know </b><a href="../HowToReach.aspx">How to Reach Here</a><br>
+                        <a href="../HowToReach.aspx">Click here to know How to Reach</a><br>
                     </p>
                 </div>
                 <div class="footer-center-left">
