@@ -65,7 +65,7 @@
         }
 
         /* Image and Cropper Styles */
-        img {
+        .my-img {
             max-width: 100%;
             height: auto;
             display: block;
@@ -149,10 +149,10 @@
                     <asp:FileUpload ID="fileUpload" runat="server" />
                     <asp:Label ID="lblFileTypeError" runat="server" ForeColor="Red" Visible="false">Invalid file type. Only .jpg, .jpeg, .png files are allowed.</asp:Label>
                     <div>
-                        <img id="currentImage" src="#" alt="Current Image" runat="server" style="display: none; max-width: 225px; max-height: 225px;" />
+                        <img class="my-img" id="currentImage" src="#" alt="Current Image" runat="server" style="display: none; max-width: 225px; max-height: 225px;" />
                         <asp:HiddenField ID="imagePreviewBase64" runat="server" />
                         <div id="cropperContainer" class="cropper-container" style="display: none;">
-                            <img id="cropperImage" src="#" alt="Image for cropping"/>
+                            <img class="my-img" id="cropperImage" src="#" alt="Image for cropping"/>
                         </div>
                         <asp:Button ID="btnCrop" runat="server" Text="Crop" OnClientClick="return cropImage();" style="display: none;" />
                     </div>
