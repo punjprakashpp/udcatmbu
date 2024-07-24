@@ -17,7 +17,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section class="top-sec">
         <div class="slider">
-            <center>
                 <div id="wowslider-container">
                     <div class="ws_images">
                         <ul>
@@ -27,7 +26,6 @@
                         </ul>
                     </div>
                 </div>
-            </center>
             <script type="text/javascript" src="script/wowslider.js"></script>
             <script type="text/javascript" src="script/slider.js"></script>
         </div>
