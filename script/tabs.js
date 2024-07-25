@@ -10,10 +10,10 @@ function openTab(evt, tabName) {
     }
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
-    
+
     // Start the marquee for the active tab
     startMarquee(tabName);
-    
+
     setNoticeSectionHeight();
     setMarqueeHeight();
 }

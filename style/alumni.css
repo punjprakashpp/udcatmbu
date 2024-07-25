@@ -12,11 +12,11 @@
     margin-bottom: 40px;
 }
 
-    .header h1 {
-        font-size: 2.5em;
-        color: #444;
-        margin-bottom: 10px;
-    }
+.header h1 {
+    font-size: 2.5em;
+    color: #444;
+    margin-bottom: 10px;
+}
 
 .search-bar {
     display: flex;
@@ -26,13 +26,15 @@
     margin-bottom: 20px;
 }
 
-    .search-bar label {
-        display: flex;
-        align-items: center;
-        margin-right: 10px;
-    }
+.search-bar label {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
 
-.dropdown, .textbox, .btn {
+.dropdown,
+.textbox,
+.btn {
     margin-left: 10px;
 }
 
@@ -45,9 +47,9 @@
     cursor: pointer;
 }
 
-    .search-bar .btn:hover {
-        background-color: #0056b3;
-    }
+.search-bar .btn:hover {
+    background-color: #0056b3;
+}
 
 .faculty-member {
     display: flex;
@@ -60,47 +62,53 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-    .faculty-member .col1, .faculty-member .col2, .faculty-member .col3 {
-        flex: 1 1 30%;
-        margin: 10px;
-        box-sizing: border-box;
-    }
+.faculty-member .col1,
+.faculty-member .col2,
+.faculty-member .col3 {
+    flex: 1 1 30%;
+    margin: 10px;
+    box-sizing: border-box;
+}
 
-    .faculty-member .col2, .faculty-member .col3 {
-        line-height: 2;
-    }
+.faculty-member .col2,
+.faculty-member .col3 {
+    line-height: 2;
+}
 
-    .faculty-member .col1 {
-        text-align: center;
-    }
+.faculty-member .col1 {
+    text-align: center;
+}
 
-    .faculty-member img {
-        max-width: 150px;
-        border-radius: 50%;
-        margin-bottom: 15px;
-    }
+.faculty-member img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
 
 .contact-info {
     display: flex;
     align-items: center;
 }
 
-    .contact-info i {
-        margin-right: 8px;
-        color: #007bff;
-    }
+.contact-info i {
+    margin-right: 8px;
+    color: #007bff;
+}
 
-    .contact-info a {
-        color: #007bff;
-    }
+.contact-info a {
+    color: #007bff;
+}
 
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
+.contact-info a:hover {
+    text-decoration: underline;
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .faculty-member .col1, .faculty-member .col2, .faculty-member .col3 {
+
+    .faculty-member .col1,
+    .faculty-member .col2,
+    .faculty-member .col3 {
         flex: 1 1 45%;
     }
 }
@@ -110,27 +118,32 @@
         flex-direction: column;
     }
 
-        .faculty-member .col1, .faculty-member .col2, .faculty-member .col3 {
-            flex: 1 1 100%;
-            margin: 10px 0;
-        }
+    .faculty-member .col1,
+    .faculty-member .col2,
+    .faculty-member .col3 {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
 
-        .faculty-member .col2, .faculty-member .col3 {
-            flex: 1 1 100%;
-            margin: 0;
-        }
+    .faculty-member .col2,
+    .faculty-member .col3 {
+        flex: 1 1 100%;
+        margin: 0;
+    }
 
     .search-bar {
         flex-direction: column;
         align-items: flex-start;
     }
 
-        .search-bar label {
-            width: 100%;
-            margin-bottom: 10px;
-        }
+    .search-bar label {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 
-    .dropdown, .textbox, .btn {
+    .dropdown,
+    .textbox,
+    .btn {
         margin-left: 0;
         margin-top: 10px;
     }
@@ -151,13 +164,15 @@
         align-items: flex-start;
     }
 
-        .search-bar label {
-            width: 100%;
-            padding:5px;
-            margin-bottom: 10px;
-        }
+    .search-bar label {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
 
-    .dropdown, .textbox, .btn {
+    .dropdown,
+    .textbox,
+    .btn {
         margin-left: 0;
         margin-top: 10px;
         width: 100%;

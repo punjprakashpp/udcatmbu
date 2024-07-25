@@ -1,31 +1,31 @@
 ﻿.mid-sec {
-    display:block;
-    margin:20px;
-    text-align:center;
+    display: block;
+    margin: 20px;
+    text-align: center;
 }
 
 .mid-sec .sec {
     width: 30%;
-    margin-left:20px;
-    margin-right:20px;
+    margin-left: 20px;
+    margin-right: 20px;
     display: inline-block;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    justify-content:space-around;
+    justify-content: space-around;
     padding: 20px;
-    height:360px;
+    height: 360px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
-   -webkit-backdrop-filter: blur(10px);
-   vertical-align:top;
-   text-align:justify;
-   font-size: larger;
-   line-height:1.2;
+    -webkit-backdrop-filter: blur(10px);
+    vertical-align: top;
+    text-align: justify;
+    font-size: larger;
+    line-height: 1.2;
 }
 
 .mid-sec .sec .labels {
-    
-    justify-content:space-around;
+
+    justify-content: space-around;
     margin-bottom: 5px;
     border-radius: 10px;
 }
@@ -39,61 +39,60 @@
     transition: 0.3s;
     font-size: 17px;
     border-radius: 10px 10px 0 0;
-    text-align:center;
+    text-align: center;
 }
 
-.mid-sec .sec a 
-{
-    text-decoration:none;
+.mid-sec .sec a {
+    text-decoration: none;
 }
 
-.mid-sec .sec a:hover
-{
-    text-decoration:underline;
+.mid-sec .sec a:hover {
+    text-decoration: underline;
 }
 
-.mid-sec .sec p
-{
-    padding-bottom:2px;
-    text-shadow: none;  /* Remove default shadow if needed */
-    transition: font-size 0.2s ease, text-shadow 0.2s ease;  /* Adjust transition speed and type */
-}
-.mid-sec .sec p:hover
-{
-    font-size: 1.05em;  /* Increase font size on hover (adjust percentage as needed) */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);  /* Adjust shadow offset, blur, and color */
+.mid-sec .sec p {
+    padding-bottom: 2px;
+    text-shadow: none;
+    /* Remove default shadow if needed */
+    transition: font-size 0.2s ease, text-shadow 0.2s ease;
+    /* Adjust transition speed and type */
 }
 
-.mid-sec .sec ul li
-{  
-   list-style: circle;
-   padding-bottom:2px;
-   margin-left:10px;
+.mid-sec .sec p:hover {
+    font-size: 1.05em;
+    /* Increase font size on hover (adjust percentage as needed) */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    /* Adjust shadow offset, blur, and color */
 }
 
-.mid-sec .sec ul li:hover
-{
-    font-size: 1.05em;  /* Increase font size on hover (adjust percentage as needed) */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);  /* Adjust shadow offset, blur, and color */
+.mid-sec .sec ul li {
+    list-style: circle;
+    padding-bottom: 2px;
+    margin-left: 10px;
 }
-@media screen and (max-width:1300px) 
-{
-    .mid-sec .sec 
-    {
-        height:390px;
+
+.mid-sec .sec ul li:hover {
+    font-size: 1.05em;
+    /* Increase font size on hover (adjust percentage as needed) */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    /* Adjust shadow offset, blur, and color */
+}
+
+@media screen and (max-width:1300px) {
+    .mid-sec .sec {
+        height: 390px;
     }
 }
 
-@media screen and (max-width:1260px) 
-{
+@media screen and (max-width:1260px) {
     .mid-sec {
         margin: 10px;
         margin-top: 20px;
         margin-bottom: 10px;
     }
-    .mid-sec .sec 
-    {
-        height:420px;
+
+    .mid-sec .sec {
+        height: 420px;
     }
 }
 
@@ -106,29 +105,29 @@
     }
 
     .mid-sec .sec {
-        margin-left:0px;
-        margin-right:0px;
-        height:500px;
+        margin-left: 0px;
+        margin-right: 0px;
+        height: 500px;
     }
 
 }
+
 @media screen and (max-width:768px) {
     .mid-sec {
-        margin-top:20px;
-        margin-bottom:10px;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
-    
+
     .mid-sec .sec {
-        display:block;
-        width:100%;
-        margin-left:0px;
-        margin-right:0px;
-        margin-top:20px;
-        height:auto;
-    } 
- 
-    .mid-sec .sec .labels .label-text 
-    {
-        font-size:20px;
+        display: block;
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 20px;
+        height: auto;
+    }
+
+    .mid-sec .sec .labels .label-text {
+        font-size: 20px;
     }
 }

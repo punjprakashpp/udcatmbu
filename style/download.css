@@ -37,8 +37,8 @@ body {
 }
 
 .download-container h1 {
-        width: 75%;
-    }
+    width: 75%;
+}
 
 .form-row {
     display: flex;
@@ -125,11 +125,11 @@ body {
         margin: 10px;
         padding: 10px;
     }
-    
+
     .download-container {
-    width: auto;
+        width: auto;
     }
-    
+
     .download-container h1 {
         width: 90%;
     }
@@ -167,12 +167,12 @@ body {
     .grid-view-container a {
         font-size: 14px;
     }
-    .part 
-    {
-        display:block;
-        width:100%;
-        text-align:left;
-        margin-bottom:10px;
+
+    .part {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 10px;
     }
 }
 

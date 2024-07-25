@@ -8,8 +8,8 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .lightbox-content {
@@ -40,7 +40,8 @@
 
 #pdf-viewer {
     width: 100%;
-    height: 80vh; /* Height adjusted for scrollable area */
+    height: 80vh;
+    /* Height adjusted for scrollable area */
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -48,6 +49,7 @@
 }
 
 .pdf-canvas {
-    margin-bottom: 20px; /* Space between pages */
+    margin-bottom: 20px;
+    /* Space between pages */
     width: inherit;
 }

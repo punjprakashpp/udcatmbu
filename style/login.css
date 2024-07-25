@@ -1,6 +1,6 @@
 /* Center the form on the page */
 .bg {
-    width:480px;
+    width: 480px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
@@ -24,7 +24,7 @@
 
 .bg td {
     padding: 10px;
-    
+
 }
 
 .bg td:first-child {
@@ -37,7 +37,8 @@
 }
 
 /* Textbox styling */
-.bg input[type="text"], input[type="password"] {
+.bg input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 8px;
     margin: 5px 0;

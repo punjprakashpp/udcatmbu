@@ -1,50 +1,51 @@
 ﻿.cont {
     line-height: 1.6;
-    display:block;
+    display: block;
     padding: 20px;
     background-color: #f0f0f0;
 }
 
 .cont .image {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 1000px;
-            height: auto;
-            width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    height: auto;
+    width: 100%;
 }
 
 .cont .title {
-            text-align: center;
-            color: #369;
-            font-size: 32px;
-            margin-bottom: 10px;
+    text-align: center;
+    color: #369;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
 .cont hr {
-            margin: 0 auto;
-            max-width: 1000px;
-            text-align: justify;
-            height:2px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: justify;
+    height: 2px;
 }
 
-.cont h2,h1 {
-            margin: 0 auto;
-            max-width: 1000px;
-            text-align: justify;
+.cont h2,
+h1 {
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: justify;
 }
+
 .cont p {
-            padding-bottom: 10px;
-            margin: 0 auto;
-            max-width: 1000px;
-            text-align: justify;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-top: 20px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 20px;
 }
 
-.cont #tbl
-{
+.cont #tbl {
     margin: 0 auto;
     max-width: 1000px;
     text-align: left;
@@ -52,19 +53,19 @@
     border-collapse: collapse;
     border-spacing: 2px;
     border-color: gray;
-}  
+}
 
 .cont #tbl tbody {
     display: table-row-group;
     vertical-align: middle;
     border-color: inherit;
-}     
+}
 
 .cont #tbl tbody tr {
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
-} 
+}
 
 .cont #tbl tbody tr td {
     display: table-cell;
@@ -76,4 +77,3 @@
     column-width: fit-content;
     columns: fit-content;
 }
-

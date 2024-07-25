@@ -66,6 +66,7 @@
     .person .card {
         width: 50%;
     }
+
     .person {
         padding-left: 100px;
         margin-left: 0;
@@ -78,17 +79,23 @@
     .person .card {
         width: 90%;
     }
+
     .person {
         padding: 40px;
         margin-left: 0;
         margin-right: 0;
         height: 1600px;
     }
+
     .person .card .box {
-        transition: none; /* Remove transitions */
+        transition: none;
+        /* Remove transitions */
     }
+
     .person .card .box:hover {
-        margin-top: 2rem; /* Reset hover effect */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Reset box-shadow */
+        margin-top: 2rem;
+        /* Reset hover effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Reset box-shadow */
     }
 }

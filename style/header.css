@@ -90,9 +90,8 @@
   text-align: left;
 }
 
-.social
-{
-    text-align: right;
+.social {
+  text-align: right;
 }
 
 .top-header-icons-ul li a {
@@ -158,6 +157,7 @@
     padding: 0 10px 0 0;
     font-size: 13px;
   }
+
   .logo-header {
     width: 80%;
   }
@@ -167,7 +167,7 @@
   .contact {
     width: 100%;
   }
-  
+
   .logo-header {
     width: 100%;
   }
