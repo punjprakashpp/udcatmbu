@@ -55,10 +55,17 @@
             position: absolute;
             top: 20px;
             right: 35px;
-            color: #fff;
+            color: grey;
             font-size: 40px;
             font-weight: bold;
             transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            text-decoration: none;
             cursor: pointer;
         }
 

@@ -1,4 +1,18 @@
-﻿.lightbox {
+﻿#pdf-viewer {
+    width: 100%;
+    height: 80vh; /* Height adjusted for scrollable area */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdf-canvas {
+    margin-bottom: 5px; /* Space between pages */
+    width: inherit;
+}
+
+.lightbox {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -25,7 +39,7 @@
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #fff;
+    color: grey;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
@@ -33,23 +47,7 @@
 
 .close:hover,
 .close:focus {
-    color: #bbb;
+    color: red;
     text-decoration: none;
     cursor: pointer;
-}
-
-#pdf-viewer {
-    width: 100%;
-    height: 80vh;
-    /* Height adjusted for scrollable area */
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pdf-canvas {
-    margin-bottom: 20px;
-    /* Space between pages */
-    width: inherit;
 }

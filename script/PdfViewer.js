@@ -4,6 +4,25 @@
     const closeBtn = document.getElementsByClassName('close')[0];
     const openPdfLinks = document.querySelectorAll('.open-pdf, #openPdfLink');
 
+    // Auto-load PDF if URL is provided via data attribute on viewer
+    const initialUrl = viewer.getAttribute('data-url');
+    if (initialUrl) {
+        loadPdf(initialUrl);
+    }
+
+    openPdfLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const url = link.getAttribute('data-url') || viewer.getAttribute('data-url');
+            if (url) {
+                lightbox.style.display = "block";
+                loadPdf(url);
+            } else {
+                console.error('No PDF URL provided.');
+            }
+        });
+    });
+
     function loadPdf(url) {
         if (!url) {
             console.error('No PDF URL provided.');
@@ -40,19 +59,6 @@
         });
     }
 
-    openPdfLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const url = link.getAttribute('data-url') || viewer.getAttribute('data-url');
-            if (url) {
-                lightbox.style.display = "block";
-                loadPdf(url);
-            } else {
-                console.error('No PDF URL provided.');
-            }
-        });
-    });
-
     closeBtn.onclick = function () {
         lightbox.style.display = "none";
     };
@@ -62,10 +68,4 @@
             lightbox.style.display = "none";
         }
     };
-
-    // Auto-load PDF if URL is provided via data attribute on viewer
-    const initialUrl = viewer.getAttribute('data-url');
-    if (initialUrl) {
-        loadPdf(initialUrl);
-    }
 });

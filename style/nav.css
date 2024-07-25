@@ -126,8 +126,7 @@
         display: block;
         position: relative;
         top: 0;
-        left: 0;
-        width: 80%;
+        width: 90%;
         padding: 14px 16px;
         background-color: #001f44;
         text-align: center;
@@ -136,8 +135,15 @@
 
     .navbar.responsive .sidebar .cut {
         position: absolute;
-        top: 0;
-        right: 25px;
+        top: 15px;
+        right: 0px;
+    }
+    
+    .navbar.responsive .sidebar .cut:hover,
+    .navbar.responsive .sidebar .cut:focus {
+        color: red;
+        text-decoration: none;
+        cursor: pointer;
     }
 
     .navbar a:not(:first-child),
