@@ -44,3 +44,14 @@ label {
     text-align: center;
     margin-top: 10px;
 }
+
+
+@media screen and (max-width: 600px) {
+    .container{
+        width:90%;
+    }
+
+    table td {
+    padding: 9px;
+    }
+}

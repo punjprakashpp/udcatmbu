@@ -15,6 +15,7 @@
     <!--End-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../style/nav.css">
+    <link rel="stylesheet" type="text/css" href="../style/top.css">
     <link rel="stylesheet" type="text/css" href="../style/footer.css">
     <link rel="stylesheet" type="text/css" href="../style/header.css">
     <link rel="stylesheet" type="text/css" href="Styles/Styles.css" />
@@ -312,6 +313,17 @@
                         <asp:Label ID="lblVisitorCount" runat="server" ForeColor="Red" />
             </p>
         </div>
-    </footer>
+    </footer> 
+       
+    <div class="top-elements">
+        <button onclick="topFunction()" id="TopBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+        <script src="script/top.js"></script>
+        <div class="icon-bar">
+            <a href="https://www.linkedin.com/in/udcatmbu" class="linkedin" target="_blank"><i class="fa fa-linkedin " aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/udcatmbu" class="facebook" target="_blank"><i class="fa fa-facebook " aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/udcatmbu" class="instagram" target="_blank"><i class="fa fa-instagram " aria-hidden="true"></i></a>
+            <a href="https://x.com/udcatmbu" class="twitter" target="_blank"><i class="fa fa-twitter " aria-hidden="true"></i></a>
+        </div>
+    </div>
 </body>
 </html>

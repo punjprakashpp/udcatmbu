@@ -1,0 +1,103 @@
+﻿#TopBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 0px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#TopBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+/* Base styles for the icon bar */
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+  transition: right 0.3s;
+}
+
+.icon-bar:hover,
+.icon-bar:focus {
+  right: 0;
+  cursor: pointer;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #2c4762;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.instagram {
+  background: #f40083;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .icon-bar {
+    top: auto;
+    bottom: 0;
+    right: 0; /* Positioning the icon bar at the bottom */
+    left: 0;  /* Center the bar horizontally */
+    transform: none; /* No need to transform */
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: space-around;
+    transition: none; /* Remove the slide-out transition on mobile */
+  }
+
+  .icon-bar a {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .icon-bar a:hover {
+    right: 0; /* Override hover effect on mobile */
+  }
+
+  /* Add padding to the bottom of the body or main container to prevent content overlap */
+  body {
+    padding-bottom: 40px; /* Adjust based on the height of the icon bar */
+  }
+
+  #TopBtn{
+      bottom: 50px; /* Place the button at the bottom of the page */
+  }
+}
+

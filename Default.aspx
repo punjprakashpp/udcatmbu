@@ -6,8 +6,8 @@
     <link rel="stylesheet" type="text/css" href="style/slider.css" />
     <script type="text/javascript" src="script/jquery.js"></script>
     <!-- End WOWSlider.com HEAD section -->
-    <link rel="stylesheet" type="text/css" href="style/links.css">
     <link rel="stylesheet" type="text/css" href="style/top-sec.css">
+    <link rel="stylesheet" type="text/css" href="style/links.css">
     <link rel="stylesheet" type="text/css" href="style/mid-sec.css">
     <link rel="stylesheet" type="text/css" href="style/person.css">
     <link rel="stylesheet" type="text/css" href="style/down-sec.css">
@@ -16,6 +16,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section class="top-sec">
+        <div class="marquee-links">
+            <p class="high">Highlights: </p>
+            <marquee behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
+		        <asp:Repeater ID="linksRepeater" runat="server">
+                    <ItemTemplate>
+                        <a href='<%# Eval("LinkURL") %>' target=_blank><b><font size="3"><%# Eval("LinkText") %></font></b></a>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </marquee>
+        </div>
         <div class="slider">
                 <div id="wowslider-container">
                     <div class="ws_images">
@@ -86,14 +96,6 @@
         <script src="script/PdfViewer.js"></script>
     </section>
     <script type="text/javascript" src="script/tabs.js"></script>
-    <div class="marquee-links">
-        <marquee behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
-		<asp:Repeater ID="linksRepeater" runat="server">
-        <ItemTemplate>
-            <a href='<%# Eval("LinkURL") %>' target=_blank><b><font size="3"><%# Eval("LinkText") %></font></b></a>
-        </ItemTemplate>
-        </asp:Repeater></marquee>
-    </div>
     <div class="person">
         <div class="card">
             <a href="Chancellor.aspx">

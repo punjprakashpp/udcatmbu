@@ -1,32 +1,61 @@
+/* Style the container */
 .marquee-links {
-  width: 100%;
-  background: #f2f2f2;
-  height: 30px;
+    width: calc(90% + 30px); /* Set the container width to 90% of the parent element + 30px */
+    max-width: 100%; /* Ensure the container does not exceed the parent width */
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    height: 30px; /* Adjust height as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
 }
 
+/* Style the "HIGHLIGHT:" text */
+.marquee-links .high {
+    margin: 0;
+    margin-right: 10px;
+    font-weight: bold;
+    color: white; 
+    background-color: orangered;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 3px; /* Optional: to match container's rounded corners */
+}
+
+/* Style the marquee */
 .marquee-links marquee {
-  display: block;
+    flex: 1; /* Make the marquee take the remaining space */
+    white-space: nowrap; /* Prevent line breaks */
+    display: block; /* Ensure marquee is block-level */
 }
 
+/* Style the links inside the marquee */
 .marquee-links marquee a {
-  height: 100;
-  text-decoration: none;
-  margin-top: 2px;
-  padding: 5px;
-  color: #001f44;
+    text-decoration: none;
+    padding: 5px;
+    color: #001f44; /* Link color */
+    display: inline-flex; /* To align image and text nicely */
+    align-items: center;
 }
 
+/* Add an icon/image before the links */
 .marquee-links marquee a:before {
-  content: url('../img/gif/newanim.gif');
-  display: inline-block;
-  /* Ensures the image appears after the link */
-  margin-right: 5px;
-  /* Adjust as needed to add spacing between the link and image */
+    content: url('../img/gif/newanim.gif'); /* Path to image */
+    margin-right: 5px; /* Space between the image and link */
 }
 
+/* Hover state for the links */
 .marquee-links marquee a:hover {
-  text-decoration: underline;
-  background: #bababa;
-  font-size: 1.25em;
-  /* Increase font size on hover (adjust percentage as needed) */
+    text-decoration: underline; /* Underline on hover */
+    background: #bababa; /* Background color on hover */
+    font-size: 1.05em; /* Increase font size on hover */
+    transition: font-size 0.2s, background-color 0.2s; /* Smooth transition */
+}
+
+/* Additional styles for bold and font tags if necessary */
+.marquee-links b, .marquee-links font {
+    font-size: inherit; /* Ensure font size consistency */
 }

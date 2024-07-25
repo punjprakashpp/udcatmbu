@@ -3,85 +3,114 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
-    <link href="~/Admin/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta lang="en-in">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/nav.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="~/img/logo/logo-small.png" type="image" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
-        <div class="page">
-            <div class="header">
-                <div class="title">
-                    <h1><asp:Image ID="Image1" runat="server" Width="20" Height="20" ImageUrl="~/Admin/logo/logo.png" />&nbsp;UDCA TMBU WEBSITE MANAGEMENT PORTAL&nbsp;<asp:Image ID="Image2" runat="server" Width="20" Height="20" ImageUrl="~/Admin/logo/logo.png" /></h1>
-                </div>
-                <div class="clear hideSkiplink">
-                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu"
-                        EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal">
-                        <Items>
-                            <asp:MenuItem NavigateUrl="~/Admin/Default.aspx" Text="Dashboard" />
-                            <asp:MenuItem Text="Account" Value="Account">
-                                <asp:MenuItem NavigateUrl="~/Admin/ChangePassword.aspx" Text="Change Password" Value="Change Password"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/RegisterOtherUser.aspx" Text="Register Other Users" Value="Add Users"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/RemoveOtherUser.aspx" Text="Remove Other Users" Value="Remove Users"></asp:MenuItem>
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Add" Value="Add">
-                                <asp:MenuItem NavigateUrl="~/Admin/AddVideoLinks.aspx" Text="Video Links" Value="Video Links"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/AddHomeLinks.aspx" Text="Home Links" Value="Links"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/AddHomeButton.aspx" Text="Home Buttons" Value="Buttons"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/AddFaculty.aspx" Text="Faculty & Guest Faculty" Value="Faculty Member"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/AddStaff.aspx" Text="Office & Supporting Staff" Value="Office Staff"></asp:MenuItem>
-                                
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Update" Value="Update">
-                                <asp:MenuItem NavigateUrl="~/Admin/UpdateFeeStructure.aspx" Text="Fee Structure" Value="Fee Structure"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UpdateImportantDates.aspx" Text="Important dates" Value="Important dates"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UpdateCoursePDF.aspx" Text="Course Related PDF" Value="Course PDF"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UpdateAdministration.aspx" Text="Administration Detail" Value="Administration"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UpdateProfilePDF.aspx" Text="Administration Profile PDF" Value="Profile PDF"></asp:MenuItem>
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Upload" Value="Upload">
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadNotice.aspx" Text="Notice" Value="Notice"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadNews.aspx" Text="News" Value="News"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadTender.aspx" Text="Tender" Value="Tender"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadFiles.aspx" Text="Documents" Value="Documents"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadSliderImage.aspx" Text="Slider Image" Value="Slider Image"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadGalleryImage.aspx" Text="Gallery Image " Value="Gallery Image"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadNewspaper.aspx" Text="Newspaper Image" Value="Newspaper Image"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/UploadAffReg.aspx" Text="Affilations &amp; Regulations" Value="Affilations &amp; Regulations"></asp:MenuItem>
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Delete" Value="Delete">                                
-                                <asp:MenuItem NavigateUrl="~/Admin/DeleteGalleryImage.aspx" Text="Gallery Image" Value="Delete Gallery"></asp:MenuItem>                                
-                                <asp:MenuItem NavigateUrl="~/Admin/DeleteNewspaper.aspx" Text="Newspaper Image" Value="Delete Newspaper"></asp:MenuItem>                                
-                                <asp:MenuItem NavigateUrl="~/Admin/DeleteAlumni.aspx" Text="Registered Alumni" Value="Delete Alumni"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/DeleteFiles.aspx" Text="Uploaded Documents" Value="Documents"></asp:MenuItem>
-                            </asp:MenuItem>
-                            <asp:MenuItem Text="Manage" Value="Manage">
-                                <asp:MenuItem NavigateUrl="~/Admin/ManageHomeButton.aspx" Text="Home Button" Value="Home Button"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/ManageHomeLinks.aspx" Text="Home Links" Value="Home Links"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/ManageVideoLinks.aspx" Text="Video Links" Value="Video Links"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/ManageSliderImage.aspx" Text="Slider Image" Value="Slider Image"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/ManageNotice.aspx" Text="Notice" Value="Notice"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/ManageNews.aspx" Text="News" Value="News"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/ManageTender.aspx" Text="Tender" Value="Tender"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/ManageFaculty.aspx" Text="Faculty & Guest Faculty" Value="Faculty & Guest Faculty"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/ManageStaff.aspx" Text="Office & Suppoting Staff" Value="Office & Suppoting Staff"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Admin/ManageAffReg.aspx" Text="Affilations &amp; Regulations" Value="Affilations &amp; Regulations"></asp:MenuItem>
-                            </asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/Admin/Logout.aspx" Text="Log Out" Value="Log Out"></asp:MenuItem>
-                        </Items>
-                    </asp:Menu>
-                </div>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    <asp:Image ID="Image1" runat="server" class="logo-small" ImageUrl="logo/logo.png" />&nbsp;UDCA TMBU WEBSITE MANAGEMENT PORTAL&nbsp;<asp:Image ID="Image2" runat="server" class="logo-small" ImageUrl="logo/logo.png" /></h1>
             </div>
+            <div class="clear hideSkiplink">
+                <nav class="navbar" id="navbar">
+                    <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><i class="fa fa-bars"></i></a>
+                    <div class="subnav home-link">
+                        <a href="Default.aspx">Dashboard</a>
+                    </div>
+                    <div class="sidebar" id="sidebar">
+                        <img class="logo-nav" src="logo/logo-head.png" alt="logo-head" />
+                        <a href="javascript:void(0);" class="icon cut" id="close" onclick="toggleResponsive()"><i class="fa fa-close"></i></a>
+                        <div class="subnav">
+                            <button class="subnavbtn" onclick="toggleDropdown(this)">Account <i class="fa fa-caret-down"></i></button>
+                            <div class="subnav-content">
+                                <a href="ChangePassword.aspx">Change Password</a>
+                                <a href="RegisterOtherUser.aspx">Register Other Users</a>
+                                <a href="RemoveOtherUser.aspx">Remove Other Users</a>
+                            </div>
+                        </div>
+                        <div class="subnav">
+                            <button class="subnavbtn" onclick="toggleDropdown(this)">Add <i class="fa fa-caret-down"></i></button>
+                            <div class="subnav-content">
+                                <a href="AddVideoLinks.aspx">Video Links</a>
+                                <a href="AddHomeLinks.aspx">Home Links</a>
+                                <a href="AddHomeButton.aspx">Home Buttons</a>
+                                <a href="AddFaculty.aspx">Faculty & Guest Faculty</a>
+                                <a href="AddStaff.aspx">Office & Supporting Staff</a>
+                            </div>
+                        </div>
+                        <div class="subnav">
+                            <button class="subnavbtn" onclick="toggleDropdown(this)">Update <i class="fa fa-caret-down"></i></button>
+                            <div class="subnav-content">
+                                <a href="UpdateFeeStructure.aspx">Fee Structure</a>
+                                <a href="UpdateImportantDates.aspx">Important dates</a>
+                                <a href="UpdateCoursePDF.aspx">Course Related PDF</a>
+                                <a href="UpdateAdministration.aspx">Administration Detail</a>
+                                <a href="UpdateProfilePDF.aspx">Administration Profile PDF</a>
+                            </div>
+                        </div>
+                        <div class="subnav">
+                            <button class="subnavbtn" onclick="toggleDropdown(this)">Upload <i class="fa fa-caret-down"></i></button>
+                            <div class="subnav-content">
+                                <a href="UploadNotice.aspx">Notice</a>
+                                <a href="UploadNews.aspx">News</a>
+                                <a href="UploadTender.aspx">Tender</a>
+                                <a href="UploadFiles.aspx">Documents</a>
+                                <a href="UploadSliderImage.aspx">Slider Image</a>
+                                <a href="UploadGalleryImage.aspx">Gallery Image</a>
+                                <a href="UploadNewspaper.aspx">Newspaper Image</a>
+                                <a href="UploadAffReg.aspx">Affiliations & Regulations</a>
+                            </div>
+                        </div>
+                        <div class="subnav">
+                            <button class="subnavbtn" onclick="toggleDropdown(this)">Delete <i class="fa fa-caret-down"></i></button>
+                            <div class="subnav-content">
+                                <a href="DeleteGalleryImage.aspx">Gallery Image</a>
+                                <a href="DeleteNewspaper.aspx">Newspaper Image</a>
+                                <a href="DeleteAlumni.aspx">Registered Alumni</a>
+                                <a href="DeleteFiles.aspx">Uploaded Documents</a>
+                            </div>
+                        </div>
+                        <div class="subnav">
+                            <button class="subnavbtn" onclick="toggleDropdown(this)">Manage <i class="fa fa-caret-down"></i></button>
+                            <div class="subnav-content">
+                                <a href="ManageHomeButton.aspx">Home Button</a>
+                                <a href="ManageHomeLinks.aspx">Home Links</a>
+                                <a href="ManageVideoLinks.aspx">Video Links</a>
+                                <a href="ManageSliderImage.aspx">Slider Image</a>
+                                <a href="ManageNotice.aspx">Notice</a>
+                                <a href="ManageNews.aspx">News</a>
+                                <a href="ManageTender.aspx">Tender</a>
+                                <a href="ManageFaculty.aspx">Faculty & Guest Faculty</a>
+                                <a href="ManageStaff.aspx">Office & Supporting Staff</a>
+                                <a href="ManageAffReg.aspx">Affiliations & Regulations</a>
+                            </div>
+                        </div>
+                        <a href="Logout.aspx">Log Out</a>
+                    </div>
+                </nav>
+            </div>
+            <script type="text/javascript" src="Script/nav.js"></script>
+        </div>
+        <form runat="server">
             <div class="main">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </div>
             <div class="clear">
             </div>
-        </div>
+        </form>
         <div class="footer">
+            <hr />
             <h2><i>developed by</i> <u><b>Punj Prakash</b></u> for <i>University Department of Computer Applications</i></h2>
         </div>
-    </form>
+    </div>
 </body>
 </html>
