@@ -203,7 +203,7 @@
             <asp:Repeater ID="ButtonRepeater" runat="server">
                 <ItemTemplate>
                     <div class="panel">
-                        <a class="info-btn" href='<%# Eval("LinkURL") %>'>
+                        <a class="info-btn" href='<%# Eval("LinkURL") %>' target="_blank">
                             <img src="img/logo/logo-small.png" />
                             <p>&nbsp;<%# Eval("LinkText") %></p>
                         </a>

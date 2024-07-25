@@ -20,7 +20,7 @@
                 <h1>
                     <asp:Image ID="Image1" runat="server" class="logo-small" ImageUrl="logo/logo.png" />&nbsp;UDCA TMBU WEBSITE MANAGEMENT PORTAL&nbsp;<asp:Image ID="Image2" runat="server" class="logo-small" ImageUrl="logo/logo.png" /></h1>
             </div>
-            <div class="clear hideSkiplink">
+            <div class="clear hideSkiplink"><hr />
                 <nav class="navbar" id="navbar">
                     <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><i class="fa fa-bars"></i></a>
                     <div class="subnav home-link">
@@ -107,10 +107,14 @@
             <div class="clear">
             </div>
         </form>
-        <div class="footer">
-            <hr />
-            <h2><i>developed by</i> <u><b>Punj Prakash</b></u> for <i>University Department of Computer Applications</i></h2>
-        </div>
+        <footer>
+            <div class="footer-distributed">
+                <div class="footer-copyright">
+                    <hr />
+                    <p>Copyright &copy; 2024 UDCA TMBU | All Rights Reserved ! | <i>developed by</i> <u><b>Punj Prakash</b></u></p>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
