@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="style/mid-sec.css">
     <link rel="stylesheet" type="text/css" href="style/person.css">
     <link rel="stylesheet" type="text/css" href="style/down-sec.css">
-    <link rel="stylesheet" type="text/css" href="style/lightbox.css">
+    <link rel="stylesheet" type="text/css" href="style/PdfViewer.css">
     <title>UDCA | TMBU</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -83,7 +83,7 @@
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-        <script src="script/PdfViewerGrid.js"></script>
+        <script src="script/PdfViewer.js"></script>
     </section>
     <script type="text/javascript" src="script/tabs.js"></script>
     <div class="marquee-links">

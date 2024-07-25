@@ -92,6 +92,7 @@ public partial class _Default : System.Web.UI.Page
 
                         marqueeContent.Append("<div class='notice'>");
                         marqueeContent.AppendFormat("<strong>{0}:</strong> ", noticeDate.ToString("dd-MM-yyyy"));
+                        //marqueeContent.AppendFormat("<a href='{0}' target='_Blank'>{1}</a>", filePath, title);
                         marqueeContent.AppendFormat("<a href='#' class='open-pdf' data-url='{0}'>{1}</a>", filePath, title);
                         marqueeContent.Append("</div>");
                     }
@@ -123,6 +124,7 @@ public partial class _Default : System.Web.UI.Page
 
                         marqueeContent.Append("<div class='notice'>");
                         marqueeContent.AppendFormat("<strong>{0}:</strong> ", newsDate.ToString("dd-MM-yyyy"));
+                        //marqueeContent.AppendFormat("<a href='{0}' target='_Blank'>{1}</a>", filePath, title);
                         marqueeContent.AppendFormat("<a href='#' class='open-pdf' data-url='{0}'>{1}</a>", filePath, title);
                         marqueeContent.Append("</div>");
                     }
@@ -154,6 +156,7 @@ public partial class _Default : System.Web.UI.Page
 
                         marqueeContent.Append("<div class='notice'>");
                         marqueeContent.AppendFormat("<strong>{0}:</strong> ", tenderDate.ToString("dd-MM-yyyy"));
+                        //marqueeContent.AppendFormat("<a href='{0}' target='_Blank'>{1}</a>", filePath, title);
                         marqueeContent.AppendFormat("<a href='#' class='open-pdf' data-url='{0}'>{1}</a>", filePath, title);
                         marqueeContent.Append("</div>");
                     }

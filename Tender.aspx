@@ -5,9 +5,8 @@
     <link rel="stylesheet" href="style/table.css">
     <link rel="stylesheet" href="style/alumni.css">
     <link rel="stylesheet" href="style/download.css">
-    <link rel="stylesheet" href="style/lightbox.css">
-    <link rel="stylesheet" href="style/Syllabus.css">
-    <link rel="stylesheet" href="style/PdfViewerGrid.css">
+    <link rel="stylesheet" href="style/PdfViewer.css">
+    <link rel="stylesheet" href="style/syllabus.css">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -62,6 +61,6 @@
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-        <script src="script/PdfViewerGrid.js"></script>
+        <script src="script/PdfViewer.js"></script>
     </div>
 </asp:Content>

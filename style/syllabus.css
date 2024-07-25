@@ -18,20 +18,6 @@
     display: block;
 }
 
-#pdf-viewer {
-    width: 100%;
-    height: 80vh; /* Height adjusted for scrollable area */
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pdf-canvas {
-    margin-bottom: 20px; /* Space between pages */
-    width:inherit;
-}
-
 .my-h1 {
     text-align: center;
     padding: 20px 0;
