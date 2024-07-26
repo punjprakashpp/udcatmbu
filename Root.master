@@ -71,7 +71,6 @@
                     <a href="HowToReach.aspx"><i class="fa fa-map-marker"></i>How to Reach Here</a>
                     <a href="CampusMap.aspx"><i class="fa fa-map"></i>Campus Map</a>
                     <a href="ContactUs.aspx"><i class="fa fa-phone"></i>Contact Us</a>
-                    <a href="AboutDeveloper.aspx"><i class="fa fa-code"></i>About Developers</a>
                 </div>
             </div>
             <div class="subnav">
@@ -181,7 +180,6 @@
                 </div>
             </div>
             <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a>
-            <a href="Login.aspx"><i class="fa fa-sign-in"></i>Login</a>
         </div>
     </nav>
     <script src="script/nav.js"></script>
@@ -203,7 +201,7 @@
                     <b>Phone:</b> <a href="tel:0641250040">0641-250040</a><br />
                     <b>Website:</b> <a href="http://udcatmbu.org">udcatmbu.org</a><br>
                     <b>Email:</b> <a href="mailto:udcatmbu.bgp@gmail.com">udcatmbu.bgp@gmail.com</a><br>
-                    <a href="HowToReach.aspx">Click here to know How to Reach</a><br>
+                    <b>Click here for </b><a href="Login.aspx"><i class="fa fa-sign-in"></i> Administrator Login</a><br>
                 </p>
             </div>
             <div class="footer-center-left">
@@ -229,20 +227,16 @@
                 </ul>
             </div>
             <div class="footer-right">
+                <ul class="footer-links">
+                    <li><a href="AboutDeveloper.aspx">About Developers</a></li>
+                    <li><a href="https://udcalibrary.bsite.net/" target="new">UDCA Automated Library</a></li>
+                </ul>
                 <h2>Useful Websites</h2>
                 <ul class="footer-links">
                     <li><a href="https://swayam.gov.in/" target="new">SWAYAM Portal</a></li>
                     <li><a href="http://www.freshersworld.com/" target="new">Freshers World</a></li>
-                    <li><a href="https://internshala.com/" target="new">InternShala</a></li>
+                    <li><a href="https://internshala.com/" target="new">Intern Shala</a></li>
                 </ul>
-                <h2>View Website in </h2>
-                <div id="google_translate_element"></div>
-                <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-                    }
-                </script>
-                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             </div>
             <hr />
             <div class="footer-copyright">
