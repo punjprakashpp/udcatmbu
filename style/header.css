@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,300,700');
 
 /* Base styles */
 * {
@@ -8,81 +9,38 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.header-contacts {
-  font-size: 16px;
-  color: #666666;
+.header {  
   height: auto;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  float: left;
-  background: #001f44;
+  font-size: 16px;
+  color: #666666;
+}
+
+.contact { 
+  width:100%;
   display: block;
+  background: #001f44;
 }
 
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-
-.container:before,
-.container:after,
-.row:before,
-.row:after {
-  display: table;
-  content: " ";
-}
-
-.row {
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.contact {
+.contacts {
   width: 50%;
   float: left;
   position: relative;
   padding-right: 15px;
   padding-left: 15px;
+  background: #001f44;
+  text-align: center;
 }
 
-.top-header-icons {
-  height: auto;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  float: left;
-}
-
-.top-header-icons-ul {
+.icons-ul {
   height: auto;
   width: 100%;
   margin: 0;
   padding: 5px 0;
-  text-align: left;
+  text-align: center;
 }
 
-.top-header-icons-ul li {
+.icons-ul li {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -90,11 +48,7 @@
   text-align: left;
 }
 
-.social {
-  text-align: right;
-}
-
-.top-header-icons-ul li a {
+.icons-ul li a {
   height: auto;
   margin: 0;
   padding: 0 30px 0 0;
@@ -107,80 +61,57 @@
   background-color: transparent;
 }
 
-.top-header-icons-ul li a i {
+.icons-ul li a i {
   color: #fff;
   font-size: 14px;
   margin-right: 4px;
 }
 
 /* Header Brand Styles */
-.header-brand {
+.header .brand {
   height: auto;
   width: 100%;
   background: white;
   display: block;
-}
-
-.header-image {
-  display: block;
-  height: auto;
-  width: 100%;
-  background: white;
   text-align: center;
 }
 
-.logo-header {
+.header .image {
   display: inline;
   width: 60%;
 }
 
 /* Media Queries */
 @media only screen and (max-width: 1024px) {
-  .contact {
+  .contacts {
     width: 50%;
     text-align: center;
     padding-right: 0px;
     padding-left: 0px;
   }
 
-  .top-header-icons {
+  .icons-ul {
     text-align: center !important;
   }
 
-  .top-header-icons-ul {
-    text-align: center;
-  }
-
-  .top-header-icons-ul li a {
+  .icons-ul li a {
     float: none !important;
     text-align: center !important;
     padding: 0 10px 0 0;
     font-size: 13px;
   }
 
-  .logo-header {
+  .header .image {
     width: 80%;
   }
 }
 
 @media only screen and (max-width: 720px) {
-  .contact {
+  .contacts {
     width: 100%;
   }
 
-  .logo-header {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 452px) {
-  .logo-header {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 420px) {
-  .logo-header {
+  .header .image {
     width: 100%;
   }
 }

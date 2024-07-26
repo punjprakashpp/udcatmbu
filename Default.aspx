@@ -1,17 +1,11 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true"
-    CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <!-- Start WOWSlider.com HEAD section -->
-    <link rel="stylesheet" type="text/css" href="style/slider.css" />
-    <script type="text/javascript" src="script/jquery.js"></script>
-    <!-- End WOWSlider.com HEAD section -->
-    <link rel="stylesheet" type="text/css" href="style/top-sec.css">
-    <link rel="stylesheet" type="text/css" href="style/links.css">
-    <link rel="stylesheet" type="text/css" href="style/mid-sec.css">
+    <link rel="stylesheet" type="text/css" href="style/slider.css">
+    <link rel="stylesheet" type="text/css" href="style/section.css">
     <link rel="stylesheet" type="text/css" href="style/person.css">
-    <link rel="stylesheet" type="text/css" href="style/down-sec.css">
     <link rel="stylesheet" type="text/css" href="style/PdfViewer.css">
+    <script type="text/javascript" src="script/jquery.js"></script>
     <title>UDCA | TMBU</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -92,9 +86,9 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-        <script src="script/PdfViewer.js"></script>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+    <script src="script/PdfViewer.js"></script>
     <script type="text/javascript" src="script/tabs.js"></script>
     <div class="person">
         <div class="card">
