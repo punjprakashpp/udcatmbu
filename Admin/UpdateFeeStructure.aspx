@@ -2,12 +2,62 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Update Fee Structure</title>
-    <link rel="stylesheet" type="text/css" href="Styles/table.css" />
+    <style>
+        /* Base Styles */
+        .container {
+            max-width: 1200px; /* Set a max-width for better layout control on large screens */
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+            .container h2 {
+                font-size: 1.5rem; /* Use relative units for scalability */
+                margin: 0 0 1rem 0; /* Combine margin properties for shorthand */
+                text-align: center;
+            }
+
+            .container table {
+                width: 50%;
+                border-collapse: collapse;
+                margin-bottom: 1.5rem; /* Add space below the table */
+            }
+
+            .container th,
+            .container td {
+                border: 1px solid #ddd; /* Softer border color */
+                padding: 12px 15px; /* Increase padding for better spacing */
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            .container th {
+                background-color: #f9f9f9; /* Add background to table headers */
+                font-weight: bold;
+            }
+
+            .container td a {
+                text-decoration: none;
+                color: #007bff; /* Use a more visible link color */
+                font-weight: 500;
+            }
+
+                .container td a:hover {
+                    text-decoration: underline;
+                }
+
+        @media (max-width: 767px) {
+            .container table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 1.5rem; /* Add space below the table */
+            }
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <div>
+    <div class="container">
     <h2>Update Fee Structure</h2>
-    <table style="width: 50%;">
+    <table>
         <tr>
             <td>
                 <label for="ddlSemester">Semester:</label>

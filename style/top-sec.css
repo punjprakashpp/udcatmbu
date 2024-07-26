@@ -61,18 +61,20 @@
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 20px;
     border-radius: 10px 10px 0 0;
     width: -webkit-fill-available;
     text-align: center;
 }
 
 .tabs .tab-link:hover {
-    background-color: #ddd;
+    background: #55ACEE;
+    color: white;
 }
 
 .tabs .tab-link.active {
-    background-color: #ccc;
+    background: #5271FF;
+    color: white;
 }
 
 .tab-content {

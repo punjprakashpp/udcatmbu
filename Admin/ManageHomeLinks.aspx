@@ -3,10 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>Edit/Delete Marquee Links</title>
     <link rel="stylesheet" type="text/css" href="Styles/table.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="Script/table.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <div>
+    <div class="container">
         <h2>Manage Home Links</h2>
         <div class="search-bar">
             <label>

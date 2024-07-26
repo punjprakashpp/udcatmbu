@@ -1,11 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="ManageTender.aspx.cs" Inherits="Admin_pages_EditDeleteTender" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>Edit/Delete Tender</title>
     <link rel="stylesheet" type="text/css" href="Styles/table.css" />
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="Script/table.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $(".datepicker").datepicker({
@@ -15,13 +16,13 @@
     </script>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="container">
         <h2>Manage Tender</h2>
         <div class="search-bar">
             <label>
                 Tender Date:
-                <asp:TextBox ID="txtSearchDate" CssClass="datepicker textbox" runat="server" ></asp:TextBox>
+                <asp:TextBox ID="txtSearchDate" CssClass="datepicker textbox" runat="server"></asp:TextBox>
             </label>
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn" />
             <label>

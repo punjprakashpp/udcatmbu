@@ -37,9 +37,11 @@
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 20px;
     border-radius: 10px 10px 0 0;
     text-align: center;
+    background: #5271FF;
+    color: white;
 }
 
 .mid-sec .sec a {

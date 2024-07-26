@@ -2,7 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Delete Files</title>
-    <link rel="stylesheet" href="Styles/table.css">
+    <link rel="stylesheet" type="text/css" href="Styles/table.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="Script/table.js"></script>
     <style>
         .edit-delete-container {
             display: flex;
@@ -51,6 +53,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <div class="container">
     <center><h1>Delete Files</h1></center>
     <div class="edit-delete-container">
         <div class="form-row">
@@ -77,4 +80,5 @@
             <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
         </div>
     </div>
+        </div>
 </asp:Content>

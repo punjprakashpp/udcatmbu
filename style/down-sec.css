@@ -58,6 +58,7 @@
     /* Allow text to wrap */
     white-space: normal;
     /* Allow text to wrap to the next line */
+    background: #5271FF;
 }
 
 /* Hover effect for buttons */

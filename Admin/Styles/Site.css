@@ -11,7 +11,6 @@
 body {
   background: #b6b7bc;
   font-size: 0.8em;
-  font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
   color: #696969;
 }
 
@@ -64,7 +63,6 @@ h5, h6 {
   width: 960px;
   background: #fff;
   margin: 20px auto;
-  border: 1px solid #496077;
 }
 
 .header {
@@ -81,7 +79,6 @@ h5, h6 {
 
 .main {
   padding: 12px;
-  margin: 12px 8px;
   min-height: 420px;
 }
 
@@ -90,10 +87,6 @@ h5, h6 {
   margin: 12px 8px;
   width: 200px;
   min-height: 200px;
-}
-
-div.hideSkiplink {
-  background: #3a4f63;
 }
 
 fieldset {
@@ -125,10 +118,6 @@ input.textEntry, input.passwordEntry {
   border: 1px solid #ccc;
 }
 
-.clear {
-  clear: both;
-}
-
 .title {
   text-align: center;
 }
@@ -145,10 +134,6 @@ input.textEntry, input.passwordEntry {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-}
-
-.cen .data:hover {
-  transform: scale(1.02);
 }
 
 .cen ul {
@@ -189,6 +174,9 @@ input.textEntry, input.passwordEntry {
 
   .cen .data {
     margin-bottom: 15px;
+    font-size:medium;
+    text-align: left;
+    padding-left: 50px;
   }
 
   .cen ul {
@@ -320,31 +308,26 @@ input.textEntry, input.passwordEntry {
   }
 }
 
-.logo-small {
-  height: 20px;
-  width: 20px;
-}
-
-@media screen and (max-width: 600px) {
-  .logo-small {
-    height: 15px;
-    width: 15px;
-  }
-}
-
 .footer-distributed {
   background: #001f44;
   color: white;
   text-align: left;
-  padding: 5px;
+  padding: 0 20px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
 }
 
 .footer-copyright p {
   color: white;
   text-align: center;
-  margin-top: 10px;
-  font-size: 20px;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .footer-copyright p {
+        font-size:1em;
+    }
 }
 
 .my-h2 {
