@@ -3,25 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
     <title>About UDCA</title>
-    <style>
-        .cont p
-        {
-            font-size: 16px;
-            color: black;  /* Adjust text color as needed */
-            text-shadow: none;  /* Remove default shadow if needed */
-            transition: font-size 0.2s ease, text-shadow 0.2s ease;  /* Adjust transition speed and type */
-        }
-        .cont p:hover
-        {
-            font-size: 1.125em;  /* Increase font size on hover (adjust percentage as needed) */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);  /* Adjust shadow offset, blur, and color */
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="cont" align="center">
         <h1 class="title">UNIVERSITY DEPARTMENT OF COMPUTER APPLICATION</h1>
-        <h1 class="title">यूनिवर्सिटी डिपार्टमेंट ऑफ़ कम्प्यूटर एप्लीकेशन</h1>
         <img src="img/Dept/AdminBuilding.jpg" alt="tmbu" class="image"><br />
         <h3>Leading The Future</h3>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University Department of Computer Applications (UDCA) is a constituent unit of Tilka Manjhi Bhagalpur University, Bhagalpur, Bihar. It is formally known as COMPUTER CENTRE. This University Department of Computer Applications offers Master of Computer Applications (MCA) course. UDCA is Recognised By Govt. of Bihar and Approved By AICTE, New Delhi.</p>

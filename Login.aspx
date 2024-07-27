@@ -1,9 +1,97 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true"
-    CodeFile="Login.aspx.cs" Inherits="Login" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>User Login</title>
-    <link rel="stylesheet" type="text/css" href="style/login.css" />
+    <style>
+        /* Center the form on the page */
+        .bg {
+            width: 480px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+            /* Title */
+            .bg h2 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            /* Table styling */
+            .bg table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            .bg td {
+                padding: 10px;
+            }
+
+                .bg td:first-child {
+                    text-align: right;
+                    color: #666;
+                }
+
+                .bg td:last-child {
+                    text-align: left;
+                }
+
+            /* Textbox styling */
+            .bg input[type="text"],
+            input[type="password"] {
+                width: 100%;
+                padding: 8px;
+                margin: 5px 0;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            /* Button styling */
+            .bg .logbtn {
+                width: 100%;
+                padding: 10px;
+                background-color: #007bff;
+                border: none;
+                color: #fff;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 3px;
+                text-align: center;
+            }
+
+                .bg .logbtn:hover {
+                    background-color: #0056b3;
+                }
+
+            /* Error message styling */
+            .bg .erlbl {
+                display: block;
+                margin-top: 10px;
+                text-align: center;
+                color: red;
+            }
+
+            /* Validator styling */
+            .bg asp\:RequiredFieldValidator {
+                display: block;
+                margin-top: 5px;
+                font-size: 12px;
+                color: red;
+            }
+
+        @media (max-width: 768px) {
+            .bg {
+                width: 90%;
+                margin: 20px;
+                padding: 10px;
+            }
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="bg">
@@ -33,12 +121,12 @@
                 <td>
                 </td>
                 <td>
-                    <asp:Button ID="btnLogin" runat="server" Text="Login" CSS class="logbtn" OnClick="btnLogin_Click" />
+                    <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="logbtn" OnClick="btnLogin_Click" />
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:Label ID="lblMessage" runat="server" CSS class="erlbl" ForeColor="Red"></asp:Label>
+                    <asp:Label ID="lblMessage" runat="server" CssClass="erlbl" ForeColor="Red"></asp:Label>
                 </td>
             </tr>
         </table>

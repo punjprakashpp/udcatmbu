@@ -21,15 +21,18 @@
             </marquee>
         </div>
         <div class="slider">
-                <div id="wowslider-container">
-                    <div class="ws_images">
-                        <ul>
-                            <asp:Repeater ID="SliderRepeater" runat="server"><ItemTemplate>
-                                <li><img src="<%# Eval("ImagePath") %>" title="<%# Eval("Title") %>" /></li>
-                            </ItemTemplate></asp:Repeater>
-                        </ul>
-                    </div>
+            <div id="wowslider-container">
+                <div class="ws_images">
+                    <ul>
+                        <asp:Repeater ID="SliderRepeater" runat="server">
+                            <ItemTemplate>
+                                <li>
+                                    <img src="<%# Eval("ImagePath") %>" title="<%# Eval("Title") %>" /></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </ul>
                 </div>
+            </div>
             <script type="text/javascript" src="script/wowslider.js"></script>
             <script type="text/javascript" src="script/slider.js"></script>
         </div>
@@ -141,54 +144,40 @@
     <div class="mid-sec">
         <div class="sec">
             <div class="labels">
-                <p class="label-text">
-                    Director's Message
-                </p>
+                <p class="label-text">Director's Message</p>
             </div>
             <br />
             <p>
                 Welcome to University Department of Computer Applications(UDCA),a young, elite department
                 with a world-class reputation, global outlook, innovative spirit. It is my real
                 pleasure to introduce you to the department. Department strives to offer its student
-                the best administrative component of there academic career
+                the best administrative component of there academic career .......
             </p>
-            <p style="text-align: right;">
-                <a href="Director.aspx">Read More...</a>
-            </p>
+            <p style="text-align: right;"><a href="Director.aspx">Read More...</a></p>
         </div>
         <div class="sec">
             <div class="labels">
-                <p class="label-text">
-                    About UDCA
-                </p>
+                <p class="label-text">About UDCA</p>
             </div>
             <br />
             <p>
                 University Department of Computer Applications (UDCA) is a constituent unit of Tilka
                 Manjhi Bhagalpur University, Bhagalpur, Bihar. It is formally known as COMPUTER
                 CENTRE. This University Department of Computer Applications offers Master of Computer
-                Applications course. UDCA is Recognised By Govt. of Bihar and Approved By AICTE,
-                New Delhi.
+                Applications course. UDCA is Recognised by .......
             </p>
-            <p style="text-align: right;">
-                <a href="AboutUDCA.aspx">Read More...</a>
-            </p>
+            <p style="text-align: right;"><a href="AboutUDCA.aspx">Read More...</a></p>
         </div>
         <div class="sec">
             <div class="labels">
-                <p class="label-text">
-                    Key Features of UDCA
-                </p>
+                <p class="label-text">Key Features of UDCA</p>
             </div>
             <br />
             <ul>
                 <li>UDCA is a constituent unit of T.M.Bhagalpur University, Bhagalpur.</li>
-                <li>TMBU is the first University in Bihar to offers 3 years (six semesters) full time
-                    MCA course.</li>
+                <li>TMBU is the first University in Bihar to offers 3 years (six semesters) full time MCA course.</li>
                 <li>The UDCA campus is spread over 2.5 acrs.</li>
-                <li>The campus is situated between University Administrative Building and NH-80 at 1/2
-                    km from equi distance.</li>
-                <li>Fully Wi-fi campus.</li>
+                <li>The campus is situated between University Administrative Building and NH-80 at 1/2 km from equi distance.</li>
             </ul>
         </div>
     </div>

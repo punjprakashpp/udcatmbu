@@ -1,56 +1,11 @@
 ﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-<title>Attendance Protocol</title>
-    <style>
-        #content {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
-        #content .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: background-color 0.3s ease;
-        }
-        #content .container:hover {
-            background-color: #f9f9f9;
-        }
-        #content h1 {
-            text-align: center;
-            color: #fff;
-            font-size: 36px;
-            font-weight: bold;
-            padding: 20px;
-            background-image: linear-gradient(to right, #4A90E2, #36D1DC);
-            border-radius: 10px 10px 0 0;
-            margin-top: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        #content .points {
-            margin-left: 20px;
-            color: #666;
-        }
-        #content .point {
-            margin-bottom: 10px;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 5px;
-        }
-        #content .point:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <title>Attendance Protocol</title>
+    <link rel="stylesheet" type="text/css" href="style/campus.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<div id="content">
+<div class="content">
     <div class="container">
         <h1>Attendance Protocol</h1>
         <div class="points">

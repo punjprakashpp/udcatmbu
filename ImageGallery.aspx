@@ -3,23 +3,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Image Gallery | UDCA</title>
-    <link rel="stylesheet" href="style/video.css">
+    <link rel="stylesheet" href="style/gallery.css">
     <style>
-        .video {
-            flex: 1 1 calc(33.33% - 40px);
-            margin: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: #fff;
-        }
-        
-        @media (max-width: 768px) {
-            .video {
-                flex: 1 1 100%;
-            }
-        }
-
         /* Modal styles */
         .modal {
             display: none;
@@ -94,24 +79,16 @@
         .prev:hover, .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
-
-        .thumb {
-            width: -webkit-fill-available;
-            height: -webkit-fill-available;
-        }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <h1 style="text-align: center; padding: 20px 0; background-color: #369; color: white;
-        font-size: 1.8em; font-weight: bold; text-align: center; text-transform: uppercase;
-        margin-top: 20px; margin-bottom: 20px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-        Image Gallery</h1>
+    <h1 class="my-h1">Image Gallery</h1>
     <div class="cont">
         <asp:Repeater ID="GalleryRepeater" runat="server">
             <ItemTemplate>
                 <div class="gallery video" width="600" height="400px">
-                    <a class="openModal" href="#" data-Title='<%# Eval("Title") %>' data-index='<%# Container.ItemIndex %>'>
+                    <a class="openModal" href="#" data-title='<%# Eval("Title") %>' data-index='<%# Container.ItemIndex %>'>
                         <img class="thumb" src='<%# Eval("ImagePath") %>' alt='<%# Eval("Title") %>' width="600" height="400">
                     </a>
                     <div class="desc">

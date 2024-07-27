@@ -2,9 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Vice Chancellor</title>
-    <link rel="stylesheet" type="text/css" href="style/syllabus.css">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
-    <link rel="stylesheet" type="text/css" href="style/adm.css">
     <link rel="stylesheet" type="text/css" href="style/PdfViewer.css">
 </asp:Content>
 

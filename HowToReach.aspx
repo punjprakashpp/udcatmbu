@@ -10,19 +10,6 @@
             }
         }
     </style>
-    <style>
-        .cont p {
-            font-size: 16px;
-            color: black; /* Adjust text color as needed */
-            text-shadow: none; /* Remove default shadow if needed */
-            transition: font-size 0.2s ease, text-shadow 0.2s ease; /* Adjust transition speed and type */
-        }
-
-            .cont p:hover {
-                font-size: 1.125em; /* Increase font size on hover (adjust percentage as needed) */
-                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adjust shadow offset, blur, and color */
-            }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="cont" align="center">

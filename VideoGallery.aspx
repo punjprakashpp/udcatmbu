@@ -2,10 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Video Gallery | UDCA</title>
-    <link rel="stylesheet" href="style/video.css">
+    <link rel="stylesheet" href="style/gallery.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <h1 style="text-align: center; padding: 20px 0; background-color: #369; color: white; font-size: 1.8em; font-weight: bold; text-align: center; text-transform: uppercase; margin-top: 20px; margin-bottom: 20px; border-top-left-radius: 10px; border-top-right-radius: 10px;">Video Gallery</h1>
+    <h1 class="my-h1">Video Gallery</h1>
     <div class="cont">
         <asp:Repeater ID="linksRepeater" runat="server">
             <ItemTemplate>
@@ -17,4 +17,3 @@
         </asp:Repeater>
     </div>
 </asp:Content>
-

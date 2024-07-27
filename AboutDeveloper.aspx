@@ -21,13 +21,13 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
+        .cont h1 {
             font-size: 2em;
             color: #444;
             margin-bottom: 20px;
         }
 
-        .dev {
+        .cont .dev {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -60,9 +60,9 @@
             text-decoration: none;
         }
 
-            .dev a:hover {
-                text-decoration: underline;
-            }
+        .dev a:hover {
+            text-decoration: underline;
+        }
 
         /* CSS to show all .dev elements in one line */
         .cont > .dev {

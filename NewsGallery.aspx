@@ -3,50 +3,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>News Gallery | UDCA</title>
-    <link rel="stylesheet" href="style/video.css">
+    <link rel="stylesheet" href="style/gallery.css">
     <style>
-        .video
-        {
-            flex: 1 1 calc(20% - 40px);
-            margin: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: #fff;
-        }
-        
-        @media (max-width: 768px)
-        {
-            .video
-            {
-                flex: 1 1 100%;
-            }
-        }
-        div.gallery
-        {
-            margin: 5px;
-            border: 1px solid #ccc;
-            float: left;
-            width: 180px;
-        }
-        
-        div.gallery:hover
-        {
-            border: 1px solid #777;
-        }
-        
-        div.gallery img
-        {
-            width: 100%;
-            height: auto;
-        }
-        
-        div.desc
-        {
-            padding: 15px;
-            text-align: center;
-        }
-        
         #lightbox
         {
             display: none; /* Hidden by default */
@@ -103,16 +61,13 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <h1 style="text-align: center; padding: 20px 0; background-color: #369; color: white;
-        font-size: 1.8em; font-weight: bold; text-align: center; text-transform: uppercase;
-        margin-top: 20px; margin-bottom: 20px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-        News Gallery</h1>
+    <h1 class="my-h1">News Gallery</h1>
     <div class="cont">
         <asp:Repeater ID="NewsRepeater" runat="server">
             <ItemTemplate>
                 <div class="gallery video">
                     <a href="#lightbox" onclick="displayImage('<%# Eval("ImagePath") %>')">
-                        <img src='<%# Eval("ImagePath") %>' alt="Cinque Terre" width="600" height="400">
+                        <img class="thumb" src='<%# Eval("ImagePath") %>' alt="Cinque Terre" width="600" height="400">
                     </a>
                     <div class="desc">
                         <h2>

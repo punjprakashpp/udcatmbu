@@ -3,25 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
     <title>About TMBU</title>
-    <style>
-        .cont p {
-            font-size: 16px;
-            color: black; /* Adjust text color as needed */
-            text-shadow: none; /* Remove default shadow if needed */
-            transition: font-size 0.2s ease, text-shadow 0.2s ease; /* Adjust transition speed and type */
-        }
-
-            .cont p:hover {
-                font-size: 1.125em; /* Increase font size on hover (adjust percentage as needed) */
-                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adjust shadow offset, blur, and color */
-            }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="cont" align="center">
         <a href="http://tmbuniv.ac.in/" target="_blank" style="text-decoration: none;">
             <h1 class="title">TILKA MANJHI BHAGALPUR UNIVERSITY</h1>
-            <h1 class="title">तिलका मांझी भागलपुर विश्वविद्यालय</h1>
             <img src="img/Dept/tmbu.jpg" alt="tmbu" class="image"></a><br />
         <h2 align="left">Establishment:</h2>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Tilka Manjhi Bhagalpur University, also known as Bhagalpur University, is a premier institution for providing higher education in the state of Bihar. The university is situated in Bhagalpur town of Bihar State in India and is named after famous freedom fighter Tilka Manjhi. Established on 12 July 1960, it is a public university sprawled within 264 acres of lush green campus ideal for teaching and learning. The university has 9 Faculties, 36 Teaching Departments, 5 Research Centres and 30 Constituent Colleges, besides affiliated to it 24 Colleges and 15 B.Ed. Colleges.</p>

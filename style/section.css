@@ -245,14 +245,13 @@
         width: 45%;
         height: 420px;
         display: inline-block;
-        margin: inherit;
     }
 }
 
 @media screen and (max-width: 768px) {
     .mid-sec .sec {
         height: auto;
-        width: 100%;
+        width: 95%;
         margin-bottom: 5px;
     }
 

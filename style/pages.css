@@ -7,73 +7,115 @@
 
 .cont .image {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     max-width: 1000px;
-    height: auto;
     width: 100%;
+    height: auto;
+}
+
+.cont .title,
+.cont h2,
+.cont h1 {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
 }
 
 .cont .title {
-    text-align: center;
     color: #369;
     font-size: 32px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .cont hr {
-    margin: 0 auto;
     max-width: 1000px;
-    text-align: justify;
+    margin: 0 auto;
     height: 2px;
 }
 
-.cont h2,
-h1 {
-    margin: 0 auto;
+.cont p {
     max-width: 1000px;
+    margin: 20px auto;
+    font-size: 16px;
+    color: black;
     text-align: justify;
+    transition: font-size 0.2s ease, text-shadow 0.2s ease;
 }
 
-.cont p {
-    padding-bottom: 10px;
-    margin: 0 auto;
-    max-width: 1000px;
-    text-align: justify;
-    font-size: 16px;
-    line-height: 1.6;
-    margin-top: 20px;
+.cont p:hover {
+    font-size: 1.125em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .cont #tbl {
-    margin: 0 auto;
     max-width: 1000px;
-    text-align: left;
-    display: table;
+    margin: 0 auto;
     border-collapse: collapse;
-    border-spacing: 2px;
-    border-color: gray;
+    text-align: left;
 }
 
-.cont #tbl tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
-}
-
-.cont #tbl tbody tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-
-.cont #tbl tbody tr td {
-    display: table-cell;
-    vertical-align: inherit;
-    font-size: 1em;
+.cont #tbl td {
     border: 1px solid #a5baff;
-    padding: 3px 7px 2px 7px;
+    padding: 3px 7px;
     word-wrap: break-word;
-    column-width: fit-content;
-    columns: fit-content;
+}
+
+.dev {
+    border: solid;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.dev-img,
+.dev-des {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+}
+
+.dev-img {
+    width: 30%;
+}
+
+.dev-des {
+    width: 60%;
+}
+
+.dev-img a {
+    text-decoration: none;
+}
+
+.dev-img a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1320px) {
+    .dev-img,
+    .dev-des {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dev-img {
+        width: 40%;
+    }
+
+    .dev-des {
+        width: 80%;
+    }
+}
+
+@media (max-width: 540px) {
+    .dev {
+        width: 100%;
+    }
+
+    .dev-img,
+    .dev-des {
+        display: block;
+        width: 90%;
+        text-align: center;
+    }
 }

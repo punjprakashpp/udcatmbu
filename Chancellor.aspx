@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>About Chancellor</title>
     <link rel="stylesheet" type="text/css" href="style/pages.css">
-    <link rel="stylesheet" type="text/css" href="style/adm.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="cont" align="center">
