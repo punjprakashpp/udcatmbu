@@ -183,14 +183,15 @@
     <footer>
         <div class="footer">
             <div class="footer-left">
-                <span><a href="Default.aspx"><img src="img/logo/logo-head.png" alt="logo-head"></a></span>
+                <a href="Default.aspx">
+                <h2><img src="img/logo/logo-head.png" alt="logo-head"></h2></a><hr />
                 <p>
                     <b>Location: </b><a href="https://maps.app.goo.gl/Zv7E8aFZ3hYQ1ZMf6" target="_blank">Computer Center,</a>
-                    &nbsp;TMBU,<br />&nbsp;Bhagalpur, Bihar, 812007, India<br />
+                    &nbsp;TMBU, Bhagalpur, Bihar, 812007<br />
                     <b>Phone: </b><a href="tel:0641250040">0641-250040</a><br />
                     <b>Website: </b><a href="http://udcatmbu.org">udcatmbu.org</a><br>
                     <b>Email: </b><a href="mailto:udcatmbu.bgp@gmail.com">udcatmbu.bgp@gmail.com</a><br>
-                    <b>Click here for </b><a href="Login.aspx"><i class="fa fa-sign-in"></i> Administrator Login</a><br>
+                    <b>Click here for </b><a href="Login.aspx"><i class="fa fa-sign-in"></i> Admin Login</a><br>
                 </p>
             </div>
             <div class="footer-center">

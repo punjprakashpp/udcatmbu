@@ -12,7 +12,6 @@
             <div class="dev-img" align="left">
                 <asp:Image ID="imgPerson" runat="server" /><br /><br />
                 <h2 align="center" style="color:Red;"><asp:Label ID="lblName" runat="server" /></h2>
-                <h3 >Registrar of <b>TMBU</b></h3>
                 <p>Phone No.:&nbsp;&nbsp;<b>+91 9534675123</b><br />E-Mail Id.:<b><a href="mailto:registrar@tmbuniv.ac.in" target="_blank">registrar@tmbuniv.ac.in</a></b></p>
                 <h5 align="left">To know more about Registrar <a href="#" id="openPdfLink">Click here</a></h5>
             </div> 

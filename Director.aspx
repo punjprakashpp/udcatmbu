@@ -12,7 +12,6 @@
             <div class="dev-img" align="left">
                 <asp:Image ID="imgPerson" runat="server" /><br /><br />
                 <h2 align="center" style="color:Red;"><asp:Label ID="lblName" runat="server" /></h2>
-                <h3 >Director of <b>UDCA</b></h3>
                 <p>Phone No.:&nbsp;&nbsp;<b>+91 6412501290</b><br />E-Mail Id.:<b><a href="mailto:director_udca@tmbuniv.ac.in" target="_blank">director_udca@tmbuniv.ac.in</a></b></p>
                 <h5 align="left">To know more about Director <a href="#" id="openPdfLink">Click here</a></h5>
             </div> 

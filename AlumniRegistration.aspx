@@ -19,19 +19,29 @@
             max-width: 720px;
         }
 
-        .cont h2 {
+        .cont .center {
+            color: white; 
+            text-align:center;
+            background-color: #001f44;
+        }
+
+        .cont .center img {
+            width: 80px;
+        }
+
+        .cont .center h2 {
             color:white;
-            margin-bottom: 20px;
+            padding:0;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="cont">
         <div class="container">
-            <center style="color: white; background-color: #001f44;">
-            <img src="../img/other/white.png" style="width:100px;" />
-            <h2>Alumni Registration</h2>
-        </center>
+            <div class="center">
+                <img src="img/other/white.png"/>
+                <h2>Alumni Registration</h2>
+            </div>
             <table>
                 <tr>
                     <td></td>

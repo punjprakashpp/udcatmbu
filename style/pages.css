@@ -105,6 +105,15 @@
     .dev-des {
         width: 80%;
     }
+    .dev-img h2,
+    .dev-img h4,
+    .dev-img h5,
+    .dev-img p {
+        text-align:center;
+    }
+    .dev-des h2 {
+        text-align:center;
+    }
 }
 
 @media (max-width: 540px) {

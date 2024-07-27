@@ -13,7 +13,6 @@
             <div class="dev-img" align="left">
                 <asp:Image ID="imgPerson" runat="server" /><br /><br />
                 <h2 align="center" style="color:Red;"><asp:Label ID="lblName" runat="server" /></h2>
-                <h3>Vice-Chancellor of <b>TMBU</b></h3>
                 <p>Phone No.:&nbsp;&nbsp;<b>0641-2620100</b><br />E-Mail Id.:<b><a href="mailto:vc@tmbuniv.ac.in" target="_blank">vc@tmbuniv.ac.in</a></b></p>
                 <h5 align="left">To know more about VC <a href="#" id="openPdfLink">Click here</a></h5>
             </div> 
