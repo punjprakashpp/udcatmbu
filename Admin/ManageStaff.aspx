@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="ManageStaff.aspx.cs" Inherits="Admin_pages_EditFaculty" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Edit/Delete Faculty</title>
-    <link rel="stylesheet" href="Styles/managefaculty.css">
+    <title>Edit/Delete Staff</title>
+    <link rel="stylesheet" href="Styles/manage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Manage Administration Person</title>
+    <link rel="stylesheet" href="Styles/manage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet"/>
@@ -12,113 +13,10 @@
             position: relative;
             overflow: hidden;
         }
-
-        /* Table Styles */
-        table {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-
-        table td {
-            padding: 10px;
-            vertical-align: top;
-            font-size:16px;
-        }
-
-        table td:first-child {
-            width: 30%;
-            font-weight: bold;
-            color: #555;
-        }
-
-        /* Input and Button Styles */
-        input[type="text"], select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin-top: 6px;
-            margin-bottom: 16px;
-            resize: vertical;
-        }
-
-        input[type="file"] {
-            padding: 6px 12px;
-        }
-
-        button, input[type="button"], input[type="submit"] {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-align: center;
-            display: inline-block;
-        }
-
-        button:hover, input[type="button"]:hover, input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        /* Image and Cropper Styles */
-        .my-img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .cropper-container {
-            width: 300px;
-            height: 300px;
-            position: relative;
-            overflow: hidden;
-            margin: 20px auto;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        #currentImage {
-            display: block;
-            margin: 20px auto;
-            max-width: 225px;
-            max-height: 225px;
-            border: 1px solid #ddd;
-            padding: 5px;
-            border-radius: 4px;
-        }
-
-        #cropperContainer {
-            display: none;
-        }
-
-        #cropperImage {
-            max-width: 100%;
-        }
-
-        #btnCrop {
-            margin-top: 10px;
-        }
-
-        /* Error Message Styles */
-        .error-message {
-            color: red;
-            font-weight: bold;
-        }
-
-        /* Hidden Field Styles */
-        .hidden {
-            display: none;
-        }
     </style>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <div>
+    <div class="container">
         <h2>Update Administration Person</h2>
         <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Text=""></asp:Label>
         <asp:HiddenField ID="hfPersonID" runat="server" />
@@ -159,7 +57,8 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td>&nbsp;</td>
+                <td>
                     <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
                 </td>
             </tr>

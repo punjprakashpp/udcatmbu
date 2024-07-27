@@ -1,11 +1,11 @@
 ﻿/* Center the form on the page */
 .bg {
-    width: 480px;
+    max-width: 500px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -35,18 +35,22 @@
     text-align: left;
 }
 
-/* Textbox and Dropdown styling */
-.bg input[type="text"], input[type="password"], select {
+/* Input styling */
+.bg input[type="text"],
+.bg input[type="password"],
+.bg select {
     width: 100%;
     padding: 8px;
     margin: 5px 0;
-    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
 /* Button styling */
-.bg asp\:Button {
+.bg asp\:Button,
+input[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -58,30 +62,33 @@
     text-align: center;
 }
 
-.bg asp\:Button:hover {
+.bg asp\:Button:hover,
+input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
 /* Error message styling */
-.bg asp\:Label {
+.bg asp\:Label,
+.bg asp\:RequiredFieldValidator,
+.bg asp\:CompareValidator,
+.bg asp\:RegularExpressionValidator,
+span.error {
     display: block;
     margin-top: 10px;
     text-align: center;
-    color: red;
+    color: #ff0000;
+    font-size: 14px;
 }
 
-/* Validator styling */
-.bg asp\:RequiredFieldValidator,
-.bg asp\:RegularExpressionValidator {
-    display: block;
-    margin-top: 5px;
-    font-size: 12px;
-    color: red;
+/* Success message styling */
+span.success {
+    color: #28a745;
 }
 
-
+/* Responsive styling */
 @media screen and (max-width: 600px) {
-    .bg{
-        width:auto;
+    .bg {
+        width: auto;
+        padding: 15px;
     }
 }

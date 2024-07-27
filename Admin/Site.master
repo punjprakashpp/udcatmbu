@@ -39,9 +39,9 @@
                             <div class="subnav">
                                 <button class="subnavbtn" onclick="toggleDropdown(this)">Add <i class="fa fa-caret-down"></i></button>
                                 <div class="subnav-content">
+                                    <a href="AddHomeButton.aspx">Buttons</a>
                                     <a href="AddVideoLinks.aspx">Video Links</a>
-                                    <a href="AddHomeLinks.aspx">Home Links</a>
-                                    <a href="AddHomeButton.aspx">Home Buttons</a>
+                                    <a href="AddHomeLinks.aspx">Highlights Links</a>
                                     <a href="AddFaculty.aspx">Faculty & Guest Faculty</a>
                                     <a href="AddStaff.aspx">Office & Supporting Staff</a>
                                 </div>

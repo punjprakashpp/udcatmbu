@@ -3,6 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>Update Fee Structure</title>
+    <link rel="stylesheet" href="Styles/manage.css">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -13,59 +14,7 @@
             });
         });
     </script>
-    <style>
-        /* Base Styles */
-        .container {
-            max-width: 1200px; /* Set a max-width for better layout control on large screens */
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-            .container h2 {
-                font-size: 1.5rem; /* Use relative units for scalability */
-                margin: 0 0 1rem 0; /* Combine margin properties for shorthand */
-                text-align: center;
-            }
-
-            .container table {
-                width: 50%;
-                border-collapse: collapse;
-                margin-bottom: 1.5rem; /* Add space below the table */
-            }
-
-            .container th,
-            .container td {
-                border: 1px solid #ddd; /* Softer border color */
-                padding: 12px 15px; /* Increase padding for better spacing */
-                font-size: 1rem;
-                text-align: left;
-            }
-
-            .container th {
-                background-color: #f9f9f9; /* Add background to table headers */
-                font-weight: bold;
-            }
-
-            .container td a {
-                text-decoration: none;
-                color: #007bff; /* Use a more visible link color */
-                font-weight: 500;
-            }
-
-                .container td a:hover {
-                    text-decoration: underline;
-                }
-
-        @media (max-width: 767px) {
-            .container table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-bottom: 1.5rem; /* Add space below the table */
-            }
-        }
-    </style>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="container">
         <h2>Update Important Dates</h2>
@@ -159,8 +108,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
+                <td>&nbsp;</td>
                 <td>
                     <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
                 </td>
@@ -169,8 +117,7 @@
                 <td>
                     <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
                 </td>
-                <td>
-                </td>
+                <td></td>
             </tr>
         </table>
     </div>

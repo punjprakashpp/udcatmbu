@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Add Slider image</title>
-    <link rel="stylesheet" href="Styles/managefaculty.css">
+    <link rel="stylesheet" href="Styles/manage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -15,14 +15,15 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="container">
         <h2>Upload Slider image</h2>
         <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
         <table>
             <tr>
                 <td>Image Description:</td>
-                <td><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
+                <td>
+                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Slider Image:</td>
@@ -32,15 +33,17 @@
                     <div>
                         <asp:HiddenField ID="imagePreviewBase64" runat="server" />
                         <div id="cropperContainer" class="cropper-container" style="display: none;">
-                            <img id="cropperImage" src="#" alt="Image for cropping"/>
+                            <img id="cropperImage" src="#" alt="Image for cropping" />
                         </div>
-                        <asp:Button ID="btnCrop" runat="server" Text="Crop" OnClientClick="return cropImage();" style="display: none;" />
+                        <asp:Button ID="btnCrop" runat="server" Text="Crop" OnClientClick="return cropImage();" Style="display: none;" />
                     </div>
                 </td>
             </tr>
             <tr>
-                <td><asp:Button ID="btnEdit" runat="server" Text="Manage" OnClick="btnEdit_Click" /></td>
-                <td><asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" /></td>
+                <td>
+                    <asp:Button ID="btnEdit" runat="server" Text="Manage" OnClick="btnEdit_Click" /></td>
+                <td>
+                    <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" /></td>
             </tr>
         </table>
     </div>

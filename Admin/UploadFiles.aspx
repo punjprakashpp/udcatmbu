@@ -2,8 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>File Upload</title>
-    <link rel="stylesheet" type="text/css" href="Styles/upload.css" />
-    <link rel="stylesheet" type="text/css" href="Styles/managefaculty.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/manage.css" />
     <script type="text/javascript">
         function toggleSessionDropdown() {
             var ddlSemester = document.getElementById('<%= ddlSemester.ClientID %>');
@@ -29,7 +28,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <div class="cont">
+    <div class="container">
         <h2>Upload File</h2>
         <table class="upload-table">
             <tr>
@@ -65,7 +64,7 @@
                 <td></td>
                 <td colspan="2">
                     <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnDelete" runat="server" Text="Delete Files" OnClick="btnDelete_Click" />
                 </td>
             </tr>
@@ -78,5 +77,3 @@
         </table>
     </div>
 </asp:Content>
-
-

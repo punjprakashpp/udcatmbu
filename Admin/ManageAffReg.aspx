@@ -21,7 +21,7 @@
         <h2>Edit/Delete Affiliations & Regulations</h2>
         <div class="search-bar">
             <label>
-                Affiliations/Regulations Date:
+                Document Date:
                 <asp:TextBox ID="txtSearchDate" CssClass="datepicker textbox" runat="server" ></asp:TextBox>
             </label>
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn" />

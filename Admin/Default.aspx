@@ -1,8 +1,12 @@
 ﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <style>
+        .my-h2 {
+            text-align: center;
+        }
+    </style>
 </asp:Content>
-
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2 class="my-h2">Welcome to UDCA TMBU Website Management's Dashboard</h2>
     <div class="cen">

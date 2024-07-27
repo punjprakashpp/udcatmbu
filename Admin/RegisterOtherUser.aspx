@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>User Registration</title>
-    <link rel="stylesheet" type="text/css" href="Styles/register.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/account.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="bg">

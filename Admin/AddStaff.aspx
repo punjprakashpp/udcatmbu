@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Add Faculty Members</title>
-    <link rel="stylesheet" href="Styles/managefaculty.css">
+    <link rel="stylesheet" href="Styles/manage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -64,8 +64,13 @@
                 </td>
             </tr>
             <tr>
-                <td><asp:Button ID="btnEdit" runat="server" Text="Manage" OnClick="btnEdit_Click" /></td>
-                <td><asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" /></td>
+                <td>&nbsp;</td>
+                <td>
+                    &nbsp;&nbsp;
+                    <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnEdit" runat="server" Text="Manage" OnClick="btnEdit_Click" />
+                </td>
             </tr>
         </table>
     </div>

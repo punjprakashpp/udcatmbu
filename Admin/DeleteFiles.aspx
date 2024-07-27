@@ -5,57 +5,12 @@
     <link rel="stylesheet" type="text/css" href="Styles/table.css" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="Script/table.js"></script>
-    <style>
-        .edit-delete-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px;
-        }
-
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            margin-bottom: 10px;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .form-row label {
-            margin-right: 10px;
-        }
-
-        .form-row select, 
-        .form-row input,
-        .form-row button {
-            padding: 5px 10px;
-            font-size: 16px;
-        }
-
-        .form-row button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .form-row button:hover {
-            background-color: #0056b3;
-        }
-
-        .grid-view-container {
-            width: 100%;
-            max-width: 800px;
-            margin-top: 20px;
-        }
-    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container">
     <center><h1>Delete Files</h1></center>
-    <div class="edit-delete-container">
+    <div class="table-container">
         <div class="form-row">
             <asp:TextBox ID="txtSearch" runat="server" placeholder="Search by file name"></asp:TextBox>
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />

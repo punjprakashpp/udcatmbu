@@ -29,14 +29,14 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 1.5em;
-  color: #666;
   font-variant: small-caps;
-  font-weight: 200;
+  color: #666;
+  margin: 0;
 }
 
 h1 {
   font-size: 1.6em;
+  font-weight: 700;
 }
 
 h2 {
@@ -47,83 +47,35 @@ h3 {
   font-size: 1.2em;
 }
 
-h4 {
+h4, h5, h6 {
   font-size: 1.1em;
-}
-
-h5, h6 {
-  font-size: 1em;
-}
-
-.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2 {
-  margin-top: 0;
 }
 
 .page {
   width: 960px;
   background: #fff;
   margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #496077;
 }
 
 .header {
   background: #001f44;
   padding: 0 20px;
+  color: #f9f9f9;
 }
 
 .header h1 {
-  color: #f9f9f9;
   line-height: 2em;
   font-size: 2em;
-  font-weight: 700;
+  color:white;
 }
 
-.main {
-  padding: 12px;
-  min-height: 420px;
-}
-
-.leftCol {
-  padding: 6px 0;
-  margin: 12px 8px;
-  width: 200px;
-  min-height: 200px;
-}
-
-fieldset {
-  margin: 1em 0;
-  padding: 1em;
-  border: 1px solid #ccc;
-}
-
-fieldset p {
-  margin: 2px 12px 10px;
-}
-
-fieldset label {
-  display: block;
-}
-
-fieldset label.inline {
-  display: inline;
-}
-
-legend {
-  font-size: 1.1em;
-  font-weight: 600;
-}
-
-input.textEntry, input.passwordEntry {
-  width: 100%;
-  max-width: 320px;
-  border: 1px solid #ccc;
-}
-
-.title {
+.title, .cen {
   text-align: center;
 }
 
 .cen {
-  text-align: center;
   width: 90%;
   margin: 0 auto;
 }
@@ -134,11 +86,13 @@ input.textEntry, input.passwordEntry {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .cen ul {
   list-style: none;
-  padding: 0;
+  padding: 0 20px;
 }
 
 .cen li {
@@ -162,64 +116,12 @@ input.textEntry, input.passwordEntry {
 
   .cen .data {
     width: 33%;
-    text-align: left;
   }
 }
 
-@media (max-width: 768px) {
-  .cen {
-    width: 95%;
-    display: block;
-  }
-
-  .cen .data {
-    margin-bottom: 15px;
-    font-size:medium;
-    text-align: left;
-    padding-left: 50px;
-  }
-
-  .cen ul {
-    padding-left: 20px;
-  }
-
-  .cen {
-    margin-bottom: 5px;
-  }
-}
-
-.loginDisplay {
-  font-size: 1.1em;
-  text-align: right;
-  padding: 10px;
-  color: white;
-}
-
-.loginDisplay a {
-  color: white;
-}
-
-.failureNotification {
-  font-size: 1.2em;
-  color: red;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.submitButton {
-  text-align: right;
-  padding-right: 10px;
-}
-
-@media screen and (max-width: 880px) {
+@media (max-width: 880px) {
   .page {
     width: 100%;
-    margin: 20px auto;
-    border: 1px solid #496077;
-    font-size: 1em;
-    padding: 10px;
   }
 
   .header h1 {
@@ -227,41 +129,12 @@ input.textEntry, input.passwordEntry {
     padding-left: 10px;
   }
 
-  .main {
-    margin: 12px 0;
-    padding: 0 10px;
-  }
-
-  .leftCol {
-    width: 100%;
-    margin: 0 0 12px 0;
-  }
-
-  .menu ul li a {
-    padding: 8px 10px;
-    font-size: 1em;
-  }
-
-  .loginDisplay {
-    text-align: center;
-    font-size: 1em;
-    padding: 10px 0;
-  }
-
-  input.textEntry, input.passwordEntry {
-    max-width: 100%;
-  }
-
-  div.accountInfo {
-    width: 100%;
-  }
-
   h1, h2, h3, h4, h5, h6 {
     font-size: 1.2em;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   body {
     font-size: 0.9em;
   }
@@ -274,37 +147,12 @@ input.textEntry, input.passwordEntry {
 
   .header h1 {
     font-size: 1.2em;
-    text-align: center;
     padding-left: 0;
     line-height: 1.5em;
   }
 
-  .main {
-    margin: 8px 0;
-    padding: 0 8px;
-  }
-
-  .leftCol {
-    margin: 0 0 8px;
-  }
-
-  .menu ul li a {
-    padding: 6px 8px;
-    font-size: 0.9em;
-  }
-
-  .loginDisplay {
-    font-size: 0.9em;
-    padding: 8px 0;
-  }
-
   h1, h2, h3, h4, h5, h6 {
     font-size: 1em;
-  }
-
-  .submitButton {
-    text-align: center;
-    padding-right: 0;
   }
 }
 
@@ -316,20 +164,15 @@ input.textEntry, input.passwordEntry {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
 }
 
-.footer-copyright p {
+.footer p {
   color: white;
   text-align: center;
   font-size: 16px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 0;
 }
 
-@media screen and (max-width: 500px) {
-    .footer-copyright p {
-        font-size:1em;
-    }
-}
-
-.my-h2 {
-  text-align: center;
+@media (max-width: 500px) {
+  .footer p {
+    font-size: 1em;
+  }
 }

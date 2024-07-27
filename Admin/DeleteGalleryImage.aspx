@@ -1,10 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Site.master" AutoEventWireup="true"
-    CodeFile="DeleteGalleryImage.aspx.cs" Inherits="Admin_pages_DeleteGalleryImage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Site.master" AutoEventWireup="true" CodeFile="DeleteGalleryImage.aspx.cs" Inherits="Admin_pages_DeleteGalleryImage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>Delete Gallery Images</title>
-    <link rel="stylesheet" href="Styles/managefaculty.css">
-    <link rel="stylesheet" href="Styles/gallery.css" />
+    <link rel="stylesheet" href="Styles/manage.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="container">

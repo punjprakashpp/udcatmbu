@@ -15,7 +15,6 @@
         });
     </script>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container">
         <h2>Manage Notice</h2>

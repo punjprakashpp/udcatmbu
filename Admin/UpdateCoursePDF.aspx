@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Update Other PDF</title>
-    <link rel="stylesheet" href="Styles/notice.css">
+    <link rel="stylesheet" href="Styles/add.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <h2 style="text-align:center;">Update Course Related PDF</h2>

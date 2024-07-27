@@ -15,7 +15,6 @@
         });
     </script>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="container">
         <h2>Manage Tender</h2>
