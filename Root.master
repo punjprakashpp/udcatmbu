@@ -55,7 +55,7 @@
                         <div class="subnav-content">
                             <a href="AboutUDCA.aspx"><i class="fa fa-university"></i>About UDCA</a>
                             <a href="AboutTMBU.aspx"><i class="fa fa-university"></i>About TMBU</a>
-                            <a href="AboutComputerCenter.aspx"><i class="fa fa-desktop"></i>Computer Center</a>
+                            <a href="ComputerCenter.aspx"><i class="fa fa-desktop"></i>Computer Center</a>
                             <a href="Director.aspx"><i class="fa fa-user"></i>Director's Message</a>
                             <a href="HowToReach.aspx"><i class="fa fa-map-marker"></i>How to Reach Here</a>
                             <a href="CampusMap.aspx"><i class="fa fa-map"></i>Campus Map</a>
