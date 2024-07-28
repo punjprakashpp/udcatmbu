@@ -106,7 +106,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="cont">
-        <h1>Website Development Team</h1>
+        <h1>Website Development Work</h1>
         <div class="dev">
             <div class="dev-img">
                 <img alt="Punj Prakash" src="img/dev/punj.jpg" />
@@ -127,7 +127,6 @@
                 </p>
             </div>
         </div>
-        <br />
         <div class="dev">
             <div class="dev-img">
                 <img alt="Anmol Ratan" src="img/dev/anmol.jpg" />
@@ -148,6 +147,8 @@
                 </p>
             </div>
         </div>
+        <br />
+        <h1>Other Development Work</h1>
         <div class="dev">
             <div class="dev-img">
                 <img alt="Anand Prakash" src="img/dev/anand.jpg" />
@@ -177,8 +178,7 @@
             </div>
         </div>
         <br />
-        <br />
-        <h1>Guiding cum Supervising Team</h1>
+        <h1>Guiding cum Supervising Work</h1>
         <div class="dev">
             <div class="dev-img">
                 <img alt="Rakesh Kumar Pandey" src="img/dev/rak.jpg" />
@@ -207,4 +207,5 @@
         </div>
     </div>
 </asp:Content>
+
 
