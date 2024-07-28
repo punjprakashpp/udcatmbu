@@ -1,10 +1,6 @@
 using System;
 using System.IO;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
@@ -69,7 +65,7 @@ public partial class Admin_pages_UploadFiles : System.Web.UI.Page
                 newFileName = originalFileName;
             }
 
-            string folderPath = Server.MapPath("../docs/Files/");
+            string folderPath = Server.MapPath("~/docs/Files/");
 
             // Ensure the directory exists
             if (!Directory.Exists(folderPath))

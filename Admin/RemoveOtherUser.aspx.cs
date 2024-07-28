@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Admin_RemoveOtherUser : System.Web.UI.Page

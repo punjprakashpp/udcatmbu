@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Admin_pages_EditDeleteAlumni : System.Web.UI.Page

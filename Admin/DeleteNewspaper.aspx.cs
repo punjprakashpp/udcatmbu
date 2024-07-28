@@ -20,7 +20,7 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ID, Title, '../' + ImagePath AS ImagePath FROM Image WHERE Type = 'News'";
+            string query = "SELECT ID, Title, '~/' + ImagePath AS ImagePath FROM Image WHERE Type = 'News'";
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 query += " AND Title LIKE @SearchQuery";

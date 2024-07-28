@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
 {
@@ -43,7 +37,7 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
                     hfPersonID.Value = rdr["PersonID"].ToString();
                     txtName.Text = rdr["Name"].ToString();
                     hfCurrentImagePath.Value = rdr["ImagePath"].ToString(); // Save current image path
-                    currentImage.Src = ResolveUrl("../" + rdr["ImagePath"].ToString());
+                    currentImage.Src = ResolveUrl("~/" + rdr["ImagePath"].ToString());
                     currentImage.Style["display"] = "block";
                 }
                 else
@@ -68,7 +62,7 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
             if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
             {
                 string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                string folderPath = Server.MapPath("../img/person/");
+                string folderPath = Server.MapPath("~/img/person/");
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
@@ -91,7 +85,7 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
                 // Delete the previous image file if a new one is uploaded and it's an update operation
                 if (!string.IsNullOrEmpty(hfCurrentImagePath.Value))
                 {
-                    string previousImagePath = Server.MapPath("../" + hfCurrentImagePath.Value);
+                    string previousImagePath = Server.MapPath("~/" + hfCurrentImagePath.Value);
                     if (File.Exists(previousImagePath))
                     {
                         File.Delete(previousImagePath);

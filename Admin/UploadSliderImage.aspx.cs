@@ -24,7 +24,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
             if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
             {
                 string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                string folderPath = Server.MapPath("../img/slider/");
+                string folderPath = Server.MapPath("~/img/slider/");
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);

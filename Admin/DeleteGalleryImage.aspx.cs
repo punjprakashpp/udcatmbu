@@ -21,7 +21,7 @@ public partial class Admin_pages_DeleteGalleryImage : Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ID, Title, '../' + ImagePath AS ImagePath FROM Image WHERE Type = 'Gallery'";
+            string query = "SELECT ID, Title, '~/' + ImagePath AS ImagePath FROM Image WHERE Type = 'Gallery'";
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 query += " AND Title LIKE @SearchQuery";
@@ -84,7 +84,7 @@ public partial class Admin_pages_DeleteGalleryImage : Page
 
         if (!string.IsNullOrEmpty(imagePath))
         {
-            string fullPath = Server.MapPath(imagePath);
+            string fullPath = Server.MapPath("~/" + imagePath);
             if (File.Exists(fullPath))
             {
                 File.Delete(fullPath);

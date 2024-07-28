@@ -60,7 +60,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                     txtPosition.Text = reader["Position"].ToString();
                     txtPhone.Text = reader["Phone"].ToString();
                     txtEmail.Text = reader["Email"].ToString();
-                    currentImage.Src = ResolveUrl("../" + reader["ImagePath"].ToString());
+                    currentImage.Src = ResolveUrl("~/" + reader["ImagePath"].ToString());
                     currentImage.Style["display"] = "block";
                 }
                 reader.Close();

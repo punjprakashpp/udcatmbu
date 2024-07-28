@@ -1,10 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Collections.Generic;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class Admin_pages_UploadMarqueeVideos : System.Web.UI.Page
 {

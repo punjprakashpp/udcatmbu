@@ -9,7 +9,7 @@
         <div class="container">
             <h1>Anti-Ragging Policy</h1>
             <p align="center" class="important">Ragging is strictly prohibited in this institution.</p>
-            <img src="img/other/ragg.jpeg" alt="Measures Taken" /><br />
+            <img src="img/other/ragg.jpeg" alt="Measures Taken" width="100%" /><br />
             <br />
             <p>
                 We believe in providing a safe and conducive environment for all our students. Ragging in any form

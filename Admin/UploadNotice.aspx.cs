@@ -1,10 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
@@ -41,7 +36,7 @@ public partial class Admin_pages_UploadNotice : System.Web.UI.Page
                             important = "yes";
                         }
                         string fileName = Path.GetFileName(fileUpload.FileName);
-                        string uploadFolder = Server.MapPath("../docs/notice/");
+                        string uploadFolder = Server.MapPath("~/docs/notice/");
                         if (!Directory.Exists(uploadFolder))
                         {
                             Directory.CreateDirectory(uploadFolder);

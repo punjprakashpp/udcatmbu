@@ -33,7 +33,7 @@ public partial class Admin_pages_UploadAffReg : System.Web.UI.Page
                     try
                     {
                         string fileName = Path.GetFileName(fileUpload.FileName);
-                        string uploadFolder = Server.MapPath("../docs/affreg/");
+                        string uploadFolder = Server.MapPath("~/docs/affreg/");
                         if (!Directory.Exists(uploadFolder))
                         {
                             Directory.CreateDirectory(uploadFolder);

@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="container">
-        <h2>Manage Home Links</h2>
+        <h2>Manage Highlights Links</h2>
         <div class="search-bar">
             <label>
                 Link Text:

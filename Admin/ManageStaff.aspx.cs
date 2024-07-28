@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -60,7 +59,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                     txtPosition.Text = reader["Position"].ToString();
                     txtPhone.Text = reader["Phone"].ToString();
                     txtEmail.Text = reader["Email"].ToString();
-                    currentImage.Src = ResolveUrl("../" + reader["ImagePath"].ToString());
+                    currentImage.Src = ResolveUrl("~/" + reader["ImagePath"].ToString());
                     currentImage.Style["display"] = "block";
                 }
                 reader.Close();

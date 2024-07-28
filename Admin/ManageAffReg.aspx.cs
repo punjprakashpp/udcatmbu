@@ -140,7 +140,7 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
                 try
                 {
                     string fileName = Path.GetFileName(fileUpload.FileName);
-                    string uploadFolder = Server.MapPath("../docs/affreg/");
+                    string uploadFolder = Server.MapPath("~/docs/affreg/");
                     if (!Directory.Exists(uploadFolder))
                     {
                         Directory.CreateDirectory(uploadFolder);
@@ -149,9 +149,9 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
                     fileUpload.SaveAs(newFilePath);
 
                     // Delete the old file
-                    if (File.Exists(Server.MapPath(oldFilePath)))
+                    if (File.Exists(Server.MapPath("~/" + oldFilePath)))
                     {
-                        File.Delete(Server.MapPath(oldFilePath));
+                        File.Delete(Server.MapPath("~/" + oldFilePath));
                     }
 
                     // Store the relative path to the database
@@ -211,9 +211,9 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
                 cmd.Parameters.AddWithValue("@AffRegID", affregID);
                 conn.Open();
                 string filePath = cmd.ExecuteScalar() as string;
-                if (filePath != null && File.Exists(Server.MapPath(filePath)))
+                if (filePath != null && File.Exists(Server.MapPath("~/" + filePath)))
                 {
-                    File.Delete(Server.MapPath(filePath));
+                    File.Delete(Server.MapPath("~/" + filePath));
                 }
             }
 

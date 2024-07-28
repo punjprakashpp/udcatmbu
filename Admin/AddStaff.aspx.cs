@@ -23,7 +23,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
             if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
             {
                 string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                string folderPath = Server.MapPath("../img/Staff/");
+                string folderPath = Server.MapPath("~/img/Staff/");
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);

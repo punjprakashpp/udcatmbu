@@ -19,7 +19,7 @@ public partial class Admin_pages_UploadGalleryImage : Page
     protected void btnUpload_Click(object sender, EventArgs e)
     {
         string occasion = txtOccasion.Text;
-        string uploadFolder = Server.MapPath("../img/gallery/");
+        string uploadFolder = Server.MapPath("~/img/gallery/");
         string imagePath = "img/gallery/";
 
         // Ensure the upload directory exists

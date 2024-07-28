@@ -1,10 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
@@ -43,7 +38,7 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
                         }
 
                         string fileName = Path.GetFileName(fileUpload.FileName);
-                        string uploadFolder = Server.MapPath("../docs/news/");
+                        string uploadFolder = Server.MapPath("~/docs/news/");
                         if (!Directory.Exists(uploadFolder))
                         {
                             Directory.CreateDirectory(uploadFolder);
