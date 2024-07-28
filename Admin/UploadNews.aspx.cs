@@ -27,6 +27,7 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
         string imp = "no";
         string filePath = null;
 
+        // Check if the title is not empty and the date is valid
         if (!string.IsNullOrEmpty(newsTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out newsDate))
         {
             if (fileUpload.HasFile)
@@ -36,14 +37,11 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
                 {
                     try
                     {
-                        if (ImpChkbox.Checked == true)
+                        if (ImpChkbox.Checked)
                         {
                             imp = "yes";
                         }
-                        else
-                        {
-                            imp = "no";
-                        }
+
                         string fileName = Path.GetFileName(fileUpload.FileName);
                         string uploadFolder = Server.MapPath("../docs/news/");
                         if (!Directory.Exists(uploadFolder))
@@ -76,7 +74,7 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
                                 // Clear form fields
                                 txtLinkText.Text = string.Empty;
                                 txtLinkDate.Text = string.Empty;
-                                fileUpload.Attributes.Clear();
+                                // fileUpload control cannot be programmatically cleared
                             }
                         }
                     }
@@ -100,7 +98,7 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
         }
         else
         {
-            lblMessage.Text = "Please enter valid News Title and News Date.";
+            lblMessage.Text = "Please enter a valid News Title and News Date.";
             lblMessage.ForeColor = System.Drawing.Color.Red;
         }
     }

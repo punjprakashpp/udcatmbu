@@ -60,14 +60,7 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                if (!string.IsNullOrEmpty(txtSearchDate.Text))
-                {
-                    cmd.Parameters.AddWithValue("@AffRegDate", txtSearchDate.Text);
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("@AffRegDate", DBNull.Value);
-                }
+                cmd.Parameters.AddWithValue("@AffRegDate", string.IsNullOrEmpty(txtSearchDate.Text) ? (object)DBNull.Value : txtSearchDate.Text);
 
                 int startRow = PageIndex * PageSize + 1;
                 int endRow = startRow + PageSize - 1;

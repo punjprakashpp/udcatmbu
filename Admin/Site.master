@@ -59,9 +59,9 @@
                             <div class="subnav">
                                 <button class="subnavbtn" onclick="toggleDropdown(this)">Upload <i class="fa fa-caret-down"></i></button>
                                 <div class="subnav-content">
-                                    <a href="UploadNotice.aspx">Notice</a>
-                                    <a href="UploadNews.aspx">News</a>
-                                    <a href="UploadTender.aspx">Tender</a>
+                                    <a href="UploadNotice.aspx">Notice PDF</a>
+                                    <a href="UploadNews.aspx">News PDF</a>
+                                    <a href="UploadTender.aspx">Tender PDF</a>
                                     <a href="UploadFiles.aspx">Documents</a>
                                     <a href="UploadSliderImage.aspx">Slider Image</a>
                                     <a href="UploadGalleryImage.aspx">Gallery Image</a>
@@ -72,13 +72,13 @@
                             <div class="subnav">
                                 <button class="subnavbtn" onclick="toggleDropdown(this)">Manage <i class="fa fa-caret-down"></i></button>
                                 <div class="subnav-content">
-                                    <a href="ManageHomeButton.aspx">Home Button</a>
-                                    <a href="ManageHomeLinks.aspx">Home Links</a>
+                                    <a href="ManageHomeButton.aspx">Button</a>
                                     <a href="ManageVideoLinks.aspx">Video Links</a>
+                                    <a href="ManageHomeLinks.aspx">Highlights Links</a>
+                                    <a href="ManageNotice.aspx">Notice PDF</a>
+                                    <a href="ManageNews.aspx">News PDF</a>
+                                    <a href="ManageTender.aspx">Tender PDF</a>
                                     <a href="ManageSliderImage.aspx">Slider Image</a>
-                                    <a href="ManageNotice.aspx">Notice</a>
-                                    <a href="ManageNews.aspx">News</a>
-                                    <a href="ManageTender.aspx">Tender</a>
                                     <a href="ManageFaculty.aspx">Faculty & Guest Faculty</a>
                                     <a href="ManageStaff.aspx">Office & Supporting Staff</a>
                                     <a href="ManageAffReg.aspx">Affiliations & Regulations</a>

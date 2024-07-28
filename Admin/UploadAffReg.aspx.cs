@@ -19,8 +19,10 @@ public partial class Admin_pages_UploadAffReg : System.Web.UI.Page
     {
         string affregTitle = txtLinkText.Text.Trim();
         DateTime affregDate;
+        string imp = "no";
         string filePath = null;
 
+        // Check if the title is not empty and the date is valid
         if (!string.IsNullOrEmpty(affregTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out affregDate))
         {
             if (fileUpload.HasFile)
@@ -45,24 +47,24 @@ public partial class Admin_pages_UploadAffReg : System.Web.UI.Page
                         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                         using (SqlConnection conn = new SqlConnection(connStr))
                         {
-                            string query = "INSERT INTO Board (Type, Title, Date, Important, FilePath) VALUES (@Type, @Title, @AffRegDate, @Important, @FilePath)";
+                            string query = "INSERT INTO Board (Type, Title, Date, Important, FilePath) VALUES (@Type, @Title, @Date, @Important, @FilePath)";
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
                                 cmd.Parameters.AddWithValue("@Type", "AffReg");
                                 cmd.Parameters.AddWithValue("@Title", affregTitle);
-                                cmd.Parameters.AddWithValue("@AffRegDate", affregDate);
-                                cmd.Parameters.AddWithValue("@Important", "no");
+                                cmd.Parameters.AddWithValue("@Date", affregDate);
+                                cmd.Parameters.AddWithValue("@Important", imp);
                                 cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
 
                                 conn.Open();
                                 cmd.ExecuteNonQuery();
-                                lblMessage.Text = "uploaded successfully!";
+                                lblMessage.Text = "File uploaded successfully!";
                                 lblMessage.ForeColor = System.Drawing.Color.Green;
 
                                 // Clear form fields
                                 txtLinkText.Text = string.Empty;
                                 txtLinkDate.Text = string.Empty;
-                                fileUpload.Attributes.Clear();
+                                // fileUpload control cannot be programmatically cleared
                             }
                         }
                     }
@@ -86,7 +88,7 @@ public partial class Admin_pages_UploadAffReg : System.Web.UI.Page
         }
         else
         {
-            lblMessage.Text = "Please enter valid Title and Date.";
+            lblMessage.Text = "Please enter a valid Title and Date.";
             lblMessage.ForeColor = System.Drawing.Color.Red;
         }
     }

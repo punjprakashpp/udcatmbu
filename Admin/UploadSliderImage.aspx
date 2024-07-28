@@ -8,8 +8,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <style>
         .cropper-container {
-            width: 600px;
-            height: 400px;
+            width: 300px;
+            height: 200px;
             position: relative;
             overflow: hidden;
         }

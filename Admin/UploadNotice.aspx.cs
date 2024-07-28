@@ -24,7 +24,7 @@ public partial class Admin_pages_UploadNotice : System.Web.UI.Page
     {
         string noticeTitle = txtLinkText.Text.Trim();
         DateTime noticeDate;
-        string imp = "no";
+        string important = "no";
         string filePath = null;
 
         if (!string.IsNullOrEmpty(noticeTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out noticeDate))
@@ -36,13 +36,9 @@ public partial class Admin_pages_UploadNotice : System.Web.UI.Page
                 {
                     try
                     {
-                        if (ImpChkbox.Checked == true)
+                        if (ImpChkbox.Checked)
                         {
-                            imp = "yes";
-                        }
-                        else
-                        {
-                            imp = "no";
+                            important = "yes";
                         }
                         string fileName = Path.GetFileName(fileUpload.FileName);
                         string uploadFolder = Server.MapPath("../docs/notice/");
@@ -65,7 +61,7 @@ public partial class Admin_pages_UploadNotice : System.Web.UI.Page
                                 cmd.Parameters.AddWithValue("@Type", "Notice");
                                 cmd.Parameters.AddWithValue("@Title", noticeTitle);
                                 cmd.Parameters.AddWithValue("@Date", noticeDate);
-                                cmd.Parameters.AddWithValue("@Important", imp);
+                                cmd.Parameters.AddWithValue("@Important", important);
                                 cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
 
                                 conn.Open();
@@ -77,6 +73,7 @@ public partial class Admin_pages_UploadNotice : System.Web.UI.Page
                                 ImpChkbox.Checked = false;
                                 txtLinkText.Text = string.Empty;
                                 txtLinkDate.Text = string.Empty;
+                                // Clear the file upload control
                                 fileUpload.Attributes.Clear();
                             }
                         }

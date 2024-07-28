@@ -26,9 +26,9 @@
                 <li><a href="ManageNotice.aspx">Manage Notice</a></li>
                 <li><a href="ManageNews.aspx">Manage News</a></li>
                 <li><a href="ManageTender.aspx">Manage Tender</a></li>
-                <li><a href="ManageFaculty.aspx">Manage Faculty & Guest Faculty</a></li>
-                <li><a href="ManageStaff.aspx">Manage Office & Supporting Staff</a></li>
-                <li><a href="ManageAffReg.aspx">Manage Affiliations & Regulations</a></li>
+                <li><a href="ManageFaculty.aspx">Faculty & Guest Faculty</a></li>
+                <li><a href="ManageStaff.aspx">Office & Supporting Staff</a></li>
+                <li><a href="ManageAffReg.aspx">Affiliations & Regulations</a></li>
             </ul>
         </div>
         <div class="data">
@@ -49,7 +49,7 @@
                 <li><a href="UploadGalleryImage.aspx">Upload Gallery Image</a></li>
                 <li><a href="UploadNewspaper.aspx">Upload Newspaper Image</a></li>
                 <li><a href="UploadFiles.aspx">Upload Downloadable Files</a></li>
-                <li><a href="UploadAffReg.aspx">Upload Affiliations & Regulations PDF</a></li>
+                <li><a href="UploadAffReg.aspx">Affiliations & Regulations PDF</a></li>
             </ul>
         </div>
         <div class="data">

@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
@@ -61,14 +60,7 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                if (!string.IsNullOrEmpty(txtSearchDate.Text))
-                {
-                    cmd.Parameters.AddWithValue("@TenderDate", txtSearchDate.Text);
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("@TenderDate", DBNull.Value);
-                }
+                cmd.Parameters.AddWithValue("@TenderDate", string.IsNullOrEmpty(txtSearchDate.Text) ? (object)DBNull.Value : txtSearchDate.Text);
 
                 int startRow = PageIndex * PageSize + 1;
                 int endRow = startRow + PageSize - 1;

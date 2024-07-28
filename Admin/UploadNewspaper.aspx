@@ -10,8 +10,8 @@
     <style>
         .cropper-container
         {
-            width: 600px;
-            height: 400px;
+            width: 300px;
+            height: 225px;
             position: relative;
             overflow: hidden;
         }
@@ -88,7 +88,7 @@
                     img.onload = function() {
                         var aspectRatio = img.width / img.height;
                         cropper = new Cropper(cropperImage[0], {
-                            aspectRatio: aspectRatio,
+                            aspectRatio: 0,
                             viewMode: 1,
                             autoCropArea: 1,
                         });
