@@ -1,7 +1,7 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="Root.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head runat="server">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="img/logo/logo-small.png" type="image" />
-    <link rel="stylesheet" type="text/css" href="style/header.css">
-    <link rel="stylesheet" type="text/css" href="style/nav.css">
-    <link rel="stylesheet" type="text/css" href="style/top.css">
-    <link rel="stylesheet" type="text/css" href="style/footer.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script type="text/javascript" src="script/pdf.min.js" defer></script>
+    <script type="text/javascript" src="script/script.js" defer></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -172,8 +171,7 @@
                 </div>
             </nav>
         </div>
-    </header>  
-    <script src="script/nav.js"></script>
+    </header>
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -241,7 +239,6 @@
     </footer>
     <div class="top-elements">
         <button onclick="topFunction()" id="TopBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
-        <script src="script/top.js"></script>
         <div class="icon-bar">
             <a href="https://www.linkedin.com/in/udcatmbu" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
             <a href="https://www.facebook.com/udcatmbu" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>

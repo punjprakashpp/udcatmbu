@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Pro Vice-Chancellor</title>
     <link rel="stylesheet" type="text/css" href="style/pages.css">
-    <link rel="stylesheet" type="text/css" href="style/PdfViewer.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="cont" align="center">
@@ -30,8 +29,5 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-        <script src="script/PdfViewer.js"></script>
     </div>
 </asp:Content>
-
