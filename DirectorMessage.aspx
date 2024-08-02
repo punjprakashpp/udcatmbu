@@ -1,18 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="Director.aspx.cs" Inherits="About_Director" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="DirectorMessage.aspx.cs" Inherits="About_Director" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Director's Message</title>
     <link rel="stylesheet" type="text/css" href="style/pages.css">
     <link rel="stylesheet" type="text/css" href="style/PdfViewer.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
     <div class="cont" align="center">
         <h1 class="title">Director of UDCA</h1>
         <div class="dev">
             <div class="dev-img" align="left">
                 <asp:Image ID="imgPerson" runat="server" /><br /><br />
                 <h2 align="center" style="color:Red;"><asp:Label ID="lblName" runat="server" /></h2>
-                <p>Phone No.:&nbsp;&nbsp;<b>+91 6412501290</b><br />E-Mail Id.:<b><a href="mailto:director_udca@tmbuniv.ac.in" target="_blank">director_udca@tmbuniv.ac.in</a></b></p>
+                <p>Phone No.:&nbsp;&nbsp;<a href="tel:+91 6412501290" target="_blank"><b>+91 6412501290</b></a><br />E-Mail Id.:<b><a href="mailto:director_udca@tmbuniv.ac.in" target="_blank">director_udca@tmbuniv.ac.in</a></b></p>
                 <h5 align="left">To know more about Director <a href="#" id="openPdfLink">Click here</a></h5>
             </div> 
             <div class="dev-des" align="right">

@@ -1,10 +1,10 @@
-﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
+﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Admission Selection Process</title>
     <link rel="stylesheet" type="text/css" href="style/site.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
     <div class="cont">
         <div class="container">
             <h1 class="my-h1">Progressive Guidelines for MCA Course Admission</h1>

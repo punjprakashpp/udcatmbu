@@ -42,6 +42,14 @@
                 <td><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
+                <td>Phone:</td>
+                <td><asp:TextBox ID="txtPhone" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
                 <td>Image:</td>
                 <td>
                     <asp:FileUpload ID="fileUpload" runat="server" />

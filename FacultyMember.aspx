@@ -1,11 +1,11 @@
-<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true"
+<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true"
     CodeFile="FacultyMember.aspx.cs" Inherits="pages_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Faculty Members</title>
     <link rel="stylesheet" href="style/faculty.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont">
         <div class="container">
             <div class="header">

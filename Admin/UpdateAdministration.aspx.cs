@@ -36,6 +36,8 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
                 {
                     hfPersonID.Value = rdr["PersonID"].ToString();
                     txtName.Text = rdr["Name"].ToString();
+                    txtPhone.Text = rdr["Phone"].ToString();
+                    txtEmail.Text = rdr["Email"].ToString();
                     hfCurrentImagePath.Value = rdr["ImagePath"].ToString(); // Save current image path
                     currentImage.Src = ResolveUrl("~/" + rdr["ImagePath"].ToString());
                     currentImage.Style["display"] = "block";
@@ -107,18 +109,20 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
             if (string.IsNullOrEmpty(hfPersonID.Value))
             {
                 // Insert new record
-                query = "INSERT INTO Person (Type, Name, ImagePath) VALUES (@Type, @Name, @ImagePath)";
+                query = "INSERT INTO Person (Type, Name, Phone, Email, ImagePath) VALUES (@Type, @Name, @Phone, @Email, @ImagePath)";
             }
             else
             {
                 // Update existing record
-                query = "UPDATE Person SET Name = @Name, ImagePath = @ImagePath WHERE Type = @Type";
+                query = "UPDATE Person SET Name = @Name, Phone = @Phone, Email = @Email, ImagePath = @ImagePath WHERE Type = @Type";
             }
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@Type", type);
                 cmd.Parameters.AddWithValue("@Name", name);
+                cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
+                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                 cmd.Parameters.AddWithValue("@ImagePath", imagePath);
 
                 if (!string.IsNullOrEmpty(hfPersonID.Value))
@@ -133,7 +137,6 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
                 lblMessage.Text = "Person saved successfully!";
             }
         }
-
         ClearForm();
     }
 
@@ -142,6 +145,8 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
         hfPersonID.Value = string.Empty;
         ddlType.SelectedIndex = 0;
         txtName.Text = string.Empty;
+        txtPhone.Text = string.Empty;
+        txtEmail.Text = string.Empty;
         fileUpload.Attributes.Clear();
         currentImage.Style["display"] = "none";
     }

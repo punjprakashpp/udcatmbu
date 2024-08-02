@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="Chancellor.aspx.cs" Inherits="pages_Chancellor" %>
+﻿<%@ page title="" language="C#" masterpagefile="Website.master" autoeventwireup="true" CodeFile="Chancellor.cs" inherits="pages_Chancellor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>About Chancellor</title>
     <link rel="stylesheet" type="text/css" href="style/pages.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
     <div class="cont" align="center">
         <h1 class="title">Chancellor of TMBU</h1>
         <div class="dev">

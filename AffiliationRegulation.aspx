@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="AffiliationRegulation.aspx.cs" Inherits="pages_AffReg" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="AffiliationRegulation.aspx.cs" Inherits="pages_AffReg" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Affiliations & Regulations</title>
@@ -16,7 +16,7 @@
     </script>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont">
         <div class="container">
             <h1>Affiliations & Regulations</h1>

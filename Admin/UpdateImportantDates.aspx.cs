@@ -18,21 +18,46 @@ public partial class Admin_pages_UpdateFeeStructure : System.Web.UI.Page
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
-            SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Dates] WHERE DateID = 1", connection);
+            SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Dates] WHERE Title IN ('Application Start Date', 'Application End Date', 'Fee for TMBU Candidate', 'Fee for Other Candidate', 'Merit List-I Date', 'Merit List-I Admission Start Date', 'Merit List-I Admission End Date', 'Merit List-II Date', 'Merit List-II Admission Start Date', 'Merit List-II Admission End Date', 'Class Start Date')", connection);
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
+            while (reader.Read())
             {
-                txtAppStartDate.Text = Convert.ToDateTime(reader["AppStartDate"]).ToString("dd-MM-yyyy");
-                txtAppEndDate.Text = Convert.ToDateTime(reader["AppEndDate"]).ToString("dd-MM-yyyy");
-                txtTMBUCandFee.Text = reader["TMBUCandFee"].ToString();
-                txtOthCandFee.Text = reader["OthCandFee"].ToString();
-                txtMeritIDate.Text = Convert.ToDateTime(reader["MeritIDate"]).ToString("dd-MM-yyyy");
-                txtAdmIStartDate.Text = Convert.ToDateTime(reader["AdmIStartDate"]).ToString("dd-MM-yyyy");
-                txtAdmIEndDate.Text = Convert.ToDateTime(reader["AdmIEndDate"]).ToString("dd-MM-yyyy");
-                txtMeritIIDate.Text = Convert.ToDateTime(reader["MeritIIDate"]).ToString("dd-MM-yyyy");
-                txtAdmIIStartDate.Text = Convert.ToDateTime(reader["AdmIIStartDate"]).ToString("dd-MM-yyyy");
-                txtAdmIIEndDate.Text = Convert.ToDateTime(reader["AdmIIEndDate"]).ToString("dd-MM-yyyy");
-                txtClassStartDate.Text = Convert.ToDateTime(reader["ClassStartDate"]).ToString("dd-MM-yyyy");
+                switch (reader["Title"].ToString())
+                {
+                    case "Application Start Date":
+                        txtAppStartDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Application End Date":
+                        txtAppEndDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Fee for TMBU Candidate":
+                        txtTMBUCandFee.Text = reader["Value"].ToString();
+                        break;
+                    case "Fee for Other Candidate":
+                        txtOthCandFee.Text = reader["Value"].ToString();
+                        break;
+                    case "Merit List-I Date":
+                        txtMeritIDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Merit List-I Admission Start Date":
+                        txtAdmIStartDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Merit List-I Admission End Date":
+                        txtAdmIEndDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Merit List-II Date":
+                        txtMeritIIDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Merit List-II Admission Start Date":
+                        txtAdmIIStartDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Merit List-II Admission End Date":
+                        txtAdmIIEndDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Class Start Date":
+                        txtClassStartDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                }
             }
         }
     }
@@ -44,50 +69,54 @@ public partial class Admin_pages_UpdateFeeStructure : System.Web.UI.Page
         {
             connection.Open();
 
-            SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM [dbo].[Dates] WHERE DateID = 1", connection);
-            int count = (int)checkCommand.ExecuteScalar();
+            string[] titles = {
+                "Application Start Date", "Application End Date", "Fee for TMBU Candidate",
+                "Fee for Other Candidate", "Merit List-I Date", "Merit List-I Admission Start Date",
+                "Merit List-I Admission End Date", "Merit List-II Date", "Merit List-II Admission Start Date",
+                "Merit List-II Admission End Date", "Class Start Date"
+            };
 
-            if (count > 0)
+            string[] dates = {
+                txtAppStartDate.Text, txtAppEndDate.Text, "", "",
+                txtMeritIDate.Text, txtAdmIStartDate.Text, txtAdmIEndDate.Text,
+                txtMeritIIDate.Text, txtAdmIIStartDate.Text, txtAdmIIEndDate.Text, txtClassStartDate.Text
+            };
+
+            string[] values = {
+                "", "", txtTMBUCandFee.Text, txtOthCandFee.Text,
+                "", "", "", "", "", "", ""
+            };
+
+            for (int i = 0; i < titles.Length; i++)
             {
-                // Update existing data
-                SqlCommand updateCommand = new SqlCommand("UPDATE [dbo].[Dates] SET AppStartDate = @AppStartDate, AppEndDate = @AppEndDate, TMBUCandFee = @TMBUCandFee, OthCandFee = @OthCandFee, MeritIDate = @MeritIDate, AdmIStartDate = @AdmIStartDate, AdmIEndDate = @AdmIEndDate, MeritIIDate = @MeritIIDate, AdmIIStartDate = @AdmIIStartDate, AdmIIEndDate = @AdmIIEndDate, ClassStartDate = @ClassStartDate WHERE DateID = 1", connection);
-                updateCommand.Parameters.AddWithValue("@AppStartDate", DateTime.ParseExact(txtAppStartDate.Text, "dd-MM-yyyy", null));
-                updateCommand.Parameters.AddWithValue("@AppEndDate", DateTime.ParseExact(txtAppEndDate.Text, "dd-MM-yyyy", null));
-                updateCommand.Parameters.AddWithValue("@TMBUCandFee", txtTMBUCandFee.Text);
-                updateCommand.Parameters.AddWithValue("@OthCandFee", txtOthCandFee.Text);
-                updateCommand.Parameters.AddWithValue("@MeritIDate", DateTime.ParseExact(txtMeritIDate.Text, "dd-MM-yyyy", null));
-                updateCommand.Parameters.AddWithValue("@AdmIStartDate", DateTime.ParseExact(txtAdmIStartDate.Text, "dd-MM-yyyy", null));
-                updateCommand.Parameters.AddWithValue("@AdmIEndDate", DateTime.ParseExact(txtAdmIEndDate.Text, "dd-MM-yyyy", null));
-                updateCommand.Parameters.AddWithValue("@MeritIIDate", DateTime.ParseExact(txtMeritIIDate.Text, "dd-MM-yyyy", null));
-                updateCommand.Parameters.AddWithValue("@AdmIIStartDate", DateTime.ParseExact(txtAdmIIStartDate.Text, "dd-MM-yyyy", null));
-                updateCommand.Parameters.AddWithValue("@AdmIIEndDate", DateTime.ParseExact(txtAdmIIEndDate.Text, "dd-MM-yyyy", null));
-                updateCommand.Parameters.AddWithValue("@ClassStartDate", DateTime.ParseExact(txtClassStartDate.Text, "dd-MM-yyyy", null));
+                SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM [dbo].[Dates] WHERE Title = @Title", connection);
+                checkCommand.Parameters.AddWithValue("@Title", titles[i]);
+                int count = (int)checkCommand.ExecuteScalar();
 
-                updateCommand.ExecuteNonQuery();
-                lblMessage.Text = "Important dates updated successfully!";
-                lblMessage.ForeColor = System.Drawing.Color.Green;
-            }
-            else
-            {
-                // Insert new data
-                SqlCommand insertCommand = new SqlCommand("INSERT INTO [dbo].[Dates] (AppStartDate, AppEndDate, TMBUCandFee, OthCandFee, MeritIDate, AdmIStartDate, AdmIEndDate, MeritIIDate, AdmIIStartDate, AdmIIEndDate, ClassStartDate) VALUES (@AppStartDate, @AppEndDate, @TMBUCandFee, @OthCandFee, @MeritIDate, @AdmIStartDate, @AdmIEndDate, @MeritIIDate, @AdmIIStartDate, @AdmIIEndDate, @ClassStartDate)", connection);
-                insertCommand.Parameters.AddWithValue("@AppStartDate", DateTime.ParseExact(txtAppStartDate.Text, "dd-MM-yyyy", null));
-                insertCommand.Parameters.AddWithValue("@AppEndDate", DateTime.ParseExact(txtAppEndDate.Text, "dd-MM-yyyy", null));
-                insertCommand.Parameters.AddWithValue("@TMBUCandFee", txtTMBUCandFee.Text);
-                insertCommand.Parameters.AddWithValue("@OthCandFee", txtOthCandFee.Text);
-                insertCommand.Parameters.AddWithValue("@MeritIDate", DateTime.ParseExact(txtMeritIDate.Text, "dd-MM-yyyy", null));
-                insertCommand.Parameters.AddWithValue("@AdmIStartDate", DateTime.ParseExact(txtAdmIStartDate.Text, "dd-MM-yyyy", null));
-                insertCommand.Parameters.AddWithValue("@AdmIEndDate", DateTime.ParseExact(txtAdmIEndDate.Text, "dd-MM-yyyy", null));
-                insertCommand.Parameters.AddWithValue("@MeritIIDate", DateTime.ParseExact(txtMeritIIDate.Text, "dd-MM-yyyy", null));
-                insertCommand.Parameters.AddWithValue("@AdmIIStartDate", DateTime.ParseExact(txtAdmIIStartDate.Text, "dd-MM-yyyy", null));
-                insertCommand.Parameters.AddWithValue("@AdmIIEndDate", DateTime.ParseExact(txtAdmIIEndDate.Text, "dd-MM-yyyy", null));
-                insertCommand.Parameters.AddWithValue("@ClassStartDate", DateTime.ParseExact(txtClassStartDate.Text, "dd-MM-yyyy", null));
+                if (count > 0)
+                {
+                    // Update existing data
+                    SqlCommand updateCommand = new SqlCommand("UPDATE [dbo].[Dates] SET Date = @Date, Value = @Value WHERE Title = @Title", connection);
+                    updateCommand.Parameters.AddWithValue("@Date", string.IsNullOrEmpty(dates[i]) ? (object)DBNull.Value : DateTime.ParseExact(dates[i], "dd-MM-yyyy", null));
+                    updateCommand.Parameters.AddWithValue("@Value", string.IsNullOrEmpty(values[i]) ? (object)DBNull.Value : values[i]);
+                    updateCommand.Parameters.AddWithValue("@Title", titles[i]);
 
-                insertCommand.ExecuteNonQuery();
-                lblMessage.Text = "Important dates inserted successfully!";
-                lblMessage.ForeColor = System.Drawing.Color.Green;
+                    updateCommand.ExecuteNonQuery();
+                }
+                else
+                {
+                    // Insert new data
+                    SqlCommand insertCommand = new SqlCommand("INSERT INTO [dbo].[Dates] (Title, Date, Value) VALUES (@Title, @Date, @Value)", connection);
+                    insertCommand.Parameters.AddWithValue("@Title", titles[i]);
+                    insertCommand.Parameters.AddWithValue("@Date", string.IsNullOrEmpty(dates[i]) ? (object)DBNull.Value : DateTime.ParseExact(dates[i], "dd-MM-yyyy", null));
+                    insertCommand.Parameters.AddWithValue("@Value", string.IsNullOrEmpty(values[i]) ? (object)DBNull.Value : values[i]);
+
+                    insertCommand.ExecuteNonQuery();
+                }
             }
+
+            lblMessage.Text = "Important dates updated successfully!";
+            lblMessage.ForeColor = System.Drawing.Color.Green;
         }
     }
-
 }

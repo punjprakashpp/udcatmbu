@@ -18,21 +18,46 @@ public partial class Acedemic_ImpDates : System.Web.UI.Page
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
-            SqlCommand command = new SqlCommand("SELECT AppStartDate, AppEndDate, TMBUCandFee, OthCandFee, MeritIDate, AdmIStartDate, AdmIEndDate, MeritIIDate, AdmIIStartDate, AdmIIEndDate, ClassStartDate FROM [dbo].[Dates] WHERE DateID = 1", connection);
+            SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Dates] WHERE Title IN ('Application Start Date', 'Application End Date', 'Fee for TMBU Candidate', 'Fee for Other Candidate', 'Merit List-I Date', 'Merit List-I Admission Start Date', 'Merit List-I Admission End Date', 'Merit List-II Date', 'Merit List-II Admission Start Date', 'Merit List-II Admission End Date', 'Class Start Date')", connection);
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
+            while (reader.Read())
             {
-                lblAppStartDate.Text = Convert.ToDateTime(reader["AppStartDate"]).ToString("dd-MM-yyyy");
-                lblAppEndDate.Text = Convert.ToDateTime(reader["AppEndDate"]).ToString("dd-MM-yyyy");
-                lblTMBUCandFee.Text = reader["TMBUCandFee"].ToString();
-                lblOthCandFee.Text = reader["OthCandFee"].ToString();
-                lblMeritIDate.Text = Convert.ToDateTime(reader["MeritIDate"]).ToString("dd-MM-yyyy");
-                lblAdmIStartDate.Text = Convert.ToDateTime(reader["AdmIStartDate"]).ToString("dd-MM-yyyy");
-                lblAdmIEndDate.Text = Convert.ToDateTime(reader["AdmIEndDate"]).ToString("dd-MM-yyyy");
-                lblMeritIIDate.Text = Convert.ToDateTime(reader["MeritIIDate"]).ToString("dd-MM-yyyy");
-                lblAdmIIStartDate.Text = Convert.ToDateTime(reader["AdmIIStartDate"]).ToString("dd-MM-yyyy");
-                lblAdmIIEndDate.Text = Convert.ToDateTime(reader["AdmIIEndDate"]).ToString("dd-MM-yyyy");
-                lblClassStartDate.Text = Convert.ToDateTime(reader["ClassStartDate"]).ToString("dd-MM-yyyy");
+                switch (reader["Title"].ToString())
+                {
+                    case "Application Start Date":
+                        lblAppStartDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Application End Date":
+                        lblAppEndDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Fee for TMBU Candidate":
+                        lblTMBUCandFee.Text = reader["Value"].ToString();
+                        break;
+                    case "Fee for Other Candidate":
+                        lblOthCandFee.Text = reader["Value"].ToString();
+                        break;
+                    case "Merit List-I Date":
+                        lblMeritIDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Merit List-I Admission Start Date":
+                        lblAdmIStartDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Merit List-I Admission End Date":
+                        lblAdmIEndDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Merit List-II Date":
+                        lblMeritIIDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Merit List-II Admission Start Date":
+                        lblAdmIIStartDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Merit List-II Admission End Date":
+                        lblAdmIIEndDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                    case "Class Start Date":
+                        lblClassStartDate.Text = Convert.ToDateTime(reader["Date"]).ToString("dd-MM-yyyy");
+                        break;
+                }
             }
         }
     }

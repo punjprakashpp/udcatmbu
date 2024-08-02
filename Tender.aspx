@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="Tender.aspx.cs" Inherits="pages_Tender" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Tender.aspx.cs" Inherits="pages_Tender" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Tenders</title>
@@ -16,7 +16,7 @@
     </script>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont">
         <div class="container">
             <h1 class="my-h1">Tenders</h1>

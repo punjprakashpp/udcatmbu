@@ -1,11 +1,11 @@
-﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
+﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Course Structure</title>
     <link rel="stylesheet" type="text/css" href="style/site.css">
     <link rel="stylesheet" type="text/css" href="style/PdfViewer.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont">
         <div class="container">
             <h1 class="my-h1">MCA Course Structure:</h1>

@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Website.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/slider.css">
@@ -8,7 +8,7 @@
     <script type="text/javascript" src="script/jquery.js"></script>
     <title>UDCA | TMBU</title>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <section class="top-sec">
         <div class="marquee-links">
             <p class="high">Highlights: </p>
@@ -45,9 +45,6 @@
                 <div class="tab-link" onclick="openTab(event, 'News')">
                     News
                 </div>
-                <div class="tab-link" onclick="openTab(event, 'Tender')">
-                    Tender
-                </div>
             </div>
             <!-- Notices Tab -->
             <div id="Notices" class="tab-content" style="display: block;">
@@ -69,76 +66,38 @@
                     </div>
                 </div>
             </div>
-            <!-- Tender Tab -->
-            <div id="Tender" class="tab-content">
-                <div class="notice-board">
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq3" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralTender" runat="server"></asp:Literal>
-                        </marquee>
-                    </div>
-                </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="script/tabs.js"></script>
+    <section class="person">
+        <div class="card">
+            <div class="box">
+                <h3 align="center">
+                    <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label></h3>
+                <asp:Image ID="ImageChancellor" class="img" runat="server" />
+                <h4>
+                    <asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label></h4>
             </div>
         </div>
-        <!-- Lightbox for PDF Viewer -->
-        <div id="lightbox" class="lightbox">
-            <div class="lightbox-content">
-                <span class="close">&times;</span>
-                <div id="pdf-viewer">
-                    <!-- Canvases will be dynamically added here -->
-                </div>
+        <div class="card">
+            <div class="box">
+                <h3 align="center">
+                    <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label></h3>
+                <asp:Image ID="ImageViceChancellor" class="img" runat="server" />
+                <h4>
+                    <asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label></h4>
+            </div>
+        </div>
+        <div class="card">
+            <div class="box">
+                <h3 align="center">
+                    <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label></h3>
+                <asp:Image ID="ImageDirector" class="img" runat="server" />
+                <h4>
+                    <asp:Label ID="lblNameDirector" runat="server" Text=""></asp:Label></h4>
             </div>
         </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-    <script src="script/PdfViewer.js"></script>
-    <script type="text/javascript" src="script/tabs.js"></script>
-    <div class="person">
-        <div class="card">
-            <a href="Chancellor.aspx">
-                <div class="box">
-                    <h3 align="center">
-                        <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label></h3>
-                    <asp:Image ID="ImageChancellor" class="img" runat="server" />
-                    <h4>
-                        <asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label></h4>
-                </div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="ViceChancellor.aspx">
-                <div class="box">
-                    <h3 align="center">
-                        <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label></h3>
-                    <asp:Image ID="ImageViceChancellor" class="img" runat="server" />
-                    <h4>
-                        <asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label></h4>
-                </div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="ProViceChancellor.aspx">
-                <div class="box">
-                    <h3 align="center">
-                        <asp:Label ID="lblProViceChancellor" runat="server" Text="Pro-Vice-Chancellor of T.M.B.U"></asp:Label></h3>
-                    <asp:Image ID="ImageProViceChancellor" class="img" runat="server" />
-                    <h4>
-                        <asp:Label ID="lblNameProViceChancellor" runat="server" Text=""></asp:Label></h4>
-                </div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="Director.aspx">
-                <div class="box">
-                    <h3 align="center">
-                        <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label></h3>
-                    <asp:Image ID="ImageDirector" class="img" runat="server" />
-                    <h4>
-                        <asp:Label ID="lblNameDirector" runat="server" Text=""></asp:Label></h4>
-                </div>
-            </a>
-        </div>
-    </div>
     <br />
     <br />
     <div class="mid-sec">
@@ -181,7 +140,7 @@
             </ul>
         </div>
     </div>
-    <div class="down-sec">
+    <section class="down-sec">
         <div class="ext-btn">
             <asp:Repeater ID="ButtonRepeater" runat="server">
                 <ItemTemplate>
@@ -194,5 +153,5 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-    </div>
+    </section>
 </asp:Content>

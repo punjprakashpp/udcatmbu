@@ -16,8 +16,7 @@ public partial class _Default : System.Web.UI.Page
             BindLinks();
             BindButton();
             BindNotice();
-            BindNews();
-            BindTender();
+            BindEvent();
             LoadPersons();
         }
     }
@@ -72,7 +71,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'Notice' ORDER BY Date DESC";
+            string query = "SELECT Title, Date, FilePath FROM Docs WHERE Important='yes' AND Type = 'Notice' ORDER BY Date DESC";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -88,8 +87,8 @@ public partial class _Default : System.Web.UI.Page
 
                         marqueeContent.Append("<div class='notice'>");
                         marqueeContent.AppendFormat("<strong>{0}:</strong> ", noticeDate.ToString("dd-MM-yyyy"));
-                        //marqueeContent.AppendFormat("<a href='{0}' target='_Blank'>{1}</a>", filePath, title);
-                        marqueeContent.AppendFormat("<a href='#' class='open-pdf' data-url='{0}'>{1}</a>", filePath, title);
+                        marqueeContent.AppendFormat("<a href='{0}' target='_Blank'>{1}</a>", filePath, title);
+                        //marqueeContent.AppendFormat("<a href='#' class='open-pdf' data-url='{0}'>{1}</a>", filePath, title);
                         marqueeContent.Append("</div>");
                     }
 
@@ -99,12 +98,12 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    private void BindNews()
+    private void BindEvent()
     {
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'News' ORDER BY Date DESC";
+            string query = "SELECT Title, Date, FilePath FROM Docs WHERE Important='yes' AND Type = 'Event' ORDER BY Date DESC";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -120,44 +119,12 @@ public partial class _Default : System.Web.UI.Page
 
                         marqueeContent.Append("<div class='notice'>");
                         marqueeContent.AppendFormat("<strong>{0}:</strong> ", newsDate.ToString("dd-MM-yyyy"));
-                        //marqueeContent.AppendFormat("<a href='{0}' target='_Blank'>{1}</a>", filePath, title);
-                        marqueeContent.AppendFormat("<a href='#' class='open-pdf' data-url='{0}'>{1}</a>", filePath, title);
+                        marqueeContent.AppendFormat("<a href='{0}' target='_Blank'>{1}</a>", filePath, title);
+                        //marqueeContent.AppendFormat("<a href='#' class='open-pdf' data-url='{0}'>{1}</a>", filePath, title);
                         marqueeContent.Append("</div>");
                     }
 
                     LiteralNews.Text = marqueeContent.ToString();
-                }
-            }
-        }
-    }
-
-    private void BindTender()
-    {
-        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        using (SqlConnection conn = new SqlConnection(connStr))
-        {
-            string query = "SELECT Title, Date, FilePath FROM Board WHERE Important='yes' AND Type = 'Tender' ORDER BY Date DESC";
-            using (SqlCommand cmd = new SqlCommand(query, conn))
-            {
-                conn.Open();
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    StringBuilder marqueeContent = new StringBuilder();
-
-                    while (reader.Read())
-                    {
-                        string title = reader["Title"].ToString();
-                        DateTime tenderDate = Convert.ToDateTime(reader["Date"]);
-                        string filePath = reader["FilePath"].ToString();
-
-                        marqueeContent.Append("<div class='notice'>");
-                        marqueeContent.AppendFormat("<strong>{0}:</strong> ", tenderDate.ToString("dd-MM-yyyy"));
-                        //marqueeContent.AppendFormat("<a href='{0}' target='_Blank'>{1}</a>", filePath, title);
-                        marqueeContent.AppendFormat("<a href='#' class='open-pdf' data-url='{0}'>{1}</a>", filePath, title);
-                        marqueeContent.Append("</div>");
-                    }
-
-                    LiteralTender.Text = marqueeContent.ToString();
                 }
             }
         }
@@ -179,10 +146,6 @@ public partial class _Default : System.Web.UI.Page
                 case "Vice-Chancellor":
                     lblNameViceChancellor.Text = person.Name;
                     ImageViceChancellor.ImageUrl = person.ImagePath;
-                    break;
-                case "Pro-Vice-Chancellor":
-                    lblNameProViceChancellor.Text = person.Name;
-                    ImageProViceChancellor.ImageUrl = person.ImagePath;
                     break;
                 case "Director":
                     lblNameDirector.Text = person.Name;

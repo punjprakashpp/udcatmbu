@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Fee Structure" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true" CodeFile="FeeStructure.aspx.cs" Inherits="Acedemic_FeeStructure" %>
+﻿<%@ Page Title="Fee Structure" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="FeeStructure.aspx.cs" Inherits="Acedemic_FeeStructure" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>MCA Course Fee Structure</title>
@@ -85,7 +85,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont">
         <div class="container">
             <h1>Fee Structure for MCA Course</h1>
@@ -112,7 +112,7 @@
         </div>
         <script>
             window.onload = function () {
-                var table = document.getElementById('ContentPlaceHolder1_GridView1');
+                var table = document.getElementById('Content1_GridView1');
                 for (var i = 0; i < table.rows.length; i++) {
                     var row = table.rows[i];
                     if (i === 0) continue;

@@ -1,10 +1,10 @@
-﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
+﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
     <title>Computer Centre</title>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
     <div class="cont" align="center">
         <h1 class="title">COMPUTER CENTRE</h1>
         <img src="img/Dept/ComputerCentre.jpg" alt="Computer Centre" class="image">

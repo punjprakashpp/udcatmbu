@@ -1,10 +1,10 @@
-﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
+﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Dress Code Policy</title>
     <link rel="stylesheet" type="text/css" href="style/campus.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="content">
         <div class="container">
             <h1>Dress Code Policy</h1>

@@ -1,10 +1,10 @@
-﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
+﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
     <title>About TMBU</title>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont" align="center">
         <a href="http://tmbuniv.ac.in/" target="_blank" style="text-decoration: none;">
             <h1 class="title">TILKA MANJHI BHAGALPUR UNIVERSITY</h1>

@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeFile="Downloads.aspx.cs" Inherits="Downloads" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Website.master" AutoEventWireup="true" CodeFile="Downloads.aspx.cs" Inherits="Downloads" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Download Center</title>
@@ -135,7 +135,7 @@
                 }
 
         /* Error Message Styles */
-        #ContentPlaceHolder1_lblMessage {
+        #Content1_lblMessage {
             color: red;
             margin-top: 20px;
         }
@@ -230,7 +230,7 @@
     </style>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont">
         <div class="container download-container">
             <h1>Download Files</h1>

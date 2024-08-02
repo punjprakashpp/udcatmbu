@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
+﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Admission Entrance Test Syllabus</title>
@@ -12,7 +12,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
 <div class="cont">
     <div class="container">
         <h1>Admission Entrance Test Syllabus</h1>

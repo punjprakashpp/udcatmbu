@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="Root.master" AutoEventWireup="true"
+<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true"
     CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -82,7 +82,7 @@
     </style>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <h1 class="my-h1">Image Gallery</h1>
     <div class="cont">
         <asp:Repeater ID="GalleryRepeater" runat="server">

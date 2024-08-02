@@ -1,10 +1,10 @@
-﻿<%@ Page MasterPageFile="Root.master" AutoEventWireup="true" %>
+﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
     <title>About UDCA</title>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
     <div class="cont" align="center">
         <h1 class="title">UNIVERSITY DEPARTMENT OF COMPUTER APPLICATION</h1>
         <img src="img/Dept/AdminBuilding.jpg" alt="tmbu" class="image"><br />

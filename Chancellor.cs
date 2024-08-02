@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Data.SqlClient;
 
-public partial class pages_Vice_Chancellor : System.Web.UI.Page
+public partial class pages_Chancellor : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -15,7 +15,7 @@ public partial class pages_Vice_Chancellor : System.Web.UI.Page
     private void LoadPerson()
     {
         string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        string query = "SELECT * FROM Person WHERE Type = 'Vice-Chancellor'";
+        string query = "SELECT * FROM Person WHERE Type = 'Chancellor'";
 
         using (SqlConnection con = new SqlConnection(connectionString))
         {
