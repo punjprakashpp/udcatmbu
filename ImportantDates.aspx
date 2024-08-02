@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="ImportantDates.aspx.cs" Inherits="Acedemic_ImpDates" %>
+﻿<%@ Page Title="Important Dates" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="ImportantDates.aspx.cs" Inherits="Acedemic_ImpDates" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <title>Important Dates</title>
     <link rel="stylesheet" type="text/css" href="style/site.css">
     <style>
         .cont .container {

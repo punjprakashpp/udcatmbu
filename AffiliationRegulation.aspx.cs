@@ -43,13 +43,13 @@ public partial class pages_AffReg : System.Web.UI.Page
             string query = @"
                 WITH AffReg_CTE AS (
                     SELECT 
-                        BID, 
+                        DocsID, 
                         Title, 
                         Date, 
                         FilePath,
                         ROW_NUMBER() OVER (ORDER BY Date DESC) AS RowNum
                     FROM 
-                        Board
+                        Docs
                     WHERE
                         Type = 'AffReg'
                         AND (@AffRegDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @AffRegDate)

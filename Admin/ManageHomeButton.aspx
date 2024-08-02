@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="ManageHomeButton.aspx.cs" Inherits="Admin_pages_EditDeleteMarqueeLinks" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ManageHomeButton.aspx.cs" Inherits="Admin_pages_EditDeleteMarqueeLinks" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>Edit/Delete Home Buttons</title>

@@ -1,7 +1,6 @@
-﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Admission Eligibility" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Admission Eligibility Criteria</title>
     <link rel="stylesheet" type="text/css" href="style/site.css">
     <style>
         .cont .container {

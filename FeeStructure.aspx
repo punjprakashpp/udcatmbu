@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Fee Structure" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="FeeStructure.aspx.cs" Inherits="Acedemic_FeeStructure" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>MCA Course Fee Structure</title>
     <link rel="stylesheet" type="text/css" href="style/site.css">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

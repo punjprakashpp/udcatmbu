@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Site.master" AutoEventWireup="true" CodeFile="UpdateCoursePDF.aspx.cs" Inherits="Admin_pages_UpdateOtherPDF" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UpdateCoursePDF.aspx.cs" Inherits="Admin_pages_UpdateOtherPDF" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Update Other PDF</title>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="ManageAffReg.aspx.cs" Inherits="Admin_pages_EditDeleteAffReg" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ManageAffReg.aspx.cs" Inherits="Admin_pages_EditDeleteAffReg" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Edit/Delete Affiliations & Regulations</title>

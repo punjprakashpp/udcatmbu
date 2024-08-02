@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="ManageNotice.aspx.cs" Inherits="Admin_pages_EditDeleteNotice" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ManageNotice.aspx.cs" Inherits="Admin_pages_EditDeleteNotice" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Edit/Delete Notice</title>

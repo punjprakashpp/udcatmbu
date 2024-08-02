@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Site.master" AutoEventWireup="true" CodeFile="DeleteFiles.aspx.cs" Inherits="Admin_pages_EditDeleteFiles" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="DeleteFiles.aspx.cs" Inherits="Admin_pages_EditDeleteFiles" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Delete Files</title>

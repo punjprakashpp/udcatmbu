@@ -15,7 +15,7 @@ public partial class About_Director : System.Web.UI.Page
     private void LoadPerson()
     {
         string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        string query = "SELECT * FROM Person WHERE Type = 'Director'";
+        string query = "SELECT Name, Phone, Email, ImagePath FROM Person WHERE Type = 'Director'";
 
         using (SqlConnection con = new SqlConnection(connectionString))
         {
@@ -26,14 +26,22 @@ public partial class About_Director : System.Web.UI.Page
                 if (rdr.Read())
                 {
                     string name = rdr["Name"].ToString();
+                    string phone = rdr["Phone"].ToString();
+                    string email = rdr["Email"].ToString();
                     string imagePath = rdr["ImagePath"].ToString();
 
                     lblName.Text = name;
+                    lblPhone.Text = phone;
+                    lblEmail.Text = email;
+                    emailLink.NavigateUrl = "mailto:" + email;
                     imgPerson.ImageUrl = "~/" + imagePath;
                 }
                 else
                 {
                     lblName.Text = "No person found.";
+                    lblPhone.Text = "";
+                    lblEmail.Text = "";
+                    emailLink.NavigateUrl = "#";
                     imgPerson.ImageUrl = "";
                 }
                 con.Close();

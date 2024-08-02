@@ -1,8 +1,7 @@
-﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="About TMBU" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
-    <title>About TMBU</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont" align="center">

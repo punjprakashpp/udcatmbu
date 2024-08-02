@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="AffiliationRegulation.aspx.cs" Inherits="pages_AffReg" %>
+﻿<%@ Page Title="Affiliations & Regulations" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="AffiliationRegulation.aspx.cs" Inherits="pages_AffReg" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Affiliations & Regulations</title>
     <link rel="stylesheet" href="style/site.css">
-    <link rel="stylesheet" href="style/PdfViewer.css">
+    <link rel="stylesheet" href="style/pdf.css">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -37,9 +36,9 @@
                 <asp:Button ID="btnPrevious" runat="server" Text="Previous" OnClick="btnPrevious_Click" CssClass="btn" />
                 <asp:Button ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" CssClass="btn" />
             </div>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="BID" OnRowDataBound="GridView1_RowDataBound">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="DocsID" OnRowDataBound="GridView1_RowDataBound">
                 <Columns>
-                    <asp:BoundField DataField="BID" HeaderText="AffReg ID" SortExpression="BID" Visible="False" />
+                    <asp:BoundField DataField="DocsID" HeaderText="AffReg ID" SortExpression="DocsID" Visible="False" />
                     <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" DataFormatString="{0:dd-MM-yyyy}" />
                     <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
                     <asp:TemplateField HeaderText="File">
@@ -57,8 +56,9 @@
                     </div>
                 </div>
             </div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-            <script src="script/PdfViewer.js"></script>
+            <script src="script/pdf.worker.min.js"></script>
+            <script src="script/pdf.min.js"></script>
+            <script src="script/pdf.js"></script>
         </div>
     </div>
 </asp:Content>

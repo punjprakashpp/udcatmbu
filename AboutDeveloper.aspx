@@ -1,17 +1,7 @@
-<%@ Page MasterPageFile="Website.master" AutoEventWireup="false" %>
+<%@ Page Title="About Developers" MasterPageFile="Website.master" AutoEventWireup="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>About Developers</title>
     <style>
-        /* General CSS for desktop view */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
         .cont {
             max-width: 100%;
             margin: 0 auto;

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="DeleteAlumni.aspx.cs" Inherits="Admin_pages_EditDeleteAlumni" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="DeleteAlumni.aspx.cs" Inherits="Admin_pages_EditDeleteAlumni" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>Edit/Delete Alumni</title>

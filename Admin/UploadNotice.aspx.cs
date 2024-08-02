@@ -5,11 +5,6 @@ using System.Configuration;
 
 public partial class Admin_pages_UploadNotice : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-
     protected void btnSubmit_Edit(object sender, EventArgs e)
     {
         Response.Redirect("ManageNotice.aspx");
@@ -17,6 +12,7 @@ public partial class Admin_pages_UploadNotice : System.Web.UI.Page
 
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
+        string noticeNo = txtLinkNo.Text.Trim();
         string noticeTitle = txtLinkText.Text.Trim();
         DateTime noticeDate;
         string important = "no";
@@ -50,10 +46,11 @@ public partial class Admin_pages_UploadNotice : System.Web.UI.Page
                         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                         using (SqlConnection conn = new SqlConnection(connStr))
                         {
-                            string query = "INSERT INTO Board (Type, Title, Date, Important, FilePath) VALUES (@Type, @Title, @Date, @Important, @FilePath)";
+                            string query = "INSERT INTO Docs (Type, No, Title, Date, Important, FilePath) VALUES (@Type, @No, @Title, @Date, @Important, @FilePath)";
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
                                 cmd.Parameters.AddWithValue("@Type", "Notice");
+                                cmd.Parameters.AddWithValue("@No", noticeNo);
                                 cmd.Parameters.AddWithValue("@Title", noticeTitle);
                                 cmd.Parameters.AddWithValue("@Date", noticeDate);
                                 cmd.Parameters.AddWithValue("@Important", important);
@@ -66,6 +63,7 @@ public partial class Admin_pages_UploadNotice : System.Web.UI.Page
 
                                 // Clear form fields
                                 ImpChkbox.Checked = false;
+                                txtLinkNo.Text = string.Empty;
                                 txtLinkText.Text = string.Empty;
                                 txtLinkDate.Text = string.Empty;
                                 // Clear the file upload control

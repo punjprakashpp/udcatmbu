@@ -1,7 +1,6 @@
-﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Medical Facility" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <title>Health Center</title>
     <link rel="stylesheet" type="text/css" href="style/amenties.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="DeleteNewspaper.aspx.cs" Inherits="Admin_pages_DeleteNewspaper" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="DeleteNewspaper.aspx.cs" Inherits="Admin_pages_DeleteNewspaper" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>Delete Newspaper Image</title>

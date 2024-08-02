@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="UploadAffReg.aspx.cs" Inherits="Admin_pages_UploadAffReg" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UploadAffReg.aspx.cs" Inherits="Admin_pages_UploadAffReg" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Upload Notice</title>

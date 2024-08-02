@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="UploadSliderImage.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UploadSliderImage.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Add Slider image</title>

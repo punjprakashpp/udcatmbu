@@ -1,8 +1,7 @@
-﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Computer Centre" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
-    <title>Computer Centre</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
     <div class="cont" align="center">

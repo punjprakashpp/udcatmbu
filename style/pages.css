@@ -40,12 +40,6 @@
     font-size: 16px;
     color: black;
     text-align: justify;
-    transition: font-size 0.2s ease, text-shadow 0.2s ease;
-}
-
-.cont p:hover {
-    font-size: 1.125em;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .cont #tbl {

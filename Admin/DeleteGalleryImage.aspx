@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Site.master" AutoEventWireup="true" CodeFile="DeleteGalleryImage.aspx.cs" Inherits="Admin_pages_DeleteGalleryImage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="DeleteGalleryImage.aspx.cs" Inherits="Admin_pages_DeleteGalleryImage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>Delete Gallery Images</title>

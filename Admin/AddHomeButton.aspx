@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AddHomeButton.aspx.cs" Inherits="Admin_pages_UploadMarqueeLinks" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="AddHomeButton.aspx.cs" Inherits="Admin_pages_UploadMarqueeLinks" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Add Buttons</title>

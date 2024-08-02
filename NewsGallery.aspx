@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true"
+﻿<%@ Page Title="News Gallery" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true"
     CodeFile="NewsGallery.aspx.cs" Inherits="pages_VideoGallery" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>News Gallery | UDCA</title>
     <link rel="stylesheet" href="style/gallery.css">
     <style>
         #lightbox

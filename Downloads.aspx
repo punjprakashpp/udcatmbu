@@ -1,7 +1,6 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Website.master" AutoEventWireup="true" CodeFile="Downloads.aspx.cs" Inherits="Downloads" %>
+<%@ Page Title="Download Files" Language="C#" MasterPageFile="~/Website.master" AutoEventWireup="true" CodeFile="Downloads.aspx.cs" Inherits="Downloads" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Download Center</title>
     <link rel="stylesheet" href="style/site.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">

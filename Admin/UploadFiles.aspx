@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Site.master" AutoEventWireup="true" CodeFile="UploadFiles.aspx.cs" Inherits="Admin_pages_UploadFiles" %>
+<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UploadFiles.aspx.cs" Inherits="Admin_pages_UploadFiles" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>File Upload</title>

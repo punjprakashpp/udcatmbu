@@ -1,14 +1,11 @@
-﻿.top-sec, .mid-sec, .ext-btn {
+﻿.top-sec {
     text-align: center;
     display: block;
-}
-
-.top-sec {
     width: auto;
     margin: 20px 50px;
 }
 
-.top-sec .slider, .top-sec .notice-section, .mid-sec .sec {
+.top-sec .slider, .top-sec .notice-section {
     display: inline-block;
     width: 45%;
     margin: 0 15px;
@@ -29,7 +26,6 @@
 }
 
 .top-sec .notice-section .notice-board {
-    padding: 20px;
     border-radius: 5px;
     background-color: #F0F0F0;
     text-align: center;
@@ -68,7 +64,7 @@
 
 .tab-content {
     display: none;
-    padding-top: 6px;
+    padding: 5px;
 }
 
 .marquee {
@@ -159,50 +155,135 @@
 }
 
 .mid-sec {
-    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:100px;
+    margin-right:100px;
+    gap: 20px; /* Adjust gap between cards */
+}
+
+.mid-sec .card {
+    flex: 1;
+    min-width: 20%; /* Adjust as needed to fit the number of cards per row */
+    max-width: 24%;
+    box-sizing: border-box;
+}
+
+.mid-sec .card .box {
+    margin-top: 2rem;
+    padding: 20px;
+    background: transparent;
+    border-radius: 5px;
+    transition: margin 1s ease, box-shadow 1s ease;
     text-align: center;
+    height: 320px;
+    width: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid black;
 }
 
-.mid-sec .sec {
-    width: 30%;
-    height: 380px;
-    text-align: justify;
-    font-size: larger;
-    line-height: 1.2;
-    vertical-align: top;
-    display: inline-block;
+.mid-sec .card .box:hover {
+    margin-top: -5px;
+    box-shadow: 0px 0px 40px black;
 }
 
-.mid-sec .sec .labels .label-text {
-    background-color: #f1f1f1;
-    padding: 14px 16px;
+.mid-sec .card .box .img {
+    opacity: 1;
+    width: 160px;
+    height: 160px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.mid-sec .card .box h4 {
     font-size: 20px;
-    border-radius: 10px 10px 0 0;
+    font-family: 'Open Sans', sans-serif;
+    margin: 20px 0 10px;
+    color: brown;
     text-align: center;
-    background: #5271FF;
-    color: white;
+    font-weight: 700;
 }
 
-.mid-sec .sec a {
+.mid-sec .card .box h3 {
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    text-align: center;
+}
+
+.mid-sec .card a {
     text-decoration: none;
+    color:black;
 }
 
-.mid-sec .sec a:hover, .mid-sec .sec p:hover, .mid-sec .sec ul li:hover {
-    font-size: 1.05em;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+@media (max-width: 1320px) {
+    .mid-sec .card {
+        min-width:20%;
+    }
+
+    .mid-sec {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0;
+    }
 }
 
-.mid-sec .sec p, .mid-sec .sec ul li {
-    padding-bottom: 2px;
-    transition: font-size 0.2s ease, text-shadow 0.2s ease;
+@media (max-width: 1080px) {
+    .mid-sec .card {
+        min-width:30%;
+    }
+
+    .mid-sec {
+        padding-left: 50px;
+        padding-right: 50px;
+        margin: 0;
+    }
 }
 
-.ext-btn {
+@media (max-width: 960px) {
+    .mid-sec .card {
+        min-width:45%;
+    }
+
+    .mid-sec {
+        padding-left: 100px;
+        padding-right: 100px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 720px) {
+    .mid-sec .card {
+        min-width: 90%;
+    }
+
+    .mid-sec {
+        padding: 40px;
+        margin: 0;
+    }
+
+    .mid-sec .card .box {
+        transition: none;
+        height: auto !important; /* Use !important to override inline styles */
+    }
+
+    .mid-sec .card .box:hover {
+        margin-top: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.down-sec {
+    text-align: center;
+    display: block;
     background-color: #fff;
     padding: 20px 0;
 }
 
-.ext-btn .panel {
+.down-sec .panel {
     margin: 10px 0;
     display: inline-flex;
     justify-content: center;
@@ -234,34 +315,8 @@
     background: #00BFFF;
 }
 
-@media screen and (max-width: 1260px) {
-    .mid-sec {
-        margin: 10px;
-    }
-}
-
-@media screen and (max-width: 960px) {
-    .mid-sec .sec {
-        width: 45%;
-        height: 420px;
-        display: inline-block;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .mid-sec .sec {
-        height: auto;
-        width: 95%;
-        margin-bottom: 5px;
-    }
-
-    .mid-sec .sec .labels .label-text {
-        font-size: 20px;
-    }
-}
-
 @media (max-width: 880px) {
-    .ext-btn .panel {
+    .down-sec .panel {
         flex-direction: column;
     }
 

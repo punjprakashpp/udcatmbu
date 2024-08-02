@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <style>

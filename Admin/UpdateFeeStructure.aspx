@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="UpdateFeeStructure.aspx.cs" Inherits="Admin_pages_UpdateFeeStructure" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UpdateFeeStructure.aspx.cs" Inherits="Admin_pages_UpdateFeeStructure" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <title>Update Fee Structure</title>

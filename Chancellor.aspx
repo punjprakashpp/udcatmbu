@@ -1,8 +1,12 @@
-﻿<%@ page title="" language="C#" masterpagefile="Website.master" autoeventwireup="true" CodeFile="Chancellor.cs" inherits="pages_Chancellor" %>
+﻿<%@ page title="About Chancellor" language="C#" masterpagefile="Website.master" autoeventwireup="true" CodeFile="Chancellor.aspx.cs" inherits="pages_Chancellor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <title>About Chancellor</title>
     <link rel="stylesheet" type="text/css" href="style/pages.css">
+    <style>
+        .cont .title, .cont h2, .cont h1 {
+            text-align: center;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
     <div class="cont" align="center">

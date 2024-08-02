@@ -1,19 +1,19 @@
-.person {
-    width: 100%;
-    padding-bottom: 100px;
-    padding-left: 100px;
-    padding-right: 100px;
-    height: 350px;
+.mid-sec {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:100px;
+    margin-right:100px;
+    gap: 20px; /* Adjust gap between cards */
 }
 
-.person .card {
-    width: 25%;
-    display: block;
-    float: left;
-    padding: 20px;
+.mid-sec .card {
+    flex: 1;
+    min-width: 22%; /* Adjust as needed to fit the number of cards per row */
+    max-width: 24%;
+    box-sizing: border-box;
 }
 
-.person .card .box {
+.mid-sec .card .box {
     margin-top: 2rem;
     padding: 20px;
     background: transparent;
@@ -27,12 +27,12 @@
     border: 2px solid black;
 }
 
-.person .card .box:hover {
+.mid-sec .card .box:hover {
     margin-top: -5px;
     box-shadow: 0px 0px 40px black;
 }
 
-.person .card .box .img {
+.mid-sec .card .box .img {
     opacity: 1;
     width: 160px;
     height: 160px;
@@ -42,60 +42,53 @@
     border: 2px solid black;
 }
 
-.person .card .box h4 {
+.mid-sec .card .box h4 {
     font-size: 20px;
-    font-family: open sans;
-    margin: 20px 0px 10px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 20px 0 10px;
     color: brown;
     text-align: center;
     font-weight: 700;
 }
 
-.person .card .box h3 {
+.mid-sec .card .box h3 {
     font-size: 15px;
-    font-family: open sans;
+    font-family: 'Open Sans', sans-serif;
     color: black;
     text-align: center;
 }
 
-.person .card a {
+.mid-sec .card a {
     text-decoration: none;
 }
 
 @media (max-width: 1280px) {
-    .person .card {
-        width: 50%;
+    .mid-sec .card {
+        min-width: 45%;
     }
 
-    .person {
+    .mid-sec {
         padding-left: 100px;
-        margin-left: 0;
-        margin-right: 0;
-        height: 750px;
+        margin: 0;
     }
 }
 
 @media (max-width: 768px) {
-    .person .card {
-        width: 90%;
+    .mid-sec .card {
+        min-width: 90%;
     }
 
-    .person {
+    .mid-sec {
         padding: 40px;
-        margin-left: 0;
-        margin-right: 0;
-        height: 1600px;
+        margin: 0;
     }
 
-    .person .card .box {
+    .mid-sec .card .box {
         transition: none;
-        /* Remove transitions */
     }
 
-    .person .card .box:hover {
+    .mid-sec .card .box:hover {
         margin-top: 2rem;
-        /* Reset hover effect */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* Reset box-shadow */
     }
 }

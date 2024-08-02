@@ -1,16 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true"
+﻿<%@ Page Title="Office Staffs" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true"
     CodeFile="OfficeStaff.aspx.cs" Inherits="pages_OfficeStaff" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Office & Non-Teaching Staff</title>
     <link rel="stylesheet" href="style/faculty.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont">
         <div class="container">
             <div class="header">
-                <h1>
-                    Our Office & Non-Teaching Staff</h1>
+                <h1>Our Office & Non-Teaching Staff</h1>
             </div>
             <asp:Repeater ID="facultyRepeater" runat="server">
                 <ItemTemplate>
@@ -38,8 +36,7 @@
                 </ItemTemplate>
             </asp:Repeater>
             <div class="header">
-                <h1>
-                    Meet Our Supporting Staff</h1>
+                <h1>Our Supporting Staff Members</h1>
             </div>
             <asp:Repeater ID="SupportRepeater" runat="server">
                 <ItemTemplate>

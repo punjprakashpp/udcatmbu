@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Tender.aspx.cs" Inherits="pages_Tender" %>
+﻿<%@ Page Title="Tenders" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Tender.aspx.cs" Inherits="pages_Tender" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Tenders</title>
     <link rel="stylesheet" href="style/site.css">
-    <link rel="stylesheet" href="style/PdfViewer.css">
+    <link rel="stylesheet" href="style/pdf.css">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>

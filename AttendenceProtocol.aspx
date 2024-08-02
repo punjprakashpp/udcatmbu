@@ -1,7 +1,6 @@
-﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Attendance Protocol" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Attendance Protocol</title>
     <link rel="stylesheet" type="text/css" href="style/campus.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">

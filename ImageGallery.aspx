@@ -1,8 +1,6 @@
-<%@ Page Title="" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true"
-    CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
+<%@ Page Title="Image Gallery" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>Image Gallery | UDCA</title>
     <link rel="stylesheet" href="style/gallery.css">
     <style>
         /* Modal styles */

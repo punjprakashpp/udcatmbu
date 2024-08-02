@@ -1,7 +1,6 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Website.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
+<%@ Page Title="Admin Login" Language="C#" MasterPageFile="~/Website.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>User Login</title>
     <style>
         /* Center the form on the page */
         .bg {
@@ -77,7 +76,7 @@
             }
 
             /* Validator styling */
-            .bg asp\:RequiredFieldValidator {
+            .bg .val {
                 display: block;
                 margin-top: 5px;
                 font-size: 12px;
@@ -103,7 +102,7 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvUserName" runat="server" ControlToValidate="txtUserName"
+                    <asp:RequiredFieldValidator ID="rfvUserName" CssClass="val" runat="server" ControlToValidate="txtUserName"
                         ErrorMessage="User Name is required" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -113,7 +112,7 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword"
+                    <asp:RequiredFieldValidator ID="rfvPassword" CssClass="val" runat="server" ControlToValidate="txtPassword"
                         ErrorMessage="Password is required" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -132,5 +131,3 @@
         </table>
     </div>
 </asp:Content>
-
-

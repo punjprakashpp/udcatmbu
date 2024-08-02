@@ -25,14 +25,14 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ID, Title FROM Image Where Type ='Slider'";
+            string query = "SELECT ImageID, Title FROM Image Where Type ='Slider'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 ddlFaculties.DataSource = reader;
                 ddlFaculties.DataTextField = "Title";
-                ddlFaculties.DataValueField = "ID";
+                ddlFaculties.DataValueField = "ImageID";
                 ddlFaculties.DataBind();
                 ddlFaculties.Items.Insert(0, new ListItem("--Select Slider Image--", ""));
                 reader.Close();
@@ -45,7 +45,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT * FROM Image WHERE ID = @SliderID";
+            string query = "SELECT * FROM Image WHERE ImageID = @SliderID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@SliderID", facultyId);
@@ -86,7 +86,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                 con.Open();
 
 
-                string selectImagePathQuery = "SELECT ImagePath FROM Image WHERE ID = @SliderID";
+                string selectImagePathQuery = "SELECT ImagePath FROM Image WHERE ImageID = @SliderID";
                 using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, con))
                 {
                     selectImagePathCmd.Parameters.AddWithValue("@SliderID", facultyId);
@@ -153,7 +153,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    string query = "UPDATE Image SET Title = @Title, ImagePath = @FilePath WHERE ID = @SliderID";
+                    string query = "UPDATE Image SET Title = @Title, ImagePath = @FilePath WHERE ImageID = @SliderID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -193,14 +193,14 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                     conn.Open();
 
                     string imagePath = "";
-                    string selectImagePathQuery = "SELECT ImagePath FROM Image WHERE ID = @SliderID";
+                    string selectImagePathQuery = "SELECT ImagePath FROM Image WHERE ImageID = @SliderID";
                     using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, conn))
                     {
                         selectImagePathCmd.Parameters.AddWithValue("@SliderID", facultyId);
                         imagePath = selectImagePathCmd.ExecuteScalar() as string;
                     }
 
-                    string deleteFacultyQuery = "DELETE FROM Image WHERE ID = @SliderID";
+                    string deleteFacultyQuery = "DELETE FROM Image WHERE ImageID = @SliderID";
                     using (SqlCommand deleteFacultyCmd = new SqlCommand(deleteFacultyQuery, conn))
                     {
                         deleteFacultyCmd.Parameters.AddWithValue("@SliderID", facultyId);

@@ -1,7 +1,6 @@
-﻿<%@ Page MasterPageFile="Website.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="How to Reach UDCA" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <title>How to Reach</title>
     <link rel="stylesheet" type="text/css" href="style/pages.css">
     <style>
         @media(max-width:1024px) {
