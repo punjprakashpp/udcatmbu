@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/slider.css">
     <link rel="stylesheet" type="text/css" href="style/section.css">
+    <link rel="stylesheet" type="text/css" href="style/person.css">
+    <link rel="stylesheet" type="text/css" href="style/PdfViewer.css">
+    <script type="text/javascript" src="script/jquery.js"></script>
     <title>UDCA | TMBU</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -23,14 +26,15 @@
                     <ul>
                         <asp:Repeater ID="SliderRepeater" runat="server">
                             <ItemTemplate>
-                                <li><img class="lazy" data-src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" title="<%# Eval("Title") %>"/>
-                                    <noscript><img src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" title="<%# Eval("Title") %>"></noscript>
-                                </li>
+                                <li>
+                                    <img src="<%# Eval("ImagePath") %>" title="<%# Eval("Title") %>" /></li>
                             </ItemTemplate>
                         </asp:Repeater>
                     </ul>
                 </div>
             </div>
+            <script type="text/javascript" src="script/wowslider.js"></script>
+            <script type="text/javascript" src="script/slider.js"></script>
         </div>
         <div class="notice-section">
             <!-- Tabs -->
@@ -86,44 +90,57 @@
             </div>
         </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+    <script src="script/PdfViewer.js"></script>
+    <script type="text/javascript" src="script/tabs.js"></script>
     <div class="person">
         <div class="card">
             <a href="Chancellor.aspx">
                 <div class="box">
-                    <h3 align="center"><asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label></h3>
+                    <h3 align="center">
+                        <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label></h3>
                     <asp:Image ID="ImageChancellor" class="img" runat="server" />
-                    <h4><asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label></h4>
+                    <h4>
+                        <asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label></h4>
                 </div>
             </a>
         </div>
         <div class="card">
             <a href="ViceChancellor.aspx">
                 <div class="box">
-                    <h3 align="center"><asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label></h3>
+                    <h3 align="center">
+                        <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label></h3>
                     <asp:Image ID="ImageViceChancellor" class="img" runat="server" />
-                    <h4><asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label></h4>
+                    <h4>
+                        <asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label></h4>
                 </div>
             </a>
         </div>
         <div class="card">
             <a href="ProViceChancellor.aspx">
                 <div class="box">
-                    <h3 align="center"><asp:Label ID="lblProViceChancellor" runat="server" Text="Pro-Vice-Chancellor of T.M.B.U"></asp:Label></h3>
+                    <h3 align="center">
+                        <asp:Label ID="lblProViceChancellor" runat="server" Text="Pro-Vice-Chancellor of T.M.B.U"></asp:Label></h3>
                     <asp:Image ID="ImageProViceChancellor" class="img" runat="server" />
-                    <h4><asp:Label ID="lblNameProViceChancellor" runat="server" Text=""></asp:Label></h4>
+                    <h4>
+                        <asp:Label ID="lblNameProViceChancellor" runat="server" Text=""></asp:Label></h4>
                 </div>
             </a>
         </div>
         <div class="card">
             <a href="Director.aspx">
                 <div class="box">
-                    <h3 align="center"><asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label></h3>
+                    <h3 align="center">
+                        <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label></h3>
                     <asp:Image ID="ImageDirector" class="img" runat="server" />
-                    <h4><asp:Label ID="lblNameDirector" runat="server" Text=""></asp:Label></h4>
+                    <h4>
+                        <asp:Label ID="lblNameDirector" runat="server" Text=""></asp:Label></h4>
                 </div>
             </a>
         </div>
     </div>
+    <br />
+    <br />
     <div class="mid-sec">
         <div class="sec">
             <div class="labels">
@@ -147,7 +164,7 @@
                 University Department of Computer Applications (UDCA) is a constituent unit of Tilka
                 Manjhi Bhagalpur University, Bhagalpur, Bihar. It is formally known as COMPUTER
                 CENTRE. This University Department of Computer Applications offers Master of Computer
-                Applications course. UDCA is Recognised by Govt. of Bihar and .......
+                Applications course. UDCA is Recognised by .......
             </p>
             <p style="text-align: right;"><a href="AboutUDCA.aspx">Read More...</a></p>
         </div>
@@ -165,18 +182,17 @@
         </div>
     </div>
     <div class="down-sec">
-        <asp:Repeater ID="ButtonRepeater" runat="server">
-            <ItemTemplate>
-                <div class="panel">
-                    <a class="info-btn" href='<%# Eval("LinkURL") %>' target="_blank">
-                        <img src="img/logo/logo-small.png" />
-                        <p>&nbsp;<%# Eval("LinkText") %></p>
-                    </a>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
+        <div class="ext-btn">
+            <asp:Repeater ID="ButtonRepeater" runat="server">
+                <ItemTemplate>
+                    <div class="panel">
+                        <a class="info-btn" href='<%# Eval("LinkURL") %>' target="_blank">
+                            <img src="img/logo/logo-small.png" />
+                            <p>&nbsp;<%# Eval("LinkText") %></p>
+                        </a>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
     </div>
-    <script type="text/javascript" src="script/jquery.js"></script>
-    <script type="text/javascript" src="script/wowslider.js"></script>
-    <script type="text/javascript" src="script/slider.js"></script>
 </asp:Content>

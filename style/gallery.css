@@ -1,1 +1,81 @@
-﻿.video h2,div.desc{padding:15px;text-align:center}.my-h1,.video h2,div.desc{text-align:center}.cont{display:flex;flex-wrap:wrap;justify-content:space-around;padding:20px;background-color:#fff;box-shadow:0 0 10px rgba(0,0,0,.1)}.my-h1{padding:20px 0;background-color:#369;color:#fff;font-size:1.8em;font-weight:700;text-transform:uppercase;margin:20px 0;border-top-left-radius:10px;border-top-right-radius:10px}.video{flex:1 1 calc(20% - 40px);margin:20px;box-shadow:0 2px 4px rgba(0,0,0,.1);border-radius:8px;overflow:hidden;background-color:#fff}.video iframe{width:100%;height:315px;border:none}.video h2{font-size:1.2em;color:#333;background-color:#f4f4f4;margin:0}@media (max-width:768px){.video{flex:1 1 100%}}div.gallery{margin:5px;border:1px solid #ccc;float:left;width:180px}div.gallery:hover{border:1px solid #777}div.gallery img{width:100%;height:auto}.thumb{width:-webkit-fill-available;height:-webkit-fill-available}
+﻿/* General Styles */
+.cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.my-h1 {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #369;
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 20px 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Video Styles */
+.video {
+    flex: 1 1 calc(20% - 40px); /* Adjust as needed for different layouts */
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.video iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+}
+
+.video h2 {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .video {
+        flex: 1 1 100%;
+    }
+}
+
+/* Gallery Styles */
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+.thumb {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}

@@ -15,7 +15,7 @@
 
 .navbar a {
     float: left;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -44,7 +44,7 @@
 }
 
 .subnav .subnavbtn {
-    font-size: 14px;
+    font-size: 16px;
     border: none;
     outline: none;
     color: white;
@@ -98,7 +98,7 @@
     .subnav:hover .subnav-content {
         display: block;
         visibility: visible;
-        max-height: 450px;
+        max-height: 350px;
         /* Adjust based on content */
     }
 }
@@ -126,7 +126,7 @@
         display: block;
         position: relative;
         top: 0;
-        width: 80%;
+        width: 90%;
         padding: 14px 16px;
         background-color: #001f44;
         text-align: center;
@@ -174,11 +174,14 @@
         float: none;
         display: block;
         text-align: left;
-        font-size:16px;
     }
 
     .navbar.responsive .subnav {
         float: none;
+    }
+
+    .navbar.responsive .subnav .search {
+        max-width: 100%;
     }
 
     .navbar.responsive .subnav-content {
@@ -192,7 +195,6 @@
         display: block;
         width: 100%;
         text-align: left;
-        font-size:16px;
     }
 
     .navbar.responsive .subnav-content {
@@ -210,7 +212,6 @@
     .navbar.fixed {
         position: fixed;
         top: 0px;
-        left: 0px;
         width: 100%;
         box-shadow: -3px 13px 24px -1px rgba(0, 0, 0, 0.3);
         z-index: 99999;

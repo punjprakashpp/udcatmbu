@@ -1,1 +1,195 @@
-﻿.container{max-width:1200px;margin:0 auto;padding:0 15px}.container h2{font-size:1.5rem;margin-bottom:1rem;text-align:center}.container table{width:100%;border-collapse:collapse;margin-bottom:1.5rem}.container td,.container th{border:1px solid #ddd;padding:12px 15px;font-size:1rem;text-align:left}.container th{background-color:#f9f9f9;font-weight:700}.form-row button,.search-bar .btn{background-color:#007bff;color:#fff;cursor:pointer}.container td a{text-decoration:none;color:#007bff;font-weight:500}.container td a:hover{text-decoration:underline}.grid-view-container,.table-container{display:flex;flex-direction:column;align-items:center;margin:20px}.form-row{display:flex;flex-wrap:wrap;align-items:center;margin-bottom:10px;gap:10px;justify-content:center}.form-row label{margin-right:10px}.form-row button,.form-row input,.form-row select{padding:5px 10px;font-size:16px}.form-row button{border:none}.form-row button:hover,.search-bar .btn:hover{background-color:#0056b3}.search-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:15px;padding:10px;background-color:#f5f5f5;border-radius:5px;box-shadow:0 2px 4px rgba(0,0,0,.1)}.search-bar label{display:flex;align-items:center;font-size:1rem}.search-bar .datepicker,.search-bar .dropdown,.search-bar .textbox{padding:5px 10px;font-size:1rem;border:1px solid #ddd;border-radius:4px;margin-right:10px}.search-bar .btn{border:none;padding:8px 15px;font-size:1rem;border-radius:4px}@media (max-width:767px){.container td,.container th{font-size:.875rem;display:block;width:100%;padding:5px}.container th{display:none}.container td{text-align:left;border:none;border-bottom:1px solid #ddd;position:relative;padding-left:50%;padding-top:15px;padding-bottom:15px}.container td:last-child{border-bottom:none}.container td:before{content:attr(data-label);position:absolute;left:15px;top:15px;white-space:nowrap;font-weight:700;font-size:.875rem}.container td a{display:inline-block;padding:8px 0}.search-bar{flex-direction:column;gap:15px;padding:20px}.search-bar label{width:100%;justify-content:space-between;font-size:.875rem}.search-bar .btn,.search-bar .datepicker,.search-bar .dropdown,.search-bar .textbox{width:100%;font-size:1rem;padding:10px}.search-bar .btn{font-size:1.1rem;padding:12px}}
+﻿/* Base Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.container th,
+.container td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.container th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.container td a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+}
+
+.container td a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Optimization */
+@media (max-width: 767px) {
+  .container th,
+  .container td {
+    font-size: 0.875rem;
+    display: block;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .container th {
+    display: none;
+  }
+
+  .container td {
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 50%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .container td:last-child {
+    border-bottom: none;
+  }
+
+  .container td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 0.875rem;
+  }
+
+  .container td a {
+    display: inline-block;
+    padding: 8px 0;
+  }
+}
+
+/* Additional Styles */
+.table-container,
+.grid-view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  justify-content: center;
+}
+
+.form-row label {
+  margin-right: 10px;
+}
+
+.form-row select, 
+.form-row input,
+.form-row button {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.form-row button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.form-row button:hover {
+  background-color: #0056b3;
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.search-bar .datepicker,
+.search-bar .textbox,
+.search-bar .dropdown {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-bar .btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar .btn:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 767px) {
+  .search-bar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .search-bar label {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 0.875rem;
+  }
+
+  .search-bar .datepicker,
+  .search-bar .textbox,
+  .search-bar .dropdown,
+  .search-bar .btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+  
+  .search-bar .btn {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+}

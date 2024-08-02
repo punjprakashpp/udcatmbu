@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Affiliations & Regulations</title>
     <link rel="stylesheet" href="style/site.css">
+    <link rel="stylesheet" href="style/PdfViewer.css">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -56,6 +57,8 @@
                     </div>
                 </div>
             </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+            <script src="script/PdfViewer.js"></script>
         </div>
     </div>
 </asp:Content>

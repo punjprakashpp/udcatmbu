@@ -1,15 +1,14 @@
 <%@ Master AutoEventWireup="true" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="~/Admin/logo/logo.png" type="image" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
     <link href="Styles/nav.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="Script/nav.js" defer></script>
+    <link rel="icon" href="~/img/logo/logo-small.png" type="image" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -21,82 +20,83 @@
                     <h1>UDCA TMBU WEBSITE MANAGEMENT</h1>
                 </div>
                 <hr />
-                <nav class="navbar" id="navbar">
-                    <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><i class="fa fa-bars"></i></a>
-                    <div class="subnav home-link">
-                        <a href="Default.aspx">Dashboard</a>
-                    </div>
-                    <div class="sidebar" id="sidebar">
-                        <img class="logo-nav" src="logo/logo-head.png" alt="logo-head" />
-                        <a href="javascript:void(0);" class="icon cut" id="close" onclick="toggleResponsive()"><i class="fa fa-close"></i></a>
-                        <div class="subnav">
-                            <button class="subnavbtn" onclick="toggleDropdown(this)">Account <i class="fa fa-caret-down"></i></button>
-                            <div class="subnav-content">
-                                <a href="ChangePassword.aspx">Change Password</a>
-                                <a href="RegisterOtherUser.aspx">Register Other Users</a>
-                                <a href="RemoveOtherUser.aspx">Remove Other Users</a>
-                            </div>
+                    <nav class="navbar" id="navbar">
+                        <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><i class="fa fa-bars"></i></a>
+                        <div class="subnav home-link">
+                            <a href="Default.aspx">Dashboard</a>
                         </div>
-                        <div class="subnav">
-                            <button class="subnavbtn" onclick="toggleDropdown(this)">Add <i class="fa fa-caret-down"></i></button>
-                            <div class="subnav-content">
-                                <a href="AddHomeButton.aspx">Buttons</a>
-                                <a href="AddVideoLinks.aspx">Video Links</a>
-                                <a href="AddHomeLinks.aspx">Highlights Links</a>
-                                <a href="AddFaculty.aspx">Faculty & Guest Faculty</a>
-                                <a href="AddStaff.aspx">Office & Supporting Staff</a>
+                        <div class="sidebar" id="sidebar">
+                            <img class="logo-nav" src="logo/logo-head.png" alt="logo-head" />
+                            <a href="javascript:void(0);" class="icon cut" id="close" onclick="toggleResponsive()"><i class="fa fa-close"></i></a>
+                            <div class="subnav">
+                                <button class="subnavbtn" onclick="toggleDropdown(this)">Account <i class="fa fa-caret-down"></i></button>
+                                <div class="subnav-content">
+                                    <a href="ChangePassword.aspx">Change Password</a>
+                                    <a href="RegisterOtherUser.aspx">Register Other Users</a>
+                                    <a href="RemoveOtherUser.aspx">Remove Other Users</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="subnav">
-                            <button class="subnavbtn" onclick="toggleDropdown(this)">Update <i class="fa fa-caret-down"></i></button>
-                            <div class="subnav-content">
-                                <a href="UpdateFeeStructure.aspx">Fee Structure</a>
-                                <a href="UpdateImportantDates.aspx">Important dates</a>
-                                <a href="UpdateCoursePDF.aspx">Course Related PDF</a>
-                                <a href="UpdateAdministration.aspx">Administration Detail</a>
-                                <a href="UpdateProfilePDF.aspx">Administration Profile PDF</a>
+                            <div class="subnav">
+                                <button class="subnavbtn" onclick="toggleDropdown(this)">Add <i class="fa fa-caret-down"></i></button>
+                                <div class="subnav-content">
+                                    <a href="AddHomeButton.aspx">Buttons</a>
+                                    <a href="AddVideoLinks.aspx">Video Links</a>
+                                    <a href="AddHomeLinks.aspx">Highlights Links</a>
+                                    <a href="AddFaculty.aspx">Faculty & Guest Faculty</a>
+                                    <a href="AddStaff.aspx">Office & Supporting Staff</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="subnav">
-                            <button class="subnavbtn" onclick="toggleDropdown(this)">Upload <i class="fa fa-caret-down"></i></button>
-                            <div class="subnav-content">
-                                <a href="UploadNotice.aspx">Notice PDF</a>
-                                <a href="UploadNews.aspx">News PDF</a>
-                                <a href="UploadTender.aspx">Tender PDF</a>
-                                <a href="UploadFiles.aspx">Documents</a>
-                                <a href="UploadSliderImage.aspx">Slider Image</a>
-                                <a href="UploadGalleryImage.aspx">Gallery Image</a>
-                                <a href="UploadNewspaper.aspx">Newspaper Image</a>
-                                <a href="UploadAffReg.aspx">Affiliations & Regulations</a>
+                            <div class="subnav">
+                                <button class="subnavbtn" onclick="toggleDropdown(this)">Update <i class="fa fa-caret-down"></i></button>
+                                <div class="subnav-content">
+                                    <a href="UpdateFeeStructure.aspx">Fee Structure</a>
+                                    <a href="UpdateImportantDates.aspx">Important dates</a>
+                                    <a href="UpdateCoursePDF.aspx">Course Related PDF</a>
+                                    <a href="UpdateAdministration.aspx">Administration Detail</a>
+                                    <a href="UpdateProfilePDF.aspx">Administration Profile PDF</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="subnav">
-                            <button class="subnavbtn" onclick="toggleDropdown(this)">Manage <i class="fa fa-caret-down"></i></button>
-                            <div class="subnav-content">
-                                <a href="ManageHomeButton.aspx">Button</a>
-                                <a href="ManageVideoLinks.aspx">Video Links</a>
-                                <a href="ManageHomeLinks.aspx">Highlights Links</a>
-                                <a href="ManageNotice.aspx">Notice PDF</a>
-                                <a href="ManageNews.aspx">News PDF</a>
-                                <a href="ManageTender.aspx">Tender PDF</a>
-                                <a href="ManageSliderImage.aspx">Slider Image</a>
-                                <a href="ManageFaculty.aspx">Faculty & Guest Faculty</a>
-                                <a href="ManageStaff.aspx">Office & Supporting Staff</a>
-                                <a href="ManageAffReg.aspx">Affiliations & Regulations</a>
+                            <div class="subnav">
+                                <button class="subnavbtn" onclick="toggleDropdown(this)">Upload <i class="fa fa-caret-down"></i></button>
+                                <div class="subnav-content">
+                                    <a href="UploadNotice.aspx">Notice PDF</a>
+                                    <a href="UploadNews.aspx">News PDF</a>
+                                    <a href="UploadTender.aspx">Tender PDF</a>
+                                    <a href="UploadFiles.aspx">Documents</a>
+                                    <a href="UploadSliderImage.aspx">Slider Image</a>
+                                    <a href="UploadGalleryImage.aspx">Gallery Image</a>
+                                    <a href="UploadNewspaper.aspx">Newspaper Image</a>
+                                    <a href="UploadAffReg.aspx">Affiliations & Regulations</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="subnav">
-                            <button class="subnavbtn" onclick="toggleDropdown(this)">Delete <i class="fa fa-caret-down"></i></button>
-                            <div class="subnav-content">
-                                <a href="DeleteGalleryImage.aspx">Gallery Image</a>
-                                <a href="DeleteNewspaper.aspx">Newspaper Image</a>
-                                <a href="DeleteAlumni.aspx">Registered Alumni</a>
-                                <a href="DeleteFiles.aspx">Uploaded Documents</a>
+                            <div class="subnav">
+                                <button class="subnavbtn" onclick="toggleDropdown(this)">Manage <i class="fa fa-caret-down"></i></button>
+                                <div class="subnav-content">
+                                    <a href="ManageHomeButton.aspx">Button</a>
+                                    <a href="ManageVideoLinks.aspx">Video Links</a>
+                                    <a href="ManageHomeLinks.aspx">Highlights Links</a>
+                                    <a href="ManageNotice.aspx">Notice PDF</a>
+                                    <a href="ManageNews.aspx">News PDF</a>
+                                    <a href="ManageTender.aspx">Tender PDF</a>
+                                    <a href="ManageSliderImage.aspx">Slider Image</a>
+                                    <a href="ManageFaculty.aspx">Faculty & Guest Faculty</a>
+                                    <a href="ManageStaff.aspx">Office & Supporting Staff</a>
+                                    <a href="ManageAffReg.aspx">Affiliations & Regulations</a>
+                                </div>
                             </div>
+                            <div class="subnav">
+                                <button class="subnavbtn" onclick="toggleDropdown(this)">Delete <i class="fa fa-caret-down"></i></button>
+                                <div class="subnav-content">
+                                    <a href="DeleteGalleryImage.aspx">Gallery Image</a>
+                                    <a href="DeleteNewspaper.aspx">Newspaper Image</a>
+                                    <a href="DeleteAlumni.aspx">Registered Alumni</a>
+                                    <a href="DeleteFiles.aspx">Uploaded Documents</a>
+                                </div>
+                            </div>
+                            <a href="Logout.aspx">Log Out</a>
                         </div>
-                        <a href="Logout.aspx">Log Out</a>
-                    </div>
-                </nav>
+                    </nav>
+                <script type="text/javascript" src="Script/nav.js"></script>
             </div>
         </header>
         <form runat="server">
