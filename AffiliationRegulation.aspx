@@ -21,8 +21,8 @@
             <h1>Affiliations & Regulations</h1>
             <div class="search-bar">
                 <label>
-                    Affiliations & Regulations Date:
-                <asp:TextBox ID="txtSearchDate" CssClass="datepicker textbox" runat="server"></asp:TextBox>
+                   Search Affiliations & Regulations:
+                <asp:TextBox ID="txtSearch" CssClass="datepicker textbox" runat="server"></asp:TextBox>
                 </label>
                 <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn" />
                 <label>
@@ -43,7 +43,7 @@
                     <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
                     <asp:TemplateField HeaderText="File">
                         <ItemTemplate>
-                            <a href='<%# Eval("FilePath") %>' class="open-pdf" data-url='<%# Eval("FilePath") %>' target="_blank">View</a>
+                            <a href='#' class="open-pdf" data-url='<%# Eval("FilePath") %>'>View</a>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

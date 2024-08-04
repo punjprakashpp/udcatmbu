@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ManageNews.aspx.cs" Inherits="Admin_pages_EditDeleteNews" %>
+﻿<%@ Page Title="Manage Events" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ManageEvents.aspx.cs" Inherits="Admin_pages_EditDeleteNews" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Edit/Delete News</title>
     <link rel="stylesheet" type="text/css" href="Styles/table.css" />
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -15,13 +14,14 @@
         });
     </script>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container">
-        <h2>Manage News</h2>
+        <h2>Manage Event</h2>
         <div class="search-bar">
             <label>
-                News Date:
-                <asp:TextBox ID="txtSearchDate" CssClass="datepicker textbox" runat="server" ></asp:TextBox>
+                Search Event:
+                <asp:TextBox ID="txtSearch" CssClass="textbox" runat="server"></asp:TextBox>
             </label>
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn" />
             <label>
@@ -35,16 +35,23 @@
             <asp:Button ID="btnPrevious" runat="server" Text="Previous" OnClick="btnPrevious_Click" CssClass="btn" />
             <asp:Button ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" CssClass="btn" />
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="BID" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowDeleting="GridView1_RowDeleting" OnRowCancelingEdit="GridView1_RowCancelingEdit">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="DocsID" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowDeleting="GridView1_RowDeleting" OnRowCancelingEdit="GridView1_RowCancelingEdit">
             <Columns>
-                <asp:BoundField DataField="BID" HeaderText="News ID" ReadOnly="True" SortExpression="BID" Visible="False" />
-                <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
-                <asp:TemplateField HeaderText="News Date">
+                <asp:BoundField DataField="DocsID" HeaderText="Event ID" ReadOnly="True" SortExpression="DocsID" Visible="False" />
+                <asp:TemplateField HeaderText="Event">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txtNewsDate" runat="server" CssClass="datepicker" Text='<%# Bind("Date", "{0:dd-MM-yyyy}") %>'></asp:TextBox>
+                        <asp:TextBox ID="txtTitle" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID="lblNewsDate" runat="server" Text='<%# Eval("Date", "{0:dd-MM-yyyy}") %>'></asp:Label>
+                        <asp:Label ID="lblTitle" runat="server" Text='<%# Eval("Title") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Date">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtEventDate" runat="server" CssClass="datepicker" Text='<%# Bind("Date", "{0:dd-MM-yyyy}") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="lblEventDate" runat="server" Text='<%# Eval("Date", "{0:dd-MM-yyyy}") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="File Path">

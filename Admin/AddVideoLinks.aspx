@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="AddVideoLinks.aspx.cs" Inherits="Admin_pages_UploadMarqueeVideos" %>
+﻿<%@ Page Title="Add Video Links" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="AddVideoLinks.aspx.cs" Inherits="Admin_pages_UploadMarqueeVideos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <title>Add Video Links</title>
     <link rel="stylesheet" href="Styles/manage.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">

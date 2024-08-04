@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="RemoveOtherUser.aspx.cs" Inherits="Admin_RemoveOtherUser" %>
+﻿<%@ Page Title="Remove Other User" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="RemoveOtherUser.aspx.cs" Inherits="Admin_RemoveOtherUser" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Remove Other User</title>
     <link rel="stylesheet" type="text/css" href="Styles/account.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">

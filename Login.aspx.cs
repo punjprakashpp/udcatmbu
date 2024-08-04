@@ -25,7 +25,7 @@ public partial class Login : System.Web.UI.Page
                 lblMessage.ForeColor = System.Drawing.Color.Green;
                 lblMessage.Text = "Login successful!";
                 FormsAuthentication.SetAuthCookie(userName, false);  // Set the authentication cookie
-                Response.Redirect("~/Admin/Default.aspx");
+                Response.Redirect("~/Admin/Dashboard.aspx");
             }
             else
             {

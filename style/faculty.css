@@ -1,5 +1,4 @@
-﻿.cont {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+﻿.cont { 
     margin: 0;
     padding: 0;
     display: flex;
@@ -24,7 +23,6 @@
         opacity: 0;
         transform: translateY(-20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -35,7 +33,6 @@
     text-align: center;
     margin-bottom: 30px;
     background: linear-gradient(135deg, #007bff, #00d4ff);
-    /* Gradient background */
     color: white;
     padding: 20px;
     border-radius: 15px;
@@ -54,7 +51,6 @@
         opacity: 0;
         transform: translateY(-20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -78,10 +74,12 @@
     margin-bottom: 20px;
     overflow: hidden;
     animation: slideIn 1s ease;
+    padding: 10px;
 }
 
 .cont .container .faculty-member:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .cont .container .faculty-member img {
@@ -105,7 +103,6 @@
         opacity: 0;
         transform: rotate(-180deg);
     }
-
     to {
         opacity: 1;
         transform: rotate(0);
@@ -114,6 +111,7 @@
 
 .cont .container .faculty-details {
     padding: 20px;
+    flex: 1;
 }
 
 .cont .container .faculty-details h2 {
@@ -127,7 +125,7 @@
 .cont .container .faculty-details p {
     color: #666;
     font-size: 18px;
-    margin: 0;
+    margin: 5px 0;
     line-height: 1.6;
     animation: fadeIn 1s ease;
 }
@@ -148,7 +146,6 @@
     color: #0056b3;
 }
 
-/* Additional Member Cards */
 .cont .container .faculty-member:nth-child(odd) {
     background-color: #e8f4f8;
 }
@@ -160,5 +157,14 @@
 @media (max-width: 600px) {
     .cont .container .faculty-member {
         flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cont .container .faculty-member img {
+        margin-bottom: 15px;
+    }
+
+    .cont .container .faculty-details {
+        padding: 0;
     }
 }

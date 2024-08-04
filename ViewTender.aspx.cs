@@ -43,16 +43,17 @@ public partial class pages_Tender : System.Web.UI.Page
             string query = @"
                 WITH Tender_CTE AS (
                     SELECT 
-                        BID, 
+                        DocsID,
+                        No, 
                         Title, 
                         Date, 
                         FilePath,
                         ROW_NUMBER() OVER (ORDER BY Date DESC) AS RowNum
                     FROM 
-                        Board
+                        Docs
                     WHERE
                         Type = 'Tender'
-                        AND (@TenderDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @TenderDate)
+                        AND (@Title IS NULL OR Title LIKE '%' + @Title + '%')
                 )
                 SELECT * FROM Tender_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow
@@ -60,13 +61,13 @@ public partial class pages_Tender : System.Web.UI.Page
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                if (!string.IsNullOrEmpty(txtSearchDate.Text))
+                if (!string.IsNullOrEmpty(txtSearch.Text))
                 {
-                    cmd.Parameters.AddWithValue("@TenderDate", txtSearchDate.Text);
+                    cmd.Parameters.AddWithValue("@Title", txtSearch.Text);
                 }
                 else
                 {
-                    cmd.Parameters.AddWithValue("@TenderDate", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Title", DBNull.Value);
                 }
 
                 int startRow = PageIndex * PageSize + 1;

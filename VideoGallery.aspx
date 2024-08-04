@@ -9,7 +9,7 @@
         <asp:Repeater ID="linksRepeater" runat="server">
             <ItemTemplate>
                 <div class="video">
-                    <iframe width="560" height="315" src='<%# "https://www.youtube.com/embed/" + Eval("LinkURL") %>' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src='<%# Eval("LinkURL") %>' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <h2><%# Eval("LinkText") %></h2>
                 </div>
             </ItemTemplate>

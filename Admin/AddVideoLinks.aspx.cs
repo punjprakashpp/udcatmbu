@@ -23,9 +23,10 @@ public partial class Admin_pages_UploadMarqueeVideos : System.Web.UI.Page
 
         // Remove "https://youtu.be/" from the VideoURL if it exists
         string urlToRemove = "https://youtu.be/";
+        string urlToAdd = "https://www.youtube.com/embed/";
         if (VideoURL.StartsWith(urlToRemove))
         {
-            VideoURL = VideoURL.Replace(urlToRemove, string.Empty);
+            VideoURL = VideoURL.Replace(urlToRemove, urlToAdd);
         }
 
         if (!string.IsNullOrEmpty(VideoText) && !string.IsNullOrEmpty(VideoURL))

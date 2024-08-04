@@ -25,14 +25,14 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT MID, Name FROM Member WHERE Type = 'Faculty' OR Type = 'Guest'";
+            string query = "SELECT MemberID, Name FROM Member WHERE Type = 'Faculty' OR Type = 'Guest'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 ddlFaculties.DataSource = reader;
                 ddlFaculties.DataTextField = "Name";
-                ddlFaculties.DataValueField = "MID";
+                ddlFaculties.DataValueField = "MemberID";
                 ddlFaculties.DataBind();
                 ddlFaculties.Items.Insert(0, new ListItem("--Select Faculty--", ""));
                 reader.Close();
@@ -45,7 +45,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT * FROM Member WHERE MID = @FacultyId";
+            string query = "SELECT * FROM Member WHERE MemberID = @FacultyId";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@FacultyId", facultyId);
@@ -92,7 +92,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                 con.Open();
 
 
-                string selectImagePathQuery = "SELECT ImagePath FROM Member WHERE MID = @FacultyId";
+                string selectImagePathQuery = "SELECT ImagePath FROM Member WHERE MemberID = @FacultyId";
                 using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, con))
                 {
                     selectImagePathCmd.Parameters.AddWithValue("@FacultyId", facultyId);
@@ -160,7 +160,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    string query = "UPDATE Member SET Type = @Type, Status = @Status, Name = @Name, Qualification = @Qualification, Position = @Position, Phone = @Phone, Email = @Email, ImagePath = @ImagePath WHERE MID = @FacultyId";
+                    string query = "UPDATE Member SET Type = @Type, Status = @Status, Name = @Name, Qualification = @Qualification, Position = @Position, Phone = @Phone, Email = @Email, ImagePath = @ImagePath WHERE MemberID = @FacultyId";
                     
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -206,14 +206,14 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                     conn.Open();
 
                     string imagePath = "";
-                    string selectImagePathQuery = "SELECT ImagePath FROM Member WHERE MID = @FacultyId";
+                    string selectImagePathQuery = "SELECT ImagePath FROM Member WHERE MemberID = @FacultyId";
                     using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, conn))
                     {
                         selectImagePathCmd.Parameters.AddWithValue("@FacultyId", facultyId);
                         imagePath = selectImagePathCmd.ExecuteScalar() as string;
                     }
 
-                    string deleteFacultyQuery = "DELETE FROM Member WHERE MID = @FacultyId";
+                    string deleteFacultyQuery = "DELETE FROM Member WHERE MemberID = @FacultyId";
                     using (SqlCommand deleteFacultyCmd = new SqlCommand(deleteFacultyQuery, conn))
                     {
                         deleteFacultyCmd.Parameters.AddWithValue("@FacultyId", facultyId);

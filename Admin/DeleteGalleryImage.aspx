@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="DeleteGalleryImage.aspx.cs" Inherits="Admin_pages_DeleteGalleryImage" %>
+﻿<%@ Page Title="Delete Gallery Images" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="DeleteGalleryImage.aspx.cs" Inherits="Admin_pages_DeleteGalleryImage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <title>Delete Gallery Images</title>
     <link rel="stylesheet" href="Styles/manage.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -13,11 +12,11 @@
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
         </div>
         <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Red"></asp:Label>
-        <asp:GridView ID="gvGallery" runat="server" AutoGenerateColumns="False" DataKeyNames="ID"
+        <asp:GridView ID="gvGallery" runat="server" AutoGenerateColumns="False" DataKeyNames="ImageID"
             OnRowDeleting="gvGallery_RowDeleting" AllowPaging="True" PageSize="10"
             OnPageIndexChanging="gvGallery_PageIndexChanging">
             <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" Visible="False" />
+                <asp:BoundField DataField="ImageID" HeaderText="ImageID" ReadOnly="True" Visible="False" />
                 <asp:BoundField DataField="Title" HeaderText="Occasion" />
                 <asp:ImageField DataImageUrlField="ImagePath" HeaderText="Image" ControlStyle-Height="100px" ControlStyle-Width="150px">
                     <ControlStyle Height="100px" Width="150px" />

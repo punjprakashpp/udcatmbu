@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UpdateCoursePDF.aspx.cs" Inherits="Admin_pages_UpdateOtherPDF" %>
+﻿<%@ Page Title="Update Course PDF" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UpdateCoursePDF.aspx.cs" Inherits="Admin_pages_UpdateOtherPDF" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Update Other PDF</title>
     <link rel="stylesheet" href="Styles/add.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -15,7 +14,7 @@
                 <asp:FileUpload ID="fileUploadCalender" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnCalender" runat="server" Text="Submit" OnClick="btnCalender_Click" />
+                <asp:Button ID="btnCalender" runat="server" Text="Update" OnClick="btnCalender_Click" />
             </td>
             <td></td>
         </tr>
@@ -27,7 +26,7 @@
                 <asp:FileUpload ID="fileUploadProspectus" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnProspectus" runat="server" Text="Submit" OnClick="btnProspectus_Click" />
+                <asp:Button ID="btnProspectus" runat="server" Text="Update" OnClick="btnProspectus_Click" />
             </td>
             <td></td>
         </tr>
@@ -39,7 +38,7 @@
                 <asp:FileUpload ID="fileUploadTimeTable" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnTimeTable" runat="server" Text="Submit" OnClick="btnTimeTable_Click" />
+                <asp:Button ID="btnTimeTable" runat="server" Text="Update" OnClick="btnTimeTable_Click" />
             </td>
             <td></td>
         </tr>
@@ -51,7 +50,7 @@
                 <asp:FileUpload ID="fileUploadHolidayList" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnHolidayList" runat="server" Text="Submit" OnClick="btnHolidayList_Click" />
+                <asp:Button ID="btnHolidayList" runat="server" Text="Update" OnClick="btnHolidayList_Click" />
             </td>
             <td></td>
         </tr>
@@ -63,7 +62,7 @@
                 <asp:FileUpload ID="fileUploadCourseStructure" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnCourseStructure" runat="server" Text="Submit" OnClick="btnCourseStructure_Click" />
+                <asp:Button ID="btnCourseStructure" runat="server" Text="Update" OnClick="btnCourseStructure_Click" />
             </td>
             <td></td>
         </tr>
@@ -75,7 +74,7 @@
                 <asp:FileUpload ID="fileUploadCourseSyllabus" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnCourseSyllabus" runat="server" Text="Submit" OnClick="btnCourseSyllabus_Click" />
+                <asp:Button ID="btnCourseSyllabus" runat="server" Text="Update" OnClick="btnCourseSyllabus_Click" />
             </td>
             <td></td>
         </tr>
@@ -85,4 +84,3 @@
         </tr>
     </table>
 </asp:Content>
-

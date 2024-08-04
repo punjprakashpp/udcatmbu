@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ChangePassword.aspx.cs" Inherits="Admin_Account_ChangePassword" %>
+﻿<%@ Page Title="Change Password" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ChangePassword.aspx.cs" Inherits="Admin_Account_ChangePassword" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Change Password</title>
     <link rel="stylesheet" type="text/css" href="Styles/account.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -44,4 +43,3 @@
             </table>
         </div>
 </asp:Content>
-

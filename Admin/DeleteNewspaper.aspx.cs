@@ -20,7 +20,7 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ID, Title, '~/' + ImagePath AS ImagePath FROM Image WHERE Type = 'News'";
+            string query = "SELECT ImageID, Title, '~/' + ImagePath AS ImagePath FROM Image WHERE Type = 'News'";
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 query += " AND Title LIKE @SearchQuery";
@@ -60,7 +60,7 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ImagePath FROM Image WHERE ID = @ID";
+            string query = "SELECT ImagePath FROM Image WHERE ImageID = @ID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@ID", id);
@@ -73,7 +73,7 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
                 reader.Close();
             }
 
-            query = "DELETE FROM Image WHERE ID = @ID";
+            query = "DELETE FROM Image WHERE ImageID = @ID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@ID", id);

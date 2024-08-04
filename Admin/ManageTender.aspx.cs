@@ -42,25 +42,31 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             string query = @"
-                WITH Tender_CTE AS (
-                    SELECT 
-                        BID, 
-                        Title, 
-                        Date, 
-                        FilePath,
-                        ROW_NUMBER() OVER (ORDER BY Date) AS RowNum
-                    FROM 
-                        Board
-                    WHERE
-                        Type = 'Tender'
-                        AND (@TenderDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @TenderDate)
-                )
-                SELECT * FROM Tender_CTE
-                WHERE RowNum BETWEEN @StartRow AND @EndRow";
+            WITH Tender_CTE AS (
+                SELECT 
+                    DocsID,
+                    No, 
+                    Title, 
+                    Date, 
+                    FilePath,
+                    ROW_NUMBER() OVER (ORDER BY Date) AS RowNum
+                FROM 
+                    Docs
+                WHERE
+                    Type = 'Tender'
+                    AND (@SearchNo IS NULL OR No LIKE '%' + @SearchNo + '%')
+                    AND (@SearchTitle IS NULL OR Title LIKE '%' + @SearchTitle + '%')
+            )
+            SELECT * FROM Tender_CTE
+            WHERE RowNum BETWEEN @StartRow AND @EndRow";
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@TenderDate", string.IsNullOrEmpty(txtSearchDate.Text) ? (object)DBNull.Value : txtSearchDate.Text);
+                string searchNo = rdNo.Checked ? txtSearch.Text : string.Empty;
+                string searchTitle = rdTitle.Checked ? txtSearch.Text : string.Empty;
+
+                cmd.Parameters.AddWithValue("@SearchNo", string.IsNullOrEmpty(searchNo) ? (object)DBNull.Value : searchNo);
+                cmd.Parameters.AddWithValue("@SearchTitle", string.IsNullOrEmpty(searchTitle) ? (object)DBNull.Value : searchTitle);
 
                 int startRow = PageIndex * PageSize + 1;
                 int endRow = startRow + PageSize - 1;
@@ -79,11 +85,13 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
         }
     }
 
+
     protected void btnSearch_Click(object sender, EventArgs e)
     {
         PageIndex = 0;
         BindGridView();
     }
+
 
     protected void ddlRecordsPerPage_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -115,12 +123,13 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
     protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
         GridViewRow row = GridView1.Rows[e.RowIndex];
-        int tenderID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-        string title = (row.Cells[1].Controls[0] as TextBox).Text;
-        string tenderDateText = (row.FindControl("txtTenderDate") as TextBox).Text;
-        DateTime tenderDate;
+        int TenderID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+        string no = (row.FindControl("txtNo") as TextBox).Text;
+        string title = (row.FindControl("txtTitle") as TextBox).Text;
+        string TenderDateText = (row.FindControl("txtTenderDate") as TextBox).Text;
+        DateTime TenderDate;
 
-        if (!DateTime.TryParseExact(tenderDateText, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out tenderDate))
+        if (!DateTime.TryParseExact(TenderDateText, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out TenderDate))
         {
             lblMessage.Text = "Invalid date format.";
             lblMessage.ForeColor = System.Drawing.Color.Red;
@@ -175,13 +184,14 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "UPDATE Board SET Title=@Title, Date=@TenderDate, FilePath=@FilePath WHERE BID=@TenderID";
+            string query = "UPDATE Docs SET No=@No, Title=@Title, Date=@TenderDate, FilePath=@FilePath WHERE DocsID=@TenderID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
+                cmd.Parameters.AddWithValue("@No", no);
                 cmd.Parameters.AddWithValue("@Title", title);
-                cmd.Parameters.AddWithValue("@TenderDate", tenderDate);
+                cmd.Parameters.AddWithValue("@TenderDate", TenderDate);
                 cmd.Parameters.AddWithValue("@FilePath", newFilePath);
-                cmd.Parameters.AddWithValue("@TenderID", tenderID);
+                cmd.Parameters.AddWithValue("@TenderID", TenderID);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -199,16 +209,16 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-        int tenderID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+        int TenderID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
 
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             // Retrieve the file path to delete the file
-            string query = "SELECT FilePath FROM Board WHERE BID=@TenderID";
+            string query = "SELECT FilePath FROM Docs WHERE DocsID=@TenderID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@TenderID", tenderID);
+                cmd.Parameters.AddWithValue("@TenderID", TenderID);
                 conn.Open();
                 string filePath = cmd.ExecuteScalar() as string;
                 if (filePath != null && File.Exists(Server.MapPath("~/" + filePath)))
@@ -218,10 +228,10 @@ public partial class Admin_pages_EditDeleteTender : System.Web.UI.Page
             }
 
             // Delete the record from the database
-            query = "DELETE FROM Board WHERE BID=@TenderID";
+            query = "DELETE FROM Docs WHERE DocsID=@TenderID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@TenderID", tenderID);
+                cmd.Parameters.AddWithValue("@TenderID", TenderID);
                 cmd.ExecuteNonQuery();
                 BindGridView();
             }

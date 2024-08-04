@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UpdateFeeStructure.aspx.cs" Inherits="Admin_pages_UpdateFeeStructure" %>
+﻿<%@ Page Title="Update Fee Structure" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UpdateFeeStructure.aspx.cs" Inherits="Admin_pages_UpdateFeeStructure" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Update Fee Structure</title>
     <link rel="stylesheet" href="Styles/manage.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">

@@ -343,7 +343,6 @@
 .footer {
     background: #001f44;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-    font-family: 'Open Sans', sans-serif;
     color: white;
     width: 100%;
     text-align: left;
@@ -356,6 +355,15 @@
     vertical-align: top;
     width: 24%;
     margin: 10px 0 12px;
+}
+.footer .col-1 {
+    width: 25%;
+}
+.footer .col-2 {
+    width: 30%;
+}
+.footer .col-3, .footer .col-4 {
+    width: 20%;
 }
 
 .footer .column img {
@@ -374,13 +382,13 @@
     padding-left: 10px;
 }
 
-.footer .footer-links {
+.footer .links {
     color: #ffffff;
     margin: 10px 0 12px;
     padding: 0;
 }
 
-.footer .footer-links a {
+.footer .links a {
     display: inline-block;
     line-height: 1.5;
     font-weight: 200;
@@ -389,16 +397,12 @@
     color: inherit;
 }
 
-.footer .footer-links a:before {
+.footer .links a:before {
     content: "|";
     font-weight: 200;
     font-size: 20px;
     color: #fff;
     padding-right: 5px;
-}
-
-.footer .footer-links .link-1:before {
-    content: none;
 }
 
 .footer ul {
@@ -414,46 +418,63 @@
     text-decoration: underline;
 }
 
-.footer .footer-copyright {
+.footer .copyright {
     color: white;
     text-align: center;
     margin-top: 10px;
 }
 
-.footer .footer-copyright p {
-    font-size: 1em;
+.footer .copyright p {
+    font-size: 1.25em;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer .column {
+        width: 45%;
+        margin:0px 10px;
+    }
 }
 
 @media screen and (max-width: 720px) {
     .footer .column {
-        width: 49%;
+        width: 45%;
+        line-height:2em;
+    }
+    .footer .links a {
+        font-size:1.25em;
+    }
+    .footer .col-1, .footer .col-2 {
+        width:95%;
+    }
+    .footer .col-1 p {
+        font-size:1.25em;
+        text-align:left;
+        margin-bottom: 10px;
+    }    
+    .footer .copyright p {
+        font-size: 1.15em;
     }
 }
 
 @media screen and (max-width: 480px) {
+    .footer {
+        padding: 10px;
+    }
     .footer .column {
         display: block;
         width: 100%;
         margin-bottom: 20px;
     }
-}
-
-/* Additional mobile-specific styles */
-@media screen and (max-width: 320px) {
-    .footer {
-        padding: 10px;
-    }
-
     .footer .column p {
         font-size: 12px;
         padding-left: 5px;
     }
 
-    .footer .footer-links a {
+    .footer .links a {
         font-size: 14px;
     }
 
-    .footer .footer-copyright p {
+    .footer .copyright p {
         font-size: 0.9em;
     }
 }

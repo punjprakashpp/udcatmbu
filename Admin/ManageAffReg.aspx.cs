@@ -44,23 +44,23 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
             string query = @"
                 WITH AffReg_CTE AS (
                     SELECT 
-                        BID, 
+                        DocsID,
                         Title, 
                         Date, 
                         FilePath,
                         ROW_NUMBER() OVER (ORDER BY Date) AS RowNum
                     FROM 
-                        Board
+                        Docs
                     WHERE
                         Type = 'AffReg'
-                        AND (@AffRegDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @AffRegDate)
+                    AND (@SearchTitle IS NULL OR Title LIKE '%' + @SearchTitle + '%')
                 )
                 SELECT * FROM AffReg_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow";
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@AffRegDate", string.IsNullOrEmpty(txtSearchDate.Text) ? (object)DBNull.Value : txtSearchDate.Text);
+                cmd.Parameters.AddWithValue("@SearchTitle", string.IsNullOrEmpty(txtSearch.Text) ? (object)DBNull.Value : txtSearch.Text);
 
                 int startRow = PageIndex * PageSize + 1;
                 int endRow = startRow + PageSize - 1;
@@ -115,12 +115,12 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
     protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
         GridViewRow row = GridView1.Rows[e.RowIndex];
-        int affregID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-        string title = (row.Cells[1].Controls[0] as TextBox).Text;
-        string affregDateText = (row.FindControl("txtAffRegDate") as TextBox).Text;
-        DateTime affregDate;
+        int AffRegID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+        string title = (row.FindControl("txtTitle") as TextBox).Text;
+        string AffRegDateText = (row.FindControl("txtAffRegDate") as TextBox).Text;
+        DateTime AffRegDate;
 
-        if (!DateTime.TryParseExact(affregDateText, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out affregDate))
+        if (!DateTime.TryParseExact(AffRegDateText, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out AffRegDate))
         {
             lblMessage.Text = "Invalid date format.";
             lblMessage.ForeColor = System.Drawing.Color.Red;
@@ -175,13 +175,13 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "UPDATE Board SET Title=@Title, Date=@AffRegDate, FilePath=@FilePath WHERE BID=@AffRegID";
+            string query = "UPDATE Docs SET Title=@Title, Date=@AffRegDate, FilePath=@FilePath WHERE DocsID=@AffRegID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Title", title);
-                cmd.Parameters.AddWithValue("@AffRegDate", affregDate);
+                cmd.Parameters.AddWithValue("@AffRegDate", AffRegDate);
                 cmd.Parameters.AddWithValue("@FilePath", newFilePath);
-                cmd.Parameters.AddWithValue("@AffRegID", affregID);
+                cmd.Parameters.AddWithValue("@AffRegID", AffRegID);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -199,16 +199,16 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-        int affregID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+        int AffRegID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
 
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             // Retrieve the file path to delete the file
-            string query = "SELECT FilePath FROM Board WHERE BID=@AffRegID";
+            string query = "SELECT FilePath FROM Docs WHERE DocsID=@AffRegID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@AffRegID", affregID);
+                cmd.Parameters.AddWithValue("@AffRegID", AffRegID);
                 conn.Open();
                 string filePath = cmd.ExecuteScalar() as string;
                 if (filePath != null && File.Exists(Server.MapPath("~/" + filePath)))
@@ -218,10 +218,10 @@ public partial class Admin_pages_EditDeleteAffReg : System.Web.UI.Page
             }
 
             // Delete the record from the database
-            query = "DELETE FROM Board WHERE BID=@AffRegID";
+            query = "DELETE FROM Docs WHERE DocsID=@AffRegID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@AffRegID", affregID);
+                cmd.Parameters.AddWithValue("@AffRegID", AffRegID);
                 cmd.ExecuteNonQuery();
                 BindGridView();
             }

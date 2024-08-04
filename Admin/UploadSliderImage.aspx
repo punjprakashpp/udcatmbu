@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UploadSliderImage.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
+﻿<%@ Page Title="Upload Slider image" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UploadSliderImage.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Add Slider image</title>
     <link rel="stylesheet" href="Styles/manage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
@@ -40,10 +39,12 @@
                 </td>
             </tr>
             <tr>
+                <td>&nbsp;</td>
                 <td>
-                    <asp:Button ID="btnEdit" runat="server" Text="Manage" OnClick="btnEdit_Click" /></td>
-                <td>
-                    <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" /></td>
+                    <asp:Button ID="btnSave" runat="server" Text="Upload" OnClick="btnSave_Click" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnEdit" runat="server" Text="Delete Images" OnClick="btnEdit_Click" />
+                </td>     
             </tr>
         </table>
     </div>

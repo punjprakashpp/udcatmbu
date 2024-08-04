@@ -8,12 +8,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body {
-  background: #b6b7bc;
-  font-size: 0.8em;
-  color: #696969;
-}
-
 a {
   color: #034af3;
   text-decoration: none;
@@ -52,10 +46,9 @@ h4, h5, h6 {
 }
 
 .page {
-  width: 960px;
+  width: 1090px;
   background: #fff;
-  margin: 20px auto;
-  padding: 10px;
+  margin: 5px auto;
   border: 1px solid #496077;
 }
 
@@ -66,57 +59,12 @@ h4, h5, h6 {
 }
 
 .header h1 {
-  line-height: 2em;
   font-size: 2em;
   color:white;
 }
 
-.title, .cen {
+.title {
   text-align: center;
-}
-
-.cen {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.cen .data {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.cen ul {
-  list-style: none;
-  padding: 0 20px;
-}
-
-.cen li {
-  margin-bottom: 10px;
-}
-
-.cen a {
-  color: #007bff;
-}
-
-.cen a:hover {
-  text-decoration: underline;
-}
-
-@media (min-width: 768px) {
-  .cen {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .cen .data {
-    width: 33%;
-  }
 }
 
 @media (max-width: 880px) {
@@ -169,6 +117,7 @@ h4, h5, h6 {
   text-align: center;
   font-size: 16px;
   padding: 10px 0;
+  margin-bottom:0px;
 }
 
 @media (max-width: 500px) {

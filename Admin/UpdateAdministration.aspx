@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UpdateAdministration.aspx.cs" Inherits="Admin_pages_UpdateAdministration" %>
+﻿<%@ Page Title="Update Administrative Person" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UpdateAdministration.aspx.cs" Inherits="Admin_pages_UpdateAdministration" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Manage Administration Person</title>
     <link rel="stylesheet" href="Styles/manage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
@@ -17,7 +16,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container">
-        <h2>Update Administration Person</h2>
+        <h2>Update Administrative Person</h2>
         <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Text=""></asp:Label>
         <asp:HiddenField ID="hfPersonID" runat="server" />
         <asp:HiddenField ID="hfCurrentImagePath" runat="server" />

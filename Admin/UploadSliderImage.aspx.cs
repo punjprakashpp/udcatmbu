@@ -10,7 +10,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-        Response.Redirect("ManageSliderImage.aspx");
+        Response.Redirect("DeleteSliderImage.aspx");
     }
 
     protected void btnSave_Click(object sender, EventArgs e)

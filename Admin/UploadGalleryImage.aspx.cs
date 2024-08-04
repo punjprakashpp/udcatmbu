@@ -44,6 +44,7 @@ public partial class Admin_pages_UploadGalleryImage : Page
             }
 
             lblMessage.Text = "Images uploaded successfully.";
+            txtOccasion.Text = string.Empty;
         }
         else
         {

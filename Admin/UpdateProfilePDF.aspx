@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UpdateProfilePDF.aspx.cs" Inherits="Admin_pages_UpdateOtherPDF" %>
+﻿<%@ Page Title="Update Profile PDF" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UpdateProfilePDF.aspx.cs" Inherits="Admin_pages_UpdateOtherPDF" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Update Profile PDF</title>
     <link rel="stylesheet" href="Styles/add.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -15,7 +14,7 @@
                 <asp:FileUpload ID="fileUploadVCProfile" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnVCProfile" runat="server" Text="Submit" OnClick="btnVCProfile_Click" />
+                <asp:Button ID="btnVCProfile" runat="server" Text="Update" OnClick="btnVCProfile_Click" />
             </td>
             <td></td>
         </tr>
@@ -27,7 +26,7 @@
                 <asp:FileUpload ID="fileUploadPVCProfile" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnPVCProfile" runat="server" Text="Submit" OnClick="btnPVCProfile_Click" />
+                <asp:Button ID="btnPVCProfile" runat="server" Text="Update" OnClick="btnPVCProfile_Click" />
             </td>
             <td></td>
         </tr>
@@ -39,7 +38,7 @@
                 <asp:FileUpload ID="fileUploadDirectorProfile" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnDirectorProfile" runat="server" Text="Submit" OnClick="btnDirectorProfile_Click" />
+                <asp:Button ID="btnDirectorProfile" runat="server" Text="Update" OnClick="btnDirectorProfile_Click" />
             </td>
             <td></td>
         </tr>
@@ -51,7 +50,7 @@
                 <asp:FileUpload ID="fileUploadDSWProfile" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnDSWProfile" runat="server" Text="Submit" OnClick="btnDSWProfile_Click" />
+                <asp:Button ID="btnDSWProfile" runat="server" Text="Update" OnClick="btnDSWProfile_Click" />
             </td>
             <td></td>
         </tr>
@@ -63,7 +62,7 @@
                 <asp:FileUpload ID="fileUploadCCDCProfile" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnCCDCProfile" runat="server" Text="Submit" OnClick="btnCCDCProfile_Click" />
+                <asp:Button ID="btnCCDCProfile" runat="server" Text="Update" OnClick="btnCCDCProfile_Click" />
             </td>
             <td></td>
         </tr>
@@ -75,7 +74,7 @@
                 <asp:FileUpload ID="fileUploadRegistrarProfile" runat="server" />
             </td>
             <td>
-                <asp:Button ID="btnRegistrarProfile" runat="server" Text="Submit" OnClick="btnRegistrarProfile_Click" />
+                <asp:Button ID="btnRegistrarProfile" runat="server" Text="Update" OnClick="btnRegistrarProfile_Click" />
             </td>
             <td></td>
         </tr>

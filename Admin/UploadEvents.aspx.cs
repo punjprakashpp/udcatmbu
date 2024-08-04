@@ -3,27 +3,22 @@ using System.IO;
 using System.Data.SqlClient;
 using System.Configuration;
 
-public partial class Admin_pages_UploadNews : System.Web.UI.Page
+public partial class Admin_pages_UploadEvent : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
 
     protected void btnSubmit_Edit(object sender, EventArgs e)
     {
-        Response.Redirect("ManageNews.aspx");
+        Response.Redirect("ManageEvents.aspx");
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
-        string newsTitle = txtLinkText.Text.Trim();
-        DateTime newsDate;
-        string imp = "no";
+        string EventTitle = txtLinkText.Text.Trim();
+        DateTime EventDate;
+        string important = "no";
         string filePath = null;
 
-        // Check if the title is not empty and the date is valid
-        if (!string.IsNullOrEmpty(newsTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out newsDate))
+        if (!string.IsNullOrEmpty(EventTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out EventDate))
         {
             if (fileUpload.HasFile)
             {
@@ -34,11 +29,10 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
                     {
                         if (ImpChkbox.Checked)
                         {
-                            imp = "yes";
+                            important = "yes";
                         }
-
                         string fileName = Path.GetFileName(fileUpload.FileName);
-                        string uploadFolder = Server.MapPath("~/docs/news/");
+                        string uploadFolder = Server.MapPath("~/docs/event/");
                         if (!Directory.Exists(uploadFolder))
                         {
                             Directory.CreateDirectory(uploadFolder);
@@ -47,29 +41,32 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
                         fileUpload.SaveAs(filePath);
 
                         // Store the relative path to the database
-                        string relativeFilePath = "docs/news/" + fileName;
+                        string relativeFilePath = "docs/event/" + fileName;
 
                         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                         using (SqlConnection conn = new SqlConnection(connStr))
                         {
-                            string query = "INSERT INTO Board (Type, Title, Date, Important, FilePath) VALUES (@Type, @Title, @Date, @Important, @FilePath)";
+                            string query = "INSERT INTO Docs (Type, No, Title, Date, Important, FilePath) VALUES (@Type, @No, @Title, @Date, @Important, @FilePath)";
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
-                                cmd.Parameters.AddWithValue("@Type", "News");
-                                cmd.Parameters.AddWithValue("@Title", newsTitle);
-                                cmd.Parameters.AddWithValue("@Date", newsDate);
-                                cmd.Parameters.AddWithValue("@Important", imp);
+                                cmd.Parameters.AddWithValue("@Type", "Event");
+                                cmd.Parameters.AddWithValue("@No", string.Empty);
+                                cmd.Parameters.AddWithValue("@Title", EventTitle);
+                                cmd.Parameters.AddWithValue("@Date", EventDate);
+                                cmd.Parameters.AddWithValue("@Important", important);
                                 cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
 
                                 conn.Open();
                                 cmd.ExecuteNonQuery();
-                                lblMessage.Text = "News uploaded successfully!";
+                                lblMessage.Text = "Event uploaded successfully!";
                                 lblMessage.ForeColor = System.Drawing.Color.Green;
 
                                 // Clear form fields
+                                ImpChkbox.Checked = false;
                                 txtLinkText.Text = string.Empty;
                                 txtLinkDate.Text = string.Empty;
-                                // fileUpload control cannot be programmatically cleared
+                                // Clear the file upload control
+                                fileUpload.Attributes.Clear();
                             }
                         }
                     }
@@ -93,7 +90,7 @@ public partial class Admin_pages_UploadNews : System.Web.UI.Page
         }
         else
         {
-            lblMessage.Text = "Please enter a valid News Title and News Date.";
+            lblMessage.Text = "Please enter valid Event Title and Event Date.";
             lblMessage.ForeColor = System.Drawing.Color.Red;
         }
     }

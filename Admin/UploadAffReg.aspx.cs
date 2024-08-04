@@ -5,11 +5,6 @@ using System.Configuration;
 
 public partial class Admin_pages_UploadAffReg : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-
     protected void btnSubmit_Edit(object sender, EventArgs e)
     {
         Response.Redirect("ManageAffReg.aspx");
@@ -47,10 +42,11 @@ public partial class Admin_pages_UploadAffReg : System.Web.UI.Page
                         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                         using (SqlConnection conn = new SqlConnection(connStr))
                         {
-                            string query = "INSERT INTO Board (Type, Title, Date, Important, FilePath) VALUES (@Type, @Title, @Date, @Important, @FilePath)";
+                            string query = "INSERT INTO Docs (Type, No, Title, Date, Important, FilePath) VALUES (@Type, @No, @Title, @Date, @Important, @FilePath)";
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
                                 cmd.Parameters.AddWithValue("@Type", "AffReg");
+                                cmd.Parameters.AddWithValue("@No", string.Empty);
                                 cmd.Parameters.AddWithValue("@Title", affregTitle);
                                 cmd.Parameters.AddWithValue("@Date", affregDate);
                                 cmd.Parameters.AddWithValue("@Important", imp);

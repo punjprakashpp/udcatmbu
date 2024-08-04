@@ -1,7 +1,6 @@
-<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UploadFiles.aspx.cs" Inherits="Admin_pages_UploadFiles" %>
+<%@ Page Title="Upload Files" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UploadFiles.aspx.cs" Inherits="Admin_pages_UploadFiles" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <title>File Upload</title>
     <link rel="stylesheet" type="text/css" href="Styles/manage.css" />
     <script type="text/javascript">
         function toggleSessionDropdown() {
@@ -29,7 +28,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="container">
-        <h2>Upload File</h2>
+        <h2>Upload Downloadable File</h2>
         <table class="upload-table">
             <tr>
                 <td><asp:Label ID="Label1" runat="server" Text="Upload Type: "></asp:Label></td>
@@ -64,7 +63,7 @@
                 <td></td>
                 <td colspan="2">
                     <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnDelete" runat="server" Text="Delete Files" OnClick="btnDelete_Click" />
                 </td>
             </tr>

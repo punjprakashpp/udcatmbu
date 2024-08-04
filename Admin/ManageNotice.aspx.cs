@@ -42,25 +42,31 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             string query = @"
-                WITH Notice_CTE AS (
-                    SELECT 
-                        BID, 
-                        Title, 
-                        Date, 
-                        FilePath,
-                        ROW_NUMBER() OVER (ORDER BY Date) AS RowNum
-                    FROM 
-                        Board
-                    WHERE
-                        Type = 'Notice'
-                        AND (@NoticeDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @NoticeDate)
-                )
-                SELECT * FROM Notice_CTE
-                WHERE RowNum BETWEEN @StartRow AND @EndRow";
+            WITH Notice_CTE AS (
+                SELECT 
+                    DocsID,
+                    No, 
+                    Title, 
+                    Date, 
+                    FilePath,
+                    ROW_NUMBER() OVER (ORDER BY Date) AS RowNum
+                FROM 
+                    Docs
+                WHERE
+                    Type = 'Notice'
+                    AND (@SearchNo IS NULL OR No LIKE '%' + @SearchNo + '%')
+                    AND (@SearchTitle IS NULL OR Title LIKE '%' + @SearchTitle + '%')
+            )
+            SELECT * FROM Notice_CTE
+            WHERE RowNum BETWEEN @StartRow AND @EndRow";
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@NoticeDate", string.IsNullOrEmpty(txtSearchDate.Text) ? (object)DBNull.Value : txtSearchDate.Text);
+                string searchNo = rdNo.Checked ? txtSearch.Text : string.Empty;
+                string searchTitle = rdTitle.Checked ? txtSearch.Text : string.Empty;
+
+                cmd.Parameters.AddWithValue("@SearchNo", string.IsNullOrEmpty(searchNo) ? (object)DBNull.Value : searchNo);
+                cmd.Parameters.AddWithValue("@SearchTitle", string.IsNullOrEmpty(searchTitle) ? (object)DBNull.Value : searchTitle);
 
                 int startRow = PageIndex * PageSize + 1;
                 int endRow = startRow + PageSize - 1;
@@ -116,7 +122,8 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
     {
         GridViewRow row = GridView1.Rows[e.RowIndex];
         int noticeID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-        string title = (row.Cells[1].Controls[0] as TextBox).Text;
+        string no = (row.FindControl("txtNo") as TextBox).Text;
+        string title = (row.FindControl("txtTitle") as TextBox).Text;
         string noticeDateText = (row.FindControl("txtNoticeDate") as TextBox).Text;
         DateTime noticeDate;
 
@@ -175,9 +182,10 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "UPDATE Board SET Title=@Title, Date=@NoticeDate, FilePath=@FilePath WHERE BID=@NoticeID";
+            string query = "UPDATE Docs SET No=@No, Title=@Title, Date=@NoticeDate, FilePath=@FilePath WHERE DocsID=@NoticeID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
+                cmd.Parameters.AddWithValue("@No", no);
                 cmd.Parameters.AddWithValue("@Title", title);
                 cmd.Parameters.AddWithValue("@NoticeDate", noticeDate);
                 cmd.Parameters.AddWithValue("@FilePath", newFilePath);
@@ -205,7 +213,7 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             // Retrieve the file path to delete the file
-            string query = "SELECT FilePath FROM Board WHERE BID=@NoticeID";
+            string query = "SELECT FilePath FROM Docs WHERE DocsID=@NoticeID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@NoticeID", noticeID);
@@ -218,7 +226,7 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
             }
 
             // Delete the record from the database
-            query = "DELETE FROM Board WHERE BID=@NoticeID";
+            query = "DELETE FROM Docs WHERE DocsID=@NoticeID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@NoticeID", noticeID);

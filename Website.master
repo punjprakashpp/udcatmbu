@@ -107,8 +107,6 @@
                         <i class="fa fa-cogs"></i>Administration <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
-                        <a href="Chancellor.aspx"><i class="fa fa-user"></i>Chancellor of TMBU</a>
-                        <a href="Director.aspx"><i class="fa fa-user"></i>Director of UDCA TMBU</a>
                         <a href="AdministrativePersons.aspx"><i class="fa fa-group"></i>Administrative Persons</a>
                         <a href="AffiliationRegulation.aspx"><i class="fa fa-file"></i>Affiliations & Regulations</a>
                     </div>
@@ -158,7 +156,7 @@
                     <div class="subnav-content">
                         <a href="LatestNotice.aspx"><i class="fa fa-bell"></i>Latest Notice</a>
                         <a href="LatestEvents.aspx"><i class="fa fa-newspaper-o"></i>Latest Events</a>
-                        <a href="Tender.aspx"><i class="fa fa-info"></i>View Tenders</a>
+                        <a href="ViewTender.aspx"><i class="fa fa-info"></i>View Tenders</a>
                     </div>
                 </div>
                 <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a>
@@ -169,7 +167,7 @@
         <asp:ContentPlaceHolder ID="Content1" runat="server" />
     </form>
     <footer class="footer">
-        <div class="column">
+        <div class="column col-1">
             <h2>
                 <a href="Default.aspx">
                     <img src="img/logo/logo-head.png" alt="logo-head"></a>
@@ -184,9 +182,9 @@
                 <b>Click here for </b><a href="Login.aspx"><i class="fa fa-sign-in"></i>Administrator Login</a><br>
             </p>
         </div>
-        <div class="column">
+        <div class="column col-2">
             <h2>Important Links</h2>
-            <ul class="footer-links">
+            <ul class="links">
                 <li><a href="http://tmbuniv.ac.in" target="_blank">Tilka Manjhi Bhagalpur University</a></li>
                 <li><a href="https://www.ugc.ac.in/" target="_blank">University Grant Commission</a></li>
                 <li><a href="https://www.aicte-india.org/" target="_blank">All India Council of Technical Education</a></li>
@@ -195,9 +193,9 @@
                 <li><a href="https://state.bihar.gov.in/" target="_blank">Bihar Government Official Website</a></li>
             </ul>
         </div>
-        <div class="column">
+        <div class="column col-3">
             <h2>Quick Links</h2>
-            <ul class="footer-links">
+            <ul class="links">
                 <li><a href="Downloads.aspx">Downloads</a></li>
                 <li><a href="Prospectus.aspx">Prospectus</a></li>
                 <li><a href="TimeTable.aspx">Time Table</a></li>
@@ -206,20 +204,20 @@
                 <li><a href="AlumniRegistration.aspx">Alumni Registration</a></li>
             </ul>
         </div>
-        <div class="column">
-            <ul class="footer-links">
+        <div class="column col-4">
+            <ul class="links">
                 <li><a href="AboutDeveloper.aspx">About Developers</a></li>
                 <li><a href="https://udcalibrary.bsite.net/" target="new">UDCA Automated Library</a></li>
             </ul>
             <h2>Useful Websites</h2>
-            <ul class="footer-links">
+            <ul class="links">
                 <li><a href="https://swayam.gov.in/" target="new">SWAYAM Portal</a></li>
                 <li><a href="http://www.freshersworld.com/" target="new">Freshers World</a></li>
                 <li><a href="https://internshala.com/" target="new">Intern Shala</a></li>
             </ul>
         </div>
         <hr />
-        <div class="footer-copyright">
+        <div class="copyright">
             <p>
                 Copyright &copy; 2024 -
                 <asp:Label ID="lblyear" runat="server"></asp:Label>
@@ -228,7 +226,7 @@
             </p>
         </div>
     </footer>
-    <div class="top-elements">
+    <div class="top">
         <button onclick="topFunction()" id="TopBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
         <div class="icon-bar">
             <a href="https://www.linkedin.com/in/udcatmbu" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>

@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ManageNotice.aspx.cs" Inherits="Admin_pages_EditDeleteNotice" %>
+﻿<%@ Page Title="Manage Notice & News" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ManageNotice.aspx.cs" Inherits="Admin_pages_EditDeleteNotice" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Edit/Delete Notice</title>
     <link rel="stylesheet" type="text/css" href="Styles/table.css" />
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -15,13 +14,16 @@
         });
     </script>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="container">
         <h2>Manage Notice</h2>
         <div class="search-bar">
             <label>
-                Notice Date:
-                <asp:TextBox ID="txtSearchDate" CssClass="datepicker textbox" runat="server" ></asp:TextBox>
+                Search using:&nbsp;&nbsp;
+                <asp:RadioButton ID="rdNo" runat="server" Text=" No." GroupName="SearchCriteria" />&nbsp;&nbsp;
+                <asp:RadioButton ID="rdTitle" runat="server" Text=" Notice:" GroupName="SearchCriteria" />&nbsp;
+                <asp:TextBox ID="txtSearch" CssClass="textbox" runat="server"></asp:TextBox>
             </label>
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn" />
             <label>
@@ -35,11 +37,26 @@
             <asp:Button ID="btnPrevious" runat="server" Text="Previous" OnClick="btnPrevious_Click" CssClass="btn" />
             <asp:Button ID="btnNext" runat="server" Text="Next" OnClick="btnNext_Click" CssClass="btn" />
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="BID" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowDeleting="GridView1_RowDeleting" OnRowCancelingEdit="GridView1_RowCancelingEdit">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="DocsID" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowDeleting="GridView1_RowDeleting" OnRowCancelingEdit="GridView1_RowCancelingEdit">
             <Columns>
-                <asp:BoundField DataField="BID" HeaderText="Notice ID" ReadOnly="True" SortExpression="BID" Visible="False" />
-                <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
-                <asp:TemplateField HeaderText="Notice Date">
+                <asp:BoundField DataField="DocsID" HeaderText="Notice ID" ReadOnly="True" SortExpression="DocsID" Visible="False" />
+                <asp:TemplateField HeaderText="No">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtNo" runat="server" Text='<%# Bind("No") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="lblNo" runat="server" Text='<%# Eval("No") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Notice">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txtTitle" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="lblTitle" runat="server" Text='<%# Eval("Title") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Date">
                     <EditItemTemplate>
                         <asp:TextBox ID="txtNoticeDate" runat="server" CssClass="datepicker" Text='<%# Bind("Date", "{0:dd-MM-yyyy}") %>'></asp:TextBox>
                     </EditItemTemplate>

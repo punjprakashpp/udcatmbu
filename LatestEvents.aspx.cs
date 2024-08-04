@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.UI.WebControls;
 
-public partial class pages_News : System.Web.UI.Page
+public partial class pages_Event : System.Web.UI.Page
 {
     private int PageSize
     {
@@ -41,32 +41,32 @@ public partial class pages_News : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             string query = @"
-                WITH News_CTE AS (
+                WITH Event_CTE AS (
                     SELECT 
-                        BID, 
+                        DocsID, 
                         Title, 
                         Date, 
                         FilePath,
                         ROW_NUMBER() OVER (ORDER BY Date DESC) AS RowNum
                     FROM 
-                        Board
+                        Docs
                     WHERE
-                        Type = 'News'
-                        AND (@NewsDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @NewsDate)
+                        Type = 'Event'
+                        AND (@Title IS NULL OR Title LIKE '%' + @Title + '%')
                 )
-                SELECT * FROM News_CTE
+                SELECT * FROM Event_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow
                 ORDER BY Date DESC";
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                if (!string.IsNullOrEmpty(txtSearchDate.Text))
+                if (!string.IsNullOrEmpty(txtSearch.Text))
                 {
-                    cmd.Parameters.AddWithValue("@NewsDate", txtSearchDate.Text);
+                    cmd.Parameters.AddWithValue("@Title", txtSearch.Text);
                 }
                 else
                 {
-                    cmd.Parameters.AddWithValue("@NewsDate", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Title", DBNull.Value);
                 }
 
                 int startRow = PageIndex * PageSize + 1;

@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ManageHomeButton.aspx.cs" Inherits="Admin_pages_EditDeleteMarqueeLinks" %>
+﻿<%@ Page Title="Manage Buttons" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="ManageHomeButton.aspx.cs" Inherits="Admin_pages_EditDeleteMarqueeLinks" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <title>Edit/Delete Home Buttons</title>
     <link rel="stylesheet" type="text/css" href="Styles/table.css" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="Script/table.js"></script>

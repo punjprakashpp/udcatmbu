@@ -42,25 +42,25 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             string query = @"
-                WITH News_CTE AS (
+                WITH Event_CTE AS (
                     SELECT 
-                        BID, 
+                        DocsID,
                         Title, 
                         Date, 
                         FilePath,
                         ROW_NUMBER() OVER (ORDER BY Date) AS RowNum
                     FROM 
-                        Board
+                        Docs
                     WHERE
-                        Type = 'News'
-                        AND (@NewsDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @NewsDate)
+                        Type = 'Event'
+                    AND (@SearchTitle IS NULL OR Title LIKE '%' + @SearchTitle + '%')
                 )
-                SELECT * FROM News_CTE
+                SELECT * FROM Event_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow";
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@NewsDate", string.IsNullOrEmpty(txtSearchDate.Text) ? (object)DBNull.Value : txtSearchDate.Text);
+                cmd.Parameters.AddWithValue("@SearchTitle", string.IsNullOrEmpty(txtSearch.Text) ? (object)DBNull.Value : txtSearch.Text);
 
                 int startRow = PageIndex * PageSize + 1;
                 int endRow = startRow + PageSize - 1;
@@ -115,12 +115,12 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
     protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
         GridViewRow row = GridView1.Rows[e.RowIndex];
-        int newsID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-        string title = (row.Cells[1].Controls[0] as TextBox).Text;
-        string newsDateText = (row.FindControl("txtNewsDate") as TextBox).Text;
-        DateTime newsDate;
+        int EventID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+        string title = (row.FindControl("txtTitle") as TextBox).Text;
+        string EventDateText = (row.FindControl("txtEventDate") as TextBox).Text;
+        DateTime EventDate;
 
-        if (!DateTime.TryParseExact(newsDateText, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out newsDate))
+        if (!DateTime.TryParseExact(EventDateText, "dd-MM-yyyy", null, System.Globalization.DateTimeStyles.None, out EventDate))
         {
             lblMessage.Text = "Invalid date format.";
             lblMessage.ForeColor = System.Drawing.Color.Red;
@@ -140,7 +140,7 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
                 try
                 {
                     string fileName = Path.GetFileName(fileUpload.FileName);
-                    string uploadFolder = Server.MapPath("~/docs/news/");
+                    string uploadFolder = Server.MapPath("~/docs/event/");
                     if (!Directory.Exists(uploadFolder))
                     {
                         Directory.CreateDirectory(uploadFolder);
@@ -155,7 +155,7 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
                     }
 
                     // Store the relative path to the database
-                    newFilePath = "docs/news/" + fileName;
+                    newFilePath = "docs/event/" + fileName;
                 }
                 catch (Exception ex)
                 {
@@ -175,13 +175,13 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "UPDATE Board SET Title=@Title, Date=@NewsDate, FilePath=@FilePath WHERE BID=@NewsID";
+            string query = "UPDATE Docs SET Title=@Title, Date=@EventDate, FilePath=@FilePath WHERE DocsID=@EventID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Title", title);
-                cmd.Parameters.AddWithValue("@NewsDate", newsDate);
+                cmd.Parameters.AddWithValue("@EventDate", EventDate);
                 cmd.Parameters.AddWithValue("@FilePath", newFilePath);
-                cmd.Parameters.AddWithValue("@NewsID", newsID);
+                cmd.Parameters.AddWithValue("@EventID", EventID);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -199,16 +199,16 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-        int newsID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+        int EventID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
 
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             // Retrieve the file path to delete the file
-            string query = "SELECT FilePath FROM Board WHERE BID=@NewsID";
+            string query = "SELECT FilePath FROM Docs WHERE DocsID=@EventID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@NewsID", newsID);
+                cmd.Parameters.AddWithValue("@EventID", EventID);
                 conn.Open();
                 string filePath = cmd.ExecuteScalar() as string;
                 if (filePath != null && File.Exists(Server.MapPath("~/" + filePath)))
@@ -218,10 +218,10 @@ public partial class Admin_pages_EditDeleteNews : System.Web.UI.Page
             }
 
             // Delete the record from the database
-            query = "DELETE FROM Board WHERE BID=@NewsID";
+            query = "DELETE FROM Docs WHERE DocsID=@EventID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@NewsID", newsID);
+                cmd.Parameters.AddWithValue("@EventID", EventID);
                 cmd.ExecuteNonQuery();
                 BindGridView();
             }

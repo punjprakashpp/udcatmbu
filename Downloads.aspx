@@ -264,12 +264,12 @@
             </div>
             <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
             <div class="grid-view-container">
-                <asp:GridView ID="GridViewFiles" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" OnRowCommand="GridViewFiles_RowCommand">
+                <asp:GridView ID="GridViewFiles" runat="server" AutoGenerateColumns="False" DataKeyNames="FilesID" OnRowCommand="GridViewFiles_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="FileName" HeaderText="File Name" />
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:LinkButton ID="lnkDownload" runat="server" CommandName="Download" CommandArgument='<%# Eval("Id") %>'>Download</asp:LinkButton>
+                                <asp:LinkButton ID="lnkDownload" runat="server" CommandName="Download" CommandArgument='<%# Eval("FilesID") %>'>Download</asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

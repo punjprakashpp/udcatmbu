@@ -100,9 +100,9 @@
             <a href="Director.aspx">
                 <div class="box">
                     <h4 style="margin-top: 0px;">Director's Message</h4>
-                    <p style="text-align: justify;">Welcome to the University Department of Computer Applications. We pride ourselves on our global outlook and innovative spirit. We are dedicated to providing the best administrative support for your academic career</p>
+                    <p style="text-align: justify;">Welcome to UDCA. we pride ourselves on our global outlook and innovative spirit. It is my pleasure to introduce you to our department, where we are committed to providing the best administrative support for your academic career.</p>
                     <br />
-                    <p style="text-align: right;"><a href="Director.aspx">Click to read more</a></p>
+                    <p style="text-align: right; color:blueviolet;">Click to read more</p>
                 </div>
             </a>
         </div>
@@ -112,7 +112,7 @@
                     <h4 style="margin-top: 0px;">About TMBU</h4>
                     <p style="text-align: justify;">Tilka Manjhi Bhagalpur University (TMBU), also known as Bhagalpur University, is a leading institution for higher education in the state of Bihar. Located in Bhagalpur city, the university is named after the renowned freedom fighter Tilka Manjhi.</p>
                     <br />
-                    <p style="text-align: right;"><a href="AboutTMBU.aspx">Click to read more</a></p>
+                    <p style="text-align: right; color:blueviolet;">Click to read more</p>
                 </div>
             </a>
         </div>
@@ -121,7 +121,7 @@
                 <div class="box">
                     <h4 style="margin-top: 0px;">About UDCA</h4>
                     <p style="text-align: justify;">The University Department of Computer Applications, part of Tilka Manjhi Bhagalpur University and known as the Computer Centre, offers a Master of Computer Applications course. It is recognized by the Government of Bihar and approved by AICTE, New Delhi.</p>
-                    <p style="text-align: right;"><a href="AboutUDCA.aspx">Click to read more</a></p>
+                    <p style="text-align: right; color:blueviolet;">Click to read more</p>
                 </div>
             </a>
         </div>
@@ -130,7 +130,7 @@
                 <div class="box">
                     <h4 style="margin-top: 0px;">About Computer Center</h4>
                     <p style="text-align: justify;">The Computer Centre at Tilka Manjhi Bhagalpur University represents a significant milestone in technological progress and educational empowerment in the region. Established in 1988 with a grant from the University Grants Commission.</p>
-                    <p style="text-align: right;"><a href="ComputerCenter.aspx">Click to read more</a></p>
+                    <p style="text-align: right; color:blueviolet;">Click to read more</p>
                 </div>
             </a>
         </div>

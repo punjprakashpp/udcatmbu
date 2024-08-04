@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="AddHomeButton.aspx.cs" Inherits="Admin_pages_UploadMarqueeLinks" %>
+﻿<%@ Page Title="Add Buttons" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="AddHomeButton.aspx.cs" Inherits="Admin_pages_UploadMarqueeLinks" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Add Buttons</title>
     <link rel="stylesheet" href="Styles/manage.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">

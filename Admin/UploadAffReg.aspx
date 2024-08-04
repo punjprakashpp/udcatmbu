@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UploadAffReg.aspx.cs" Inherits="Admin_pages_UploadAffReg" %>
+﻿<%@ Page Title="Upload Affiliations" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="UploadAffReg.aspx.cs" Inherits="Admin_pages_UploadAffReg" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Upload Notice</title>
     <link rel="stylesheet" href="Styles/manage.css">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="RegisterOtherUser.aspx.cs" Inherits="Admin_Register" %>
+﻿<%@ Page Title="User Registration" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="RegisterOtherUser.aspx.cs" Inherits="Admin_Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>User Registration</title>
     <link rel="stylesheet" type="text/css" href="Styles/account.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -56,4 +55,3 @@
         </table>
     </div>
 </asp:Content>
-

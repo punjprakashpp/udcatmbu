@@ -20,7 +20,7 @@ public partial class Admin_pages_EditDeleteFiles : System.Web.UI.Page
         string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string query = "SELECT Id, FileName, FileType, Semester, Session FROM Files";
+            string query = "SELECT FilesID, FileName, FileType, Semester, Session FROM Files";
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 query += " WHERE FileName LIKE @SearchQuery";
@@ -59,10 +59,10 @@ public partial class Admin_pages_EditDeleteFiles : System.Web.UI.Page
         string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string query = "SELECT FilePath FROM Files WHERE Id = @Id";
+            string query = "SELECT FilePath FROM Files WHERE FilesID = @FilesID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.Parameters.AddWithValue("@FilesID", id);
 
                 conn.Open();
                 string filePath = cmd.ExecuteScalar().ToString();
@@ -73,10 +73,10 @@ public partial class Admin_pages_EditDeleteFiles : System.Web.UI.Page
                     File.Delete(Server.MapPath("~/" + filePath));
                 }
 
-                query = "DELETE FROM Files WHERE Id = @Id";
+                query = "DELETE FROM Files WHERE FilesID = @FilesID";
                 using (SqlCommand cmdDelete = new SqlCommand(query, conn))
                 {
-                    cmdDelete.Parameters.AddWithValue("@Id", id);
+                    cmdDelete.Parameters.AddWithValue("@FilesID", id);
                     conn.Open();
                     cmdDelete.ExecuteNonQuery();
                     conn.Close();

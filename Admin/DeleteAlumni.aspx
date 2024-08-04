@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="DeleteAlumni.aspx.cs" Inherits="Admin_pages_EditDeleteAlumni" %>
+﻿<%@ Page Title="Delete Alumni" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="DeleteAlumni.aspx.cs" Inherits="Admin_pages_EditDeleteAlumni" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
-    <title>Edit/Delete Alumni</title>
     <link rel="stylesheet" type="text/css" href="Styles/table.css" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="Script/table.js"></script>

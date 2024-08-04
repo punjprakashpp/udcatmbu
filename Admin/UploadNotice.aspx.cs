@@ -5,6 +5,7 @@ using System.Configuration;
 
 public partial class Admin_pages_UploadNotice : System.Web.UI.Page
 {
+
     protected void btnSubmit_Edit(object sender, EventArgs e)
     {
         Response.Redirect("ManageNotice.aspx");

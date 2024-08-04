@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="AddFaculty.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
+﻿<%@ Page Title="Add Faculty Members" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" CodeFile="AddFacultyMember.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-    <title>Add Faculty Members</title>
     <link rel="stylesheet" href="Styles/manage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>

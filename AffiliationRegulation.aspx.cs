@@ -52,7 +52,7 @@ public partial class pages_AffReg : System.Web.UI.Page
                         Docs
                     WHERE
                         Type = 'AffReg'
-                        AND (@AffRegDate IS NULL OR CONVERT(VARCHAR, Date, 105) = @AffRegDate)
+                        AND (@Title IS NULL OR Title LIKE '%' + @Title + '%')
                 )
                 SELECT * FROM AffReg_CTE
                 WHERE RowNum BETWEEN @StartRow AND @EndRow
@@ -60,13 +60,13 @@ public partial class pages_AffReg : System.Web.UI.Page
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                if (!string.IsNullOrEmpty(txtSearchDate.Text))
+                if (!string.IsNullOrEmpty(txtSearch.Text))
                 {
-                    cmd.Parameters.AddWithValue("@AffRegDate", txtSearchDate.Text);
+                    cmd.Parameters.AddWithValue("@Title", txtSearch.Text);
                 }
                 else
                 {
-                    cmd.Parameters.AddWithValue("@AffRegDate", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Title", DBNull.Value);
                 }
 
                 int startRow = PageIndex * PageSize + 1;

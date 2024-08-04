@@ -5,10 +5,6 @@ using System.Configuration;
 
 public partial class Admin_pages_UploadTender : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
 
     protected void btnSubmit_Edit(object sender, EventArgs e)
     {
@@ -17,13 +13,12 @@ public partial class Admin_pages_UploadTender : System.Web.UI.Page
 
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
-        string tenderTitle = txtLinkText.Text.Trim();
-        DateTime tenderDate;
-        string imp = "no";
+        string TenderNo = txtLinkNo.Text.Trim();
+        string TenderTitle = txtLinkText.Text.Trim();
+        DateTime TenderDate;
         string filePath = null;
 
-        // Check if the title is not empty and the date is valid
-        if (!string.IsNullOrEmpty(tenderTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out tenderDate))
+        if (!string.IsNullOrEmpty(TenderTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out TenderDate))
         {
             if (fileUpload.HasFile)
             {
@@ -32,11 +27,6 @@ public partial class Admin_pages_UploadTender : System.Web.UI.Page
                 {
                     try
                     {
-                        if (ImpChkbox.Checked)
-                        {
-                            imp = "yes";
-                        }
-
                         string fileName = Path.GetFileName(fileUpload.FileName);
                         string uploadFolder = Server.MapPath("~/docs/tender/");
                         if (!Directory.Exists(uploadFolder))
@@ -52,13 +42,14 @@ public partial class Admin_pages_UploadTender : System.Web.UI.Page
                         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                         using (SqlConnection conn = new SqlConnection(connStr))
                         {
-                            string query = "INSERT INTO Board (Type, Title, Date, Important, FilePath) VALUES (@Type, @Title, @Date, @Important, @FilePath)";
+                            string query = "INSERT INTO Docs (Type, No, Title, Date, Important, FilePath) VALUES (@Type, @No, @Title, @Date, @Important, @FilePath)";
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
                                 cmd.Parameters.AddWithValue("@Type", "Tender");
-                                cmd.Parameters.AddWithValue("@Title", tenderTitle);
-                                cmd.Parameters.AddWithValue("@Date", tenderDate);
-                                cmd.Parameters.AddWithValue("@Important", imp);
+                                cmd.Parameters.AddWithValue("@No", TenderNo);
+                                cmd.Parameters.AddWithValue("@Title", TenderTitle);
+                                cmd.Parameters.AddWithValue("@Date", TenderDate);
+                                cmd.Parameters.AddWithValue("@Important", "no");
                                 cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
 
                                 conn.Open();
@@ -67,9 +58,11 @@ public partial class Admin_pages_UploadTender : System.Web.UI.Page
                                 lblMessage.ForeColor = System.Drawing.Color.Green;
 
                                 // Clear form fields
+                                txtLinkNo.Text = string.Empty;
                                 txtLinkText.Text = string.Empty;
                                 txtLinkDate.Text = string.Empty;
-                                // fileUpload control cannot be programmatically cleared
+                                // Clear the file upload control
+                                fileUpload.Attributes.Clear();
                             }
                         }
                     }
@@ -93,7 +86,7 @@ public partial class Admin_pages_UploadTender : System.Web.UI.Page
         }
         else
         {
-            lblMessage.Text = "Please enter a valid Tender Title and Tender Date.";
+            lblMessage.Text = "Please enter valid Tender Title and Tender Date.";
             lblMessage.ForeColor = System.Drawing.Color.Red;
         }
     }

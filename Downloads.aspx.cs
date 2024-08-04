@@ -29,9 +29,9 @@ public partial class Downloads : System.Web.UI.Page
     {
         ddlSession.Items.Add(new ListItem("--- Select-Session ---", string.Empty));
         int currentYear = DateTime.Now.Year;
-        for (int year = 2019; year <= currentYear; year++)
+        for (int year = 2020; year <= currentYear; year++)
         {
-            if (year > 2018 && year <= currentYear - 2)
+            if (year > 2019 && year <= currentYear - 2)
                 ddlSession.Items.Add(new ListItem(year.ToString() + " - " + (year + 2).ToString(), year.ToString() + "-" + (year + 2).ToString()));
         }
     }
@@ -72,7 +72,7 @@ public partial class Downloads : System.Web.UI.Page
         string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string query = "SELECT Id, FileName FROM Files WHERE FileType = @FileType";
+            string query = "SELECT FilesID, FileName FROM Files WHERE FileType = @FileType";
 
             if (ddlSemester.SelectedValue != string.Empty)
             {
@@ -113,7 +113,7 @@ public partial class Downloads : System.Web.UI.Page
             string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT FilePath FROM Files WHERE Id = @Id";
+                string query = "SELECT FilePath FROM Files WHERE FilesID = @Id";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", id);
@@ -150,4 +150,3 @@ public partial class Downloads : System.Web.UI.Page
         }
     }
 }
-
