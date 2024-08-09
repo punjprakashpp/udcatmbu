@@ -4,12 +4,13 @@
     <link rel="stylesheet" type="text/css" href="style/slider.css">
     <link rel="stylesheet" type="text/css" href="style/section.css">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <section class="top-sec">
         <div class="marquee-links">
             <p class="high">Highlights: </p>
             <marquee behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
-		        <asp:Repeater ID="linksRepeater" runat="server">
+                <asp:Repeater ID="linksRepeater" runat="server">
                     <ItemTemplate>
                         <a href='<%# Eval("LinkURL") %>' target=_blank><b><font size="3"><%# Eval("LinkText") %></font></b></a>
                     </ItemTemplate>
@@ -23,7 +24,8 @@
                         <asp:Repeater ID="SliderRepeater" runat="server">
                             <ItemTemplate>
                                 <li>
-                                    <img src="<%# Eval("ImagePath") %>" title="<%# Eval("Title") %>" /></li>
+                                    <img src="<%# Eval("ImagePath") %>" title="<%# Eval("Title") %>" />
+                                </li>
                             </ItemTemplate>
                         </asp:Repeater>
                     </ul>
@@ -67,10 +69,12 @@
             <a href="https://governor.bih.nic.in/" target="_blank">
                 <div class="box">
                     <h3 align="center">
-                        <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label></h3>
+                        <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label>
+                    </h3>
                     <asp:Image ID="ImageChancellor" class="img" runat="server" />
                     <h4>
-                        <asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label></h4>
+                        <asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label>
+                    </h4>
                 </div>
             </a>
         </div>
@@ -78,10 +82,12 @@
             <a href="docs/Profile/VCProfile.pdf" target="_blank">
                 <div class="box">
                     <h3 align="center">
-                        <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label></h3>
+                        <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label>
+                    </h3>
                     <asp:Image ID="ImageViceChancellor" class="img" runat="server" />
                     <h4>
-                        <asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label></h4>
+                        <asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label>
+                    </h4>
                 </div>
             </a>
         </div>
@@ -89,10 +95,12 @@
             <a href="docs/Profile/DirectorProfile.pdf" target="_blank">
                 <div class="box">
                     <h3 align="center">
-                        <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label></h3>
+                        <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label>
+                    </h3>
                     <asp:Image ID="ImageDirector" class="img" runat="server" />
                     <h4>
-                        <asp:Label ID="lblNameDirector" runat="server" Text=""></asp:Label></h4>
+                        <asp:Label ID="lblNameDirector" runat="server" Text=""></asp:Label>
+                    </h4>
                 </div>
             </a>
         </div>
@@ -101,7 +109,6 @@
                 <div class="box">
                     <h4 style="margin-top: 0px;">Director's Message</h4>
                     <p style="text-align: justify;">Welcome to UDCA. we pride ourselves on our global outlook and innovative spirit. It is my pleasure to introduce you to our department, where we are committed to providing the best administrative support for your academic career.</p>
-                    <br />
                     <p style="text-align: right; color:blueviolet;">Click to read more</p>
                 </div>
             </a>
@@ -110,8 +117,7 @@
             <a href="AboutTMBU.aspx">
                 <div class="box">
                     <h4 style="margin-top: 0px;">About TMBU</h4>
-                    <p style="text-align: justify;">Tilka Manjhi Bhagalpur University (TMBU), also known as Bhagalpur University, is a leading institution for higher education in the state of Bihar. Located in Bhagalpur city, the university is named after the renowned freedom fighter Tilka Manjhi.</p>
-                    <br />
+                    <p style="text-align: justify;">Tilka Manjhi Bhagalpur University, also known as Bhagalpur University, is a leading institution for higher education in Bihar. Located in Bhagalpur city, the university is named after the renowned freedom fighter Tilka Manjhi.</p>
                     <p style="text-align: right; color:blueviolet;">Click to read more</p>
                 </div>
             </a>
@@ -120,7 +126,7 @@
             <a href="AboutUDCA.aspx">
                 <div class="box">
                     <h4 style="margin-top: 0px;">About UDCA</h4>
-                    <p style="text-align: justify;">The University Department of Computer Applications, part of Tilka Manjhi Bhagalpur University and known as the Computer Centre, offers a Master of Computer Applications course. It is recognized by the Government of Bihar and approved by AICTE, New Delhi.</p>
+                    <p style="text-align: justify;">The University Department of Computer Applications, a part of Tilka Manjhi Bhagalpur University and also known as the Computer Centre, offers an MCA course. It is recognized by the Government of Bihar and approved by AICTE, New Delhi.</p>
                     <p style="text-align: right; color:blueviolet;">Click to read more</p>
                 </div>
             </a>
@@ -139,9 +145,10 @@
                 <h4 style="margin-top: 0px;">Key features of UDCA</h4>
                 <ul style="text-align: left; margin-left: 5px;">
                     <li>UDCA is a constituent unit of TMBU.</li>
-                    <li>TMBU is the first University in Bihar to offers 3 years full time MCA course.</li>
-                    <li>The campus is located between the TMBU Building and NH-80, about 1/2 km from each.</li>
-                    <li>The UDCA campus is spread over 2.5 acrs.</li>
+                    <li>TMBU is the first university in Bihar to offer MCA course.</li>
+                    <li>The campus is located between the TMBU building and NH-80.</li>
+                    <li>The campus covers 2.5 acres.</li>
+                    <li>The campus is Wi-Fi enabled.</li>
                 </ul>
             </div>
         </div>
