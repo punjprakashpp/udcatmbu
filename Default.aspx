@@ -104,48 +104,12 @@
             </a>
         </div>
         <div class="card">
-            <a href="Director.aspx">
-                <div class="box">
-                    <h4 style="margin-top: 0px;">Director's Message</h4>
-                    <p style="text-align: justify;">Welcome to UDCA. we pride ourselves on our global outlook and innovative spirit. It is my pleasure to introduce you to our department, where we are committed to providing the best administrative support for your academic career.</p>
-                    <p style="text-align: right; color: blueviolet;">Click to read more</p>
-                </div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="AboutTMBU.aspx">
-                <div class="box">
-                    <h4 style="margin-top: 0px;">About TMBU</h4>
-                    <p style="text-align: justify;">Tilka Manjhi Bhagalpur University, also known as Bhagalpur University, is a leading institution for higher education in Bihar. Located in Bhagalpur city, the university is named after the renowned freedom fighter Tilka Manjhi.</p>
-                    <p style="text-align: right; color: blueviolet;">Click to read more</p>
-                </div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="AboutUDCA.aspx">
-                <div class="box">
-                    <h4 style="margin-top: 0px;">About UDCA</h4>
-                    <p style="text-align: justify;">The University Department of Computer Applications, a part of Tilka Manjhi Bhagalpur University and also known as the Computer Centre, offers an MCA course. It is recognized by the Government of Bihar and approved by AICTE, New Delhi.</p>
-                    <p style="text-align: right; color: blueviolet;">Click to read more</p>
-                </div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="ComputerCenter.aspx">
-                <div class="box">
-                    <h4 style="margin-top: 0px;">About Computer Center</h4>
-                    <p style="text-align: justify;">The Computer Centre at Tilka Manjhi Bhagalpur University represents a significant milestone in technological progress and educational empowerment in the region. Established in 1988 with a grant from the University Grant Commission.</p>
-                    <p style="text-align: right; color: blueviolet;">Click to read more</p>
-                </div>
-            </a>
-        </div>
-        <div class="card">
             <div class="box">
-                <h4 style="margin-top: 0px;">Key features of UDCA</h4>
-                <ul style="text-align: left; margin-left: 5px;">
+                <h3 align="center">Key features of UDCA</h3>
+                <ul>
                     <li>UDCA is a constituent unit of TMBU.</li>
-                    <li>TMBU is the first university in Bihar to offer full time (3 years) MCA course.</li>
-                    <li>The campus is located between the TMBU building and NH-80.</li>
+                    <li>TMBU is the first university in Bihar to offer a full-time (3 years) MCA course.</li>
+                    <li>The campus is located between the TMBU building and NH-80 equidistant from both.</li>
                     <li>The campus covers 2.5 acres.</li>
                     <li>The campus is Wi-Fi enabled.</li>
                 </ul>
@@ -164,68 +128,46 @@
             </ItemTemplate>
         </asp:Repeater>
     </section>
+    <section class="bottom-sec">
+        <div class="sec">
+            <a href="Director.aspx">
+                <div class="panel">
+                    <h4>Director's Message</h4>
+                    <p>Welcome to UDCA. We pride ourselves on our global outlook and innovative spirit. It is my pleasure to introduce you to our department, where we are committed to providing the best administrative support for your academic career.</p>
+                    <p class="highlight">Click to read more</p>
+                </div>
+            </a>
+        </div>
+        <div class="sec">
+            <a href="AboutTMBU.aspx">
+                <div class="panel">
+                    <h4>About TMBU</h4>
+                    <p>Tilka Manjhi Bhagalpur University, also known as Bhagalpur University, is a leading institution for higher education in Bihar. Located in Bhagalpur city, the university is named after the renowned freedom fighter Tilka Manjhi.</p>
+                    <p class="highlight">Click to read more</p>
+                </div>
+            </a>
+        </div>
+        <div class="sec">
+            <a href="AboutUDCA.aspx">
+                <div class="panel">
+                    <h4>About UDCA</h4>
+                    <p>The University Department of Computer Applications, a part of Tilka Manjhi Bhagalpur University and also known as the Computer Centre, offers an MCA course. It is recognized by the Government of Bihar and approved by AICTE, New Delhi.</p>
+                    <p class="highlight">Click to read more</p>
+                </div>
+            </a>
+        </div>
+        <div class="sec">
+            <a href="ComputerCenter.aspx">
+                <div class="panel">
+                    <h4>About Computer Center</h4>
+                    <p>The Computer Centre at Tilka Manjhi Bhagalpur University represents a significant milestone in technological progress and educational empowerment in the region. Established in 1988 with a grant from the University Grant Commission.</p>
+                    <p class="highlight">Click to read more</p>
+                </div>
+            </a>
+        </div>
+    </section>
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/wowslider.js"></script>
     <script type="text/javascript" src="script/slider.js"></script>
     <script type="text/javascript" src="script/section.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            function adjustHeights() {
-                let cards = document.querySelectorAll('.mid-sec .card');
-                let boxes = document.querySelectorAll('.mid-sec .box');
-                let maxCardHeight = 0;
-                let maxBoxHeight = 0;
-
-                // Reset heights to calculate the natural height
-                cards.forEach(function (card) {
-                    card.style.height = 'auto';
-                });
-
-                boxes.forEach(function (box) {
-                    box.style.height = 'auto';
-                });
-
-                // Find the maximum height among all cards
-                cards.forEach(function (card) {
-                    let cardHeight = card.offsetHeight;
-                    if (cardHeight > maxCardHeight) {
-                        maxCardHeight = cardHeight;
-                    }
-                });
-
-                // Find the maximum height among all boxes
-                boxes.forEach(function (box) {
-                    let boxHeight = box.offsetHeight;
-                    if (boxHeight > maxBoxHeight) {
-                        maxBoxHeight = boxHeight;
-                    }
-                });
-
-                // Set all cards to the maximum height
-                cards.forEach(function (card) {
-                    card.style.height = maxCardHeight + 'px';
-                });
-
-                // Set all boxes to the maximum height
-                boxes.forEach(function (box) {
-                    box.style.height = maxBoxHeight + 'px';
-                });
-            }
-
-            // Initial adjustment on page load
-            adjustHeights();
-
-            // Adjust heights on window resize to handle dynamic content changes
-            window.addEventListener('resize', function () {
-                if (window.innerWidth >= 760) {
-                    adjustHeights();
-                } else {
-                    // Reset the height when below 760px
-                    document.querySelectorAll('.mid-sec .card, .mid-sec .box').forEach(function (element) {
-                        element.style.height = 'auto';
-                    });
-                }
-            });
-        });
-    </script>
 </asp:Content>
