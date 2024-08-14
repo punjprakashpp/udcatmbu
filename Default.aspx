@@ -168,4 +168,64 @@
     <script type="text/javascript" src="script/wowslider.js"></script>
     <script type="text/javascript" src="script/slider.js"></script>
     <script type="text/javascript" src="script/section.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function adjustHeights() {
+                let cards = document.querySelectorAll('.mid-sec .card');
+                let boxes = document.querySelectorAll('.mid-sec .box');
+                let maxCardHeight = 0;
+                let maxBoxHeight = 0;
+
+                // Reset heights to calculate the natural height
+                cards.forEach(function (card) {
+                    card.style.height = 'auto';
+                });
+
+                boxes.forEach(function (box) {
+                    box.style.height = 'auto';
+                });
+
+                // Find the maximum height among all cards
+                cards.forEach(function (card) {
+                    let cardHeight = card.offsetHeight;
+                    if (cardHeight > maxCardHeight) {
+                        maxCardHeight = cardHeight;
+                    }
+                });
+
+                // Find the maximum height among all boxes
+                boxes.forEach(function (box) {
+                    let boxHeight = box.offsetHeight;
+                    if (boxHeight > maxBoxHeight) {
+                        maxBoxHeight = boxHeight;
+                    }
+                });
+
+                // Set all cards to the maximum height
+                cards.forEach(function (card) {
+                    card.style.height = maxCardHeight + 'px';
+                });
+
+                // Set all boxes to the maximum height
+                boxes.forEach(function (box) {
+                    box.style.height = maxBoxHeight + 'px';
+                });
+            }
+
+            // Initial adjustment on page load
+            adjustHeights();
+
+            // Adjust heights on window resize to handle dynamic content changes
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 760) {
+                    adjustHeights();
+                } else {
+                    // Reset the height when below 760px
+                    document.querySelectorAll('.mid-sec .card, .mid-sec .box').forEach(function (element) {
+                        element.style.height = 'auto';
+                    });
+                }
+            });
+        });
+    </script>
 </asp:Content>
