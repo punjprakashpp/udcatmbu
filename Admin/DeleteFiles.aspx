@@ -5,7 +5,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="Script/table.js"></script>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="container">
         <h2>Delete Downloadable Files</h2>
