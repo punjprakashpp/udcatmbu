@@ -207,7 +207,7 @@
         <div class="column col-4">
             <ul class="links">
                 <li><a href="AboutDeveloper.aspx">About Developers</a></li>
-                <li><a href="https://udcalibrary.bsite.net/" target="new">UDCA Automated Library</a></li>
+                <li><a href="http://udcalibrary.runasp.net/" target="new">UDCA Automated Library</a></li>
             </ul>
             <h2>Useful Websites</h2>
             <ul class="links">

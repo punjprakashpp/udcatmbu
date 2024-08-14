@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Director's Message" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Director.aspx.cs" Inherits="About_Director" %>
+﻿<%@ Page Title="Vice-Chancellor" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="ViceChancellor.aspx.cs" Inherits="About_Director" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont" align="center">
-        <h1 class="title">Director of UDCA</h1>
+        <h1 class="title">Vice-Chancellor of TMBU</h1>
         <div class="dev">
             <div class="dev-img" align="left">
                 <asp:Image ID="imgPerson" runat="server" /><br />
@@ -18,22 +18,20 @@
                     E-Mail Id.:<b><asp:HyperLink ID="emailLink" runat="server">
                         <asp:Label ID="lblEmail" runat="server" /></asp:HyperLink></b>
                 </p>
-                <h5 align="left">To know more about Director <a href="#" id="openPdfLink">Click here</a></h5>
+                <h5 align="left">To know more about VC <a href="#" id="openPdfLink">Click here</a></h5>
             </div>
 
             <div class="dev-des" align="right">
-                <h2><b>Director's Message</b></h2>
-                <p>Welcome to the University Department of Computer Applications (UDCA), a young, elite department with a world-class reputation, global outlook, and innovative spirit. As the Director, I am honored to introduce you to our department, which is dedicated to providing the best administrative support and academic excellence.</p>
+                <h2><b>Vice-Chancellor's Message</b></h2>
+                <p>I'm thrilled to announce the upcoming launch of the University Department of Computer Applications' own website. It's truly inspiring to recognize the incredible work of our students who have developed it. This website will not only be a source of pride for our institution but also a valuable resource for the entire scientific community, especially benefiting our current computer course students.</p>
+                <p>With this initiative, I am confident that our institution will continue to thrive, thanks to the sincere and dedicated efforts of our members. I envision this website becoming a landmark in the realm of computer science education, symbolizing our commitment to modernization and excellence.</p>
                 <p>At UDCA, we believe in the transformative power of education. Our mission is to empower students with the knowledge and skills needed to thrive in a rapidly changing world. We offer a nurturing and inclusive environment where every student can explore, learn, and grow.</p>
-                <p>Our dedicated faculty, state-of-the-art facilities, and diverse courses inspire a passion for learning and prepare students for future opportunities. We encourage critical thinking, creativity, and social responsibility, aiming to develop not just successful professionals but also compassionate citizens.</p>
-                <p>Our department is a community of support and encouragement, guiding and mentoring students on their educational journey. We value the partnership between students, parents, and the institution.</p>
-                <p>With great pleasure, I welcome you to the University Department of Computer Applications—a place where knowledge meets opportunity, and dreams find wings to soar.</p>
             </div>
         </div>
         <div id="lightbox" class="lightbox">
             <div class="lightbox-content">
                 <span class="close">&times;</span>
-                <div id="pdf-viewer" data-url="docs/Profile/DirectorProfile.pdf">
+                <div id="pdf-viewer" data-url="docs/Profile/VCProfile.pdf">
                     <!-- Canvases will be dynamically added here -->
                 </div>
             </div>

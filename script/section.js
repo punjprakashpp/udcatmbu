@@ -11,7 +11,6 @@
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 
-    // Start the marquee for the active tab
     startMarquee(tabName);
 
     setNoticeSectionHeight();
@@ -50,40 +49,13 @@ function setMarqueeHeight() {
     }
 }
 
-function adjustCardHeights() {
-    const cards = document.querySelectorAll('.mid-sec .card .box');
-    let maxHeight = 0;
-
-    // Check if the screen width is more than 768px
-    if (window.innerWidth > 768) {
-        // Reset heights to find the max height
-        cards.forEach(card => {
-            card.style.height = 'auto'; // Reset height
-            maxHeight = Math.max(maxHeight, card.offsetHeight);
-        });
-
-        // Set all cards to the max height
-        cards.forEach(card => {
-            card.style.height = `${maxHeight}px`;
-        });
-    } else {
-        // For mobile, set height to auto
-        cards.forEach(card => {
-            card.style.height = 'auto';
-        });
-    }
-}
-
 window.onload = function () {
-    adjustCardHeights();
     setNoticeSectionHeight();
     setMarqueeHeight();
-    // Start marquee for the default active tab
     startMarquee('Notice');
 };
 
 window.onresize = function () {
-    adjustCardHeights();
     setNoticeSectionHeight();
     setMarqueeHeight();
 };

@@ -1,4 +1,4 @@
-﻿<%@ page title="About Chancellor" language="C#" masterpagefile="Website.master" autoeventwireup="true" CodeFile="Chancellor.aspx.cs" inherits="pages_Chancellor" %>
+﻿<%@ page title="Chancellor" language="C#" masterpagefile="Website.master" autoeventwireup="true" CodeFile="Chancellor.aspx.cs" inherits="pages_Chancellor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
@@ -25,4 +25,3 @@
         </div>
     </div>
 </asp:Content>
-
