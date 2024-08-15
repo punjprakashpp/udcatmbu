@@ -23,7 +23,7 @@
                         <asp:Repeater ID="SliderRepeater" runat="server">
                             <ItemTemplate>
                                 <li>
-                                    <img src="<%# Eval("ImagePath") %>" title="<%# Eval("Title") %>" />
+                                    <img src="<%# Eval("ImagePath") %>" title="<%# Eval("Title") %>" alt="<%# Eval("Title") %>" />
                                 </li>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -32,7 +32,6 @@
             </div>
         </div>
         <div class="notice-section">
-            <!-- Tabs -->
             <div class="tabs">
                 <div class="tab-link active" onclick="openTab(event, 'Notice')">
                     Latest Notice
@@ -41,7 +40,6 @@
                     Latest Events
                 </div>
             </div>
-            <!-- Notices Tab -->
             <div id="Notice" class="tab-content" style="display: block;">
                 <div class="notice-board">
                     <div class="notice-links">
@@ -51,7 +49,6 @@
                     </div>
                 </div>
             </div>
-            <!-- News Tab -->
             <div id="Event" class="tab-content">
                 <div class="notice-board">
                     <div class="notice-links">
@@ -67,7 +64,7 @@
         <div class="card">
             <a href="Chancellor.aspx">
                 <div class="box">
-                    <h3 align="center">
+                    <h3>
                         <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label>
                     </h3>
                     <asp:Image ID="ImageChancellor" class="img" runat="server" />
@@ -80,7 +77,7 @@
         <div class="card">
             <a href="ViceChancellor.aspx">
                 <div class="box">
-                    <h3 align="center">
+                    <h3>
                         <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label>
                     </h3>
                     <asp:Image ID="ImageViceChancellor" class="img" runat="server" />
@@ -93,7 +90,7 @@
         <div class="card">
             <a href="Director.aspx">
                 <div class="box">
-                    <h3 align="center">
+                    <h3>
                         <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label>
                     </h3>
                     <asp:Image ID="ImageDirector" class="img" runat="server" />
@@ -105,15 +102,51 @@
         </div>
         <div class="card">
             <div class="box">
-                <h3 align="center">Key features of UDCA</h3>
+                <h3>Key features of UDCA</h3>
                 <ul>
+                    <li>TMBU is the first university in Bihar to offer MCA course.</li>
                     <li>UDCA is a constituent unit of TMBU.</li>
-                    <li>TMBU is the first university in Bihar to offer a full-time (3 years) MCA course.</li>
-                    <li>The campus is located between the TMBU building and NH-80 equidistant from both.</li>
                     <li>The campus covers 2.5 acres.</li>
                     <li>The campus is Wi-Fi enabled.</li>
+                    <li>The campus is located between the TMBU building and NH-80.</li>
                 </ul>
             </div>
+        </div>
+        <div class="card">
+            <a href="Director.aspx">
+                <div class="about">
+                    <h3>Director's Message</h3>
+                    <p>Welcome to UDCA. We pride ourselves on our global outlook and innovative spirit. It is my pleasure to introduce you to our department, where we are committed to providing the best administrative support for your academic career.</p>
+                    <p class="highlight">Click to read more</p>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="AboutTMBU.aspx">
+                <div class="about">
+                    <h3>About TMBU</h3>
+                    <p>Tilka Manjhi Bhagalpur University, also known as Bhagalpur University, is a leading institution for higher education in Bihar. Located in Bhagalpur city, the university is named after the renowned freedom fighter Tilka Manjhi.</p>
+                    <p class="highlight">Click to read more</p>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="AboutUDCA.aspx">
+                <div class="about">
+                    <h3>About UDCA</h3>
+                    <p>The University Department of Computer Applications, a part of Tilka Manjhi Bhagalpur University and also known as the Computer Centre, offers an MCA course. It is recognized by the Govt. of Bihar and approved by AICTE, New Delhi.</p>
+                    <p class="highlight">Click to read more</p>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="ComputerCenter.aspx">
+                <div class="about">
+                    <h3>About Computer Center</h3>
+                    <p>The Computer Centre at Tilka Manjhi Bhagalpur University represents a significant milestone in technological progress and educational empowerment in the region. Established in 1988 with a grant from the UGC, New Delhi.</p>
+                    <p class="highlight">Click to read more</p>
+                </div>
+            </a>
         </div>
     </section>
     <section class="down-sec">
@@ -127,44 +160,6 @@
                 </div>
             </ItemTemplate>
         </asp:Repeater>
-    </section>
-    <section class="bottom-sec">
-        <div class="sec">
-            <a href="Director.aspx">
-                <div class="panel">
-                    <h4>Director's Message</h4>
-                    <p>Welcome to UDCA. We pride ourselves on our global outlook and innovative spirit. It is my pleasure to introduce you to our department, where we are committed to providing the best administrative support for your academic career.</p>
-                    <p class="highlight">Click to read more</p>
-                </div>
-            </a>
-        </div>
-        <div class="sec">
-            <a href="AboutTMBU.aspx">
-                <div class="panel">
-                    <h4>About TMBU</h4>
-                    <p>Tilka Manjhi Bhagalpur University, also known as Bhagalpur University, is a leading institution for higher education in Bihar. Located in Bhagalpur city, the university is named after the renowned freedom fighter Tilka Manjhi.</p>
-                    <p class="highlight">Click to read more</p>
-                </div>
-            </a>
-        </div>
-        <div class="sec">
-            <a href="AboutUDCA.aspx">
-                <div class="panel">
-                    <h4>About UDCA</h4>
-                    <p>The University Department of Computer Applications, a part of Tilka Manjhi Bhagalpur University and also known as the Computer Centre, offers an MCA course. It is recognized by the Government of Bihar and approved by AICTE, New Delhi.</p>
-                    <p class="highlight">Click to read more</p>
-                </div>
-            </a>
-        </div>
-        <div class="sec">
-            <a href="ComputerCenter.aspx">
-                <div class="panel">
-                    <h4>About Computer Center</h4>
-                    <p>The Computer Centre at Tilka Manjhi Bhagalpur University represents a significant milestone in technological progress and educational empowerment in the region. Established in 1988 with a grant from the University Grant Commission.</p>
-                    <p class="highlight">Click to read more</p>
-                </div>
-            </a>
-        </div>
     </section>
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/wowslider.js"></script>

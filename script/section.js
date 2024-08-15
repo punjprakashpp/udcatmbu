@@ -12,7 +12,6 @@
     evt.currentTarget.className += " active";
 
     startMarquee(tabName);
-
     setNoticeSectionHeight();
     setMarqueeHeight();
 }
@@ -49,7 +48,37 @@ function setMarqueeHeight() {
     }
 }
 
+function adjustHeights() {
+    if (window.innerWidth > 768) {
+        let boxes = document.querySelectorAll('.box');
+        let abouts = document.querySelectorAll('.about');
+
+        let maxBoxHeight = Array.from(boxes).reduce((maxHeight, box) => {
+            return Math.max(maxHeight, box.offsetHeight);
+        }, 0);
+
+        boxes.forEach(box => {
+            box.style.height = maxBoxHeight + 'px';
+        });
+
+        let maxAboutHeight = Array.from(abouts).reduce((maxHeight, about) => {
+            return Math.max(maxHeight, about.offsetHeight);
+        }, 0);
+
+        abouts.forEach(about => {
+            about.style.height = maxAboutHeight + 'px';
+        });
+    } else {
+        document.querySelectorAll('.box, .about').forEach(element => {
+            element.style.height = 'auto';
+        });
+    }
+}
+
+adjustHeights();
+
 window.onload = function () {
+    adjustHeights();
     setNoticeSectionHeight();
     setMarqueeHeight();
     startMarquee('Notice');
@@ -58,4 +87,5 @@ window.onload = function () {
 window.onresize = function () {
     setNoticeSectionHeight();
     setMarqueeHeight();
+    adjustHeights();
 };
