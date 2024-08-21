@@ -14,77 +14,88 @@ public partial class Admin_pages_UploadAffReg : System.Web.UI.Page
     {
         string affregTitle = txtLinkText.Text.Trim();
         DateTime affregDate;
-        string imp = "no";
+        string important = "no";
         string filePath = null;
 
-        // Check if the title is not empty and the date is valid
-        if (!string.IsNullOrEmpty(affregTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out affregDate))
+        if (!string.IsNullOrEmpty(affregTitle))
         {
-            if (fileUpload.HasFile)
+            // Parse the date using the specific format 'dd-MM-yyyy'
+            try
             {
-                string fileExtension = Path.GetExtension(fileUpload.FileName).ToLower();
-                if (fileExtension == ".pdf")
+                affregDate = DateTime.ParseExact(txtLinkDate.Text.Trim(), "dd-MM-yyyy", null);
+
+                if (fileUpload.HasFile)
                 {
-                    try
+                    string fileExtension = Path.GetExtension(fileUpload.FileName).ToLower();
+                    if (fileExtension == ".pdf")
                     {
-                        string fileName = Path.GetFileName(fileUpload.FileName);
-                        string uploadFolder = Server.MapPath("~/docs/affreg/");
-                        if (!Directory.Exists(uploadFolder))
+                        try
                         {
-                            Directory.CreateDirectory(uploadFolder);
-                        }
-                        filePath = Path.Combine(uploadFolder, fileName);
-                        fileUpload.SaveAs(filePath);
-
-                        // Store the relative path to the database
-                        string relativeFilePath = "docs/affreg/" + fileName;
-
-                        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-                        using (SqlConnection conn = new SqlConnection(connStr))
-                        {
-                            string query = "INSERT INTO Docs (Type, No, Title, Date, Important, FilePath) VALUES (@Type, @No, @Title, @Date, @Important, @FilePath)";
-                            using (SqlCommand cmd = new SqlCommand(query, conn))
+                            string fileName = Path.GetFileName(fileUpload.FileName);
+                            string uploadFolder = Server.MapPath("~/docs/affreg/");
+                            if (!Directory.Exists(uploadFolder))
                             {
-                                cmd.Parameters.AddWithValue("@Type", "AffReg");
-                                cmd.Parameters.AddWithValue("@No", string.Empty);
-                                cmd.Parameters.AddWithValue("@Title", affregTitle);
-                                cmd.Parameters.AddWithValue("@Date", affregDate);
-                                cmd.Parameters.AddWithValue("@Important", imp);
-                                cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
+                                Directory.CreateDirectory(uploadFolder);
+                            }
+                            filePath = Path.Combine(uploadFolder, fileName);
+                            fileUpload.SaveAs(filePath);
 
-                                conn.Open();
-                                cmd.ExecuteNonQuery();
-                                lblMessage.Text = "File uploaded successfully!";
-                                lblMessage.ForeColor = System.Drawing.Color.Green;
+                            // Store the relative path to the database
+                            string relativeFilePath = "docs/affreg/" + fileName;
 
-                                // Clear form fields
-                                txtLinkText.Text = string.Empty;
-                                txtLinkDate.Text = string.Empty;
-                                // fileUpload control cannot be programmatically cleared
+                            string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+                            using (SqlConnection conn = new SqlConnection(connStr))
+                            {
+                                string query = "INSERT INTO Docs (Type, No, Title, Date, Important, FilePath) VALUES (@Type, @No, @Title, @Date, @Important, @FilePath)";
+                                using (SqlCommand cmd = new SqlCommand(query, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@Type", "AffReg");
+                                    cmd.Parameters.AddWithValue("@No", string.Empty);
+                                    cmd.Parameters.AddWithValue("@Title", affregTitle);
+                                    cmd.Parameters.AddWithValue("@Date", affregDate);
+                                    cmd.Parameters.AddWithValue("@Important", important);
+                                    cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
+
+                                    conn.Open();
+                                    cmd.ExecuteNonQuery();
+                                    lblMessage.Text = "Document uploaded successfully!";
+                                    lblMessage.ForeColor = System.Drawing.Color.Green;
+
+                                    // Clear form fields
+                                    txtLinkText.Text = string.Empty;
+                                    txtLinkDate.Text = string.Empty;
+                                    // Clear the file upload control
+                                    fileUpload.Attributes.Clear();
+                                }
                             }
                         }
+                        catch (Exception ex)
+                        {
+                            lblMessage.Text = "Error: " + ex.Message;
+                            lblMessage.ForeColor = System.Drawing.Color.Red;
+                        }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        lblMessage.Text = "Error: " + ex.Message;
+                        lblMessage.Text = "Only PDF files are allowed.";
                         lblMessage.ForeColor = System.Drawing.Color.Red;
                     }
                 }
                 else
                 {
-                    lblMessage.Text = "Only PDF files are allowed.";
+                    lblMessage.Text = "Please upload a PDF file.";
                     lblMessage.ForeColor = System.Drawing.Color.Red;
                 }
             }
-            else
+            catch (FormatException)
             {
-                lblMessage.Text = "Please upload a PDF file.";
+                lblMessage.Text = "Please enter a valid date in the format dd-MM-yyyy.";
                 lblMessage.ForeColor = System.Drawing.Color.Red;
             }
         }
         else
         {
-            lblMessage.Text = "Please enter a valid Title and Date.";
+            lblMessage.Text = "Please enter valid Title and Date.";
             lblMessage.ForeColor = System.Drawing.Color.Red;
         }
     }

@@ -19,74 +19,85 @@ public partial class Admin_pages_UploadNotice : System.Web.UI.Page
         string important = "no";
         string filePath = null;
 
-        if (!string.IsNullOrEmpty(noticeTitle) && DateTime.TryParse(txtLinkDate.Text.Trim(), out noticeDate))
+        if (!string.IsNullOrEmpty(noticeTitle))
         {
-            if (fileUpload.HasFile)
+            // Parse the date using the specific format 'dd-MM-yyyy'
+            try
             {
-                string fileExtension = Path.GetExtension(fileUpload.FileName).ToLower();
-                if (fileExtension == ".pdf")
+                noticeDate = DateTime.ParseExact(txtLinkDate.Text.Trim(), "dd-MM-yyyy", null);
+
+                if (fileUpload.HasFile)
                 {
-                    try
+                    string fileExtension = Path.GetExtension(fileUpload.FileName).ToLower();
+                    if (fileExtension == ".pdf")
                     {
-                        if (ImpChkbox.Checked)
+                        try
                         {
-                            important = "yes";
-                        }
-                        string fileName = Path.GetFileName(fileUpload.FileName);
-                        string uploadFolder = Server.MapPath("~/docs/notice/");
-                        if (!Directory.Exists(uploadFolder))
-                        {
-                            Directory.CreateDirectory(uploadFolder);
-                        }
-                        filePath = Path.Combine(uploadFolder, fileName);
-                        fileUpload.SaveAs(filePath);
-
-                        // Store the relative path to the database
-                        string relativeFilePath = "docs/notice/" + fileName;
-
-                        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-                        using (SqlConnection conn = new SqlConnection(connStr))
-                        {
-                            string query = "INSERT INTO Docs (Type, No, Title, Date, Important, FilePath) VALUES (@Type, @No, @Title, @Date, @Important, @FilePath)";
-                            using (SqlCommand cmd = new SqlCommand(query, conn))
+                            if (ImpChkbox.Checked)
                             {
-                                cmd.Parameters.AddWithValue("@Type", "Notice");
-                                cmd.Parameters.AddWithValue("@No", noticeNo);
-                                cmd.Parameters.AddWithValue("@Title", noticeTitle);
-                                cmd.Parameters.AddWithValue("@Date", noticeDate);
-                                cmd.Parameters.AddWithValue("@Important", important);
-                                cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
+                                important = "yes";
+                            }
+                            string fileName = Path.GetFileName(fileUpload.FileName);
+                            string uploadFolder = Server.MapPath("~/docs/notice/");
+                            if (!Directory.Exists(uploadFolder))
+                            {
+                                Directory.CreateDirectory(uploadFolder);
+                            }
+                            filePath = Path.Combine(uploadFolder, fileName);
+                            fileUpload.SaveAs(filePath);
 
-                                conn.Open();
-                                cmd.ExecuteNonQuery();
-                                lblMessage.Text = "Notice uploaded successfully!";
-                                lblMessage.ForeColor = System.Drawing.Color.Green;
+                            // Store the relative path to the database
+                            string relativeFilePath = "docs/notice/" + fileName;
 
-                                // Clear form fields
-                                ImpChkbox.Checked = false;
-                                txtLinkNo.Text = string.Empty;
-                                txtLinkText.Text = string.Empty;
-                                txtLinkDate.Text = string.Empty;
-                                // Clear the file upload control
-                                fileUpload.Attributes.Clear();
+                            string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+                            using (SqlConnection conn = new SqlConnection(connStr))
+                            {
+                                string query = "INSERT INTO Docs (Type, No, Title, Date, Important, FilePath) VALUES (@Type, @No, @Title, @Date, @Important, @FilePath)";
+                                using (SqlCommand cmd = new SqlCommand(query, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@Type", "Notice");
+                                    cmd.Parameters.AddWithValue("@No", noticeNo);
+                                    cmd.Parameters.AddWithValue("@Title", noticeTitle);
+                                    cmd.Parameters.AddWithValue("@Date", noticeDate);
+                                    cmd.Parameters.AddWithValue("@Important", important);
+                                    cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
+
+                                    conn.Open();
+                                    cmd.ExecuteNonQuery();
+                                    lblMessage.Text = "Notice uploaded successfully!";
+                                    lblMessage.ForeColor = System.Drawing.Color.Green;
+
+                                    // Clear form fields
+                                    ImpChkbox.Checked = false;
+                                    txtLinkNo.Text = string.Empty;
+                                    txtLinkText.Text = string.Empty;
+                                    txtLinkDate.Text = string.Empty;
+                                    // Clear the file upload control
+                                    fileUpload.Attributes.Clear();
+                                }
                             }
                         }
+                        catch (Exception ex)
+                        {
+                            lblMessage.Text = "Error: " + ex.Message;
+                            lblMessage.ForeColor = System.Drawing.Color.Red;
+                        }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        lblMessage.Text = "Error: " + ex.Message;
+                        lblMessage.Text = "Only PDF files are allowed.";
                         lblMessage.ForeColor = System.Drawing.Color.Red;
                     }
                 }
                 else
                 {
-                    lblMessage.Text = "Only PDF files are allowed.";
+                    lblMessage.Text = "Please upload a PDF file.";
                     lblMessage.ForeColor = System.Drawing.Color.Red;
                 }
             }
-            else
+            catch (FormatException)
             {
-                lblMessage.Text = "Please upload a PDF file.";
+                lblMessage.Text = "Please enter a valid date in the format dd-MM-yyyy.";
                 lblMessage.ForeColor = System.Drawing.Color.Red;
             }
         }
