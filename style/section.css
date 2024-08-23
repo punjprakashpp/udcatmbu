@@ -55,10 +55,11 @@
     transition: font-size 0.2s, background-color 0.2s;
 }
 
-.top-sec .slider, 
+.top-sec .slider-section, 
 .top-sec .notice-section {
     display: inline-block;
-    width: 45%;
+    width:40%;
+    max-width:800px;
     margin: 0 15px;
     padding: 20px;
     border-radius: 10px;
@@ -67,8 +68,15 @@
     backdrop-filter: blur(10px);
 }
 
-.top-sec .slider {
+.top-sec .slider-section {
     align-self: flex-start;
+    width:55%;
+}
+
+@media screen and (max-width: 1280px) {
+    .top-sec .slider-section {
+        width:50%;
+    }
 }
 
 .top-sec .notice-section {
@@ -145,11 +153,11 @@
         margin: 20px 0 10px;
     }
 
-    .top-sec .slider, 
+    .top-sec .slider-section, 
     .top-sec .notice-section {
         display: block;
         width: 100%;
-        margin: 20px 0;
+        margin: 20px auto;
     }
 }
 

@@ -29,7 +29,7 @@ function startMarquee(tabName) {
 }
 
 function setNoticeSectionHeight() {
-    var slider = document.querySelector('.slider');
+    var slider = document.querySelector('.slider-section');
     var noticeSection = document.querySelector('.notice-section');
     if (slider && noticeSection) {
         noticeSection.style.height = slider.offsetHeight + 'px';
@@ -39,7 +39,7 @@ function setNoticeSectionHeight() {
 function setMarqueeHeight() {
     var marq1 = document.querySelector('#marq1');
     var marq2 = document.querySelector('#marq2');
-    var slider = document.querySelector('.slider');
+    var slider = document.querySelector('.slider-section');
     if (marq1 && slider) {
         marq1.style.height = (slider.offsetHeight - 105) + 'px';
     }

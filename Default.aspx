@@ -16,18 +16,17 @@
                 </asp:Repeater>
             </marquee>
         </div>
-        <div class="slider">
-            <div id="wowslider-container" style="margin: 0 auto;">
-                <div class="ws_images">
-                    <ul>
-                        <asp:Repeater ID="SliderRepeater" runat="server">
-                            <ItemTemplate>
-                                <li>
-                                    <img src="<%# Eval("ImagePath") %>" title="<%# Eval("Title") %>" alt="<%# Eval("Title") %>" />
-                                </li>
-                            </ItemTemplate>
-                        </asp:Repeater>
-                    </ul>
+        <div class="slider-section">
+            <div class="slider">
+                <img src="img/default/slider.jpg" class="slide active" />
+                <asp:Repeater ID="SliderRepeater" runat="server">
+                    <ItemTemplate>
+                        <img src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" class="slide" />
+                    </ItemTemplate>
+                </asp:Repeater>
+                <div class="slider-controls">
+                    <a class="prev" onclick="prevSlide()">&#10094;</a>
+                    <a class="next" onclick="nextSlide()">&#10095;</a>
                 </div>
             </div>
         </div>
@@ -161,8 +160,6 @@
             </ItemTemplate>
         </asp:Repeater>
     </section>
-    <script type="text/javascript" src="script/jquery.js"></script>
-    <script type="text/javascript" src="script/wowslider.js"></script>
     <script type="text/javascript" src="script/slider.js"></script>
     <script type="text/javascript" src="script/section.js"></script>
 </asp:Content>
