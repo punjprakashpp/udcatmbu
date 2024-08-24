@@ -2,8 +2,8 @@ const slides = document.querySelectorAll('.slide');
 const transitionEffects = [
   'fade', 'slide-in', 'grow', 'rotate', 'flip', 'zoom', 
   'slide-up', 'spin', 'bounce', 'fade-slide', 
-  'flip-vertical', 'slide-down', 'zoom-out', 'flip-horizontal', 
-  'skew-horizontal', 'slide-diagonal', 'rotate-zoom', 'bounce-horizontal'
+  'flip-vertical', 'slide-down', 'zoom-out', 
+  'flip-horizontal', 'slide-diagonal', 'rotate-zoom', 'bounce-horizontal'
 ];
 let currentSlide = 0;
 

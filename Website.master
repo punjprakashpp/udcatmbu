@@ -168,22 +168,12 @@
     </form>
     <footer class="footer">
         <div class="column col-1">
-            <h2>
-                <a href="Default.aspx">
-                    <img src="img/logo/logo-head.png" alt="logo-head"></a>
-            </h2>
+            <h2><a href="Default.aspx"><img src="img/logo/logo-head.png" alt="logo-head"></a></h2>
             <hr />
-            <p>
-                <b>Location: </b><a href="https://maps.app.goo.gl/Zv7E8aFZ3hYQ1ZMf6" target="_blank">Computer Center,</a>
-                &nbsp;TMBU, Bhagalpur, Bihar, 812007<br />
-                <b>Phone: </b><a href="tel:0641250040">0641-250040</a><br />
-                <b>Website: </b><a href="http://udcatmbu.org">udcatmbu.org</a><br>
-                <b>Email: </b><a href="mailto:udcatmbu.bgp@gmail.com">udcatmbu.bgp@gmail.com</a><br>
-                <b>Click here for </b><a href="Login.aspx"><i class="fa fa-sign-in"></i>Administrator Login</a><br>
-            </p>
+            <p class="abt"><a href="AboutUDCA.aspx">The University Department of Computer Applications, a part of Tilka Manjhi Bhagalpur University and also known as the Computer Centre, offers an MCA course.</a></p>
         </div>
-        <div class="column col-2">
-            <h2>Important Links</h2>
+        <div class="column col-3">
+            <h2>Important Websites</h2>
             <ul class="links">
                 <li><a href="http://tmbuniv.ac.in" target="_blank">Tilka Manjhi Bhagalpur University</a></li>
                 <li><a href="https://www.ugc.ac.in/" target="_blank">University Grant Commission</a></li>
@@ -193,27 +183,37 @@
                 <li><a href="https://state.bihar.gov.in/" target="_blank">Bihar Government Official Website</a></li>
             </ul>
         </div>
-        <div class="column col-3">
+        <div class="column col-4">
             <h2>Quick Links</h2>
-            <ul class="links">
+            <ul class="links lnks">
                 <li><a href="Downloads.aspx">Downloads</a></li>
                 <li><a href="Prospectus.aspx">Prospectus</a></li>
+                <li><a href="ImageGallery.aspx">Image Gallery</a></li>
+            </ul>
+            <ul class="links lnks">
                 <li><a href="TimeTable.aspx">Time Table</a></li>
                 <li><a href="HolidayList.aspx">Holiday List</a></li>
-                <li><a href="ImageGallery.aspx">Image Gallery</a></li>
-                <li><a href="AlumniRegistration.aspx">Alumni Registration</a></li>
+                <li><a href="Login.aspx">Admin Login</a></li>
             </ul>
-        </div>
-        <div class="column col-4">
             <ul class="links">
                 <li><a href="AboutDeveloper.aspx">About Developers</a></li>
+                <li><a href="AlumniRegistration.aspx">Alumni Registration</a></li>
                 <li><a href="http://udcalibrary.runasp.net/" target="new">UDCA Automated Library</a></li>
             </ul>
-            <h2>Useful Websites</h2>
-            <ul class="links">
-                <li><a href="https://swayam.gov.in/" target="new">SWAYAM Portal</a></li>
-                <li><a href="http://www.freshersworld.com/" target="new">Freshers World</a></li>
-                <li><a href="https://internshala.com/" target="new">Intern Shala</a></li>
+        </div>
+        <div class="column col-2">
+            <h2>Contact US</h2>
+            <ul class="links cnt">
+                <li><i class="fa fa-map-marker"></i>&nbsp;<b>Location: </b><a href="https://maps.app.goo.gl/Zv7E8aFZ3hYQ1ZMf6" target="_blank">Computer Center,</a> TMBU, Bhagalpur, Bihar, 812007</li>
+                <li><i class="fa fa-phone"></i>&nbsp;<b>Phone: </b><a href="tel:0641250040">0641-250040</a></li>
+                <li><i class="fa fa-envelope"></i>&nbsp;<b>Email: </b><a href="mailto:udcatmbu.bgp@gmail.com">udcatmbu.bgp@gmail.com</a></li>
+                <li><b>Website: </b><a href="http://udcatmbu.org">udcatmbu.org</a></li>
+                <li><b>Social Links: </b>
+                    &nbsp;&nbsp;<a href="https://www.facebook.com/udcatmbu" target="_blank"><i class="fa fa-facebook"></i></a>
+                    &nbsp;&nbsp;<a href="https://www.instagram.com/udcatmbu" target="_blank"><i class="fa fa-instagram"></i></a>
+                    &nbsp;&nbsp;<a href="https://x.com/udcatmbu" target="_blank"><i class="fa fa-twitter"></i></a>
+                    &nbsp;&nbsp;<a href="https://www.linkedin.com/in/udcatmbu" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </li>
             </ul>
         </div>
         <hr />

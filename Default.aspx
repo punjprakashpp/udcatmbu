@@ -1,4 +1,4 @@
-<%@ Page Title="UDCA | TMBU" Language="C#" MasterPageFile="~/Website.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="UDCA | TMBU" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/slider.css">
@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <section class="top-sec">
-        <div class="marquee-links">
+        <div class="links-section">
             <p class="high">Highlights: </p>
             <marquee behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
 					<asp:Repeater ID="linksRepeater" runat="server">
