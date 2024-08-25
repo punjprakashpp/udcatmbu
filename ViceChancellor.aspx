@@ -8,7 +8,7 @@
     <div class="cont" align="center">
         <h1 class="title">Vice-Chancellor of TMBU</h1>
         <div class="dev">
-            <div class="dev-img" align="left">
+            <div class="dev-img" align="center">
                 <asp:Image ID="imgPerson" runat="server" /><br />
                 <br />
                 <h2 align="center" style="color: Red;">

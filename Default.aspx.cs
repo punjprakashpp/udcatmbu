@@ -26,7 +26,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, ImagePath FROM Image WHERE Type ='Slider'";
+            string query = "SELECT Title, ImagePath FROM Image WHERE Type ='Slider' ORDER BY ImageID DESC";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
