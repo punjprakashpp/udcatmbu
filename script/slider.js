@@ -6,41 +6,47 @@ const transitionEffects = [
   'flip-horizontal', 'slide-diagonal', 'rotate-zoom', 'bounce-horizontal'
 ];
 let currentSlide = 0;
+let autoSlideInterval;
 
-function showNextSlide(auto = true) {
+function showSlide(index, auto = true) {
+    // Remove active class and effect from the current slide
     slides[currentSlide].classList.remove('active');
-  
-    // Update current slide index and handle circular navigation
-    currentSlide = auto ? (currentSlide + 1) % slides.length : currentSlide;
-  
+
+    // Update current slide index
+    currentSlide = index;
+
     // Randomly select a transition effect
     const randomEffect = transitionEffects[Math.floor(Math.random() * transitionEffects.length)];
-  
-    // Apply random effect and activate the next slide
+
+    // Apply the random effect and activate the new slide
     slides[currentSlide].classList.add(randomEffect, 'active');
-  
+
     // Remove the effect class after 2 seconds
     setTimeout(() => {
         slides[currentSlide].classList.remove(randomEffect);
     }, 2000);
-  
+
     // Automatically move to the next slide after 4 seconds if auto is true
     if (auto) {
-        setTimeout(showNextSlide, 4000);
+        clearTimeout(autoSlideInterval);
+        autoSlideInterval = setTimeout(() => showNextSlide(), 4000);
     }
 }
 
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        showNextSlide(false);
+    function showNextSlide(auto = true) {
+        const nextSlideIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextSlideIndex, auto);
     }
 
-    function prevSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showNextSlide(false);
-    }
+        function nextSlide() {
+            const nextSlideIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextSlideIndex, false);
+        }
 
-    // Start the slider with automatic transitions
-    setTimeout(showNextSlide, 4000);
+        function prevSlide() {
+            const prevSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevSlideIndex, false);
+        }
+
+        // Start the slider with automatic transitions
+        autoSlideInterval = setTimeout(showNextSlide, 4000);
