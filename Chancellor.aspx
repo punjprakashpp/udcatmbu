@@ -12,9 +12,9 @@
     <div class="cont" align="center">
         <h1 class="title">Chancellor of TMBU</h1>
         <div class="dev">
-            <div class="dev-img" align="left">
+            <div class="dev-img" align="center">
                 <asp:Image ID="imgPerson" runat="server" /><br /><br />
-                <h4 align="justify">To know more<a href="https://governor.bih.nic.in/" target="_blank"> Click here</a></h4>
+                <h4 align="center">To know more<a href="https://governor.bih.nic.in/" target="_blank"> Click here</a></h4>
             </div> 
             <div class="dev-des" align="right">
                 <h2 style="font-size:large;"><b>Hon'ble</b></h2>
