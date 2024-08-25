@@ -9,17 +9,14 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.header, .contact {
-    width: 100%;
-}
-
 .header {  
   height: auto;
   font-size: 16px;
   color: #666666;
 }
 
-.contact { 
+.contact-section {
+  width: 100%; 
   display: block;
   background: #001f44;
 }
@@ -71,8 +68,8 @@
 
 /* Header Brand Styles */
 .header .brand {
-  height: auto;
   width: 100%;
+  height: auto;
   background: white;
   display: block;
   text-align: center;
@@ -455,18 +452,17 @@
 @media screen and (max-width: 680px) {
     .footer {
         padding: 10px;
-        font-size: 14px;
     }
+
     .footer .column {
         width: 45%;
         line-height:2em;
     }
-    .footer .links a {
-        font-size: 16px;
-    }
+
     .footer .col-1, .footer .col-2 {
         width:95%;
     }
+
     .footer .col-1 p {
         text-align:left;
         margin-bottom: 10px;
@@ -479,17 +475,9 @@
         width: 100%;
         margin-bottom: 20px;
     }
+
     .footer .column p {
-        font-size: 14px;
         padding-left: 5px;
-    }
-
-    .footer .links a {
-        font-size: 14px;
-    }
-
-    .footer .copyright p {
-        font-size: 12px;
     }
 }
 

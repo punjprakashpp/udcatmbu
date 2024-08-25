@@ -41,10 +41,10 @@ function setMarqueeHeight() {
     var marq2 = document.querySelector('#marq2');
     var slider = document.querySelector('.slider-section');
     if (marq1 && slider) {
-        marq1.style.height = (slider.offsetHeight - 105) + 'px';
+        marq1.style.height = (slider.offsetHeight - 95) + 'px';
     }
     if (marq2 && slider) {
-        marq2.style.height = (slider.offsetHeight - 105) + 'px';
+        marq2.style.height = (slider.offsetHeight - 95) + 'px';
     }
 }
 

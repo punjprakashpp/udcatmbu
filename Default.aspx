@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style/section.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
-    <section class="top-sec">
+    <section class="link-sce">
         <div class="links-section">
             <p class="high">Highlights: </p>
             <marquee behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
@@ -16,6 +16,8 @@
                 </asp:Repeater>
             </marquee>
         </div>
+    </section>
+    <section class="top-sec">
         <div class="slider-section">
             <div class="slider">
                 <img src="img/default/slider.jpg" class="slide active" />

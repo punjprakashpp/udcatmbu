@@ -16,7 +16,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="contact">
+        <div class="contact-section">
             <div class="contacts">
                 <ul class="icons-ul">
                     <li><a href="tel:0641-250040"><i class="fa fa-phone"></i>&nbsp;0641-250040</a></li>
