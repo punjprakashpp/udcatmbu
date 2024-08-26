@@ -9,10 +9,9 @@
         <div class="main">
             <div class="slider-section">
                 <div class="slider">
-                    <img src="img/default/slider.jpg" class="slide active" />
                     <asp:Repeater ID="SliderRepeater" runat="server">
                         <ItemTemplate>
-                            <img src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" class="slide" />
+                            <img src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" class="slide <%# (Container.ItemIndex == 0) ? "active" : "" %>" />
                         </ItemTemplate>
                     </asp:Repeater>
                     <div class="slider-controls">
