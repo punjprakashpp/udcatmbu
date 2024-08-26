@@ -14,7 +14,7 @@
                 <h2 align="center" style="color: Red;">
                     <asp:Label ID="lblName" runat="server" /></h2>
                 <p>
-                    Phone No.:&nbsp;&nbsp;<a href="tel:+91 6412501290" target="_blank"><b><asp:Label ID="lblPhone" runat="server" /></b></a><br />
+                    Phone No.:&nbsp;&nbsp;<b><asp:HyperLink ID="phoneLink" runat="server"><asp:Label ID="lblPhone" runat="server" /></asp:HyperLink></b><br />
                     E-Mail Id.:<b><asp:HyperLink ID="emailLink" runat="server">
                         <asp:Label ID="lblEmail" runat="server" /></asp:HyperLink></b>
                 </p>

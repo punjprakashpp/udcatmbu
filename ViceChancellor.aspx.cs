@@ -33,6 +33,7 @@ public partial class About_Director : System.Web.UI.Page
                     lblName.Text = name;
                     lblPhone.Text = phone;
                     lblEmail.Text = email;
+                    phoneLink.NavigateUrl = "mailto:" + phone;
                     emailLink.NavigateUrl = "mailto:" + email;
                     imgPerson.ImageUrl = "~/" + imagePath;
                 }
