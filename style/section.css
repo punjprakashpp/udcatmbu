@@ -283,13 +283,13 @@
 }
 
 .main h3 {
-    font-size: 18px;
+    font-size: 1.4rem;
     color: #0056b3;
     margin: 10px 0;
 }
 
 .main h4 {
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 700;
     color: brown;
 }
@@ -316,14 +316,6 @@
         width: 120px;
         height: 120px;
     }
-
-    .main h3 {
-        font-size: 16px;
-    }
-
-    .main h4 {
-        font-size: 18px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -332,88 +324,113 @@
         height: 100px;
     }
 
-    .main h3 {
-        font-size: 14px;
-    }
-
-    .main h4 {
-        font-size: 16px;
-    }
-
     .box {
         padding: 15px;
     }
 }
 
-.sec .panel {
-    margin: 10px;
+/* Container for buttons */
+.btn-area {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    align-items: center;
-    flex: 1 1 calc(20% - 20px); /* Adjust width for 4 items per row */
-    box-sizing: border-box;
 }
 
-.sec .info-btn {
+/* Info button styling */
+.info-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 250px;
+    background-color: #5271FF;
     color: #ffffff;
-    width: 220px;
-    height: 80px;
-    background: #5271FF;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: background 0.3s ease, transform 0.3s ease;
-    flex-direction: column;
-    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
 }
 
-.sec .info-btn img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 10px;
+/* Hover effect for info buttons */
+.info-btn:hover {
+    background-color: #4158d0;
+    transform: scale(1.05);
 }
 
-.sec .info-btn:hover {
-    background: #00BFFF;
-    transform: translateY(-5px);
+/* Image styling inside info buttons */
+.info-btn img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
 }
 
-/* Responsive Design */
+/* Paragraph styling inside info buttons */
+.info-btn p {
+    font-size: 1rem;
+    margin: 0;
+    transition: color 0.3s ease;
+}
 
-/* Medium devices (tablets, 768px and below) */
+/* Hover effect for images inside info buttons */
+.info-btn:hover img {
+    transform: rotate(10deg);
+}
+
+/* Hover effect for text inside info buttons */
+.info-btn:hover p {
+    color: #e0e0e0;
+}
+
+/* Media Queries */
+
+/* For tablets and small desktops */
+@media (max-width: 992px) {
+    .info-btn {
+        padding: 18px;
+        max-width: 220px;
+    }
+
+    .info-btn p {
+        font-size: 0.95rem;
+    }
+}
+
+/* For small tablets and large phones */
 @media (max-width: 768px) {
-    .sec .panel {
-        flex: 1 1 calc(50% - 20px); /* Two items per row */
+    .info-btn {
+        padding: 15px;
+        max-width: 200px;
     }
 
-    .sec .info-btn {
-        width: 100%;
-        height: auto;
-        padding: 15px 10px;
-        font-size: 16px;
+    .info-btn p {
+        font-size: 0.9rem;
     }
 }
 
-/* Small devices (landscape phones, 576px and below) */
+/* For phones and very small screens */
 @media (max-width: 576px) {
-    .sec .panel {
-        flex: 1 1 100%; /* Full width for single column layout */
-        margin: 10px 0; /* Adjust margin for single column */
+    .info-btn {
+        padding: 10px;
+        max-width: 100%;
     }
 
-    .sec .info-btn {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        font-size: 14px;
+    .info-btn img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .info-btn p {
+        font-size: 0.85rem;
     }
 }
 
@@ -434,7 +451,7 @@
 .slider {
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     position: relative;
 }
 
@@ -444,9 +461,9 @@
     max-width: 100%;
     padding: 10px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(225, 225, 225, 0.25);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     position: absolute;
     top: 20px;
     right: 20px;
@@ -480,6 +497,7 @@
         width: 100%; /* Full width */
         margin-top: 20px; /* Add margin above for separation */
         display: block; /* Display the notice section */
+        z-index: auto;
     }
 
     .slider-section, 
@@ -496,8 +514,8 @@
 
 .notice {
     margin: 10px 0;
-    border: 2px solid grey;
     padding: 5px;
+    color: brown;
 }
 
 .notice a {
