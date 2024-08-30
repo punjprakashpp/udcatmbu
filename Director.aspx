@@ -20,7 +20,6 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 20px;
         }
 
             /* Header styling */
@@ -50,11 +49,9 @@
             align-items: center;
             justify-content: space-between;
             gap: 20px;
-            margin-bottom: 20px;
         }
 
         .row-img {
-            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -76,17 +73,11 @@
             }
 
             .row-img a {
-                display: inline-block;
-                background-color: #0056b3;
-                color: white;
                 text-decoration: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                transition: background-color 0.3s ease;
             }
 
                 .row-img a:hover {
-                    background-color: #003d80;
+                    text-decoration: underline;
                 }
 
         /* Director's message text and link */
@@ -219,13 +210,13 @@
                 </div>
                 <div class="row-txt">
                     <h2>Director's Message</h2>
-                    <p>Welcome to the University Department of Computer Applications (UDCA), a dynamic and progressive institution recognized for its global vision, academic innovation, and unwavering commitment to excellence. As the Director, it is my honor to introduce you to our thriving department—a place where ambition meets opportunity, and the future is shaped by a collective passion for learning and technological advancement.</p>
+                    <p>Welcome to the University Department of Computer Applications (UDCA), a hub of innovation and academic excellence. As the Director, I am proud to introduce you to a vibrant community where ambition meets opportunity, and education goes beyond degrees to foster creativity, purpose, and a commitment to societal impact.</p>
+                    <p>At UDCA, we empower students with the knowledge and skills needed to thrive in today’s fast-evolving technological landscape. Our curriculum is thoughtfully crafted to align with industry demands while nurturing a broader sense of social responsibility. Supported by state-of-the-art facilities and a dedicated faculty, we prepare students to become not only skilled professionals but also compassionate leaders ready to drive meaningful change.</p>
                 </div>
-                <p>At UDCA, we believe education extends far beyond earning a degree. It’s about nurturing talent, fostering creativity, and instilling a deep sense of purpose and responsibility. Our mission is to empower students with the knowledge and skills essential for success in today’s rapidly changing world. We are dedicated to creating an environment where curiosity is encouraged, innovation is celebrated, and students are inspired to challenge the status quo and explore new frontiers in technology.</p>
-                <p>Our carefully designed curriculum meets the evolving demands of the IT industry while cultivating a broader understanding of social responsibility. Supported by cutting-edge facilities and a team of accomplished and dedicated faculty, we ensure that every student is well-equipped to face the challenges and seize the opportunities of tomorrow. At UDCA, we don’t just focus on academic excellence—we strive to develop compassionate leaders and forward-thinking professionals who will make meaningful contributions to society.</p>
-                <p>Education at UDCA is a collaborative journey, where students, faculty, and the community come together to create a transformative experience. We take great pride in fostering a supportive and inclusive atmosphere that promotes both intellectual growth and personal development. Here, we believe in the power of partnerships, valuing the connections between students, parents, and the institution as we guide our students through their educational journey.</p>
-                <p>I invite you to join us on this exciting path of discovery, growth, and transformation. Together, we will unlock potential, expand horizons, and build a brighter, more innovative future. At UDCA, knowledge becomes opportunity, and dreams are given wings to soar.</p>
-                <p>With dedication and optimism, I warmly welcome you to the University Department of Computer Applications—a place where the future begins today.</p>
+            </div>
+            <div>
+                <p>Learning at UDCA is a collaborative journey. We emphasize a supportive, inclusive environment that promotes intellectual growth, personal development, and the power of partnerships among students, faculty, and the community.</p>
+                <p>I invite you to explore UDCA—a place where knowledge opens doors, and aspirations take flight. Join us in shaping a brighter, more innovative future.</p>
             </div>
         </div>
     </section>
