@@ -211,12 +211,12 @@
                 <div class="row-txt">
                     <h2>Director's Message</h2>
                     <p>Welcome to the University Department of Computer Applications (UDCA), a hub of innovation and academic excellence. As the Director, I am proud to introduce you to a vibrant community where ambition meets opportunity, and education goes beyond degrees to foster creativity, purpose, and a commitment to societal impact.</p>
-                    <p>At UDCA, we empower students with the knowledge and skills needed to thrive in today’s fast-evolving technological landscape. Our curriculum is thoughtfully crafted to align with industry demands while nurturing a broader sense of social responsibility. Supported by state-of-the-art facilities and a dedicated faculty, we prepare students to become not only skilled professionals but also compassionate leaders ready to drive meaningful change.</p>
+                    <p>At UDCA, we empower students with the knowledge and skills needed to thrive in today's fast-evolving technological landscape. Our curriculum is thoughtfully crafted to align with industry demands while nurturing a broader sense of social responsibility. Supported by state-of-the-art facilities and a dedicated faculty, we prepare students to become not only skilled professionals but also compassionate leaders ready to drive meaningful change.</p>
                 </div>
             </div>
             <div>
                 <p>Learning at UDCA is a collaborative journey. We emphasize a supportive, inclusive environment that promotes intellectual growth, personal development, and the power of partnerships among students, faculty, and the community.</p>
-                <p>I invite you to explore UDCA—a place where knowledge opens doors, and aspirations take flight. Join us in shaping a brighter, more innovative future.</p>
+                <p>I invite you to explore UDCA - a place where knowledge opens doors, and aspirations take flight. Join us in shaping a brighter, more innovative future.</p>
             </div>
         </div>
     </section>
