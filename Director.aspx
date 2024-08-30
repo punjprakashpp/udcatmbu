@@ -17,6 +17,10 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
         }
 
             /* Header styling */
@@ -24,7 +28,7 @@
                 font-size: 2.5rem;
                 margin-bottom: 20px;
                 text-align: center;
-                color: #001f44;
+                color: #0056b3;
             }
 
             .main p {
@@ -40,21 +44,20 @@
                 color: #333;
             }
 
-            .main a {
-                display: inline-block;
-                text-decoration: none;
-            }
-
-                .main a:hover {
-                    text-decoration: underline;
-                }
-
         /* New Section Styling for Director's Message */
+        .director-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
         .row-img {
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
         }
 
             .row-img img {
@@ -72,22 +75,30 @@
                 margin-bottom: 5px;
             }
 
-            .row-img h3 {
-                font-size: 1.4rem;
-                color: #555;
-                margin-bottom: 20px;
+            .row-img a {
+                display: inline-block;
+                background-color: #0056b3;
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
             }
+
+                .row-img a:hover {
+                    background-color: #003d80;
+                }
 
         /* Director's message text and link */
         .row-txt {
-            text-align: center;
+            flex: 2;
+            text-align: left;
         }
 
             .row-txt p {
                 font-size: 1.1rem;
                 line-height: 1.6;
                 margin-bottom: 20px;
-                text-align: justify;
             }
 
         /* Media Queries for Responsive Design */
@@ -118,7 +129,7 @@
             }
         }
 
-        /* Medium devices (768px and below) */
+        /* Medium devices (tablets, 768px and below) */
         @media (max-width: 768px) {
             .main h1 {
                 font-size: 2rem;
@@ -132,25 +143,19 @@
                 padding: 30px;
             }
 
-            .row-img {
+            .director-section {
                 flex-direction: column;
-                justify-content: space-between;
-                margin-bottom: 20px;
+                text-align: center;
             }
 
-                .row-img img {
-                    width: 120px;
-                    height: 120px;
-                }
-
-                .row-img h2, .row-img h3 {
-                    text-align: left;
-                    margin-left: 15px;
-                }
-
-            .row-txt p {
-                text-align: left;
+            .row-img,
+            .row-txt {
+                text-align: center;
             }
+
+                .row-img h2 {
+                    text-align: center;
+                }
         }
 
         /* Small devices (576px and below) */
@@ -167,13 +172,17 @@
                 font-size: 1.5rem;
             }
 
+            .main li {
+                font-size: 1rem;
+            }
+
             .main {
                 padding: 20px;
             }
 
             .row-img {
-                flex-direction: column;
-                align-items: center;
+                width: 100%;
+                margin-bottom: 20px;
             }
 
                 .row-img img {
@@ -183,15 +192,15 @@
 
                 .row-img h2 {
                     font-size: 1.6rem;
-                    text-align: center;
                 }
 
-                .row-img h3 {
-                    font-size: 1.2rem;
-                }
-
-            .row-txt p {
+            .row-txt {
                 font-size: 0.9rem;
+            }
+
+            .director-section {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -199,19 +208,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <section class="sec">
         <div class="main">
-            <div class="row-img">
-                <h1>Director of University Department of Computer Applications</h1>
-                <asp:Image ID="imgPerson" runat="server" />
-                <h2><asp:Label ID="lblName" runat="server" /></h2>
-                <p>Phone No.:&nbsp;&nbsp;<b><asp:HyperLink ID="phoneLink" runat="server">
-                    <asp:Label ID="lblPhone" runat="server" /></asp:HyperLink></b></p>
-                <p>E-Mail Id.:<b>&nbsp;&nbsp;<asp:HyperLink ID="emailLink" runat="server">
-                    <asp:Label ID="lblEmail" runat="server" /></asp:HyperLink></b></p>
-                <p>To know more about Director <a href="#" id="openPdfLink">Click here</a></p>
-            </div>
-            <div class="row-txt">
-                <h2>Director's Message</h2>
-                <p>Welcome to the University Department of Computer Applications (UDCA), a dynamic and progressive institution recognized for its global vision, academic innovation, and unwavering commitment to excellence. As the Director, it is my honor to introduce you to our thriving department—a place where ambition meets opportunity, and the future is shaped by a collective passion for learning and technological advancement.</p>
+            <h1>Director of University Department of Computer Applications</h1>
+            <div class="director-section">
+                <div class="row-img">
+                    <asp:Image ID="imgPerson" runat="server" />
+                    <h2><asp:Label ID="lblName" runat="server" /></h2>
+                    <p>Phone No.:&nbsp;&nbsp;<b><asp:HyperLink ID="phoneLink" runat="server"><asp:Label ID="lblPhone" runat="server" /></asp:HyperLink></b></p>
+                    <p>E-Mail Id.:<b>&nbsp;&nbsp;<asp:HyperLink ID="emailLink" runat="server"><asp:Label ID="lblEmail" runat="server" /></asp:HyperLink></b></p>
+                    <p>To know more about Director <a href="#" id="openPdfLink">Click here</a></p>
+                </div>
+                <div class="row-txt">
+                    <h2>Director's Message</h2>
+                    <p>Welcome to the University Department of Computer Applications (UDCA), a dynamic and progressive institution recognized for its global vision, academic innovation, and unwavering commitment to excellence. As the Director, it is my honor to introduce you to our thriving department—a place where ambition meets opportunity, and the future is shaped by a collective passion for learning and technological advancement.</p>
+                </div>
                 <p>At UDCA, we believe education extends far beyond earning a degree. It’s about nurturing talent, fostering creativity, and instilling a deep sense of purpose and responsibility. Our mission is to empower students with the knowledge and skills essential for success in today’s rapidly changing world. We are dedicated to creating an environment where curiosity is encouraged, innovation is celebrated, and students are inspired to challenge the status quo and explore new frontiers in technology.</p>
                 <p>Our carefully designed curriculum meets the evolving demands of the IT industry while cultivating a broader understanding of social responsibility. Supported by cutting-edge facilities and a team of accomplished and dedicated faculty, we ensure that every student is well-equipped to face the challenges and seize the opportunities of tomorrow. At UDCA, we don’t just focus on academic excellence—we strive to develop compassionate leaders and forward-thinking professionals who will make meaningful contributions to society.</p>
                 <p>Education at UDCA is a collaborative journey, where students, faculty, and the community come together to create a transformative experience. We take great pride in fostering a supportive and inclusive atmosphere that promotes both intellectual growth and personal development. Here, we believe in the power of partnerships, valuing the connections between students, parents, and the institution as we guide our students through their educational journey.</p>
