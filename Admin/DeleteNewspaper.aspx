@@ -12,7 +12,7 @@
             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
         </div>
         <asp:GridView ID="gvNewspapers" runat="server" AutoGenerateColumns="False" DataKeyNames="ImageID"
-            AllowPaging="True" PageSize="25" OnPageIndexChanging="gvNewspapers_PageIndexChanging" 
+            AllowPaging="True" PageSize="10" OnPageIndexChanging="gvNewspapers_PageIndexChanging" 
             OnRowDeleting="gvNewspapers_RowDeleting">
             <Columns>
                 <asp:BoundField DataField="ImageID" HeaderText="ImageID" ReadOnly="True" Visible="False" />
