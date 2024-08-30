@@ -20,12 +20,11 @@
                 </p>
                 <h5 align="left">To know more about VC <a href="#" id="openPdfLink">Click here</a></h5>
             </div>
-
             <div class="dev-des" align="right">
                 <h2><b>Vice-Chancellor's Message</b></h2>
-                <p>I'm thrilled to announce the upcoming launch of the University Department of Computer Applications' own website. It's truly inspiring to recognize the incredible work of our students who have developed it. This website will not only be a source of pride for our institution but also a valuable resource for the entire scientific community, especially benefiting our current computer course students.</p>
-                <p>With this initiative, I am confident that our institution will continue to thrive, thanks to the sincere and dedicated efforts of our members. I envision this website becoming a landmark in the realm of computer science education, symbolizing our commitment to modernization and excellence.</p>
-                <p>At UDCA, we believe in the transformative power of education. Our mission is to empower students with the knowledge and skills needed to thrive in a rapidly changing world. We offer a nurturing and inclusive environment where every student can explore, learn, and grow.</p>
+                <p>Welcome to Tilka Manjhi Bhagalpur University (TMBU), a hub of learning and innovation. As Vice-Chancellor, I am honored to lead this institution dedicated to academic excellence, research, and holistic development. At TMBU, we strive to empower our students with the skills, knowledge, and values needed to succeed in a rapidly changing world.</p>
+                <p>Our diverse programs and dynamic learning environment encourage critical thinking, ethical behavior, and meaningful societal contributions. We are proud of our accomplished faculty who mentor and guide students, fostering a culture of inquiry, innovation, and community engagement.</p>
+                <p>We are committed to growth, research, and global collaboration, ensuring that our graduates are not only well-prepared professionals but also socially responsible citizens. I invite you to join us on this journey of excellence, innovation, and impact.</p>
             </div>
         </div>
         <div id="lightbox" class="lightbox">
