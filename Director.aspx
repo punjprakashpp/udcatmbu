@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Director's Message" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Director.aspx.cs" Inherits="About_Director" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="style/pdf.css">
     <style>
         /* Body and general layout styling */
         .sec {
@@ -205,13 +204,16 @@
             <div class="director-section">
                 <div class="row-img">
                     <asp:Image ID="imgPerson" runat="server" />
-                    <h2><asp:Label ID="lblName" runat="server" /></h2>
+                    <h2>
+                        <asp:Label ID="lblName" runat="server" /></h2>
                     <p>
                         Phone No.:&nbsp;&nbsp;<b><asp:HyperLink ID="phoneLink" runat="server">
-                            <asp:Label ID="lblPhone" runat="server" /></asp:HyperLink></b><br />
+                            <asp:Label ID="lblPhone" runat="server" />
+                            </asp:HyperLink></b><br />
                         E-Mail Id.:<b>&nbsp;&nbsp;<asp:HyperLink ID="emailLink" runat="server">
-                            <asp:Label ID="lblEmail" runat="server" /></asp:HyperLink></b><br />
-                        To know more about Director <a href="#" id="openPdfLink">Click here</a><br />
+                            <asp:Label ID="lblEmail" runat="server" />
+                            </asp:HyperLink></b><br />
+                        To know more about Director <a href="docs/Profile/DirectorProfile.pdf" target="_blank">Click here</a>
                     </p>
                 </div>
                 <div class="row-txt">
@@ -226,13 +228,4 @@
             </div>
         </div>
     </section>
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <span class="close">&times;</span>
-            <div id="pdf-viewer" data-url="docs/Profile/DirectorProfile.pdf"></div>
-        </div>
-    </div>
-    <script src="script/pdf.worker.min.js"></script>
-    <script src="script/pdf.min.js"></script>
-    <script src="script/pdf.js"></script>
 </asp:Content>
