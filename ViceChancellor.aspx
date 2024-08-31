@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
-    <link rel="stylesheet" type="text/css" href="style/pdf.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont" align="center">
@@ -14,11 +13,12 @@
                 <h2 align="center" style="color: Red;">
                     <asp:Label ID="lblName" runat="server" /></h2>
                 <p>
-                    Phone No.:&nbsp;&nbsp;<b><asp:HyperLink ID="phoneLink" runat="server"><asp:Label ID="lblPhone" runat="server" /></asp:HyperLink></b><br />
+                    Phone No.:&nbsp;&nbsp;<b><asp:HyperLink ID="phoneLink" runat="server">
+                        <asp:Label ID="lblPhone" runat="server" /></asp:HyperLink></b><br />
                     E-Mail Id.:<b><asp:HyperLink ID="emailLink" runat="server">
                         <asp:Label ID="lblEmail" runat="server" /></asp:HyperLink></b>
                 </p>
-                <h5 align="left">To know more about VC <a href="#" id="openPdfLink">Click here</a></h5>
+                <h5 align="left">To know more about VC <a href="docs/Profile/VCProfile.pdf" target="_blank">Click here</a></h5>
             </div>
             <div class="dev-des" align="right">
                 <h2><b>Vice-Chancellor's Message</b></h2>
@@ -27,16 +27,5 @@
                 <p>We are committed to growth, research, and global collaboration, ensuring that our graduates are not only well-prepared professionals but also socially responsible citizens. I invite you to join us on this journey of excellence, innovation, and impact.</p>
             </div>
         </div>
-        <div id="lightbox" class="lightbox">
-            <div class="lightbox-content">
-                <span class="close">&times;</span>
-                <div id="pdf-viewer" data-url="docs/Profile/VCProfile.pdf">
-                    <!-- Canvases will be dynamically added here -->
-                </div>
-            </div>
-        </div>
-        <script src="script/pdf.worker.min.js"></script>
-        <script src="script/pdf.min.js"></script>
-        <script src="script/pdf.js"></script>
     </div>
 </asp:Content>
