@@ -208,12 +208,11 @@
                     <h2><asp:Label ID="lblName" runat="server" /></h2>
                     <p>
                         Phone No.:&nbsp;&nbsp;<b><asp:HyperLink ID="phoneLink" runat="server">
-                            <asp:Label ID="lblPhone" runat="server" />
-                            </asp:HyperLink></b><br />
+                            <asp:Label ID="lblPhone" runat="server" /></asp:HyperLink></b><br />
                         E-Mail Id.:<b>&nbsp;&nbsp;<asp:HyperLink ID="emailLink" runat="server">
-                            <asp:Label ID="lblEmail" runat="server" />
-                            </asp:HyperLink></b><br />
+                            <asp:Label ID="lblEmail" runat="server" /></asp:HyperLink></b><br />
                         To know more about Director <a href="#" id="openPdfLink">Click here</a><br />
+                    </p>
                 </div>
                 <div class="row-txt">
                     <h2>Director's Message</h2>
