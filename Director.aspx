@@ -11,7 +11,7 @@
         }
 
         .main {
-            max-width: 1200px;
+            max-width: 880px;
             margin: 0 auto;
             padding: 40px;
             background-color: #fff;
@@ -27,6 +27,7 @@
                 font-size: 2.5rem;
                 margin-bottom: 20px;
                 text-align: center;
+                margin:0 auto;
                 color: #0056b3;
             }
 
@@ -137,6 +138,7 @@
             .director-section {
                 flex-direction: column;
                 text-align: center;
+                gap: 0px;
             }
 
             .row-img,
@@ -199,22 +201,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <section class="sec">
         <div class="main">
-            <h1>Director of University Department of Computer Applications</h1>
+            <h1>Director of UDCA TMBU</h1>
             <div class="director-section">
                 <div class="row-img">
                     <asp:Image ID="imgPerson" runat="server" />
                     <h2><asp:Label ID="lblName" runat="server" /></h2>
-                    <p>Phone No.:&nbsp;&nbsp;<b><asp:HyperLink ID="phoneLink" runat="server"><asp:Label ID="lblPhone" runat="server" /></asp:HyperLink></b></p>
-                    <p>E-Mail Id.:<b>&nbsp;&nbsp;<asp:HyperLink ID="emailLink" runat="server"><asp:Label ID="lblEmail" runat="server" /></asp:HyperLink></b></p>
-                    <p>To know more about Director <a href="#" id="openPdfLink">Click here</a></p>
+                    <p>
+                Phone No.:&nbsp;&nbsp;<b><asp:HyperLink ID="phoneLink" runat="server">
+                    <asp:Label ID="lblPhone" runat="server" /></asp:HyperLink></b><br />
+                E-Mail Id.:<b>&nbsp;&nbsp;<asp:HyperLink ID="emailLink" runat="server">
+                    <asp:Label ID="lblEmail" runat="server" /></asp:HyperLink></b><br />
+                To know more about Director <a href="#" id="openPdfLink">Click here</a><br />
                 </div>
                 <div class="row-txt">
                     <h2>Director's Message</h2>
                     <p>Welcome to the University Department of Computer Applications (UDCA), a hub of innovation and academic excellence. As the Director, I am proud to introduce you to a vibrant community where ambition meets opportunity, and education goes beyond degrees to foster creativity, purpose, and a commitment to societal impact.</p>
-                    <p>At UDCA, we empower students with the knowledge and skills needed to thrive in today's fast-evolving technological landscape. Our curriculum is thoughtfully crafted to align with industry demands while nurturing a broader sense of social responsibility. Supported by state-of-the-art facilities and a dedicated faculty, we prepare students to become not only skilled professionals but also compassionate leaders ready to drive meaningful change.</p>
                 </div>
             </div>
-            <div>
+            <div>                    
+                <p>At UDCA, we empower students with the knowledge and skills needed to thrive in today's fast-evolving technological landscape. Our curriculum is thoughtfully crafted to align with industry demands while nurturing a broader sense of social responsibility. Supported by state-of-the-art facilities and a dedicated faculty, we prepare students to become not only skilled professionals but also compassionate leaders ready to drive meaningful change.</p>                    
                 <p>Learning at UDCA is a collaborative journey. We emphasize a supportive, inclusive environment that promotes intellectual growth, personal development, and the power of partnerships among students, faculty, and the community.</p>
                 <p>I invite you to explore UDCA - a place where knowledge opens doors, and aspirations take flight. Join us in shaping a brighter, more innovative future.</p>
             </div>
