@@ -267,7 +267,7 @@
                 <asp:GridView ID="GridViewFiles" runat="server" AutoGenerateColumns="False" DataKeyNames="FilesID" OnRowCommand="GridViewFiles_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="FileName" HeaderText="File Name" />
-                        <asp:TemplateField>
+                        <asp:TemplateField HeaderText="File">
                             <ItemTemplate>
                                 <asp:LinkButton ID="lnkDownload" runat="server" CommandName="Download" CommandArgument='<%# Eval("FilesID") %>'>Download</asp:LinkButton>
                             </ItemTemplate>
