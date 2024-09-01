@@ -606,3 +606,65 @@
         font-size: 14px;
     }
 }
+
+/* Facility Container Styling */
+.fac {
+    background-color: #e1e8e1;
+    border-radius: 10px;
+    padding: 10px;
+    width: calc(16.666% - 20px); /* Responsive three-column layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Ensures text does not overflow */
+    transition: transform 0.3s; /* Hover effect */
+}
+
+.fac:hover {
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+.img-main {
+    width: 100%;
+    text-align: center; /* Centers image */
+}
+
+.sec-img {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.stud-sec {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: 800;
+    color: #fff;
+    text-align: center; /* Changed from left to center */
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5); /* Improved background color for better text contrast */
+    bottom: 0;
+    text-transform: uppercase;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+    .fac {
+        width: calc(33.333% - 20px); /* Two-column layout */
+    }
+}
+
+@media (max-width: 768px) {
+    .fac {
+        width: calc(50% - 20px); /* Two-column layout */
+    }
+}
+
+@media (max-width: 576px) {
+    .fac {
+        width: 100%; /* Single-column layout */
+    }
+}
