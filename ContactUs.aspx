@@ -34,13 +34,13 @@
         <div id="left" align="left">
             <h2>Mailing Address:</h2>
             <p>
-                University Department of
+                <a href="https://maps.app.goo.gl/Zv7E8aFZ3hYQ1ZMf6" target="_blank">University Department of
                 <br />
-                Computer Applications,<br />
-                Computer Centre,
+                    Computer Applications,<br />
+                    Computer Centre,
                 <br />
-                Tilka Manjhi Bhagalpur University,<br />
-                Bhagalpur, Bihar, 812007
+                    Tilka Manjhi Bhagalpur University,<br />
+                    Bhagalpur, Bihar, 812007</a>
             </p>
             <br />
             <h2>Phone No.:</h2>
