@@ -85,18 +85,15 @@
     </section>
     <section class="sec">
         <div class="main">
-            <div class="director-section">
-                <div class="row-img">
-                    <asp:Image ID="ImgDirector" class="img" runat="server" />
-                    <h2 align="center"><asp:Label ID="NameDirector" runat="server" Text="" /></h2>
-                    <h3>Director of UDCA</h3>
-                </div>
-                <div class="row-txt">
-                    <h2>Director's Message</h2>
-                    <p>Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
-                    <a href="Director.aspx">Read more</a>
-                </div>
-            </div>
+            <h2>Key Features of UDCA:</h2>
+            <ul>
+                <li><b>Constituent Unit of T.M. Bhagalpur University: </b>UDCA is an integral part of Tilka Manjhi Bhagalpur University, Bhagalpur.</li>
+                <li><b>Pioneer in MCA Program: </b>TMBU is the first university in Bihar to offer a 3-year, 6-semester full-time MCA course.</li>
+                <li><b>Recognition and Accreditation: </b>UDCA's MCA course recognized by the Government of Bihar and approved by AICTE.</li>
+                <li><b>Expansive Campus: </b>The UDCA campus spans 2.5 acres, providing a spacious and conducive environment for learning.</li>
+                <li><b>Strategic Location: </b>Conveniently located between the University Administrative Building and National Highway 80.</li>
+                <li><b>Wi-Fi Enabled Campus: </b>Fully Wi-Fi-enabled campus, ensuring seamless internet access for students and faculty.</li>
+            </ul>
         </div>
     </section>
     <section class="sec">
@@ -138,15 +135,18 @@
     </section>
     <section class="sec">
         <div class="main">
-            <h2>Key Features of UDCA:</h2>
-            <ul>
-                <li><b>Constituent Unit of T.M. Bhagalpur University: </b>UDCA is an integral part of Tilka Manjhi Bhagalpur University, Bhagalpur.</li>
-                <li><b>Pioneer in MCA Program: </b>TMBU is the first university in Bihar to offer a 3-year, 6-semester full-time MCA course.</li>
-                <li><b>Recognition and Accreditation: </b>UDCA's MCA course recognized by the Government of Bihar and approved by AICTE.</li>
-                <li><b>Expansive Campus: </b>The UDCA campus spans 2.5 acres, providing a spacious and conducive environment for learning.</li>
-                <li><b>Strategic Location: </b>Conveniently located between the University Administrative Building and National Highway 80.</li>
-                <li><b>Wi-Fi Enabled Campus: </b>Fully Wi-Fi-enabled campus, ensuring seamless internet access for students and faculty.</li>
-            </ul>
+            <div class="director-section">
+                <div class="row-img">
+                    <asp:Image ID="ImgDirector" class="img" runat="server" />
+                    <h2 align="center"><asp:Label ID="NameDirector" runat="server" Text="" /></h2>
+                    <h3>Director of UDCA</h3>
+                </div>
+                <div class="row-txt">
+                    <h2>Director's Message</h2>
+                    <p>Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
+                    <a href="Director.aspx">Read more</a>
+                </div>
+            </div>
         </div>
     </section>
 	<section class="sec">
