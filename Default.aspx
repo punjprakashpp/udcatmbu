@@ -97,6 +97,49 @@
     </section>
     <section class="sec">
         <div class="main">
+            <h2>Facilities of Department:</h2>
+            <div class="btn-area">
+                <div class="fac">
+                    <div class="img-main">
+                        <img src="img/facility/computer-lab.png" class="sec-img" alt="Computer Lab">
+                    </div>
+                    <div class="stud-sec">Computer Lab</div>
+                </div>
+                <div class="fac">
+                    <div class="img-main">
+                        <img src="img/facility/library.png" class="sec-img" alt="Library">
+                    </div>
+                    <div class="stud-sec">Library</div>
+                </div>
+                <div class="fac">
+                    <div class="img-main">
+                        <img src="img/facility/online-library.png" class="sec-img" alt="Online Library">
+                    </div>
+                    <div class="stud-sec">Online Library</div>
+                </div>
+                <div class="fac">
+                    <div class="img-main">
+                        <img src="img/facility/hostel.png" class="sec-img" alt="Hostel">
+                    </div>
+                    <div class="stud-sec">Hostel</div>
+                </div>
+                <div class="fac">
+                    <div class="img-main">
+                        <img src="img/facility/hospital.png" class="sec-img" alt="Hospital">
+                    </div>
+                    <div class="stud-sec">Hospital</div>
+                </div>
+                <div class="fac">
+                    <div class="img-main">
+                        <img src="img/facility/free-wifi.png" class="sec-img" alt="Free Wi-Fi">
+                    </div>
+                    <div class="stud-sec">Free Wi-Fi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec">
+        <div class="main">
             <div class="card">
                 <div class="board">
                     <h2>Notice & News</h2>
@@ -144,49 +187,6 @@
                     <h2>Director's Message</h2>
                     <p>Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
                     <a href="Director.aspx">Read more</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="sec">
-        <div class="main">
-            <h2>Facilities of Department:</h2>
-            <div class="btn-area">
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/facility/computer-lab.png" class="sec-img" alt="Computer Lab">
-                    </div>
-                    <div class="stud-sec">Computer Lab</div>
-                </div>
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/facility/library.png" class="sec-img" alt="Library">
-                    </div>
-                    <div class="stud-sec">Library</div>
-                </div>
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/facility/online-library.png" class="sec-img" alt="Online Library">
-                    </div>
-                    <div class="stud-sec">Online Library</div>
-                </div>
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/facility/hostel.png" class="sec-img" alt="Hostel">
-                    </div>
-                    <div class="stud-sec">Hostel</div>
-                </div>
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/facility/hospital.png" class="sec-img" alt="Hospital">
-                    </div>
-                    <div class="stud-sec">Hospital</div>
-                </div>
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/facility/free-wifi.png" class="sec-img" alt="Free Wi-Fi">
-                    </div>
-                    <div class="stud-sec">Free Wi-Fi</div>
                 </div>
             </div>
         </div>
