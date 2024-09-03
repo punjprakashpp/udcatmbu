@@ -97,43 +97,59 @@
     </section>
     <section class="sec">
         <div class="main">
+            <div class="director-section">
+                <div class="row-img">
+                    <asp:Image ID="ImgDirector" class="img" runat="server" />
+                    <h2 align="center"><asp:Label ID="NameDirector" runat="server" Text="" /></h2>
+                    <h3>Director of UDCA</h3>
+                </div>
+                <div class="row-txt">
+                    <h2>Director's Message</h2>
+                    <p>Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
+                    <a href="Director.aspx">Read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec">
+        <div class="main">
             <h2>Facilities of Department:</h2>
             <div class="btn-area">
                 <div class="fac">
                     <div class="img-main">
-                        <img src="img/facility/computer-lab.png" class="sec-img" alt="Computer Lab">
+                        <img src="img/icon/computer-lab.png" class="sec-img" alt="Computer Lab">
                     </div>
                     <div class="stud-sec">Computer Lab</div>
                 </div>
                 <div class="fac">
                     <div class="img-main">
-                        <img src="img/facility/library.png" class="sec-img" alt="Library">
+                        <img src="img/icon/library.png" class="sec-img" alt="Library">
                     </div>
                     <div class="stud-sec">Library</div>
                 </div>
                 <div class="fac">
                     <div class="img-main">
-                        <img src="img/facility/online-library.png" class="sec-img" alt="Online Library">
+                        <img src="img/icon/faculty.png" class="sec-img" alt="Faculty">
                     </div>
-                    <div class="stud-sec">Online Library</div>
+                    <div class="stud-sec">Qualified Faculty</div>
                 </div>
                 <div class="fac">
                     <div class="img-main">
-                        <img src="img/facility/hostel.png" class="sec-img" alt="Hostel">
+                        <img src="img/icon/hostel.png" class="sec-img" alt="Hostel">
                     </div>
-                    <div class="stud-sec">Hostel</div>
+                    <div class="stud-sec">University Hostel</div>
                 </div>
                 <div class="fac">
                     <div class="img-main">
-                        <img src="img/facility/hospital.png" class="sec-img" alt="Hospital">
+                        <img src="img/icon/hospital.png" class="sec-img" alt="Hospital">
                     </div>
-                    <div class="stud-sec">Hospital</div>
+                    <div class="stud-sec">Health Centre</div>
                 </div>
                 <div class="fac">
                     <div class="img-main">
-                        <img src="img/facility/free-wifi.png" class="sec-img" alt="Free Wi-Fi">
+                        <img src="img/icon/free-wifi.png" class="sec-img" alt="Free Wi-Fi">
                     </div>
-                    <div class="stud-sec">Free Wi-Fi</div>
+                    <div class="stud-sec">Wi-Fi Enabled</div>
                 </div>
             </div>
         </div>
@@ -177,33 +193,141 @@
     </section>
     <section class="sec">
         <div class="main">
-            <div class="director-section">
-                <div class="row-img">
-                    <asp:Image ID="ImgDirector" class="img" runat="server" />
-                    <h2 align="center"><asp:Label ID="NameDirector" runat="server" Text="" /></h2>
-                    <h3>Director of UDCA</h3>
+            <h2>Quick Navigation Buttons:</h2>
+            <div class="btn-area">
+                <div class="fac">
+                    <a href="AboutUDCA.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/college.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">About UDCA</div>
+                    </a>
                 </div>
-                <div class="row-txt">
-                    <h2>Director's Message</h2>
-                    <p>Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
-                    <a href="Director.aspx">Read more</a>
+                <div class="fac">
+                    <a href="AboutTMBU.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/university.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">About TMBU</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="ComputerCenter.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/computer-lab.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">About Computer Center</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="AboutDeveloper.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/developer.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">About Developer</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="FacultyMember.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/faculty.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Faculty Members</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="ViewAlumni.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/alumni.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Our Alumni</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="Downloads.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/download.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Download Files</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="ImageGallery.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/gallery.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Image Gallery</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="HolidayList.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/holiday-list.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Holiday List</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="Prospectus.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/prospectus.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Prospectus</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="TimeTable.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/time-table.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Time Table</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="CourseSyllabus.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/syllabus.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Syllabus</div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-	<section class="sec">
-		<div class="main">
-			<div class="btn-area">
-				<asp:Repeater ID="ButtonRepeater" runat="server">
-					<ItemTemplate>
-						<a class="info-btn" href='<%# Eval("LinkURL") %>' target="_blank">
-							<img src="img/logo/logo-small.png" />
-		                    <p><%# Eval("LinkText") %></p>
-		                </a>	
-		            </ItemTemplate>
-		        </asp:Repeater>
-		    </div>
-		</div>
+    <section class="sec">
+        <div class="main">
+            <h2>Important Links Buttons:</h2>
+            <div class="btn-area">
+                <div class="fac">
+                    <a href="Login.aspx" target="_blank">
+                        <div class="img-main">
+                            <img src="img/icon/login.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Admin Login</div>
+                    </a>
+                </div>
+                <asp:Repeater ID="ButtonRepeater" runat="server">
+                    <ItemTemplate>
+                        <div class="fac">
+                            <a href='<%# Eval("LinkURL") %>' target="_blank">
+                                <div class="img-main">
+                                    <img src="img/icon/logo-icon.png" class="sec-img" alt="logo">
+                                </div>
+                                <div class="stud-sec"><%# Eval("LinkText") %></div>
+                            </a>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <div class="fac">
+                    <a href="http://udcalibrary.runasp.net/" target="_blank">
+                        <div class="img-main">
+                            <img src="img/icon/online-library.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Online-Library</div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
     <script type="text/javascript" src="script/slider.js"></script>
     <script type="text/javascript" src="script/section.js"></script>

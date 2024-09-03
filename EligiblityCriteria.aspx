@@ -22,7 +22,7 @@
                 <p><strong>Related Links:</strong></p>
                 <a href="FeeStructure.aspx" class="effect">Fee Structure</a>
                 <a href="CourseStructure.aspx" class="effect">Course Structure</a>
-                <a href="Calender.aspx" target="_blank" class="effect">Academic Calendar</a>
+                <a href="AcademicCalender.aspx" class="effect">Academic Calendar</a>
             </div>
         </div>
     </div>

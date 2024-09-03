@@ -23,6 +23,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+    position: relative; /* This makes .notice-section's absolute positioning relative to .main */
 }
 
     /* Header styling */
@@ -329,116 +330,6 @@
     }
 }
 
-/* Container for buttons */
-.btn-area {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Info button styling */
-.info-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 250px;
-    background-color: #5271FF;
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-align: center;
-}
-
-/* Hover effect for info buttons */
-.info-btn:hover {
-    background-color: #4158d0;
-    transform: scale(1.05);
-}
-
-/* Image styling inside info buttons */
-.info-btn img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 12px;
-    transition: transform 0.3s ease;
-}
-
-/* Paragraph styling inside info buttons */
-.info-btn p {
-    font-size: 1rem;
-    margin: 0;
-    transition: color 0.3s ease;
-}
-
-/* Hover effect for images inside info buttons */
-.info-btn:hover img {
-    transform: rotate(10deg);
-}
-
-/* Hover effect for text inside info buttons */
-.info-btn:hover p {
-    color: #e0e0e0;
-}
-
-/* Media Queries */
-
-/* For tablets and small desktops */
-@media (max-width: 992px) {
-    .info-btn {
-        padding: 18px;
-        max-width: 220px;
-    }
-
-    .info-btn p {
-        font-size: 0.95rem;
-    }
-}
-
-/* For small tablets and large phones */
-@media (max-width: 768px) {
-    .info-btn {
-        padding: 15px;
-        max-width: 200px;
-    }
-
-    .info-btn p {
-        font-size: 0.9rem;
-    }
-}
-
-/* For phones and very small screens */
-@media (max-width: 576px) {
-    .info-btn {
-        padding: 10px;
-        max-width: 100%;
-    }
-
-    .info-btn img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .info-btn p {
-        font-size: 0.85rem;
-    }
-}
-
-/* Main Container */
-.main {
-    position: relative; /* This makes .notice-section's absolute positioning relative to .main */
-}
-
 /* Slider Section */
 .slider-section {
     display: block;    
@@ -607,7 +498,16 @@
     }
 }
 
-/* Facility Container Styling */
+/* Container for buttons */
+.btn-area {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
 .fac {
     background-color: #e1e8e1;
     border-radius: 10px;
@@ -646,6 +546,7 @@
     text-align: center; /* Changed from left to center */
     position: absolute;
     background: rgba(0, 0, 0, 0.5); /* Improved background color for better text contrast */
+    left:0;
     bottom: 0;
     text-transform: uppercase;
 }
