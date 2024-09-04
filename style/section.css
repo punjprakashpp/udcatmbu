@@ -1,12 +1,4 @@
-﻿/* Global reset and box-sizing */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body and general layout styling */
-.sec {
+﻿.sec {
     background-color: #f9f9f9;
     color: #333;
     padding: 20px;
@@ -21,12 +13,11 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-wrap: wrap;
+    position: relative; 
     justify-content: space-between;
     gap: 20px;
-    position: relative; /* This makes .notice-section's absolute positioning relative to .main */
 }
 
-    /* Header styling */
     .main h1 {
         font-size: 2.5rem;
         margin-bottom: 20px;
@@ -47,6 +38,22 @@
         color: #333;
     }
 
+    .main h3 {
+        font-size: 1.5rem;
+        color: #0056b3;
+        margin: 10px 0;
+    }
+
+    .main h4 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: brown;
+    }
+
+    .main ul {
+        padding-left: 20px;
+    }
+
     .main li {
         font-size: 1.1rem;
         line-height: 1.6;
@@ -54,7 +61,6 @@
         text-align: justify;
     }
 
-/* New Section Styling for Director's Message */
 .director-section {
     display: flex;
     align-items: center;
@@ -91,7 +97,6 @@
         margin-bottom: 20px;
     }
 
-/* Director's message text and link */
 .row-txt {
     flex: 2;
     text-align: left;
@@ -117,9 +122,6 @@
             background-color: #003d80;
         }
 
-/* Media Queries for Responsive Design */
-
-/* Extra large devices (1200px and below) */
 @media (max-width: 1200px) {
     .main h1 {
         font-size: 2.4rem;
@@ -130,7 +132,6 @@
     }
 }
 
-/* Large devices (992px and below) */
 @media (max-width: 992px) {
     .main h1 {
         font-size: 2.3rem;
@@ -145,7 +146,6 @@
     }
 }
 
-/* Medium devices (tablets, 768px and below) */
 @media (max-width: 768px) {
     .main h1 {
         font-size: 2rem;
@@ -175,7 +175,6 @@
         }
 }
 
-/* Small devices (576px and below) */
 @media (max-width: 576px) {
     .main h1 {
         font-size: 1.8rem;
@@ -283,20 +282,6 @@
     object-fit: cover;
 }
 
-.main h3 {
-    font-size: 1.4rem;
-    color: #0056b3;
-    margin: 10px 0;
-}
-
-.main h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: brown;
-}
-
-/* Media Queries for Responsive Layouts */
-
 @media (max-width: 1024px) {
     .card {
         flex: 1 1 calc(45% - 20px);
@@ -330,7 +315,6 @@
     }
 }
 
-/* Slider Section */
 .slider-section {
     display: block;    
     max-width: 800px;
@@ -346,7 +330,6 @@
     position: relative;
 }
 
-/* Notice Section */
 .notice-section {
     width: auto;
     max-width: 100%;
@@ -363,7 +346,6 @@
     display: none; /* Hide by default for mobile */
 }
 
-/* For tablet and desktop */
 @media (min-width: 768px) {
     .notice-section {
         top: 35px;
@@ -372,7 +354,6 @@
     }
 }
 
-/* For desktop view */
 @media (min-width: 1024px) {
     .notice-section {
         width: 400px;
@@ -381,7 +362,6 @@
     }
 }
 
-/* Responsive Design for Mobile (max-width: 768px) */
 @media (max-width: 768px) {
     .notice-section {
         position: static; /* Change from absolute to static positioning */
@@ -424,7 +404,6 @@
     margin-left: 5px;
 }
 
-/* Links Section */
 .links-section {
     width: 100%;
     background-color: #f2f2f2;
@@ -482,7 +461,6 @@
     }
 }
 
-/* Responsive Design for Links Section and Notices */
 @media (max-width: 576px) {
     .links-section {
         padding: 10px;
@@ -498,7 +476,6 @@
     }
 }
 
-/* Container for buttons */
 .btn-area {
     max-width: 1200px;
     margin: 0 auto;
@@ -512,7 +489,7 @@
     background-color: #e1e8e1;
     border-radius: 10px;
     padding: 10px;
-    width: calc(16.666% - 20px); /* Responsive three-column layout */
+    width: calc(16.666% - 20px); /* Responsive Six-column layout */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -551,10 +528,9 @@
     text-transform: uppercase;
 }
 
-/* Responsive Media Queries */
 @media (max-width: 992px) {
     .fac {
-        width: calc(33.333% - 20px); /* Two-column layout */
+        width: calc(33.333% - 20px); /* Three-column layout */
     }
 
     .sec-img {
@@ -569,7 +545,7 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 412px) {
     .fac {
         width: 100%; /* Single-column layout */
     }

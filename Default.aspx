@@ -43,7 +43,7 @@
     </section>
     <section class="sec">
         <div class="main">
-            <h1>WELCOME TO UNIVERSITY DEPARTMENT OF COMPUTER APPLICATIONS</h1>
+            <h1>WELCOME TO <br>UNIVERSITY DEPARTMENT OF COMPUTER APPLICATIONS</h1>
             <p>The University Department of Computer Applications (UDCA), also known as the Computer Centre, is a prominent unit of Tilka Manjhi Bhagalpur University (TMBU), Bihar. Renowned for its academic excellence, UDCA offers a Master of Computer Applications (MCA) program, providing in-depth knowledge in computer applications. Recognized by the Government of Bihar and approved by AICTE, New Delhi, UDCA sets a high standard for computer science education in the region.</p>
             <h2>Our Mission:</h2>
             <p>UDCA is committed to equipping students with the necessary knowledge and skills to thrive in the ever-evolving field of Information Technology. The department creates an environment that fosters critical thinking, creativity, and social responsibility. It is dedicated to nurturing students to become not only successful IT professionals but also compassionate citizens who make positive contributions to society.</p>
@@ -97,22 +97,6 @@
     </section>
     <section class="sec">
         <div class="main">
-            <div class="director-section">
-                <div class="row-img">
-                    <asp:Image ID="ImgDirector" class="img" runat="server" />
-                    <h2 align="center"><asp:Label ID="NameDirector" runat="server" Text="" /></h2>
-                    <h3>Director of UDCA</h3>
-                </div>
-                <div class="row-txt">
-                    <h2>Director's Message</h2>
-                    <p>Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
-                    <a href="Director.aspx">Read more</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="sec">
-        <div class="main">
             <h2>Facilities of Department:</h2>
             <div class="btn-area">
                 <div class="fac">
@@ -156,37 +140,16 @@
     </section>
     <section class="sec">
         <div class="main">
-            <div class="card">
-                <div class="board">
-                    <h2>Notice & News</h2>
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq1" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralNotice" runat="server"></asp:Literal>
-                        </marquee>
-                    </div>
-                    <a class="more" href="LatestNotice.aspx">View All</a>
+            <div class="director-section">
+                <div class="row-img">
+                    <asp:Image ID="ImgDirector" class="img" runat="server" />
+                    <h2 align="center"><asp:Label ID="NameDirector" runat="server" Text="" /></h2>
+                    <h3>Director of UDCA</h3>
                 </div>
-            </div>
-            <div class="card">
-                <div class="board">
-                    <h2>Latest Events</h2>
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq2" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralEvent" runat="server"></asp:Literal>
-                        </marquee>
-                    </div>
-                    <a class="more" href="LatestEvents.aspx">View All</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="board">
-                    <h2>Latest Tenders</h2>
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq3" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralTender" runat="server"></asp:Literal>
-                        </marquee>
-                    </div>
-                    <a class="more" href="ViewTender.aspx">View All</a>
+                <div class="row-txt">
+                    <h2>Director's Message</h2>
+                    <p>Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
+                    <a href="Director.aspx">Read more</a>
                 </div>
             </div>
         </div>
@@ -290,6 +253,43 @@
                         </div>
                         <div class="stud-sec">Syllabus</div>
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec">
+        <div class="main">
+            <div class="card">
+                <div class="board">
+                    <h2>Notice & News</h2>
+                    <div class="notice-links">
+                        <marquee class="marquee" id="marq1" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                            <asp:Literal ID="LiteralNotice" runat="server"></asp:Literal>
+                        </marquee>
+                    </div>
+                    <a class="more" href="LatestNotice.aspx">View All</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="board">
+                    <h2>Latest Events</h2>
+                    <div class="notice-links">
+                        <marquee class="marquee" id="marq2" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                            <asp:Literal ID="LiteralEvent" runat="server"></asp:Literal>
+                        </marquee>
+                    </div>
+                    <a class="more" href="LatestEvents.aspx">View All</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="board">
+                    <h2>Latest Tenders</h2>
+                    <div class="notice-links">
+                        <marquee class="marquee" id="marq3" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                            <asp:Literal ID="LiteralTender" runat="server"></asp:Literal>
+                        </marquee>
+                    </div>
+                    <a class="more" href="ViewTender.aspx">View All</a>
                 </div>
             </div>
         </div>
