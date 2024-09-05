@@ -1,7 +1,7 @@
 <%@ Page Title="UDCA | TMBU" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="style/slider.css">
     <link rel="stylesheet" type="text/css" href="style/section.css">
+    <link rel="stylesheet" type="text/css" href="style/slider.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <section class="sec">
@@ -9,10 +9,17 @@
             <div class="slider-section">
                 <div class="slider">
                     <asp:Repeater ID="SliderRepeater" runat="server">
-                        <ItemTemplate>
-                            <img src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" class="slide <%# (Container.ItemIndex == 0) ? "active" : "" %>" />
-                        </ItemTemplate>
-                    </asp:Repeater>
+                    <ItemTemplate>
+                        <div class="slide <%# (Container.ItemIndex == 0) ? "active" : "" %>">
+                            <img class="slide-img" src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" />
+                            <div class="caption">
+                                <h2 class="caption-title" style="color:white"><%# Eval("Title") %></h2>
+                                
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                    <!--<p class="caption-text"><%# Eval("Description") %></p>-->
                     <div class="slider-controls">
                         <a class="prev" onclick="prevSlide()">&#10094;</a>
                         <a class="next" onclick="nextSlide()">&#10095;</a>

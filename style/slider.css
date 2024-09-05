@@ -28,6 +28,60 @@
     opacity: 1;
 }
 
+.slide-img {
+    width: 100%;
+}
+
+/* Caption styling */
+.caption {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 70%; /* Adjust width as needed */
+}
+
+/* Caption title */
+.caption-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    animation: slideInEffect 1s ease-in-out; /* Slide-in animation */
+}
+
+/* Caption text */
+.caption-text {
+    font-size: 16px;
+    margin: 0;
+    animation: fadeEffect 2s ease-in-out; /* Fade-in animation */
+}
+
+/* Caption animations */
+@keyframes slideInEffect {
+    from {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Centered control buttons */
 .slider-controls {
     position: absolute;
@@ -111,6 +165,57 @@
         height: 50px;
         font-size: 24px; /* Default font size for larger screens */
         padding: 10px;
+    }
+}
+
+/* For small screens (phones) */
+@media (max-width: 480px) {
+    .caption {
+        bottom: 10%; /* Adjusted position */
+        width: 90%; /* Full width for mobile view */
+        padding: 8px 16px; /* Smaller padding */
+    }
+
+    .caption-title {
+        font-size: 18px; /* Smaller font size */
+    }
+
+    .caption-text {
+        font-size: 14px; /* Smaller font size */
+    }
+}
+
+/* For medium screens (tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .caption {
+        bottom: 15%; /* Adjusted position */
+        width: 80%; /* Slightly wider for tablets */
+        padding: 10px 20px; /* Medium padding */
+    }
+
+    .caption-title {
+        font-size: 20px; /* Medium font size */
+    }
+
+    .caption-text {
+        font-size: 15px; /* Medium font size */
+    }
+}
+
+/* For large screens (desktops) */
+@media (min-width: 769px) {
+    .caption {
+        bottom: 20%; /* Default position */
+        width: 70%; /* Default width */
+        padding: 10px 20px; /* Default padding */
+    }
+
+    .caption-title {
+        font-size: 24px; /* Default font size */
+    }
+
+    .caption-text {
+        font-size: 16px; /* Default font size */
     }
 }
 
