@@ -1,4 +1,5 @@
 <%@ Page Title="UDCA | TMBU" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/section.css">
     <link rel="stylesheet" type="text/css" href="style/slider.css">
@@ -14,12 +15,10 @@
                             <img class="slide-img" src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" />
                             <div class="caption">
                                 <h2 class="caption-title" style="color:white"><%# Eval("Title") %></h2>
-                                
                             </div>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-                    <!--<p class="caption-text"><%# Eval("Description") %></p>-->
                     <div class="slider-controls">
                         <a class="prev" onclick="prevSlide()">&#10094;</a>
                         <a class="next" onclick="nextSlide()">&#10095;</a>
