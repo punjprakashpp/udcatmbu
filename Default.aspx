@@ -84,7 +84,7 @@
     </section>
     <section class="sec">
         <div class="main">
-            <h2>Key Features of UDCA:</h2>
+            <h2>Features of UDCA:</h2>
             <ul>
                 <li><b>Constituent Unit of T.M. Bhagalpur University: </b>UDCA is an integral part of Tilka Manjhi Bhagalpur University, Bhagalpur.</li>
                 <li><b>Pioneer in MCA Program: </b>TMBU is the first university in Bihar to offer a 3-year, 6-semester full-time MCA course.</li>
@@ -97,7 +97,7 @@
     </section>
     <section class="sec">
         <div class="main">
-            <h2>Facilities of Department:</h2>
+            <h2>Facilities at UDCA:</h2>
             <div class="btn-area">
                 <div class="fac">
                     <div class="img-main">
