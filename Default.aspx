@@ -41,9 +41,9 @@
 					<asp:Repeater ID="linksRepeater" runat="server">
 						<ItemTemplate>
 							<a href='<%# Eval("LinkURL") %>' target=_blank><b><font size="3"><%# Eval("LinkText") %></font></b></a>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </marquee>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </marquee>
             </div>
         </div>
     </section>
