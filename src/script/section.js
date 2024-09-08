@@ -1,4 +1,12 @@
-﻿function setNoticeSectionHeight() {
+﻿function setSliderHeight() {
+    var slider = document.querySelector('.slider');
+    var sliderimg = document.querySelector('.slide-img');
+    if (slider && sliderimg) {
+        slider.style.height = sliderimg.offsetHeight + 'px';
+    }
+}
+
+function setNoticeSectionHeight() {
     var slider = document.querySelector('.slider-section');
     var noticeSection = document.querySelector('.notice-section');
     if (slider && noticeSection) {
@@ -54,11 +62,12 @@ function adjustHeights() {
 }
 
 function initialize() {
+    setSliderHeight();
     setNoticeSectionHeight();
     setMarqueeHeight();
+    setSliderHeight();
     setBoardHeight();
     adjustHeights();
-    // Ensure startMarquee is defined and implemented somewhere
     if (typeof startMarquee === 'function') {
         startMarquee('Notice');
     }
@@ -66,8 +75,10 @@ function initialize() {
 
 window.onload = initialize;
 window.onresize = function () {
+    setSliderHeight();
     setNoticeSectionHeight();
     setMarqueeHeight();
+    setSliderHeight();
     setBoardHeight();
     adjustHeights();
 };
