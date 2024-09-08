@@ -6,7 +6,7 @@
     }
 }
 
-function setNoticeSectionHeight() {
+function setSectionHeight() {
     var slider = document.querySelector('.slider-section');
     var noticeSection = document.querySelector('.notice-section');
     if (slider && noticeSection) {
@@ -63,22 +63,13 @@ function adjustHeights() {
 
 function initialize() {
     setSliderHeight();
-    setNoticeSectionHeight();
-    setMarqueeHeight();
+    setSectionHeight();
     setSliderHeight();
+    setMarqueeHeight();
     setBoardHeight();
     adjustHeights();
-    if (typeof startMarquee === 'function') {
-        startMarquee('Notice');
-    }
 }
 
 window.onload = initialize;
-window.onresize = function () {
-    setSliderHeight();
-    setNoticeSectionHeight();
-    setMarqueeHeight();
-    setSliderHeight();
-    setBoardHeight();
-    adjustHeights();
-};
+window.onresize = initialize;
+window.onreset = initialize;
