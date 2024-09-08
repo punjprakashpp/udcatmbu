@@ -131,11 +131,11 @@
         height: 360px; /* Adjust height for tablets */
     }
     
-    .slider-controls {        display:none;
+    .slider-controls {        
         width: 90px; /* Adjust width for button spacing */
     }
     
-    .slider-controls a {display:none;
+    .slider-controls a {
         width: 45px;
         height: 45px;
         font-size: 20px; /* Adjust font size for tablets */
