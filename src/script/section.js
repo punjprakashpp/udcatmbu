@@ -1,52 +1,51 @@
-﻿function setSliderHeight() {
-    var slider = document.querySelector('.slider');
-    var sliderimg = document.querySelector('.slide-img');
-    if (slider && sliderimg) {
-        slider.style.height = sliderimg.offsetHeight + 'px';
-    }
-}
+﻿function setSectionHeight() {
+    const slider = document.querySelector('.slider');
+    const sliderImg = document.querySelector('.slide-img');
 
-function setSectionHeight() {
-    var slider = document.querySelector('.slider-section');
-    var noticeSection = document.querySelector('.notice-section');
-    if (slider && noticeSection) {
-        noticeSection.style.height = slider.offsetHeight + 'px';
+    // Ensure the image is fully loaded before setting the height
+    if (slider && sliderImg) {
+        if (sliderImg.complete) {
+            // Image is already loaded, set the height
+            slider.style.height = sliderImg.offsetHeight + 'px';
+        } else {
+            // Wait for the image to load
+            sliderImg.addEventListener('load', () => {
+                slider.style.height = sliderImg.offsetHeight + 'px';
+            });
+        }
+    }
+
+    const sliderSection = document.querySelector('.slider-section');
+    const noticeSection = document.querySelector('.notice-section');
+    if (sliderSection && noticeSection) {
+        noticeSection.style.height = sliderSection.offsetHeight + 'px';
     }
 }
 
 function setMarqueeHeight() {
-    var marq = document.querySelector('#marq');
-    var slider = document.querySelector('.slider-section');
-    if (marq && slider) {
-        marq.style.height = (slider.offsetHeight - 70) + 'px';
+    const marquee = document.querySelector('#marq');
+    const sliderSection = document.querySelector('.slider-section');
+    if (marquee && sliderSection) {
+        marquee.style.height = (sliderSection.offsetHeight - 70) + 'px';
     }
 }
 
 function setBoardHeight() {
-    var marq1 = document.querySelector('#marq1');
-    var marq2 = document.querySelector('#marq2');
-    var marq3 = document.querySelector('#marq3');
-    var board = document.querySelector('.board');
-
+    const board = document.querySelector('.board');
     if (board) {
-        var newHeight = board.offsetHeight - 150 + 'px';
-
-        if (marq1) {
-            marq1.style.height = newHeight;
-        }
-        if (marq2) {
-            marq2.style.height = newHeight;
-        }
-        if (marq3) {
-            marq3.style.height = newHeight;
-        }
+        const newHeight = board.offsetHeight - 150 + 'px';
+        ['#marq1', '#marq2', '#marq3'].forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.style.height = newHeight;
+            }
+        });
     }
 }
 
 function adjustHeights() {
+    const boxes = document.querySelectorAll('.box');
     if (window.innerWidth > 768) {
-        let boxes = document.querySelectorAll('.box');
-
         let maxBoxHeight = Array.from(boxes).reduce((maxHeight, box) => {
             return Math.max(maxHeight, box.offsetHeight);
         }, 0);
@@ -55,21 +54,32 @@ function adjustHeights() {
             box.style.height = maxBoxHeight + 'px';
         });
     } else {
-        document.querySelectorAll('.box').forEach(element => {
-            element.style.height = 'auto';
+        boxes.forEach(box => {
+            box.style.height = 'auto';
         });
     }
 }
 
 function initialize() {
-    setSliderHeight();
     setSectionHeight();
-    setSliderHeight();
     setMarqueeHeight();
     setBoardHeight();
     adjustHeights();
 }
 
-window.onload = initialize;
-window.onresize = initialize;
-window.onreset = initialize;
+// Throttle function to limit execution frequency of resize events
+function throttle(func, delay) {
+    let timeout;
+    return function () {
+        if (!timeout) {
+            timeout = setTimeout(() => {
+                func();
+                timeout = null;
+            }, delay);
+        }
+    };
+}
+
+// Initialize and add event listeners
+window.addEventListener('load', initialize);
+window.addEventListener('resize', throttle(initialize, 100));  // Throttling for better performance

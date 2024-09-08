@@ -14,7 +14,7 @@
                         <div class="slide <%# (Container.ItemIndex == 0) ? "active" : "" %>">
                             <img class="slide-img" src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" />
                             <div class="caption">
-                                <h3 class="caption-title" style="color:white"><%# Eval("Title") %></h3>
+                                <div class="caption-text"><%# Eval("Title") %></div>
                             </div>
                         </div>
                     </ItemTemplate>
