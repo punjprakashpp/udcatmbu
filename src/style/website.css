@@ -359,13 +359,13 @@
     width:22%;
 }
 
-.footer .col-2,
-.footer .col-3 {
+.footer .col-2, .footer .col-3 {
     width:26%;
 }
 
 .footer .column img {
     width: 95%;
+    padding-top:5px;
     text-align: center;
 }
 
