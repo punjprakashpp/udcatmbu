@@ -10,12 +10,13 @@
     <link rel="stylesheet" type="text/css" href="Styles/Site.css" />
     <link rel="stylesheet" type="text/css" href="Styles/nav.css" />
     <link rel="icon" type="image" href="~/Admin/logo/logo.png" />
-    <asp:ContentPlaceHolder ID="HeadContent" runat="server"/>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
 </head>
 <body class="page">
     <header class="header">
         <div class="title">
-            <h1>UDCA TMBU WEBSITE MANAGEMENT</h1><hr />
+            <h1>UDCA TMBU WEBSITE MANAGEMENT</h1>
+            <hr />
         </div>
         <nav class="navbar" id="navbar">
             <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><i class="fa fa-bars"></i></a>

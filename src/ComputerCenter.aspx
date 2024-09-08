@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="Computer Centre" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont" align="center">
         <h1 class="title">COMPUTER CENTRE</h1>
         <img src="img/Dept/ComputerCentre.jpg" alt="Computer Centre" class="image">
@@ -16,7 +16,7 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our exploration will extend beyond the confines of the Computer Centre itself, examining the ecosystem of partnerships, collaborations, and networks that have propelled its success. Government agencies, industry partners, educational institutions, and non-profit organizations have all contributed to its growth, forming synergies and alliances that expand its reach.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acknowledging the complexities inherent in the intersection of technology and education, we will also explore the hurdles faced by the Computer Centre, from funding constraints to infrastructural challenges. Strategies employed to overcome these obstacles will be examined, offering insights into resilience and adaptability in the face of evolving educational paradigms and technological landscapes.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In conclusion, the story of the Computer Centre at T. M. Bhagalpur University exemplifies the power of vision, perseverance, and collaboration in driving meaningful change. As we celebrate its legacy, we are reminded of the transformative potential of technology and the enduring importance of education as a catalyst for progress. In a digital age, institutions like the Computer Centre serve as beacons of knowledge, innovation, and empowerment, shaping the future of education and society.</p>
-        <br /><hr />
+        <br />
+        <hr />
     </div>
 </asp:Content>
-

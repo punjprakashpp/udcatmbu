@@ -10,15 +10,15 @@
             <div class="slider-section">
                 <div class="slider">
                     <asp:Repeater ID="SliderRepeater" runat="server">
-                    <ItemTemplate>
-                        <div class="slide <%# (Container.ItemIndex == 0) ? "active" : "" %>">
-                            <img class="slide-img" src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" />
-                            <div class="caption">
-                                <div class="caption-text"><%# Eval("Title") %></div>
+                        <ItemTemplate>
+                            <div class="slide <%# (Container.ItemIndex == 0) ? "active" : "" %>">
+                                <img class="slide-img" src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" />
+                                <div class="caption">
+                                    <div class="caption-text"><%# Eval("Title") %></div>
+                                </div>
                             </div>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
+                        </ItemTemplate>
+                    </asp:Repeater>
                     <div class="slider-controls">
                         <a class="prev" onclick="prevSlide()">&#10094;</a>
                         <a class="next" onclick="nextSlide()">&#10095;</a>
@@ -38,9 +38,9 @@
             <div class="links-section">
                 <p class="high">Highlights: </p>
                 <marquee behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
-					<asp:Repeater ID="linksRepeater" runat="server">
-						<ItemTemplate>
-							<a href='<%# Eval("LinkURL") %>' target=_blank><b><font size="3"><%# Eval("LinkText") %></font></b></a>
+                    <asp:Repeater ID="linksRepeater" runat="server">
+                        <ItemTemplate>
+                            <a href='<%# Eval("LinkURL") %>' target="_blank"><b><font size="3"><%# Eval("LinkText") %></font></b></a>
                         </ItemTemplate>
                     </asp:Repeater>
                 </marquee>
@@ -49,7 +49,7 @@
     </section>
     <section class="sec">
         <div class="main">
-            <h1>WELCOME TO <br>UNIVERSITY DEPARTMENT OF COMPUTER APPLICATIONS</h1>
+            <h1>WELCOME TO<br>UNIVERSITY DEPARTMENT OF COMPUTER APPLICATIONS</h1>
             <p>The University Department of Computer Applications (UDCA), also known as the Computer Centre, is a prominent unit of Tilka Manjhi Bhagalpur University (TMBU), Bihar. Renowned for its academic excellence, UDCA offers a Master of Computer Applications (MCA) program, providing in-depth knowledge in computer applications. Recognized by the Government of Bihar and approved by AICTE, New Delhi, UDCA sets a high standard for computer science education in the region.</p>
             <h2>Our Mission:</h2>
             <p>UDCA is committed to equipping students with the necessary knowledge and skills to thrive in the ever-evolving field of Information Technology. The department creates an environment that fosters critical thinking, creativity, and social responsibility. It is dedicated to nurturing students to become not only successful IT professionals but also compassionate citizens who make positive contributions to society.</p>

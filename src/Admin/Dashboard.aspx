@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="Admin.master" AutoEventWireup="true" %>
-
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <style>
         .cen {
@@ -44,7 +43,7 @@
 
                 .cen .data {
                     width: 30%;
-                    margin-left:20px;
+                    margin-left: 20px;
                 }
         }
     </style>

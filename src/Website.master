@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="img/logo/logo-small.png" type="image" />
-    <link rel="stylesheet" type="text/css" href="style/website.css"/>
-    <asp:ContentPlaceHolder ID="head" runat="server"/>
+    <link rel="stylesheet" type="text/css" href="style/website.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
 <body>
     <header class="header">
@@ -33,9 +33,7 @@
             </div>
         </div>
         <div class="brand">
-            <a href="Default.aspx">
-                <img class="image" src="img/logo/logo-header.png">
-            </a>
+            <a href="Default.aspx"><img class="image" src="img/logo/logo-header.png"></a>
         </div>
         <nav class="navbar" id="navbar">
             <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><i class="fa fa-bars"></i></a>
@@ -236,7 +234,7 @@
             <a href="mailto:udcatmbu.bgp@gmail.com" class="email" target="_blank"><i class="fa fa-envelope"></i></a>
             <a href="https://x.com/udcatmbu" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
         </div>
-    </div>      
+    </div>
     <script src="script/website.js" defer></script>
 </body>
 </html>

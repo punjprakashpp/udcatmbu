@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Punj\\Desktop\\GitHub\\udcatmbu\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9852B9C5-1279-42C6-9BFD-E2FDACC13B55}|C:\\Users\\Punj\\Desktop\\GitHub\\udcatmbu\\src|c:\\users\\punj\\desktop\\github\\udcatmbu\\src\\style\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9852B9C5-1279-42C6-9BFD-E2FDACC13B55}|C:\\Users\\Punj\\Desktop\\GitHub\\udcatmbu\\src|solutionrelative:src\\style\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9852B9C5-1279-42C6-9BFD-E2FDACC13B55}|C:\\Users\\Punj\\Desktop\\GitHub\\udcatmbu\\src|c:\\users\\punj\\desktop\\github\\udcatmbu\\src\\style\\slider.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9852B9C5-1279-42C6-9BFD-E2FDACC13B55}|C:\\Users\\Punj\\Desktop\\GitHub\\udcatmbu\\src|solutionrelative:src\\style\\slider.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Punj\\Desktop\\GitHub\\udcatmbu\\src\\style\\site.css",
+              "RelativeDocumentMoniker": "src\\style\\site.css",
+              "ToolTip": "C:\\Users\\Punj\\Desktop\\GitHub\\udcatmbu\\src\\style\\site.css",
+              "RelativeToolTip": "src\\style\\site.css",
+              "ViewState": "AgIAABoAAAAAAAAAAAAuwL8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-08T16:00:32.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "slider.css",
+              "DocumentMoniker": "C:\\Users\\Punj\\Desktop\\GitHub\\udcatmbu\\src\\style\\slider.css",
+              "RelativeDocumentMoniker": "src\\style\\slider.css",
+              "ToolTip": "C:\\Users\\Punj\\Desktop\\GitHub\\udcatmbu\\src\\style\\slider.css",
+              "RelativeToolTip": "src\\style\\slider.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIIBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-08T15:59:41.571Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
