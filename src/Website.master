@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head runat="server">
-    <title></title>
+    <title><%: Page.Title %> - UDCA | TMBU </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="UDCA, UDCA TMBU, udcatmbu, University Department of Computer Applications TMBU, University Department of Computer Applications T.M.Bhagalpur University, Computer Center, Computer Center Bhagalpur, MCA, MCA in Bhagalpur, MCA from TMBU, Master of Computer Applications (MCA) in Bhagalpur">
@@ -33,7 +33,8 @@
             </div>
         </div>
         <div class="brand">
-            <a href="Default.aspx"><img class="image" src="img/logo/logo-header.png"></a>
+            <a href="Default.aspx">
+                <img class="image" src="img/logo/logo-header.png"></a>
         </div>
         <nav class="navbar" id="navbar">
             <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><i class="fa fa-bars"></i></a>
@@ -167,7 +168,8 @@
     </form>
     <footer class="footer">
         <div class="column col-1">
-            <h2><a href="Default.aspx"><img src="img/logo/logo-head.png" alt="logo-head"></a></h2>
+            <h2><a href="Default.aspx">
+                <img src="img/logo/logo-head.png" alt="logo-head"></a></h2>
             <hr />
             <p class="abt"><a href="AboutUDCA.aspx">The University Department of Computer Applications, a part of Tilka Manjhi Bhagalpur University and also known as the Computer Centre, offers an MCA course.</a></p>
         </div>

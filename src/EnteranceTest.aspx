@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Admission Entrance Test" MasterPageFile="Website.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Entrance Test" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="style/site.css">
@@ -14,7 +14,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" Runat="Server">
 <div class="cont">
     <div class="container">
-        <h1>Admission Entrance Test Syllabus</h1>
+        <h1>Syllabus of Entrance Test for Admission</h1>
         <p class="effect">* Selection procedure for the MCA course will go under three phases:</p>
         <h2 class="effect">PHASE I: Written Test</h2>
         <p class="effect">The written test examination paper will contain questions in the following subjects:</p>

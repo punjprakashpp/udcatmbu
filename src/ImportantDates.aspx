@@ -61,7 +61,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont">
         <div class="container">
-            <h1>Important Dates</h1>
+            <h1>Important Dates regarding Admissions:</h1>
             <table>
                 <tr>
                     <th>Serial</th>
