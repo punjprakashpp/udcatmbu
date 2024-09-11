@@ -213,7 +213,7 @@
                         E-Mail Id.:<b>&nbsp;&nbsp;<asp:HyperLink ID="emailLink" runat="server">
                             <asp:Label ID="lblEmail" runat="server" />
                             </asp:HyperLink></b><br />
-                        To know more about Director <a href="docs/Profile/DirectorProfile.pdf" target="_blank">Click here</a>
+                        To know more about Director <a href="/ViewerJS/#../docs/Profile/DirectorProfile.pdf" target="_blank">Click here</a>
                     </p>
                 </div>
                 <div class="row-txt">

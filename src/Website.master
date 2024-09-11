@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="UDCA, UDCA TMBU, udcatmbu, University Department of Computer Applications TMBU, University Department of Computer Applications T.M.Bhagalpur University, Computer Center, Computer Center Bhagalpur, MCA, MCA in Bhagalpur, MCA from TMBU, Master of Computer Applications (MCA) in Bhagalpur">
     <meta name="description" content="University Department of Computer Applications (UDCA) is a constituent unit of Tilka Manjhi Bhagalpur University (TMBU), Bhagalpur.The first University in Bihar to offers 3 years (6 semesters) full time MCA course, now offering 2 years (4 semesters) MCA Course according to new guidelines. The UDCA campus is spread over 2.5 acrs and fully equiped with Wi-Fi.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="Content/font-awesome.css">
     <link rel="icon" href="img/logo/logo-small.png" type="image" />
     <link rel="stylesheet" type="text/css" href="style/website.css" />
     <asp:ContentPlaceHolder ID="head" runat="server" />
@@ -37,15 +37,15 @@
                 <img class="image" src="img/logo/logo-header.png"></a>
         </div>
         <nav class="navbar" id="navbar">
-            <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><i class="fa fa-bars"></i></a>
+            <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i></a>
             <div class="subnav home-link">
                 <a href="Default.aspx"><i class="fa fa-home"></i>Home</a>
             </div>
             <div class="sidebar" id="sidebar">
                 <img class="logo-nav" src="img/logo/logo-head.png" alt="logo-head" />
-                <a href="javascript:void(0);" class="icon cut" id="close" onclick="toggleResponsive()"><i class="fa fa-close"></i></a>
+                <a href="javascript:void(0);" class="icon icon-close" id="close"><i class="fa fa-close"></i></a>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-info-circle"></i>About <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-graduation-cap"></i>Academic <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-university"></i>Admission <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-book"></i>Course <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-gavel"></i>Campus Rules <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-cogs"></i>Administration <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-group"></i>Faculty & Staffs <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -120,7 +120,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-building"></i>Amenities <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-users"></i>Alumni <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-photo"></i>Gallery <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -149,7 +149,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">
+                    <button class="subnavbtn">
                         <i class="fa fa-info-circle"></i>Information <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -228,7 +228,7 @@
         </div>
     </footer>
     <div class="top">
-        <button onclick="topFunction()" id="TopBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+        <button id="TopBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
         <div class="icon-bar">
             <a href="https://www.linkedin.com/in/udcatmbu" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
             <a href="https://www.facebook.com/udcatmbu" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>

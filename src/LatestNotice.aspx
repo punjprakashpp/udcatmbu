@@ -20,7 +20,7 @@
                     <asp:BoundField DataField="Title" HeaderText="Notice" SortExpression="Title" />
                     <asp:TemplateField HeaderText="File">
                         <ItemTemplate>
-                            <a href='<%# Eval("FilePath") %>' target="_blank">View</a>
+                            <a href='/ViewerJS/#../<%# Eval("FilePath") %>' target="_blank">View</a>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

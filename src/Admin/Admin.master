@@ -19,15 +19,15 @@
             <hr />
         </div>
         <nav class="navbar" id="navbar">
-            <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><i class="fa fa-bars"></i></a>
+            <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i></a>
             <div class="subnav home-link">
                 <a href="Dashboard.aspx">Dashboard</a>
             </div>
             <div class="sidebar" id="sidebar">
                 <img class="logo-nav" src="logo/logo-head.png" alt="logo-head" />
-                <a href="javascript:void(0);" class="icon cut" id="close" onclick="toggleResponsive()"><i class="fa fa-close"></i></a>
+                <a href="javascript:void(0);" class="icon cut" id="close" ><i class="fa fa-close"></i></a>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">Account <i class="fa fa-caret-down"></i></button>
+                    <button class="subnavbtn">Account <i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <a href="ChangePassword.aspx">Change Password</a>
                         <a href="RegisterOtherUser.aspx">Register Other Users</a>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">Add <i class="fa fa-caret-down"></i></button>
+                    <button class="subnavbtn">Add <i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <a href="AddHomeButton.aspx">Buttons</a>
                         <a href="AddVideoLinks.aspx">Video Links</a>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">Upload <i class="fa fa-caret-down"></i></button>
+                    <button class="subnavbtn">Upload <i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <a href="UploadNotice.aspx">Notice PDF</a>
                         <a href="UploadEvents.aspx">Events PDF</a>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">Upload <i class="fa fa-caret-down"></i></button>
+                    <button class="subnavbtn">Upload <i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <a href="UploadFiles.aspx">Documents</a>
                         <a href="UploadSliderImage.aspx">Slider Image</a>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">Update <i class="fa fa-caret-down"></i></button>
+                    <button class="subnavbtn">Update <i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <a href="UpdateFeeStructure.aspx">Fee Structure</a>
                         <a href="UpdateImportantDates.aspx">Important dates</a>
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">Manage <i class="fa fa-caret-down"></i></button>
+                    <button class="subnavbtn">Manage <i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <a href="ManageNotice.aspx">Notice PDF</a>
                         <a href="ManageEvents.aspx">Events PDF</a>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">Manage <i class="fa fa-caret-down"></i></button>
+                    <button class="subnavbtn">Manage <i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <a href="ManageHomeButton.aspx">Button</a>
                         <a href="ManageVideoLinks.aspx">Video Links</a>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="subnav">
-                    <button class="subnavbtn" onclick="toggleDropdown(this)">Delete <i class="fa fa-caret-down"></i></button>
+                    <button class="subnavbtn">Delete <i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
                         <a href="DeleteSliderImage.aspx">Slider Image</a>
                         <a href="DeleteGalleryImage.aspx">Gallery Image</a>

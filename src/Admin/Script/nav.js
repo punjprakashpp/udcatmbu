@@ -1,50 +1,76 @@
-function toggleResponsive() {
-    var navbar = document.getElementById("navbar");
-    var sidebar = document.getElementById("sidebar");
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById("navbar");
+    const sidebar = document.getElementById("sidebar");
 
-    if (navbar.classList.contains("responsive")) {
-        closeResponsiveMenu(navbar, sidebar);
-    } else {
-        openResponsiveMenu(navbar, sidebar);
+    // Toggles the responsive class on the navbar and sidebar
+    function toggleResponsive() {
+        if (navbar.classList.contains("responsive")) {
+            closeResponsiveMenu();
+        } else {
+            openResponsiveMenu();
+        }
     }
-}
 
-function openResponsiveMenu(navbar, sidebar) {
-    navbar.classList.add("responsive");
-    sidebar.classList.add('show');
-}
+    // Opens the responsive menu
+    function openResponsiveMenu() {
+        navbar.classList.add("responsive");
+        if (sidebar) {
+            sidebar.classList.add('show'); // Adds 'show' to slide in
+        }
+    }
 
-function closeResponsiveMenu(navbar, sidebar) {
-    navbar.classList.remove("responsive");
-    sidebar.classList.remove('show');
+    // Closes the responsive menu
+    function closeResponsiveMenu() {
+        navbar.classList.remove("responsive");
+        if (sidebar) {
+            sidebar.classList.remove('show'); // Removes 'show' to slide out
+        }
+        closeSubMenus();
+    }
 
-    // Hide all subnav contents and remove active class from all subnav buttons
-    document.querySelectorAll('.subnav-content').forEach(content => content.classList.remove('show'));
-    document.querySelectorAll('.subnavbtn').forEach(btn => btn.classList.remove('active'));
-}
+    // Closes all submenus
+    function closeSubMenus() {
+        document.querySelectorAll('.subnav-content').forEach(content => content.classList.remove('show'));
+        document.querySelectorAll('.subnavbtn').forEach(btn => btn.classList.remove('active'));
+    }
 
-function toggleDropdown(button) {
-    var nextElement = button.nextElementSibling;
+    // Toggles a dropdown menu
+    function toggleDropdown(button) {
+        const nextElement = button.nextElementSibling;
 
-    // Hide all subnav contents and remove active class from all subnav buttons except the one being clicked
-    document.querySelectorAll('.subnav-content').forEach(content => {
-        if (content !== nextElement) content.classList.remove('show');
+        // Close other dropdowns
+        document.querySelectorAll('.subnav-content').forEach(content => {
+            if (content !== nextElement) content.classList.remove('show');
+        });
+
+        document.querySelectorAll('.subnavbtn').forEach(btn => {
+            if (btn !== button) btn.classList.remove('active');
+        });
+
+        // Toggle the clicked dropdown
+        nextElement.classList.toggle('show');
+        button.classList.toggle('active');
+    }
+
+    // Makes the navbar sticky on scroll
+    function navbarFunction() {
+        navbar.classList.toggle("fixed", window.scrollY >= 100);
+    }
+
+    // Event listeners
+    window.addEventListener('scroll', navbarFunction);
+
+    document.querySelectorAll('.subnavbtn').forEach(button => {
+        button.addEventListener('click', () => toggleDropdown(button));
     });
 
-    document.querySelectorAll('.subnavbtn').forEach(btn => {
-        if (btn !== button) btn.classList.remove('active');
-    });
-
-    // Toggle the current subnav content
-    nextElement.classList.toggle('show');
-    button.classList.toggle('active');
-}
-
-window.addEventListener('scroll', navbarFunction);
-
-function navbarFunction() {
-    navbar.classList.add("fixed");
-    if (window.scrollY < 150) {
-        navbar.classList.remove("fixed");
+    const navbarIcon = document.querySelector('.navbar .icon');
+    if (navbarIcon) {
+        navbarIcon.addEventListener('click', toggleResponsive);
     }
-}
+
+    const closeButton = document.getElementById('close');
+    if (closeButton) {
+        closeButton.addEventListener('click', toggleResponsive);
+    }
+});
