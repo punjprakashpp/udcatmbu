@@ -21,7 +21,7 @@
                     <asp:BoundField DataField="Title" HeaderText="Tender" SortExpression="Title" />
                     <asp:TemplateField HeaderText="File">
                         <ItemTemplate>
-                            <a href='/ViewerJS/#../<%# Eval("FilePath") %>' target="_blank">View</a>
+                            <a href='/pdfjs/web/viewer.html?file=/<%# Eval("FilePath") %>' target="_blank">View</a>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

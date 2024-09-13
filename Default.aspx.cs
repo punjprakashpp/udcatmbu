@@ -89,7 +89,7 @@ public partial class _Default : System.Web.UI.Page
 
                         marqueeContent.Append("<div class='notice'>");
                         marqueeContent.AppendFormat("<strong>{0}:</strong> ", noticeDate.ToString("dd-MM-yyyy"));
-                        marqueeContent.AppendFormat("<a href='/ViewerJS/#../{0}' target='_Blank'>{1}</a>", filePath, title);
+                        marqueeContent.AppendFormat("<a href='/pdfjs/web/viewer.html?file=/{0}' target='_Blank'>{1}</a>", filePath, title);
                         marqueeContent.Append("</div>");
                     }
 
@@ -121,7 +121,7 @@ public partial class _Default : System.Web.UI.Page
 
                         marqueeContent.Append("<div class='notice'>");
                         marqueeContent.AppendFormat("<strong>{0}:</strong> ", noticeDate.ToString("dd-MM-yyyy"));
-                        marqueeContent.AppendFormat("<a href='/ViewerJS/#../{0}' target='_Blank'>{1}</a>", filePath, title);
+                        marqueeContent.AppendFormat("<a href='/pdfjs/web/viewer.html?file=/{0}' target='_Blank'>{1}</a>", filePath, title);
                         marqueeContent.Append("</div>");
                     }
                     
@@ -152,7 +152,7 @@ public partial class _Default : System.Web.UI.Page
 
                         marqueeContent.Append("<div class='notice'>");
                         marqueeContent.AppendFormat("<strong>{0}:</strong> ", newsDate.ToString("dd-MM-yyyy"));
-                        marqueeContent.AppendFormat("<a href='/ViewerJS/#../{0}' target='_Blank'>{1}</a>", filePath, title);
+                        marqueeContent.AppendFormat("<a href='/pdfjs/web/viewer.html?file=/{0}' target='_Blank'>{1}</a>", filePath, title);
                         marqueeContent.Append("</div>");
                     }
 
@@ -183,7 +183,7 @@ public partial class _Default : System.Web.UI.Page
 
                         marqueeContent.Append("<div class='notice'>");
                         marqueeContent.AppendFormat("<strong>{0}:</strong> ", newsDate.ToString("dd-MM-yyyy"));
-                        marqueeContent.AppendFormat("<a href='/ViewerJS/#../{0}' target='_Blank'>{1}</a>", filePath, title);
+                        marqueeContent.AppendFormat("<a href='/pdfjs/web/viewer.html?file=/{0}' target='_Blank'>{1}</a>", filePath, title);
                         marqueeContent.Append("</div>");
                     }
 

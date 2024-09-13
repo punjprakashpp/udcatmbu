@@ -18,7 +18,7 @@
                     E-Mail Id.:<b><asp:HyperLink ID="emailLink" runat="server">
                         <asp:Label ID="lblEmail" runat="server" /></asp:HyperLink></b>
                 </p>
-                <h5 align="left">To know more about VC <a href="/ViewerJS/#../docs/Profile/VCProfile.pdf" target="_blank">Click here</a></h5>
+                <h5 align="left">To know more about VC <a href="/pdfjs/web/viewer.html?file=/docs/Profile/VCProfile.pdf" target="_blank">Click here</a></h5>
             </div>
             <div class="dev-des" align="right">
                 <h2><b>Vice-Chancellor's Message</b></h2>

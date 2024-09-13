@@ -60,17 +60,6 @@
                 </div>
                 <div class="subnav">
                     <button class="subnavbtn">
-                        <i class="fa fa-graduation-cap"></i>Academic <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="AcademicCalender.aspx"><i class="fa fa-calendar"></i>Academic Calendar</a>
-                        <a href="Prospectus.aspx"><i class="fa fa-book"></i>Prospectus</a>
-                        <a href="TimeTable.aspx"><i class="fa fa-clock-o"></i>Time Table</a>
-                        <a href="HolidayList.aspx"><i class="fa fa-sun-o"></i>Holiday List</a>
-                    </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
                         <i class="fa fa-university"></i>Admission <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
@@ -78,6 +67,17 @@
                         <a href="EnteranceTest.aspx"><i class="fa fa-pencil"></i>Entrance Test</a>
                         <a href="EligiblityCriteria.aspx"><i class="fa fa-list-alt"></i>Eligibility Criteria</a>
                         <a href="ImportantDates.aspx"><i class="fa fa-calendar-check-o"></i>Important Dates</a>
+                    </div>
+                </div>
+                <div class="subnav">
+                    <button class="subnavbtn">
+                        <i class="fa fa-graduation-cap"></i>Academic <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="subnav-content">
+                        <a href="Prospectus.aspx"><i class="fa fa-book"></i>Prospectus</a>
+                        <a href="TimeTable.aspx"><i class="fa fa-clock-o"></i>Time Table</a>
+                        <a href="HolidayList.aspx"><i class="fa fa-sun-o"></i>Holiday List</a>
+                        <a href="AcademicCalender.aspx"><i class="fa fa-calendar"></i>Academic Calendar</a>
                     </div>
                 </div>
                 <div class="subnav">
@@ -115,8 +115,8 @@
                         <i class="fa fa-group"></i>Faculty & Staffs <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
-                        <a href="FacultyMember.aspx"><i class="fa fa-users"></i>Faculties & Guest Faculties</a>
-                        <a href="OfficeStaff.aspx"><i class="fa fa-briefcase"></i>Office & Supporting Staffs</a>
+                        <a href="FacultyMember.aspx"><i class="fa fa-users"></i>Teaching Staffs</a>
+                        <a href="OfficeStaff.aspx"><i class="fa fa-briefcase"></i>Non-Teaching Staffs</a>
                     </div>
                 </div>
                 <div class="subnav">
@@ -176,7 +176,7 @@
         <div class="column col-3">
             <h2>Important Websites</h2>
             <ul class="links">
-                <li><a href="http://tmbuniv.ac.in" target="_blank">Tilka Manjhi Bhagalpur University</a></li>
+                <li><a href="https://tmbuniv.ac.in" target="_blank">Tilka Manjhi Bhagalpur University</a></li>
                 <li><a href="https://www.ugc.ac.in/" target="_blank">University Grant Commission</a></li>
                 <li><a href="https://www.aicte-india.org/" target="_blank">All India Council of Technical Education</a></li>
                 <li><a href="https://governor.bih.nic.in/" target="_blank">Raj Bhavan Bihar Website</a></li>

@@ -225,6 +225,7 @@ html {
     .navbar a.icon {
         float: right;
         display: block;
+        font-size: 1.5em;
     }
 
     .navbar a.icon-close {
@@ -239,6 +240,31 @@ html {
             position: absolute;
             right: 0;
             top: 0;
+        }
+
+        .navbar.responsive .icon-close {
+            position: absolute;
+            top: 15px;
+            right: 0px;
+            color: red;
+        }
+
+            .navbar.responsive .icon-close:hover,
+            .navbar.responsive .icon-close:focus {
+                color: brown;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .navbar.responsive .logo-nav {
+            display: block;
+            position: relative;
+            top: 0;
+            width: 90%;
+            padding: 14px 16px;
+            background-color: #001f44;
+            text-align: center;
+            transition: padding 0.3s ease-in-out;
         }
 
         .navbar.responsive a {
@@ -293,30 +319,6 @@ html {
         .sidebar.show {
             transform: translateX(0); /* Slide in from the left */
         }
-
-        .sidebar .logo-nav {
-            display: block;
-            position: relative;
-            top: 0;
-            width: 90%;
-            padding: 14px 16px;
-            background-color: #001f44;
-            text-align: center;
-            transition: padding 0.3s ease-in-out;
-        }
-
-        .sidebar .icon-close {
-            position: absolute;
-            top: 15px;
-            right: 0px;
-        }
-
-            .sidebar .icon-close:hover,
-            .sidebar .icon-close:focus {
-                color: red;
-                text-decoration: none;
-                cursor: pointer;
-            }
 
     /* Fixed/sticky navbar */
     .navbar.fixed {

@@ -202,3 +202,28 @@ td a {
         padding: 6px;
     }
 }
+
+.dnld {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+
+iframe {
+    width: 100%;
+    height: 100vh; /* Default height for larger screens */
+}
+
+@media (max-width: 768px) {
+    iframe {
+        height: 80vh; /* Slightly smaller height for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    iframe {
+        height: 70vh; /* Smaller height for mobile screens */
+    }
+}
