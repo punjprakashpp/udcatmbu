@@ -1,386 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,300,700');
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
 /* Main slider container */
-.slider {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    margin: 0 auto;
+.slider-container {
+    position: relative;
+    max-width: 600px;
     overflow: hidden;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    display: none;
     position: relative;
 }
 
-/* Individual slides */
-.slide {
-    position: absolute;
-    display: none;
+.image {
     width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    border-radius: 10px;
+    vertical-align: middle;
 }
 
-    /* Active slide */
-    .slide.active {
-        display: block;
-        opacity: 1;
-    }
-
-.slide-img {
-    width: 100%;
-}
-
-/* Centered control buttons */
-.slider-controls {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100px; /* Adjust the width for button spacing */
-}
-
-    /* Button styles */
-    .slider-controls a {
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
-        border: none;
-        padding: 10px;
-        font-size: 24px;
-        cursor: pointer;
-        border-radius: 50%;
-        display: flex;
-        width: 50px;
-        height: 50px;
-        justify-content: center;
-        align-items: center;
-    }
-
-        /* Button hover effects */
-        .slider-controls a:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-/* Caption styling */
 .caption {
     position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #fff;
+    bottom: 8px;
+    left: 16px;
+    color: #f2f2f2;
+    font-size: 16px;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
-    border-radius: 5px;
-    width: 70%; /* Adjust width as needed */
-}
-
-/* Caption title */
-.caption-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0 0 10px;
-    animation: slideInEffect 1s ease-in-out; /* Slide-in animation */
-}
-
-/* Caption text */
-.caption-text {
-    font-size: 20px;
-    margin: 0;
-    animation: slideInEffect 1s ease-in-out; /* Slide-in animation */
-}
-
-/* For small screens (phones) */
-@media (max-width: 480px) {
-    .slider {
-        height: 400px; /* Adjust height for smaller screens */
-    }
-
-    .slider-controls {
-        width: 80px; /* Reduce width for button spacing */
-    }
-
-        .slider-controls a {
-            width: 40px;
-            height: 40px;
-            font-size: 18px; /* Slightly larger font size for smaller screens */
-            padding: 8px;
-        }
-
-    .caption {
-        bottom: 20%; /* Adjusted position */
-        width: 90%; /* Full width for mobile view */
-        padding: 8px 16px; /* Smaller padding */
-    }
-
-    .caption-title {
-        font-size: 18px; /* Smaller font size */
-    }
-
-    .caption-text {
-        font-size: 16px; /* Smaller font size */
-    }
-}
-
-/* For medium screens (tablets) */
-@media (min-width: 481px) and (max-width: 768px) {
-    .slider {
-        height: 360px; /* Adjust height for tablets */
-    }
-
-    .slider-controls {
-        width: 90px; /* Adjust width for button spacing */
-    }
-
-        .slider-controls a {
-            width: 45px;
-            height: 45px;
-            font-size: 20px; /* Adjust font size for tablets */
-            padding: 9px;
-        }
-
-    .caption {
-        bottom: 20%; /* Adjusted position */
-        width: 80%; /* Slightly wider for tablets */
-        padding: 10px 20px; /* Medium padding */
-    }
-
-    .caption-title {
-        font-size: 20px; /* Medium font size */
-    }
-
-    .caption-text {
-        font-size: 15px; /* Medium font size */
-    }
-}
-
-/* For large screens (desktops) */
-@media (min-width: 769px) {
-    .slider {
-        height: 480px; /* Default height for larger screens */
-    }
-
-    .slider-controls {
-        width: 100px; /* Default width for button spacing */
-    }
-
-        .slider-controls a {
-            width: 50px;
-            height: 50px;
-            font-size: 24px; /* Default font size for larger screens */
-            padding: 10px;
-        }
-
-    .caption {
-        bottom: 20%; /* Default position */
-        width: 70%; /* Default width */
-        padding: 10px 20px; /* Default padding */
-    }
-
-    .caption-title {
-        font-size: 24px; /* Default font size */
-    }
-
-    .caption-text {
-        font-size: 16px; /* Default font size */
-    }
 }
 
 /* Animations */
-@keyframes fadeEffect {
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
     from {
-        opacity: 0;
+        opacity: 0.4
     }
 
     to {
-        opacity: 1;
+        opacity: 1
     }
 }
 
-@keyframes slideInEffect {
+.slide-left {
+    animation: slide-left 1.5s;
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.slide-right {
+    animation: slide-right 1.5s;
+}
+
+@keyframes slide-right {
     from {
         transform: translateX(-100%);
-        transform: translateY(50%);
-        opacity: 0;
     }
 
     to {
         transform: translateX(0);
-        transform: translateY(0);
-        opacity: 1;
     }
 }
 
-@keyframes growEffect {
+.zoom-in {
+    animation: zoom-in 1.5s;
+}
+
+@keyframes zoom-in {
     from {
         transform: scale(0.8);
-        opacity: 0;
     }
 
     to {
         transform: scale(1);
-        opacity: 1;
     }
 }
 
-@keyframes rotateEffect {
-    from {
-        transform: rotateY(90deg);
-        opacity: 0;
-    }
-
-    to {
-        transform: rotateY(0deg);
-        opacity: 1;
-    }
+.zoom-out {
+    animation: zoom-out 1.5s;
 }
 
-@keyframes zoomOutEffect {
+@keyframes zoom-out {
     from {
-        transform: scale(1.5);
-        opacity: 0;
+        transform: scale(1.2);
     }
 
     to {
         transform: scale(1);
-        opacity: 1;
     }
 }
 
-@keyframes flipHorizontalEffect {
-    from {
-        transform: rotateY(180deg);
-        opacity: 0;
-    }
-
-    to {
-        transform: rotateY(0deg);
-        opacity: 1;
-    }
+.rotate {
+    animation: rotate 1.5s;
 }
 
-@keyframes slideDiagonalEffect {
-    from {
-        transform: translate(-100%, -100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-}
-
-@keyframes rotateZoomEffect {
-    from {
-        transform: rotate(360deg) scale(0.5);
-        opacity: 0;
-    }
-
-    to {
-        transform: rotate(0deg) scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes bounceHorizontalEffect {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(0);
-    }
-
-    40% {
-        transform: translateX(-30px);
-    }
-
-    60% {
-        transform: translateX(-15px);
-    }
-}
-
-@keyframes flipEffect {
-    from {
-        transform: rotateX(90deg);
-        opacity: 0;
-    }
-
-    to {
-        transform: rotateX(0deg);
-        opacity: 1;
-    }
-}
-
-@keyframes slideUpEffect {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes spinEffect {
+@keyframes rotate {
     from {
         transform: rotate(0deg);
-        opacity: 0;
     }
 
     to {
         transform: rotate(360deg);
-        opacity: 1;
     }
 }
 
-/* Class-to-animation mappings */
-.fade {
-    animation: fadeEffect 2s ease-in-out;
-}
-
-.slide-in {
-    animation: slideInEffect 2s ease-in-out;
-}
-
-.grow {
-    animation: growEffect 2s ease-in-out;
-}
-
-.rotate {
-    animation: rotateEffect 2s ease-in-out;
-}
-
-.zoom-out {
-    animation: zoomOutEffect 2s ease-in-out;
-}
-
 .flip-horizontal {
-    animation: flipHorizontalEffect 2s ease-in-out;
+    animation: flip-horizontal 1.5s;
 }
 
-.slide-diagonal {
-    animation: slideDiagonalEffect 2s ease-in-out;
+@keyframes flip-horizontal {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(180deg);
+    }
 }
 
-.rotate-zoom {
-    animation: rotateZoomEffect 2s ease-in-out;
+.flip-vertical {
+    animation: flip-vertical 1.5s;
 }
 
-.bounce-horizontal {
-    animation: bounceHorizontalEffect 2s ease-in-out;
+@keyframes flip-vertical {
+    from {
+        transform: rotateX(0deg);
+    }
+
+    to {
+        transform: rotateX(180deg);
+    }
 }
 
-.flip {
-    animation: flipEffect 2s ease-in-out;
+.bounce {
+    animation: bounce 1.5s;
 }
 
-.slide-up {
-    animation: slideUpEffect 2s ease-in-out;
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .spin {
-    animation: spinEffect 2s ease-in-out;
+    animation: spin 1.5s;
 }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Navigation controls */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+}
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .active {
+        background-color: #717171;
+    }

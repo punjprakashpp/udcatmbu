@@ -1,30 +1,25 @@
 ﻿function setSectionHeight() {
-    const slider = document.querySelector('.slider');
-    const sliderImg = document.querySelector('.slide-img');
+    const sliderImg = document.querySelector('.image');
     const sliderSection = document.querySelector('.slider-section');
     const noticeSection = document.querySelector('.notice-section');
 
-    if (slider && sliderImg) {
-        const setHeights = () => {
-            // Ensure image height is calculated correctly
-            const sliderImgHeight = sliderImg.offsetHeight;
+    if (!sliderImg || !sliderSection || !noticeSection) return; // Ensure elements exist
 
-            if (sliderImgHeight > 0) {
-                // Set slider height based on the image height
-                slider.style.height = sliderImgHeight + 'px';
+    const setHeights = () => {
+        const sliderImgHeight = sliderImg.offsetHeight;
 
-                // Ensure the noticeSection is set after sliderSection height is calculated
-                if (sliderSection && noticeSection) {
-                    noticeSection.style.height = sliderSection.offsetHeight + 'px';
-                }
-            }
-        };
-
-        if (sliderImg.complete) {
-            setHeights(); // Image is already loaded
-        } else {
-            sliderImg.addEventListener('load', setHeights); // Wait for the image to load
+        if (sliderImgHeight > 0) {
+            noticeSection.style.height = sliderSection.offsetHeight + 'px';
         }
+        if (window.innerWidth <= 768) {
+            noticeSection.style.width = sliderSection.offsetWidth + 'px';
+        }
+    };
+
+    if (sliderImg.complete) {
+        setHeights(); // Image is already loaded
+    } else {
+        sliderImg.addEventListener('load', setHeights); // Wait for the image to load
     }
 }
 
@@ -54,8 +49,7 @@ function adjustHeights() {
     const boxes = document.querySelectorAll('.box');
     if (boxes.length > 0) {
         if (window.innerWidth > 768) {
-            // Reset height to auto before calculating max height to avoid incorrect values
-            boxes.forEach(box => box.style.height = 'auto');
+            boxes.forEach(box => box.style.height = 'auto'); // Reset height before calculation
 
             let maxBoxHeight = Array.from(boxes).reduce((maxHeight, box) => {
                 return Math.max(maxHeight, box.offsetHeight);
@@ -80,7 +74,7 @@ function initialize() {
     adjustHeights();
 }
 
-// **Debounce Function to Manage Event Handler Execution:**
+// Debounce Function for performance on resize
 function debounce(func, delay) {
     let timeout;
     return function () {
@@ -91,8 +85,8 @@ function debounce(func, delay) {
     };
 }
 
-// **Initialize and Add Event Listeners**
+// Initialize on load and resize with debounced handler
 window.addEventListener('load', initialize);
 window.addEventListener('resize', debounce(() => {
-    initialize(); // Re-initialize to ensure heights are recalculated properly
-}, 150));  // Debounce for better performance on window resize
+    initialize(); // Ensure heights are recalculated properly
+}, 150));

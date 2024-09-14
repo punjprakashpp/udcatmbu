@@ -1,65 +1,46 @@
-const slides = document.querySelectorAll('.slide');
-const transitionEffects = [
-    'fade', 'slide-in', 'grow', 'rotate', 'flip', 'zoom',
-    'slide-up', 'spin', 'bounce', 'fade-slide',
-    'flip-vertical', 'slide-down', 'zoom-out',
-    'flip-horizontal', 'slide-diagonal', 'rotate-zoom', 'bounce-horizontal'
-];
+let slideIndex = 0;
+let slideInterval = setInterval(function () {
+    changeSlide(1);
+}, 3000); // Automatically change slides every 3 seconds
 
-let currentSlide = 0;
-let autoSlideInterval;
+showSlides(slideIndex);
 
-// Function to show a slide with a transition effect
-function showSlide(index, auto = true) {
-    // Remove the active class and effect from the current slide
-    slides[currentSlide].classList.remove('active');
-
-    // Update the current slide index
-    currentSlide = index;
-
-    // Randomly select a transition effect
-    const randomEffect = transitionEffects[Math.floor(Math.random() * transitionEffects.length)];
-
-    // Apply the random effect and activate the new slide
-    slides[currentSlide].classList.add(randomEffect, 'active');
-
-    // Remove the effect class after the transition ends
-    setTimeout(() => {
-        slides[currentSlide].classList.remove(randomEffect);
-    }, 2000);
-
-    // Automatically move to the next slide if auto is true
-    if (auto) {
-        resetAutoSlide(); // Reset the automatic slide interval
-    }
+function changeSlide(n) {
+    clearInterval(slideInterval); // Clear interval to avoid double increments
+    showSlides(slideIndex += n);
+    slideInterval = setInterval(function () {
+        changeSlide(1);
+    }, 3000); // Restart the interval after manual navigation
 }
 
-    // Function to move to the next slide
-    function showNextSlide(auto = true) {
-        const nextSlideIndex = (currentSlide + 1) % slides.length;
-        showSlide(nextSlideIndex, auto);
+function currentSlide(n) {
+    clearInterval(slideInterval);
+    showSlides(slideIndex = n);
+    slideInterval = setInterval(function () {
+        changeSlide(1);
+    }, 3000); // Restart the interval after dot navigation
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("slide");
+    let animations = ['fade', 'slide-left', 'slide-right', 'zoom-in', 'zoom-out', 'rotate', 'flip-horizontal', 'flip-vertical', 'bounce', 'spin']; // List of animations
+
+    if (n >= slides.length) {
+        slideIndex = 0;
+    } else if (n < 0) {
+        slideIndex = slides.length - 1;
     }
 
-        // Function to manually go to the next slide
-        function nextSlide() {
-            const nextSlideIndex = (currentSlide + 1) % slides.length;
-            showSlide(nextSlideIndex, false); // No automatic transition after manual navigation
-        }
+    // Hide all slides and remove animation classes
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].classList.remove(...animations); // Remove all animation classes
+    }
 
-        // Function to manually go to the previous slide
-        function prevSlide() {
-            const prevSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(prevSlideIndex, false); // No automatic transition after manual navigation
-        }
+    // Display the current slide
+    slides[slideIndex].style.display = "block";
 
-        // Function to reset the automatic slide interval
-        function resetAutoSlide() {
-            clearTimeout(autoSlideInterval);
-            autoSlideInterval = setTimeout(() => showNextSlide(true), 4000); // Continue auto slide after 4 seconds
-        }
-
-        // Start the slider with automatic transitions
-        autoSlideInterval = setTimeout(showNextSlide, 4000);
-
-        // Initialize the first slide as active
-        slides[currentSlide].classList.add('active');
+    // Choose a random animation for the current slide
+    let randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+    slides[slideIndex].classList.add(randomAnimation);
+}

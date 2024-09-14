@@ -5,7 +5,7 @@
 }
 
 .main {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
     padding: 40px;
     background-color: #fff;
@@ -19,7 +19,7 @@
 }
 
     .main h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
         margin-bottom: 20px;
         text-align: center;
         color: #0056b3;
@@ -316,11 +316,15 @@
 }
 
 .slider-section {
-    display: block;    
-    max-width: 800px;
+    display: block;
+    max-width: 600px;
     width: 100%;
     margin-bottom: 20px;
     position: relative; /* Relative positioning for proper overlay */
+    border-radius: 10px;
+    background: rgba(225, 225, 225, 0.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
 }
 
 .notice-section {
@@ -349,9 +353,9 @@
 
 @media (min-width: 1024px) {
     .notice-section {
-        width: 300px;
         top: 40px;
         right: 40px;
+        width:350px;
     }
 }
 
