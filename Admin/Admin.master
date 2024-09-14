@@ -51,11 +51,6 @@
                         <a href="UploadEvents.aspx">Events PDF</a>
                         <a href="UploadTender.aspx">Tender PDF</a>
                         <a href="UploadAffReg.aspx">Affiliations & Regulations</a>
-                    </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">Upload <i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content">
                         <a href="UploadFiles.aspx">Documents</a>
                         <a href="UploadSliderImage.aspx">Slider Image</a>
                         <a href="UploadGalleryImage.aspx">Gallery Image</a>
@@ -79,11 +74,6 @@
                         <a href="ManageEvents.aspx">Events PDF</a>
                         <a href="ManageTender.aspx">Tender PDF</a>
                         <a href="ManageAffReg.aspx">Affiliations & Regulations</a>
-                    </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">Manage <i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content">
                         <a href="ManageHomeButton.aspx">Button</a>
                         <a href="ManageVideoLinks.aspx">Video Links</a>
                         <a href="ManageHomeLinks.aspx">Highlights Links</a>

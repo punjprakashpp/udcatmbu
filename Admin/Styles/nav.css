@@ -88,7 +88,7 @@
     .subnav:hover .subnav-content {
         display: block;
         visibility: visible;
-        max-height: 350px; /* Adjust based on content */
+        max-height: 450px; /* Adjust based on content */
     }
 }
 

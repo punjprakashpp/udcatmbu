@@ -1,0 +1,160 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,300,700');
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 960px;
+  margin: 0 auto; /* Center the body content */
+}
+
+/* Header Styles */
+.header-contacts {
+  font-size: 16px;
+  color: #666666;
+  background: #001f44;
+  padding: 10px 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 970px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact {
+  width: 50%;
+}
+
+.top-header-icons-ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-header-icons-ul li a {
+  color: #dbd8d8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.top-header-icons-ul li a:hover {
+  color: #fff;
+}
+
+/* Main Content */
+.bg {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  max-width: 960px;
+}
+
+#title h1 {
+  font-size: 40px;
+  color: #007bff;
+  margin: 0;
+  padding: 10px 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#img {
+  margin-right: 20px;
+}
+
+#img img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+#login {
+  width: 100%;
+  max-width: 400px;
+}
+
+table.tbl {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tblhead {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+td {
+  padding: 10px;
+}
+
+.lbl {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.txt, .btn {
+  width: calc(100% - 20px);
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.txt {
+  border: 1px solid #ccc;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Styles */
+.footer-distributed {
+  background: #001f44;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.footer-copyright p{
+  color: white;
+  text-align: center;
+  font-size:20px;
+}

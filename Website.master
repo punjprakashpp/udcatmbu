@@ -199,7 +199,7 @@
             <ul class="links">
                 <li><a href="AboutDeveloper.aspx">About Developers</a></li>
                 <li><a href="AlumniRegistration.aspx">Alumni Registration</a></li>
-                <li><a href="http://udcalibrary.runasp.net/" target="new">UDCA Automated Library</a></li>
+                <li><a href="Library/Default.aspx" target="new">UDCA Automated Library</a></li>
             </ul>
         </div>
         <div class="column col-2">

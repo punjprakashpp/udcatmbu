@@ -323,7 +323,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
                 <div class="fac">
-                    <a href="http://udcalibrary.runasp.net/" target="_blank">
+                    <a href="Library/Default.aspx" target="_blank">
                         <div class="img-main">
                             <img src="img/icon/online-library.png" class="sec-img" alt="logo">
                         </div>
