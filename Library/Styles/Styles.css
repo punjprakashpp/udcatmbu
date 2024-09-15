@@ -1,12 +1,9 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700');
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,300,700');
-
-/* Base styles */
+﻿/* Base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 
 body {

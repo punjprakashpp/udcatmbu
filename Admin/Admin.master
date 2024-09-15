@@ -6,10 +6,11 @@
     <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="Styles/Site.css" />
-    <link rel="stylesheet" type="text/css" href="Styles/nav.css" />
-    <link rel="icon" type="image" href="~/Admin/logo/logo.png" />
+    <link rel="stylesheet" type="text/css" href="font/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="font/Poppins.css"/> 
+    <link rel="stylesheet" type="text/css" href="Styles/Site.css"/>
+    <link rel="stylesheet" type="text/css" href="Styles/nav.css"/>
+    <link rel="icon" type="image" href="~/Admin/logo/logo.png"/>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
 </head>
 <body class="page">

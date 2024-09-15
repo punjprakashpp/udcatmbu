@@ -11,7 +11,8 @@
     <meta name="keywords" content="UDCA, UDCA TMBU, udcatmbu, University Department of Computer Applications TMBU, University Department of Computer Applications T.M.Bhagalpur University, Computer Center, Computer Center Bhagalpur, MCA, MCA in Bhagalpur, MCA from TMBU, Master of Computer Applications (MCA) in Bhagalpur">
     <meta name="description" content="University Department of Computer Applications (UDCA) is a constituent unit of Tilka Manjhi Bhagalpur University (TMBU), Bhagalpur.The first University in Bihar to offers 3 years (6 semesters) full time MCA course, now offering 2 years (4 semesters) MCA Course according to new guidelines. The UDCA campus is spread over 2.5 acrs and fully equiped with Wi-Fi.">
     <!--End-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="font/font-awesome.css">
+    <link rel="stylesheet" href="font/Poppins.css">
     <title>UDCA Automated Library</title>
     <link rel="stylesheet" type="text/css" href="Styles/Styles.css">
 </head>

@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <title>Edit/Delete Marquee Links</title>
     <link rel="stylesheet" type="text/css" href="Styles/table.css" />
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="Script/jquery.js"></script>
     <script src="Script/table.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">

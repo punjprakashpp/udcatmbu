@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <link rel="stylesheet" href="Styles/manage.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet"/>
+    <script src="Script/jquery.js"></script>
+    <script src="Script/cropper.js"></script>
+    <link href="Styles/cropper.css" rel="stylesheet"/>
     <style>
         .cropper-container {
             width: 300px;

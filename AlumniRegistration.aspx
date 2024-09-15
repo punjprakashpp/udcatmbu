@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="Alumni Registration" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="AlumniRegistration.aspx.cs" Inherits="pages_AlumniRegister" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="style/cropper.css">
+    <script src="script/cropper.js"></script>
+    <script src="script/jquery.js"></script>
     <link rel="stylesheet" href="style/site.css">
     <link rel="stylesheet" href="style/alumni.css">
     <style>

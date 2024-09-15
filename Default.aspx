@@ -327,7 +327,7 @@
                         <div class="img-main">
                             <img src="img/icon/online-library.png" class="sec-img" alt="logo">
                         </div>
-                        <div class="stud-sec">Online-Library</div>
+                        <div class="stud-sec">Online Library</div>
                     </a>
                 </div>
             </div>

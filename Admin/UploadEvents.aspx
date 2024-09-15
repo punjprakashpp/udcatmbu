@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <link rel="stylesheet" href="Styles/manage.css">
-    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="Styles/jquery-ui.css" >
+    <script src="Script/jquery.js"></script>
+    <script src="Script/jquery-ui.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#<%= txtLinkDate.ClientID %>").datepicker({

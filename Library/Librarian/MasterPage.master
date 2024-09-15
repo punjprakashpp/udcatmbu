@@ -5,6 +5,8 @@
 <head runat="server">
     <title>Library Management System</title>
     <link rel="icon" href="../img/logo/logo-small.png" type="image" />
+    <link rel="stylesheet" href="../font/font-awesome.css">
+    <link rel="stylesheet" href="../font/Poppins.css">
     <link href="Styles/StyleSheet.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

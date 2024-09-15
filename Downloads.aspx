@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/site.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript">
         function toggleSessionDropdown() {
             var ddlDownloadType = document.getElementById('<%= ddlDownloadType.ClientID %>');
