@@ -90,12 +90,12 @@
         <div class="main">
             <h2>Features of UDCA:</h2>
             <ul>
-                <li><b>Constituent Unit of T.M. Bhagalpur University: </b>UDCA is an integral part of Tilka Manjhi Bhagalpur University, Bhagalpur.</li>
+                <li><b>Constituent Unit of TMBU: </b>UDCA is an integral part of Tilka Manjhi Bhagalpur University, Bhagalpur.</li>
                 <li><b>Pioneer in MCA Program: </b>TMBU is the first university in Bihar to offer a 3-year, 6-semester full-time MCA course.</li>
-                <li><b>Recognition and Accreditation: </b>UDCA's MCA course recognized by the Government of Bihar and approved by AICTE.</li>
-                <li><b>Expansive Campus: </b>The UDCA campus spans 2.5 acres, providing a spacious and conducive environment for learning.</li>
-                <li><b>Strategic Location: </b>Conveniently located between the University Administrative Building and National Highway 80.</li>
-                <li><b>Wi-Fi Enabled Campus: </b>Fully Wi-Fi-enabled campus, ensuring seamless internet access for students and faculty.</li>
+                <li><b>Recognition and Accreditation: </b>UDCA's MCA course recognized by the Govt. of Bihar and approved by AICTE.</li>
+                <li><b>Expansive Campus: </b>The UDCA campus spans 2.5 acres, providing a spacious and conducive environment.</li>
+                <li><b>Strategic Location: </b>Conveniently located between the University Administrative Building and NH 80.</li>
+                <li><b>Wi-Fi Enabled Campus: </b>Fully Wi-Fi-enabled campus, ensuring seamless internet access for students.</li>
             </ul>
         </div>
     </section>
