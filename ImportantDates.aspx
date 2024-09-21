@@ -133,7 +133,7 @@
                         <asp:Label ID="lblClassStartDate" runat="server"></asp:Label></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><b>Note: </b>For further any queries, please <a href="Contact.aspx">contact</a> the admission officer-in-charge or <a href="mailto:udcatmbu.bgp@gmail.com">mail us</a>.</td>
+                    <td colspan="3"><b>Note: </b>For further any queries, please <a href="ContactUs.aspx">contact</a> the admission officer-in-charge or <a href="mailto:udcatmbu.bgp@gmail.com">mail us</a>.</td>
                 </tr>
             </table>
         </div>

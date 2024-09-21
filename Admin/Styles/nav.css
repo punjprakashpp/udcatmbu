@@ -111,7 +111,7 @@
         display: block;
     }
 
-    .navbar a.icon-close {
+    .navbar a.cut {
         display: none;
     }
 
@@ -189,14 +189,14 @@
             transition: padding 0.3s ease-in-out;
         }
 
-        .sidebar .icon-close {
+        .sidebar .cut {
             position: absolute;
             top: 15px;
             right: 0px;
         }
 
-            .sidebar .icon-close:hover,
-            .sidebar .icon-close:focus {
+            .sidebar .cut:hover,
+            .sidebar .cut:focus {
                 color: red;
                 text-decoration: none;
                 cursor: pointer;

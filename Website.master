@@ -128,6 +128,7 @@
                         <a href="UniversityHostel.aspx"><i class="fa fa-bed"></i>University Hostel</a>
                         <a href="CentralLibrary.aspx"><i class="fa fa-book"></i>Central Library</a>
                         <a href="MedicalFacility.aspx"><i class="fa fa-medkit"></i>Medical Facilities</a>
+                        <a href="Library/Default.aspx"><i class="fa fa-book"></i>Automated Library</a>
                     </div>
                 </div>
                 <div class="subnav">
@@ -159,7 +160,6 @@
                         <a href="ViewTender.aspx"><i class="fa fa-info"></i>View Tenders</a>
                     </div>
                 </div>
-                <a href="Library/Default.aspx"><i class="fa fa-book"></i>Automated Library</a>
                 <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a>
                 <a href="login.aspx"><i class="fa fa-sign-in"></i>Login</a>
             </div>
@@ -169,76 +169,70 @@
         <asp:ContentPlaceHolder ID="Content1" runat="server" />
     </form>
     <footer class="footer">
-        <div class="column col-1">
-            <h2><a href="Default.aspx">
-                <img src="img/logo/logo-head.png" alt="logo-head"></a></h2>
-            <hr />
-            <p class="abt"><a href="AboutUDCA.aspx">The University Department of Computer Applications, a part of Tilka Manjhi Bhagalpur University and also known as the Computer Centre, offers an MCA course.</a></p>
+        <div class="content">
+            <div class="top">
+                <a href="Default.aspx">
+                    <img class="logo-name" src="img/logo/logo-head.png"></a>
+                <div class="media-icons">
+                    <a href="https://www.facebook.com/udcatmbu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/udcatmbu" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/udcatmbu" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/udcatmbu" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:udcatmbu.bgp@gmail.com"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="link-boxes">
+                <ul class="boxes">
+                    <li class="link_name">About Us</li>
+                    <li><a href="AboutUDCA.aspx">About UDCA</a></li>
+                    <li><a href="AboutTMBU.aspx">About TMBU</a></li>
+                    <li><a href="ComputerCenter.aspx">Computer Center</a></li>
+                    <li><a href="Director.aspx">Director's Message</a></li>
+                    <li><a href="AboutDeveloper.aspx">About Developers</a></li>
+                </ul>
+                <ul class="boxes">
+                    <li class="link_name">Quick Links</li>
+                    <li><a href="LatestNotice.aspx">Notice</a></li>
+                    <li><a href="CourseSyllabus.aspx">Syllabus</a></li>
+                    <li><a href="TimeTable.aspx">Time Table</a></li>
+                    <li><a href="HolidayList.aspx">Holiday List</a></li>
+                    <li><a href="Prospectus.aspx">Prospectus</a></li>
+                </ul>
+                <ul class="boxes">
+                    <li class="link_name">Quick Links</li>
+                    <li><a href="Login.aspx">Admin Login</a></li>
+                    <li><a href="ImageGallery.aspx">Image Gallery</a></li>
+                    <li><a href="Downloads.aspx">Download Files</a></li>
+                    <li><a href="Library/Default.aspx">Automated Library</a></li>
+                    <li><a href="AlumniRegistration.aspx">Alumni Registration</a></li>
+                </ul>
+                <ul class="boxes">
+                    <li class="link_name">Important Links</li>
+                    <li><a href="https://tmbuniv.ac.in" target="_blank">TMBU Website</a></li>
+                    <li><a href="https://www.ugc.ac.in/" target="_blank">UGC Website</a></li>
+                    <li><a href="https://www.aicte-india.org/" target="_blank">AICTE Website</a></li>
+                    <li><a href="https://scholarships.gov.in/" target="_blank">National Scholarship</a></li>
+                    <li><a href="http://www.pmsonline.bih.nic.in/" target="_blank">Post Matric Scholrship</a></li>
+                </ul>
+                <ul class="boxes">
+                    <li class="link_name">Contacts</li>
+                    <li><a href="https://maps.app.goo.gl/Zv7E8aFZ3hYQ1ZMf6" target="_blank"><i class="fa fa-map-marker"></i>&nbsp;<b>Location: </b>UDCA, TMBU, Bhagalpur, Bihar, 812007</a></li>
+                    <li><a href="tel:0641250040"><i class="fa fa-phone"></i>&nbsp;<b>Phone: </b>0641-250040</a></li>
+                    <li><a href="mailto:udcatmbu.bgp@gmail.com"><i class="fa fa-envelope"></i>&nbsp;<b>Email: </b>udcatmbu.bgp@gmail.com</a></li>
+                    <li><a href="http://udcatmbu.org"><i class="fa fa-globe"></i>&nbsp;<b>Website: </b>udcatmbu.org</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="column col-3">
-            <h2>Important Websites</h2>
-            <ul class="links">
-                <li><a href="https://tmbuniv.ac.in" target="_blank">Tilka Manjhi Bhagalpur University</a></li>
-                <li><a href="https://www.ugc.ac.in/" target="_blank">University Grant Commission</a></li>
-                <li><a href="https://www.aicte-india.org/" target="_blank">All India Council of Technical Education</a></li>
-                <li><a href="https://governor.bih.nic.in/" target="_blank">Raj Bhavan Bihar Website</a></li>
-                <li><a href="https://bhagalpur.nic.in/" target="_blank">Bhagalpur Official Website</a></li>
-                <li><a href="https://state.bihar.gov.in/" target="_blank">Bihar Government Official Website</a></li>
-            </ul>
-        </div>
-        <div class="column col-4">
-            <h2>Quick Links</h2>
-            <ul class="links lnks">
-                <li><a href="Downloads.aspx">Downloads</a></li>
-                <li><a href="Prospectus.aspx">Prospectus</a></li>
-                <li><a href="ImageGallery.aspx">Image Gallery</a></li>
-            </ul>
-            <ul class="links lnks">
-                <li><a href="TimeTable.aspx">Time Table</a></li>
-                <li><a href="HolidayList.aspx">Holiday List</a></li>
-                <li><a href="Login.aspx">Admin Login</a></li>
-            </ul>
-            <ul class="links">
-                <li><a href="AboutDeveloper.aspx">About Developers</a></li>
-                <li><a href="AlumniRegistration.aspx">Alumni Registration</a></li>
-                <li><a href="Library/Default.aspx" target="new">UDCA Automated Library</a></li>
-            </ul>
-        </div>
-        <div class="column col-2">
-            <h2>Contact US</h2>
-            <ul class="links cnt">
-                <li><i class="fa fa-map-marker"></i>&nbsp;<b>Location: </b><a href="https://maps.app.goo.gl/Zv7E8aFZ3hYQ1ZMf6" target="_blank">UDCA, Computer Center,</a> TMBU, Bhagalpur, Bihar, 812007</li>
-                <li><i class="fa fa-phone"></i>&nbsp;<b>Phone: </b><a href="tel:0641250040">0641-250040</a></li>
-                <li><i class="fa fa-envelope"></i>&nbsp;<b>Email: </b><a href="mailto:udcatmbu.bgp@gmail.com">udcatmbu.bgp@gmail.com</a></li>
-                <li><b>Website: </b><a href="http://udcatmbu.org">udcatmbu.org</a></li>
-                <li><b>Social Links: </b>
-                    &nbsp;&nbsp;<a href="https://www.facebook.com/udcatmbu" target="_blank"><i class="fa fa-facebook"></i></a>
-                    &nbsp;&nbsp;<a href="https://www.instagram.com/udcatmbu" target="_blank"><i class="fa fa-instagram"></i></a>
-                    &nbsp;&nbsp;<a href="https://x.com/udcatmbu" target="_blank"><i class="fa fa-x-twitter"></i></a>
-                    &nbsp;&nbsp;<a href="https://www.linkedin.com/in/udcatmbu" target="_blank"><i class="fa fa-linkedin"></i></a>
-                </li>
-            </ul>
-        </div>
-        <hr />
-        <div class="copyright">
-            <p>
-                Copyright &copy; 2024 -
-                <asp:Label ID="lblyear" runat="server"></asp:Label>
-                UDCA TMBU | All Rights Reserved ! | Developed & Managed by UDCA TMBU | Visitor Count :
-                <asp:Label ID="lblVisitorCount" runat="server" ForeColor="Red" />
-            </p>
+        <div class="bottom-details">
+            <div class="bottom_text">
+                <span class="copyright_text">Copyright &#169; 2024 UDCA TMBU | All rights reserved !</span>
+                <span class="policy_terms">Developed by <a href="AboutDeveloper.aspx">UDCA TMBU</a> | Visits :
+                    <asp:Label ID="lblVisitorCount" runat="server" Font-Bold="true" /></span>
+            </div>
         </div>
     </footer>
-    <div class="top">
-        <button id="TopBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
-        <div class="icon-bar">
-            <a href="https://www.linkedin.com/in/udcatmbu" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/udcatmbu" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-            <a href="https://www.instagram.com/udcatmbu" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-            <a href="mailto:udcatmbu.bgp@gmail.com" class="email" target="_blank"><i class="fa fa-envelope"></i></a>
-            <a href="https://x.com/udcatmbu" class="twitter" target="_blank"><i class="fa fa-x-twitter"></i></a>
-        </div>
-    </div>
+    <button id="TopBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
     <script src="script/website.js" defer></script>
 </body>
 </html>

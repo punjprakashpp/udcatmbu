@@ -160,8 +160,73 @@
     </section>
     <section class="sec">
         <div class="main">
-            <h2>Quick Navigation Buttons:</h2>
+            <div class="card">
+                <div class="board">
+                    <h2>Notice & News</h2>
+                    <div class="notice-links">
+                        <marquee class="marquee" id="marq1" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                            <asp:Literal ID="LiteralNotice" runat="server"></asp:Literal>
+                        </marquee>
+                    </div>
+                    <a class="more" href="LatestNotice.aspx">View All</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="board">
+                    <h2>Latest Events</h2>
+                    <div class="notice-links">
+                        <marquee class="marquee" id="marq2" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                            <asp:Literal ID="LiteralEvent" runat="server"></asp:Literal>
+                        </marquee>
+                    </div>
+                    <a class="more" href="LatestEvents.aspx">View All</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="board">
+                    <h2>Latest Tenders</h2>
+                    <div class="notice-links">
+                        <marquee class="marquee" id="marq3" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                            <asp:Literal ID="LiteralTender" runat="server"></asp:Literal>
+                        </marquee>
+                    </div>
+                    <a class="more" href="ViewTender.aspx">View All</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec">
+        <div class="main">
+            <h2>Quick Links:</h2>
             <div class="btn-area">
+                <div class="fac">
+                    <a href="Login.aspx" target="_blank">
+                        <div class="img-main">
+                            <img src="img/icon/login.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Admin Login</div>
+                    </a>
+                </div>
+                <asp:Repeater ID="ButtonRepeater" runat="server">
+                    <ItemTemplate>
+                        <div class="fac">
+                            <a href='<%# Eval("LinkURL") %>' target="_blank">
+                                <div class="img-main">
+                                    <img src="img/icon/logo-icon.png" class="sec-img" alt="logo">
+                                </div>
+                                <div class="stud-sec"><%# Eval("LinkText") %></div>
+                            </a>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <div class="fac">
+                    <a href="Library/Default.aspx" target="_blank">
+                        <div class="img-main">
+                            <img src="img/icon/online-library.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Online Library</div>
+                    </a>
+                </div>
                 <div class="fac">
                     <a href="AboutUDCA.aspx">
                         <div class="img-main">
@@ -256,78 +321,6 @@
                             <img src="img/icon/syllabus.png" class="sec-img" alt="logo">
                         </div>
                         <div class="stud-sec">Syllabus</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="sec">
-        <div class="main">
-            <div class="card">
-                <div class="board">
-                    <h2>Notice & News</h2>
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq1" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralNotice" runat="server"></asp:Literal>
-                        </marquee>
-                    </div>
-                    <a class="more" href="LatestNotice.aspx">View All</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="board">
-                    <h2>Latest Events</h2>
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq2" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralEvent" runat="server"></asp:Literal>
-                        </marquee>
-                    </div>
-                    <a class="more" href="LatestEvents.aspx">View All</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="board">
-                    <h2>Latest Tenders</h2>
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq3" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralTender" runat="server"></asp:Literal>
-                        </marquee>
-                    </div>
-                    <a class="more" href="ViewTender.aspx">View All</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="sec">
-        <div class="main">
-            <h2>Important Links Buttons:</h2>
-            <div class="btn-area">
-                <div class="fac">
-                    <a href="Login.aspx" target="_blank">
-                        <div class="img-main">
-                            <img src="img/icon/login.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Admin Login</div>
-                    </a>
-                </div>
-                <asp:Repeater ID="ButtonRepeater" runat="server">
-                    <ItemTemplate>
-                        <div class="fac">
-                            <a href='<%# Eval("LinkURL") %>' target="_blank">
-                                <div class="img-main">
-                                    <img src="img/icon/logo-icon.png" class="sec-img" alt="logo">
-                                </div>
-                                <div class="stud-sec"><%# Eval("LinkText") %></div>
-                            </a>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-                <div class="fac">
-                    <a href="Library/Default.aspx" target="_blank">
-                        <div class="img-main">
-                            <img src="img/icon/online-library.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Online Library</div>
                     </a>
                 </div>
             </div>

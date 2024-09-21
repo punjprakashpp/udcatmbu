@@ -10,7 +10,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             // Display the visitor count
             lblVisitorCount.Text = GetVisitorCount().ToString();
-            lblyear.Text = DateTime.Now.Year.ToString();
         }
     }
 

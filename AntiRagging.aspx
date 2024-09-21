@@ -50,7 +50,6 @@
                 <h3>Contact Information:</h3>
                 <p><span>Anti-Ragging Helpline:</span> 1800-180-5522</p>
                 <p><span>Email:</span> helpline@antiragging.in</p>
-                <p><span>Address:</span> UDCA Department TMBU</p>
             </div>
         </div>
     </div>
