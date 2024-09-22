@@ -22,14 +22,14 @@
                         <a class="next" onclick="changeSlide(1)">&#10095;</a>
                     </div>
                 </div>
-            </div>
-            <div class="notice-section">
-                <h4 align="center">Latest Notice and News</h4>
-                <div class="notice-board">
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralNotices" runat="server"></asp:Literal>
-                        </marquee>
+                <div class="notice-section">
+                    <h4 align="center">Latest Notice and News</h4>
+                    <div class="notice-board">
+                        <div class="notice-links">
+                            <marquee class="marquee" id="marq" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                                <asp:Literal ID="LiteralNotices" runat="server"></asp:Literal>
+                            </marquee>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,8 @@
     </section>
     <section class="sec">
         <div class="main">
-            <h1>WELCOME TO<br />UNIVERSITY DEPARTMENT OF COMPUTER APPLICATIONS</h1>
+            <h1>WELCOME TO<br />
+                UNIVERSITY DEPARTMENT OF COMPUTER APPLICATIONS</h1>
             <p>The University Department of Computer Applications (UDCA), also known as the Computer Centre, is a prominent unit of Tilka Manjhi Bhagalpur University (TMBU), Bihar. Renowned for its academic excellence, UDCA offers a Master of Computer Applications (MCA) program, providing in-depth knowledge in computer applications. Recognized by the Government of Bihar and approved by AICTE, New Delhi, UDCA sets a high standard for computer science education in the region.</p>
             <h2>Our Mission:</h2>
             <p>UDCA is committed to equipping students with the necessary knowledge and skills to thrive in the ever-evolving field of Information Technology. The department creates an environment that fosters critical thinking, creativity, and social responsibility. It is dedicated to nurturing students to become not only successful IT professionals but also compassionate citizens who make positive contributions to society.</p>
@@ -60,27 +61,33 @@
             <div class="card">
                 <a href="Chancellor.aspx">
                     <div class="box">
-                        <h3><asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label></h3>
+                        <h3>
+                            <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label></h3>
                         <asp:Image ID="ImageChancellor" class="img" runat="server" />
-                        <h4><asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label></h4>
+                        <h4>
+                            <asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label></h4>
                     </div>
                 </a>
             </div>
             <div class="card">
                 <a href="ViceChancellor.aspx">
                     <div class="box">
-                        <h3><asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label></h3>
+                        <h3>
+                            <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label></h3>
                         <asp:Image ID="ImageViceChancellor" class="img" runat="server" />
-                        <h4><asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label></h4>
+                        <h4>
+                            <asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label></h4>
                     </div>
                 </a>
             </div>
             <div class="card">
                 <a href="Director.aspx">
                     <div class="box">
-                        <h3><asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label></h3>
+                        <h3>
+                            <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label></h3>
                         <asp:Image ID="ImageDirector" class="img" runat="server" />
-                        <h4><asp:Label ID="lblNameDirector" runat="server" Text="" /></h4>
+                        <h4>
+                            <asp:Label ID="lblNameDirector" runat="server" Text="" /></h4>
                     </div>
                 </a>
             </div>
@@ -147,7 +154,8 @@
             <div class="director-section">
                 <div class="row-img">
                     <asp:Image ID="ImgDirector" class="img" runat="server" />
-                    <h2 align="center"><asp:Label ID="NameDirector" runat="server" Text="" /></h2>
+                    <h2 align="center">
+                        <asp:Label ID="NameDirector" runat="server" Text="" /></h2>
                     <h3>Director of UDCA</h3>
                 </div>
                 <div class="row-txt">

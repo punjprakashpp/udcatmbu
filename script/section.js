@@ -1,6 +1,6 @@
 ﻿function setSectionHeight() {
     const sliderImg = document.querySelector('.image');
-    const sliderSection = document.querySelector('.slider-section');
+    const sliderSection = document.querySelector('.slider-container');
     const noticeSection = document.querySelector('.notice-section');
 
     if (!sliderImg || !sliderSection || !noticeSection) return; // Ensure elements exist
