@@ -34,8 +34,7 @@
             </div>
         </div>
         <div class="brand">
-            <a href="Default.aspx">
-                <img class="image" src="img/logo/logo-header.png"></a>
+            <a href="Default.aspx"><img class="image" src="img/logo/logo-header.png"></a>
         </div>
         <nav class="navbar" id="navbar">
             <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i></a>
@@ -185,35 +184,35 @@
             <div class="link-boxes">
                 <ul class="boxes">
                     <li class="link_name">About Us</li>
-                    <li><a href="AboutUDCA.aspx">About UDCA</a></li>
-                    <li><a href="AboutTMBU.aspx">About TMBU</a></li>
-                    <li><a href="ComputerCenter.aspx">Computer Center</a></li>
-                    <li><a href="Director.aspx">Director's Message</a></li>
-                    <li><a href="AboutDeveloper.aspx">About Developers</a></li>
+                    <li><a href="AboutUDCA.aspx">> About UDCA</a></li>
+                    <li><a href="AboutTMBU.aspx">> About TMBU</a></li>
+                    <li><a href="ComputerCenter.aspx">> Computer Center</a></li>
+                    <li><a href="Director.aspx">> Director's Message</a></li>
+                    <li><a href="AdministrativePersons.aspx">> Administrative Persons</a></li>
                 </ul>
                 <ul class="boxes">
                     <li class="link_name">Quick Links</li>
-                    <li><a href="LatestNotice.aspx">Notice</a></li>
-                    <li><a href="CourseSyllabus.aspx">Syllabus</a></li>
-                    <li><a href="TimeTable.aspx">Time Table</a></li>
-                    <li><a href="HolidayList.aspx">Holiday List</a></li>
-                    <li><a href="Prospectus.aspx">Prospectus</a></li>
+                    <li><a href="LatestNotice.aspx">> Notice</a></li>
+                    <li><a href="CourseSyllabus.aspx">> Syllabus</a></li>
+                    <li><a href="TimeTable.aspx">> Time Table</a></li>
+                    <li><a href="HolidayList.aspx">> Holiday List</a></li>
+                    <li><a href="Prospectus.aspx">> Prospectus</a></li>
                 </ul>
                 <ul class="boxes">
                     <li class="link_name">Quick Links</li>
-                    <li><a href="Login.aspx">Admin Login</a></li>
-                    <li><a href="ImageGallery.aspx">Image Gallery</a></li>
-                    <li><a href="Downloads.aspx">Download Files</a></li>
-                    <li><a href="Library/Default.aspx">Automated Library</a></li>
-                    <li><a href="AlumniRegistration.aspx">Alumni Registration</a></li>
+                    <li><a href="Login.aspx">> Admin Login</a></li>
+                    <li><a href="ImageGallery.aspx">> Image Gallery</a></li>
+                    <li><a href="Downloads.aspx">> Download Files</a></li>
+                    <li><a href="Library/Default.aspx">> Automated Library</a></li>
+                    <li><a href="AlumniRegistration.aspx">> Alumni Registration</a></li>
                 </ul>
                 <ul class="boxes">
                     <li class="link_name">Important Links</li>
-                    <li><a href="https://tmbuniv.ac.in" target="_blank">TMBU Website</a></li>
-                    <li><a href="https://www.ugc.ac.in/" target="_blank">UGC Website</a></li>
-                    <li><a href="https://www.aicte-india.org/" target="_blank">AICTE Website</a></li>
-                    <li><a href="https://scholarships.gov.in/" target="_blank">National Scholarship</a></li>
-                    <li><a href="http://www.pmsonline.bih.nic.in/" target="_blank">Post Matric Scholrship</a></li>
+                    <li><a href="https://tmbuniv.ac.in" target="_blank">> TMBU Website</a></li>
+                    <li><a href="https://www.ugc.ac.in/" target="_blank">> UGC Website</a></li>
+                    <li><a href="https://www.aicte-india.org/" target="_blank">> AICTE Website</a></li>
+                    <li><a href="https://swayam.gov.in/" target="_blank">> Swayam Portal</a></li>
+                    <li><a href="https://scholarships.gov.in/" target="_blank">> National Scholarship</a></li>
                 </ul>
                 <ul class="boxes">
                     <li class="link_name">Contacts</li>
