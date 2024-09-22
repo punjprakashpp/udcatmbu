@@ -25,7 +25,7 @@
 
 function setMarqueeHeight() {
     const marquee = document.querySelector('#marq');
-    const sliderSection = document.querySelector('.slider-section');
+    const sliderSection = document.querySelector('.slider-container');
     if (marquee && sliderSection) {
         const calculatedHeight = sliderSection.offsetHeight - 70;
         marquee.style.height = calculatedHeight > 0 ? calculatedHeight + 'px' : 'auto'; // Fallback for height
