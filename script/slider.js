@@ -23,7 +23,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
     let slides = document.getElementsByClassName("slide");
-    let animations = ['fade', 'slide-left', 'slide-right', 'zoom-in', 'zoom-out', 'rotate', 'flip-horizontal', 'flip-vertical', 'bounce', 'spin']; // List of animations
+    let animations = ['slide-left', 'slide-right', 'zoom-in', 'zoom-out', 'bounce']; // List of animations
 
     if (n >= slides.length) {
         slideIndex = 0;
