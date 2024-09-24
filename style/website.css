@@ -10,14 +10,16 @@
     height: auto;
     font-size: 16px;
     color: #666666;
-    background: #001f44;
 }
 
-.contact-section {
-    width: 100%;
-    display: block;
-    background: #001f44;
-}
+    /* Header Brand Styles */
+    .header .brand {
+        width: 100%;
+        height: auto;
+        background: white;
+        display: block;
+        text-align: center;
+    }
 
 .contacts {
     width: 50%;
@@ -25,7 +27,7 @@
     position: relative;
     padding-right: 15px;
     padding-left: 15px;
-    background: #001f44;
+    background-color: #001f44;
     text-align: center;
 }
 
@@ -64,14 +66,6 @@
                 margin-right: 4px;
             }
 
-/* Header Brand Styles */
-.header .brand {
-    width: 100%;
-    height: auto;
-    background: white;
-    display: block;
-    text-align: center;
-}
 
 .header .image {
     display: inline;
@@ -112,8 +106,6 @@
 /* navbar styles */
 .navbar {
     overflow: hidden;
-    margin:auto;
-    max-width:1280px;
     background-color: #001f44;
     transition: background-color 0.3s ease-out, max-height 0.3s ease-out;
 }
@@ -328,7 +320,6 @@
 }
 
 .footer {
-    position: relative;
     background: #140B5C;
     width: 100%;
     bottom: 0;

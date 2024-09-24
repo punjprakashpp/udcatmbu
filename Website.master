@@ -17,7 +17,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="contact-section">
+        <div class="brand">
             <div class="contacts">
                 <ul class="icons-ul">
                     <li><a href="tel:0641-250040"><i class="fa fa-phone"></i>&nbsp;0641-250040</a></li>
@@ -32,9 +32,8 @@
                     <li><a href="https://x.com/udcatmbu" target="_blank"><i class="fa fa-x-twitter"></i>Twitter</a></li>
                 </ul>
             </div>
-        </div>
-        <div class="brand">
-            <a href="Default.aspx"><img class="image" src="img/logo/logo-header.png"></a>
+            <a href="Default.aspx">
+                <img class="image" src="img/logo/logo-header.png"></a>
         </div>
         <nav class="navbar" id="navbar">
             <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i></a>
@@ -188,6 +187,7 @@
                     <li><a href="AboutTMBU.aspx">> About TMBU</a></li>
                     <li><a href="ComputerCenter.aspx">> Computer Center</a></li>
                     <li><a href="Director.aspx">> Director's Message</a></li>
+                    <li><a href="AboutDeveloper.aspx">> About Developers</a></li>
                     <li><a href="AdministrativePersons.aspx">> Administrative Persons</a></li>
                 </ul>
                 <ul class="boxes">
@@ -197,6 +197,7 @@
                     <li><a href="TimeTable.aspx">> Time Table</a></li>
                     <li><a href="HolidayList.aspx">> Holiday List</a></li>
                     <li><a href="Prospectus.aspx">> Prospectus</a></li>
+                    <li><a href="FacultyMember.aspx">> Teaching Staffs</a></li>
                 </ul>
                 <ul class="boxes">
                     <li class="link_name">Quick Links</li>
@@ -204,6 +205,7 @@
                     <li><a href="ImageGallery.aspx">> Image Gallery</a></li>
                     <li><a href="Downloads.aspx">> Download Files</a></li>
                     <li><a href="Library/Default.aspx">> Automated Library</a></li>
+                    <li><a href="ViewAlumni.aspx">> View Our Almuni</a></li>
                     <li><a href="AlumniRegistration.aspx">> Alumni Registration</a></li>
                 </ul>
                 <ul class="boxes">
@@ -212,6 +214,7 @@
                     <li><a href="https://www.ugc.ac.in/" target="_blank">> UGC Website</a></li>
                     <li><a href="https://www.aicte-india.org/" target="_blank">> AICTE Website</a></li>
                     <li><a href="https://swayam.gov.in/" target="_blank">> Swayam Portal</a></li>
+                    <li><a href="http://www.pmsonline.bih.nic.in/" target="_blank">> PMS Scholarship</a></li>
                     <li><a href="https://scholarships.gov.in/" target="_blank">> National Scholarship</a></li>
                 </ul>
                 <ul class="boxes">
