@@ -86,3 +86,67 @@ td {
 .btn:hover {
   background-color: #0056b3;
 }
+
+/* Mobile First Approach */
+.bg {
+  margin: 20px;
+  padding: 15px;
+}
+
+#title h1 {
+  font-size: 32px;
+}
+
+#main {
+  flex-direction: column;
+}
+
+#img {
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+
+#img img {
+  max-width: 100%;
+}
+
+#login {
+  max-width: 100%;
+}
+
+/* Media Queries for Tablets and Larger Screens */
+@media (min-width: 768px) {
+  .bg {
+    margin: 50px auto;
+    padding: 20px;
+  }
+
+  #title h1 {
+    font-size: 36px;
+  }
+
+  #main {
+    flex-direction: row;
+  }
+
+  #img {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  #login {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #title h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  #img img {
+      display: none;
+  }
+}
