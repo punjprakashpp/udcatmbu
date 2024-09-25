@@ -126,7 +126,6 @@
                         <a href="UniversityHostel.aspx"><i class="fa fa-bed"></i>University Hostel</a>
                         <a href="CentralLibrary.aspx"><i class="fa fa-book"></i>Central Library</a>
                         <a href="MedicalFacility.aspx"><i class="fa fa-medkit"></i>Medical Facilities</a>
-                        <a href="Library/Default.aspx"><i class="fa fa-book"></i>Automated Library</a>
                     </div>
                 </div>
                 <div class="subnav">
@@ -159,6 +158,7 @@
                     </div>
                 </div>
                 <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a>
+                <a href="Library.aspx"><i class="fa fa-book"></i>Library</a>
                 <a href="login.aspx"><i class="fa fa-sign-in"></i>Login</a>
             </div>
         </nav>
@@ -202,9 +202,9 @@
                 <ul class="boxes">
                     <li class="link_name">Quick Links</li>
                     <li><a href="Login.aspx">> Admin Login</a></li>
+                    <li><a href="Library.aspx">> Library Login</a></li>
                     <li><a href="ImageGallery.aspx">> Image Gallery</a></li>
                     <li><a href="Downloads.aspx">> Download Files</a></li>
-                    <li><a href="Library/Default.aspx">> Automated Library</a></li>
                     <li><a href="ViewAlumni.aspx">> View Our Almuni</a></li>
                     <li><a href="AlumniRegistration.aspx">> Alumni Registration</a></li>
                 </ul>
@@ -215,7 +215,7 @@
                     <li><a href="https://www.aicte-india.org/" target="_blank">> AICTE Website</a></li>
                     <li><a href="https://swayam.gov.in/" target="_blank">> Swayam Portal</a></li>
                     <li><a href="http://www.pmsonline.bih.nic.in/" target="_blank">> PMS Scholarship</a></li>
-                    <li><a href="https://scholarships.gov.in/" target="_blank">> National Scholarship</a></li>
+                    <li><a href="https://scholarships.gov.in/" target="_blank">> NSP Scholarship</a></li>
                 </ul>
                 <ul class="boxes">
                     <li class="link_name">Contacts</li>

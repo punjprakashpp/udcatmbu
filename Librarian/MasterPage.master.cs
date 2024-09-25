@@ -10,7 +10,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         // Redirect to default page if session variable "aid" is not set
         if (Session["aid"] == null)
         {
-            Response.Redirect("../Default.aspx", false);
+            Response.Redirect("../Library.aspx", false);
             HttpContext.Current.ApplicationInstance.CompleteRequest();
             return;
         }
@@ -32,7 +32,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         // Clear session variables and redirect to default page
         Session.Clear();
-        Response.Redirect("../Default.aspx", false);
+        Response.Redirect("../Library.aspx", false);
         HttpContext.Current.ApplicationInstance.CompleteRequest();
     }
 

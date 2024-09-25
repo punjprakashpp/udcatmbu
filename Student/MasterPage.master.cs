@@ -15,7 +15,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
         if (Session["sid"] == null)
         {
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../Library.aspx");
         }
         else
         {
@@ -47,7 +47,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void btnLogOut_Click(object sender, EventArgs e)
     {
         Session["sid"] = null;
-        Response.Redirect("../Default.aspx");
+        Response.Redirect("../Library.aspx");
     }
 
     private void InsertPenaltyIfNotExists()

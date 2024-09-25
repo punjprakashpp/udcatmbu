@@ -208,7 +208,7 @@
             <h2>Quick Links:</h2>
             <div class="btn-area">
                 <div class="fac">
-                    <a href="Login.aspx" target="_blank">
+                    <a href="Login.aspx">
                         <div class="img-main">
                             <img src="img/icon/login.png" class="sec-img" alt="logo">
                         </div>
@@ -228,7 +228,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
                 <div class="fac">
-                    <a href="Library/Default.aspx" target="_blank">
+                    <a href="Library.aspx">
                         <div class="img-main">
                             <img src="img/icon/online-library.png" class="sec-img" alt="logo">
                         </div>
