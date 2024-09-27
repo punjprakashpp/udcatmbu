@@ -1,4 +1,4 @@
-﻿/* Base styles */
+/* Base styles */
 * {
     margin: 0;
     padding: 0;
@@ -9,16 +9,19 @@
 .header {
     height: auto;
     font-size: 16px;
-    color: #666666;
+    background: #001f44;
 }
 
-    /* Header Brand Styles */
+    .header .content {
+        margin: auto;
+        max-width: 1280px;
+    }
+
     .header .brand {
         width: 100%;
-        height: auto;
-        background: white;
         display: block;
         text-align: center;
+        background: white;
     }
 
 .contacts {

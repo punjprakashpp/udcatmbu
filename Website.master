@@ -2,8 +2,9 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head runat="server">
-    <title><%: Page.Title %> - UDCA | TMBU </title>
+    <title><%: Page.Title %> - UDCA | TMBU</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="UDCA, UDCA TMBU, udcatmbu, University Department of Computer Applications TMBU, University Department of Computer Applications T.M.Bhagalpur University, Computer Center, Computer Center Bhagalpur, MCA, MCA in Bhagalpur, MCA from TMBU, Master of Computer Applications (MCA) in Bhagalpur">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="style/website.css" />
     <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
+
 <body>
     <header class="header">
         <div class="brand">
@@ -32,136 +34,137 @@
                     <li><a href="https://x.com/udcatmbu" target="_blank"><i class="fa fa-x-twitter"></i>Twitter</a></li>
                 </ul>
             </div>
-            <a href="Default.aspx">
-                <img class="image" src="img/logo/logo-header.png"></a>
+            <a href="Default.aspx"><img class="image" src="img/logo/logo-header.png"></a>
         </div>
-        <nav class="navbar" id="navbar">
-            <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i></a>
-            <div class="subnav home-link">
-                <a href="Default.aspx"><i class="fa fa-home"></i>Home</a>
-            </div>
-            <div class="sidebar" id="sidebar">
-                <img class="logo-nav" src="img/logo/logo-head.png" alt="logo-head" />
-                <a href="javascript:void(0);" class="icon icon-close" id="close"><i class="fa fa-close"></i></a>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-info-circle"></i>About <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="AboutUDCA.aspx"><i class="fa fa-university"></i>About UDCA</a>
-                        <a href="AboutTMBU.aspx"><i class="fa fa-university"></i>About TMBU</a>
-                        <a href="ComputerCenter.aspx"><i class="fa fa-desktop"></i>Computer Center</a>
-                        <a href="Director.aspx"><i class="fa fa-user"></i>Director's Message</a>
-                        <a href="HowToReach.aspx"><i class="fa fa-map-marker"></i>How to Reach Here</a>
-                        <a href="CampusMap.aspx"><i class="fa fa-map"></i>Campus Map</a>
-                        <a href="ContactUs.aspx"><i class="fa fa-phone"></i>Contact Us</a>
-                    </div>
+        <div class="content">
+            <nav class="navbar" id="navbar">
+                <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i></a>
+                <div class="subnav home-link">
+                    <a href="Default.aspx"><i class="fa fa-home"></i>Home</a>
                 </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-university"></i>Admission <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="SelectionProcedure.aspx"><i class="fa fa-check-circle"></i>Selection Procedure</a>
-                        <a href="EnteranceTest.aspx"><i class="fa fa-pencil"></i>Entrance Test</a>
-                        <a href="EligiblityCriteria.aspx"><i class="fa fa-list-alt"></i>Eligibility Criteria</a>
-                        <a href="ImportantDates.aspx"><i class="fa fa-calendar-check-o"></i>Important Dates</a>
+                <div class="sidebar" id="sidebar">
+                    <img class="logo-nav" src="img/logo/logo-head.png" alt="logo-head" />
+                    <a href="javascript:void(0);" class="icon icon-close" id="close"><i class="fa fa-close"></i></a>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-info-circle"></i>About <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="AboutUDCA.aspx"><i class="fa fa-university"></i>About UDCA</a>
+                            <a href="AboutTMBU.aspx"><i class="fa fa-university"></i>About TMBU</a>
+                            <a href="ComputerCenter.aspx"><i class="fa fa-desktop"></i>Computer Center</a>
+                            <a href="Director.aspx"><i class="fa fa-user"></i>Director's Message</a>
+                            <a href="HowToReach.aspx"><i class="fa fa-map-marker"></i>How to Reach Here</a>
+                            <a href="CampusMap.aspx"><i class="fa fa-map"></i>Campus Map</a>
+                            <a href="ContactUs.aspx"><i class="fa fa-phone"></i>Contact Us</a>
+                        </div>
                     </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-graduation-cap"></i>Academic <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="Prospectus.aspx"><i class="fa fa-book"></i>Prospectus</a>
-                        <a href="TimeTable.aspx"><i class="fa fa-clock-o"></i>Time Table</a>
-                        <a href="HolidayList.aspx"><i class="fa fa-sun-o"></i>Holiday List</a>
-                        <a href="AcademicCalender.aspx"><i class="fa fa-calendar"></i>Academic Calendar</a>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-university"></i>Admission <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="SelectionProcedure.aspx"><i class="fa fa-check-circle"></i>Selection Procedure</a>
+                            <a href="EnteranceTest.aspx"><i class="fa fa-pencil"></i>Entrance Test</a>
+                            <a href="EligiblityCriteria.aspx"><i class="fa fa-list-alt"></i>Eligibility Criteria</a>
+                            <a href="ImportantDates.aspx"><i class="fa fa-calendar-check-o"></i>Important Dates</a>
+                        </div>
                     </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-book"></i>Course <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="CourseStructure.aspx"><i class="fa fa-list"></i>Course Structure</a>
-                        <a href="FeeStructure.aspx"><i class="fa fa-money"></i>Fee Structure</a>
-                        <a href="CourseSyllabus.aspx"><i class="fa fa-file-text"></i>Course Syllabus</a>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-graduation-cap"></i>Academic <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="Prospectus.aspx"><i class="fa fa-book"></i>Prospectus</a>
+                            <a href="TimeTable.aspx"><i class="fa fa-clock-o"></i>Time Table</a>
+                            <a href="HolidayList.aspx"><i class="fa fa-sun-o"></i>Holiday List</a>
+                            <a href="AcademicCalender.aspx"><i class="fa fa-calendar"></i>Academic Calendar</a>
+                        </div>
                     </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-gavel"></i>Campus Rules <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="AttendenceProtocol.aspx"><i class="fa fa-calendar"></i>Attendance Protocol</a>
-                        <a href="AntiRagging.aspx"><i class="fa fa-ban"></i>Anti-Ragging</a>
-                        <a href="DressCode.aspx"><i class="fa fa-shirtsinbulk"></i>Dress Code</a>
-                        <a href="Decipline.aspx"><i class="fa fa-balance-scale"></i>Discipline</a>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-book"></i>Course <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="CourseStructure.aspx"><i class="fa fa-list"></i>Course Structure</a>
+                            <a href="FeeStructure.aspx"><i class="fa fa-money"></i>Fee Structure</a>
+                            <a href="CourseSyllabus.aspx"><i class="fa fa-file-text"></i>Course Syllabus</a>
+                        </div>
                     </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-cogs"></i>Administration <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="AdministrativePersons.aspx"><i class="fa fa-group"></i>Administrative Persons</a>
-                        <a href="AffiliationRegulation.aspx"><i class="fa fa-file"></i>Affiliations & Regulations</a>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-gavel"></i>Campus Rules <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="AttendenceProtocol.aspx"><i class="fa fa-calendar"></i>Attendance Protocol</a>
+                            <a href="AntiRagging.aspx"><i class="fa fa-ban"></i>Anti-Ragging</a>
+                            <a href="DressCode.aspx"><i class="fa fa-shirtsinbulk"></i>Dress Code</a>
+                            <a href="Decipline.aspx"><i class="fa fa-balance-scale"></i>Discipline</a>
+                        </div>
                     </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-group"></i>Faculty & Staffs <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="FacultyMember.aspx"><i class="fa fa-users"></i>Teaching Staffs</a>
-                        <a href="OfficeStaff.aspx"><i class="fa fa-briefcase"></i>Non-Teaching Staffs</a>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-cogs"></i>Administration <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="AdministrativePersons.aspx"><i class="fa fa-group"></i>Administrative Persons</a>
+                            <a href="AffiliationRegulation.aspx"><i class="fa fa-file"></i>Affiliations & Regulations</a>
+                        </div>
                     </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-building"></i>Amenities <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="UniversityHostel.aspx"><i class="fa fa-bed"></i>University Hostel</a>
-                        <a href="CentralLibrary.aspx"><i class="fa fa-book"></i>Central Library</a>
-                        <a href="MedicalFacility.aspx"><i class="fa fa-medkit"></i>Medical Facilities</a>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-group"></i>Faculty & Staffs <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="FacultyMember.aspx"><i class="fa fa-users"></i>Teaching Staffs</a>
+                            <a href="OfficeStaff.aspx"><i class="fa fa-briefcase"></i>Non-Teaching Staffs</a>
+                        </div>
                     </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-users"></i>Alumni <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="ViewAlumni.aspx"><i class="fa fa-user"></i>View Our Almuni</a>
-                        <a href="AlumniRegistration.aspx"><i class="fa fa-sign-in"></i>Alumni Registration</a>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-building"></i>Amenities <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="UniversityHostel.aspx"><i class="fa fa-bed"></i>University Hostel</a>
+                            <a href="CentralLibrary.aspx"><i class="fa fa-book"></i>Central Library</a>
+                            <a href="MedicalFacility.aspx"><i class="fa fa-medkit"></i>Medical Facilities</a>
+                        </div>
                     </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-photo"></i>Gallery <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="ImageGallery.aspx"><i class="fa fa-image"></i>Image Gallery</a>
-                        <a href="VideoGallery.aspx"><i class="fa fa-video-camera"></i>Video Gallery</a>
-                        <a href="NewsGallery.aspx"><i class="fa fa-newspaper-o"></i>News Gallery</a>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-users"></i>Alumni <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="ViewAlumni.aspx"><i class="fa fa-user"></i>View Our Almuni</a>
+                            <a href="AlumniRegistration.aspx"><i class="fa fa-sign-in"></i>Alumni Registration</a>
+                        </div>
                     </div>
-                </div>
-                <div class="subnav">
-                    <button class="subnavbtn">
-                        <i class="fa fa-info-circle"></i>Information <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="subnav-content">
-                        <a href="LatestNotice.aspx"><i class="fa fa-bell"></i>Latest Notice</a>
-                        <a href="LatestEvents.aspx"><i class="fa fa-newspaper-o"></i>Latest Events</a>
-                        <a href="ViewTender.aspx"><i class="fa fa-info"></i>View Tenders</a>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-photo"></i>Gallery <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="ImageGallery.aspx"><i class="fa fa-image"></i>Image Gallery</a>
+                            <a href="VideoGallery.aspx"><i class="fa fa-video-camera"></i>Video Gallery</a>
+                            <a href="NewsGallery.aspx"><i class="fa fa-newspaper-o"></i>News Gallery</a>
+                        </div>
                     </div>
+                    <div class="subnav">
+                        <button class="subnavbtn">
+                            <i class="fa fa-info-circle"></i>Information <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="subnav-content">
+                            <a href="LatestNotice.aspx"><i class="fa fa-bell"></i>Latest Notice</a>
+                            <a href="LatestEvents.aspx"><i class="fa fa-newspaper-o"></i>Latest Events</a>
+                            <a href="ViewTender.aspx"><i class="fa fa-info"></i>View Tenders</a>
+                        </div>
+                    </div>
+                    <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a>
+                    <a href="Library.aspx"><i class="fa fa-book"></i>Library</a>
+                    <a href="login.aspx"><i class="fa fa-sign-in"></i>Login</a>
                 </div>
-                <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a>
-                <a href="Library.aspx"><i class="fa fa-book"></i>Library</a>
-                <a href="login.aspx"><i class="fa fa-sign-in"></i>Login</a>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
     <form id="form1" runat="server">
         <asp:ContentPlaceHolder ID="Content1" runat="server" />
@@ -229,8 +232,9 @@
         <div class="bottom-details">
             <div class="bottom_text">
                 <span class="copyright_text">Copyright &#169; 2024 UDCA TMBU | All rights reserved !</span>
-                <span class="policy_terms">Developed by <a href="AboutDeveloper.aspx">UDCA TMBU</a> | Visits :
-                    <asp:Label ID="lblVisitorCount" runat="server" Font-Bold="true" /></span>
+                <span class="policy_terms">Visits :
+                    <asp:Label ID="lblVisitorCount" runat="server" Font-Bold="true" />
+                    | Developed by <a href="AboutDeveloper.aspx">UDCA TMBU</a></span>
             </div>
         </div>
     </footer>
