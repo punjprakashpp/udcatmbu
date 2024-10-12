@@ -3,6 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/section.css">
     <link rel="stylesheet" type="text/css" href="style/slider.css">
+    <script defer type="text/javascript" src="script/slider.js"></script>
+    <script defer type="text/javascript" src="script/section.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <section class="sec">
@@ -234,7 +236,7 @@
                         </div>
                         <div class="stud-sec">Online Library</div>
                     </a>
-                </div>
+                </div><!--
                 <div class="fac">
                     <a href="AboutUDCA.aspx">
                         <div class="img-main">
@@ -330,10 +332,8 @@
                         </div>
                         <div class="stud-sec">Syllabus</div>
                     </a>
-                </div>
+                </div>-->
             </div>
         </div>
     </section>
-    <script type="text/javascript" src="script/slider.js"></script>
-    <script type="text/javascript" src="script/section.js"></script>
 </asp:Content>

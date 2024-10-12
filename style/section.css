@@ -523,10 +523,18 @@
     .fac {
         width: calc(50% - 20px); /* Two-column layout */
     }
+
+    .sec-img {
+        width: 40%;
+    }
 }
 
 @media (max-width: 576px) {
     .fac {
         width: 100%; /* Single-column layout */
+    }
+
+    .sec-img {
+        width: 30%;
     }
 }

@@ -68,6 +68,12 @@
         }
     }
 
+    // Adjust Sidebar Height
+    function adjustSidebarHeight() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
     // Scrolls to the top of the page
     function topFunction() {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -97,3 +103,6 @@
         closeButton.addEventListener('click', toggleResponsive);
     }
 });
+
+window.addEventListener('resize', adjustSidebarHeight);
+window.addEventListener('load', adjustSidebarHeight);

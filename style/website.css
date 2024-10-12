@@ -12,11 +12,6 @@
     background: #001f44;
 }
 
-    .header .content {
-        margin: auto;
-        max-width: 1280px;
-    }
-
     .header .brand {
         width: 100%;
         display: block;
@@ -193,6 +188,11 @@
 
 /* Subnav styles for hover effect */
 @media screen and (min-width: 601px) {
+    .navbar {
+        margin: auto;
+        max-width: 1280px;
+    }
+
     .subnav:hover .subnav-content {
         display: block;
         visibility: visible;
@@ -296,15 +296,19 @@
     /* Sidebar styles */
     .sidebar {
         width: 75%; /* Adjust width as needed */
-        height: 100%;
+        height: 100vh; /* Full viewport height */
         background-color: #001f44;
         overflow-y: auto;
         z-index: 1000;
         position: fixed;
         top: 0;
         left: 0;
-        transform: translateX(-100%); /* Initially hidden off-screen */
-        transition: transform 0.3s ease-in-out; /* Smooth slide effect */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar {
+        height: calc(var(--vh, 1vh) * 100); /* Use the custom calculated vh */
     }
 
         .sidebar.show {
