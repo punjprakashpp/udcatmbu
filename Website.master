@@ -132,7 +132,8 @@
                         <i class="fa fa-users"></i>Alumni <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="subnav-content">
-                        <a href="ViewAlumni.aspx"><i class="fa fa-user"></i>View Our Almuni</a>
+                        <a href="ViewAlumni.aspx"><i class="fa fa-user"></i>Our Almuni</a>
+                        <a href="OurAchivers.aspx"><i class="fa fa-sun-o"></i>Our Achivers</a>
                         <a href="AlumniRegistration.aspx"><i class="fa fa-sign-in"></i>Alumni Registration</a>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-public partial class pages_VideoGallery : System.Web.UI.Page
+public partial class pages_ImageGallery : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -49,8 +49,8 @@ public partial class pages_VideoGallery : System.Web.UI.Page
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            GalleryRepeater.DataSource = dt;
-            GalleryRepeater.DataBind();
+            ThumbnailRepeater.DataSource = dt;
+            ThumbnailRepeater.DataBind();
         }
     }
 
@@ -70,7 +70,7 @@ public partial class pages_VideoGallery : System.Web.UI.Page
             string modalContent = "";
             foreach (DataRow row in dt.Rows)
             {
-                modalContent += "<div class='mySlides'><img src='" + row["ImagePath"].ToString() + "' class='modal-img'></div>";
+                modalContent += "<img src='" + row["ImagePath"].ToString() + "' alt='" + title + "' onclick=\"displayImage('" + row["ImagePath"].ToString() + "')\">";
             }
             return modalContent;
         }

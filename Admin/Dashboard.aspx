@@ -74,6 +74,7 @@
         <div class="data two">
             <p>Add Menu Options:</p>
             <ul>
+                <li><a href="AddAchivers.aspx">Add Achivers</a></li>
                 <li><a href="AddVideoLinks.aspx">Add Video Links</a></li>
                 <li><a href="AddHomeLinks.aspx">Add Highlight Links</a></li>
                 <li><a href="AddHomeButton.aspx">Add Buttons for home Page</a></li>
@@ -107,6 +108,7 @@
                 <li><a href="DeleteGalleryImage.aspx">Delete Gallery Image</a></li>
                 <li><a href="DeleteNewspaper.aspx">Delete Newspaper Image</a></li>
                 <li><a href="DeleteAlumni.aspx">Delete Registered Alumni</a></li>
+                <li><a href="DeleteAchivers.aspx">Delete Registered Achivers</a></li>
                 <li><a href="DeleteFiles.aspx">Delete Downloadable Files</a></li>
             </ul>
         </div>

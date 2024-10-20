@@ -3,6 +3,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/gallery.css">
     <style>
+        .thumb {
+            cursor: pointer;
+            display: block;
+            border: 2px solid #ccc;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+        }
+
+            .thumb:hover {
+                transform: scale(1.05);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+
         #lightbox {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
@@ -16,18 +30,18 @@
             text-align: center;
         }
 
-        #lightbox img {
-            margin-top: 5%; /* Add a bit of space at the top */
-            max-width: 80%;
-            max-height: 80%;
-            border: 1px solid #ccc;
-            padding: 10px;
-            background: white;
-        }
+            #lightbox img {
+                margin-top: 5%; /* Add a bit of space at the top */
+                max-width: 80%;
+                max-height: 80%;
+                border: 1px solid #ccc;
+                padding: 10px;
+                background: white;
+            }
 
         .close {
             position: absolute;
-            top: 20px;
+            top: 50px;
             right: 35px;
             color: grey;
             font-size: 40px;
@@ -36,9 +50,15 @@
             transition: 0.3s;
         }
 
-        .close:hover,
-        .close:focus {
-            color: red;
+            .close:hover,
+            .close:focus {
+                color: red;
+            }
+
+        @media(max-width:768px) {
+            #lightbox img {
+                margin-top: 25%;
+            }
         }
     </style>
     <script>
@@ -73,10 +93,10 @@
     <div class="cont">
         <asp:Repeater ID="NewsRepeater" runat="server">
             <ItemTemplate>
-                <div class="gallery video">
+                <div class="video">
                     <!-- Clicking this image will display it in the lightbox -->
                     <a href="javascript:void(0);" onclick="displayImage('<%# Eval("ImagePath") %>')">
-                        <img class="thumb" src='<%# Eval("ImagePath") %>' alt='<%# Eval("Title") %>' width="600" height="400">
+                        <img class="thumb" src='<%# Eval("ImagePath") %>' alt='<%# Eval("Title") %>'>
                     </a>
                     <div class="desc">
                         <h2><%# Eval("Title")%></h2>

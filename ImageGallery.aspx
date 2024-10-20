@@ -1,94 +1,17 @@
-<%@ Page Title="Image Gallery" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="ImageGallery.aspx.cs" Inherits="pages_VideoGallery" %>
+<%@ Page Title="Image Gallery" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="ImageGallery.aspx.cs" Inherits="pages_ImageGallery" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link rel="stylesheet" href="style/image.css">
     <link rel="stylesheet" href="style/gallery.css">
-    <style>
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            position: relative;
-        }
-
-        .mySlides {
-            display: none;
-        }
-
-        .modal-img {
-            width: 100%;
-            height: auto;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: grey;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: red;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-            transition: 0.6s ease;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        .prev {
-            left: 0;
-        }
-
-        .next {
-            right: 0;
-        }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <h1 class="my-h1">Image Gallery</h1>
     <div class="cont">
-        <asp:Repeater ID="GalleryRepeater" runat="server">
+        <asp:Repeater ID="ThumbnailRepeater" runat="server">
             <ItemTemplate>
-                <div class="gallery video" width="600" height="400px">
-                    <a class="openModal" href="#" data-title='<%# Eval("Title") %>' data-index='<%# Container.ItemIndex %>'>
-                        <img class="thumb" src='<%# Eval("ImagePath") %>' alt='<%# Eval("Title") %>' width="600" height="400">
-                    </a>
+                <div class="video">
+                    <img src='<%# Eval("ImagePath") %>' class="thumbnail" alt='<%# Eval("Title") %>' onclick="openLightbox('<%# Eval("Title") %>')">
                     <div class="desc">
                         <h2><%# Eval("Title") %></h2>
                     </div>
@@ -97,73 +20,56 @@
         </asp:Repeater>
     </div>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <!-- Slideshow content -->
-        <div class="modal-content" id="modalContent">
-            <!-- Navigation buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <!-- The lightbox for displaying the gallery -->
+    <div id="galleryLightbox" class="lightbox" style="display: none;">
+        <span class="close" onclick="closeGalleryLightbox()">&times;</span>
+        <div class="gallery">
+            <!-- Gallery images will be loaded here dynamically -->
         </div>
     </div>
 
+    <!-- The lightbox for displaying clicked images -->
+    <div id="lightbox" style="display: none;">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightboxImage" src="" alt="Expanded Image">
+    </div>
     <script>
-        let slideIndex = 1;
+        function openLightbox(title) {
+            document.getElementById('galleryLightbox').style.display = 'block';
+            loadGalleryImages(title); // Load images corresponding to the clicked thumbnail
+        }
 
-        function showSlides(n) {
-            let slides = document.getElementsByClassName("mySlides");
-            if (slides.length === 0) return; // Ensure there are slides
+        function closeGalleryLightbox() {
+            document.getElementById('galleryLightbox').style.display = 'none';
+        }
 
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+        function displayImage(src) {
+            document.getElementById('lightboxImage').src = src;
+            document.getElementById('lightbox').style.display = 'block';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Event listener to close the lightbox when clicking outside of the image
+        window.onclick = function (event) {
+            const lightbox = document.getElementById('lightbox');
+            const galleryLightbox = document.getElementById('galleryLightbox');
+            if (event.target === lightbox) {
+                lightbox.style.display = 'none'; // Hide the image lightbox
+            } else if (event.target === galleryLightbox) {
+                galleryLightbox.style.display = 'none'; // Hide the gallery lightbox
             }
-            slides[slideIndex - 1].style.display = "block";
-        }
+        };
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const modal = document.getElementById("myModal");
-            const closeModal = document.querySelector(".close");
-
-            document.querySelectorAll('.openModal').forEach(function (element) {
-                element.onclick = function (event) {
-                    event.preventDefault();
-                    const title = element.getAttribute('data-title');
-                    const index = element.getAttribute('data-index');
-                    fetchModalContent(title, index);
-                };
-            });
-
-            closeModal.onclick = function () {
-                modal.style.display = "none";
-            };
-
-            window.onclick = function (event) {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            };
-        });
-
-        function fetchModalContent(title, index) {
-            const modalContent = document.getElementById("modalContent");
+        function loadGalleryImages(title) {
             const xhr = new XMLHttpRequest();
             xhr.open("GET", "ImageGallery.aspx?Title=" + encodeURIComponent(title), true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    modalContent.innerHTML = xhr.responseText + modalContent.innerHTML;
-                    currentSlide(1);
-                    document.getElementById("myModal").style.display = "block";
+                    const galleryContainer = document.getElementById('galleryLightbox').getElementsByClassName('gallery')[0];
+                    galleryContainer.innerHTML = xhr.responseText; // Populate gallery images
                 }
             };
             xhr.send();

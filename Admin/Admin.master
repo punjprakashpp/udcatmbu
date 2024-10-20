@@ -90,6 +90,7 @@
                         <a href="DeleteGalleryImage.aspx">Gallery Image</a>
                         <a href="DeleteNewspaper.aspx">Newspaper Image</a>
                         <a href="DeleteAlumni.aspx">Registered Alumni</a>
+                        <a href="DeleteAchivers.aspx">Registered Achivers</a>
                         <a href="DeleteFiles.aspx">Uploaded Documents</a>
                     </div>
                 </div>
