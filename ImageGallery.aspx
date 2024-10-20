@@ -100,7 +100,6 @@
     <!-- The Modal -->
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
-
         <!-- Slideshow content -->
         <div class="modal-content" id="modalContent">
             <!-- Navigation buttons -->

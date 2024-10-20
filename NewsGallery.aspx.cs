@@ -19,7 +19,6 @@ public partial class pages_VideoGallery : System.Web.UI.Page
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
-
             NewsRepeater.DataSource = dt;
             NewsRepeater.DataBind();
         }
