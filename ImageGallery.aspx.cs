@@ -70,7 +70,7 @@ public partial class pages_VideoGallery : System.Web.UI.Page
             string modalContent = "";
             foreach (DataRow row in dt.Rows)
             {
-                modalContent += "<div class='mySlides'><img src='"+row["ImagePath"].ToString() + "' class='modal-img'></div>";
+                modalContent += "<div class='mySlides'><img src='" + row["ImagePath"].ToString() + "' class='modal-img'></div>";
             }
             return modalContent;
         }

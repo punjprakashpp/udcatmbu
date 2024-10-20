@@ -138,9 +138,9 @@
             document.querySelectorAll('.openModal').forEach(function (element) {
                 element.onclick = function (event) {
                     event.preventDefault();
-                    const Title = element.getAttribute('data-Title');
+                    const title = element.getAttribute('data-title');
                     const index = element.getAttribute('data-index');
-                    fetchModalContent(Title, index);
+                    fetchModalContent(title, index);
                 };
             });
 
@@ -155,10 +155,10 @@
             };
         });
 
-        function fetchModalContent(Title, index) {
+        function fetchModalContent(title, index) {
             const modalContent = document.getElementById("modalContent");
             const xhr = new XMLHttpRequest();
-            xhr.open("GET", "ImageGallery.aspx?Title=" + encodeURIComponent(Title), true);
+            xhr.open("GET", "ImageGallery.aspx?Title=" + encodeURIComponent(title), true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     modalContent.innerHTML = xhr.responseText + modalContent.innerHTML;
