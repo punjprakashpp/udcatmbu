@@ -1,8 +1,6 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="Website.master.cs" Inherits="MasterPage" %>
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
 <head runat="server">
     <title><%: Page.Title %> - UDCA | TMBU</title>
     <meta charset="utf-8">
@@ -17,7 +15,6 @@
     <script src="script/website.js" defer></script>
     <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
-
 <body>
     <header class="header">
         <div class="brand">
@@ -163,13 +160,14 @@
                 <a href="Library.aspx"><i class="fa fa-book"></i>Library</a>
                 <a href="login.aspx"><i class="fa fa-sign-in"></i>Login</a>
             </div>
+			<div class="sidebar-backdrop" id="sidebar-backdrop"></div>
         </nav>
     </header>
     <form id="form1" runat="server">
         <asp:ContentPlaceHolder ID="Content1" runat="server" />
     </form>
     <footer class="footer">
-        <div class="content">
+        <div class="footer-content">
             <div class="top">
                 <a href="Default.aspx">
                     <img class="logo-name" src="img/logo/logo-head.png"></a>

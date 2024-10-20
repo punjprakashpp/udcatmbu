@@ -96,7 +96,6 @@
 .show {
     display: block !important;
     visibility: visible !important;
-    max-height: fit-content !important; /* Adjust based on content */
 }
 
 /* Mobile styles */
