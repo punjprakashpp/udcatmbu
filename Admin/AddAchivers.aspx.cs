@@ -8,26 +8,145 @@ using System.Web.UI.WebControls;
 
 public partial class Admin_AddAchivers : System.Web.UI.Page
 {
+    private string _studentID;
+    private readonly string _connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            // Populate Session dropdown
             PopulateSessionDropdown();
-            // Save the data to the database or perform any other required operations
         }
     }
 
     private void PopulateSessionDropdown()
     {
+        ddlSession.Items.Clear();
         ddlSession.Items.Add(new ListItem("--- Select Session ---", string.Empty));
-        int currentYear = DateTime.Now.Year;
-        for (int year = 2002; year <= currentYear; year++)
+
+        string query = "SELECT DISTINCT Session FROM Student ORDER BY Session";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        using (SqlCommand cmd = new SqlCommand(query, conn))
         {
-            if (year <= 2019)
-                ddlSession.Items.Add(new ListItem(year.ToString() + " - " + (year + 3).ToString(), year.ToString()));
-            else if (year > 2019 && year <= currentYear - 2)
-                ddlSession.Items.Add(new ListItem(year.ToString() + " - " + (year + 2).ToString(), year.ToString()));
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string session = reader["Session"].ToString();
+                    ddlSession.Items.Add(new ListItem(session, session));
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowErrorMessage("Error loading sessions: " + ex.Message);
+            }
+        }
+    }
+
+    protected void btnFetch_Click(object sender, EventArgs e)
+    {
+        if (ValidateStudent())
+        {
+            if (CheckIfAchiverExists())
+            {
+                ShowErrorMessage("Achiver already registered.");
+            }
+            else
+            {
+                FetchStudentPanel.Visible = false;
+                AddAchiverPanel.Visible = true;
+                LoadStudentDetails();
+            }
+        }
+        else
+        {
+            ShowErrorMessage("No student found with the provided details.");
+        }
+    }
+
+    private bool ValidateStudent()
+    {
+        string query = @"SELECT StudentID FROM Student WHERE RegNo = @RegNo AND RegYear = @RegYear 
+                         AND RollNo = @RollNo AND DOB = @DOB AND Session = @Session";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        using (SqlCommand cmd = new SqlCommand(query, conn))
+        {
+            cmd.Parameters.AddWithValue("@RegNo", txtRegistrationNo.Text.Trim());
+            cmd.Parameters.AddWithValue("@RegYear", txtRegistrationYear.Text.Trim());
+            cmd.Parameters.AddWithValue("@RollNo", txtRollNo.Text.Trim());
+            cmd.Parameters.AddWithValue("@DOB", DateTime.Parse(txtDOB.Text.Trim()));
+            cmd.Parameters.AddWithValue("@Session", ddlSession.SelectedValue);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    _studentID = reader["StudentID"].ToString();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowErrorMessage("Database error: " + ex.Message);
+            }
+        }
+
+        return false;
+    }
+
+    private bool CheckIfAchiverExists()
+    {
+        string query = "SELECT 1 FROM Achiver WHERE StudentID = @StudentID";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        using (SqlCommand cmd = new SqlCommand(query, conn))
+        {
+            cmd.Parameters.AddWithValue("@StudentID", _studentID);
+
+            try
+            {
+                conn.Open();
+                return cmd.ExecuteReader().HasRows;
+            }
+            catch (Exception ex)
+            {
+                ShowErrorMessage("Error checking achiver status: " + ex.Message);
+                return true;
+            }
+        }
+    }
+
+    private void LoadStudentDetails()
+    {
+        string query = "SELECT FirstName, MidName, LastName FROM Student WHERE StudentID = @StudentID";
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        using (SqlCommand cmd = new SqlCommand(query, conn))
+        {
+            cmd.Parameters.AddWithValue("@StudentID", _studentID);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    txtFirstName.Text = reader["FirstName"].ToString();
+                    txtMidName.Text = reader["MidName"].ToString();
+                    txtLastName.Text = reader["LastName"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowErrorMessage("Error loading student details: " + ex.Message);
+            }
         }
     }
 
@@ -35,125 +154,108 @@ public partial class Admin_AddAchivers : System.Web.UI.Page
     {
         if (!Page.IsValid) return;
 
-        string imagePath = "img/default/default.jpg"; // Default image path
+        string imagePath = ProcessImageUpload() ?? "img/default/default.jpg";
+        txtPhone.Text = "+91 " + txtPhone.Text.Trim();
 
-        // Prefix the phone number with "+91 "
-        txtPhone.Text = "+91 " + txtPhone.Text;
+        string query = @"INSERT INTO Achiver 
+                         (Session, StudentID, FirstName, MidName, LastName, Achivement, Qualification, Phone, Email, Occupation, Company, ImagePath) 
+                         VALUES 
+                         (@Session, @StudentID, @FirstName, @MidName, @LastName, @Achivement, @Qualification, @Phone, @Email, @Occupation, @Company, @ImagePath)";
 
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        using (SqlCommand cmd = new SqlCommand(query, conn))
+        {
+            cmd.Parameters.AddWithValue("@Session", ddlSession.SelectedItem.Text);
+            cmd.Parameters.AddWithValue("@StudentID", Convert.ToInt32(_studentID));
+            cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text.Trim());
+            cmd.Parameters.AddWithValue("@MidName", txtMidName.Text.Trim());
+            cmd.Parameters.AddWithValue("@LastName", txtLastName.Text.Trim());
+            cmd.Parameters.AddWithValue("@Achivement", txtAchivement.Text.Trim());
+            cmd.Parameters.AddWithValue("@Qualification", txtQualification.Text.Trim());
+            cmd.Parameters.AddWithValue("@Phone", txtPhone.Text.Trim());
+            cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+            cmd.Parameters.AddWithValue("@Occupation", txtOccupation.Text);
+            cmd.Parameters.AddWithValue("@Company", txtCompany.Text);
+            cmd.Parameters.AddWithValue("@ImagePath", imagePath);
+
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                ClearForm();
+                lblMessage.Text = "Achiver details saved successfully!";
+                lblMessage.ForeColor = Color.Green;
+            }
+            catch (Exception ex)
+            {
+                ShowErrorMessage("Error saving achiver details: " + ex.Message);
+            }
+        }
+    }
+
+    private string ProcessImageUpload()
+    {
         if (fileUpload.HasFile)
         {
-            // Check if the file is an image
             string fileExtension = Path.GetExtension(fileUpload.FileName).ToLower();
+
             if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
             {
-                string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                string folderPath = Server.MapPath("~/img/achiver/");
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-                string fullPath = folderPath + fileName;
+                string fileName = Path.GetFileName(fileUpload.FileName);
+                string folderPath = Server.MapPath("~/img/alumni/");
 
-                // Save the cropped image
-                string base64String = imagePreviewBase64.Value;
-                base64String = base64String.Replace("data:image/png;base64,", "").Replace("data:image/jpeg;base64,", "");
-                byte[] imageBytes = Convert.FromBase64String(base64String);
-                using (MemoryStream ms = new MemoryStream(imageBytes))
+                if (!Directory.Exists(folderPath))
+                    Directory.CreateDirectory(folderPath);
+
+                string fullPath = Path.Combine(folderPath, fileName);
+
+                try
                 {
+                    string base64String = imagePreviewBase64.Value.Replace("data:image/png;base64,", "").Replace("data:image/jpeg;base64,", "");
+                    byte[] imageBytes = Convert.FromBase64String(base64String);
+
+                    using (MemoryStream ms = new MemoryStream(imageBytes))
                     using (Bitmap bmp = new Bitmap(ms))
                     {
                         bmp.Save(fullPath, ImageFormat.Png);
                     }
+
+                    return "img/alumni/" + fileName;
                 }
-                imagePath = "img/achiver/" + fileName; // Removed tilde (~)
+                catch (Exception ex)
+                {
+                    ShowErrorMessage("Error processing image: " + ex.Message);
+                }
             }
             else
             {
-                lblMessage.Text = "Invalid file type. Only .jpg, .jpeg, .png files are allowed.";
-                return;
+                ShowErrorMessage("Invalid file type. Only .jpg, .jpeg, and .png files are allowed.");
             }
         }
 
-        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        using (SqlConnection conn = new SqlConnection(connStr))
-        {
-            string query = @"INSERT INTO Achivers 
-                        (Name, Achivement, Qualification, Phone, Email, ImagePath, Session, RegistrationNo, RegistrationYear, RollNo, Occupation, Company, LinkedIn, Facebook, Instagram, Twitter) 
-                        VALUES 
-                        (@Name, @Achivement, @Qualification, @Phone, @Email, @ImagePath, @Session, @RegistrationNo, @RegistrationYear, @RollNo, @Occupation, @Company, @LinkedIn, @Facebook, @Instagram, @Twitter)";
-            using (SqlCommand cmd = new SqlCommand(query, conn))
-            {
-                cmd.Parameters.AddWithValue("@Name", txtName.Text);
-                cmd.Parameters.AddWithValue("@Achivement", txtAchivement.Text);
-                cmd.Parameters.AddWithValue("@Qualification", txtQualification.Text);
-                cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@ImagePath", imagePath);
-                cmd.Parameters.AddWithValue("@Session", string.IsNullOrEmpty(ddlSession.SelectedValue) ? (object)DBNull.Value : ddlSession.SelectedItem.ToString());
-                cmd.Parameters.AddWithValue("@RegistrationNo", txtRegistrationNo.Text);
-                cmd.Parameters.AddWithValue("@RegistrationYear", Convert.ToInt32(txtRegistrationYear.Text));
-                cmd.Parameters.AddWithValue("@RollNo", txtRollNo.Text);
-                cmd.Parameters.AddWithValue("@Company", txtCompany.Text);
-                cmd.Parameters.AddWithValue("@Occupation", txtOccupation.Text);
-                cmd.Parameters.AddWithValue("@LinkedIn", txtLinkedIn.Text);
-                cmd.Parameters.AddWithValue("@Facebook", txtFacebook.Text);
-                cmd.Parameters.AddWithValue("@Instagram", txtInstagram.Text);
-                cmd.Parameters.AddWithValue("@Twitter", txtTwitter.Text);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                lblMessage.Text = "A details saved successfully!";
-                lblmsg.Text = "Achiver details saved successfully!";
-            }
-        }
-
-        ClearForm();
-    }
-
-    protected void cvDuplicateCheck_ServerValidate(object source, ServerValidateEventArgs args)
-    {
-        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        using (SqlConnection conn = new SqlConnection(connStr))
-        {
-            string query = @"SELECT COUNT(*) FROM Achivers WHERE RegistrationNo = @RegistrationNo AND RollNo = @RollNo AND RegistrationYear = @RegistrationYear";
-            using (SqlCommand cmd = new SqlCommand(query, conn))
-            {
-                cmd.Parameters.AddWithValue("@RegistrationNo", txtRegistrationNo.Text);
-                cmd.Parameters.AddWithValue("@RollNo", txtRollNo.Text);
-                cmd.Parameters.AddWithValue("@RegistrationYear", txtRegistrationYear.Text);
-
-                conn.Open();
-                int count = (int)cmd.ExecuteScalar();
-                if (count > 0)
-                {
-                    args.IsValid = false;
-                }
-                else
-                {
-                    args.IsValid = true;
-                }
-            }
-        }
+        return null;
     }
 
     private void ClearForm()
     {
-        txtName.Text = string.Empty;
-        txtAchivement.Text = string.Empty;
-        txtQualification.Text = string.Empty;
-        txtPhone.Text = string.Empty;
-        txtEmail.Text = string.Empty;
-        ddlSession.SelectedIndex = 0; // Set the dropdown selection to the first item
-        txtRegistrationNo.Text = string.Empty;
-        txtRegistrationYear.Text = string.Empty;
-        txtRollNo.Text = string.Empty;
-        txtCompany.Text = string.Empty;
-        txtOccupation.Text = string.Empty;
-        txtLinkedIn.Text = string.Empty;
-        txtFacebook.Text = string.Empty;
-        txtInstagram.Text = string.Empty;
-        txtTwitter.Text = string.Empty;
+        txtAchivement.Text = txtQualification.Text = txtPhone.Text = txtEmail.Text = txtRegistrationNo.Text = txtRegistrationYear.Text =
+        txtRollNo.Text = txtCompany.Text = txtOccupation.Text = txtLinkedIn.Text = txtFacebook.Text = txtInstagram.Text =
+        txtTwitter.Text = lblMessage.Text = txtFirstName.Text = txtMidName.Text = txtLastName.Text = txtDOB.Text = string.Empty;
+        ddlSession.SelectedIndex = 0;
+        FetchStudentPanel.Visible = true;
+        AddAchiverPanel.Visible = false;
         fileUpload.Attributes.Clear();
-        lblMessage.Text = string.Empty;
+    }
+
+    private void ShowErrorMessage(string message)
+    {
+        lblMessage.Text = message;
+        lblMessage.ForeColor = Color.Red;
+    }
+
+    protected void btnReset_Click(object sender, EventArgs e)
+    {
+        _studentID = string.Empty;
+        ClearForm();
     }
 }

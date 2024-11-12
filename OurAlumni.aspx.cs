@@ -27,14 +27,30 @@ public partial class pages_Default : System.Web.UI.Page
 
     private void PopulateSessionDropdown()
     {
-        ddlSession.Items.Add(new ListItem("-Select-Session-",string.Empty));
-        int currentYear = DateTime.Now.Year;
-        for (int year = 2002; year <= currentYear; year++)
+        ddlSession.Items.Clear();
+        ddlSession.Items.Add(new ListItem("--- Select Session ---", string.Empty));
+
+        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+        string query = "SELECT DISTINCT Session FROM Student ORDER BY Session";
+
+        using (SqlConnection conn = new SqlConnection(connStr))
+        using (SqlCommand cmd = new SqlCommand(query, conn))
         {
-            if (year <= 2019)
-                ddlSession.Items.Add(new ListItem(year.ToString() + " - " + (year + 3).ToString(), year.ToString()));
-            else if (year > 2019 && year <= currentYear - 2)
-                ddlSession.Items.Add(new ListItem(year.ToString() + " - " + (year + 2).ToString(), year.ToString()));
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string session = reader["Session"].ToString();
+                    ddlSession.Items.Add(new ListItem(session, session));
+                }
+            }
+            catch (Exception ex)
+            {
+                lblmsg.Text= "Error loading sessions: " + ex.Message;
+                lblmsg.ForeColor = System.Drawing.Color.Red;
+            }
         }
     }
 
@@ -43,13 +59,11 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = @"SELECT Name, RollNo, Session, Qualification, Occupation, Company, Phone, Email, ImagePath, LinkedIn, Facebook, Instagram, Twitter 
+            string query = @"SELECT FirstName, MidName, LastName, Session, Qualification, Occupation, Company, Phone, Email, ImagePath, LinkedIn, Facebook, Instagram, Twitter 
                              FROM Alumni 
-                             WHERE (@Session IS NULL OR Session = @Session) 
-                             AND (@RollNo IS NULL OR RollNo = @RollNo)";
+                             WHERE (@Session IS NULL OR Session = @Session)";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Session", string.IsNullOrEmpty(ddlSession.SelectedValue) ? (object)DBNull.Value : ddlSession.SelectedItem.ToString());
-            cmd.Parameters.AddWithValue("@RollNo", string.IsNullOrEmpty(txtRollNo.Text) ? (object)DBNull.Value : txtRollNo.Text);
 
             conn.Open();
             using (SqlDataReader reader = cmd.ExecuteReader())

@@ -13,13 +13,15 @@ public partial class UploadStudentData : System.Web.UI.Page
         {
             try
             {
-                string filePath = Server.MapPath("~/Uploads/") + Path.GetFileName(fileUpload.PostedFile.FileName);
+                // Save uploaded file
+                string filePath = Server.MapPath("~/docs/Uploads/") + Path.GetFileName(fileUpload.PostedFile.FileName);
                 fileUpload.SaveAs(filePath);
 
+                // Define DataTable columns matching the database table
                 DataTable dtExcelData = new DataTable();
                 dtExcelData.Columns.AddRange(new DataColumn[10] {
                     new DataColumn("Session", typeof(string)),
-                    new DataColumn("RollNo", typeof(string)),
+                    new DataColumn("RollNo", typeof(string)),    // Matches database column "RollNo"
                     new DataColumn("RegNo", typeof(string)),
                     new DataColumn("RegYear", typeof(string)),
                     new DataColumn("FirstName", typeof(string)),
@@ -30,6 +32,7 @@ public partial class UploadStudentData : System.Web.UI.Page
                     new DataColumn("EntryDate", typeof(DateTime))
                 });
 
+                // Read data from Excel
                 using (var workbook = new XLWorkbook(filePath))
                 {
                     var worksheet = workbook.Worksheet(1); // Assuming first sheet
@@ -52,25 +55,17 @@ public partial class UploadStudentData : System.Web.UI.Page
                         string midName = row.Cell(6).Value.ToString();
                         string lastName = row.Cell(7).Value.ToString();
                         string dobString = row.Cell(8).Value.ToString();
-                        string gender = row.Cell(9).Value.ToString();
-                        string entryDateString = row.Cell(13).Value.ToString();
 
                         DateTime dob;
-                        DateTime entryDate;
 
-                        // Try parsing dates
+                        // Parse DOB and EntryDate with default values
                         if (!DateTime.TryParse(dobString, out dob))
                         {
                             dob = DateTime.MinValue; // Default if invalid date
                         }
 
-                        if (!DateTime.TryParse(entryDateString, out entryDate))
-                        {
-                            entryDate = DateTime.MinValue; // Default if invalid date
-                        }
-
                         // Add the row to DataTable
-                        dtExcelData.Rows.Add(session, rollNo, regNo, regYear, firstName, midName, lastName, dob, gender, entryDate);
+                        dtExcelData.Rows.Add(session, rollNo, regNo, regYear, firstName, midName, lastName, dob);
                     }
                 }
 
@@ -82,35 +77,34 @@ public partial class UploadStudentData : System.Web.UI.Page
                     {
                         sqlBulkCopy.DestinationTableName = "dbo.Student";
 
-                        // Column mappings (ensure the column names in database match exactly)
+                        // Column mappings to ensure DataTable columns match the database columns
                         sqlBulkCopy.ColumnMappings.Add("Session", "Session");
-                        sqlBulkCopy.ColumnMappings.Add("RollNo", "Roll");
+                        sqlBulkCopy.ColumnMappings.Add("RollNo", "RollNo");      // Adjusted for database "RollNo"
                         sqlBulkCopy.ColumnMappings.Add("RegNo", "RegNo");
                         sqlBulkCopy.ColumnMappings.Add("RegYear", "RegYear");
                         sqlBulkCopy.ColumnMappings.Add("FirstName", "FirstName");
                         sqlBulkCopy.ColumnMappings.Add("MidName", "MidName");
                         sqlBulkCopy.ColumnMappings.Add("LastName", "LastName");
                         sqlBulkCopy.ColumnMappings.Add("DOB", "DOB");
-                        sqlBulkCopy.ColumnMappings.Add("Gender", "Gender");
-                        sqlBulkCopy.ColumnMappings.Add("EntryDate", "EntryDate");
 
+                        // Execute bulk copy
                         con.Open();
                         sqlBulkCopy.WriteToServer(dtExcelData);
                         lblmsg.Text = "Student Data Added Successfully!";
-                        lblmsg.ForeColor = System.Drawing.Color.Green;  // Success message color
+                        lblmsg.ForeColor = System.Drawing.Color.Green;
                     }
                 }
             }
             catch (Exception ex)
             {
-                lblmsg.Text = "Error: " + ex.Message; // Display error message if any
-                lblmsg.ForeColor = System.Drawing.Color.Red;  // Error message color
+                lblmsg.Text = "Error: " + ex.Message;
+                lblmsg.ForeColor = System.Drawing.Color.Red;
             }
         }
         else
         {
             lblmsg.Text = "Please upload a file!";
-            lblmsg.ForeColor = System.Drawing.Color.Red;  // Error message color
+            lblmsg.ForeColor = System.Drawing.Color.Red;
         }
     }
 }
