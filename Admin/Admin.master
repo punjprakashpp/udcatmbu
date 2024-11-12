@@ -52,6 +52,7 @@
                         <a href="UploadNotice.aspx">Notice PDF</a>
                         <a href="UploadEvents.aspx">Events PDF</a>
                         <a href="UploadTender.aspx">Tender PDF</a>
+                        <a href="UploadStudentData.aspx">Upload Student Data</a>
                         <a href="UploadAffReg.aspx">Affiliations & Regulations</a>
                         <a href="UploadFiles.aspx">Documents</a>
                         <a href="UploadSliderImage.aspx">Slider Image</a>
