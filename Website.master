@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head runat="server">
-    <title><%: Page.Title %> - UDCA | TMBU</title>
+    <title><%: Page.Title %></title>
     <meta charset="utf-8">
+	<base href="https://udcatmbu.org/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="UDCA, UDCA TMBU, udcatmbu, University Department of Computer Applications TMBU, University Department of Computer Applications T.M.Bhagalpur University, Computer Center, Computer Center Bhagalpur, MCA, MCA in Bhagalpur, MCA from TMBU, Master of Computer Applications (MCA) in Bhagalpur">
     <meta name="description" content="University Department of Computer Applications (UDCA) is a constituent unit of Tilka Manjhi Bhagalpur University (TMBU), Bhagalpur.The first University in Bihar to offers 3 years (6 semesters) full time MCA course, now offering 2 years (4 semesters) MCA Course according to new guidelines. The UDCA campus is spread over 2.5 acrs and fully equiped with Wi-Fi.">
@@ -32,12 +33,12 @@
                     <li><a href="https://x.com/udcatmbu" target="_blank"><i class="fa fa-x-twitter"></i>Twitter</a></li>
                 </ul>
             </div>
-            <a href="Default.aspx"><img class="image" src="img/logo/logo-header.png"></a>
+            <a href="/"><img class="image" src="img/logo/logo-header.png"></a>
         </div>
         <nav class="navbar" id="navbar">
             <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i></a>
             <div class="subnav home-link">
-                <a href="Default.aspx"><i class="fa fa-home"></i>Home</a>
+                <a href="/"><i class="fa fa-home"></i>Home</a>
             </div>
             <div class="sidebar" id="sidebar">
                 <img class="logo-nav" src="img/logo/logo-head.png" alt="logo-head" />
@@ -50,6 +51,7 @@
                         <a href="AboutUDCA.aspx"><i class="fa fa-university"></i>About UDCA</a>
                         <a href="AboutTMBU.aspx"><i class="fa fa-university"></i>About TMBU</a>
                         <a href="ComputerCenter.aspx"><i class="fa fa-desktop"></i>Computer Center</a>
+						<a href="AboutDeveloper.aspx"><i class="fa fa-code"></i>About Developers</a>
                         <a href="Director.aspx"><i class="fa fa-user"></i>Director's Message</a>
                         <a href="HowToReach.aspx"><i class="fa fa-map-marker"></i>How to Reach Here</a>
                         <a href="CampusMap.aspx"><i class="fa fa-map"></i>Campus Map</a>
@@ -158,7 +160,6 @@
                     </div>
                 </div>
                 <a href="Downloads.aspx"><i class="fa fa-download"></i>Downloads</a>
-                <a href="Library.aspx"><i class="fa fa-book"></i>Library</a>
                 <a href="login.aspx"><i class="fa fa-sign-in"></i>Login</a>
             </div>
 			<div class="sidebar-backdrop" id="sidebar-backdrop"></div>
@@ -170,7 +171,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="top">
-                <a href="Default.aspx">
+                <a href="/">
                     <img class="logo-name" src="img/logo/logo-head.png"></a>
                 <div class="media-icons">
                     <a href="https://www.facebook.com/udcatmbu" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -186,10 +187,10 @@
                     <li class="link_name">About Us</li>
                     <li><a href="AboutUDCA.aspx">> About UDCA</a></li>
                     <li><a href="AboutTMBU.aspx">> About TMBU</a></li>
+                    <li><a href="Prospectus.aspx">> Prospectus</a></li>
                     <li><a href="ComputerCenter.aspx">> Computer Center</a></li>
-                    <li><a href="Director.aspx">> Director's Message</a></li>
                     <li><a href="AboutDeveloper.aspx">> About Developers</a></li>
-                    <li><a href="AdministrativePersons.aspx">> Administrative Persons</a></li>
+                    <li><a href="Director.aspx">> Director's Message</a></li>
                 </ul>
                 <ul class="boxes">
                     <li class="link_name">Quick Links</li>
@@ -197,16 +198,16 @@
                     <li><a href="CourseSyllabus.aspx">> Syllabus</a></li>
                     <li><a href="TimeTable.aspx">> Time Table</a></li>
                     <li><a href="HolidayList.aspx">> Holiday List</a></li>
-                    <li><a href="Prospectus.aspx">> Prospectus</a></li>
                     <li><a href="FacultyMember.aspx">> Teaching Staffs</a></li>
+                    <li><a href="AdministrativePersons.aspx">> Administrative Persons</a></li>
                 </ul>
                 <ul class="boxes">
                     <li class="link_name">Quick Links</li>
                     <li><a href="Login.aspx">> Admin Login</a></li>
-                    <li><a href="Library.aspx">> Library Login</a></li>
                     <li><a href="ImageGallery.aspx">> Image Gallery</a></li>
                     <li><a href="Downloads.aspx">> Download Files</a></li>
-                    <li><a href="ViewAlumni.aspx">> View Our Almuni</a></li>
+                    <li><a href="OurAlumni.aspx">> View Our Almuni</a></li>
+                    <li><a href="OurAchivers.aspx">> View Our Achivers</a></li>
                     <li><a href="AlumniRegistration.aspx">> Alumni Registration</a></li>
                 </ul>
                 <ul class="boxes">
@@ -215,8 +216,8 @@
                     <li><a href="https://www.ugc.ac.in/" target="_blank">> UGC Website</a></li>
                     <li><a href="https://www.aicte-india.org/" target="_blank">> AICTE Website</a></li>
                     <li><a href="https://swayam.gov.in/" target="_blank">> Swayam Portal</a></li>
-                    <li><a href="http://www.pmsonline.bih.nic.in/" target="_blank">> PMS Scholarship</a></li>
                     <li><a href="https://scholarships.gov.in/" target="_blank">> NSP Scholarship</a></li>
+                    <li><a href="http://www.pmsonline.bih.nic.in/" target="_blank">> PMS Scholarship</a></li>
                 </ul>
                 <ul class="boxes">
                     <li class="link_name">Contacts</li>

@@ -1,4 +1,4 @@
-<%@ Page Title="Home" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="University Department of Computer Applications" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/section.css">
@@ -170,6 +170,73 @@
     </section>
     <section class="sec">
         <div class="main">
+            <h2>Important Links:</h2>
+            <div class="btn-area">
+                <asp:Repeater ID="ButtonRepeater" runat="server">
+                    <ItemTemplate>
+                        <div class="fac">
+                            <a href='<%# Eval("LinkURL") %>' target="_blank">
+                                <div class="img-main">
+                                    <img src="img/icon/logo-icon.png" class="sec-img" alt="logo">
+                                </div>
+                                <div class="stud-sec"><%# Eval("LinkText") %></div>
+                            </a>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <div class="fac">
+                    <a href="AboutUDCA.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/college.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">About UDCA</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="AboutTMBU.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/university.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">About TMBU</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="ComputerCenter.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/computer-lab.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Computer Center</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="AboutDeveloper.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/developer.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">About Developer</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="FacultyMember.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/faculty.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Faculty Members</div>
+                    </a>
+                </div>
+                <div class="fac">
+                    <a href="OurAlumni.aspx">
+                        <div class="img-main">
+                            <img src="img/icon/alumni.png" class="sec-img" alt="logo">
+                        </div>
+                        <div class="stud-sec">Our Alumni</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec">
+        <div class="main">
             <div class="card">
                 <div class="board">
                     <h2>Notice & News</h2>
@@ -209,82 +276,6 @@
         <div class="main">
             <h2>Quick Links:</h2>
             <div class="btn-area">
-                <div class="fac">
-                    <a href="Login.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/login.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Admin Login</div>
-                    </a>
-                </div>
-                <asp:Repeater ID="ButtonRepeater" runat="server">
-                    <ItemTemplate>
-                        <div class="fac">
-                            <a href='<%# Eval("LinkURL") %>' target="_blank">
-                                <div class="img-main">
-                                    <img src="img/icon/logo-icon.png" class="sec-img" alt="logo">
-                                </div>
-                                <div class="stud-sec"><%# Eval("LinkText") %></div>
-                            </a>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-                <div class="fac">
-                    <a href="Library.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/online-library.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Online Library</div>
-                    </a>
-                </div><!--
-                <div class="fac">
-                    <a href="AboutUDCA.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/college.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">About UDCA</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="AboutTMBU.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/university.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">About TMBU</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="ComputerCenter.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/computer-lab.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">About Computer Center</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="AboutDeveloper.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/developer.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">About Developer</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="FacultyMember.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/faculty.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Faculty Members</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="ViewAlumni.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/alumni.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Our Alumni</div>
-                    </a>
-                </div>
                 <div class="fac">
                     <a href="Downloads.aspx">
                         <div class="img-main">
@@ -332,7 +323,7 @@
                         </div>
                         <div class="stud-sec">Syllabus</div>
                     </a>
-                </div>-->
+                </div>
             </div>
         </div>
     </section>

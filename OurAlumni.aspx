@@ -1,4 +1,4 @@
-<%@ Page Title="Our Alumni" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="ViewAlumni.aspx.cs" Inherits="pages_Default" %>
+<%@ Page Title="Our Alumni" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="OurAlumni.aspx.cs" Inherits="pages_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/site.css">
