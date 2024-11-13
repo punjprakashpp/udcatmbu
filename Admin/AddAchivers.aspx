@@ -26,12 +26,36 @@
         .cont .container {
             max-width: 600px;
         }
+
+        .cont .center {
+            color: white;
+            text-align: center;
+            background-color: #001f44;
+        }
+
+            .cont .center img {
+                width: 80px;
+            }
+
+            .cont .center h2 {
+                color: white;
+                padding: 0;
+            }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="cont">
         <div class="container">
-            <h2>Add Achivers</h2>
+            <div class="center">
+                <img src="../img/other/white.png" />
+                <h2>Add Achivers</h2>
+            </div>
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></td>
+                </tr>
+            </table>
             <asp:Panel ID="FetchStudentPanel" runat="server" Visible="true">
                 <table>
                     <tr>
@@ -100,12 +124,6 @@
                     </tr>
                 </table>
             </asp:Panel>
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></td>
-                </tr>
-            </table>
             <asp:Panel ID="AddAchiverPanel" runat="server" Visible="false">
                 <table>
                     <tr>

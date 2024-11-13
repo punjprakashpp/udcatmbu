@@ -42,7 +42,6 @@
                 padding: 0;
             }
     </style>
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
     <div class="cont">
@@ -51,6 +50,11 @@
                 <img src="img/other/white.png" />
                 <h2>Alumni Registration</h2>
             </div>
+            <table>
+                <tr>
+                    <td colspan="2"><asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></td>
+                </tr>
+            </table>
             <asp:Panel ID="VerifyStudentPanel" runat="server" Visible="true">
                 <table>
                     <tr>
@@ -119,12 +123,6 @@
                     </tr>
                 </table>
             </asp:Panel>
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></td>
-                </tr>
-            </table>
             <asp:Panel ID="RegisterAlumniPanel" runat="server" Visible="false">
                 <table>
                     <tr>

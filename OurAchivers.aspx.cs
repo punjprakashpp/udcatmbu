@@ -19,7 +19,7 @@ public partial class OurAchivers : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Session, FirstName, MidName, LastName, Achivement, Qualification, Occupation, Company, Phone, Email, ImagePath, FROM Achiver ";
+            string query = "SELECT Session, FirstName, MidName, LastName, Achivement, Qualification, Occupation, Company, Phone, Email, ImagePath FROM Achiver";
             SqlCommand cmd = new SqlCommand(query, conn);
 
             conn.Open();

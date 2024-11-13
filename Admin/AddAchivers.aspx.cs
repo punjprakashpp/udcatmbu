@@ -238,9 +238,8 @@ public partial class Admin_AddAchivers : System.Web.UI.Page
 
     private void ClearForm()
     {
-        txtAchivement.Text = txtQualification.Text = txtPhone.Text = txtEmail.Text = txtRegistrationNo.Text = txtRegistrationYear.Text =
-        txtRollNo.Text = txtCompany.Text = txtOccupation.Text = txtLinkedIn.Text = txtFacebook.Text = txtInstagram.Text =
-        txtTwitter.Text = lblMessage.Text = txtFirstName.Text = txtMidName.Text = txtLastName.Text = txtDOB.Text = string.Empty;
+        txtAchivement.Text = txtQualification.Text = txtPhone.Text = txtEmail.Text = txtRegistrationNo.Text = txtRegistrationYear.Text = txtRollNo.Text =
+        txtCompany.Text = txtOccupation.Text = lblMessage.Text = txtFirstName.Text = txtMidName.Text = txtLastName.Text = txtDOB.Text = string.Empty;
         ddlSession.SelectedIndex = 0;
         FetchStudentPanel.Visible = true;
         AddAchiverPanel.Visible = false;
