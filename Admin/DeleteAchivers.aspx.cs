@@ -1,140 +1,101 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
-using System.IO;
 using System.Web.UI.WebControls;
 
-public partial class Admin_pages_EditDeleteAlumni : System.Web.UI.Page
+public partial class Admin_pages_DeleteAchiver : System.Web.UI.Page
 {
-    private int PageSize
-    {
-        get { return int.Parse(ddlRecordsPerPage.SelectedValue); }
-    }
-
-    private int CurrentPage
-    {
-        get { return ViewState["CurrentPage"] != null ? (int)ViewState["CurrentPage"] : 0; }
-        set { ViewState["CurrentPage"] = value; }
-    }
+    private string ConnectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            BindGridView();
+            LoadAchieverData();
         }
     }
 
-    private void BindGridView()
+    private void LoadAchieverData()
     {
-        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        using (SqlConnection conn = new SqlConnection(connStr))
+        string query = "SELECT AchiverID, Session, FirstName, MidName, LastName, '../' + ImagePath AS ImagePath FROM Achiver";
+        using (SqlConnection conn = new SqlConnection(ConnectionString))
         {
-            string query = "SELECT * FROM " +
-                           "(SELECT ROW_NUMBER() OVER (ORDER BY Name) AS RowNum, AchiverID, Name, Session, RegistrationNo, RegistrationYear, RollNo " +
-                           "FROM Achivers";
-            string whereClause = "";
-            if (!string.IsNullOrEmpty(txtName.Text))
-            {
-                whereClause += string.IsNullOrEmpty(whereClause) ? " WHERE" : " AND";
-                whereClause += " RollNo = @RollNo";
-            }
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
-            query += whereClause + ") AS RowConstrainedResult WHERE RowNum >= @StartRow AND RowNum < @EndRow ORDER BY RowNum";
-
-            using (SqlCommand cmd = new SqlCommand(query, conn))
-            {
-                if (!string.IsNullOrEmpty(txtName.Text))
-                {
-                    cmd.Parameters.AddWithValue("@RollNo", txtName.Text);
-                }
-
-                int startRow = CurrentPage * PageSize + 1;
-                int endRow = startRow + PageSize;
-
-                cmd.Parameters.AddWithValue("@StartRow", startRow);
-                cmd.Parameters.AddWithValue("@EndRow", endRow);
-
-                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                {
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    GridView1.DataSource = dt;
-                    GridView1.DataBind();
-                }
-            }
+            gvAchievers.DataSource = dt;
+            gvAchievers.DataBind();
         }
     }
 
-    protected void btnSearch_Click(object sender, EventArgs e)
+    protected void gvAchievers_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        CurrentPage = 0;
-        BindGridView();
-    }
-
-    protected void ddlSession_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        CurrentPage = 0;
-        BindGridView();
-    }
-
-    protected void ddlRecordsPerPage_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        CurrentPage = 0;
-        BindGridView();
-    }
-
-    protected void btnPrevious_Click(object sender, EventArgs e)
-    {
-        if (CurrentPage > 0)
+        if (e.CommandName == "Delete")
         {
-            CurrentPage--;
-            BindGridView();
+            int achieverID = Convert.ToInt32(e.CommandArgument);
+            DeleteAchieverRecord(achieverID);
+            LoadAchieverData(); // Refresh the grid after deletion
         }
     }
 
-    protected void btnNext_Click(object sender, EventArgs e)
+    private void DeleteAchieverRecord(int achieverID)
     {
-        CurrentPage++;
-        BindGridView();
-    }
-
-    protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-    {
-        GridView1.EditIndex = e.NewEditIndex;
-        BindGridView();
-    }
-
-    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    {
-        int alumniID = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-
-        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        using (SqlConnection conn = new SqlConnection(connStr))
+        string query = "DELETE FROM Achiver WHERE AchiverID = @AchiverID";
+        using (SqlConnection conn = new SqlConnection(ConnectionString))
         {
-            // Retrieve the file path to delete the file
-            string query = "SELECT ImagePath FROM Achivers WHERE AchiverID=@AchiverID";
-            using (SqlCommand cmd = new SqlCommand(query, conn))
-            {
-                cmd.Parameters.AddWithValue("@AchiverID", alumniID);
-                conn.Open();
-                string filePath = cmd.ExecuteScalar() as string;
-                if (filePath != null && File.Exists(Server.MapPath(filePath)))
-                {
-                    File.Delete(Server.MapPath(filePath));
-                }
-            }
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@AchiverID", achieverID);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+        }
+    }
 
-            // Delete the record from the database
-            query = "DELETE FROM Achivers WHERE AchiverID=@AchiverID";
-            using (SqlCommand cmd = new SqlCommand(query, conn))
-            {
-                cmd.Parameters.AddWithValue("@AchiverID", alumniID);
-                cmd.ExecuteNonQuery();
-                BindGridView();
-                lblMessage.Text = "Record deleted successfully.";
-            }
+    protected void btnSearchAchiever_Click(object sender, EventArgs e)
+    {
+        string searchQuery = txtSearchAchiever.Text.Trim();
+        string query = "SELECT AchiverID, FirstName, LastName, Achivement, Qualification, Phone, Email, Occupation, Company FROM Achiver WHERE FirstName LIKE @SearchQuery OR LastName LIKE @SearchQuery";
+        using (SqlConnection conn = new SqlConnection(ConnectionString))
+        {
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.SelectCommand.Parameters.AddWithValue("@SearchQuery", "%" + searchQuery + "%");
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            gvAchievers.DataSource = dt;
+            gvAchievers.DataBind();
+        }
+    }
+
+    protected void gvAchievers_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        gvAchievers.PageIndex = e.NewPageIndex;
+        LoadAchieverData();
+    }
+
+    protected void ddlAchieversPerPage_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        int recordsPerPage = int.Parse(ddlAchieversPerPage.SelectedValue);
+        gvAchievers.PageSize = recordsPerPage;
+        LoadAchieverData();
+    }
+
+    protected void btnPreviousAchiever_Click(object sender, EventArgs e)
+    {
+        if (gvAchievers.PageIndex > 0)
+        {
+            gvAchievers.PageIndex--;
+            LoadAchieverData();
+        }
+    }
+
+    protected void btnNextAchiever_Click(object sender, EventArgs e)
+    {
+        if (gvAchievers.PageIndex < gvAchievers.PageCount - 1)
+        {
+            gvAchievers.PageIndex++;
+            LoadAchieverData();
         }
     }
 }

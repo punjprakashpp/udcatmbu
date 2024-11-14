@@ -22,7 +22,6 @@
                 <td>&nbsp;</td>
                 <td>
                     <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnEdit" runat="server" Text="Delete Images" OnClick="btnEdit_Click" />
                 </td>     
             </tr>

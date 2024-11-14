@@ -63,7 +63,7 @@
                 <td></td>
                 <td colspan="2">
                     <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnDelete" runat="server" Text="Delete Files" OnClick="btnDelete_Click" />
                 </td>
             </tr>

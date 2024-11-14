@@ -19,7 +19,7 @@ public partial class UploadStudentData : System.Web.UI.Page
 
                 // Define DataTable columns matching the database table
                 DataTable dtExcelData = new DataTable();
-                dtExcelData.Columns.AddRange(new DataColumn[10] {
+                dtExcelData.Columns.AddRange(new DataColumn[9] {
                     new DataColumn("Session", typeof(string)),
                     new DataColumn("RollNo", typeof(string)),    // Matches database column "RollNo"
                     new DataColumn("RegNo", typeof(string)),
@@ -27,9 +27,8 @@ public partial class UploadStudentData : System.Web.UI.Page
                     new DataColumn("FirstName", typeof(string)),
                     new DataColumn("MidName", typeof(string)),
                     new DataColumn("LastName", typeof(string)),
-                    new DataColumn("DOB", typeof(DateTime)),
                     new DataColumn("Gender", typeof(string)),
-                    new DataColumn("EntryDate", typeof(DateTime))
+                    new DataColumn("DOB", typeof(DateTime))
                 });
 
                 // Read data from Excel
@@ -54,7 +53,8 @@ public partial class UploadStudentData : System.Web.UI.Page
                         string firstName = row.Cell(5).Value.ToString();
                         string midName = row.Cell(6).Value.ToString();
                         string lastName = row.Cell(7).Value.ToString();
-                        string dobString = row.Cell(8).Value.ToString();
+                        string gender = row.Cell(8).Value.ToString();
+                        string dobString = row.Cell(9).Value.ToString();
 
                         DateTime dob;
 
@@ -65,7 +65,7 @@ public partial class UploadStudentData : System.Web.UI.Page
                         }
 
                         // Add the row to DataTable
-                        dtExcelData.Rows.Add(session, rollNo, regNo, regYear, firstName, midName, lastName, dob);
+                        dtExcelData.Rows.Add(session, rollNo, regNo, regYear, firstName, midName, lastName, gender, dob);
                     }
                 }
 
@@ -85,6 +85,7 @@ public partial class UploadStudentData : System.Web.UI.Page
                         sqlBulkCopy.ColumnMappings.Add("FirstName", "FirstName");
                         sqlBulkCopy.ColumnMappings.Add("MidName", "MidName");
                         sqlBulkCopy.ColumnMappings.Add("LastName", "LastName");
+                        sqlBulkCopy.ColumnMappings.Add("Gender", "Gender");
                         sqlBulkCopy.ColumnMappings.Add("DOB", "DOB");
 
                         // Execute bulk copy
