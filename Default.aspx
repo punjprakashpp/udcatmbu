@@ -1,10 +1,10 @@
 <%@ Page Title="University Department of Computer Applications" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="style/section.css">
     <link rel="stylesheet" type="text/css" href="include/css/slider.css">
+    <link rel="stylesheet" type="text/css" href="include/css/section.css">
     <script defer type="text/javascript" src="include/js/slider.js"></script>
-    <script defer type="text/javascript" src="script/section.js"></script>
+    <script defer type="text/javascript" src="include/js/section.js"></script>
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4">
@@ -241,26 +241,30 @@
                         <div class="col">
                             <div class="card">
                                 <div class="board">
-                                    <h2 class="text-center">Latest Events</h2>
+                                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                        <h2 class="h5 mb-0 text-center">Latest Events</h2>
+                                        <a href="LatestEvents.aspx" class="btn btn-sm btn-light">View All</a>
+                                    </div>
                                     <div class="notice-links">
-                                        <marquee class="marquee" id="marq2" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                                        <marquee class="marquee" id="marq1" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
                                             <asp:Literal ID="LiteralEvent" runat="server"></asp:Literal>
                                         </marquee>
                                     </div>
-                                    <a class="btn btn-primary" href="LatestEvents.aspx">View All</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <div class="board">
-                                    <h2 class="text-center">Latest Tenders</h2>
+                                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                        <h2 class="h5 mb-0 text-center">Latest Tenders</h2>
+                                        <a href="ViewTender.aspx" class="btn btn-sm btn-light">View All</a>
+                                    </div>
                                     <div class="notice-links">
-                                        <marquee class="marquee" id="marq3" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                                        <marquee class="marquee" id="marq2" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
                                             <asp:Literal ID="LiteralTender" runat="server"></asp:Literal>
                                         </marquee>
                                     </div>
-                                    <a class="btn btn-primary" href="ViewTender.aspx">View All</a>
                                 </div>
                             </div>
                         </div>

@@ -1,22 +1,74 @@
 ﻿<%@ Page Title="About Computer Centre" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="style/pages.css">
 </asp:Content>
+
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <div class="cont" align="center">
-        <h1 class="title">COMPUTER CENTRE</h1>
-        <img src="img/Dept/ComputerCentre.jpg" alt="Computer Centre" class="image">
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Computer Centre at T. M. Bhagalpur University, Bhagalpur, stands as a beacon of technological advancement and educational empowerment within the region. Established in 1988 under a generous financial grant by the University Grants Commission (UGC), New Delhi, vide letter no. F60-22/86(T) dated February 20, 1986, this institution has played a pivotal role in fostering computer literacy, facilitating research, and providing essential training to students, faculty, and staff alike.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From its inception, the Computer Centre was envisioned not only as a hub for introducing computers to the academic environment but also as a catalyst for transformative change in education and research methodologies. Situated east of the eastern gate of T. N. B. College campus, its strategic location has enabled seamless integration with the university's academic ecosystem.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Over the years, the Computer Centre has evolved into a Nodal Centre for computer training and education, reflecting the broader technological landscape of the region. Its journey mirrors the tireless efforts of individuals committed to bridging the digital divide and empowering communities through knowledge dissemination.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our exploration, we will delve into various facets of the Computer Centre, including its infrastructure, programs, achievements, challenges, and future prospects. Through interviews with key stakeholders, archival research, and analysis of relevant data, we aim to provide a comprehensive understanding of this institution and its impact on the academic, social, and economic fabric of Bhagalpur and its surrounding areas.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Structured to provide a holistic view, our narrative will begin with an examination of the historical context and mission of the Computer Centre, leading into its current initiatives and future aspirations. Key milestones, transformative moments, and the contributions of individuals instrumental in shaping its trajectory will be highlighted.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furthermore, we will explore the broader implications of the Computer Centre's work, addressing societal challenges, fostering innovation, and preparing the next generation of digital citizens. Through case studies, testimonials, and empirical evidence, we will assess the effectiveness of its programs and initiatives, showcasing tangible outcomes and intangible benefits for stakeholders.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our exploration will extend beyond the confines of the Computer Centre itself, examining the ecosystem of partnerships, collaborations, and networks that have propelled its success. Government agencies, industry partners, educational institutions, and non-profit organizations have all contributed to its growth, forming synergies and alliances that expand its reach.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acknowledging the complexities inherent in the intersection of technology and education, we will also explore the hurdles faced by the Computer Centre, from funding constraints to infrastructural challenges. Strategies employed to overcome these obstacles will be examined, offering insights into resilience and adaptability in the face of evolving educational paradigms and technological landscapes.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In conclusion, the story of the Computer Centre at T. M. Bhagalpur University exemplifies the power of vision, perseverance, and collaboration in driving meaningful change. As we celebrate its legacy, we are reminded of the transformative potential of technology and the enduring importance of education as a catalyst for progress. In a digital age, institutions like the Computer Centre serve as beacons of knowledge, innovation, and empowerment, shaping the future of education and society.</p>
-        <br />
-        <hr />
-    </div>
+    <section class="py-4">
+        <div class="container bg-white rounded shadow-sm p-4">
+            <!-- Computer Centre Header -->
+            <div class="text-center">
+                <h1 class="title text-primary">COMPUTER CENTRE</h1>
+                <img src="img/Dept/ComputerCentre.jpg" alt="Computer Centre" class="img-fluid mt-2 mb-3 d-block mx-auto">
+            </div>
+
+            <!-- Introduction -->
+            <article>
+                <p align="justify" class="lead">
+                    The Computer Centre at T. M. Bhagalpur University, established in 1988 under a financial grant by the University Grants Commission (UGC), New Delhi, has played a crucial role in advancing computer literacy and providing essential training to students, faculty, and staff. Its strategic location near the eastern gate of T. N. B. College has enabled it to seamlessly integrate with the university’s academic ecosystem.
+                </p>
+            </article>
+
+            <!-- Evolution and Mission -->
+            <article>
+                <p align="justify" class="lead">
+                    From its inception, the Computer Centre was envisioned as a hub for computer introduction in academia and a catalyst for transformative change in education and research. Over time, it has evolved into a Nodal Centre for computer training and education, reflecting the region’s growing technological landscape.
+                </p>
+            </article>
+
+            <!-- Exploration and Impact -->
+            <article>
+                <p align="justify" class="lead">
+                    Our exploration of the Computer Centre delves into its infrastructure, programs, achievements, challenges, and future aspirations. We aim to provide a comprehensive understanding through interviews, archival research, and data analysis, highlighting its impact on the academic, social, and economic fabric of Bhagalpur and beyond.
+                </p>
+            </article>
+
+            <!-- Historical Context and Achievements -->
+            <article>
+                <p align="justify" class="lead">
+                    The story begins with the historical context and mission of the Computer Centre, tracing its key milestones, transformative moments, and the contributions of individuals who shaped its success. Key achievements and the overall impact of the centre on both the academic environment and the broader community will be explored.
+                </p>
+            </article>
+
+            <!-- Broader Implications and Societal Challenges -->
+            <article>
+                <p align="justify" class="lead">
+                    The Computer Centre's initiatives have far-reaching implications, addressing societal challenges and fostering innovation. Through case studies and empirical evidence, we will assess the effectiveness of its programs, showcasing tangible outcomes and the intangible benefits to students, faculty, and the larger community.
+                </p>
+            </article>
+
+            <!-- Ecosystem of Partnerships -->
+            <article>
+                <p align="justify" class="lead">
+                    The success of the Computer Centre has been propelled by a network of partnerships, collaborations, and alliances. Contributions from government agencies, industry partners, educational institutions, and non-profits have expanded its reach and impact, creating a robust ecosystem of support.
+                </p>
+            </article>
+
+            <!-- Challenges and Strategies -->
+            <article>
+                <p align="justify" class="lead">
+                    While the Centre has achieved great success, it has also faced hurdles such as funding constraints and infrastructural challenges. We will examine the strategies employed to overcome these obstacles and adapt to changing educational and technological landscapes.
+                </p>
+            </article>
+
+            <!-- Conclusion -->
+            <article>
+                <p align="justify" class="lead">
+                    In conclusion, the Computer Centre at T. M. Bhagalpur University exemplifies the power of vision, collaboration, and perseverance in driving meaningful change. The Centre’s legacy demonstrates the transformative potential of technology in education, making it a beacon of knowledge, innovation, and empowerment for future generations.
+                </p>
+            </article>
+
+            <hr />
+        </div>
+    </section>
 </asp:Content>

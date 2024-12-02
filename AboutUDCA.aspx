@@ -1,19 +1,54 @@
 ﻿<%@ Page Title="About UDCA" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="style/pages.css">
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <div class="cont" align="center">
-        <h1 class="title">UNIVERSITY DEPARTMENT OF COMPUTER APPLICATION</h1>
-        <img src="img/Dept/AdminBuilding.jpg" alt="tmbu" class="image"><br />
-        <h3>Leading The Future</h3>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University Department of Computer Applications (UDCA) is a constituent unit of Tilka Manjhi Bhagalpur University, Bhagalpur, Bihar. It is formally known as COMPUTER CENTRE. This University Department of Computer Applications offers Master of Computer Applications (MCA) course. UDCA is Recognised By Govt. of Bihar and Approved By AICTE, New Delhi.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After an initial survey of the demands for studies in the field of Information Technology, the University, in early 2002, decided to start MCA Course in the Computer Centre. Consequently, a three years (i.e., 6 Semester) regular Course of Master of Computer Applications (MCA) was started during 2002 with the infrastructure of the Computer Centre and named as "MCA Study Centre". Later on this Study Center was converted into a regular postgraduate Department and named as "University Department of Computer Applications". Presently this Department is conducting the MCA Course.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After getting a no-objection certificate from the Department of Science and Technology, Government of Bihar, the University approached the All India Council of Technical Education (AICTE), New Delhi for approval of the course. After inspecting the infrastructure of the Department, the AICTE, accorded its first approval in 2004 vide its Letter No. PG/MCA/ BIH/2004 dated 11/05/2004 to conduct the course with an Intake of sixty students.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Hon'ble Chancellor of the Universities of Bihar has been pleased to approve the draft ordinance for MCA Course, in exercise of the power vested in him under section 38/(4) of the Bihar State University Act, 1976 as amended up to date. This has been communicated by Governor's Secretariat, Bihar vide its letter no TMBU -16/2003-941 /GS (I) dated 6/03/ 2006.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AICTE has changed the MCA program from 03 years to 02 years. Hence The MCA Course shall be of 02 years duration from 2020-21. (Vide Letter no. AICTE/ABMCA/2020-21 dated 03.07.2020.)</p>
-        <br />
-        <hr />
-    </div>
+    <section class="py-4">
+        <div class="container bg-white rounded shadow-sm p-4">
+            <h1 class="text-center text-primary">WELCOME TO<br />
+                UNIVERSITY DEPARTMENT OF COMPUTER APPLICATIONS
+            </h1>
+            <img class="img-fluid mt-2 mb-2 d-block mx-auto" src="img/Dept/UDCABuilding.jpg" alt="Administrative Building of UDCA" />
+            <p align="justify" class="lead">
+                The University Department of Computer Applications (UDCA), also known as the Computer Centre, is a prominent constituent unit of Tilka Manjhi Bhagalpur University (TMBU), Bhagalpur, Bihar. Renowned for its academic excellence, this department offers a Master of Computer Applications (MCA) course, providing in-depth knowledge in computer applications. Recognized by the Government of Bihar and approved by AICTE, New Delhi, UDCA sets a high standard for computer science education in the region.
+            </p>
+
+            <h2>Our Mission:</h2>
+            <p align="justify" class="lead">
+                UDCA is committed to equipping students with the necessary knowledge and skills to thrive in the 
+            ever-evolving field of Information Technology. The department creates an environment that fosters 
+            critical thinking, creativity, and social responsibility. It is dedicated to nurturing students to 
+            become not only successful IT professionals but also compassionate citizens who make positive 
+            contributions to society.
+            </p>
+
+            <h2>Our Vision:</h2>
+            <p align="justify" class="lead">
+                UDCA envisions becoming a center of excellence in computer applications, providing world-class 
+            education with a global perspective. The department aims to develop innovative and ethical leaders 
+            who will shape the future of technology and contribute to the betterment of society.
+            </p>
+
+            <h2>History and Evolution:</h2>
+            <p align="justify" class="lead">
+                In early 2002, after identifying the growing demand for studies in Information Technology, the University decided to start the MCA course in the Computer Centre. A three-year (six-semester) regular MCA program was launched in 2002, utilizing the infrastructure of the Computer Centre, under the name "MCA Study Centre."      
+            </p>
+            <p align="justify" class="lead">
+                This study center was later transformed into a regular postgraduate department and renamed the "University Department of Computer Applications." Currently, UDCA continues to conduct the MCA course, providing quality education in the field of computer applications.      
+            </p>
+
+            <h2>Approval and Recognition:</h2>
+            <p align="justify" class="lead">
+                After obtaining a no-objection certificate from the Department of Science and Technology, Government of Bihar, the University sought approval from the All India Council of Technical Education (AICTE), New Delhi. Following an inspection of the department's infrastructure, AICTE granted its initial approval in 2004 (Letter No. PG/MCA/BIH/2004 dated 11/05/2004) for an intake of sixty students.
+            </p>
+            <p align="justify" class="lead">
+                The Hon'ble Chancellor of the Universities of Bihar approved the draft ordinance for the MCA course under section 38/(4) of the Bihar State University Act, 1976 (as amended). This was communicated by the Governor's Secretariat, Bihar, via letter no. TMBU-16/2003-941/GS (I) dated 06/03/2006.
+            </p>
+
+            <h2>Program Update:</h2>
+            <p align="justify" class="lead">
+                In 2020, AICTE revised the MCA program duration from three years to two years. Consequently, the MCA course at UDCA has been a two-year program since the 2020-21 academic session (vide Letter No. AICTE/ABMCA/2020-21 dated 03.07.2020).
+            </p>
+        </div>
+    </section>
 </asp:Content>

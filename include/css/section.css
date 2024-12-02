@@ -4,14 +4,13 @@
     border: 2px solid #ddd;
 }
 
-.box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
+    .box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
 
 .board {
-    padding: 20px;
-    height:400px;
+    height: 400px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -36,9 +35,9 @@
     .notice-section {
         position: static; /* Change from absolute to static positioning */
         width: 100%; /* Full width */
+        height: 300px;
         margin-top: 20px; /* Add margin above for separation */
         display: block; /* Display the notice section */
-        z-index: auto;
     }
 }
 
@@ -53,20 +52,20 @@
     font-size: 16px;
 }
 
-.notice a {
-    text-decoration: none;
-    color: black;
-}
+    .notice a {
+        text-decoration: none;
+        color: black;
+    }
 
-.notice a:hover {
-    text-decoration: underline;
-}
+        .notice a:hover {
+            text-decoration: underline;
+        }
 
-.notice a:after {
-    content: url('../img/gif/newanim.gif');
-    display: inline-block;
-    margin-left: 5px;
-}
+        .notice a:after {
+            content: url('../img/gif/newanim.gif');
+            display: inline-block;
+            margin-left: 5px;
+        }
 
 .links-section {
     width: 100%;
@@ -80,42 +79,42 @@
     box-sizing: border-box;
 }
 
-.links-section .high {
-    margin-right: 10px;
-    font-weight: bold;
-    color: white;
-    background-color: orangered;
-    font-size: 16px;
-    padding: 4px;
-    border-radius: 3px;
-    margin-bottom:0px;
-}
+    .links-section .high {
+        margin-right: 10px;
+        font-weight: bold;
+        color: white;
+        background-color: orangered;
+        font-size: 16px;
+        padding: 4px;
+        border-radius: 3px;
+        margin-bottom: 0px;
+    }
 
-.links-section marquee {
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-}
+    .links-section marquee {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
-.links-section marquee a {
-    text-decoration: none;
-    padding: 5px;
-    color: #001f44;
-    display: inline-flex;
-    align-items: center;
-}
+        .links-section marquee a {
+            text-decoration: none;
+            padding: 5px;
+            color: #001f44;
+            display: inline-flex;
+            align-items: center;
+        }
 
-.links-section marquee a:before {
-    content: url('../img/gif/newanim.gif');
-    margin-right: 5px;
-}
+            .links-section marquee a:before {
+                content: url('../img/gif/newanim.gif');
+                margin-right: 5px;
+            }
 
-.links-section marquee a:hover {
-    text-decoration: underline;
-    background: #bababa;
-    font-size: 1.05em;
-    transition: font-size 0.2s, background-color 0.2s;
-}
+            .links-section marquee a:hover {
+                text-decoration: underline;
+                background: #bababa;
+                font-size: 1.05em;
+                transition: font-size 0.2s, background-color 0.2s;
+            }
 
 
 @media (max-width: 768px) {
@@ -131,9 +130,9 @@
         height: auto;
     }
 
-    .links-section marquee {
-        font-size: 14px;
-    }
+        .links-section marquee {
+            font-size: 14px;
+        }
 
     .notice {
         font-size: 14px;
