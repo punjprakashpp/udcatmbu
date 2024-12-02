@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="About Computer Centre" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <div class="cont" align="center">
         <h1 class="title">COMPUTER CENTRE</h1>
         <img src="img/Dept/ComputerCentre.jpg" alt="Computer Centre" class="image">

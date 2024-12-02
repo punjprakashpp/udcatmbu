@@ -1,9 +1,9 @@
 <%@ Page Title="Administrative Persons" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="AdministrativePersons.aspx.cs" Inherits="pages_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/faculty.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <div class="cont">
         <div class="container">
             <div class="header">

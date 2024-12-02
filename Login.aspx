@@ -1,6 +1,6 @@
 <%@ Page Title="Admin Login" Language="C#" MasterPageFile="~/Website.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <style>
         /* Center the form on the page */
         .bg {
@@ -92,7 +92,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <div class="bg">
         <h2><i class="fa fa-sign-in"></i> Administrator Login</h2>
         <table>

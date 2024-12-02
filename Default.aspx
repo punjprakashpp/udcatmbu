@@ -1,330 +1,338 @@
 <%@ Page Title="University Department of Computer Applications" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/section.css">
-    <link rel="stylesheet" type="text/css" href="style/slider.css">
-    <script defer type="text/javascript" src="script/slider.js"></script>
+    <link rel="stylesheet" type="text/css" href="include/css/slider.css">
+    <script defer type="text/javascript" src="include/js/slider.js"></script>
     <script defer type="text/javascript" src="script/section.js"></script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
-    <section class="sec">
-        <div class="main">
-            <div class="slider-section">
-                <div class="slider-container">
-                    <div class="slides">
-                        <asp:Repeater ID="SliderRepeater" runat="server">
-                            <ItemTemplate>
-                                <div class="slide">
-                                    <img class="image" src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" />
-                                    <div class="caption"><%# Eval("Title") %></div>
-                                </div>
-                            </ItemTemplate>
-                        </asp:Repeater>
-                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
+    <section class="py-4">
+        <div class="container bg-white rounded shadow-sm p-4">
+            <div class="row">
+                <div class="col-lg-8 col-md-7 col-12">
+                    <div class="slider-section">
+                        <div class="slider-container">
+                            <div class="slides">
+                                <asp:Repeater ID="SliderRepeater" runat="server">
+                                    <ItemTemplate>
+                                        <div class="slide">
+                                            <img class="image" src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" />
+                                            <div class="caption"><%# Eval("Title") %></div>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="notice-section">
-                    <h4 align="center">Latest Notice and News</h4>
-                    <div class="notice-board">
-                        <div class="notice-links">
-                            <marquee class="marquee" id="marq" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                                <asp:Literal ID="LiteralNotices" runat="server"></asp:Literal>
-                            </marquee>
+                <div class="col-lg-4 col-md-5 col-12">
+                    <div class="notice-section card shadow-sm border-0">
+                        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <h2 class="h5 mb-0 text-center">Latest Notices and News</h2>
+                            <a href="LatestNotice.aspx" class="btn btn-sm btn-light">View All</a>
+                        </div>
+                        <div class="card-body p-3">
+                            <div class="notice-board">
+                                <div class="notice-links">
+                                    <marquee
+                                        class="marquee text-muted"
+                                        id="marq"
+                                        direction="up"
+                                        scrollamount="2"
+                                        onmouseover="this.stop();"
+                                        onmouseout="this.start();">
+                                        <asp:Literal ID="LiteralNotices" runat="server"></asp:Literal>
+                                    </marquee>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="links-section">
-                <p class="high">Highlights: </p>
-                <marquee behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
-                    <asp:Repeater ID="linksRepeater" runat="server">
-                        <ItemTemplate>
-                            <a href='<%# Eval("LinkURL") %>' target="_blank"><b><font size="3"><%# Eval("LinkText") %></font></b></a>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </marquee>
+            <div class="row py-3">
+                <div class="col-12">
+                    <div class="links-section">
+                        <p class="high">Highlights: </p>
+                        <marquee behavior="scroll" onmouseover="this.stop();" onmouseout="this.start();">
+                            <asp:Repeater ID="linksRepeater" runat="server">
+                                <ItemTemplate>
+                                    <a href='<%# Eval("LinkURL") %>' target="_blank"><b><font size="3"><%# Eval("LinkText") %></font></b></a>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </marquee>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="sec">
-        <div class="main">
-            <h1>WELCOME TO<br />
+    <section class="py-4">
+        <div class="container bg-white rounded shadow-sm p-4">
+            <h1 class="text-center text-primary">WELCOME TO<br />
                 UNIVERSITY DEPARTMENT OF COMPUTER APPLICATIONS</h1>
-            <p>The University Department of Computer Applications (UDCA), also known as the Computer Centre, is a prominent unit of Tilka Manjhi Bhagalpur University (TMBU), Bihar. Renowned for its academic excellence, UDCA offers a Master of Computer Applications (MCA) program, providing in-depth knowledge in computer applications. Recognized by the Government of Bihar and approved by AICTE, New Delhi, UDCA sets a high standard for computer science education in the region.</p>
+            <p align="justify" class="lead text-justify">The University Department of Computer Applications (UDCA), also known as the Computer Centre, is a prominent unit of Tilka Manjhi Bhagalpur University (TMBU), Bihar. Renowned for its academic excellence, UDCA offers a Master of Computer Applications (MCA) program, providing in-depth knowledge in computer applications. Recognized by the Government of Bihar and approved by AICTE, New Delhi, UDCA sets a high standard for computer science education in the region.</p>
+
             <h2>Our Mission:</h2>
-            <p>UDCA is committed to equipping students with the necessary knowledge and skills to thrive in the ever-evolving field of Information Technology. The department creates an environment that fosters critical thinking, creativity, and social responsibility. It is dedicated to nurturing students to become not only successful IT professionals but also compassionate citizens who make positive contributions to society.</p>
+            <p align="justify" class="lead text-justify">UDCA is committed to equipping students with the necessary knowledge and skills to thrive in the ever-evolving field of Information Technology. The department creates an environment that fosters critical thinking, creativity, and social responsibility. It is dedicated to nurturing students to become not only successful IT professionals but also compassionate citizens who make positive contributions to society.</p>
+
             <h2>Our Vision:</h2>
-            <p>UDCA envisions becoming a center of excellence in computer applications, providing world-class education with a global perspective. The department aims to develop innovative and ethical leaders who will shape the future of technology and contribute to the betterment of society.</p>
+            <p align="justify" class="lead text-justify">UDCA envisions becoming a center of excellence in computer applications, providing world-class education with a global perspective. The department aims to develop innovative and ethical leaders who will shape the future of technology and contribute to the betterment of society.</p>
         </div>
     </section>
-    <section class="sec">
-        <div class="main">
-            <div class="card">
-                <a href="Chancellor.aspx">
-                    <div class="box">
-                        <h3>
-                            <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label></h3>
-                        <asp:Image ID="ImageChancellor" class="img" runat="server" />
-                        <h4>
-                            <asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label></h4>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="ViceChancellor.aspx">
-                    <div class="box">
-                        <h3>
-                            <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label></h3>
-                        <asp:Image ID="ImageViceChancellor" class="img" runat="server" />
-                        <h4>
-                            <asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label></h4>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="Director.aspx">
-                    <div class="box">
-                        <h3>
-                            <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label></h3>
-                        <asp:Image ID="ImageDirector" class="img" runat="server" />
-                        <h4>
-                            <asp:Label ID="lblNameDirector" runat="server" Text="" /></h4>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-    <section class="sec">
-        <div class="main">
-            <h2>Features of UDCA:</h2>
-            <ul>
-                <li><b>Constituent Unit of TMBU: </b>UDCA is an integral part of Tilka Manjhi Bhagalpur University, Bhagalpur.</li>
-                <li><b>Pioneer in MCA Program: </b>TMBU is the first university in Bihar to offer a 3-year, 6-semester full-time MCA course.</li>
-                <li><b>Recognition and Accreditation: </b>UDCA's MCA course recognized by the Govt. of Bihar and approved by AICTE.</li>
-                <li><b>Expansive Campus: </b>The UDCA campus spans 2.5 acres, providing a spacious and conducive environment.</li>
-                <li><b>Strategic Location: </b>Conveniently located between the University Administrative Building and NH 80.</li>
-                <li><b>Wi-Fi Enabled Campus: </b>Fully Wi-Fi-enabled campus, ensuring seamless internet access for students.</li>
-            </ul>
-        </div>
-    </section>
-    <section class="sec">
-        <div class="main">
-            <h2>Facilities at UDCA:</h2>
-            <div class="btn-area">
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/icon/computer-lab.png" class="sec-img" alt="Computer Lab">
-                    </div>
-                    <div class="stud-sec">Computer Lab</div>
+    <section class="py-4">
+        <div class="container bg-white rounded shadow-sm p-4">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <a href="Chancellor.aspx" class="card text-center text-decoration-none">
+                        <div class="card-body box">
+                            <h3 class="card-title">
+                                <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label>
+                            </h3>
+                            <asp:Image ID="ImageChancellor" class="img-fluid rounded-circle mb-3" runat="server" />
+                            <h4 class="card-subtitle text-brown">
+                                <asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label>
+                            </h4>
+                        </div>
+                    </a>
                 </div>
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/icon/library.png" class="sec-img" alt="Library">
-                    </div>
-                    <div class="stud-sec">Library</div>
+                <div class="col">
+                    <a href="ViceChancellor.aspx" class="card text-center text-decoration-none">
+                        <div class="card-body box">
+                            <h3 class="card-title">
+                                <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label>
+                            </h3>
+                            <asp:Image ID="ImageViceChancellor" class="img-fluid rounded-circle mb-3" runat="server" />
+                            <h4 class="card-subtitle text-brown">
+                                <asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label>
+                            </h4>
+                        </div>
+                    </a>
                 </div>
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/icon/faculty.png" class="sec-img" alt="Faculty">
-                    </div>
-                    <div class="stud-sec">Qualified Faculty</div>
-                </div>
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/icon/hostel.png" class="sec-img" alt="Hostel">
-                    </div>
-                    <div class="stud-sec">University Hostel</div>
-                </div>
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/icon/hospital.png" class="sec-img" alt="Hospital">
-                    </div>
-                    <div class="stud-sec">Health Centre</div>
-                </div>
-                <div class="fac">
-                    <div class="img-main">
-                        <img src="img/icon/free-wifi.png" class="sec-img" alt="Free Wi-Fi">
-                    </div>
-                    <div class="stud-sec">Wi-Fi Enabled</div>
+                <div class="col">
+                    <a href="Director.aspx" class="card text-center text-decoration-none">
+                        <div class="card-body box">
+                            <h3 class="card-title">
+                                <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label>
+                            </h3>
+                            <asp:Image ID="ImageDirector" class="img-fluid rounded-circle mb-3" runat="server" />
+                            <h4 class="card-subtitle text-brown">
+                                <asp:Label ID="lblNameDirector" runat="server" Text=""></asp:Label>
+                            </h4>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-    <section class="sec">
-        <div class="main">
-            <div class="director-section">
-                <div class="row-img">
-                    <asp:Image ID="ImgDirector" class="img" runat="server" />
-                    <h2 align="center">
-                        <asp:Label ID="NameDirector" runat="server" Text="" /></h2>
+    <section class="py-4">
+        <div class="container bg-white rounded shadow-sm p-4">
+            <div class="row">
+                <div class="bg-white rounded shadow-sm px-4 col-12 col-md-6">
+                    <h2 class="text-center">Features of UDCA:</h2>
+                    <p align="justify"><b>Constituent Unit of TMBU: </b>UDCA is an integral part of Tilka Manjhi Bhagalpur University, Bhagalpur.</p>
+                    <p align="justify"><b>Pioneer in MCA Program: </b>TMBU is the first university in Bihar to offer a 3-year, 6-semester full-time MCA course.</p>
+                    <p align="justify"><b>Recognition and Accreditation: </b>UDCA's MCA course recognized by the Govt. of Bihar and approved by AICTE.</p>
+                    <p align="justify"><b>Expansive Campus: </b>The UDCA campus spans 2.5 acres, providing a spacious and conducive environment.</p>
+                    <p align="justify"><b>Strategic Location: </b>Conveniently located between the University Administrative Building and NH 80.</p>
+                    <p align="justify"><b>Wi-Fi Enabled Campus: </b>Fully Wi-Fi-enabled campus, ensuring seamless internet access for students.</p>
+                </div>
+                <div class="bg-white rounded shadow-sm px-4 col-12 col-md-6">
+                    <h2 class="text-center">Facilities at UDCA:</h2>
+                    <div class="row row-cols-2 row-cols-lg-3 g-4">
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <img src="img/icon/computer-lab.png" class="card-img-top w-75 m-auto" alt="Computer Lab">
+                                    <p class="card-text">Computer Lab</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <img src="img/icon/library.png" class="card-img-top w-75 m-auto" alt="Library">
+                                    <p class="card-text">Library</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <img src="img/icon/faculty.png" class="card-img-top w-75 m-auto" alt="Faculty">
+                                    <p class="card-text">Qualified Faculty</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <img src="img/icon/hostel.png" class="card-img-top w-75 m-auto" alt="Hostel">
+                                    <p class="card-text">University Hostel</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <img src="img/icon/hospital.png" class="card-img-top w-75 m-auto" alt="Health Centre">
+                                    <p class="card-text">Health Centre</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <img src="img/icon/free-wifi.png" class="card-img-top w-75 m-auto" alt="Free Wi-Fi">
+                                    <p class="card-text">Wi-Fi Enabled</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container bg-white rounded shadow-sm p-4">
+            <div class="row">
+                <div class="bg-white rounded shadow-sm px-4 col-md-4 text-center">
+                    <asp:Image ID="ImgDirector" class="img-fluid rounded-circle mb-3" Width="175" runat="server" />
+                    <h2>
+                        <asp:Label ID="NameDirector" runat="server" Text=""/>
+                    </h2>
                     <h3>Director of UDCA</h3>
                 </div>
-                <div class="row-txt">
+                <div class="bg-white rounded shadow-sm px-4 col-md-8">
                     <h2>Director's Message</h2>
-                    <p>Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
-                    <a href="Director.aspx">Read more</a>
+                    <p align="justify" class="lead">Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
+                    <a href="Director.aspx" class="btn btn-primary">Read more</a>
                 </div>
             </div>
         </div>
     </section>
-    <section class="sec">
-        <div class="main">
+
+    <section class="py-4">
+        <div class="container bg-white rounded shadow-sm p-4">
             <h2>Important Links:</h2>
-            <div class="btn-area">
+            <div class="row row-cols-2 row-cols-md-3 g-4">
                 <asp:Repeater ID="ButtonRepeater" runat="server">
                     <ItemTemplate>
-                        <div class="fac">
-                            <a href='<%# Eval("LinkURL") %>' target="_blank">
-                                <div class="img-main">
-                                    <img src="img/icon/logo-icon.png" class="sec-img" alt="logo">
+                        <div class="col">
+                            <a href='<%# Eval("LinkURL") %>' target="_blank" class="card text-center text-decoration-none">
+                                <div class="card-body">
+                                    <img src="img/icon/logo-icon.png" class="card-img-top w-75 m-auto" alt="logo">
+                                    <p class="card-text"><%# Eval("LinkText") %></p>
                                 </div>
-                                <div class="stud-sec"><%# Eval("LinkText") %></div>
                             </a>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-                <div class="fac">
-                    <a href="AboutUDCA.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/college.png" class="sec-img" alt="logo">
+            </div>
+        </div>
+    </section>
+    <section class="py-4">
+        <div class="container bg-white rounded shadow-sm p-4">
+            <div class="row">
+                <div class="bg-white rounded shadow-sm px-4 col-12 col-md-6">
+                    <div class="row row-cols-1 row-cols-lg-2 g-4">
+                        <div class="col">
+                            <div class="card">
+                                <div class="board">
+                                    <h2 class="text-center">Latest Events</h2>
+                                    <div class="notice-links">
+                                        <marquee class="marquee" id="marq2" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                                            <asp:Literal ID="LiteralEvent" runat="server"></asp:Literal>
+                                        </marquee>
+                                    </div>
+                                    <a class="btn btn-primary" href="LatestEvents.aspx">View All</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stud-sec">About UDCA</div>
-                    </a>
+                        <div class="col">
+                            <div class="card">
+                                <div class="board">
+                                    <h2 class="text-center">Latest Tenders</h2>
+                                    <div class="notice-links">
+                                        <marquee class="marquee" id="marq3" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
+                                            <asp:Literal ID="LiteralTender" runat="server"></asp:Literal>
+                                        </marquee>
+                                    </div>
+                                    <a class="btn btn-primary" href="ViewTender.aspx">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="fac">
-                    <a href="AboutTMBU.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/university.png" class="sec-img" alt="logo">
+                <div class="bg-white rounded shadow-sm px-4 col-12 col-md-6">
+                    <h2>Quick Links:</h2>
+                    <div class="row row-cols-2 row-cols-lg-3 g-4">
+                        <div class="col">
+                            <div class="card text-center">
+                                <a href="Downloads.aspx" class="text-decoration-none">
+                                    <div class="card-body text-center">
+                                        <img src="img/icon/download.png" class="card-img-top w-75 m-auto" alt="Download Files">
+                                        <div class="card-text">Download Files</div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="stud-sec">About TMBU</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="ComputerCenter.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/computer-lab.png" class="sec-img" alt="logo">
+                        <div class="col">
+                            <div class="card text-center">
+                                <a href="ImageGallery.aspx" class="text-decoration-none">
+                                    <div class="card-body">
+                                        <img src="img/icon/gallery.png" class="card-img-top w-75 m-auto" alt="Image Gallery">
+                                        <div class="card-text">Image Gallery</div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="stud-sec">Computer Center</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="AboutDeveloper.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/developer.png" class="sec-img" alt="logo">
+                        <div class="col">
+                            <div class="card text-center">
+                                <a href="HolidayList.aspx" class="text-decoration-none">
+                                    <div class="card-body">
+                                        <img src="img/icon/holiday-list.png" class="card-img-top w-75 m-auto" alt="Holiday List">
+                                        <div class="card-text">Holiday List</div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="stud-sec">About Developer</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="FacultyMember.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/faculty.png" class="sec-img" alt="logo">
+                        <div class="col">
+                            <div class="card text-center">
+                                <a href="Prospectus.aspx" class="text-decoration-none">
+                                    <div class="card-body">
+                                        <img src="img/icon/prospectus.png" class="card-img-top w-75 m-auto" alt="Prospectus">
+                                        <div class="card-text">Prospectus</div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="stud-sec">Faculty Members</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="OurAlumni.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/alumni.png" class="sec-img" alt="logo">
+                        <div class="col">
+                            <div class="card text-center">
+                                <a href="TimeTable.aspx" class="text-decoration-none">
+                                    <div class="card-body">
+                                        <img src="img/icon/time-table.png" class="card-img-top w-75 m-auto" alt="Time Table">
+                                        <div class="card-text">Time Table</div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="stud-sec">Our Alumni</div>
-                    </a>
+                        <div class="col">
+                            <div class="card text-center">
+                                <a href="CourseSyllabus.aspx" class="text-decoration-none">
+                                    <div class="card-body">
+                                        <img src="img/icon/syllabus.png" class="card-img-top w-75 m-auto" alt="Syllabus">
+                                        <div class="card-text">Syllabus</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="sec">
-        <div class="main">
-            <div class="card">
-                <div class="board">
-                    <h2>Notice & News</h2>
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq1" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralNotice" runat="server"></asp:Literal>
-                        </marquee>
-                    </div>
-                    <a class="more" href="LatestNotice.aspx">View All</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="board">
-                    <h2>Latest Events</h2>
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq2" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralEvent" runat="server"></asp:Literal>
-                        </marquee>
-                    </div>
-                    <a class="more" href="LatestEvents.aspx">View All</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="board">
-                    <h2>Latest Tenders</h2>
-                    <div class="notice-links">
-                        <marquee class="marquee" id="marq3" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
-                            <asp:Literal ID="LiteralTender" runat="server"></asp:Literal>
-                        </marquee>
-                    </div>
-                    <a class="more" href="ViewTender.aspx">View All</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="sec">
-        <div class="main">
-            <h2>Quick Links:</h2>
-            <div class="btn-area">
-                <div class="fac">
-                    <a href="Downloads.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/download.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Download Files</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="ImageGallery.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/gallery.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Image Gallery</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="HolidayList.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/holiday-list.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Holiday List</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="Prospectus.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/prospectus.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Prospectus</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="TimeTable.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/time-table.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Time Table</div>
-                    </a>
-                </div>
-                <div class="fac">
-                    <a href="CourseSyllabus.aspx">
-                        <div class="img-main">
-                            <img src="img/icon/syllabus.png" class="sec-img" alt="logo">
-                        </div>
-                        <div class="stud-sec">Syllabus</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+
 </asp:Content>

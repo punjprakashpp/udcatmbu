@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Chancellor" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Chancellor.aspx.cs" Inherits="pages_Chancellor" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
     <style>
         .cont .title, .cont h2, .cont h1 {
@@ -8,7 +8,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <div class="cont" align="center">
         <h1 class="title">Chancellor of TMBU</h1>
         <div class="dev">

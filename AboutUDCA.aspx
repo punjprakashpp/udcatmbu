@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="About UDCA" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <div class="cont" align="center">
         <h1 class="title">UNIVERSITY DEPARTMENT OF COMPUTER APPLICATION</h1>
         <img src="img/Dept/AdminBuilding.jpg" alt="tmbu" class="image"><br />

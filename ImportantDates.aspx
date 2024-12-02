@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Important Dates" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="ImportantDates.aspx.cs" Inherits="Acedemic_ImpDates" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/site.css">
     <style>
         .cont .container {
@@ -58,7 +58,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <div class="cont">
         <div class="container">
             <h1>Important Dates regarding Admissions:</h1>

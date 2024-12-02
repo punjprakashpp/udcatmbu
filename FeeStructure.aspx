@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Fee Structure" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="FeeStructure.aspx.cs" Inherits="Acedemic_FeeStructure" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/site.css">
     <link href="Styles/jquery-ui.css" rel="stylesheet" />
     <script src="Script/jquery.js"></script>
@@ -84,7 +84,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <div class="cont">
         <div class="container">
             <h1>Fee Structure for MCA Course</h1>

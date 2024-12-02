@@ -16,7 +16,6 @@ public partial class _Default : System.Web.UI.Page
             BindLinks();
             BindButton();
             BindNotices();
-            BindNotice();
             BindEvent();
             BindTender();
             LoadPersons();
@@ -73,7 +72,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, Date, FilePath FROM Docs WHERE Important='yes' AND Type = 'Notice' ORDER BY Date DESC";
+            string query = "SELECT Title, Date, FilePath FROM Docs WHERE Type = 'Notice' ORDER BY Date DESC";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -94,38 +93,6 @@ public partial class _Default : System.Web.UI.Page
                     }
 
                     LiteralNotices.Text = marqueeContent.ToString();
-                    LiteralNotice.Text = marqueeContent.ToString();
-                }
-            }
-        }
-    }
-
-    private void BindNotice()
-    {
-        string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        using (SqlConnection conn = new SqlConnection(connStr))
-        {
-            string query = "SELECT Title, Date, FilePath FROM Docs WHERE Type = 'Notice' ORDER BY Date DESC";
-            using (SqlCommand cmd = new SqlCommand(query, conn))
-            {
-                conn.Open();
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    StringBuilder marqueeContent = new StringBuilder();
-
-                    while (reader.Read())
-                    {
-                        string title = reader["Title"].ToString();
-                        DateTime noticeDate = Convert.ToDateTime(reader["Date"]);
-                        string filePath = reader["FilePath"].ToString();
-
-                        marqueeContent.Append("<div class='notice'>");
-                        marqueeContent.AppendFormat("<strong>{0}:</strong> ", noticeDate.ToString("dd-MM-yyyy"));
-                        marqueeContent.AppendFormat("<a href='/pdfjs/web/viewer.html?file=/{0}' target='_Blank'>{1}</a>", filePath, title);
-                        marqueeContent.Append("</div>");
-                    }
-                    
-                    LiteralNotice.Text = marqueeContent.ToString();
                 }
             }
         }

@@ -1,9 +1,9 @@
 <%@ Page Title="About Developers" MasterPageFile="Website.master" AutoEventWireup="false" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/dev.css" />
     <script defer src="script/dev.js"></script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <div class="cont">
         <h1>Website Developing Team</h1>
         <div class="dev-cont">

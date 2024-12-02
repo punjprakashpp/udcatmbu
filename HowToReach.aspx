@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="How to Reach Here" MasterPageFile="Website.master" AutoEventWireup="true" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">
     <style>
         @media(max-width:1024px) {
@@ -10,7 +10,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <div class="cont" align="center">
         <div>
             <h1 class="title">Location Map of UDCA</h1>

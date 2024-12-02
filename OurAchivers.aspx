@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Our Achivers" Language="C#" MasterPageFile="~/Website.master" AutoEventWireup="true" CodeFile="OurAchivers.aspx.cs" Inherits="OurAchivers" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/StyleSheet.css" />
     <style>
         .pic {
@@ -17,7 +17,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <div class="container">
         <h1 class="text-center">Meet Our Achivers</h1>
         <div class="row">

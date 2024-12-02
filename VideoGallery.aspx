@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="Video Gallery" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="VideoGallery.aspx.cs" Inherits="pages_VideoGallery" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/gallery.css">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content1" runat="Server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <h1 class="my-h1">Video Gallery</h1>
     <div class="cont">
         <asp:Repeater ID="linksRepeater" runat="server">
