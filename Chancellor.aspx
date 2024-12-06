@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Chancellor" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Chancellor.aspx.cs" Inherits="pages_Chancellor" %>
+﻿<%@ Page Title="Chancellor" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="Chancellor.aspx.cs" Inherits="pages_Chancellor" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/pages.css">

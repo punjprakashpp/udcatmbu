@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Latest Notice" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="LatestNotice.aspx.cs" Inherits="pages_Notice" %>
+﻿<%@ Page Title="Latest Notice" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="LatestNotice.aspx.cs" Inherits="pages_Notice" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/site.css">

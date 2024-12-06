@@ -1,4 +1,4 @@
-<%@ Page Title="Image Gallery" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="ImageGallery.aspx.cs" Inherits="pages_ImageGallery" %>
+<%@ Page Title="Image Gallery" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="ImageGallery.aspx.cs" Inherits="pages_ImageGallery" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/image.css">

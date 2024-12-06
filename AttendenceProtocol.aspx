@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Attendance Protocol" MasterPageFile="Website.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Attendance Protocol" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/campus.css">

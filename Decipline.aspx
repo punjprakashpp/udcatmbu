@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Discipline & Rules" MasterPageFile="Website.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Discipline & Rules" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" type="text/css" href="style/campus.css">

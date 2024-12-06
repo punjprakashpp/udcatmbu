@@ -1,32 +1,47 @@
-﻿<%@ Page Title="Central Library" MasterPageFile="Website.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Central Library" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="style/amenties.css">
 </asp:Content>
+
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <div class="cont">
-        <div class="container">
-            <div class="title">
-                <h2>Central Library </h2>
+    <section class="py-5 bg-light">
+        <div class="container bg-white rounded shadow-sm py-5 px-4">
+            <!-- Title Section -->
+            <div class="text-center mb-4">
+                <h2 class="text-primary">Central Library</h2>
             </div>
-            <img class="image" src="img/Dept/central library.jpg" alt="Central Library">
-            <p class="description">
-                &nbsp;&nbsp;&nbsp;&nbsp;The <span style="color: #ff0000;">CENTRAL LIBRARY ,</span>  designated as the <b>APEX BODY</b> of Tilka Manjhi Bhagalpur University's library system, serves as the cornerstone of academic resources. It stands as the primary repository for all publications affiliated with the institution, housing an extensive collection of books, journals, and printed materials. Beyond its comprehensive offerings, the library boasts a collection of rare documents, carefully preserved for posterity. Situated amidst a picturesque 4-acre expanse within the University's administrative campus, it not only collects and disseminates printed material but also serves as a hub for scholarly engagement and preservation efforts.
+
+            <!-- Library Image Section -->
+            <div class="text-center mb-4">
+                <img class="img-fluid rounded shadow-sm" src="img/Dept/central library.jpg" alt="Central Library">
+            </div>
+
+            <!-- Library Description Section -->
+            <p>
+                The <span class="text-danger">CENTRAL LIBRARY</span>, designated as the <strong>APEX BODY</strong> of Tilka Manjhi Bhagalpur University's library system, serves as the cornerstone of academic resources. It stands as the primary repository for all publications affiliated with the institution, housing an extensive collection of books, journals, and printed materials. Beyond its comprehensive offerings, the library boasts a collection of rare documents, carefully preserved for posterity. Situated amidst a picturesque 4-acre expanse within the University's administrative campus, it not only collects and disseminates printed material but also serves as a hub for scholarly engagement and preservation efforts.
             </p>
-            <div class="description">
+
+            <!-- Library Timing Section -->
+            <div class="mb-4">
                 <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Library Timing:</b> The Central Library of TILKA MANJHI BHAGALPUR UNIVERSITY is kept <span style="color: red;">open from 10:30 am to 5 pm</span> on all the week days and weekend days, except university holidays.
+                    <strong>Library Timing:</strong> The Central Library of TILKA MANJHI BHAGALPUR UNIVERSITY is kept <span class="text-danger">open from 10:30 am to 5 pm</span> on all weekdays and weekend days, except university holidays.
                 </p>
             </div>
-            <div class="description">
+
+            <!-- Library Collection Section -->
+            <div class="mb-4">
                 <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Library Collection (print and e-resources):</b> The Library is having a collection of more than 1.5 Lakh documents, subscribing about 300 print journals and several abstracting databases. The collection consists of Books, Back-volumes of Periodicals, Theses, Conference Proceedings, Standards, Reports, Databases, and Audiovisual materials.
+                    <strong>Library Collection (print and e-resources):</strong> The Library holds a collection of more than 1.5 Lakh documents, subscribing to about 300 print journals and several abstracting databases. The collection consists of books, back-volumes of periodicals, theses, conference proceedings, standards, reports, databases, and audiovisual materials.
                 </p>
             </div>
-            <p class="description">
-                &nbsp;&nbsp;&nbsp;&nbsp;With the developments in computers, microelectronics, and communication technologies, the behavioral characteristics of the information seekers have been changing rapidly and the library is trying its best to adapt with the technological advancement. For the last six decades, the library has been the lifeline of the academic activities of the University. It has been catering to the needs of the sixty thousand students of undergraduates, postgraduates, research scholar, two hundred faculty members and more than thousand staff members of the 36 university departments, 29 Constituent Colleges, 04 Self Financing Courses and 05 research facilities of the University.
+
+            <!-- Additional Description Section -->
+            <p>
+                With developments in computers, microelectronics, and communication technologies, the behavioral characteristics of information seekers have been changing rapidly, and the library is adapting to these technological advancements. For the last six decades, the library has been the lifeline of the academic activities of the University. It caters to the needs of the 60,000 students (undergraduates, postgraduates, research scholars), 200 faculty members, and over 1,000 staff members of the 36 university departments, 29 constituent colleges, 4 self-financing courses, and 5 research facilities of the University.
             </p>
-            <h2 class="mission" align="center">Mission of the Central Library</h2>
+
+            <!-- Library Mission Section -->
+            <h2 class="text-center text-secondary mb-4">Mission of the Central Library</h2>
             <ol>
                 <li>Procuring and safeguarding all noteworthy printed materials produced by the university, excluding ephemeral content.</li>
                 <li>Curating a collection of printed materials relevant to academic pursuits, regardless of their place of publication, and extending this mandate further.</li>
@@ -38,5 +53,5 @@
                 <li>Facilitating interdisciplinary collaboration and knowledge exchange by curating multi-disciplinary resources and fostering a culture of interdisciplinary inquiry.</li>
             </ol>
         </div>
-    </div>
+    </section>
 </asp:Content>

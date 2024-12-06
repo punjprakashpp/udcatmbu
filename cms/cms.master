@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="cms.master.cs" Inherits="cms_master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title><%: Page.Title %></title>
+    <meta charset="utf-8">
+    <meta name="author" content="Punj Prakash">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="School Website">
+    <meta name="keywords" content="HTML, CSS, JavaScript, ASP.NET, MS SQL Server">
+    <!--<base href="https://www.w3schools.com/">-->
+    <link rel="stylesheet" href="../content/bootstrap.min.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark fixed-top sticky-top border-bottom border-body" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../cms/">School Website</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Upload
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="UploadNotice.aspx">Upload Notice</a></li>
+                                <li><a class="dropdown-item" href="UploadSliderImage.aspx">Upload Slider Image</a></li>
+                                <li><a class="dropdown-item" href="UploadGalleryImage.aspx">Upload Gallery Images</a></li>
+                                <li><a class="dropdown-item" href="UploadNewspaperImage.aspx">Upload Newspaper Image</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Delete
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="DeleteSliderImages.aspx">Delete Slider Images</a></li>
+                                <li><a class="dropdown-item" href="DeleteGalleryImages.aspx">Delete Gallery Images</a></li>
+                                <li><a class="dropdown-item" href="DeleteNewspaperImages.aspx">Delete Newspaper Images</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="ManageUsers.aspx">Manage Users</a></li>
+                                <li><a class="dropdown-item" href="ManageNotice.aspx">Manage Notice</a></li>
+                                <li><a class="dropdown-item" href="ManageHighlightLinks.aspx">Manage Highlight Links</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="~/Login.aspx">Log In</a>
+                                </li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hello, <%: Context.User.Identity.Name %> !</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" runat="server" title="Manage your account" href="~/cms/ManageAccount.aspx">Manage your account</a></li>
+                                        <li><a class="dropdown-item" runat="server" title="Change your password" href="~/cms/ChangePassword.aspx">Change Your Password</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" CssClass="nav-link" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </nav>
+        <asp:ContentPlaceHolder ID="Content" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer class="container-fluid bg-dark text-light py-3 border-top">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+                <!-- Logo and Site Name -->
+                <a href="/" class="d-flex align-items-center text-light text-decoration-none mb-2 mb-md-0">
+                    <img src="../include/logo/logo.png" alt="logo" class="img-fluid me-2" width="40" height="32">
+                    <span class="fs-5">School Website</span>
+                </a>
+
+                <!-- Copyright -->
+                <p class="mb-0 mb-2 mb-md-0">© 2024 School Website. All Rights Reserved.</p>
+
+                <!-- Developer Information -->
+                <p class="mb-0">Developed by Punj Prakash</p>
+            </div>
+        </footer>
+    </form>
+    <script defer type="text/javascript" src="../Scripts/modernizr-3.4.0.js"></script>
+    <script defer type="text/javascript" src="../Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>

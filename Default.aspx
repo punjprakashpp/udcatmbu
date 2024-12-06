@@ -1,10 +1,10 @@
-<%@ Page Title="University Department of Computer Applications" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="University Department of Computer Applications" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="include/css/slider.css">
-    <link rel="stylesheet" type="text/css" href="include/css/section.css">
-    <script defer type="text/javascript" src="include/js/slider.js"></script>
-    <script defer type="text/javascript" src="include/js/section.js"></script>
+    <link rel="stylesheet" type="text/css" href="Content/slider.css">
+    <link rel="stylesheet" type="text/css" href="Content/section.css">
+    <script defer type="text/javascript" src="Scripts/slider.js"></script>
+    <script defer type="text/javascript" src="Scripts/section.js"></script>
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4">

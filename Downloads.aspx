@@ -1,4 +1,4 @@
-<%@ Page Title="Download Files" Language="C#" MasterPageFile="~/Website.master" AutoEventWireup="true" CodeFile="Downloads.aspx.cs" Inherits="Downloads" %>
+<%@ Page Title="Download Files" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="Downloads.aspx.cs" Inherits="Downloads" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/site.css">

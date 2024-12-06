@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Alumni Registration" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="AlumniRegistration.aspx.cs" Inherits="pages_AlumniRegister" %>
+﻿<%@ Page Title="Alumni Registration" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AlumniRegistration.aspx.cs" Inherits="pages_AlumniRegister" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/cropper.css">

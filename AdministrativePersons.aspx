@@ -1,4 +1,4 @@
-<%@ Page Title="Administrative Persons" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="AdministrativePersons.aspx.cs" Inherits="pages_Default" %>
+<%@ Page Title="Administrative Persons" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AdministrativePersons.aspx.cs" Inherits="pages_Default" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/faculty.css">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Video Gallery" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="VideoGallery.aspx.cs" Inherits="pages_VideoGallery" %>
+﻿<%@ Page Title="Video Gallery" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="VideoGallery.aspx.cs" Inherits="pages_VideoGallery" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/gallery.css">

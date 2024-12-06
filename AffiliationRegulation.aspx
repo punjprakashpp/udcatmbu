@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Affiliations & Regulations" Language="C#" MasterPageFile="Website.master" AutoEventWireup="true" CodeFile="AffiliationRegulation.aspx.cs" Inherits="pages_AffiliationRegulation" %>
+﻿<%@ Page Title="Affiliations & Regulations" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AffiliationRegulation.aspx.cs" Inherits="pages_AffiliationRegulation" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="style/site.css">
