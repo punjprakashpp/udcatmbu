@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="Content/all.min.css">
     <link rel="stylesheet" href="Content/bootstrap.min.css">
     <link rel="stylesheet" href="Content/Site.css" />
-    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
 <body>
@@ -56,7 +55,7 @@
         <div class="container-fluid">
             <!-- Brand -->
             <a class="navbar-brand d-block d-lg-none" href="/">
-                <img src="img/logo/logo-head.png" alt="Logo" class="logo-nav" style="width: 150px;">
+                <img src="img/logo/logo-head.png" alt="Logo" class="logo-nav" style="width: 225px;">
             </a>
 
             <!-- Toggler Button for Collapse -->
@@ -422,7 +421,7 @@
             });
         });
     </script>
-    <script defer type="text/javascript" src="Scripts/modernizr-3.4.0.js"></script>
+    <script defer type="text/javascript" src="Scripts/modernizr-2.8.3.js"></script>
     <script defer type="text/javascript" src="Scripts/bootstrap.bundle.min.js"></script>
 </body>
 </html>

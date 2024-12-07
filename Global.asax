@@ -1,9 +1,4 @@
 <%@ Application Language="C#" %>
-<%@ Import Namespace="WebSite" %>
-<%@ Import Namespace="System" %>
-<%@ Import Namespace="System.IO" %>
-<%@ Import Namespace="System.Web" %>
-<%@ Import Namespace="System.Web.Optimization" %>
 
 <script runat="server">
 
@@ -11,7 +6,6 @@
     {
         // Code that runs on application startup
         Application["NoOfVisitors"] = 0;
-        BundleConfig.RegisterBundles(BundleTable.Bundles);
 
     }
     

@@ -1,25 +1,31 @@
-<%@ Page Title="Image Gallery" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="ImageGallery.aspx.cs" Inherits="pages_ImageGallery" %>
+﻿<%@ Page Title="Image Gallery" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="ImageGallery.aspx.cs" Inherits="ImageGallery" %>
 
-<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="style/image.css">
-    <link rel="stylesheet" href="style/gallery.css">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link rel="stylesheet" href="Content/gallery.css">
+    <link rel="stylesheet" href="Content/pages.css">
 </asp:Content>
-
-<asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <h1 class="my-h1">Image Gallery</h1>
-    <div class="cont">
-        <asp:Repeater ID="ThumbnailRepeater" runat="server">
-            <ItemTemplate>
-                <div class="video">
-                    <img src='<%# Eval("ImagePath") %>' class="thumbnail" alt='<%# Eval("Title") %>' onclick="openLightbox('<%# Eval("Title") %>')">
-                    <div class="desc">
-                        <h2><%# Eval("Title") %></h2>
-                    </div>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
-    </div>
-
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
+    <section class="py-5 bg-light">
+        <div class="container bg-white rounded shadow-sm py-5 px-4">
+            <div class="text-center bg-gradient-primary text-white p-4 rounded">
+                <h1>Image Gallery</h1>
+            </div>
+            <div class="row">
+                <asp:Repeater ID="ThumbnailRepeater" runat="server">
+                    <ItemTemplate>
+                        <div class="col col col-lg-4 col-md-2 col-sm-1">
+                            <div class="photo">
+                                <img src='<%# Eval("ImagePath") %>' class="thumbnail img-thumbnail" alt='<%# Eval("Title") %>' onclick="openLightbox('<%# Eval("Title") %>')">
+                                <div class="desc">
+                                    <h2><%# Eval("Title") %></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+    </section>
     <!-- The lightbox for displaying the gallery -->
     <div id="galleryLightbox" class="lightbox" style="display: none;">
         <span class="close" onclick="closeGalleryLightbox()">&times;</span>
@@ -27,7 +33,6 @@
             <!-- Gallery images will be loaded here dynamically -->
         </div>
     </div>
-
     <!-- The lightbox for displaying clicked images -->
     <div id="lightbox" style="display: none;">
         <span class="close" onclick="closeLightbox()">&times;</span>

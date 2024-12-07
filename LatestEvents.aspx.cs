@@ -6,10 +6,38 @@ using System.Web.UI.WebControls;
 
 public partial class pages_Event : System.Web.UI.Page
 {
+    private int pageSize = 10;
+
+    // Property to persist currentPageIndex using ViewState
+    private int CurrentPageIndex
+    {
+        get
+        {
+            return ViewState["CurrentPageIndex"] != null ? (int)ViewState["CurrentPageIndex"] : 0;
+        }
+        set
+        {
+            ViewState["CurrentPageIndex"] = value;
+        }
+    }
+
+    private int TotalRecords
+    {
+        get
+        {
+            return ViewState["TotalRecords"] != null ? (int)ViewState["TotalRecords"] : 0;
+        }
+        set
+        {
+            ViewState["TotalRecords"] = value;
+        }
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
+            pageSize = int.Parse(ddlRecordsPerPage.SelectedValue);
             BindGridView();
         }
     }
@@ -17,37 +45,108 @@ public partial class pages_Event : System.Web.UI.Page
     private void BindGridView(string searchQuery = "")
     {
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT DocsID, Title, Date, FilePath FROM Docs WHERE Type = 'Event' ORDER BY Date DESC";
+            string baseQuery = "SELECT DocsID, Title, Date, FilePath FROM Docs WHERE Type = 'Event'";
             if (!string.IsNullOrEmpty(searchQuery))
             {
-                query = "SELECT DocsID, Title, Date, FilePath FROM Docs WHERE Type = 'Event' AND Title LIKE @SearchQuery ORDER BY Date DESC";
+                baseQuery += " AND Title LIKE @SearchQuery";
             }
-            using (SqlDataAdapter sda = new SqlDataAdapter(query, conn))
+
+            string paginatedQuery =
+                "WITH PaginatedData AS (" +
+                "    SELECT ROW_NUMBER() OVER (ORDER BY Date DESC) AS RowNum, DocsID, Title, Date, FilePath " +
+                "    FROM Docs WHERE Type = 'Event' " +
+                (string.IsNullOrEmpty(searchQuery) ? "" : "AND Title LIKE @SearchQuery ") +
+                ") " +
+                "SELECT DocsID, Title, Date, FilePath " +
+                "FROM PaginatedData " +
+                "WHERE RowNum BETWEEN @StartRow AND @EndRow";
+
+            using (SqlCommand cmd = new SqlCommand(paginatedQuery, conn))
             {
                 if (!string.IsNullOrEmpty(searchQuery))
                 {
-                    sda.SelectCommand.Parameters.AddWithValue("@SearchQuery", "%" + searchQuery + "%");
+                    cmd.Parameters.AddWithValue("@SearchQuery", "%" + searchQuery + "%");
                 }
 
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
+                int startRow = (CurrentPageIndex * pageSize) + 1;
+                int endRow = startRow + pageSize - 1;
+                cmd.Parameters.AddWithValue("@StartRow", startRow);
+                cmd.Parameters.AddWithValue("@EndRow", endRow);
+
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+
+                    GridView1.DataSource = dt;
+                    GridView1.DataBind();
+                }
             }
+
+            // Count total records
+            string countQuery = "SELECT COUNT(*) FROM Docs WHERE Type = 'Event'";
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                countQuery += " AND Title LIKE @SearchQuery";
+            }
+
+            using (SqlCommand countCmd = new SqlCommand(countQuery, conn))
+            {
+                if (!string.IsNullOrEmpty(searchQuery))
+                {
+                    countCmd.Parameters.AddWithValue("@SearchQuery", "%" + searchQuery + "%");
+                }
+
+                conn.Open();
+                TotalRecords = (int)countCmd.ExecuteScalar();
+                conn.Close();
+            }
+        }
+
+        UpdatePaginationInfo();
+    }
+
+    private void UpdatePaginationInfo()
+    {
+        int totalPages = (int)Math.Ceiling((double)TotalRecords / pageSize);
+        lblPageInfo.Text = "Page " + (CurrentPageIndex + 1) + " of " + totalPages;
+
+        btnPrevPage.Enabled = CurrentPageIndex > 0;
+        btnNextPage.Enabled = CurrentPageIndex < totalPages - 1;
+    }
+
+    protected void btnPrevPage_Click(object sender, EventArgs e)
+    {
+        if (CurrentPageIndex > 0)
+        {
+            CurrentPageIndex--;
+            BindGridView(txtSearch.Text.Trim());
+        }
+    }
+
+    protected void btnNextPage_Click(object sender, EventArgs e)
+    {
+        int totalPages = (int)Math.Ceiling((double)TotalRecords / pageSize);
+        if (CurrentPageIndex < totalPages - 1)
+        {
+            CurrentPageIndex++;
+            BindGridView(txtSearch.Text.Trim());
         }
     }
 
     protected void btnSearch_Click(object sender, EventArgs e)
     {
+        CurrentPageIndex = 0;
         BindGridView(txtSearch.Text.Trim());
     }
 
-    protected void AffReg_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    protected void ddlRecordsPerPage_SelectedIndexChanged(object sender, EventArgs e)
     {
-        GridView1.PageIndex = e.NewPageIndex;
+        pageSize = int.Parse(ddlRecordsPerPage.SelectedValue);
+        CurrentPageIndex = 0;
         BindGridView(txtSearch.Text.Trim());
     }
 }
-

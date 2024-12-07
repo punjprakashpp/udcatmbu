@@ -103,7 +103,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, Date, FilePath FROM Docs WHERE Important='yes' AND Type = 'Event' ORDER BY Date DESC";
+            string query = "SELECT Title, Date, FilePath FROM Docs WHERE Type = 'Event' ORDER BY Date DESC";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();

@@ -1,66 +1,8 @@
-﻿<%@ Page Title="News Gallery" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="NewsGallery.aspx.cs" Inherits="pages_VideoGallery" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="NewsGallery.aspx.cs" Inherits="NewsGallery" %>
 
-<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="style/gallery.css">
-    <style>
-        .thumb {
-            cursor: pointer;
-            display: block;
-            border: 2px solid #ccc;
-            transition: transform 0.3s, box-shadow 0.3s;
-            width: -webkit-fill-available;
-            height: -webkit-fill-available;
-        }
-
-            .thumb:hover {
-                transform: scale(1.05);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            }
-
-        #lightbox {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1000; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
-            text-align: center;
-        }
-
-            #lightbox img {
-                margin-top: 5%; /* Add a bit of space at the top */
-                max-width: 80%;
-                max-height: 80%;
-                border: 1px solid #ccc;
-                padding: 10px;
-                background: white;
-            }
-
-        .close {
-            position: absolute;
-            top: 50px;
-            right: 35px;
-            color: grey;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-            .close:hover,
-            .close:focus {
-                color: red;
-            }
-
-        @media(max-width:768px) {
-            #lightbox img {
-                margin-top: 25%;
-            }
-        }
-    </style>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link rel="stylesheet" href="Content/gallery.css">
+    <link rel="stylesheet" href="Content/pages.css">
     <script>
         // Function to display the image in the lightbox
         function displayImage(src) {
@@ -71,7 +13,7 @@
         }
 
         // Event listener to close the lightbox when clicking outside the image
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             var lightbox = document.getElementById('lightbox');
             if (event.target === lightbox) {
                 lightbox.style.display = "none"; // Close the modal if clicking outside the image
@@ -79,36 +21,42 @@
         };
 
         // Event listener to close the lightbox when clicking the "close" button (span)
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector(".close").onclick = function() {
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".close").onclick = function () {
                 var lightbox = document.getElementById('lightbox');
                 lightbox.style.display = "none"; // Hide the lightbox
             };
         });
     </script>
 </asp:Content>
-
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <h1 class="my-h1">News Gallery</h1>
-    <div class="cont">
-        <asp:Repeater ID="NewsRepeater" runat="server">
-            <ItemTemplate>
-                <div class="video">
-                    <!-- Clicking this image will display it in the lightbox -->
-                    <a href="javascript:void(0);" onclick="displayImage('<%# Eval("ImagePath") %>')">
-                        <img class="thumb" src='<%# Eval("ImagePath") %>' alt='<%# Eval("Title") %>'>
-                    </a>
-                    <div class="desc">
-                        <h2><%# Eval("Title")%></h2>
-                    </div>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
-    </div>
-
+    <section class="py-5 bg-light">
+        <div class="container bg-white rounded shadow-sm py-5 px-4">
+            <div class="text-center bg-gradient-primary text-white p-4 rounded">
+                <h1>News Gallery</h1>
+            </div>
+            <div class="row">
+                <asp:Repeater ID="NewsRepeater" runat="server">
+                    <ItemTemplate>
+                        <div class="col col-lg-4 col-md-2 col-sm-1">
+                            <div class="photo">
+                                <a href="javascript:void(0);" onclick="displayImage('<%# Eval("ImagePath") %>')">
+                                    <img class="thumbnail img-thumbnail" src='<%# Eval("ImagePath") %>' alt='<%# Eval("Title") %>'>
+                                </a>
+                                <div class="desc">
+                                    <h2><%# Eval("Title")%></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+    </section>
     <!-- Lightbox modal -->
     <div id="lightbox">
-        <span class="close">&times;</span> <!-- Close button changed to span -->
+        <span class="close">&times;</span>
+        <!-- Close button changed to span -->
         <img id="lightboxImage" src="" alt="Image Preview">
     </div>
 </asp:Content>

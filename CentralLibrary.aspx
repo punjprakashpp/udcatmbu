@@ -1,18 +1,19 @@
 ﻿<%@ Page Title="Central Library" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
+    <link rel="stylesheet" href="Content/pages.css">
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-5 bg-light">
-        <div class="container bg-white rounded shadow-sm py-5 px-4">
+        <div class="container contain bg-white rounded shadow-sm py-5 px-4">
             <!-- Title Section -->
-            <div class="text-center mb-4">
-                <h2 class="text-primary">Central Library</h2>
+            <div class="text-center bg-gradient-primary text-white p-4 rounded">
+                <h1>Central Library</h1>
             </div>
 
             <!-- Library Image Section -->
-            <div class="text-center mb-4">
+            <div class="text-center mt-4 mb-4">
                 <img class="img-fluid rounded shadow-sm" src="img/Dept/central library.jpg" alt="Central Library">
             </div>
 

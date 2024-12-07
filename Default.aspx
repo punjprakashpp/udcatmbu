@@ -22,8 +22,8 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
-                                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-                                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                                <a class="prev text-decoration-none" onclick="changeSlide(-1)">&#10094;</a>
+                                <a class="next text-decoration-none" onclick="changeSlide(1)">&#10095;</a>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                 <div class="col-lg-4 col-md-5 col-12">
                     <div class="notice-section card shadow-sm border-0">
                         <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                            <h2 class="h5 mb-0 text-center">Latest Notices and News</h2>
+                            <h2 class="h5 mb-0 text-center">Latest News and Notices</h2>
                             <a href="LatestNotice.aspx" class="btn btn-sm btn-light">View All</a>
                         </div>
                         <div class="card-body p-3">
@@ -199,14 +199,14 @@
         <div class="container bg-white rounded shadow-sm p-4">
             <div class="row">
                 <div class="bg-white rounded shadow-sm px-4 col-md-4 text-center">
-                    <asp:Image ID="ImgDirector" class="img-fluid rounded-circle mb-3" Width="175" runat="server" />
+                    <asp:Image ID="ImgDirector" class="img-fluid rounded-circle mb-3" Width="150" runat="server" />
                     <h2>
-                        <asp:Label ID="NameDirector" runat="server" Text=""/>
+                        <asp:Label ID="NameDirector" runat="server" Text="" CssClass="text-primary"/>
                     </h2>
                     <h3>Director of UDCA</h3>
                 </div>
                 <div class="bg-white rounded shadow-sm px-4 col-md-8">
-                    <h2>Director's Message</h2>
+                    <h2 class="text-primary">Director's Message</h2>
                     <p align="justify" class="lead">Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
                     <a href="Director.aspx" class="btn btn-primary">Read more</a>
                 </div>
