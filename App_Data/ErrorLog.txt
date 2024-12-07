@@ -452,3 +452,11 @@ StackTrace:    at System.Threading.Thread.AbortInternal()
    at System.Web.HttpResponse.Redirect(String url)
    at Login.btnLogin_Click(Object sender, EventArgs e) in c:\Users\Punj\Documents\GitHub\udcatmbu\Login.aspx.cs:line 52
 -----------------------------------------------------
+Date: 07-12-2024 03:37:13 PM
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at Login.btnLogin_Click(Object sender, EventArgs e) in c:\Users\Punj\Documents\GitHub\udcatmbu\Login.aspx.cs:line 52
+-----------------------------------------------------
