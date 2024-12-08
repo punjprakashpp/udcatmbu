@@ -1,14 +1,14 @@
 ﻿<%@ Page Title="Office & Supporting Staffs" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="OfficeStaff.aspx.cs" Inherits="pages_OfficeStaff" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="style/campus.css">
+    <link rel="stylesheet" href="Content/pages.css">
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-5 bg-light">
         <div class="container contain bg-white rounded shadow-sm py-5 px-4">
             <div class="text-center bg-gradient-primary text-white p-4 rounded">
-                <h1>Our Office & Non-Teaching Staff</h1>
+                <h1>Office & Non-Teaching Staff</h1>
             </div>
             <div class="mt-4">
                 <asp:Repeater ID="facultyRepeater" runat="server">
@@ -30,7 +30,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
                 <div class="text-center bg-gradient-primary text-white p-4 rounded">
-                    <h1>Our Supporting Staff Members</h1>
+                    <h1>Supporting Staff Members</h1>
                 </div>
                 <asp:Repeater ID="SupportRepeater" runat="server">
                     <ItemTemplate>

@@ -11,6 +11,13 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
     private string _studentID;
     private readonly string _connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
 
+    protected void Alert(string message)
+    {
+        string script = string.Format("alert('{0}');", message.Replace("'", "\\'")); // Escape single quotes
+
+        // Register the JavaScript alert
+        ClientScript.RegisterStartupScript(this.GetType(), "AlertMessage", script, true);
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -52,10 +59,11 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
         {
             if (CheckIfAlumniExists())
             {
-                ShowErrorMessage("Alumni already registered.");
+                Alert("Alumni already registered.");
             }
             else
             {
+                Alert("Verification Succesful.");
                 VerifyStudentPanel.Visible = false;
                 RegisterAlumniPanel.Visible = true;
                 LoadStudentDetails();
@@ -63,7 +71,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
         }
         else
         {
-            ShowErrorMessage("No student found with the provided details.");
+            Alert("No student found with the provided details.");
         }
     }
 
@@ -187,8 +195,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 ClearForm();
-                lblMessage.Text = "Alumni details saved successfully!";
-                lblMessage.ForeColor = Color.Green;
+                Alert("Alumni details saved successfully!");
             }
             catch (Exception ex)
             {
@@ -233,7 +240,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
             }
             else
             {
-                ShowErrorMessage("Invalid file type. Only .jpg, .jpeg, and .png files are allowed.");
+                Alert("Invalid file type. Only .jpg, .jpeg, and .png files are allowed.");
             }
         }
 

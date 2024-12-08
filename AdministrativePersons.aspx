@@ -1,7 +1,7 @@
 <%@ Page Title="Administrative Persons" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AdministrativePersons.aspx.cs" Inherits="pages_Default" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="style/campus.css">
+    <link rel="stylesheet" href="Content/pages.css">
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-5 bg-light">

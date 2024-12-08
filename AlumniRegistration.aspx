@@ -1,20 +1,10 @@
 ﻿<%@ Page Title="Alumni Registration" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AlumniRegistration.aspx.cs" Inherits="pages_AlumniRegister" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="style/cropper.css">
-    <link rel="stylesheet" href="style/jquery-ui.css">
-    <link rel="stylesheet" href="style/site.css">
-    <link rel="stylesheet" href="style/alumni.css">
-    <script src="script/cropper.js"></script>
-    <script src="script/jquery.js"></script>
-    <script src="script/jquery-ui.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#<%= txtDOB.ClientID %>").datepicker({
-                dateFormat: 'dd-mm-yy'
-            });
-        });
-    </script>
+    <link rel="stylesheet" href="Content/pages.css">
+    <link rel="stylesheet" href="Content/cropper.css">
+    <script type="text/javascript" src="Scripts/cropper.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-3.7.1.min.js"></script>
     <style>
         .cropper-container {
             width: 300px;
@@ -22,41 +12,22 @@
             position: relative;
             overflow: hidden;
         }
-
-        .cont .container {
-            max-width: 600px;
-        }
-
-        .cont .center {
-            color: white;
-            text-align: center;
-            background-color: #001f44;
-        }
-
-            .cont .center img {
-                width: 80px;
-            }
-
-            .cont .center h2 {
-                color: white;
-                padding: 0;
-            }
     </style>
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <div class="cont">
-        <div class="container">
-            <div class="center">
-                <img src="img/other/white.png" />
-                <h2>Alumni Registration</h2>
+    <section class="py-5 bg-light">
+        <div class="container contain bg-white rounded shadow-sm py-5 px-4">
+            <div class="text-center bg-gradient-primary text-white p-4 rounded">
+                <img src="img/other/white.png" width="100" />
+                <h1>Alumni Registration</h1>
             </div>
-            <table>
+            <table class="table table-bordered table-striped">
                 <tr>
                     <td colspan="2"><asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></td>
                 </tr>
             </table>
             <asp:Panel ID="VerifyStudentPanel" runat="server" Visible="true">
-                <table>
+                <table class="table table-bordered table-striped">
                     <tr>
                         <td></td>
                         <td>Step 1 : Verification </td>
@@ -64,7 +35,7 @@
                     <tr>
                         <td>Select Session:</td>
                         <td>
-                            <asp:DropDownList ID="ddlSession" runat="server">
+                            <asp:DropDownList ID="ddlSession" runat="server" CssClass="form-control">
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="rfvSession" runat="server" ControlToValidate="ddlSession"
                                 InitialValue="" ErrorMessage="Session is required." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -74,7 +45,7 @@
                         <td>Registration No:
                         </td>
                         <td>
-                            <asp:TextBox ID="txtRegistrationNo" placeholder="e.g. 184630004" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtRegistrationNo" placeholder="e.g. 184630004" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvRegistrationNo" runat="server" ControlToValidate="txtRegistrationNo"
                                 ErrorMessage="Registration No is required." ForeColor="Red"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="revRegistrationNo" runat="server" ControlToValidate="txtRegistrationNo"
@@ -85,7 +56,7 @@
                         <td>Registration Year:
                         </td>
                         <td>
-                            <asp:TextBox ID="txtRegistrationYear" placeholder="e.g. 2018" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtRegistrationYear" placeholder="e.g. 2018" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvRegistrationYear" runat="server" ControlToValidate="txtRegistrationYear"
                                 ErrorMessage="Registration Year is required." ForeColor="Red"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="revRegistrationYear" runat="server" ControlToValidate="txtRegistrationYear"
@@ -96,7 +67,7 @@
                         <td>Roll No:
                         </td>
                         <td>
-                            <asp:TextBox ID="txtRollNo" placeholder="e.g. 2210" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtRollNo" placeholder="e.g. 2210" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvRollNo" runat="server" ControlToValidate="txtRollNo"
                                 ErrorMessage="Roll No is required." ForeColor="Red"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="revRollNo" runat="server" ControlToValidate="txtRollNo"
@@ -107,24 +78,22 @@
                         <td>Date of Birth:
                         </td>
                         <td>
-                            <asp:TextBox ID="txtDOB" placeholder="e.g. 08-07-2000" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtDOB" placeholder="e.g. 08-07-2000" runat="server" TextMode="Date" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvDOB" runat="server" ControlToValidate="txtDOB"
                                 ErrorMessage="Date of Birth is required." ForeColor="Red"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="revDOB" runat="server" ControlToValidate="txtDOB"
-                                ErrorMessage="Use correct format." ForeColor="Red" ValidationExpression="^\d{2}-\d{2}-\d{4}$"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <asp:Button ID="btnVerify" runat="server" Text="Verify" OnClick="btnVerify_Click" />
+                            <asp:Button ID="btnVerify" runat="server" Text="Verify" OnClick="btnVerify_Click" CssClass="btn btn-primary"/>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="btnReset_Click" /></td>
+                            <asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="btnReset_Click" CssClass="btn btn-secondary"/></td>
                     </tr>
                 </table>
             </asp:Panel>
             <asp:Panel ID="RegisterAlumniPanel" runat="server" Visible="false">
-                <table>
+                <table class="table table-bordered table-striped">
                     <tr>
                         <td></td>
                         <td>Step 2 : Registration </td>
@@ -133,7 +102,7 @@
                         <td>First Name:
                         </td>
                         <td>
-                            <asp:TextBox ID="txtFirstName" placeholder="e.g. Saurabh" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtFirstName" placeholder="e.g. Saurabh" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ControlToValidate="txtFirstName"
                                 ErrorMessage="First Name is required." ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
@@ -142,14 +111,14 @@
                         <td>Middle Name (if have):
                         </td>
                         <td>
-                            <asp:TextBox ID="txtMidName" placeholder="e.g. Kumar" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtMidName" placeholder="e.g. Kumar" runat="server" CssClass="form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Last Name:
                         </td>
                         <td>
-                            <asp:TextBox ID="txtLastName" placeholder="e.g. Suman" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtLastName" placeholder="e.g. Suman" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvLastName" runat="server" ControlToValidate="txtLastName"
                                 ErrorMessage="Last Name is required." ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
@@ -158,7 +127,7 @@
                         <td>Phone No:
                         </td>
                         <td>
-                            <asp:TextBox ID="txtPhone" placeholder="e.g. 9060311534  Don't add +91 or 0 before it" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtPhone" TextMode="Phone" placeholder="e.g. 9060311534  Don't add +91 or 0 before it" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="revPhoneNo" runat="server" ControlToValidate="txtPhone"
                                 ErrorMessage="Phone No should be 10 digits." ForeColor="Red" ValidationExpression="^\d{10}$"></asp:RegularExpressionValidator>
                         </td>
@@ -167,7 +136,7 @@
                         <td>Email Id:
                         </td>
                         <td>
-                            <asp:TextBox ID="txtEmail" placeholder="e.g. punjprakashpp@gmail.com" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" TextMode="Email" placeholder="e.g. punjprakashpp@gmail.com" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
                                 ErrorMessage="Invalid Email format." ForeColor="Red" ValidationExpression="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"></asp:RegularExpressionValidator>
                         </td>
@@ -177,7 +146,7 @@
                         <td>Upload Image:
                         </td>
                         <td>
-                            <asp:FileUpload ID="fileUpload" runat="server" />
+                            <asp:FileUpload ID="fileUpload" runat="server" CssClass="form-control" />
                             <asp:Label ID="lblFileTypeError" runat="server" ForeColor="Red" Visible="false">Invalid file type. Only .jpg, .jpeg, .png files are allowed.</asp:Label>
                             <asp:RequiredFieldValidator ID="rfvFileUpload" runat="server" ControlToValidate="fileUpload"
                                 ErrorMessage="Image upload is required." InitialValue="" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -187,7 +156,7 @@
                                     <img id="cropperImage" src="#" alt="Image for cropping" />
                                 </div>
                                 <asp:Button ID="btnCrop" runat="server" Text="Crop" OnClientClick="return cropImage();"
-                                    Style="display: none;" />
+                                    Style="display: none;" CssClass="btn btn-outline-primary" />
                                 <div id="imagePreview" style="display: none;">
                                     <img id="previewImage" src="#" alt="Preview Image" style="max-width: 200px; max-height: 200px;" />
                                 </div>
@@ -198,61 +167,61 @@
                         <td>Qualification:
                         </td>
                         <td>
-                            <asp:TextBox ID="txtQualification" placeholder="e.g. MCA" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtQualification" placeholder="e.g. MCA" runat="server" CssClass="form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Occupation / Job:
                         </td>
                         <td>
-                            <asp:TextBox ID="txtOccupation" placeholder="e.g. Full Stack Developer" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtOccupation" placeholder="e.g. Full Stack Developer" runat="server" CssClass="form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Work or Company Name with location :
                         </td>
                         <td>
-                            <asp:TextBox ID="txtCompany" placeholder="e.g. Bhagalpur" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtCompany" placeholder="e.g. Bhagalpur" runat="server" CssClass="form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Linkedin Id: @
                         </td>
                         <td>
-                            <asp:TextBox ID="txtLinkedIn" placeholder="e.g. punjprakashpp" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtLinkedIn" placeholder="e.g. punjprakashpp" runat="server" CssClass="form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Facebook Id: @
                         </td>
                         <td>
-                            <asp:TextBox ID="txtFacebook" placeholder="e.g. punjprakashop" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtFacebook" placeholder="e.g. punjprakashop" runat="server" CssClass="form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Instagram Id: @
                         </td>
                         <td>
-                            <asp:TextBox ID="txtInstagram" placeholder="e.g. punjprakashpp" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtInstagram" placeholder="e.g. punjprakashpp" runat="server" CssClass="form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>Twitter / X Id: @
                         </td>
                         <td>
-                            <asp:TextBox ID="txtTwitter" placeholder="e.g. punjprakashpp" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtTwitter" placeholder="e.g. punjprakashpp" runat="server" CssClass="form-control"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
+                            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" CssClass="btn btn-primary"/>
                         </td>
                     </tr>
                 </table>
             </asp:Panel>
         </div>
-    </div>
+    </section>
     <script>
         $(document).ready(function () {
             var cropper;
