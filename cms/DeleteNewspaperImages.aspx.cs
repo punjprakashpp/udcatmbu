@@ -21,7 +21,7 @@ public partial class cms_DeleteNewspaperImages : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ImageID, Title, '~/' + FilePath AS FilePath FROM Image WHERE Type = 'News'";
+            string query = "SELECT ImageID, Title, '~/' + ImagePath AS FilePath FROM Image WHERE Type = 'News'";
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 query += " AND Title LIKE @SearchQuery";
@@ -73,7 +73,7 @@ public partial class cms_DeleteNewspaperImages : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT FilePath FROM Image WHERE ImageID = @ImageID";
+            string query = "SELECT ImagePath AS FilePath FROM Image WHERE ImageID = @ImageID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@ImageID", id);

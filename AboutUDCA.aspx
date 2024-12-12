@@ -3,12 +3,10 @@
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container bg-white rounded shadow-sm py-5 px-4">
-            <h1 class="text-center text-primary">WELCOME TO<br />
-                UNIVERSITY DEPARTMENT OF COMPUTER APPLICATIONS
-            </h1>
-            <img class="img-fluid mt-2 mb-2 d-block mx-auto" src="img/Dept/UDCABuilding.jpg" alt="Administrative Building of UDCA" />
+    <section class="py-4 bg-light">
+        <div style="max-width:1024px" class="container bg-white rounded shadow-sm p-4">
+            <h1 class="text-center text-primary">University Department of Computer Applications</h1>
+            <img class="img-fluid mt-2 mb-2 d-block mx-auto rounded-2" src="img/Dept/UDCABuilding.jpg" alt="Administrative Building of UDCA" />
             <p align="justify" class="lead">
                 The University Department of Computer Applications (UDCA), also known as the Computer Centre, is a prominent constituent unit of Tilka Manjhi Bhagalpur University (TMBU), Bhagalpur, Bihar. Renowned for its academic excellence, this department offers a Master of Computer Applications (MCA) course, providing in-depth knowledge in computer applications. Recognized by the Government of Bihar and approved by AICTE, New Delhi, UDCA sets a high standard for computer science education in the region.
             </p>

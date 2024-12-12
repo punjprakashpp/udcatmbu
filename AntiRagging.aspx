@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="Content/pages.css">
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container contain bg-white rounded shadow-sm py-5 px-4">
-            <h1 class="text-center text-white bg-gradient-primary rounded-top p-4 mb-4">Anti-Ragging Policy</h1>
+    <section class="py-4 bg-light">
+        <div class="container contain bg-white rounded shadow-sm p-4">
+            <h1 class="text-center text-primary">Anti-Ragging Policy</h1>
             <p class="text-center fw-bold text-danger mb-4">
                 Ragging is strictly prohibited in this institution.
             </p>

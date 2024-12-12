@@ -1,41 +1,16 @@
 ﻿/* Container Styling */
 .contain {
-    padding: 15px;
     max-width: 800px;
     margin: auto;
 }
 
-/* General Typography */
-    .contain h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        background: linear-gradient(to right, #4A90E2, #36D1DC);
-        border-radius: 0.5rem 0.5rem 0 0;
-    }
-
-    .contain h2 {
-        font-size: 1.75rem;
-        font-weight: bold;
-        color: #333;
-        text-transform: uppercase;
-    }
-
-    .contain p {
-        color: #555;
-        margin-bottom: 10px;
-        line-height: 1.6;
-        text-align: justify;
-    }
-
-    .contain a {
+    .contain a, .content a {
         color: #007bff;
         text-decoration: none;
         transition: color 0.3s ease;
     }
 
-        .contain a:hover {
+        .contain a:hover, .content a:hover {
             color: #0056b3;
             text-decoration: underline;
         }
@@ -51,7 +26,6 @@
 
 /* Card and Image Styling */
 .card {
-    border: none;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

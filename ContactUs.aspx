@@ -4,8 +4,8 @@
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container bg-white rounded shadow-sm py-5 px-4">
+    <section class="py-4 bg-light">
+        <div style="max-width:1024px" class="container bg-white rounded shadow-sm p-4">
             <h1 class="text-center text-primary mb-4">Contact Us</h1>
 
             <div class="row">

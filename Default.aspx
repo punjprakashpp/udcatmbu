@@ -7,7 +7,7 @@
     <script defer type="text/javascript" src="Scripts/section.js"></script>
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-4">
+    <section class="py-md-4">
         <div class="container bg-white rounded shadow-sm p-4">
             <div class="row">
                 <div class="col-lg-8 col-md-7 col-12">
@@ -37,13 +37,7 @@
                         <div class="card-body p-3">
                             <div class="notice-board">
                                 <div class="notice-links">
-                                    <marquee
-                                        class="marquee text-muted"
-                                        id="marq"
-                                        direction="up"
-                                        scrollamount="2"
-                                        onmouseover="this.stop();"
-                                        onmouseout="this.start();">
+                                    <marquee class="marquee text-muted" id="marq" direction="up" scrollamount="2" onmouseover="this.stop();" onmouseout="this.start();">
                                         <asp:Literal ID="LiteralNotices" runat="server"></asp:Literal>
                                     </marquee>
                                 </div>
@@ -87,11 +81,11 @@
                 <div class="col">
                     <a href="Chancellor.aspx" class="card text-center text-decoration-none">
                         <div class="card-body box">
-                            <h3 class="card-title">
+                            <h3 class="card-title text-secondary">
                                 <asp:Label ID="lblChancellor" runat="server" Text="Chancellor of T.M.B.U"></asp:Label>
                             </h3>
                             <asp:Image ID="ImageChancellor" class="img-fluid rounded-circle mb-3" runat="server" />
-                            <h4 class="card-subtitle text-brown">
+                            <h4 class="card-subtitle text-primary">
                                 <asp:Label ID="lblNameChancellor" runat="server" Text=""></asp:Label>
                             </h4>
                         </div>
@@ -100,11 +94,11 @@
                 <div class="col">
                     <a href="ViceChancellor.aspx" class="card text-center text-decoration-none">
                         <div class="card-body box">
-                            <h3 class="card-title">
+                            <h3 class="card-title text-secondary">
                                 <asp:Label ID="lblViceChancellor" runat="server" Text="Vice-Chancellor of T.M.B.U"></asp:Label>
                             </h3>
                             <asp:Image ID="ImageViceChancellor" class="img-fluid rounded-circle mb-3" runat="server" />
-                            <h4 class="card-subtitle text-brown">
+                            <h4 class="card-subtitle text-primary">
                                 <asp:Label ID="lblNameViceChancellor" runat="server" Text=""></asp:Label>
                             </h4>
                         </div>
@@ -113,11 +107,11 @@
                 <div class="col">
                     <a href="Director.aspx" class="card text-center text-decoration-none">
                         <div class="card-body box">
-                            <h3 class="card-title">
+                            <h3 class="card-title text-secondary">
                                 <asp:Label ID="lblDirector" runat="server" Text="Director of U.D.C.A."></asp:Label>
                             </h3>
                             <asp:Image ID="ImageDirector" class="img-fluid rounded-circle mb-3" runat="server" />
-                            <h4 class="card-subtitle text-brown">
+                            <h4 class="card-subtitle text-primary">
                                 <asp:Label ID="lblNameDirector" runat="server" Text=""></asp:Label>
                             </h4>
                         </div>
@@ -198,10 +192,10 @@
     <section class="py-4">
         <div class="container bg-white rounded shadow-sm p-4">
             <div class="row">
-                <div class="bg-white rounded shadow-sm px-4 col-md-4 text-center">
+                <div class="bg-white box rounded shadow-sm px-4 col-md-4 text-center">
                     <asp:Image ID="ImgDirector" class="img-fluid rounded-circle mb-3" Width="150" runat="server" />
                     <h2>
-                        <asp:Label ID="NameDirector" runat="server" Text="" CssClass="text-primary"/>
+                        <asp:Label ID="NameDirector" runat="server" Text="" CssClass="text-primary" />
                     </h2>
                     <h3>Director of UDCA</h3>
                 </div>
@@ -213,7 +207,6 @@
             </div>
         </div>
     </section>
-
     <section class="py-4">
         <div class="container bg-white rounded shadow-sm p-4">
             <h2>Important Links:</h2>
@@ -277,7 +270,7 @@
                             <div class="card text-center">
                                 <a href="Downloads.aspx" class="text-decoration-none">
                                     <div class="card-body text-center">
-                                        <img src="img/icon/download.png" class="card-img-top w-75 m-auto" alt="Download Files">
+                                        <img src="img/icon/download.png" class="card-img-top w-75 m-auto" alt="Download Files"/>
                                         <div class="card-text">Download Files</div>
                                     </div>
                                 </a>
@@ -287,7 +280,7 @@
                             <div class="card text-center">
                                 <a href="ImageGallery.aspx" class="text-decoration-none">
                                     <div class="card-body">
-                                        <img src="img/icon/gallery.png" class="card-img-top w-75 m-auto" alt="Image Gallery">
+                                        <img src="img/icon/gallery.png" class="card-img-top w-75 m-auto" alt="Image Gallery"/>
                                         <div class="card-text">Image Gallery</div>
                                     </div>
                                 </a>
@@ -297,7 +290,7 @@
                             <div class="card text-center">
                                 <a href="HolidayList.aspx" class="text-decoration-none">
                                     <div class="card-body">
-                                        <img src="img/icon/holiday-list.png" class="card-img-top w-75 m-auto" alt="Holiday List">
+                                        <img src="img/icon/holiday-list.png" class="card-img-top w-75 m-auto" alt="Holiday List"/>
                                         <div class="card-text">Holiday List</div>
                                     </div>
                                 </a>
@@ -307,7 +300,7 @@
                             <div class="card text-center">
                                 <a href="Prospectus.aspx" class="text-decoration-none">
                                     <div class="card-body">
-                                        <img src="img/icon/prospectus.png" class="card-img-top w-75 m-auto" alt="Prospectus">
+                                        <img src="img/icon/prospectus.png" class="card-img-top w-75 m-auto" alt="Prospectus"/>
                                         <div class="card-text">Prospectus</div>
                                     </div>
                                 </a>
@@ -317,7 +310,7 @@
                             <div class="card text-center">
                                 <a href="TimeTable.aspx" class="text-decoration-none">
                                     <div class="card-body">
-                                        <img src="img/icon/time-table.png" class="card-img-top w-75 m-auto" alt="Time Table">
+                                        <img src="img/icon/time-table.png" class="card-img-top w-75 m-auto" alt="Time Table"/>
                                         <div class="card-text">Time Table</div>
                                     </div>
                                 </a>
@@ -327,7 +320,7 @@
                             <div class="card text-center">
                                 <a href="CourseSyllabus.aspx" class="text-decoration-none">
                                     <div class="card-body">
-                                        <img src="img/icon/syllabus.png" class="card-img-top w-75 m-auto" alt="Syllabus">
+                                        <img src="img/icon/syllabus.png" class="card-img-top w-75 m-auto" alt="Syllabus"/>
                                         <div class="card-text">Syllabus</div>
                                     </div>
                                 </a>
@@ -338,5 +331,4 @@
             </div>
         </div>
     </section>
-
 </asp:Content>

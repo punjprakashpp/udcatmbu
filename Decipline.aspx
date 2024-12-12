@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="Content/pages.css">
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container contain bg-white rounded shadow-sm py-5 px-4">
-            <h1 class="text-center text-white bg-gradient-primary rounded-top p-4 mb-4">Student Discipline Rules</h1>
+    <section class="py-4 bg-light">
+        <div class="container contain bg-white rounded shadow-sm p-4">
+            <h1 class="text-center text-primary">Student Discipline Rules</h1>
             <p class="mb-4 text-justify">
                 Students enrolled in the University must recognize their responsibilities towards the faculty, office staff, and fellow students. Failure to maintain appropriate standards of conduct will attract disciplinary action.
             </p>

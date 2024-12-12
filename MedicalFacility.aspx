@@ -5,10 +5,10 @@
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container contain bg-white rounded shadow-sm py-5 px-4">
+    <section class="py-4 bg-light">
+        <div class="container contain bg-white rounded shadow-sm p-4">
             <!-- Title Section -->
-            <div class="text-center bg-gradient-primary text-white p-4 rounded">
+            <div class="text-center text-primary p-4 rounded">
                 <h1>Health Center</h1>
             </div>
 
@@ -56,72 +56,74 @@
 
             <!-- Emergency Contacts Section -->
             <h3 class="text-center text-primary mt-5">Important Contacts in Emergency</h3>
-            <table class="table table-striped mt-3">
-                <thead>
-                    <tr>
-                        <th>Health Center</th>
-                        <th>Type/Specialist</th>
-                        <th>Contacts</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Bhagalpur Sadar Hospital</td>
-                        <td><a href="https://maps.app.goo.gl/XHy8qJe7DUUjM5127">Hospital (Government)</a></td>
-                        <td><a href="tel:+916412422052">(+91)-641-2422052</a>, <a href="tel:+6412400098">(+91)-641-2400098</a></td>
-                    </tr>
-                    <tr>
-                        <td>Life Line</td>
-                        <td><a href="https://maps.app.goo.gl/3QWRmX9ucpao4z9C9">Hospital (Private)</a></td>
-                        <td><a href="tel:+916412406022">(+91)-641-2406022</a>, <a href="tel:+6412300481">(+91)-641-2300481</a></td>
-                    </tr>
-                    <tr>
-                        <td>The Appolo Clinic</td>
-                        <td><a href="https://maps.app.goo.gl/Ro5rfuUiwh3EWPGP9">Hospital (Private)</a></td>
-                        <td><a href="tel:+916412409548">(+91)-641-2409548</a>, <a href="tel:+9934076200">(+91)-9934076200</a></td>
-                    </tr>
-                    <tr>
-                        <td>Garab Nawaz (Dr. Arun Kr. Agarwal)</td>
-                        <td><a href="https://maps.app.goo.gl/KP7aBnVdMWdFa96w5">Hospital (Private)</a></td>
-                        <td><a href="tel:+916412422436">(+91)-641-2422436</a></td>
-                    </tr>
-                    <tr>
-                        <td>ARC Hospital</td>
-                        <td><a href="https://maps.app.goo.gl/1GGPu44pi2XHCSdo9">Hospital (Private)</a></td>
-                        <td><a href="tel:+916412610001">(+91)-641-2610001</a>, <a href="tel:+8757205555">(+91)-8757205555</a></td>
-                    </tr>
-                    <tr>
-                        <td>Healing Touch (Dr. Sanjay Singh / Dr. Partibha Singh)</td>
-                        <td><a href="https://maps.app.goo.gl/3xMTdsGqAo7JWFUC8">Hospital (Private)</a></td>
-                        <td><a href="tel:+916412400587">(+91)-641-2400587</a></td>
-                    </tr>
-                    <tr>
-                        <td>Dr. C.S. Shah</td>
-                        <td><a href="https://maps.app.goo.gl/nBG2vpTEDhUZBhcD7">Eye</a></td>
-                        <td><a href="tel:+916412401234">(+91)-641-2401234</a></td>
-                    </tr>
-                    <tr>
-                        <td>Dr. Sanjay Sharma</td>
-                        <td><a href="https://maps.app.goo.gl/3ExPUhfHcnYaz6uM6">Eye</a></td>
-                        <td><a href="tel:+916412405673">(+91)-641-2405673</a></td>
-                    </tr>
-                    <tr>
-                        <td>Dr. Santanu Kumar Ghosh</td>
-                        <td><a href="https://maps.app.goo.gl/dLMaP3WetgTHnXVv9">General Physician</a></td>
-                        <td><a href="tel:+919431213432">(+91)-9431213432</a></td>
-                    </tr>
-                    <tr>
-                        <td>Dr. Rajeev Shina</td>
-                        <td><a href="https://maps.app.goo.gl/3FidXPWCsBRRoKJs7">Physician / Gastroenterologist</a></td>
-                        <td><a href="tel:+918544313639">(+91)-8544313639</a></td>
-                    </tr>
-                    <tr>
-                        <td>Dr. Arun Kr. Shina</td>
-                        <td><a href="https://maps.app.goo.gl/FM4SXuFK5m6wripr5">Brain</a></td>
-                        <td><a href="tel:+916412403709">(+91)-641-2403709</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-striped mt-3">
+                    <thead>
+                        <tr>
+                            <th>Health Center</th>
+                            <th>Type/Specialist</th>
+                            <th>Contacts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bhagalpur Sadar Hospital</td>
+                            <td><a href="https://maps.app.goo.gl/XHy8qJe7DUUjM5127">Hospital (Government)</a></td>
+                            <td><a href="tel:+916412422052">(+91)-641-2422052</a>, <a href="tel:+6412400098">(+91)-641-2400098</a></td>
+                        </tr>
+                        <tr>
+                            <td>Life Line</td>
+                            <td><a href="https://maps.app.goo.gl/3QWRmX9ucpao4z9C9">Hospital (Private)</a></td>
+                            <td><a href="tel:+916412406022">(+91)-641-2406022</a>, <a href="tel:+6412300481">(+91)-641-2300481</a></td>
+                        </tr>
+                        <tr>
+                            <td>The Appolo Clinic</td>
+                            <td><a href="https://maps.app.goo.gl/Ro5rfuUiwh3EWPGP9">Hospital (Private)</a></td>
+                            <td><a href="tel:+916412409548">(+91)-641-2409548</a>, <a href="tel:+9934076200">(+91)-9934076200</a></td>
+                        </tr>
+                        <tr>
+                            <td>Garab Nawaz (Dr. Arun Kr. Agarwal)</td>
+                            <td><a href="https://maps.app.goo.gl/KP7aBnVdMWdFa96w5">Hospital (Private)</a></td>
+                            <td><a href="tel:+916412422436">(+91)-641-2422436</a></td>
+                        </tr>
+                        <tr>
+                            <td>ARC Hospital</td>
+                            <td><a href="https://maps.app.goo.gl/1GGPu44pi2XHCSdo9">Hospital (Private)</a></td>
+                            <td><a href="tel:+916412610001">(+91)-641-2610001</a>, <a href="tel:+8757205555">(+91)-8757205555</a></td>
+                        </tr>
+                        <tr>
+                            <td>Healing Touch (Dr. Sanjay Singh / Dr. Partibha Singh)</td>
+                            <td><a href="https://maps.app.goo.gl/3xMTdsGqAo7JWFUC8">Hospital (Private)</a></td>
+                            <td><a href="tel:+916412400587">(+91)-641-2400587</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dr. C.S. Shah</td>
+                            <td><a href="https://maps.app.goo.gl/nBG2vpTEDhUZBhcD7">Eye</a></td>
+                            <td><a href="tel:+916412401234">(+91)-641-2401234</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Sanjay Sharma</td>
+                            <td><a href="https://maps.app.goo.gl/3ExPUhfHcnYaz6uM6">Eye</a></td>
+                            <td><a href="tel:+916412405673">(+91)-641-2405673</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Santanu Kumar Ghosh</td>
+                            <td><a href="https://maps.app.goo.gl/dLMaP3WetgTHnXVv9">General Physician</a></td>
+                            <td><a href="tel:+919431213432">(+91)-9431213432</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Rajeev Shina</td>
+                            <td><a href="https://maps.app.goo.gl/3FidXPWCsBRRoKJs7">Physician / Gastroenterologist</a></td>
+                            <td><a href="tel:+918544313639">(+91)-8544313639</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Arun Kr. Shina</td>
+                            <td><a href="https://maps.app.goo.gl/FM4SXuFK5m6wripr5">Brain</a></td>
+                            <td><a href="tel:+916412403709">(+91)-641-2403709</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 </asp:Content>

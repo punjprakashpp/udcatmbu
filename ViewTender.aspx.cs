@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.UI.WebControls;
+using System.Drawing;
 
 public partial class pages_Tender : System.Web.UI.Page
 {
@@ -81,6 +82,17 @@ public partial class pages_Tender : System.Web.UI.Page
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
 
+                    if (dt.Rows.Count == 0)
+                    {
+                        lblMessage.Text = "No records found.";
+                        lblMessage.ForeColor = Color.Red;
+                        lblMessage.Visible = true;
+                    }
+                    else
+                    {
+                        lblMessage.Text = ""; // Hide the message if records are found
+                    }
+
                     GridView1.DataSource = dt;
                     GridView1.DataBind();
                 }
@@ -148,5 +160,12 @@ public partial class pages_Tender : System.Web.UI.Page
         pageSize = int.Parse(ddlRecordsPerPage.SelectedValue);
         CurrentPageIndex = 0;
         BindGridView(txtSearch.Text.Trim());
+    }
+
+    protected void btnReset_Click(object sender, EventArgs e)
+    {
+        lblMessage.Text = string.Empty;
+        txtSearch.Text = string.Empty;
+        BindGridView("");
     }
 }

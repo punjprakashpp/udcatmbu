@@ -1,12 +1,26 @@
-﻿.box {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+﻿.card {
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #ddd;
 }
 
-    .box:hover {
+    .card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+/* box and Image Styling */
+.box img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 5px solid #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .box img:hover {
+        transform: scale(1.05);
     }
 
 .board {
@@ -25,8 +39,7 @@
 }
 
 @media (max-width: 768px) {
-    .slider-section,
-    .notice-section {
+    .slider-section, .notice-section {
         margin: 10px auto;
         padding: 10px;
         width: 100%; /* Full width for mobile view */

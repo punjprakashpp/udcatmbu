@@ -16,7 +16,7 @@
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-5 bg-light">
-        <div class="container contain bg-white rounded shadow-sm py-5 px-4">
+        <div class="container contain bg-white rounded shadow-sm py-4 px-4">
             <div class="text-center bg-gradient-primary text-white p-4 rounded">
                 <img src="img/other/white.png" width="100" />
                 <h1>Alumni Registration</h1>

@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="Content/pages.css">
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container contain bg-white rounded shadow-sm py-5 px-4">
-            <h1 class="text-center text-white bg-gradient-primary rounded-top p-4 mb-4">Attendance Protocol</h1>
+    <section class="py-4 bg-light">
+        <div class="container contain bg-white rounded shadow-sm p-4">
+            <h1 class="text-center text-primary">Attendance Protocol</h1>
             <div class="points">
                 <div class="point">1. Consistent and timely attendance is vital for student success.</div>
                 <div class="point">2. Students are expected to be punctual for every class. Attendance will not be recorded for late arrivals exceeding five minutes.</div>

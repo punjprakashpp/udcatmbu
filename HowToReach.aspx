@@ -11,8 +11,8 @@
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container bg-white rounded shadow-sm py-5 px-4">
+    <section class="py-4 bg-light">
+        <div style="max-width:1024px" class="container bg-white rounded shadow-sm p-4">
 
             <!-- Location Map -->
             <div class="text-center mb-4">

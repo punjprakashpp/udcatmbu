@@ -1,114 +1,207 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="cms.master.cs" Inherits="cms_master" %>
 
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head runat="server">
-    <title><%: Page.Title %></title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="author" content="Punj Prakash">
+    <meta name="description" content="Content Management System">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="School Website">
-    <meta name="keywords" content="HTML, CSS, JavaScript, ASP.NET, MS SQL Server">
-    <!--<base href="https://www.w3schools.com/">-->
-    <link rel="stylesheet" href="../content/bootstrap.min.css" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <title><%: Page.Title %></title>
+    <link rel="stylesheet" href="../content/all.min.css">
+    <link rel="stylesheet" href="../content/bootstrap.min.css">
+    <style>
+        .sidebar {
+            width: 250px;
+            min-height: 100vh;
+        }
+
+            .sidebar a.nav-link {
+                color: #fff;
+                transition: background-color 0.3s ease;
+            }
+
+                .sidebar a.nav-link:hover {
+                    background-color: #495057;
+                }
+
+        .logo {
+            max-width: 225px;
+        }
+
+        @media (max-width: 991.98px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -250px;
+                width: 250px;
+                height: 100%;
+                background: #343a40;
+                transition: left 0.3s ease;
+                z-index: 1050;
+            }
+
+                .sidebar.open {
+                    left: 0;
+                }
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1040;
+        }
+
+            .overlay.active {
+                display: block;
+            }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark fixed-top sticky-top border-bottom border-body" data-bs-theme="dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../cms/">
-                    <img src="../img/logo/logo-head.png" alt="Logo" class="logo-nav" style="width: 225px;"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Upload
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="UploadNotice.aspx">Upload Notice</a></li>
-                                <li><a class="dropdown-item" href="UploadSliderImage.aspx">Upload Slider Image</a></li>
-                                <li><a class="dropdown-item" href="UploadGalleryImage.aspx">Upload Gallery Images</a></li>
-                                <li><a class="dropdown-item" href="UploadNewspaperImage.aspx">Upload Newspaper Image</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Delete
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="DeleteSliderImages.aspx">Delete Slider Images</a></li>
-                                <li><a class="dropdown-item" href="DeleteGalleryImages.aspx">Delete Gallery Images</a></li>
-                                <li><a class="dropdown-item" href="DeleteNewspaperImages.aspx">Delete Newspaper Images</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="ManageUsers.aspx">Manage Users</a></li>
-                                <li><a class="dropdown-item" href="ManageNotice.aspx">Manage Notice</a></li>
-                                <li><a class="dropdown-item" href="ManageHighlightLinks.aspx">Manage Highlight Links</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="~/Login.aspx">Log In</a>
-                                </li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hello, <%: Context.User.Identity.Name %> !</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" runat="server" title="Manage your account" href="~/cms/ManageAccount.aspx">Manage your account</a></li>
-                                        <li><a class="dropdown-item" runat="server" title="Change your password" href="~/cms/ChangePassword.aspx">Change Your Password</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" CssClass="nav-link" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+        <div class="d-flex">
+            <!-- Sidebar -->
+            <div class="sidebar bg-dark text-white d-flex flex-column">
+                <div class="d-flex justify-content-center align-items-center py-3">
+                    <a href="../cms/">
+                        <img src="../img/logo/logo-head.png" alt="Logo" class="logo">
+                    </a>
                 </div>
+                <ul class="nav flex-column px-3">
+                    <li class="nav-item">
+                        <a href="../cms/" class="nav-link">
+                            <i class="fas fa-home me-2"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#uploadMenu" role="button" aria-expanded="false" aria-controls="uploadMenu">
+                            <i class="fas fa-upload me-2"></i>Upload
+                        </a>
+                        <div class="collapse" id="uploadMenu">
+                            <ul class="nav flex-column ps-4">
+                                <li><a href="UploadNotice.aspx" class="nav-link">Notice</a></li>
+                                <li><a href="UploadSliderImage.aspx" class="nav-link">Slider Image</a></li>
+                                <li><a href="UploadGalleryImage.aspx" class="nav-link">Gallery Image</a></li>
+                                <li><a href="UploadNewspaperImage.aspx" class="nav-link">Newspaper Image</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-table me-2"></i>Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#productsMenu" role="button" aria-expanded="false" aria-controls="productsMenu">
+                            <i class="fas fa-boxes me-2"></i>Products
+                        </a>
+                        <div class="collapse" id="productsMenu">
+                            <ul class="nav flex-column ps-4">
+                                <li><a href="#" class="nav-link">Product 1</a></li>
+                                <li><a href="#" class="nav-link">Product 2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <asp:ContentPlaceHolder ID="Content" runat="server">
-        </asp:ContentPlaceHolder>
-        <footer class="container-fluid bg-dark text-light py-3 border-top">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
-                <!-- Logo and Site Name -->
-                <a href="../cms/" class="d-flex align-items-center text-light text-decoration-none mb-2 mb-md-0">
-                    <img src="../img/logo/logo-head.png" alt="Logo" class="logo-nav" style="width: 225px;">
-                </a>
+            <!-- Overlay for Sidebar -->
+            <div class="overlay"></div>
 
-                <!-- Copyright -->
-                <p class="mb-0 mb-2 mb-md-0">© 2024 School Website. All Rights Reserved.</p>
+            <!-- Main Content -->
+            <div class="main-content flex-grow-1">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+                    <div class="container-fluid">
+                        <!-- Sidebar Toggle Button -->
+                        <button class="navbar-toggler" type="button" id="sidebarToggle">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-                <!-- Developer Information -->
-                <p class="mb-0">Developed by <a href="https://punjprakashpp.github.io/punjprakashpp/" target="_blank" class="text-light text-decoration-none">Punj Prakash</a></p>
+                        <!-- Brand Name -->
+                        <span class="navbar-brand d-flex align-items-center">
+                            <a class="text-decoration-none d-flex align-items-center" href="../cms/">
+                                <img class="me-2 d-lg-none" src="../img/logo/logo-small.png" alt="Logo" style="height: 30px;">
+                                <span class="text-white fa-bold">Website CMS</span>
+                            </a>
+                        </span>
+
+                        <!-- Navbar Toggle for Mobile -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fa fa-user"></span>
+                        </button>
+
+                        <!-- Right-Side Items -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <asp:LoginView runat="server">
+                                <AnonymousTemplate>
+                                    <ul class="navbar-nav ms-auto">
+                                        <li class="nav-item">
+                                            <a href="~/Login.aspx" class="nav-link">Log In</a>
+                                        </li>
+                                    </ul>
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>
+                                    <ul class="navbar-nav ms-auto">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hello, <%: Context.User.Identity.Name %>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li><a href="ManageAccount.aspx" class="dropdown-item">Manage Account</a></li>
+                                                <li><a href="ChangePassword.aspx" class="dropdown-item">Change Password</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" CssClass="nav-link" />
+                                        </li>
+                                    </ul>
+                                </LoggedInTemplate>
+                            </asp:LoginView>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container-fluid py-4">
+                    <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+                </div>
+
+                <!-- Footer -->
+                <footer class="bg-dark text-white text-center py-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <p class="mb-2">© 2024 University Department of Computer Applications. </p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <p class="mb-2">All Rights Reserved ! Developed by <a href="https://punjprakashpp.github.io/punjprakashpp/" target="_blank" class="text-light text-decoration-none">Punj Prakash</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
-        </footer>
+        </div>
     </form>
-    <script defer type="text/javascript" src="../Scripts/modernizr-2.8.3.js"></script>
-    <script defer type="text/javascript" src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script>
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.overlay');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+    </script>
 </body>
 </html>

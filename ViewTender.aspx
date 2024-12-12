@@ -5,18 +5,19 @@
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container contain bg-white rounded shadow-sm py-5 px-4">
-            <h1 class="text-center text-white bg-gradient-primary rounded-top p-4 mb-4">Latest Tenders</h1>
+    <section class="py-4 bg-light">
+        <div class="container contain bg-white rounded shadow-sm p-4">
+            <h1 class="text-center text-primary rounded-top p-4 mb-4">Latest Tenders</h1>
 
             <!-- Search and Controls Section -->
             <div class="row mb-4">
-                <div class="col-md-4 text-start">
+                <div class="col-md-3 text-start">
                     <label for="txtSearch" class="form-label">Search Tenders:</label>
                     <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
-                <div class="col-md-2">
-                    <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary mt-4" />
+                <div class="col-md-3 mt-4 text-end">
+                    <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />
+                    <asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="btnReset_Click" CssClass="btn btn-secondary ms-2" />
                 </div>
                 <div class="col-md-3">
                     <label class="form-label">Records per page:</label>
@@ -26,16 +27,14 @@
                         <asp:ListItem Value="50" Text="50" />
                     </asp:DropDownList>
                 </div>
-                <div class="col-md-3 text-end">
-                    <asp:Button ID="btnPrevPage" runat="server" Text="Previous" CssClass="btn btn-secondary mt-4" OnClick="btnPrevPage_Click" />
-                    <asp:Button ID="btnNextPage" runat="server" Text="Next" CssClass="btn btn-secondary mt-4 ms-2" OnClick="btnNextPage_Click" />
+                <div class="col-md-3 mt-4 text-end">
+                    <asp:Button ID="btnPrevPage" runat="server" Text="Previous" CssClass="btn btn-secondary" OnClick="btnPrevPage_Click" />
+                    <asp:Button ID="btnNextPage" runat="server" Text="Next" CssClass="btn btn-secondary ms-2" OnClick="btnNextPage_Click" />
                 </div>
             </div>
 
-            <!-- Message -->
-            <div class="text-center mb-4">
-                <asp:Label ID="lblmsg" runat="server" CssClass="text-danger"></asp:Label>
-            </div>
+            <!-- Message Section -->
+            <asp:Label ID="lblMessage" runat="server" Text="" class="d-block mb-4"></asp:Label>
 
             <!-- Table Section -->
             <div class="table-responsive">

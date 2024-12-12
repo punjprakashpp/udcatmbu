@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="Content/pages.css">
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container contain bg-white rounded shadow-sm py-5 px-4">
-            <h1 class="text-center text-white bg-gradient-primary rounded-top p-4 mb-4">Dress Code Policy</h1>
+    <section class="py-4 bg-light">
+        <div class="container contain bg-white rounded shadow-sm p-4">
+            <h1 class="text-center text-primary">Dress Code Policy</h1>
             <p class="mb-4 text-justify">
                 In order to maintain a professional and respectful environment, all students are required to adhere to the following dress code:
             </p>

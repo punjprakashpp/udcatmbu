@@ -4,13 +4,13 @@
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container bg-white rounded shadow-sm py-5 px-4">
+    <section class="py-4 bg-light">
+        <div style="max-width:1024px" class="container bg-white rounded shadow-sm p-4">
             <!-- University Header -->
             <div class="text-center">
                 <a href="http://tmbuniv.ac.in/" target="_blank" class="text-decoration-none">
-                    <h1 class="title text-primary">TILKA MANJHI BHAGALPUR UNIVERSITY</h1>
-                    <img src="img/Dept/tmbu.jpg" alt="Tilka Manjhi Bhagalpur University" class="img-fluid">
+                    <h1 class="title text-primary">Tilka Manjhi Bhagalpur University</h1>
+                    <img src="img/Dept/tmbu.jpg" alt="Tilka Manjhi Bhagalpur University" class="img-fluid mt-2 mb-2 d-block mx-auto rounded-2">
                 </a>
             </div>
 

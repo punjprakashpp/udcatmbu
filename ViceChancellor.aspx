@@ -7,7 +7,7 @@
     <section class="py-5 bg-light">
         <div class="container bg-white rounded shadow-sm py-5 px-4">
             <!-- Header Section -->
-            <h1 class="text-center text-primary mb-5">Vice-Chancellor of TMBU</h1>
+            <h1 class="text-center text-primary mb-5">Vice-Chancellor of Tilka Manjhi Bhagalpur University</h1>
 
             <div class="row align-items-center">
                 <!-- Vice-Chancellor Image and Information -->
