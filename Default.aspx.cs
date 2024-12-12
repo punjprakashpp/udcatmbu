@@ -27,7 +27,7 @@ public partial class _Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Title, ImagePath FROM Image WHERE Type ='Slider' ORDER BY ImageID DESC";
+            string query = "SELECT Title, FilePath FROM Image WHERE Type ='Slider' ORDER BY ImageID DESC";
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -171,17 +171,17 @@ public partial class _Default : System.Web.UI.Page
             {
                 case "Chancellor":
                     lblNameChancellor.Text = person.Name;
-                    ImageChancellor.ImageUrl = person.ImagePath;
+                    ImageChancellor.ImageUrl = person.FilePath;
                     break;
                 case "Vice-Chancellor":
                     lblNameViceChancellor.Text = person.Name;
-                    ImageViceChancellor.ImageUrl = person.ImagePath;
+                    ImageViceChancellor.ImageUrl = person.FilePath;
                     break;
                 case "Director":
                     lblNameDirector.Text = person.Name;
                     NameDirector.Text = person.Name;
-                    ImageDirector.ImageUrl = person.ImagePath;
-                    ImgDirector.ImageUrl = person.ImagePath;
+                    ImageDirector.ImageUrl = person.FilePath;
+                    ImgDirector.ImageUrl = person.FilePath;
                     break;
             }
         }
@@ -207,7 +207,7 @@ public class PersonDAL
                 person.PersonID = Convert.ToInt32(rdr["PersonID"]);
                 person.Type = rdr["Type"].ToString();
                 person.Name = rdr["Name"].ToString();
-                person.ImagePath = rdr["ImagePath"].ToString();
+                person.FilePath = rdr["FilePath"].ToString();
                 persons.Add(person);
             }
         }
@@ -221,5 +221,5 @@ public class Person
     public int PersonID { get; set; }
     public string Type { get; set; }
     public string Name { get; set; }
-    public string ImagePath { get; set; }
+    public string FilePath { get; set; }
 }

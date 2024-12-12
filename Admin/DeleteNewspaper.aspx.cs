@@ -20,7 +20,7 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ImageID, Title, '~/' + ImagePath AS ImagePath FROM Image WHERE Type = 'News'";
+            string query = "SELECT ImageID, Title, '~/' + FilePath AS FilePath FROM Image WHERE Type = 'News'";
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 query += " AND Title LIKE @SearchQuery";
@@ -55,12 +55,12 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
     protected void gvNewspapers_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
         int id = Convert.ToInt32(gvNewspapers.DataKeys[e.RowIndex].Value);
-        string imagePath = "";
+        string FilePath = "";
 
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ImagePath FROM Image WHERE ImageID = @ID";
+            string query = "SELECT FilePath FROM Image WHERE ImageID = @ID";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@ID", id);
@@ -68,7 +68,7 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    imagePath = reader["ImagePath"].ToString();
+                    FilePath = reader["FilePath"].ToString();
                 }
                 reader.Close();
             }
@@ -81,9 +81,9 @@ public partial class Admin_pages_DeleteNewspaper : System.Web.UI.Page
             }
         }
 
-        if (!string.IsNullOrEmpty(imagePath))
+        if (!string.IsNullOrEmpty(FilePath))
         {
-            string fullPath = Server.MapPath("~/" + imagePath);
+            string fullPath = Server.MapPath("~/" + FilePath);
             if (File.Exists(fullPath))
             {
                 File.Delete(fullPath);

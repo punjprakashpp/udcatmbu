@@ -26,10 +26,10 @@ public partial class pages_Chancellor : System.Web.UI.Page
                 if (rdr.Read())
                 {
                     string name = rdr["Name"].ToString();
-                    string imagePath = rdr["ImagePath"].ToString();
+                    string FilePath = rdr["FilePath"].ToString();
 
                     lblName.Text = name;
-                    imgPerson.ImageUrl = "~/" + imagePath;
+                    imgPerson.ImageUrl = "~/" + FilePath;
                 }
                 else
                 {

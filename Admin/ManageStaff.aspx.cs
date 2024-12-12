@@ -59,7 +59,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                     txtPosition.Text = reader["Position"].ToString();
                     txtPhone.Text = reader["Phone"].ToString();
                     txtEmail.Text = reader["Email"].ToString();
-                    currentImage.Src = ResolveUrl("~/" + reader["ImagePath"].ToString());
+                    currentImage.Src = ResolveUrl("~/" + reader["FilePath"].ToString());
                     currentImage.Style["display"] = "block";
                 }
                 reader.Close();
@@ -85,22 +85,22 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
         {
             int facultyId = Convert.ToInt32(ddlFaculties.SelectedValue);
             string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-            string imagePath = "";
+            string FilePath = "";
             using (SqlConnection con = new SqlConnection(connStr))
             {
                 con.Open();
 
 
-                string selectImagePathQuery = "SELECT ImagePath FROM Member WHERE MemberID = @FacultyId";
-                using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, con))
+                string selectFilePathQuery = "SELECT FilePath FROM Member WHERE MemberID = @FacultyId";
+                using (SqlCommand selectFilePathCmd = new SqlCommand(selectFilePathQuery, con))
                 {
-                    selectImagePathCmd.Parameters.AddWithValue("@FacultyId", facultyId);
-                    imagePath = selectImagePathCmd.ExecuteScalar() as string;
+                    selectFilePathCmd.Parameters.AddWithValue("@FacultyId", facultyId);
+                    FilePath = selectFilePathCmd.ExecuteScalar() as string;
                 }
             }
 
             bool newFileUploaded = fileUpload.HasFile;
-            string oldImagePath = imagePath; // Store the current image path
+            string oldFilePath = FilePath; // Store the current image path
             string type = ddlType.SelectedValue;
             if (newFileUploaded)
             {
@@ -129,12 +129,12 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                                 bmp.Save(fullPath, ImageFormat.Png);
                             }
                         }
-                        imagePath = "img/staff/" + fileName;
+                        FilePath = "img/staff/" + fileName;
 
                         // Delete the old file
-                        if (!string.IsNullOrEmpty(oldImagePath))
+                        if (!string.IsNullOrEmpty(oldFilePath))
                         {
-                            string filePath = Server.MapPath("~/" + oldImagePath);
+                            string filePath = Server.MapPath("~/" + oldFilePath);
                             if (File.Exists(filePath))
                             {
                                 File.Delete(filePath);
@@ -158,7 +158,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    string query = "UPDATE Member SET Type = @Type, Status = @Status, Name = @Name, Qualification = @Qualification, Position = @Position, Phone = @Phone, Email = @Email, ImagePath = @ImagePath WHERE MemberID = @FacultyId";
+                    string query = "UPDATE Member SET Type = @Type, Status = @Status, Name = @Name, Qualification = @Qualification, Position = @Position, Phone = @Phone, Email = @Email, FilePath = @FilePath WHERE MemberID = @FacultyId";
                     
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -169,7 +169,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                         cmd.Parameters.AddWithValue("@Position", txtPosition.Text);
                         cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                        cmd.Parameters.AddWithValue("@ImagePath", imagePath);
+                        cmd.Parameters.AddWithValue("@FilePath", FilePath);
                         cmd.Parameters.AddWithValue("@FacultyId", ddlFaculties.SelectedValue);
                         conn.Open();
                         cmd.ExecuteNonQuery();
@@ -203,12 +203,12 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                 {
                     conn.Open();
 
-                    string imagePath = "";
-                    string selectImagePathQuery = "SELECT ImagePath FROM Member WHERE MemberID = @FacultyId";
-                    using (SqlCommand selectImagePathCmd = new SqlCommand(selectImagePathQuery, conn))
+                    string FilePath = "";
+                    string selectFilePathQuery = "SELECT FilePath FROM Member WHERE MemberID = @FacultyId";
+                    using (SqlCommand selectFilePathCmd = new SqlCommand(selectFilePathQuery, conn))
                     {
-                        selectImagePathCmd.Parameters.AddWithValue("@FacultyId", facultyId);
-                        imagePath = selectImagePathCmd.ExecuteScalar() as string;
+                        selectFilePathCmd.Parameters.AddWithValue("@FacultyId", facultyId);
+                        FilePath = selectFilePathCmd.ExecuteScalar() as string;
                     }
 
                     string deleteFacultyQuery = "DELETE FROM Member WHERE MemberID = @FacultyId";
@@ -216,9 +216,9 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                     {
                         deleteFacultyCmd.Parameters.AddWithValue("@FacultyId", facultyId);
                         int rowsAffected = deleteFacultyCmd.ExecuteNonQuery();
-                        if (rowsAffected > 0 && !string.IsNullOrEmpty(imagePath))
+                        if (rowsAffected > 0 && !string.IsNullOrEmpty(FilePath))
                         {
-                            string filePath = Server.MapPath("~/" + imagePath);
+                            string filePath = Server.MapPath("~/" + FilePath);
                             if (File.Exists(filePath))
                             {
                                 File.Delete(filePath);

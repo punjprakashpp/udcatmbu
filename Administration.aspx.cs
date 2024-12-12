@@ -19,7 +19,7 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Name, Type, ImagePath FROM Person WHERE Type = 'Chancellor'";
+            string query = "SELECT Name, Type, FilePath FROM Person WHERE Type = 'Chancellor'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -28,7 +28,7 @@ public partial class pages_Default : System.Web.UI.Page
                     if (reader.Read())
                     {
                         lblName.Text = reader["Name"].ToString();
-                        Image.ImageUrl = reader["ImagePath"].ToString();
+                        Image.ImageUrl = reader["FilePath"].ToString();
                         lblType.Text = reader["Type"].ToString();
                     }
                 }
@@ -41,7 +41,7 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Name, Type, Phone, Email, ImagePath FROM Person WHERE Type <> 'Chancellor'";
+            string query = "SELECT Name, Type, Phone, Email, FilePath FROM Person WHERE Type <> 'Chancellor'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();

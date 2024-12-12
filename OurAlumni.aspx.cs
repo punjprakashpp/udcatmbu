@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.UI.WebControls;
+using System.Drawing;
 
 public partial class pages_Default : System.Web.UI.Page
 {
@@ -49,7 +50,7 @@ public partial class pages_Default : System.Web.UI.Page
             catch (Exception ex)
             {
                 lblmsg.Text= "Error loading sessions: " + ex.Message;
-                lblmsg.ForeColor = System.Drawing.Color.Red;
+                lblmsg.ForeColor = Color.Red;
             }
         }
     }
@@ -59,7 +60,7 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = @"SELECT FirstName, MidName, LastName, Session, Qualification, Occupation, Company, Phone, Email, ImagePath, LinkedIn, Facebook, Instagram, Twitter 
+            string query = @"SELECT FirstName, MidName, LastName, Session, Qualification, Occupation, Company, Phone, Email, FilePath, LinkedIn, Facebook, Instagram, Twitter 
                              FROM Alumni 
                              WHERE (@Session IS NULL OR Session = @Session)";
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -70,6 +71,17 @@ public partial class pages_Default : System.Web.UI.Page
             {
                 DataTable dt = new DataTable();
                 dt.Load(reader);
+
+                if (dt.Rows.Count == 0)
+                {
+                    lblMessage.Text = "No records found.";
+                    lblMessage.ForeColor = Color.Red;
+                    lblMessage.Visible = true;
+                }
+                else
+                {
+                    lblMessage.Text = ""; // Hide the message if records are found
+                }
 
                 PagedDataSource pds = new PagedDataSource();
                 pds.DataSource = dt.DefaultView;

@@ -14,7 +14,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
 
     protected void btnSave_Click(object sender, EventArgs e)
     {
-        string imagePath = "img/default/default.jpg"; // Default image path
+        string FilePath = "img/default/default.jpg"; // Default image path
         string type = ddlType.SelectedValue;
         if (fileUpload.HasFile)
         {
@@ -42,7 +42,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
                         bmp.Save(fullPath, ImageFormat.Png);
                     }
                 }
-                imagePath = "img/Staff/" + fileName;
+                FilePath = "img/Staff/" + fileName;
             }
             else
             {
@@ -54,7 +54,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                string query = "INSERT INTO Member (Type, Status, Name, Qualification, Position, Phone, Email, ImagePath) VALUES (@Type, @Status, @Name, @Qualification, @Position, @Phone, @Email, @ImagePath)";
+                string query = "INSERT INTO Member (Type, Status, Name, Qualification, Position, Phone, Email, FilePath) VALUES (@Type, @Status, @Name, @Qualification, @Position, @Phone, @Email, @FilePath)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Type", type);
@@ -64,7 +64,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
                     cmd.Parameters.AddWithValue("@Position", txtPosition.Text);
                     cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@ImagePath", imagePath);
+                    cmd.Parameters.AddWithValue("@FilePath", FilePath);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     lblMessage.Text = "Staff details saved successfully!";

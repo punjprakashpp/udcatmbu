@@ -19,7 +19,7 @@
         <h2>Update Administrative Person</h2>
         <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Text=""></asp:Label>
         <asp:HiddenField ID="hfPersonID" runat="server" />
-        <asp:HiddenField ID="hfCurrentImagePath" runat="server" />
+        <asp:HiddenField ID="hfCurrentFilePath" runat="server" />
         <table>
             <tr>
                 <td>Type:</td>

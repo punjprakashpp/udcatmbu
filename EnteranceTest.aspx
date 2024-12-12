@@ -5,7 +5,7 @@
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">
-        <div style="max-width:1024px" class="container bg-white rounded shadow-sm p-4">
+        <div style="max-width:800px" class="container bg-white rounded shadow-sm p-4">
             <!-- Page Title -->
             <h1 class="text-primary text-center mb-4">Syllabus for MCA Entrance Test</h1>
 

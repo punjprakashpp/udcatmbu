@@ -8,6 +8,9 @@
     <section class="py-4 bg-light">
         <div class="container content bg-white rounded shadow-sm p-4">
             <h1 class="text-center text-primary rounded-top p-4">Meet Our Achievers</h1>
+            
+            <!-- Message Section -->
+            <asp:Label ID="lblMessage" runat="server" Text="" class="d-block mb-4"></asp:Label>
 
             <!-- Achievers List -->
             <div class="row">
@@ -18,7 +21,7 @@
                                 <div class="row g-0 align-items-center">
                                     <!-- Achiever Image -->
                                     <div class="col-md-5 text-center p-3">
-                                        <img class="img-fluid rounded-circle" src='<%# Eval("ImagePath") %>' alt='<%# Eval("FirstName") %>' style="max-width: 120px;">
+                                        <img class="img-fluid rounded-circle" src='<%# Eval("FilePath") %>' alt='<%# Eval("FirstName") %>' style="max-width: 120px;">
                                         <h4 class="text-primary mt-2">
                                             <%# Eval("FirstName") %> <%# Eval("MidName") %> <%# Eval("LastName") %>
                                         </h4>

@@ -58,7 +58,7 @@ public partial class cms_UploadSliderImage : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "INSERT INTO Image (Type, Title, ImagePath, UploadDate) VALUES (@Type, @Desc, @FilePath, @UploadDate)";
+            string query = "INSERT INTO Image (Type, Title, FilePath, UploadDate) VALUES (@Type, @Desc, @FilePath, @UploadDate)";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@Type", "Slider");

@@ -40,8 +40,8 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
                         txtName.Text = rdr["Name"].ToString();
                         txtPhone.Text = rdr["Phone"].ToString();
                         txtEmail.Text = rdr["Email"].ToString();
-                        hfCurrentImagePath.Value = rdr["ImagePath"].ToString(); // Save current image path
-                        currentImage.Src = ResolveUrl("~/" + rdr["ImagePath"].ToString());
+                        hfCurrentFilePath.Value = rdr["FilePath"].ToString(); // Save current image path
+                        currentImage.Src = ResolveUrl("~/" + rdr["FilePath"].ToString());
                         currentImage.Style["display"] = "block";
                     }
                     else
@@ -62,7 +62,7 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
     {
         string type = ddlType.SelectedValue;
         string name = txtName.Text.Trim();
-        string imagePath = !string.IsNullOrEmpty(hfCurrentImagePath.Value) ? hfCurrentImagePath.Value : "img/default/default.jpg"; // Default image path
+        string FilePath = !string.IsNullOrEmpty(hfCurrentFilePath.Value) ? hfCurrentFilePath.Value : "img/default/default.jpg"; // Default image path
 
         try
         {
@@ -93,15 +93,15 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
                                 bmp.Save(fullPath, ImageFormat.Png);
                             }
                         }
-                        imagePath = "img/person/" + fileName;
+                        FilePath = "img/person/" + fileName;
 
                         // Delete the previous image file if a new one is uploaded and it's an update operation
-                        if (!string.IsNullOrEmpty(hfCurrentImagePath.Value))
+                        if (!string.IsNullOrEmpty(hfCurrentFilePath.Value))
                         {
-                            string previousImagePath = Server.MapPath("~/" + hfCurrentImagePath.Value);
-                            if (File.Exists(previousImagePath))
+                            string previousFilePath = Server.MapPath("~/" + hfCurrentFilePath.Value);
+                            if (File.Exists(previousFilePath))
                             {
-                                File.Delete(previousImagePath);
+                                File.Delete(previousFilePath);
                             }
                         }
                     }
@@ -121,12 +121,12 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
                 if (string.IsNullOrEmpty(hfPersonID.Value))
                 {
                     // Insert new record
-                    query = "INSERT INTO Person (Type, Name, Phone, Email, ImagePath) VALUES (@Type, @Name, @Phone, @Email, @ImagePath)";
+                    query = "INSERT INTO Person (Type, Name, Phone, Email, FilePath) VALUES (@Type, @Name, @Phone, @Email, @FilePath)";
                 }
                 else
                 {
                     // Update existing record
-                    query = "UPDATE Person SET Name = @Name, Phone = @Phone, Email = @Email, ImagePath = @ImagePath WHERE Type = @Type AND PersonID = @PersonID";
+                    query = "UPDATE Person SET Name = @Name, Phone = @Phone, Email = @Email, FilePath = @FilePath WHERE Type = @Type AND PersonID = @PersonID";
                 }
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
@@ -135,7 +135,7 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
                     cmd.Parameters.AddWithValue("@Name", name);
                     cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@ImagePath", imagePath);
+                    cmd.Parameters.AddWithValue("@FilePath", FilePath);
 
                     if (!string.IsNullOrEmpty(hfPersonID.Value))
                     {

@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="MasterPage" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -9,19 +9,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="keywords" content="UDCA, UDCA TMBU, udcatmbu, University Department of Computer Applications TMBU, University Department of Computer Applications T.M.Bhagalpur University, Computer Center, Computer Center Bhagalpur, MCA, MCA in Bhagalpur, MCA from TMBU, Master of Computer Applications (MCA) in Bhagalpur"/>
     <meta name="description" content="University Department of Computer Applications (UDCA) is a constituent unit of Tilka Manjhi Bhagalpur University (TMBU), Bhagalpur.The first University in Bihar to offers 3 years (6 semesters) full time MCA course, now offering 2 years (4 semesters) MCA Course according to new guidelines. The UDCA campus is spread over 2.5 acrs and fully equiped with Wi-Fi."/>
-    <link rel="stylesheet" href="Content/Site.css"/>
     <link rel="stylesheet" href="Content/Poppins.css"/>
     <link rel="stylesheet" href="Content/all.min.css"/>
     <link rel="stylesheet" href="Content/bootstrap.min.css"/>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <style>
+        /* General Styles for the Header */
+        header {
+            background-color: #f8f9fa; /* Light background color */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e9ecef; /* Subtle bottom border */
+        }
+
+            /* Logo Styling */
+            header a img {
+                max-width: 75%; /* Responsive width for the logo */
+                height: auto; /* Maintain aspect ratio */
+            }
+
+        @media (max-width: 1200px) {
+            header a img {
+                max-width: 80%; /* Full width on small screens */
+                margin: auto;
+            }
+        }
+
+        @media (max-width: 992px) {
+            header a img {
+                max-width: 100%; /* Full width on small screens */
+            }
+        }
+
+        /* Contact and Social Links Styling */
+        header a {
+            color: #343a40; /* Dark text color */
+            font-size: 1rem; /* Base font size */
+            display: flex;
+            align-items: center;
+            text-decoration: none; /* Remove underline */
+            transition: color 0.3s ease; /* Smooth hover effect */
+        }
+
+            header a i {
+                font-size: 1.2rem; /* Icon size slightly larger */
+                margin-right: 0.5rem; /* Space between icon and text */
+            }
+
+            header a:hover {
+                color: #007bff; /* Bootstrap's primary color on hover */
+            }
+
+        /* Responsive Layout */
+        @media (max-width: 992px) {
+            header {
+                text-align: center; /* Center text on medium screens */
+            }
+
+                header .d-flex {
+                    flex-direction: column; /* Stack links vertically */
+                    gap: 1rem; /* Add spacing between stacked links */
+                }
+        }
+
+        @media (max-width: 576px) {
+            header a {
+                font-size: 0.9rem; /* Slightly smaller font on extra small screens */
+            }
+
+                header a i {
+                    font-size: 1rem; /* Adjust icon size for small screens */
+                }
+        }
+
+        /* Additional Spacing */
+        header .gap-3 {
+            gap: 1rem !important; /* Define consistent spacing between items */
+        }
+
+        @media (max-width: 1024px) {
+            .hide-below-1024 {
+                display: none !important; /* Hide elements below 1024px */
+            }
+        }
+
+        /* Flexbox for navbar items */
+        .navbar-nav {
+            display: flex;
+            flex-wrap: wrap;
+            /* Allow items to wrap into a new line */
+        }
+
+        /* Style for dropdown menus (if you want them to look better when in two rows) */
+        .nav-item {
+            margin: 0 10px;
+        }
+
+        /* Media Query for handling overflow (smaller screens) */
+        @media (max-width: 992px) {
+
+            /* Adjust this breakpoint as needed */
+            .navbar-nav {
+                justify-content: center;
+                /* Center items on smaller screens */
+            }
+        }
+
+        /* Style for the Go to Top button */
+        #goToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 1000;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+            #goToTop:hover {
+                background-color: #0056b3;
+            }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-    <header class="py-2 bg-white d-none d-sm-block">
+    <header class="py-2 bg-white">
         <div class="container-fluid">
             <div class="row text-dark text-center align-items-center">
                 <!-- Logo Section -->
-                <div class="col-xl-7 col-md-12 mb-xl-0">
+                <div class="col-xl-7 col-md-12 mb-xl-0 p-0">
                     <a href="Default.aspx">
                         <img class="m-auto" src="img/logo/logo-header.png" alt="Brand Logo" />
                     </a>
@@ -30,23 +152,23 @@
                 <div class="col-xl-5 col-md-12 hide-below-1024">
                     <div class="m-auto d-flex flex-wrap justify-content-center gap-4">
                         <!-- Contact and Social Links -->
-                        <a href="tel:0641-250040" class="text-dark text-decoration-none" aria-label="Call us">
-                            <i class="fa fa-phone"></i>&nbsp;0641-250040
-                        </a>
-                        <a href="mailto:udcatmbu.bgp@gmail.com" class="text-dark text-decoration-none" aria-label="Email us">
-                            <i class="fa fa-envelope"></i>&nbsp;udcatmbu.bgp@gmail.com
-                        </a>
-                        <a href="https://www.facebook.com/udcatmbu" target="_blank" class="text-dark text-decoration-none" aria-label="Facebook">
+                        <a href="https://www.facebook.com/udcatmbu" target="_blank" class="text-decoration-none" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>&nbsp;Facebook
                         </a>
-                        <a href="https://www.instagram.com/udcatmbu" target="_blank" class="text-dark text-decoration-none" aria-label="Instagram">
+                        <a href="https://www.instagram.com/udcatmbu" target="_blank" class="text-decoration-none" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>&nbsp;Instagram
                         </a>
-                        <a href="https://x.com/udcatmbu" target="_blank" class="text-dark text-decoration-none" aria-label="Twitter/X">
+                        <a href="https://x.com/udcatmbu" target="_blank" class="text-decoration-none" aria-label="Twitter/X">
                             <i class="fab fa-x-twitter"></i>&nbsp;Twitter/X
                         </a>
-                        <a href="https://www.linkedin.com/in/udcatmbu" target="_blank" class="text-dark text-decoration-none" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/udcatmbu" target="_blank" class="text-decoration-none" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>&nbsp;LinkedIn
+                        </a>
+                        <a href="tel:0641-250040" class="text-decoration-none" aria-label="Call us">
+                            <i class="fa fa-phone"></i>&nbsp;0641-250040
+                        </a>
+                        <a href="mailto:udcatmbu.bgp@gmail.com" class="text-decoration-none" aria-label="Email us">
+                            <i class="fa fa-envelope"></i>&nbsp;udcatmbu.bgp@gmail.com
                         </a>
                     </div>
                 </div>
@@ -57,7 +179,7 @@
         <div class="container-fluid">
             <!-- Brand -->
             <a class="navbar-brand d-block d-lg-none" href="/">
-                <img src="img/logo/logo-head.png" alt="Logo" class="logo-nav" style="width: 250px;">
+                <img src="img/logo/logo-head.png" alt="Logo" class="logo-nav" style="width: 225px;">
             </a>
 
             <!-- Toggler Button for Collapse -->
@@ -141,6 +263,22 @@
                         </ul>
                     </li>
 
+                    <!-- Amenities Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="amenitiesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-building"></i>&nbsp;Amenities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="amenitiesDropdown">
+                            <li><a class="dropdown-item" href="UniversityHostel.aspx"><i class="fa-solid fa-bed"></i>
+                                &nbsp;University Hostel</a></li>
+                            <li><a class="dropdown-item" href="CentralLibrary.aspx"><i class="fa-solid fa-book"></i>
+                                &nbsp;Central Library</a></li>
+                            <li><a class="dropdown-item" href="MedicalFacility.aspx"><i
+                                class="fa-solid fa-kit-medical"></i>&nbsp;Medical Facilities</a></li>
+                        </ul>
+                    </li>
+
                     <!-- Campus Rules Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="campusRulesDropdown" role="button"
@@ -156,22 +294,6 @@
                                     Code</a></li>
                             <li><a class="dropdown-item" href="Decipline.aspx"><i
                                 class="fa-solid fa-scale-balanced"></i>&nbsp;Discipline</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Amenities Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="amenitiesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-building"></i>&nbsp;Amenities
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="amenitiesDropdown">
-                            <li><a class="dropdown-item" href="UniversityHostel.aspx"><i class="fa-solid fa-bed"></i>
-                                &nbsp;University Hostel</a></li>
-                            <li><a class="dropdown-item" href="CentralLibrary.aspx"><i class="fa-solid fa-book"></i>
-                                &nbsp;Central Library</a></li>
-                            <li><a class="dropdown-item" href="MedicalFacility.aspx"><i
-                                class="fa-solid fa-kit-medical"></i>&nbsp;Medical Facilities</a></li>
                         </ul>
                     </li>
 
@@ -254,9 +376,6 @@
                     </li>
 
                     <!-- Standalone Links -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="Downloads.aspx"><i class="fa-solid fa-download"></i>&nbsp;Downloads</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.aspx"><i class="fa-solid fa-sign-in"></i>&nbsp;Login</a>
                     </li>

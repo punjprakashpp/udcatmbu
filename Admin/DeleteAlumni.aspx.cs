@@ -18,7 +18,7 @@ public partial class Admin_pages_DeleteAlumni : System.Web.UI.Page
 
     private void LoadAlumniData()
     {
-        string query = "SELECT AlumniID, Session, FirstName, MidName, LastName, '../' + ImagePath AS ImagePath FROM Alumni";
+        string query = "SELECT AlumniID, Session, FirstName, MidName, LastName, '../' + FilePath AS FilePath FROM Alumni";
         using (SqlConnection conn = new SqlConnection(ConnectionString))
         {
             SqlDataAdapter da = new SqlDataAdapter(query, conn);

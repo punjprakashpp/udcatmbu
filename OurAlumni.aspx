@@ -37,10 +37,9 @@
             </div>
         </div>
 
-        <!-- Message -->
-        <div class="text-center mb-4">
-            <asp:Label ID="lblmsg" runat="server" CssClass="text-danger"></asp:Label>
-        </div>
+            <!-- Message Section -->
+            <asp:Label ID="lblMessage" runat="server" Text="" class="d-block mb-4"></asp:Label>
+            <asp:Label ID="lblmsg" runat="server" Text="" class="d-block mb-4"></asp:Label>
 
         <!-- Alumni Display Section -->
         <asp:Repeater ID="facultyRepeater" runat="server">
@@ -49,7 +48,7 @@
                     <div class="row m-4 align-items-center">
                         <!-- Image and Name -->
                         <div class="col-md-4 text-center">
-                            <img class="img-fluid rounded-circle mb-3" src='<%# Eval("ImagePath") %>' alt='<%# Eval("FirstName") %>' style="max-width: 150px;">
+                            <img class="img-fluid rounded-circle mb-3" src='<%# Eval("FilePath") %>' alt='<%# Eval("FirstName") %>' style="max-width: 150px;">
                             <h3 class="text-primary">
                                 <%# Eval("FirstName") %> <%# Eval("MidName") %> <%# Eval("LastName") %>
                             </h3>

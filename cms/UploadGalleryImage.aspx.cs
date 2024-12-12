@@ -14,7 +14,7 @@ public partial class cms_UploadGalleryImage : System.Web.UI.Page
     {
         string occasion = txtOccasion.Text.Trim();
         string uploadFolder = Server.MapPath("~/uploads/gallery/");
-        string imagePath = "uploads/gallery/";
+        string FilePath = "uploads/gallery/";
 
         // Ensure the upload directory exists
         if (!Directory.Exists(uploadFolder))
@@ -28,7 +28,7 @@ public partial class cms_UploadGalleryImage : System.Web.UI.Page
             {
                 string fileName = Path.GetFileName(uploadedFile.FileName);
                 string fullFilePath = Path.Combine(uploadFolder, fileName);
-                string relativeFilePath = Path.Combine(imagePath, fileName);
+                string relativeFilePath = Path.Combine(FilePath, fileName);
 
                 // Compress and save the image
                 using (Bitmap bitmap = new Bitmap(uploadedFile.InputStream))
@@ -52,7 +52,7 @@ public partial class cms_UploadGalleryImage : System.Web.UI.Page
         }
     }
 
-    private void SaveImageDetailsToDatabase(string occasion, string imagePath)
+    private void SaveImageDetailsToDatabase(string occasion, string FilePath)
     {
         string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         DateTime uploadDate = DateTime.Now;
@@ -64,7 +64,7 @@ public partial class cms_UploadGalleryImage : System.Web.UI.Page
             {
                 command.Parameters.AddWithValue("@Type", "Gallery");
                 command.Parameters.AddWithValue("@Desc", occasion);  // Updated parameter name
-                command.Parameters.AddWithValue("@FilePath", imagePath);
+                command.Parameters.AddWithValue("@FilePath", FilePath);
                 command.Parameters.AddWithValue("@UploadDate", uploadDate);
 
                 connection.Open();

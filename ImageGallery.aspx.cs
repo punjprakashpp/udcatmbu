@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Drawing;
 
 public partial class ImageGallery : System.Web.UI.Page
 {
@@ -30,8 +31,8 @@ public partial class ImageGallery : System.Web.UI.Page
                 WITH GalleryCTE AS (
                     SELECT 
                         Title, 
-                        ImagePath,
-                        ROW_NUMBER() OVER(PARTITION BY Title ORDER BY ImagePath) AS RowNum
+                        FilePath,
+                        ROW_NUMBER() OVER(PARTITION BY Title ORDER BY FilePath) AS RowNum
                     FROM 
                         Image 
                     WHERE 
@@ -39,7 +40,7 @@ public partial class ImageGallery : System.Web.UI.Page
                 )
                 SELECT 
                     Title,
-                    ImagePath
+                    FilePath
                 FROM 
                     GalleryCTE
                 WHERE 
@@ -48,6 +49,17 @@ public partial class ImageGallery : System.Web.UI.Page
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
+
+            if (dt.Rows.Count == 0)
+            {
+                lblMessage.Text = "No records found.";
+                lblMessage.ForeColor = Color.Red;
+                lblMessage.Visible = true;
+            }
+            else
+            {
+                lblMessage.Text = ""; // Hide the message if records are found
+            }
 
             ThumbnailRepeater.DataSource = dt;
             ThumbnailRepeater.DataBind();
@@ -59,7 +71,7 @@ public partial class ImageGallery : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT ImagePath FROM Image WHERE Title = @Title AND Type = 'Gallery'";
+            string query = "SELECT FilePath FROM Image WHERE Title = @Title AND Type = 'Gallery'";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Title", title);
 
@@ -70,7 +82,7 @@ public partial class ImageGallery : System.Web.UI.Page
             string modalContent = "";
             foreach (DataRow row in dt.Rows)
             {
-                modalContent += "<img src='" + row["ImagePath"].ToString() + "' alt='" + title + "' onclick=\"displayImage('" + row["ImagePath"].ToString() + "')\">";
+                modalContent += "<img src='" + row["FilePath"].ToString() + "' alt='" + title + "' onclick=\"displayImage('" + row["FilePath"].ToString() + "')\">";
             }
             return modalContent;
         }

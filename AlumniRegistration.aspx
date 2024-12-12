@@ -16,7 +16,7 @@
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-5 bg-light">
-        <div class="container contain bg-white rounded shadow-sm py-4 px-4">
+        <div class="container contain bg-white rounded shadow-sm p-4">
             <div class="text-center bg-gradient-primary text-white p-4 rounded">
                 <img src="img/other/white.png" width="100" />
                 <h1>Alumni Registration</h1>
@@ -87,8 +87,7 @@
                         <td></td>
                         <td>
                             <asp:Button ID="btnVerify" runat="server" Text="Verify" OnClick="btnVerify_Click" CssClass="btn btn-primary"/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="btnReset_Click" CssClass="btn btn-secondary"/></td>
+                            <asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="btnReset_Click" CssClass="btn btn-secondary ms-4"/></td>
                     </tr>
                 </table>
             </asp:Panel>

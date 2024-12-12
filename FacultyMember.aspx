@@ -15,7 +15,7 @@
                             <div class="card shadow-sm">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-md-4 text-center">
-                                        <img src='<%# Eval("ImagePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
+                                        <img src='<%# Eval("FilePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
                                     </div>
                                     <div class="col-md-8 p-2">
                                         <div class="mx-2">
@@ -38,7 +38,7 @@
                             <div class="card shadow-sm">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-md-4 text-center">
-                                        <img src='<%# Eval("ImagePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
+                                        <img src='<%# Eval("FilePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
                                     </div>
                                     <div class="col-md-8 p-2">
                                         <div class="mx-2">
@@ -61,7 +61,7 @@
                             <div class="card shadow-sm">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-md-4 text-center">
-                                        <img src='<%# Eval("ImagePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
+                                        <img src='<%# Eval("FilePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
                                     </div>
                                     <div class="col-md-8 p-2">
                                         <div class="mx-2">

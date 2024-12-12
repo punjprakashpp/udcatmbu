@@ -17,7 +17,7 @@
             <Columns>
                 <asp:BoundField DataField="ImageID" HeaderText="ImageID" ReadOnly="True" Visible="False" />
                 <asp:BoundField DataField="Title" HeaderText="Description" />
-                <asp:ImageField DataImageUrlField="ImagePath" HeaderText="Image" ControlStyle-Height="100px" ControlStyle-Width="150px">
+                <asp:ImageField DataImageUrlField="FilePath" HeaderText="Image" ControlStyle-Height="100px" ControlStyle-Width="150px">
                     <ControlStyle Height="100px" Width="150px" />
                 </asp:ImageField>
                 <asp:CommandField ShowDeleteButton="True" DeleteText="Delete" />

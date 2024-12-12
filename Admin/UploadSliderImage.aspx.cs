@@ -15,7 +15,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
 
     protected void btnSave_Click(object sender, EventArgs e)
     {
-        string imagePath = "img/default/slider.jpg"; // Default image path
+        string FilePath = "img/default/slider.jpg"; // Default image path
 
         if (fileUpload.HasFile)
         {
@@ -43,7 +43,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
                         bmp.Save(fullPath, ImageFormat.Png);
                     }
                 }
-                imagePath = "img/slider/" + fileName;
+                FilePath = "img/slider/" + fileName;
             }
             else
             {
@@ -55,12 +55,12 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                string query = "INSERT INTO Image (Type, Title, ImagePath) VALUES (@Type, @Name, @ImagePath)";
+                string query = "INSERT INTO Image (Type, Title, FilePath) VALUES (@Type, @Name, @FilePath)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Type", "Slider");
                     cmd.Parameters.AddWithValue("@Name", txtName.Text);
-                    cmd.Parameters.AddWithValue("@ImagePath", imagePath);
+                    cmd.Parameters.AddWithValue("@FilePath", FilePath);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     lblMessage.Text = "Slider Image Uploaded successfully!";

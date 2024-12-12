@@ -20,7 +20,7 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Member WHERE Type = 'Faculty' AND Status ='Current'";
+            string query = "SELECT Name, Qualification, Position, Phone, Email, FilePath FROM Member WHERE Type = 'Faculty' AND Status ='Current'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -41,7 +41,7 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Member WHERE Type = 'Guest' AND Status ='Current'";
+            string query = "SELECT Name, Qualification, Position, Phone, Email, FilePath FROM Member WHERE Type = 'Guest' AND Status ='Current'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -62,7 +62,7 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Name, Qualification, Position, Phone, Email, ImagePath FROM Member WHERE Status = 'Former'";
+            string query = "SELECT Name, Qualification, Position, Phone, Email, FilePath FROM Member WHERE Status = 'Former'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();

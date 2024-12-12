@@ -154,13 +154,13 @@ public partial class Admin_AddAchivers : System.Web.UI.Page
     {
         if (!Page.IsValid) return;
 
-        string imagePath = ProcessImageUpload() ?? "img/default/default.jpg";
+        string FilePath = ProcessImageUpload() ?? "img/default/default.jpg";
         txtPhone.Text = "+91 " + txtPhone.Text.Trim();
 
         string query = @"INSERT INTO Achiver 
-                         (Session, StudentID, FirstName, MidName, LastName, Achivement, Qualification, Phone, Email, Occupation, Company, ImagePath) 
+                         (Session, StudentID, FirstName, MidName, LastName, Achivement, Qualification, Phone, Email, Occupation, Company, FilePath) 
                          VALUES 
-                         (@Session, @StudentID, @FirstName, @MidName, @LastName, @Achivement, @Qualification, @Phone, @Email, @Occupation, @Company, @ImagePath)";
+                         (@Session, @StudentID, @FirstName, @MidName, @LastName, @Achivement, @Qualification, @Phone, @Email, @Occupation, @Company, @FilePath)";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -176,7 +176,7 @@ public partial class Admin_AddAchivers : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
             cmd.Parameters.AddWithValue("@Occupation", txtOccupation.Text);
             cmd.Parameters.AddWithValue("@Company", txtCompany.Text);
-            cmd.Parameters.AddWithValue("@ImagePath", imagePath);
+            cmd.Parameters.AddWithValue("@FilePath", FilePath);
 
             try
             {

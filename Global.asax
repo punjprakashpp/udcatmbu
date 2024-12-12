@@ -1,4 +1,7 @@
-<%@ Application Language="C#" %>
+﻿<%@ Application Language="C#" %>
+<%@ Import Namespace="System.Web.Routing" %>
+<%@ Import Namespace="System.Configuration" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
 
 <script runat="server">
 
@@ -6,6 +9,7 @@
     {
         // Code that runs on application startup
         Application["NoOfVisitors"] = 0;
+        RouteConfig.RegisterRoutes(RouteTable.Routes);
 
     }
     
@@ -38,12 +42,12 @@
 
     private void IncrementVisitorCount()
     {
-        string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
 
-        using (System.Data.SqlClient.SqlConnection connection = new System.Data.SqlClient.SqlConnection(connectionString))
+        using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
-            System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand("UPDATE Visit SET Count = Count + 1 WHERE ID = 1", connection);
+            SqlCommand command = new SqlCommand("UPDATE Visit SET Count = Count + 1 WHERE ID = 1", connection);
             command.ExecuteNonQuery();
         }
     }

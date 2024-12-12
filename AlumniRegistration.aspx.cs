@@ -162,13 +162,13 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
     {
         if (!Page.IsValid) return;
 
-        string imagePath = ProcessImageUpload() ?? "img/default/default.jpg";
+        string FilePath = ProcessImageUpload() ?? "img/default/default.jpg";
         txtPhone.Text = "+91 " + txtPhone.Text.Trim();
 
         string query = @"INSERT INTO Alumni 
-                         (Session, StudentID, FirstName, MidName, LastName, Qualification, Phone, Email, Occupation, Company, LinkedIn, Facebook, Instagram, Twitter, ImagePath, EntryDate) 
+                         (Session, StudentID, FirstName, MidName, LastName, Qualification, Phone, Email, Occupation, Company, LinkedIn, Facebook, Instagram, Twitter, FilePath, EntryDate) 
                          VALUES 
-                         (@Session, @StudentID, @FirstName, @MidName, @LastName, @Qualification, @Phone, @Email, @Occupation, @Company, @LinkedIn, @Facebook, @Instagram, @Twitter, @ImagePath, @EntryDate)";
+                         (@Session, @StudentID, @FirstName, @MidName, @LastName, @Qualification, @Phone, @Email, @Occupation, @Company, @LinkedIn, @Facebook, @Instagram, @Twitter, @FilePath, @EntryDate)";
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
         using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -187,7 +187,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@Facebook", txtFacebook.Text);
             cmd.Parameters.AddWithValue("@Instagram", txtInstagram.Text);
             cmd.Parameters.AddWithValue("@Twitter", txtTwitter.Text);
-            cmd.Parameters.AddWithValue("@ImagePath", imagePath);
+            cmd.Parameters.AddWithValue("@FilePath", FilePath);
             cmd.Parameters.AddWithValue("@EntryDate", DateTime.Now);
 
             try

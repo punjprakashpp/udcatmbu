@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="Upload Newspaper Image" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="UploadNewspaperImage.aspx.cs" Inherits="cms_UploadNewspaperImage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="../include/css/cropper.css">
+    <link rel="stylesheet" href="../Content/cropper.css">
     <script type="text/javascript" src="../Scripts/jquery-3.7.1.js"></script>
-    <script type="text/javascript" src="../include/js/cropper.js"></script>
+    <script type="text/javascript" src="../Scripts/cropper.js"></script>
     <style>
         .cropper-container {
             width: 300px;

@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.UI.WebControls;
+using System.Drawing;
 
 public partial class OurAchivers : System.Web.UI.Page
 {
@@ -19,7 +20,7 @@ public partial class OurAchivers : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Session, FirstName, MidName, LastName, Achivement, Qualification, Occupation, Company, Phone, Email, ImagePath FROM Achiver";
+            string query = "SELECT Session, FirstName, MidName, LastName, Achivement, Qualification, Occupation, Company, Phone, Email, FilePath FROM Achiver";
             SqlCommand cmd = new SqlCommand(query, conn);
 
             conn.Open();
@@ -27,6 +28,18 @@ public partial class OurAchivers : System.Web.UI.Page
             {
                 DataTable dt = new DataTable();
                 dt.Load(reader);
+
+                if (dt.Rows.Count == 0)
+                {
+                    lblMessage.Text = "No records found.";
+                    lblMessage.ForeColor = Color.Red;
+                    lblMessage.Visible = true;
+                }
+                else
+                {
+                    lblMessage.Text = ""; // Hide the message if records are found
+                }
+
                 AchiverRepeater.DataSource = dt;
                 AchiverRepeater.DataBind();
             }

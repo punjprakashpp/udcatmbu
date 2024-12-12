@@ -18,7 +18,7 @@ public partial class Admin_pages_DeleteAchiver : System.Web.UI.Page
 
     private void LoadAchieverData()
     {
-        string query = "SELECT AchiverID, Session, FirstName, MidName, LastName, '../' + ImagePath AS ImagePath FROM Achiver";
+        string query = "SELECT AchiverID, Session, FirstName, MidName, LastName, '../' + FilePath AS FilePath FROM Achiver";
         using (SqlConnection conn = new SqlConnection(ConnectionString))
         {
             SqlDataAdapter da = new SqlDataAdapter(query, conn);

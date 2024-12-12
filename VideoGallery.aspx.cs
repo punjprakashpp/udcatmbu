@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Drawing;
 
 public partial class pages_VideoGallery : System.Web.UI.Page
 {
@@ -19,6 +20,17 @@ public partial class pages_VideoGallery : System.Web.UI.Page
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
+
+            if (dt.Rows.Count == 0)
+            {
+                lblMessage.Text = "No records found.";
+                lblMessage.ForeColor = Color.Red;
+                lblMessage.Visible = true;
+            }
+            else
+            {
+                lblMessage.Text = ""; // Hide the message if records are found
+            }
 
             linksRepeater.DataSource = dt;
             linksRepeater.DataBind();

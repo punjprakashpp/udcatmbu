@@ -20,7 +20,7 @@ public partial class Admin_pages_UploadGalleryImage : Page
     {
         string occasion = txtOccasion.Text;
         string uploadFolder = Server.MapPath("~/img/gallery/");
-        string imagePath = "img/gallery/";
+        string FilePath = "img/gallery/";
 
         // Ensure the upload directory exists
         if (!Directory.Exists(uploadFolder))
@@ -34,7 +34,7 @@ public partial class Admin_pages_UploadGalleryImage : Page
             {
                 string fileName = Path.GetFileName(uploadedFile.FileName);
                 string fullFilePath = Path.Combine(uploadFolder, fileName);
-                string relativeFilePath = Path.Combine(imagePath, fileName);
+                string relativeFilePath = Path.Combine(FilePath, fileName);
 
                 // Save the file to the server
                 uploadedFile.SaveAs(fullFilePath);
@@ -52,19 +52,19 @@ public partial class Admin_pages_UploadGalleryImage : Page
         }
     }
 
-    private void SaveImageDetailsToDatabase(string occasion, string imagePath)
+    private void SaveImageDetailsToDatabase(string occasion, string FilePath)
     {
         string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "INSERT INTO Image (Type, Title, ImagePath) VALUES (@Type, @Occasion, @ImagePath)";
+            string query = "INSERT INTO Image (Type, Title, FilePath) VALUES (@Type, @Occasion, @FilePath)";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@Type", "Gallery");
                 command.Parameters.AddWithValue("@Occasion", occasion);
-                command.Parameters.AddWithValue("@ImagePath", imagePath);
+                command.Parameters.AddWithValue("@FilePath", FilePath);
 
                 connection.Open();
                 command.ExecuteNonQuery();

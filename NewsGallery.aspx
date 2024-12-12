@@ -1,50 +1,40 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="NewsGallery.aspx.cs" Inherits="NewsGallery" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="Content/gallery.css">
-    <link rel="stylesheet" href="Content/pages.css">
     <script>
-        // Function to display the image in the lightbox
-        function displayImage(src) {
-            var lightboxImage = document.getElementById('lightboxImage');
-            var lightbox = document.getElementById('lightbox');
-            lightboxImage.src = src; // Update the src of the lightbox image
-            lightbox.style.display = 'block'; // Show the lightbox
+        // JavaScript for displaying the lightbox modal
+        function displayImage(FilePath) {
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src = FilePath;
+
+            // Trigger the Bootstrap modal
+            const lightboxModal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+            lightboxModal.show();
         }
-
-        // Event listener to close the lightbox when clicking outside the image
-        window.onclick = function (event) {
-            var lightbox = document.getElementById('lightbox');
-            if (event.target === lightbox) {
-                lightbox.style.display = "none"; // Close the modal if clicking outside the image
-            }
-        };
-
-        // Event listener to close the lightbox when clicking the "close" button (span)
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelector(".close").onclick = function () {
-                var lightbox = document.getElementById('lightbox');
-                lightbox.style.display = "none"; // Hide the lightbox
-            };
-        });
-    </script>
+</script>
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
-    <section class="py-5 bg-light">
-        <div class="container bg-white rounded shadow-sm py-5 px-4">
-            <div class="text-center bg-gradient-primary text-white p-4 rounded">
-                <h1>News Gallery</h1>
-            </div>
-            <div class="row">
+    <section class="py-4 bg-light">
+        <div class="container bg-white rounded shadow-sm p-4">
+            <!-- Gallery Header -->
+            <h1 class="text-center text-primary mb-4">News Gallery</h1>
+
+            <!-- Message Section -->
+            <asp:Label ID="lblMessage" runat="server" Text="" CssClass="d-block alert text-center"></asp:Label>
+
+            <!-- News Gallery -->
+            <div class="row g-4">
                 <asp:Repeater ID="NewsRepeater" runat="server">
                     <ItemTemplate>
-                        <div class="col col-lg-4 col-md-2 col-sm-1">
-                            <div class="photo">
-                                <a href="javascript:void(0);" onclick="displayImage('<%# Eval("ImagePath") %>')">
-                                    <img class="thumbnail img-thumbnail" src='<%# Eval("ImagePath") %>' alt='<%# Eval("Title") %>'>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card shadow border-0">
+                                <!-- News Image -->
+                                <a href="javascript:void(0);" onclick="displayImage('<%# Eval("FilePath") %>')">
+                                    <img class="card-img-top img-fluid" src='<%# Eval("FilePath") %>' alt='<%# Eval("Title") %>'>
                                 </a>
-                                <div class="desc">
-                                    <h2><%# Eval("Title")%></h2>
+                                <!-- News Title -->
+                                <div class="card-footer bg-light">
+                                    <h5 class="text-center text-primary mb-0"><%# Eval("Title") %></h5>
                                 </div>
                             </div>
                         </div>
@@ -53,10 +43,19 @@
             </div>
         </div>
     </section>
-    <!-- Lightbox modal -->
-    <div id="lightbox">
-        <span class="close">&times;</span>
-        <!-- Close button changed to span -->
-        <img id="lightboxImage" src="" alt="Image Preview">
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lightboxModalLabel">Image Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="lightboxImage" src="" class="img-fluid rounded" alt="Image Preview">
+                </div>
+            </div>
+        </div>
     </div>
 </asp:Content>
