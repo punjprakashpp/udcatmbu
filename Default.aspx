@@ -17,7 +17,7 @@
                                 <asp:Repeater ID="SliderRepeater" runat="server">
                                     <ItemTemplate>
                                         <div class="slide">
-                                            <img class="image" src="<%# Eval("ImagePath") %>" alt="<%# Eval("Title") %>" />
+                                            <img class="image" src="<%# Eval("FilePath") %>" alt="<%# Eval("Title") %>" />
                                             <div class="caption"><%# Eval("Title") %></div>
                                         </div>
                                     </ItemTemplate>

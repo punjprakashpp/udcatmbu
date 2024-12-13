@@ -1,12 +1,11 @@
 ﻿<%@ Page Title="Add Video Links" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="AddVideoLink.aspx.cs" Inherits="Admin_pages_UploadMarqueeVideos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="../Content/pages.css">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">
-        <div class="container content bg-white rounded shadow-sm p-5">
+        <div style="max-width:720px" class="container bg-white rounded shadow-sm p-5">
             <h1 class="text-center text-primary mb-4">Add Video Link for Video Gallery</h1>
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">

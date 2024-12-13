@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manage Notice" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="ManageNotice.aspx.cs" Inherits="cms_ManageNotice" %>
+﻿<%@ Page Title="Manage Notice" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="ManageNotices.aspx.cs" Inherits="cms_ManageNotice" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>

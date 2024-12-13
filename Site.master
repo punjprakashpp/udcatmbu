@@ -340,6 +340,8 @@
                                 &nbsp;Video Gallery</a></li>
                             <li><a class="dropdown-item" href="NewsGallery.aspx"><i class="fa-solid fa-newspaper"></i>
                                 &nbsp;News Gallery</a></li>
+                            <li><a class="dropdown-item" href="SliderGallery.aspx"><i class="fa-solid fa-sliders"></i>
+                                &nbsp;Slider Gallery</a></li>
                         </ul>
                     </li>
 

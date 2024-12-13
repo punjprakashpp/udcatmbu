@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">
-        <div style="max-width:600px" class="container bg-white rounded shadow-sm p-5">
+        <div style="max-width:720px" class="container bg-white rounded shadow-sm p-5">
             <h1 class="text-center text-primary mb-4">Add Link for Highlights</h1>
             <div class="mb-3 row">
                 <label for="txtLinkText" class="col-sm-3 col-form-label">Link Text:</label>

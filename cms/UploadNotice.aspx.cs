@@ -153,6 +153,6 @@ public partial class cms_UploadNotice : System.Web.UI.Page
 
     protected void btnManage_Click(object sender, EventArgs e)
     {
-        Response.Redirect("ManageNotice.aspx");
+        Response.Redirect("ManageNotices.aspx");
     }
 }

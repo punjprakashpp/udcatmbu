@@ -102,31 +102,64 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#addMenu" role="button" aria-expanded="false" aria-controls="uploadMenu">
+                            <i class="fas fa-add me-2"></i>Add
+                        </a>
+                        <div class="collapse" id="addMenu">
+                            <ul class="nav flex-column ps-4">
+                                <li><a href="AddVideoLink.aspx" class="nav-link"><i class="fa-solid fa-video me-2"></i>Video Link</a></li>
+                                <li><a href="AddHighlightLink.aspx" class="nav-link"><i class="fa-solid fa-highlighter me-2"></i>Highlight Link</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#uploadMenu" role="button" aria-expanded="false" aria-controls="uploadMenu">
                             <i class="fas fa-upload me-2"></i>Upload
                         </a>
                         <div class="collapse" id="uploadMenu">
                             <ul class="nav flex-column ps-4">
-                                <li><a href="UploadNotice.aspx" class="nav-link">Notice</a></li>
-                                <li><a href="UploadSliderImage.aspx" class="nav-link">Slider Image</a></li>
-                                <li><a href="UploadGalleryImage.aspx" class="nav-link">Gallery Image</a></li>
-                                <li><a href="UploadNewspaperImage.aspx" class="nav-link">Newspaper Image</a></li>
+                                <li><a href="UploadNotice.aspx" class="nav-link"><i class="fa-solid fa-bell me-2"></i>Notice</a></li>
+                                <li><a href="UploadSliderImage.aspx" class="nav-link"><i class="fa-solid fa-sliders me-2"></i>Slider Image</a></li>
+                                <li><a href="UploadGalleryImage.aspx" class="nav-link"><i class="fa-solid fa-images me-2"></i>Gallery Image</a></li>
+                                <li><a href="UploadNewspaperImage.aspx" class="nav-link"><i class="fa-solid fa-newspaper me-2"></i>Newspaper Image</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-table me-2"></i>Orders
+                        <a class="nav-link" data-bs-toggle="collapse" href="#manageMenu" role="button" aria-expanded="false" aria-controls="productsMenu">
+                            <i class="fas fa-table me-2"></i>Manage
                         </a>
+                        <div class="collapse" id="manageMenu">
+                            <ul class="nav flex-column ps-4">
+                                <li><a href="ManageNotices.aspx" class="nav-link"><i class="fa-solid fa-bell me-2"></i>Notice</a></li>
+                                <li><a href="ManageVideoLinks.aspx" class="nav-link"><i class="fa-solid fa-video me-2"></i>Video Link</a></li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#productsMenu" role="button" aria-expanded="false" aria-controls="productsMenu">
-                            <i class="fas fa-boxes me-2"></i>Products
+                        <a class="nav-link" data-bs-toggle="collapse" href="#deleteMenu" role="button" aria-expanded="false" aria-controls="uploadMenu">
+                            <i class="fas fa-remove me-2"></i>Delete
                         </a>
-                        <div class="collapse" id="productsMenu">
+                        <div class="collapse" id="deleteMenu">
                             <ul class="nav flex-column ps-4">
-                                <li><a href="#" class="nav-link">Product 1</a></li>
-                                <li><a href="#" class="nav-link">Product 2</a></li>
+                                <li><a href="DeleteSliderImages.aspx" class="nav-link"><i class="fa-solid fa-sliders me-2"></i>Slider Image</a></li>
+                                <li><a href="DeleteGalleryImages.aspx" class="nav-link"><i class="fa-solid fa-images me-2"></i>Gallery Image</a></li>
+                                <li><a href="DeleteNewspaperImages.aspx" class="nav-link"><i class="fa-solid fa-newspaper me-2"></i>Newspaper Image</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#userMenu" role="button" aria-expanded="false" aria-controls="uploadMenu">
+                            <i class="fas fa-user-lock me-2"></i>User
+                        </a>
+                        <div class="collapse" id="userMenu">
+                            <ul class="nav flex-column ps-4">
+                                <li><a href="ManageAccount.aspx" class="nav-link"><i class="fa-solid fa-address-card me-2"></i>Manage Account</a></li>
+                                <li><a href="ChangePassword.aspx" class="nav-link"><i class="fa-solid fa-lock me-2"></i>Change Password</a></li>
+                                <asp:Panel ID="UserPanel" runat="server" Visible="false">
+                                <li><a href="ManageUsers.aspx" class="nav-link"><i class="fa-solid fa-users me-2"></i>Manage Users</a></li>
+                                <li><a href="RegisterUsers.aspx" class="nav-link"><i class="fa-solid fa-user me-2"></i>Register User</a></li>
+                                </asp:Panel>
                             </ul>
                         </div>
                     </li>

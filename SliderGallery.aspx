@@ -1,4 +1,4 @@
-﻿<%@ Page Title="News Gallery" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="NewsGallery.aspx.cs" Inherits="NewsGallery" %>
+﻿<%@ Page Title="Slider Gallery" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="SliderGallery.aspx.cs" Inherits="NewsGallery" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script>
@@ -17,7 +17,7 @@
     <section class="py-4 bg-light">
         <div class="container bg-white rounded shadow-sm p-4">
             <!-- Gallery Header -->
-            <h1 class="text-center text-primary mb-4">News Gallery</h1>
+            <h1 class="text-center text-primary mb-4">Slider Gallery</h1>
 
             <!-- Message Section -->
             <asp:Label ID="lblMessage" runat="server" Text="" CssClass="d-block alert text-center"></asp:Label>

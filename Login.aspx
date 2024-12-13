@@ -7,9 +7,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">
         <div class="container contain bg-white rounded shadow-sm p-5">
-            <h1 class="text-center text-primary mb-4">
+            <h2 class="text-center text-primary mb-4">
                 <i class="fas fa-user-lock"></i>Admin / User Login
-            </h1>
+            </h2>
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
                     <div class="card shadow border-0">
