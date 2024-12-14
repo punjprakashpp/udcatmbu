@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="About Computer Centre" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="Content/pages.css">
+    <link rel="stylesheet" href="Styles/pages.css">
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
@@ -10,7 +10,7 @@
             <!-- Computer Centre Header -->
             <div class="text-center">
                 <h1 class="title text-primary">Computer Centre</h1>
-                <img src="img/Dept/ComputerCentre.jpg" alt="Computer Centre" class="img-fluid mt-2 mb-3 d-block mx-auto">
+                <img src="Image/dept/ComputerCentre.jpg" alt="Computer Centre" class="img-fluid mt-2 mb-3 d-block mx-auto">
             </div>
 
             <!-- Introduction -->

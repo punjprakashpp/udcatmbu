@@ -46,7 +46,7 @@ public partial class Admin_pages_UpdateOtherPDF : System.Web.UI.Page
             {
                 try
                 {
-                    string savePath = Server.MapPath("~/docs/Uploads/") + fileName;
+                    string savePath = Server.MapPath("~/Uploads/docs/") + fileName;
                     fileUpload.SaveAs(savePath);
                     lblMessage.Text = "File uploaded successfully: " + fileName;
                 }

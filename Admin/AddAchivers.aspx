@@ -47,7 +47,7 @@
     <div class="cont">
         <div class="container">
             <div class="center">
-                <img src="../img/other/white.png" />
+                <img src="../Image/other/white.png" />
                 <h2>Add Achivers</h2>
             </div>
             <table>

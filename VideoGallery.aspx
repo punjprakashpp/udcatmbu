@@ -2,7 +2,7 @@
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="Content/gallery.css">
-    <link rel="stylesheet" href="Content/pages.css">
+    <link rel="stylesheet" href="Styles/pages.css">
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">

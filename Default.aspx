@@ -1,8 +1,8 @@
 <%@ Page Title="University Department of Computer Applications" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="Content/slider.css">
-    <link rel="stylesheet" type="text/css" href="Content/section.css">
+    <link rel="stylesheet" type="text/css" href="Styles/slider.css">
+    <link rel="stylesheet" type="text/css" href="Styles/section.css">
     <script defer type="text/javascript" src="Scripts/slider.js"></script>
     <script defer type="text/javascript" src="Scripts/section.js"></script>
 </asp:Content>
@@ -138,7 +138,7 @@
                         <div class="col">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="img/icon/computer-lab.png" class="card-img-top w-75 m-auto" alt="Computer Lab">
+                                    <img src="Image/icon/computer-lab.png" class="card-img-top w-75 m-auto" alt="Computer Lab">
                                     <p class="card-text">Computer Lab</p>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                         <div class="col">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="img/icon/library.png" class="card-img-top w-75 m-auto" alt="Library">
+                                    <img src="Image/icon/library.png" class="card-img-top w-75 m-auto" alt="Library">
                                     <p class="card-text">Library</p>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@
                         <div class="col">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="img/icon/faculty.png" class="card-img-top w-75 m-auto" alt="Faculty">
+                                    <img src="Image/icon/faculty.png" class="card-img-top w-75 m-auto" alt="Faculty">
                                     <p class="card-text">Qualified Faculty</p>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@
                         <div class="col">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="img/icon/hostel.png" class="card-img-top w-75 m-auto" alt="Hostel">
+                                    <img src="Image/icon/hostel.png" class="card-img-top w-75 m-auto" alt="Hostel">
                                     <p class="card-text">University Hostel</p>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@
                         <div class="col">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="img/icon/hospital.png" class="card-img-top w-75 m-auto" alt="Health Centre">
+                                    <img src="Image/icon/hospital.png" class="card-img-top w-75 m-auto" alt="Health Centre">
                                     <p class="card-text">Health Centre</p>
                                 </div>
                             </div>
@@ -178,7 +178,7 @@
                         <div class="col">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <img src="img/icon/free-wifi.png" class="card-img-top w-75 m-auto" alt="Free Wi-Fi">
+                                    <img src="Image/icon/free-wifi.png" class="card-img-top w-75 m-auto" alt="Free Wi-Fi">
                                     <p class="card-text">Wi-Fi Enabled</p>
                                 </div>
                             </div>
@@ -216,7 +216,7 @@
                         <div class="col">
                             <a href='<%# Eval("LinkURL") %>' target="_blank" class="card text-center text-decoration-none">
                                 <div class="card-body">
-                                    <img src="img/icon/logo-icon.png" class="card-img-top w-75 m-auto" alt="logo">
+                                    <img src="Image/icon/logo-icon.png" class="card-img-top w-75 m-auto" alt="logo">
                                     <p class="card-text"><%# Eval("LinkText") %></p>
                                 </div>
                             </a>
@@ -270,7 +270,7 @@
                             <div class="card text-center">
                                 <a href="Downloads.aspx" class="text-decoration-none">
                                     <div class="card-body text-center">
-                                        <img src="img/icon/download.png" class="card-img-top w-75 m-auto" alt="Download Files"/>
+                                        <img src="Image/icon/download.png" class="card-img-top w-75 m-auto" alt="Download Files"/>
                                         <div class="card-text">Download Files</div>
                                     </div>
                                 </a>
@@ -280,7 +280,7 @@
                             <div class="card text-center">
                                 <a href="ImageGallery.aspx" class="text-decoration-none">
                                     <div class="card-body">
-                                        <img src="img/icon/gallery.png" class="card-img-top w-75 m-auto" alt="Image Gallery"/>
+                                        <img src="Image/icon/gallery.png" class="card-img-top w-75 m-auto" alt="Image Gallery"/>
                                         <div class="card-text">Image Gallery</div>
                                     </div>
                                 </a>
@@ -290,7 +290,7 @@
                             <div class="card text-center">
                                 <a href="HolidayList.aspx" class="text-decoration-none">
                                     <div class="card-body">
-                                        <img src="img/icon/holiday-list.png" class="card-img-top w-75 m-auto" alt="Holiday List"/>
+                                        <img src="Image/icon/holiday-list.png" class="card-img-top w-75 m-auto" alt="Holiday List"/>
                                         <div class="card-text">Holiday List</div>
                                     </div>
                                 </a>
@@ -300,7 +300,7 @@
                             <div class="card text-center">
                                 <a href="Prospectus.aspx" class="text-decoration-none">
                                     <div class="card-body">
-                                        <img src="img/icon/prospectus.png" class="card-img-top w-75 m-auto" alt="Prospectus"/>
+                                        <img src="Image/icon/prospectus.png" class="card-img-top w-75 m-auto" alt="Prospectus"/>
                                         <div class="card-text">Prospectus</div>
                                     </div>
                                 </a>
@@ -310,7 +310,7 @@
                             <div class="card text-center">
                                 <a href="TimeTable.aspx" class="text-decoration-none">
                                     <div class="card-body">
-                                        <img src="img/icon/time-table.png" class="card-img-top w-75 m-auto" alt="Time Table"/>
+                                        <img src="Image/icon/time-table.png" class="card-img-top w-75 m-auto" alt="Time Table"/>
                                         <div class="card-text">Time Table</div>
                                     </div>
                                 </a>
@@ -320,7 +320,7 @@
                             <div class="card text-center">
                                 <a href="CourseSyllabus.aspx" class="text-decoration-none">
                                     <div class="card-body">
-                                        <img src="img/icon/syllabus.png" class="card-img-top w-75 m-auto" alt="Syllabus"/>
+                                        <img src="Image/icon/syllabus.png" class="card-img-top w-75 m-auto" alt="Syllabus"/>
                                         <div class="card-text">Syllabus</div>
                                     </div>
                                 </a>

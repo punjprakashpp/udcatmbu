@@ -1,7 +1,7 @@
 <%@ Page Title="University Hostel" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="Content/pages.css">
+    <link rel="stylesheet" href="Styles/pages.css">
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
@@ -14,7 +14,7 @@
 
             <!-- Hostel Image Section -->
             <div class="text-center mt-4 mb-4">
-                <img class="img-fluid rounded shadow-sm" src="img/Dept/Boys Hostel.jpg" alt="Boys Hostel">
+                <img class="img-fluid rounded shadow-sm" src="Image/dept/Boys Hostel.jpg" alt="Boys Hostel">
             </div>
 
             <!-- Hostel Description Section -->

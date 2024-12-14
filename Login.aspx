@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="CMS Login" Language="C#" EnableEventValidation="false" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="Content/pages.css">
+    <link rel="stylesheet" type="text/css" href="Styles/pages.css">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">

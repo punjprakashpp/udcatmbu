@@ -10,7 +10,7 @@
             <div class="text-center">
                 <a href="http://tmbuniv.ac.in/" target="_blank" class="text-decoration-none">
                     <h1 class="title text-primary">Tilka Manjhi Bhagalpur University</h1>
-                    <img src="img/Dept/tmbu.jpg" alt="Tilka Manjhi Bhagalpur University" class="img-fluid mt-2 mb-2 d-block mx-auto rounded-2">
+                    <img src="Image/dept/TMBU.jpg" alt="Tilka Manjhi Bhagalpur University" class="img-fluid mt-2 mb-2 d-block mx-auto rounded-2">
                 </a>
             </div>
 

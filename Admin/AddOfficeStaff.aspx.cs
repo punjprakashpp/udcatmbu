@@ -14,7 +14,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
 
     protected void btnSave_Click(object sender, EventArgs e)
     {
-        string FilePath = "img/default/default.jpg"; // Default image path
+        string FilePath = "Image/default/default.jpg"; // Default image path
         string type = ddlType.SelectedValue;
         if (fileUpload.HasFile)
         {
@@ -23,7 +23,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
             if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
             {
                 string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                string folderPath = Server.MapPath("~/img/Staff/");
+                string folderPath = Server.MapPath("~/Image/Staff/");
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
@@ -42,7 +42,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
                         bmp.Save(fullPath, ImageFormat.Png);
                     }
                 }
-                FilePath = "img/Staff/" + fileName;
+                FilePath = "Image/Staff/" + fileName;
             }
             else
             {

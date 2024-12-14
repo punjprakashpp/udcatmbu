@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Prospectus" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="Content/iframe.css" />
+    <link rel="stylesheet" href="Styles/iframe.css" />
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
@@ -10,13 +10,13 @@
             <!-- Heading with download link -->
             <h1 class="text-center text-primary mb-4">
                 UDCA TMBU Prospectus:
-                <a class="dnld" href="docs/Uploads/Prospectus.pdf" download="Prospectus.pdf">
+                <a class="dnld" href="Uploads/docs/Prospectus.pdf" download="Prospectus.pdf">
                     Download PDF
                 </a>
             </h1>
 
             <!-- PDF Viewer -->
-            <iframe src="/pdfjs/web/viewer.html?file=/docs/Uploads/Prospectus.pdf" allowfullscreen webkitallowfullscreen></iframe>
+            <iframe src="/pdfjs/web/viewer.html?file=/Uploads/docs/Prospectus.pdf" allowfullscreen webkitallowfullscreen></iframe>
         </div>
     </section>
 </asp:Content>

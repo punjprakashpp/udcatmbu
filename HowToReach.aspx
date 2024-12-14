@@ -28,20 +28,20 @@
                 <!-- From Bhagalpur Railway Station -->
                 <h2 class="text-secondary">1) From Bhagalpur Railway Station (Junction):</h2>
                 <h3 class="text-muted">ROUTE 1:</h3>
-                <img src="img/reach/route 1.jpg" alt="Route 1" class="img-fluid mb-3 d-block mx-auto">
+                <img src="Image/reach/route 1.jpg" alt="Route 1" class="img-fluid mb-3 d-block mx-auto">
                 <p align="justify" class="lead">
                     Bhagalpur Railway Station is the nearest railway station to the University Department of Computer Applications (UDCA). The UDCA is 2.2 km from Bhagalpur Railway Station (junction) and can be reached by auto rickshaw, easy cabs, or cycle rickshaw. Get down at Hindustan Press and travel another 550 meters by foot to reach the UDCA. Landmarks between Hindustan Press and UDCA include the M.Com Department, MBA Department, Rural Economics Department, Dinkar Bhawan, and Multi-Purpose Hall (just 50 meters back). The destination will be on your right.
                 </p>
 
                 <h3 class="text-muted">ROUTE 2:</h3>
-                <img src="img/reach/route 2.jpg" alt="Route 2" class="img-fluid mb-3 d-block mx-auto">
+                <img src="Image/reach/route 2.jpg" alt="Route 2" class="img-fluid mb-3 d-block mx-auto">
                 <p align="justify" class="lead">
                     The University Department of Computer Applications (UDCA) is 2.2 km from Bhagalpur Railway Station (junction) and can be reached by auto rickshaw, easy cabs, or cycle rickshaw. Get down at Hindustan Press and travel another 550 meters by foot to reach the UDCA. Landmarks between Hindustan Press and UDCA include the M.Com Department, MBA Department, Rural Economics Department, Dinkar Bhawan, and Multi-Purpose Hall (about 50 meters back). The destination will be on your right.
                 </p>
 
                 <!-- From Bhagalpur Bus Depot -->
                 <h2 class="text-secondary">2) From Bhagalpur Bus Depot (Stand):</h2>
-                <img src="img/reach/bus stop.jpg" alt="Bus Stop" class="img-fluid mb-3 d-block mx-auto">
+                <img src="Image/reach/bus stop.jpg" alt="Bus Stop" class="img-fluid mb-3 d-block mx-auto">
                 <p align="justify" class="lead">
                     The University Department of Computer Applications is 5.3 km from the B.S.R.T.C. Bhagalpur Bus Depot and can be reached by auto rickshaw, easy cabs, or cycle rickshaw. Get down at SARAI Chowk and change to another auto rickshaw going to Champanagar. Get down at UNIVERSITY OP (Police Station) and travel another 400 meters by foot to reach the UDCA. Landmarks between TilkaManjhi Chowk and UDCA include JLN College and Hospital, Manali Restaurant Chowk, Adampur Chowk, Deep Prabha Cinema Hall, Lajpath Children Park, Shankar Talkies Chowk, Budhanath Chowk, Nayabazar, Golaghat, SARAI Chowk, TM Bhagalpur University, UNIVERSITY OP (Police Station), Marwari College, Marwari College Hostel, and Dinkar Bhawan (about 50 meters back). The destination will be on your left.
                 </p>

@@ -147,7 +147,7 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
                 try
                 {
                     string fileName = Path.GetFileName(fileUpload.FileName);
-                    string uploadFolder = Server.MapPath("~/docs/notice/");
+                    string uploadFolder = Server.MapPath("~/Uploads/notice/");
                     if (!Directory.Exists(uploadFolder))
                     {
                         Directory.CreateDirectory(uploadFolder);
@@ -162,7 +162,7 @@ public partial class Admin_pages_EditDeleteNotice : System.Web.UI.Page
                     }
 
                     // Store the relative path to the database
-                    newFilePath = "docs/notice/" + fileName;
+                    newFilePath = "Uploads/notice/" + fileName;
                 }
                 catch (Exception ex)
                 {

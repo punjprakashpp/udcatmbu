@@ -34,7 +34,7 @@ public partial class Admin_pages_UploadTender : System.Web.UI.Page
                         try
                         {
                             string fileName = Path.GetFileName(fileUpload.FileName);
-                            string uploadFolder = Server.MapPath("~/docs/tender/");
+                            string uploadFolder = Server.MapPath("~/Uploads/tender/");
                             if (!Directory.Exists(uploadFolder))
                             {
                                 Directory.CreateDirectory(uploadFolder);
@@ -43,7 +43,7 @@ public partial class Admin_pages_UploadTender : System.Web.UI.Page
                             fileUpload.SaveAs(filePath);
 
                             // Store the relative path to the database
-                            string relativeFilePath = "docs/tender/" + fileName;
+                            string relativeFilePath = "Uploads/tender/" + fileName;
 
                             string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                             using (SqlConnection conn = new SqlConnection(connStr))

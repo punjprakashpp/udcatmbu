@@ -92,7 +92,7 @@
             <div class="sidebar bg-dark text-white d-flex flex-column">
                 <div class="d-flex justify-content-center align-items-center py-3">
                     <a href="../cms/">
-                        <img src="../img/logo/logo-head.png" alt="Logo" class="logo">
+                        <img src="../Image/logo/logo-head.png" alt="Logo" class="logo">
                     </a>
                 </div>
                 <ul class="nav flex-column px-3">
@@ -181,7 +181,7 @@
                         <!-- Brand Name -->
                         <span class="navbar-brand d-flex align-items-center">
                             <a class="text-decoration-none d-flex align-items-center" href="../cms/">
-                                <img class="me-2 d-lg-none" src="../img/logo/logo-small.png" alt="Logo" style="height: 30px;">
+                                <img class="me-2 d-lg-none" src="../Image/logo/logo-small.png" alt="Logo" style="height: 30px;">
                                 <span class="text-white fa-bold">Website CMS</span>
                             </a>
                         </span>

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Upload Slider Image" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="UploadSliderImage.aspx.cs" Inherits="cms_UploadSliderImage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="../Content/cropper.css">
+    <link rel="stylesheet" href="../Styles/cropper.css">
     <script type="text/javascript" src="../Scripts/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="../Scripts/cropper.js"></script>
     <style>

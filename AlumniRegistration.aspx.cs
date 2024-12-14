@@ -162,7 +162,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
     {
         if (!Page.IsValid) return;
 
-        string FilePath = ProcessImageUpload() ?? "img/default/default.jpg";
+        string FilePath = ProcessImageUpload() ?? "Image/default/default.jpg";
         txtPhone.Text = "+91 " + txtPhone.Text.Trim();
 
         string query = @"INSERT INTO Alumni 
@@ -213,7 +213,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
             if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
             {
                 string fileName = Path.GetFileName(fileUpload.FileName);
-                string folderPath = Server.MapPath("~/img/alumni/");
+                string folderPath = Server.MapPath("~/Image/alumni/");
 
                 if (!Directory.Exists(folderPath))
                     Directory.CreateDirectory(folderPath);
@@ -231,7 +231,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
                         bmp.Save(fullPath, ImageFormat.Png);
                     }
 
-                    return "img/alumni/" + fileName;
+                    return "Image/alumni/" + fileName;
                 }
                 catch (Exception ex)
                 {

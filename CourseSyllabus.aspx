@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Course Syllabus" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="Content/iframe.css" />
+    <link rel="stylesheet" href="Styles/iframe.css" />
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
@@ -10,11 +10,11 @@
             <!-- Heading with download link -->
             <h1 class="text-center text-primary mb-4">
                 MCA Course Syllabus:
-                <a class="dnld" href="docs/Uploads/CourseSyllabus.pdf" download="CourseSyllabus.pdf">Download PDF</a>
+                <a class="dnld" href="Uploads/docs/CourseSyllabus.pdf" download="CourseSyllabus.pdf">Download PDF</a>
             </h1>
 
             <!-- PDF Viewer -->
-            <iframe src="/pdfjs/web/viewer.html?file=/docs/Uploads/CourseSyllabus.pdf" allowfullscreen webkitallowfullscreen></iframe>
+            <iframe src="/pdfjs/web/viewer.html?file=/Uploads/docs/CourseSyllabus.pdf" allowfullscreen webkitallowfullscreen></iframe>
         </div>
     </section>
 </asp:Content>

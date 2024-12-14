@@ -1,7 +1,7 @@
 <%@ Page Title="Download Syllabus" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="DownloadsSyllabus.aspx.cs" Inherits="DownloadsSyllabus" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="Content/pages.css" />
+    <link rel="stylesheet" href="Styles/pages.css" />
     <script type="text/javascript" src="Scripts/jquery-3.7.1.min.js"></script>
     <script>
         function validateForm() {

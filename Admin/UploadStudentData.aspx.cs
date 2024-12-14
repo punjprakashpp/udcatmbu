@@ -14,7 +14,7 @@ public partial class UploadStudentData : System.Web.UI.Page
             try
             {
                 // Save uploaded file
-                string filePath = Server.MapPath("~/docs/Uploads/") + Path.GetFileName(fileUpload.PostedFile.FileName);
+                string filePath = Server.MapPath("~/Uploads/docs/") + Path.GetFileName(fileUpload.PostedFile.FileName);
                 fileUpload.SaveAs(filePath);
 
                 // Define DataTable columns matching the database table

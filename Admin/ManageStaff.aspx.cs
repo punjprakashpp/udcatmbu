@@ -108,7 +108,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                 if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
                 {
                     string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                    string folderPath = Server.MapPath("~/img/staff/");
+                    string folderPath = Server.MapPath("~/Image/staff/");
                     string fullPath = Path.Combine(folderPath, fileName);
 
                     try
@@ -129,7 +129,7 @@ public partial class Admin_pages_EditFaculty : System.Web.UI.Page
                                 bmp.Save(fullPath, ImageFormat.Png);
                             }
                         }
-                        FilePath = "img/staff/" + fileName;
+                        FilePath = "Image/staff/" + fileName;
 
                         // Delete the old file
                         if (!string.IsNullOrEmpty(oldFilePath))

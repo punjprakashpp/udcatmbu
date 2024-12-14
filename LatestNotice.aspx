@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Latest Notice" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="LatestNotice.aspx.cs" Inherits="pages_Notice" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="Content/pages.css">
+    <link rel="stylesheet" type="text/css" href="Styles/pages.css">
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">

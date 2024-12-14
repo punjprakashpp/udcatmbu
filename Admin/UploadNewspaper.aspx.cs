@@ -15,7 +15,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
 
     protected void btnSave_Click(object sender, EventArgs e)
     {
-        string FilePath = "img/default/slider.jpg"; // Default image path
+        string FilePath = "Image/default/slider.jpg"; // Default image path
 
         if (fileUpload.HasFile)
         {
@@ -24,7 +24,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
             if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
             {
                 string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                string folderPath = Server.MapPath("~/img/newspaper/");
+                string folderPath = Server.MapPath("~/Image/newspaper/");
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
@@ -43,7 +43,7 @@ public partial class Admin_pages_AddFaculty : System.Web.UI.Page
                         bmp.Save(fullPath, ImageFormat.Png);
                     }
                 }
-                FilePath = "img/newspaper/" + fileName;
+                FilePath = "Image/newspaper/" + fileName;
             }
             else
             {

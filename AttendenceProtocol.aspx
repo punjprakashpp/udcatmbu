@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Attendance Protocol" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="Content/pages.css">
+    <link rel="stylesheet" type="text/css" href="Styles/pages.css">
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">

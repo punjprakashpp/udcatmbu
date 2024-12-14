@@ -62,7 +62,7 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
     {
         string type = ddlType.SelectedValue;
         string name = txtName.Text.Trim();
-        string FilePath = !string.IsNullOrEmpty(hfCurrentFilePath.Value) ? hfCurrentFilePath.Value : "img/default/default.jpg"; // Default image path
+        string FilePath = !string.IsNullOrEmpty(hfCurrentFilePath.Value) ? hfCurrentFilePath.Value : "Image/default/default.jpg"; // Default image path
 
         try
         {
@@ -73,7 +73,7 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
                 if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
                 {
                     string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
-                    string folderPath = Server.MapPath("~/img/person/");
+                    string folderPath = Server.MapPath("~/Uploads/person/");
                     if (!Directory.Exists(folderPath))
                     {
                         Directory.CreateDirectory(folderPath);
@@ -93,7 +93,7 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
                                 bmp.Save(fullPath, ImageFormat.Png);
                             }
                         }
-                        FilePath = "img/person/" + fileName;
+                        FilePath = "Uploads/person/" + fileName;
 
                         // Delete the previous image file if a new one is uploaded and it's an update operation
                         if (!string.IsNullOrEmpty(hfCurrentFilePath.Value))

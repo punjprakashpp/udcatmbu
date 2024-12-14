@@ -145,7 +145,7 @@
                 <!-- Logo Section -->
                 <div class="col-xl-7 col-md-12 mb-xl-0 p-0">
                     <a href="Default.aspx">
-                        <img src="img/logo/logo-header.png" alt="Brand Logo" />
+                        <img src="Image/logo/logo-header.png" alt="Brand Logo" />
                     </a>
                 </div>
                 <!-- Contact and Social Links -->
@@ -179,7 +179,7 @@
         <div class="container-fluid">
             <!-- Brand -->
             <a class="navbar-brand d-block d-lg-none" href="/">
-                <img src="img/logo/logo-head.png" alt="Logo" class="logo-nav" style="width: 225px;">
+                <img src="Image/logo/logo-head.png" alt="Logo" class="logo-nav" style="width: 225px;">
             </a>
 
             <!-- Toggler Button for Collapse -->
@@ -398,7 +398,7 @@
             <!-- Top Section -->
             <div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center text-center text-md-start">
                 <a href="/" class="mb-3 mb-md-0">
-                    <img class="logo-name" src="img/logo/logo-head.png" alt="Logo" style="width: 300px;">
+                    <img class="logo-name" src="Image/logo/logo-head.png" alt="Logo" style="width: 300px;">
                 </a>
                 <div class="d-flex">
                     <a href="https://x.com/udcatmbu" target="_blank" class="btn btn-secondary btn-circle me-2">

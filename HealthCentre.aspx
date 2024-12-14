@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Health Centre" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="Content/pages.css">
+    <link rel="stylesheet" href="Styles/pages.css">
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
@@ -14,7 +14,7 @@
 
             <!-- Health Center Image Section -->
             <div class="text-center mt-4 mb-4">
-                <img class="img-fluid rounded shadow-sm" src="img/Dept/Health Centre.jpg" alt="Health Center Image">
+                <img class="img-fluid rounded shadow-sm" src="Image/dept/Health Centre.jpg" alt="Health Center Image">
             </div>
 
             <!-- Health Center Information Table -->

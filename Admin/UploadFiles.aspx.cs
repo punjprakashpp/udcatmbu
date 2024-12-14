@@ -65,7 +65,7 @@ public partial class Admin_pages_UploadFiles : System.Web.UI.Page
                 newFileName = originalFileName;
             }
 
-            string folderPath = Server.MapPath("~/docs/Files/");
+            string folderPath = Server.MapPath("~/Uploads/Files/");
 
             // Ensure the directory exists
             if (!Directory.Exists(folderPath))
@@ -76,7 +76,7 @@ public partial class Admin_pages_UploadFiles : System.Web.UI.Page
             string filePath = Path.Combine(folderPath, newFileName);
             FileUpload1.SaveAs(filePath);
 
-            string relativeFilePath = "docs/Files/" + newFileName;
+            string relativeFilePath = "Uploads/Files/" + newFileName;
 
             string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))

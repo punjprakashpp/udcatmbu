@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Dress Code" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="Content/pages.css">
+    <link rel="stylesheet" type="text/css" href="Styles/pages.css">
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">
@@ -31,7 +31,7 @@
 
             <div class="text-center mt-5">
                 <h3 class="text-secondary mb-4">Examples of Acceptable Dress Code:</h3>
-                <img src="img/other/dress.jpg" alt="Acceptable Dress Code" class="img-fluid rounded shadow">
+                <img src="Image/other/dress.jpg" alt="Acceptable Dress Code" class="img-fluid rounded shadow">
             </div>
 
             <p class="mt-4 text-justify">

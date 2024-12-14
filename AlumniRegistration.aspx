@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="Alumni Registration" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AlumniRegistration.aspx.cs" Inherits="pages_AlumniRegister" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="Content/pages.css">
-    <link rel="stylesheet" href="Content/cropper.css">
+    <link rel="stylesheet" href="Styles/pages.css">
+    <link rel="stylesheet" href="Styles/cropper.css">
     <script type="text/javascript" src="Scripts/cropper.js"></script>
     <script type="text/javascript" src="Scripts/jquery-3.7.1.min.js"></script>
     <style>
@@ -18,7 +18,7 @@
     <section class="py-5 bg-light">
         <div class="container contain bg-white rounded shadow-sm p-4">
             <div class="text-center bg-gradient-primary text-white p-4 rounded">
-                <img src="img/other/white.png" width="100" />
+                <img src="Image/other/white.png" width="100" />
                 <h1>Alumni Registration</h1>
             </div>
             <table class="table table-bordered table-striped">

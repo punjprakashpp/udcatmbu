@@ -1,7 +1,7 @@
 <%@ Page Title="Download PYQ Papers" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="DownloadPYQPapers.aspx.cs" Inherits="DownloadPYQPapers" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="Content/pages.css" />
+    <link rel="stylesheet" href="Styles/pages.css" />
     <script type="text/javascript" src="Scripts/jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
         function validateForm() {

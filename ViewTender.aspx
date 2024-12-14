@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="View Tenders" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="ViewTender.aspx.cs" Inherits="pages_Tender" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" type="text/css" href="Content/pages.css">
+    <link rel="stylesheet" type="text/css" href="Styles/pages.css">
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">

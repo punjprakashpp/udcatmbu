@@ -37,7 +37,7 @@ public partial class Admin_pages_UploadEvent : System.Web.UI.Page
                                 important = "yes";
                             }
                             string fileName = Path.GetFileName(fileUpload.FileName);
-                            string uploadFolder = Server.MapPath("~/docs/event/");
+                            string uploadFolder = Server.MapPath("~/Uploads/event/");
                             if (!Directory.Exists(uploadFolder))
                             {
                                 Directory.CreateDirectory(uploadFolder);
@@ -46,7 +46,7 @@ public partial class Admin_pages_UploadEvent : System.Web.UI.Page
                             fileUpload.SaveAs(filePath);
 
                             // Store the relative path to the database
-                            string relativeFilePath = "docs/event/" + fileName;
+                            string relativeFilePath = "Uploads/event/" + fileName;
 
                             string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                             using (SqlConnection conn = new SqlConnection(connStr))
