@@ -5,7 +5,7 @@
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">
-        <div style="max-width:800px" class="container bg-white rounded shadow-sm p-4">
+        <div style="max-width:960px" class="container bg-white rounded shadow-sm p-4">
             <!-- Header Section -->
             <h1 class="text-center text-primary mb-4">Fee Structure for MCA Course</h1>
             <p class="text-center">Below is the semester-wise breakdown of fees for the MCA course:</p>

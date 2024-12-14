@@ -12,7 +12,7 @@
             <!-- Search and Controls Section -->
             <div class="row mb-4">
                 <div class="col-md-3 text-start">
-                    <label for="txtSearch" class="form-label">Search Notices & News:</label>
+                    <label for="txtSearch" class="form-label">Search Document:</label>
                     <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-3 mt-4 text-end">

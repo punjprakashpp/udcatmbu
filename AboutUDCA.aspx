@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">
-        <div style="max-width:1024px" class="container bg-white rounded shadow-sm p-4">
+        <div style="max-width:1080px" class="container bg-white rounded shadow-sm p-4">
             <h1 class="text-center text-primary">University Department of Computer Applications</h1>
             <img class="img-fluid mt-2 mb-2 d-block mx-auto rounded-2" src="Image/dept/UDCABuilding.jpg" alt="Administrative Building of UDCA" />
             <p align="justify" class="lead">
