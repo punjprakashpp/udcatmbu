@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Video Gallery" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="VideoGallery.aspx.cs" Inherits="pages_VideoGallery" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
-    <link rel="stylesheet" href="Content/gallery.css">
     <link rel="stylesheet" href="Styles/pages.css">
 </asp:Content>
 
