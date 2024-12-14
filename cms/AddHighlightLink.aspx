@@ -38,8 +38,8 @@
                 </div>
             </div>
             <div class="text-center">
-                <asp:Button ID="btnManage" CssClass="btn btn-secondary mx-2" runat="server" Text="Manage Link" OnClick="btnManage_Click" />
                 <asp:Button ID="btnSubmit" CssClass="btn btn-primary mx-2" runat="server" Text="Submit Link" OnClick="btnSubmit_Click" />
+                <asp:Button ID="btnManage" CssClass="btn btn-secondary mx-2" runat="server" Text="Manage Link" OnClick="btnManage_Click" />
             </div>
         </div>
     </section>

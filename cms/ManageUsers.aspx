@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manage Account" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="ManageUsers.aspx.cs" Inherits="Account_Manage" %>
+﻿<%@ Page Title="Manage Users" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="ManageUsers.aspx.cs" Inherits="Account_Manage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Manage Users</title>

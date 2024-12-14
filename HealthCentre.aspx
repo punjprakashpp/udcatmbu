@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Medical Facility" MasterPageFile="Site.master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Health Centre" MasterPageFile="Site.master" AutoEventWireup="true" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="Content/pages.css">
@@ -9,7 +9,7 @@
         <div class="container contain bg-white rounded shadow-sm p-4">
             <!-- Title Section -->
             <div class="text-center text-primary p-4 rounded">
-                <h1>Health Center</h1>
+                <h1>Health Centre</h1>
             </div>
 
             <!-- Health Center Image Section -->
@@ -21,7 +21,7 @@
             <table class="table table-bordered mb-4">
                 <thead>
                     <tr>
-                        <th colspan="2" class="text-center">Health Center Information</th>
+                        <th colspan="2" class="text-center">Health Centre Information</th>
                     </tr>
                 </thead>
                 <tbody>

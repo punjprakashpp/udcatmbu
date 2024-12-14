@@ -202,7 +202,7 @@
                 <div class="bg-white rounded shadow-sm px-4 col-md-8">
                     <h2 class="text-primary">Director's Message</h2>
                     <p align="justify" class="lead">Welcome to the University Department of Computer Applications (UDCA), a vibrant and dynamic institution renowned for its global vision, academic innovation, and commitment to excellence. As the Director, it is my privilege to guide you through our department, where we are driven by the mission to shape the future of technology and empower our students with the skills and knowledge essential for success in today's fast-evolving world.</p>
-                    <a href="Director.aspx" class="btn btn-primary">Read more</a>
+                    <a href="Director.aspx" class="btn btn-primary mb-2">Read more</a>
                 </div>
             </div>
         </div>

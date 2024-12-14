@@ -158,7 +158,7 @@
                                 <li><a href="ChangePassword.aspx" class="nav-link"><i class="fa-solid fa-lock me-2"></i>Change Password</a></li>
                                 <asp:Panel ID="UserPanel" runat="server" Visible="false">
                                 <li><a href="ManageUsers.aspx" class="nav-link"><i class="fa-solid fa-users me-2"></i>Manage Users</a></li>
-                                <li><a href="RegisterUsers.aspx" class="nav-link"><i class="fa-solid fa-user me-2"></i>Register User</a></li>
+                                <li><a href="RegisterOtherUser.aspx" class="nav-link"><i class="fa-solid fa-user me-2"></i>Register Other User</a></li>
                                 </asp:Panel>
                             </ul>
                         </div>

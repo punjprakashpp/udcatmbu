@@ -13,7 +13,7 @@
                 <!-- Vice-Chancellor Image and Information -->
                 <div class="col-md-4 text-center">
                     <asp:Image ID="imgPerson" runat="server" CssClass="img-fluid rounded-circle shadow mb-3" AlternateText="Vice-Chancellor's Image" />
-                    <h2 class="text-danger mt-2">
+                    <h2 class="text-primary mt-2">
                         <asp:Label ID="lblName" runat="server" />
                     </h2>
                     <p>

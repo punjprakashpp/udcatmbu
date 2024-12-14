@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="RegisterUsers.aspx.cs" Inherits="Register" %>
+﻿<%@ Page Title="Register Other User" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="RegisterOtherUser.aspx.cs" Inherits="Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-5 m-auto">
-                <h2 class="text-center">Register other Users</h2>
+                <h2 class="text-center">Register other User</h2>
                 <table class="table table-responsive">
                     <tr>
                         <td><label Class="form-control"> First Name: </label></td>

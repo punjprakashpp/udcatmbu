@@ -145,7 +145,7 @@
                 <!-- Logo Section -->
                 <div class="col-xl-7 col-md-12 mb-xl-0 p-0">
                     <a href="Default.aspx">
-                        <img class="m-auto" src="img/logo/logo-header.png" alt="Brand Logo" />
+                        <img src="img/logo/logo-header.png" alt="Brand Logo" />
                     </a>
                 </div>
                 <!-- Contact and Social Links -->
@@ -206,8 +206,6 @@
                                 &nbsp;About UDCA</a></li>
                             <li><a class="dropdown-item" href="AboutTMBU.aspx"><i class="fa-solid fa-university"></i>
                                 &nbsp;About TMBU</a></li>
-                            <li><a class="dropdown-item" href="ComputerCentre.aspx"><i class="fa-solid fa-desktop"></i>
-                                &nbsp;Computer Centre</a></li>
                             <li><a class="dropdown-item" href="Administration.aspx"><i
                                 class="fa-solid fa-users"></i>&nbsp;Administration</a></li>
                             <li><a class="dropdown-item" href="Director.aspx"><i class="fa-solid fa-user"></i>
@@ -221,7 +219,7 @@
                         </ul>
                     </li>
 
-                    <!-- Additional Dropdowns -->
+                    <!-- Admission Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="admissionDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -270,12 +268,18 @@
                             <i class="fa-solid fa-building"></i>&nbsp;Amenities
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="amenitiesDropdown">
-                            <li><a class="dropdown-item" href="UniversityHostel.aspx"><i class="fa-solid fa-bed"></i>
-                                &nbsp;University Hostel</a></li>
-                            <li><a class="dropdown-item" href="CentralLibrary.aspx"><i class="fa-solid fa-book"></i>
-                                &nbsp;Central Library</a></li>
-                            <li><a class="dropdown-item" href="MedicalFacility.aspx"><i
-                                class="fa-solid fa-kit-medical"></i>&nbsp;Medical Facilities</a></li>
+                            <li>
+                                <a class="dropdown-item" href="CentralLibrary.aspx"><i class="fa-solid fa-book"></i>&nbsp;Central Library</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="HealthCentre.aspx"><i class="fa-solid fa-kit-medical"></i>&nbsp;Health Centre</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="ComputerCentre.aspx"><i class="fa-solid fa-desktop"></i>&nbsp;Computer Centre</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="UniversityHostel.aspx"><i class="fa-solid fa-bed"></i>&nbsp;University Hostel</a>
+                            </li>
                         </ul>
                     </li>
 
