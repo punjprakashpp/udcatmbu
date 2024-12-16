@@ -7,7 +7,7 @@
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">
         <div class="container content bg-white rounded shadow-sm p-4">
-            <h1 class="text-center text-primary rounded-top p-4">Office & Non-Teaching Staff</h1>
+            <h1 class="text-center text-primary rounded-top p-4">Our Office & Non-Teaching Staff</h1>
             <div class="row">
                 <asp:Repeater ID="facultyRepeater" runat="server">
                     <ItemTemplate>
@@ -15,7 +15,7 @@
                             <div class="card shadow-sm">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-md-4 text-center">
-                                        <img src='<%# Eval("ImagePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
+                                        <img src='<%# Eval("FilePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
                                     </div>
                                     <div class="col-md-8 p-2">
                                         <div class="mx-2">
@@ -31,14 +31,14 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-                <h1 class="text-center text-primary rounded-top p-4">Supporting Staff Members</h1>
+                <h1 class="text-center text-primary rounded-top p-4">Our Supporting Staff Members</h1>
                 <asp:Repeater ID="SupportRepeater" runat="server">
                     <ItemTemplate>
                         <div class="col-md-6 mb-3">
                             <div class="card shadow-sm">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-md-4 text-center">
-                                        <img src='<%# Eval("ImagePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
+                                        <img src='<%# Eval("FilePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
                                     </div>
                                     <div class="col-md-8 p-2">
                                         <div class="mx-2">

@@ -11,13 +11,6 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
     private string _studentID;
     private readonly string _connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
 
-    protected void Alert(string message)
-    {
-        string script = string.Format("alert('{0}');", message.Replace("'", "\\'")); // Escape single quotes
-
-        // Register the JavaScript alert
-        ClientScript.RegisterStartupScript(this.GetType(), "AlertMessage", script, true);
-    }
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -48,6 +41,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
             }
             catch (Exception ex)
             {
+                NotificationHelper.ShowNotification(this, "Error loading sessions: " + ex.Message, "error", "Error");
                 ShowErrorMessage("Error loading sessions: " + ex.Message);
             }
         }
@@ -59,11 +53,11 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
         {
             if (CheckIfAlumniExists())
             {
-                Alert("Alumni already registered.");
+                NotificationHelper.ShowNotification(this, "Alumni already registered.", "warning", "warning");
             }
             else
             {
-                Alert("Verification Succesful.");
+                NotificationHelper.ShowNotification(this, "Verification Succesful.", "success", "Success");
                 VerifyStudentPanel.Visible = false;
                 RegisterAlumniPanel.Visible = true;
                 LoadStudentDetails();
@@ -71,7 +65,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
         }
         else
         {
-            Alert("No student found with the provided details.");
+            NotificationHelper.ShowNotification(this, "No student found with the provided details.", "info", "info");
         }
     }
 
@@ -101,6 +95,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
             }
             catch (Exception ex)
             {
+                NotificationHelper.ShowNotification(this, "Database error: " + ex.Message, "error", "Error");
                 ShowErrorMessage("Database error: " + ex.Message);
             }
         }
@@ -124,6 +119,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
             }
             catch (Exception ex)
             {
+                NotificationHelper.ShowNotification(this, "Error checking alumni status: " + ex.Message, "error", "Error");
                 ShowErrorMessage("Error checking alumni status: " + ex.Message);
                 return true;
             }
@@ -153,6 +149,7 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
             }
             catch (Exception ex)
             {
+                NotificationHelper.ShowNotification(this, "Error loading student details: " + ex.Message, "error", "Error");
                 ShowErrorMessage("Error loading student details: " + ex.Message);
             }
         }
@@ -195,10 +192,11 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 ClearForm();
-                Alert("Alumni details saved successfully!");
+                NotificationHelper.ShowNotification(this, "Alumni details saved successfully.", "success", "Success");
             }
             catch (Exception ex)
             {
+                NotificationHelper.ShowNotification(this, "Error loading alumni details: " + ex.Message, "error", "Error");
                 ShowErrorMessage("Error saving alumni details: " + ex.Message);
             }
         }
@@ -235,12 +233,13 @@ public partial class pages_AlumniRegister : System.Web.UI.Page
                 }
                 catch (Exception ex)
                 {
+                    NotificationHelper.ShowNotification(this, "Error processing image: " + ex.Message, "error", "Error");
                     ShowErrorMessage("Error processing image: " + ex.Message);
                 }
             }
             else
             {
-                Alert("Invalid file type. Only .jpg, .jpeg, and .png files are allowed.");
+                NotificationHelper.ShowNotification(this, "Invalid file type. Only .jpg, .jpeg, and .png files are allowed.", "warning", "warning");
             }
         }
 

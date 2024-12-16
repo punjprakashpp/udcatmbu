@@ -210,13 +210,13 @@
     <section class="py-4">
         <div class="container bg-white rounded shadow-sm p-4">
             <h2>Important Links:</h2>
-            <div class="row row-cols-2 row-cols-md-3 g-4">
+            <div class="row">
                 <asp:Repeater ID="ButtonRepeater" runat="server">
                     <ItemTemplate>
-                        <div class="col">
+                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                             <a href='<%# Eval("LinkURL") %>' target="_blank" class="card text-center text-decoration-none">
                                 <div class="card-body">
-                                    <img src="Image/icon/logo-icon.png" class="card-img-top w-75 m-auto" alt="logo">
+                                    <img src="Image/icon/udca.png" class="card-img-top w-75 m-auto" alt="logo">
                                     <p class="card-text"><%# Eval("LinkText") %></p>
                                 </div>
                             </a>

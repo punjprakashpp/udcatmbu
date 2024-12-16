@@ -53,7 +53,7 @@ public partial class cms_AddHighlightLink : System.Web.UI.Page
                 string query = "INSERT INTO Links (Type, LinkText, LinkURL, UploadDate) VALUES (@Type, @LinkText, @LinkURL, @UploadDate)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Type", "Link");
+                    cmd.Parameters.AddWithValue("@Type", "Button");
                     cmd.Parameters.AddWithValue("@LinkText", linkText);
                     cmd.Parameters.AddWithValue("@LinkURL", linkURL);
                     cmd.Parameters.AddWithValue("@UploadDate", DateTime.Now);
@@ -90,7 +90,7 @@ public partial class cms_AddHighlightLink : System.Web.UI.Page
 
     protected void btnManage_Click(object sender, EventArgs e)
     {
-        Response.Redirect("ManageHighlightLinks.aspx");
+        Response.Redirect("ManageQuickLinks.aspx");
 
     }
 

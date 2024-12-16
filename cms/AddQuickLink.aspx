@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Add Link for Highlights" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="AddHighlightLink.aspx.cs" Inherits="cms_AddHighlightLink" %>
+﻿<%@ Page Title="Add Quick Link" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="AddQuickLink.aspx.cs" Inherits="cms_AddHighlightLink" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">
         <div style="max-width:720px" class="container bg-white rounded shadow-sm p-5">
-            <h1 class="text-center text-primary mb-4">Add Link for Highlights</h1>
+            <h1 class="text-center text-primary mb-4">Add Quick Link for Buttons</h1>
             <div class="mb-3 row">
                 <label for="txtLinkText" class="col-sm-3 col-form-label">Link Text:</label>
                 <div class="col-sm-9">
@@ -44,5 +44,3 @@
         </div>
     </section>
 </asp:Content>
-
-

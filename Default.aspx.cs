@@ -167,13 +167,13 @@ public partial class _Default : System.Web.UI.Page
 
         foreach (Person person in persons)
         {
-            switch (person.Type)
+            switch (person.Position)
             {
                 case "Chancellor":
                     lblNameChancellor.Text = person.Name;
                     ImageChancellor.ImageUrl = person.FilePath;
                     break;
-                case "Vice-Chancellor":
+                case "Vice Chancellor":
                     lblNameViceChancellor.Text = person.Name;
                     ImageViceChancellor.ImageUrl = person.FilePath;
                     break;
@@ -198,14 +198,14 @@ public class PersonDAL
 
         using (SqlConnection con = new SqlConnection(connectionString))
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Person", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Member WHERE type = 'Admin'", con);
             con.Open();
             SqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
                 Person person = new Person();
-                person.PersonID = Convert.ToInt32(rdr["PersonID"]);
-                person.Type = rdr["Type"].ToString();
+                person.PersonID = Convert.ToInt32(rdr["MemberId"]);
+                person.Position = rdr["Position"].ToString();
                 person.Name = rdr["Name"].ToString();
                 person.FilePath = rdr["FilePath"].ToString();
                 persons.Add(person);
@@ -219,7 +219,7 @@ public class PersonDAL
 public class Person
 {
     public int PersonID { get; set; }
-    public string Type { get; set; }
+    public string Position { get; set; }
     public string Name { get; set; }
     public string FilePath { get; set; }
 }

@@ -109,6 +109,7 @@
                             <ul class="nav flex-column ps-4">
                                 <li><a href="AddVideoLink.aspx" class="nav-link"><i class="fa-solid fa-video me-2"></i>Video Link</a></li>
                                 <li><a href="AddHighlightLink.aspx" class="nav-link"><i class="fa-solid fa-highlighter me-2"></i>Highlight Link</a></li>
+                                <li><a href="AddQuickLink.aspx" class="nav-link"><i class="fa-solid fa-highlighter me-2"></i>Quick Link Button</a></li>
                             </ul>
                         </div>
                     </li>
@@ -133,6 +134,7 @@
                             <ul class="nav flex-column ps-4">
                                 <li><a href="ManageNotices.aspx" class="nav-link"><i class="fa-solid fa-bell me-2"></i>Notice</a></li>
                                 <li><a href="ManageVideoLinks.aspx" class="nav-link"><i class="fa-solid fa-video me-2"></i>Video Link</a></li>
+                                <li><a href="ManageQuickLinks.aspx" class="nav-link"><i class="fa-solid fa-highlighter me-2"></i>Quick Link Button</a></li>
                             </ul>
                         </div>
                     </li>
@@ -181,7 +183,7 @@
                         <!-- Brand Name -->
                         <span class="navbar-brand d-flex align-items-center">
                             <a class="text-decoration-none d-flex align-items-center" href="../cms/">
-                                <img class="me-2 d-lg-none" src="../Image/logo/logo-small.png" alt="Logo" style="height: 30px;">
+                                <img class="me-2 d-lg-none" src="../Image/icon/udca.png" alt="Logo" style="height: 30px;">
                                 <span class="text-white fa-bold">Website CMS</span>
                             </a>
                         </span>
