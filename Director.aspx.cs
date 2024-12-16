@@ -15,7 +15,7 @@ public partial class About_Director : System.Web.UI.Page
     private void LoadPerson()
     {
         string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        string query = "SELECT Name, Phone, Email, FilePath FROM Person WHERE Type = 'Director'";
+        string query = "SELECT Name, Phone, Email, FilePath FROM Member WHERE Position = 'Director'";
 
         using (SqlConnection con = new SqlConnection(connectionString))
         {

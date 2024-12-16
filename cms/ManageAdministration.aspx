@@ -1,4 +1,4 @@
-<%@ Page Title="Update Administrative Person" Language="C#" MasterPageFile="cms.master" AutoEventWireup="true" CodeFile="UpdateAdministration.aspx.cs" Inherits="Admin_pages_UpdateAdministration" %>
+<%@ Page Title="Update Administrative Person" Language="C#" MasterPageFile="cms.master" AutoEventWireup="true" CodeFile="ManageAdministration.aspx.cs" Inherits="ManageAdministration" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script type="text/javascript" src="../Scripts/jquery-3.7.1.min.js"></script>
@@ -29,11 +29,7 @@
                 <!-- Position -->
                 <div class="col-12">
                     <label for="ddlType" class="form-label">Position</label>
-                    <asp:DropDownList ID="ddlType" runat="server" CssClass="form-select" AutoPostBack="true" OnSelectedIndexChanged="ddlType_SelectedIndexChanged">
-                        <asp:ListItem Text="--- Select a Person ---" Selected="True"></asp:ListItem>
-                        <asp:ListItem Text="Chancellor"></asp:ListItem>
-                        <asp:ListItem Text="Vice Chancellor"></asp:ListItem>
-                        <!-- Add other positions here -->
+                    <asp:DropDownList ID="ddlType" runat="server" CssClass="form-select" AutoPostBack="true" OnSelectedIndexChanged="ddlType_SelectedIndexChanged">                        
                     </asp:DropDownList>
                 </div>
 
@@ -74,7 +70,8 @@
 
                 <!-- Save/Update Button -->
                 <div class="col-12 text-end">
-                    <asp:Button ID="btnSave" runat="server" Text="Save/Update" CssClass="btn btn-success" OnClick="btnSave_Click" />
+                    <asp:Button ID="btnSave" runat="server" Text="Update" CssClass="btn btn-success" OnClick="btnSave_Click" />
+                    <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-secondary ms-2" OnClick="btnDelete_Click" />
                 </div>
             </div>
         </div>

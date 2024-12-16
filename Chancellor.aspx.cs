@@ -15,7 +15,7 @@ public partial class pages_Chancellor : System.Web.UI.Page
     private void LoadPerson()
     {
         string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        string query = "SELECT * FROM Person WHERE Type = 'Chancellor'";
+        string query = "SELECT * FROM Member WHERE Position = 'Chancellor'";
 
         using (SqlConnection con = new SqlConnection(connectionString))
         {

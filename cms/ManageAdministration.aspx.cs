@@ -5,14 +5,43 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Web.UI.WebControls;
 
-public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
+public partial class ManageAdministration : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            LoadPerson();
+            PopulateTypeDropdown();
+        }
+    }
+
+    private void PopulateTypeDropdown()
+    {
+        ddlType.Items.Clear();
+        ddlType.Items.Add(new ListItem("--- Select a Person ---", string.Empty));
+
+        string query = "SELECT DISTINCT Position, Align FROM Member WHERE Type = 'Admin' ORDER BY Align";
+        string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        using (SqlCommand cmd = new SqlCommand(query, conn))
+        {
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string position = reader["Position"].ToString();
+                    ddlType.Items.Add(new ListItem(position, position));
+                }
+            }
+            catch (Exception ex)
+            {
+                NotificationHelper.ShowNotification(this, "Error loading persons: " + ex.Message, "error", "Error");
+            }
         }
     }
 
@@ -31,8 +60,8 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
             using (SqlConnection con = new SqlConnection(connectionString))
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@Type", "Admin");
-                cmd.Parameters.AddWithValue("@Position", ddlType.SelectedItem.ToString());
+                cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = "Admin";
+                cmd.Parameters.Add("@Position", SqlDbType.NVarChar).Value = ddlType.SelectedItem.ToString();
 
                 con.Open();
                 using (SqlDataReader rdr = cmd.ExecuteReader())
@@ -57,6 +86,7 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
         }
         catch (Exception ex)
         {
+            NotificationHelper.ShowNotification(this, "Error loading person: " + ex.Message, "error", "Error");
             lblMessage.Text = "Error loading person: " + ex.Message;
         }
     }
@@ -70,11 +100,10 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
         {
             if (fileUpload.HasFile)
             {
-                // Validate file type
                 string fileExtension = Path.GetExtension(fileUpload.FileName).ToLower();
                 if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
                 {
-                    string fileName = name + fileExtension;
+                    string fileName = name.Replace(" ", "_") + fileExtension;
                     string folderPath = Server.MapPath("~/Uploads/person/");
 
                     if (!Directory.Exists(folderPath))
@@ -84,11 +113,9 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
 
                     string fullPath = Path.Combine(folderPath, fileName);
 
-                    // Save the cropped image if provided
-                    string base64String = imagePreviewBase64.Value;
-                    if (!string.IsNullOrEmpty(base64String))
+                    if (!string.IsNullOrEmpty(imagePreviewBase64.Value))
                     {
-                        base64String = base64String.Replace("data:image/png;base64,", "").Replace("data:image/jpeg;base64,", "");
+                        string base64String = imagePreviewBase64.Value.Replace("data:image/png;base64,", "").Replace("data:image/jpeg;base64,", "");
                         byte[] imageBytes = Convert.FromBase64String(base64String);
 
                         using (MemoryStream ms = new MemoryStream(imageBytes))
@@ -99,24 +126,24 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
 
                         filePath = "Uploads/person/" + fileName;
 
-                        // Delete the old file if a new one is uploaded
                         DeletePreviousFile(hfCurrentFilePath.Value);
                     }
                 }
                 else
                 {
-                    Alert("Invalid file type. Only .jpg, .jpeg, and .png are allowed.");
+                    NotificationHelper.ShowNotification(this, "Invalid file type. Only .jpg, .jpeg, and .png are allowed.", "info", "info");
                     return;
                 }
             }
 
             SavePerson(name, filePath);
 
-            Alert("Person saved successfully!");
+            NotificationHelper.ShowNotification(this, "Person saved successfully!", "success", "Success");
             ClearForm();
         }
         catch (Exception ex)
         {
+            NotificationHelper.ShowNotification(this, "Error saving person: " + ex.Message, "error", "Error");
             lblMessage.Text = "Error saving person: " + ex.Message;
         }
     }
@@ -127,24 +154,18 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
 
         using (SqlConnection con = new SqlConnection(connectionString))
         {
-            string query = string.IsNullOrEmpty(hfPersonID.Value)
-                ? "INSERT INTO Member (Type, Align, Name, Position, Phone, Email, FilePath, UploadDate) VALUES (@Type, @Align, @Name, @Position, @Phone, @Email, @FilePath, @UploadDate)"
-                : "UPDATE Member SET Name = @Name, Phone = @Phone, Email = @Email, FilePath = @FilePath WHERE MemberID = @MemberID";
+            string query = "UPDATE Member SET Name = @Name, Phone = @Phone, Email = @Email, FilePath = @FilePath WHERE MemberID = @MemberID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@Type", "Admin");
-                cmd.Parameters.AddWithValue("@Align", ddlType.SelectedIndex);
-                cmd.Parameters.AddWithValue("@Name", name);
-                cmd.Parameters.AddWithValue("@Position", ddlType.SelectedItem.ToString());
-                cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@FilePath", filePath);
-                cmd.Parameters.AddWithValue("@UploadDate", DateTime.Now);
+                cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = name;
+                cmd.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = txtPhone.Text;
+                cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = txtEmail.Text;
+                cmd.Parameters.Add("@FilePath", SqlDbType.NVarChar).Value = filePath;
 
                 if (!string.IsNullOrEmpty(hfPersonID.Value))
                 {
-                    cmd.Parameters.AddWithValue("@MemberID", hfPersonID.Value);
+                    cmd.Parameters.Add("@MemberID", SqlDbType.Int).Value = int.Parse(hfPersonID.Value);
                 }
 
                 con.Open();
@@ -178,8 +199,36 @@ public partial class Admin_pages_UpdateAdministration : System.Web.UI.Page
         currentImage.Style["display"] = "none";
     }
 
-    private void Alert(string message)
+    protected void btnDelete_Click(object sender, EventArgs e)
     {
-        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + message.Replace("'", "\'") + "');", true);
+        string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+
+        try
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Member WHERE MemberID = @MemberID";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    if (!string.IsNullOrEmpty(hfPersonID.Value))
+                    {
+                        cmd.Parameters.Add("@MemberID", SqlDbType.Int).Value = int.Parse(hfPersonID.Value);
+                    }
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+
+                DeletePreviousFile(hfCurrentFilePath.Value);
+                NotificationHelper.ShowNotification(this, "Person deleted successfully!", "success", "Success");
+                ClearForm();
+            }
+        }
+        catch (Exception ex)
+        {
+            NotificationHelper.ShowNotification(this, "Error deleting person: " + ex.Message, "error", "Error");
+            lblMessage.Text = "Error deleting person: " + ex.Message;
+        }
     }
 }

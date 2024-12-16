@@ -34,11 +34,11 @@
                                 <div class="card shadow-sm mb-4">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-md-4 text-center">
-                                            <img src='<%# Eval("ImagePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
+                                            <img src='<%# Eval("FilePath") %>' alt='<%# Eval("Name") %>' class="img-fluid rounded-circle p-1" />
                                         </div>
                                         <div class="col-md-8 p-3">
                                             <h2 class="h5 text-primary mb-2"><%# Eval("Name") %></h2>
-                                            <p><strong>Position:</strong>&nbsp;<%# Eval("Type") %></p>
+                                            <p><strong>Position:</strong>&nbsp;<%# Eval("Position") %></p>
                                             <p class="mb-1"><i class="fa fa-phone"></i>&nbsp;<strong>Phone:</strong>&nbsp;<a href='tel:<%# Eval("Phone") %>'><%# Eval("Phone") %></a></p>
                                             <p><i class="fa fa-envelope"></i>&nbsp;<strong>Email:</strong>&nbsp;<a href='mailto:<%# Eval("Email") %>'><%# Eval("Email") %></a></p>
                                         </div>

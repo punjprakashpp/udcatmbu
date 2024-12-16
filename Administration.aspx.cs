@@ -19,7 +19,7 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Name, Type, FilePath FROM Person WHERE Type = 'Chancellor'";
+            string query = "SELECT Name, Position, FilePath FROM Member WHERE Position = 'Chancellor'";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
@@ -29,7 +29,7 @@ public partial class pages_Default : System.Web.UI.Page
                     {
                         lblName.Text = reader["Name"].ToString();
                         Image.ImageUrl = reader["FilePath"].ToString();
-                        lblType.Text = reader["Type"].ToString();
+                        lblType.Text = reader["Position"].ToString();
                     }
                 }
             }
@@ -41,7 +41,7 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = "SELECT Name, Type, Phone, Email, FilePath FROM Person WHERE Type <> 'Chancellor'";
+            string query = "SELECT Align, Position, Name, Type, Phone, Email, FilePath FROM Member WHERE Type = 'Admin' AND Position <> 'Chancellor' ORDER BY Align";
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 conn.Open();
