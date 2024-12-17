@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Manage Notice" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="ManageNotices.aspx.cs" Inherits="cms_ManageNotice" %>
+﻿<%@ Page Title="Manage Reports" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="ManageReports.aspx.cs" Inherits="ManageReports" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
    <link rel="stylesheet" href="../Content/flatpickr.min.css">
@@ -21,25 +21,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <div class="container py-4">
         <!-- Page Heading -->
-        <h2 class="text-center mb-4">Manage Notice</h2>
+        <h2 class="text-center mb-4">Manage Reports</h2>
 
         <!-- Search Section -->
         <div class="card shadow-sm mb-4">
             <div class="card-body m-auto">
                 <div class="row g-3 align-items-center">
-                    <div class="col-auto">
+                    <div class="col-md-4">
                         <label for="txtSearch" class="form-label mb-0 fw-bold">Search using:</label>
-                    </div>
-                    <div class="col-auto">
-                        <asp:RadioButton ID="rdNo" runat="server" Text="No." GroupName="SearchCriteria" CssClass="form-check-input me-2" />
-                    </div>
-                    <div class="col-auto">
-                        <asp:RadioButton ID="rdTitle" runat="server" Text="Notice" GroupName="SearchCriteria" CssClass="form-check-input me-2" />
                     </div>
                     <div class="col-md-4">
                         <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" placeholder="Enter search text"></asp:TextBox>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-md-4">
                         <asp:Button ID="btnSearch" runat="server" CssClass="btn btn-primary" Text="Search" OnClick="btnSearch_Click" />
                     </div>
                 </div>
@@ -59,14 +53,6 @@
                 OnPageIndexChanging="gvNotice_PageIndexChanging">
                 <Columns>
                     <asp:BoundField DataField="DocsID" HeaderText="Notice ID" ReadOnly="True" Visible="False" />
-                    <asp:TemplateField HeaderText="No" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="txtNo" runat="server" CssClass="form-control form-control-sm" Text='<%# Bind("No") %>'></asp:TextBox>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Label ID="lblNo" runat="server" Text='<%# Eval("No") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="Notice" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center">
                         <EditItemTemplate>
                             <asp:RequiredFieldValidator ID="rfvTitle" runat="server" ControlToValidate="txtTitle" ErrorMessage="Title is required." ForeColor="Red" />

@@ -3,7 +3,9 @@
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="Styles/pages.css">
     <link rel="stylesheet" href="Styles/cropper.css">
+   <link rel="stylesheet" href="Content/flatpickr.min.css">
     <script type="text/javascript" src="Scripts/cropper.js"></script>
+    <script type="text/javascript" src="Scripts/flatpickr.js"></script>
     <script type="text/javascript" src="Scripts/jquery-3.7.1.min.js"></script>
     <style>
         .cropper-container {
@@ -13,6 +15,24 @@
             overflow: hidden;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Flatpickr on the TextBox
+            const fp = flatpickr('.flatpickr-input', {
+                enableTime: false,       // Disable time
+                dateFormat: "d-m-Y",     // Date format
+                allowInput: true,        // Allow manual input
+                clickOpens: false,       // Calendar opens on click
+                disableMobile: true,     // Force Flatpickr on mobile
+                maxDate: "today"         // today is maximum date
+            });
+
+            // Open the calendar when clicking on the calendar icon
+            document.getElementById('calendar-icon').addEventListener('click', function () {
+                fp.open();
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="ContentBody" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-5 bg-light">
@@ -75,10 +95,15 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Date of Birth:
-                        </td>
+                        <td>Date of Birth:</td>
                         <td>
-                            <asp:TextBox ID="txtDOB" placeholder="e.g. 08-07-2000" runat="server" TextMode="Date" CssClass="form-control"></asp:TextBox>
+                            <div class="input-group">
+                                <asp:TextBox ID="txtDOB" placeholder="e.g. 08-07-2000" runat="server"
+                                    CssClass="form-control flatpickr-input"></asp:TextBox>
+                                <span class="input-group-text" id="calendar-icon">
+                                    <i class="fa-solid fa-calendar"></i>
+                                </span>
+                            </div>
                             <asp:RequiredFieldValidator ID="rfvDOB" runat="server" ControlToValidate="txtDOB"
                                 ErrorMessage="Date of Birth is required." ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>

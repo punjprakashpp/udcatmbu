@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Upload Notice" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="UploadNotice.aspx.cs" Inherits="cms_UploadNotice" %>
+﻿<%@ Page Title="Upload Report" Language="C#" MasterPageFile="~/cms/cms.master" AutoEventWireup="true" CodeFile="UploadReport.aspx.cs" Inherits="cms_AffReg" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
    <link rel="stylesheet" href="../Content/flatpickr.min.css">
@@ -20,27 +20,22 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-5 m-auto">
-                <h2 class="text-center">Upload Notice Image/PDF</h2>
+                <h2 class="text-center">Upload Report Image/PDF</h2>
                 <table class="table table-responsive">
                     <tr>
-                        <td>Notice No.: </td>
-                        <td>
-                            <asp:TextBox ID="txtNoticeNo" ToolTip="Notice No." CssClass="form-control" runat="server"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td>Notice Date: </td>
+                        <td>Document Date: </td>
                         <td>
                             <asp:TextBox ID="txtNoticeDate" ToolTip="Document Date" CssClass="form-control flatpickr-input" runat="server" /></td>
                         </tr>
                     <tr>
-                        <td>Notice Title: </td>
+                        <td>Document Title: </td>
                         <td>
-                            <asp:TextBox ID="txtNoticeText" ToolTip="Notice Text" CssClass="form-control" runat="server"></asp:TextBox></td>
+                            <asp:TextBox ID="txtNoticeText" ToolTip="Document Text" CssClass="form-control" runat="server"></asp:TextBox></td>
                     </tr>
                     <tr>
-                        <td>Select Notice Image/PDF: </td>
+                        <td>Select Document Image/PDF: </td>
                         <td>
-                            <asp:FileUpload ID="fileUpload" ToolTip="Notice File" CssClass="form-control" runat="server" /></td>
+                            <asp:FileUpload ID="fileUpload" ToolTip="Document File" CssClass="form-control" runat="server" /></td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -48,7 +43,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Button ID="btnManage" CssClass="form-control btn btn-secondary" runat="server" Text="Manage Notice" OnClick="btnManage_Click" /></td>
+                            <asp:Button ID="btnManage" CssClass="form-control btn btn-secondary" runat="server" Text="Manage Document" OnClick="btnManage_Click" /></td>
                         <td>
                             <asp:Button ID="btnSubmit" CssClass="form-control btn btn-primary" runat="server" Text="Submit" OnClick="btnSubmit_Click" /></td>
                     </tr>

@@ -110,6 +110,7 @@
                                 <li><a href="AddVideoLink.aspx" class="nav-link"><i class="fa-solid fa-video me-2"></i>Video Link</a></li>
                                 <li><a href="AddHighlightLink.aspx" class="nav-link"><i class="fa-solid fa-highlighter me-2"></i>Highlight Link</a></li>
                                 <li><a href="AddQuickLink.aspx" class="nav-link"><i class="fa-solid fa-highlighter me-2"></i>Quick Link Button</a></li>
+                                <li><a href="AddAdministration.aspx" class="nav-link"><i class="fa-solid fa-users me-2"></i>Administration</a></li>
                             </ul>
                         </div>
                     </li>
@@ -120,6 +121,7 @@
                         <div class="collapse" id="uploadMenu">
                             <ul class="nav flex-column ps-4">
                                 <li><a href="UploadNotice.aspx" class="nav-link"><i class="fa-solid fa-bell me-2"></i>Notice</a></li>
+                                <li><a href="UploadReport.aspx" class="nav-link"><i class="fa-solid fa-file-archive me-2"></i>Report</a></li>
                                 <li><a href="UploadSliderImage.aspx" class="nav-link"><i class="fa-solid fa-sliders me-2"></i>Slider Image</a></li>
                                 <li><a href="UploadGalleryImage.aspx" class="nav-link"><i class="fa-solid fa-images me-2"></i>Gallery Image</a></li>
                                 <li><a href="UploadNewspaperImage.aspx" class="nav-link"><i class="fa-solid fa-newspaper me-2"></i>Newspaper Image</a></li>
@@ -133,8 +135,10 @@
                         <div class="collapse" id="manageMenu">
                             <ul class="nav flex-column ps-4">
                                 <li><a href="ManageNotices.aspx" class="nav-link"><i class="fa-solid fa-bell me-2"></i>Notice</a></li>
+                                <li><a href="ManageReports.aspx" class="nav-link"><i class="fa-solid fa-file-archive me-2"></i>Report</a></li>
                                 <li><a href="ManageVideoLinks.aspx" class="nav-link"><i class="fa-solid fa-video me-2"></i>Video Link</a></li>
                                 <li><a href="ManageQuickLinks.aspx" class="nav-link"><i class="fa-solid fa-highlighter me-2"></i>Quick Link Button</a></li>
+                                <li><a href="ManageAdministration.aspx" class="nav-link"><i class="fa-solid fa-users me-2"></i>Administration</a></li>
                             </ul>
                         </div>
                     </li>
