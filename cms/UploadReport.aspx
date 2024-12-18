@@ -25,17 +25,17 @@
                     <tr>
                         <td>Document Date: </td>
                         <td>
-                            <asp:TextBox ID="txtNoticeDate" ToolTip="Document Date" CssClass="form-control flatpickr-input" runat="server" /></td>
+                            <asp:TextBox ID="txtNoticeDate" ToolTip="Report Date" CssClass="form-control flatpickr-input" runat="server" /></td>
                         </tr>
                     <tr>
                         <td>Document Title: </td>
                         <td>
-                            <asp:TextBox ID="txtNoticeText" ToolTip="Document Text" CssClass="form-control" runat="server"></asp:TextBox></td>
+                            <asp:TextBox ID="txtNoticeText" ToolTip="Report Text" CssClass="form-control" runat="server"></asp:TextBox></td>
                     </tr>
                     <tr>
                         <td>Select Document Image/PDF: </td>
                         <td>
-                            <asp:FileUpload ID="fileUpload" ToolTip="Document File" CssClass="form-control" runat="server" /></td>
+                            <asp:FileUpload ID="fileUpload" ToolTip="Report File" CssClass="form-control" runat="server" /></td>
                     </tr>
                     <tr>
                         <td colspan="2">

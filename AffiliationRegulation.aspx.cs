@@ -48,7 +48,7 @@ public partial class pages_AffiliationRegulation : System.Web.UI.Page
 
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string baseQuery = "SELECT DocsID, Title, Date, FilePath FROM Docs WHERE Type = 'AffReg'";
+            string baseQuery = "SELECT DocsID, Title, Date, FilePath FROM Docs WHERE Type = 'Report'";
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 baseQuery += " AND Title LIKE @SearchQuery";
@@ -57,7 +57,7 @@ public partial class pages_AffiliationRegulation : System.Web.UI.Page
             string paginatedQuery =
                 "WITH PaginatedData AS (" +
                 "    SELECT ROW_NUMBER() OVER (ORDER BY Date DESC) AS RowNum, DocsID, Title, Date, FilePath " +
-                "    FROM Docs WHERE Type = 'AffReg' " +
+                "    FROM Docs WHERE Type = 'Report' " +
                 (string.IsNullOrEmpty(searchQuery) ? "" : "AND Title LIKE @SearchQuery ") +
                 ") " +
                 "SELECT DocsID, Title, Date, FilePath " +
@@ -98,7 +98,7 @@ public partial class pages_AffiliationRegulation : System.Web.UI.Page
             }
 
             // Count total records
-            string countQuery = "SELECT COUNT(*) FROM Docs WHERE Type = 'AffReg'";
+            string countQuery = "SELECT COUNT(*) FROM Docs WHERE Type = 'Report'";
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 countQuery += " AND Title LIKE @SearchQuery";

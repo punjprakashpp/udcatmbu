@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="keywords" content="UDCA, UDCA TMBU, udcatmbu, University Department of Computer Applications TMBU, University Department of Computer Applications T.M.Bhagalpur University, Computer Center, Computer Center Bhagalpur, MCA, MCA in Bhagalpur, MCA from TMBU, Master of Computer Applications (MCA) in Bhagalpur"/>
     <meta name="description" content="University Department of Computer Applications (UDCA) is a constituent unit of Tilka Manjhi Bhagalpur University (TMBU), Bhagalpur.The first University in Bihar to offers 3 years (6 semesters) full time MCA course, now offering 2 years (4 semesters) MCA Course according to new guidelines. The UDCA campus is spread over 2.5 acrs and fully equiped with Wi-Fi."/>
-    <link rel="stylesheet" href="Content/all.min.css"/>
+    <link rel="stylesheet" href="Content/fontawesome.min.css"/>
     <link rel="stylesheet" href="Content/bootstrap.min.css"/>
     <link rel="stylesheet" href="Styles/site.css"/>
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
@@ -72,7 +72,7 @@
                         <a class="nav-link" href="/"><i class="fa-solid fa-house"></i>&nbsp;Home</a>
                     </li>
 
-                    <!-- Dropdown Menus -->
+                    <!-- About Menus -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-circle-info"></i>&nbsp;About
@@ -86,12 +86,7 @@
                                 class="fa-solid fa-users"></i>&nbsp;Administration</a></li>
                             <li><a class="dropdown-item" href="Director.aspx"><i class="fa-solid fa-user"></i>
                                 &nbsp;Director's Message</a></li>
-                            <li><a class="dropdown-item" href="HowToReach.aspx"><i
-                                class="fa-solid fa-map-location-dot"></i>&nbsp;How to Reach Here</a></li>
-                            <li><a class="dropdown-item" href="CampusMap.aspx"><i class="fa-solid fa-map"></i>&nbsp;Campus
-                                    Map</a></li>
-                            <li><a class="dropdown-item" href="ContactUs.aspx"><i class="fa-solid fa-phone"></i>&nbsp;Contact
-                                    Us</a></li>
+                            <li><a class="dropdown-item" href="AboutDevelopers.aspx"><i class="fa-solid fa-code"></i>&nbsp;About Developers</a></li>
                         </ul>
                     </li>
 
@@ -108,8 +103,6 @@
                                 &nbsp;Entrance Test</a></li>
                             <li><a class="dropdown-item" href="EligiblityCriteria.aspx"><i class="fa-solid fa-list"></i>
                                 &nbsp;Eligibility Criteria</a></li>
-                            <li><a class="dropdown-item" href="ImportantDates.aspx"><i
-                                class="fa-solid fa-calendar-check"></i>&nbsp;Important Dates</a></li>
                             <li><a class="dropdown-item" href="FeeStructure.aspx"><i class="fa-solid fa-money-bill"></i>
                                 &nbsp;Fee Structure</a></li>
                             <li><a class="dropdown-item" href="CourseStructure.aspx"><i class="fa-solid fa-list"></i>
@@ -191,22 +184,6 @@
                         </ul>
                     </li>
 
-                    <!-- Alumni Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="alumniDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-users"></i>&nbsp;Alumni
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="alumniDropdown">
-                            <li><a class="dropdown-item" href="OurAlumni.aspx"><i class="fa-solid fa-user"></i>&nbsp;Our
-                                    Alumni</a></li>
-                            <li><a class="dropdown-item" href="OurAchivers.aspx"><i class="fa-solid fa-award"></i>&nbsp;Our
-                                    Achievers</a></li>
-                            <li><a class="dropdown-item" href="AlumniRegistration.aspx"><i
-                                class="fa-solid fa-sign-in"></i>&nbsp;Alumni Registration</a></li>
-                        </ul>
-                    </li>
-
                     <!-- Gallery Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="galleryDropdown" role="button"
@@ -250,10 +227,49 @@
                             <i class="fa-solid fa-download"></i>&nbsp;Download
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
-                            <li><a class="dropdown-item" href="DownloadsSyllabus.aspx"><i
+                            <li><a class="dropdown-item" href="DownloadSyllabus.aspx"><i
                                 class="fa-solid fa-file-lines"></i>&nbsp;Syllabus</a></li>
+                            <li><a class="dropdown-item" href="DownloadAssignments.aspx"><i
+                                class="fa-solid fa-file-archive"></i>&nbsp;Assignments</a></li>
                             <li><a class="dropdown-item" href="DownloadPYQPapers.aspx"><i
-                                class="fa-solid fa-file-lines"></i>&nbsp;PYQ Papers</a></li>
+                                class="fa-solid fa-file-circle-question"></i>&nbsp;PYQ Papers</a></li>
+                            <li><a class="dropdown-item" href="DownloadModalPapers.aspx"><i
+                                class="fa-solid fa-file-circle-check"></i>&nbsp;Modal Papers</a></li>
+                            <li><a class="dropdown-item" href="DownloadIQPapers.aspx"><i
+                                class="fa-solid fa-file-circle-plus"></i>&nbsp;Internal Questions</a></li>
+                            <li><a class="dropdown-item" href="DownloadOthers.aspx"><i
+                                class="fa-solid fa-file"></i>&nbsp;Other Files</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Alumni Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="alumniDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-users"></i>&nbsp;Alumni
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="alumniDropdown">
+                            <li><a class="dropdown-item" href="OurAlumni.aspx"><i class="fa-solid fa-user"></i>&nbsp;Our
+                                    Alumni</a></li>
+                            <li><a class="dropdown-item" href="OurAchivers.aspx"><i class="fa-solid fa-award"></i>&nbsp;Our
+                                    Achievers</a></li>
+                            <li><a class="dropdown-item" href="AlumniRegistration.aspx"><i
+                                class="fa-solid fa-sign-in"></i>&nbsp;Alumni Registration</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Contact Menus -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-contact-card"></i>&nbsp;Contact
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                            <li><a class="dropdown-item" href="ContactUs.aspx"><i class="fa-solid fa-phone"></i>&nbsp;Contact
+                                    Us</a></li>
+                            <li><a class="dropdown-item" href="CampusMap.aspx"><i class="fa-solid fa-map"></i>&nbsp;Campus
+                                    Map</a></li>
+                            <li><a class="dropdown-item" href="HowToReach.aspx"><i
+                                class="fa-solid fa-map-location-dot"></i>&nbsp;How to Reach Here</a></li>
                         </ul>
                     </li>
 
@@ -302,10 +318,10 @@
                     <ul class="list-unstyled">
                         <li><a href="AboutUDCA.aspx" class="text-light text-decoration-none">About UDCA</a></li>
                         <li><a href="AboutTMBU.aspx" class="text-light text-decoration-none">About TMBU</a></li>
-                        <li><a href="ViceChancellor.aspx" class="text-light text-decoration-none">VC's Message</a></li>
                         <li><a href="Administration.aspx" class="text-light text-decoration-none">Administration</a></li>
                         <li><a href="ComputerCentre.aspx" class="text-light text-decoration-none">Computer Centre</a></li>
                         <li><a href="Director.aspx" class="text-light text-decoration-none">Director's Message</a></li>
+                        <li><a href="AboutDevelopers.aspx" class="text-light text-decoration-none">About Developers</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-6 mb-3">
@@ -361,10 +377,10 @@
             </div>
             <!-- Bottom Section -->
             <div class="text-center text-lg-start border-top pt-3 d-lg-flex justify-content-between align-items-center">
-                <span class="d-block mb-2 mb-lg-0">Copyright &#169; 2024 UDCA TMBU | All rights reserved!</span>
+                <span class="d-block mb-2 mb-lg-0">Copyright &#169; 2024 UDCA TMBU | All rights reserved !</span>
                 <span>Visits: 
                     <asp:Label ID="lblVisitorCount" runat="server" Font-Bold="true" />
-                    | Developed by <a href="https://punjprakashpp.github.io/punjprakashpp/" target="_blank" class="text-light text-decoration-none">Punj Prakash</a>
+                    | Developed & Managed by <a href="AboutDevelopers.aspx" class="text-white text-decoration-none">UDCA TMBU</a>
                 </span>
             </div>
         </div>
@@ -373,7 +389,6 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
     <script defer type="text/javascript" src="Scripts/site.js"></script>
-    <script defer type="text/javascript" src="Scripts/modernizr-3.4.0.min.js"></script>
     <script defer type="text/javascript" src="Scripts/bootstrap.bundle.min.js"></script>
 </body>
 </html>

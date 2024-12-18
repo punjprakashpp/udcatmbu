@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script type="text/javascript" src="../Scripts/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="../Scripts/cropper.js"></script>
-    <link rel="stylesheet" href="../Styles/cropper.css" />
+    <link rel="stylesheet" href="../Content/Cropper.min.css" />
     <style>
         .cropper-container {
             width: 300px;

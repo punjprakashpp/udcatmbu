@@ -47,7 +47,7 @@ public partial class ManageReports : System.Web.UI.Page
                 FROM 
                     Docs
                 WHERE
-                    Type = 'AffReg'";
+                    Type = 'Report'";
            
             query += "AND (@SearchTitle IS NULL OR Title LIKE '%' + @SearchTitle + '%')";
 
@@ -136,7 +136,7 @@ public partial class ManageReports : System.Web.UI.Page
                 }
                 string safeTitle = safeTitleBuilder.ToString();
                 string filename = "Notice_" + noticeDate.ToString("dd-MM-yyyy") + "_" + safeTitle + ".pdf";
-                string uploadFolder = Server.MapPath("~/uploads/affreg/");
+                string uploadFolder = Server.MapPath("~/uploads/report/");
                 newFilePath = Path.Combine(uploadFolder, filename);
 
                 // Check file type
@@ -193,7 +193,7 @@ public partial class ManageReports : System.Web.UI.Page
                     return;
                 }
 
-                newFilePath = "uploads/affreg/" + filename; // Fixed path concatenation
+                newFilePath = "uploads/report/" + filename; // Fixed path concatenation
             }
 
             using (SqlConnection conn = new SqlConnection(connStr))

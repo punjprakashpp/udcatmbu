@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" href="Styles/manage.css">
-    <link rel="stylesheet" href="Styles/cropper.css">
+    <link rel="stylesheet" href="Content/Cropper.min.css">
     <script src="Script/cropper.js"></script>
     <script src="Script/jquery.js"></script>
     <style>

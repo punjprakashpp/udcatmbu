@@ -2,8 +2,8 @@
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="Styles/pages.css">
-    <link rel="stylesheet" href="Styles/cropper.css">
-   <link rel="stylesheet" href="Content/flatpickr.min.css">
+    <link rel="stylesheet" href="Content/Cropper.min.css">
+    <link rel="stylesheet" href="Content/flatpickr.min.css">
     <script type="text/javascript" src="Scripts/cropper.js"></script>
     <script type="text/javascript" src="Scripts/flatpickr.js"></script>
     <script type="text/javascript" src="Scripts/jquery-3.7.1.min.js"></script>

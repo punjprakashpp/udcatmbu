@@ -30,7 +30,7 @@
                     <tr>
                         <td>Notice Date: </td>
                         <td>
-                            <asp:TextBox ID="txtNoticeDate" ToolTip="Document Date" CssClass="form-control flatpickr-input" runat="server" /></td>
+                            <asp:TextBox ID="txtNoticeDate" ToolTip="Notice Date" CssClass="form-control flatpickr-input" runat="server" /></td>
                         </tr>
                     <tr>
                         <td>Notice Title: </td>

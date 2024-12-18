@@ -268,10 +268,10 @@
                     <div class="row row-cols-2 row-cols-lg-3 g-4">
                         <div class="col">
                             <div class="card text-center">
-                                <a href="Downloads.aspx" class="text-decoration-none">
+                                <a href="AboutDevelopers.aspx" class="text-decoration-none">
                                     <div class="card-body text-center">
-                                        <img src="Image/icon/download.png" class="card-img-top w-75 m-auto" alt="Download Files"/>
-                                        <div class="card-text">Download Files</div>
+                                        <img src="Image/icon/developer.png" class="card-img-top w-75 m-auto" alt="About Developers"/>
+                                        <div class="card-text">About Developers</div>
                                     </div>
                                 </a>
                             </div>

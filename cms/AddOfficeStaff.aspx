@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Add Staffs" Language="C#" MasterPageFile="cms.master" AutoEventWireup="true" CodeFile="AddOfficeStaff.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <link rel="stylesheet" href="../Styles/cropper.css">
+    <link rel="stylesheet" href="../Content/Cropper.min.css">
     <script type="text/javascript" src="../Scripts/cropper.js"></script>
     <script type="text/javascript" src="../Scripts/jquery-3.7.1.min.js"></script>
     <style>

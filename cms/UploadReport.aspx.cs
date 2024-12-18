@@ -39,7 +39,7 @@ public partial class cms_AffReg : System.Web.UI.Page
                     string safeTitle = safeTitleBuilder.ToString();
                     string fileName = "Report_" + formattedDate + "_" + safeTitle + ".pdf";
 
-                    string uploadFolder = Server.MapPath("~/uploads/affreg/");
+                    string uploadFolder = Server.MapPath("~/uploads/report/");
                     if (!Directory.Exists(uploadFolder))
                     {
                         Directory.CreateDirectory(uploadFolder);
@@ -100,14 +100,14 @@ public partial class cms_AffReg : System.Web.UI.Page
                         return;
                     }
 
-                    string relativeFilePath = "uploads/affreg/" + fileName;
+                    string relativeFilePath = "uploads/report/" + fileName;
                     string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
                     using (SqlConnection conn = new SqlConnection(connStr))
                     {
                         string query = "INSERT INTO Docs (Type, Title, Date, FilePath, UploadDate) VALUES (@Type, @Title, @Date, @FilePath, @UploadDate)";
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
-                            cmd.Parameters.AddWithValue("@Type", "AffReg");
+                            cmd.Parameters.AddWithValue("@Type", "Report");
                             cmd.Parameters.AddWithValue("@Title", noticeTitle);
                             cmd.Parameters.AddWithValue("@Date", noticeDate);
                             cmd.Parameters.AddWithValue("@FilePath", relativeFilePath);
@@ -115,7 +115,7 @@ public partial class cms_AffReg : System.Web.UI.Page
 
                             conn.Open();
                             cmd.ExecuteNonQuery();
-                            lblMessage.Text = "Document uploaded successfully!";
+                            lblMessage.Text = "Report uploaded successfully!";
                             lblMessage.ForeColor = Color.Green;
 
                             txtNoticeText.Text = string.Empty;
@@ -143,13 +143,13 @@ public partial class cms_AffReg : System.Web.UI.Page
         }
         else
         {
-            lblMessage.Text = "Please enter a valid Document Title and Document Date.";
+            lblMessage.Text = "Please enter a valid Report Title and Report Date.";
             lblMessage.ForeColor = Color.Red;
         }
     }
 
     protected void btnManage_Click(object sender, EventArgs e)
     {
-        Response.Redirect("ManageNotices.aspx");
+        Response.Redirect("ManageReports.aspx");
     }
 }
