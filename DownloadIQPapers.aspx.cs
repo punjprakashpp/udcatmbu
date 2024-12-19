@@ -45,7 +45,7 @@ public partial class DownloadIQPapers : System.Web.UI.Page
         string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string query = "SELECT FilesID, FileName FROM Files WHERE FileType = @FileType";
+            string query = "SELECT DocsID, Title FROM Docs WHERE Type = @Type";
 
             if (ddlSemester.SelectedValue != string.Empty)
             {
@@ -59,7 +59,7 @@ public partial class DownloadIQPapers : System.Web.UI.Page
 
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@FileType", "Internal");
+                cmd.Parameters.AddWithValue("@Type", "Internal");
                 cmd.Parameters.AddWithValue("@Semester", semester);
                 if (ddlSession.Enabled)
                 {
@@ -97,7 +97,7 @@ public partial class DownloadIQPapers : System.Web.UI.Page
             string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT FilePath FROM Files WHERE FilesID = @Id";
+                string query = "SELECT FilePath FROM Docs WHERE DocsID = @Id";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", id);

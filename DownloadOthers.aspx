@@ -94,12 +94,12 @@
 
             <!-- Files Grid Section -->
             <div class="table-responsive">
-                <asp:GridView ID="GridViewFiles" runat="server" AutoGenerateColumns="False" DataKeyNames="FilesID" OnRowCommand="GridViewFiles_RowCommand" CssClass="table table-bordered table-striped">
+                <asp:GridView ID="GridViewFiles" runat="server" AutoGenerateColumns="False" DataKeyNames="DocsID" OnRowCommand="GridViewFiles_RowCommand" CssClass="table table-bordered table-striped">
                     <Columns>
-                        <asp:BoundField DataField="FileName" HeaderText="File Name" />
+                        <asp:BoundField DataField="Title" HeaderText="File Name" />
                         <asp:TemplateField HeaderText="File">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lnkDownload" runat="server" CommandName="Download" CommandArgument='<%# Eval("FilesID") %>' class="btn btn-link">Download</asp:LinkButton>
+                                <asp:LinkButton ID="lnkDownload" runat="server" CommandName="Download" CommandArgument='<%# Eval("DocsID") %>' class="btn btn-link">Download</asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

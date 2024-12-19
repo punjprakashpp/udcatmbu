@@ -26,10 +26,6 @@
                         <asp:HyperLink ID="emailLink" runat="server" class="text-decoration-none">
                             <asp:Label ID="lblEmail" runat="server" />
                         </asp:HyperLink>
-                        <br />
-                        <a href="/pdfjs/web/viewer.html?file=/Uploads/Profile/VCProfile.pdf" target="_blank" class="btn btn-primary mt-3">
-                            <i class="fas fa-info-circle"></i> Learn More
-                        </a>
                     </p>
                 </div>
 

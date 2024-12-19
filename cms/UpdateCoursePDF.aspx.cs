@@ -28,6 +28,11 @@ public partial class Admin_pages_UpdateOtherPDF : System.Web.UI.Page
         UploadPDF(fileUploadHolidayList, "HolidayList.pdf");
     }
 
+    protected void btnFeeStructure_Click(object sender, EventArgs e)
+    {
+        UploadPDF(fileUploadFeeStructure, "FeeStructure.pdf");
+    }
+
     protected void btnCourseStructure_Click(object sender, EventArgs e)
     {
         UploadPDF(fileUploadCourseStructure, "CourseStructure.pdf");

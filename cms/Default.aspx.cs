@@ -29,12 +29,12 @@ public partial class Admin_Default : System.Web.UI.Page
             lbltotalStudents.Text = totalStudents.ToString();
 
             // Get total achievers
-            command = new SqlCommand("SELECT COUNT(*) FROM Achiver", connection);
+            command = new SqlCommand("SELECT COUNT(*) FROM Student  WHERE Achivement IS NOT NULL", connection);
             int totalAchievers = Convert.ToInt32(command.ExecuteScalar());
             lbltotalAchievers.Text = totalAchievers.ToString();
 
             // Get total alumni
-            command = new SqlCommand("SELECT COUNT(*) FROM Alumni", connection);
+            command = new SqlCommand("SELECT COUNT(*) FROM Student WHERE Alumni IS NOT NULL", connection);
             int totalAlumni = Convert.ToInt32(command.ExecuteScalar());
             lbltotalAlumni.Text = totalAlumni.ToString();
 
@@ -54,12 +54,12 @@ public partial class Admin_Default : System.Web.UI.Page
             lbltotalNotice.Text = totalNotice.ToString();
 
             // Get total docs
-            command = new SqlCommand("SELECT COUNT(*) FROM Docs WHERE TYPE = 'AffReg'", connection);
+            command = new SqlCommand("SELECT COUNT(*) FROM Docs WHERE TYPE = 'Record'", connection);
             int totalDocs = Convert.ToInt32(command.ExecuteScalar());
             lbltotalDocs.Text = totalDocs.ToString();
 
             // Get total files
-            command = new SqlCommand("SELECT COUNT(*) FROM Files", connection);
+            command = new SqlCommand("SELECT COUNT(*) FROM Docs", connection);
             int totalFiles = Convert.ToInt32(command.ExecuteScalar());
             lbltotalFiles.Text = totalFiles.ToString();
         }
