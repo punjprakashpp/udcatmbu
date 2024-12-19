@@ -810,3 +810,33 @@ StackTrace:    at System.Threading.Thread.AbortInternal()
    at System.Web.HttpResponse.Redirect(String url)
    at Login.btnLogin_Click(Object sender, EventArgs e) in c:\Users\Punj\Documents\GitHub\udcatmbu\Login.aspx.cs:line 52
 -----------------------------------------------------
+Date: 19-12-2024 01:54:14 PM
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at Login.btnLogin_Click(Object sender, EventArgs e) in c:\Users\Punj\Documents\GitHub\udcatmbu\Login.aspx.cs:line 52
+-----------------------------------------------------
+Date: 19-12-2024 02:00:03 PM
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at Login.btnLogin_Click(Object sender, EventArgs e) in c:\Users\Punj\Documents\GitHub\udcatmbu\Login.aspx.cs:line 52
+-----------------------------------------------------
+Date: 19-12-2024 02:04:56 PM
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.End()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at System.Web.HttpResponse.Redirect(String url)
+   at Login.btnLogin_Click(Object sender, EventArgs e) in c:\Users\Punj\Documents\GitHub\udcatmbu\Login.aspx.cs:line 52
+-----------------------------------------------------

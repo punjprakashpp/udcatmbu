@@ -8,8 +8,8 @@
     <meta name="description" content="Content Management System">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%: Page.Title %></title>
-    <link rel="stylesheet" href="../Content/fontawesome.min.css">
-    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <webopt:bundlereference runat="server" path="~/Content/css" />
     <style>
         .sidebar {
             width: 250px;
@@ -87,6 +87,24 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" Path="~/Scripts/jquery-3.7.1.min.js" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
         <div class="d-flex">
             <!-- Sidebar -->
             <div class="sidebar bg-dark text-white d-flex flex-column">
@@ -255,7 +273,8 @@
     <button id="goToTop">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
-    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script defer type="text/javascript" src="/Scripts/modernizr-3.4.0.min.js"></script>
+    <script defer type="text/javascript" src="/Scripts/bootstrap.bundle.min.js"></script>
     <script>
         const sidebarToggle = document.getElementById('sidebarToggle');
         const sidebar = document.querySelector('.sidebar');

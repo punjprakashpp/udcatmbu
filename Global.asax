@@ -1,5 +1,8 @@
 ﻿<%@ Application Language="C#" %>
+<%@ Import Namespace="System" %>
+<%@ Import Namespace="System.Web" %>
 <%@ Import Namespace="System.Web.Routing" %>
+<%@ Import Namespace="System.Web.Optimization" %>
 <%@ Import Namespace="System.Configuration" %>
 <%@ Import Namespace="System.Data.SqlClient" %>
 
@@ -10,7 +13,7 @@
         // Code that runs on application startup
         Application["NoOfVisitors"] = 0;
         RouteConfig.RegisterRoutes(RouteTable.Routes);
-
+        BundleConfig.RegisterBundles(BundleTable.Bundles);
     }
     
     void Application_End(object sender, EventArgs e) 

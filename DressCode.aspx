@@ -11,6 +11,11 @@
                 In order to maintain a professional and respectful environment, all students are required to adhere to the following dress code:
             </p>
 
+            <div class="text-center mt-5 mb-4">
+                <h3 class="text-secondary mb-4">Examples of Acceptable Dress Code:</h3>
+                <img src="Image/other/dress.jpg" alt="Acceptable Dress Code" class="img-fluid rounded shadow">
+            </div>
+
             <h2 class="text-center text-secondary border-bottom pb-2 mb-4">General Guidelines</h2>
             <ul class="list-unstyled ps-3">
                 <li class="list-item mb-3">Clothing should be clean, neat, and in good condition.</li>
@@ -28,11 +33,6 @@
                 <li class="list-item mb-3"><strong>Casual Attire:</strong> Acceptable for day-to-day activities, but should still be presentable.</li>
                 <li class="list-item mb-3"><strong>Sports Attire:</strong> Allowed for sports activities only, not suitable for other occasions.</li>
             </ul>
-
-            <div class="text-center mt-5">
-                <h3 class="text-secondary mb-4">Examples of Acceptable Dress Code:</h3>
-                <img src="Image/other/dress.jpg" alt="Acceptable Dress Code" class="img-fluid rounded shadow">
-            </div>
 
             <p class="mt-4 text-justify">
                 Please ensure that you are aware of any specific dress code requirements for your classes, events, or activities.
