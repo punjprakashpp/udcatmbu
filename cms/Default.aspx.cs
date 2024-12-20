@@ -29,12 +29,12 @@ public partial class Admin_Default : System.Web.UI.Page
             lbltotalStudents.Text = totalStudents.ToString();
 
             // Get total achievers
-            command = new SqlCommand("SELECT COUNT(*) FROM Student  WHERE Achivement IS NOT NULL", connection);
+            command = new SqlCommand("SELECT COUNT(*) FROM Achiver", connection);
             int totalAchievers = Convert.ToInt32(command.ExecuteScalar());
             lbltotalAchievers.Text = totalAchievers.ToString();
 
             // Get total alumni
-            command = new SqlCommand("SELECT COUNT(*) FROM Student WHERE Alumni IS NOT NULL", connection);
+            command = new SqlCommand("SELECT COUNT(*) FROM Alumni", connection);
             int totalAlumni = Convert.ToInt32(command.ExecuteScalar());
             lbltotalAlumni.Text = totalAlumni.ToString();
 

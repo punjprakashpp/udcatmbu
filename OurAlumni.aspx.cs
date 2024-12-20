@@ -32,7 +32,7 @@ public partial class pages_Default : System.Web.UI.Page
         ddlSession.Items.Add(new ListItem("--- Select Session ---", string.Empty));
 
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-        string query = "SELECT DISTINCT Session FROM Student ORDER BY Session";
+        string query = "SELECT DISTINCT Session FROM Alumni ORDER BY Session";
 
         using (SqlConnection conn = new SqlConnection(connStr))
         using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -60,9 +60,10 @@ public partial class pages_Default : System.Web.UI.Page
         string connStr = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
         using (SqlConnection conn = new SqlConnection(connStr))
         {
-            string query = @"SELECT FirstName, MidName, LastName, Session, Qualification, Occupation, Company, Phone, Email, FilePath, LinkedIn, Facebook, Instagram, Twitter 
-                             FROM Alumni 
-                             WHERE (@Session IS NULL OR Session = @Session)";
+            string query = @"SELECT FirstName, MidName, LastName, Session, Qualification, Occupation, Company, Phone, Email, FilePath, LinkedIn, Facebook, Instagram, Twitter
+                            FROM Alumni
+                            WHERE (@Session IS NULL OR Session = @Session)
+                            ORDER BY Session";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Session", string.IsNullOrEmpty(ddlSession.SelectedValue) ? (object)DBNull.Value : ddlSession.SelectedItem.ToString());
 

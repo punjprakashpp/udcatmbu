@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="cms.master" AutoEventWireup="true" CodeFile="StudentReport.aspx.cs" Inherits="Studenteport" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <link rel="stylesheet" href="../style/StyleSheet.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" Runat="Server">
     <div class="container">

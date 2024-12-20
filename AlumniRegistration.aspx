@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Alumni Registration" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AlumniRegistration.aspx.cs" Inherits="pages_AlumniRegister" %>
+﻿<%@ Page Title="Alumni Registration" Language="C#" MasterPageFile="Site.master" AutoEventWireup="true" CodeFile="AlumniRegistration.aspx.cs" Inherits="AlumniRegistration" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="Styles/pages.css">
@@ -43,50 +43,25 @@
             </div>
             <table class="table table-bordered table-striped">
                 <tr>
-                    <td colspan="2"><asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></td>
+                    <td colspan="2">
+                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></td>
                 </tr>
             </table>
             <asp:Panel ID="VerifyStudentPanel" runat="server" Visible="true">
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <td></td>
-                        <td>Step 1 : Verification </td>
+                        <td colspan="2" class="text-center">Step 1 : Verification </td>
                     </tr>
                     <tr>
-                        <td>Select Session:</td>
                         <td>
+                            <label for="ddlSession" class="form-label">Select Session:</label>
                             <asp:DropDownList ID="ddlSession" runat="server" CssClass="form-control">
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="rfvSession" runat="server" ControlToValidate="ddlSession"
                                 InitialValue="" ErrorMessage="Session is required." ForeColor="Red"></asp:RequiredFieldValidator>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Registration No:
-                        </td>
+                        </td>                        
                         <td>
-                            <asp:TextBox ID="txtRegistrationNo" placeholder="e.g. 184630004" runat="server" CssClass="form-control"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvRegistrationNo" runat="server" ControlToValidate="txtRegistrationNo"
-                                ErrorMessage="Registration No is required." ForeColor="Red"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="revRegistrationNo" runat="server" ControlToValidate="txtRegistrationNo"
-                                ErrorMessage="Registration No should be only numerals." ForeColor="Red" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Registration Year:
-                        </td>
-                        <td>
-                            <asp:TextBox ID="txtRegistrationYear" placeholder="e.g. 2018" runat="server" CssClass="form-control"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvRegistrationYear" runat="server" ControlToValidate="txtRegistrationYear"
-                                ErrorMessage="Registration Year is required." ForeColor="Red"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="revRegistrationYear" runat="server" ControlToValidate="txtRegistrationYear"
-                                ErrorMessage="Invalid year format." ForeColor="Red" ValidationExpression="^\d{4}$"></asp:RegularExpressionValidator>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Roll No:
-                        </td>
-                        <td>
+                            <label for="txtRollNo" class="form-label">Roll No:</label>
                             <asp:TextBox ID="txtRollNo" placeholder="e.g. 2210" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvRollNo" runat="server" ControlToValidate="txtRollNo"
                                 ErrorMessage="Roll No is required." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -95,8 +70,30 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Date of Birth:</td>
                         <td>
+                            <label for="txtRegistrationNo" class="form-label">Registration No:</label>
+                            <asp:TextBox ID="txtRegistrationNo" placeholder="e.g. 184630004" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvRegistrationNo" runat="server" ControlToValidate="txtRegistrationNo"
+                                ErrorMessage="Registration No is required." ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="revRegistrationNo" runat="server" ControlToValidate="txtRegistrationNo"
+                                ErrorMessage="Registration No should be only numerals." ForeColor="Red" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                        </td>
+                        <td>
+                            <label for="txtRegistrationYear" class="form-label">Registration Year:</label>
+                            <asp:TextBox ID="txtRegistrationYear" placeholder="e.g. 2018" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvRegistrationYear" runat="server" ControlToValidate="txtRegistrationYear"
+                                ErrorMessage="Registration Year is required." ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="revRegistrationYear" runat="server" ControlToValidate="txtRegistrationYear"
+                                ErrorMessage="Invalid year format." ForeColor="Red" ValidationExpression="^\d{4}$"></asp:RegularExpressionValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="txtDOB" class="form-label">Date of Birth:</label>
                             <div class="input-group">
                                 <asp:TextBox ID="txtDOB" placeholder="e.g. 08-07-2000" runat="server"
                                     CssClass="form-control flatpickr-input"></asp:TextBox>
@@ -107,12 +104,12 @@
                             <asp:RequiredFieldValidator ID="rfvDOB" runat="server" ControlToValidate="txtDOB"
                                 ErrorMessage="Date of Birth is required." ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
-                    </tr>
-                    <tr>
-                        <td></td>
                         <td>
-                            <asp:Button ID="btnVerify" runat="server" Text="Verify" OnClick="btnVerify_Click" CssClass="btn btn-primary"/>
-                            <asp:Button ID="btnReset" runat="server" Text="Reset" OnClick="btnReset_Click" CssClass="btn btn-secondary ms-4"/></td>
+                            <div class="mt-4">
+                                <asp:Button ID="btnVerifyStudent" runat="server" Text="Verify" OnClick="btnVerifyStudent_Click" CssClass="btn btn-primary ms-4" />
+                                <asp:Button ID="btnResetVerify" runat="server" Text="Reset" OnClick="btnResetVerify_Click" CssClass="btn btn-secondary ms-4" />
+                            </div>
+                        </td>
                     </tr>
                 </table>
             </asp:Panel>
@@ -239,7 +236,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" CssClass="btn btn-primary"/>
+                            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" CssClass="btn btn-primary" />
                         </td>
                     </tr>
                 </table>

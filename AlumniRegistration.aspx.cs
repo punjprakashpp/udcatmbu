@@ -1,271 +1,243 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
+using System.Web;
 using System.Web.UI.WebControls;
 
-public partial class pages_AlumniRegister : System.Web.UI.Page
+public partial class AlumniRegistration : System.Web.UI.Page
 {
-    private string _studentID;
-    private readonly string _connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+    private string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            PopulateSessionDropdown();
+            LoadSessions();
         }
     }
 
-    private void PopulateSessionDropdown()
+    protected void btnResetVerify_Click(object sender, EventArgs e)
     {
-        ddlSession.Items.Clear();
-        ddlSession.Items.Add(new ListItem("--- Select Session ---", string.Empty));
+        ddlSession.SelectedIndex=0;
+        txtRollNo.Text = txtRegistrationNo.Text = txtRegistrationYear.Text = txtDOB.Text = string.Empty;
+        RegisterAlumniPanel.Visible = false;
+    }
 
-        string query = "SELECT DISTINCT Session FROM Student ORDER BY Session";
-
-        using (SqlConnection conn = new SqlConnection(_connectionString))
-        using (SqlCommand cmd = new SqlCommand(query, conn))
+    private void LoadSessions()
+    {
+        using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            try
+            string query = "SELECT DISTINCT [Session] FROM [Student]";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            ddlSession.DataSource = dt;
+            ddlSession.DataTextField = "Session";
+            ddlSession.DataValueField = "Session";
+            ddlSession.DataBind();
+            ddlSession.Items.Insert(0, new ListItem("Select Session", ""));
+        }
+    }
+
+    protected void btnVerifyStudent_Click(object sender, EventArgs e)
+    {
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            string query = "SELECT * FROM [Student] WHERE [Session] = @Session AND [RollNo] = @RollNo AND [RegNo] = @RegNo AND [RegYear] = @RegYear AND [DOB] = @DOB";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@Session", ddlSession.SelectedValue);
+            cmd.Parameters.AddWithValue("@RollNo", txtRollNo.Text);
+            cmd.Parameters.AddWithValue("@RegNo", txtRegistrationNo.Text);
+            cmd.Parameters.AddWithValue("@RegYear", txtRegistrationYear.Text);
+            cmd.Parameters.AddWithValue("@DOB", DateTime.ParseExact(txtDOB.Text, "dd-MM-yyyy", null));
+
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
             {
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if (reader.Read())
                 {
-                    string session = reader["Session"].ToString();
-                    ddlSession.Items.Add(new ListItem(session, session));
+                    ViewState["StudentID"] = reader["StudentID"].ToString();
+                    if(VerifyAlumni())
+                    {
+                        txtFirstName.Text = reader["FirstName"].ToString();
+                        txtMidName.Text = reader["MidName"].ToString();
+                        txtLastName.Text = reader["LastName"].ToString();
+                        RegisterAlumniPanel.Visible = true;
+                        VerifyStudentPanel.Visible = false;
+                        lblMessage.Text = "Verification Successful.";
+                        NotificationHelper.ShowNotification(this, "Verification Successful.", "success", "success");
+                    }
+                    else
+                    {
+                        NotificationHelper.ShowNotification(this, "Alumni already Registered.", "warning", "warning");
+                        lblMessage.Text = "Alumni already Registered.";
+                    }
+                    
                 }
-            }
-            catch (Exception ex)
-            {
-                NotificationHelper.ShowNotification(this, "Error loading sessions: " + ex.Message, "error", "Error");
-                ShowErrorMessage("Error loading sessions: " + ex.Message);
-            }
-        }
-    }
-
-    protected void btnVerify_Click(object sender, EventArgs e)
-    {
-        if (ValidateStudent())
-        {
-            if (CheckIfAlumniExists())
-            {
-                NotificationHelper.ShowNotification(this, "Alumni already registered.", "warning", "warning");
             }
             else
             {
-                NotificationHelper.ShowNotification(this, "Verification Succesful.", "success", "Success");
-                VerifyStudentPanel.Visible = false;
-                RegisterAlumniPanel.Visible = true;
-                LoadStudentDetails();
+                NotificationHelper.ShowNotification(this, "Verification failed. Please check your details.", "error", "error");
+                lblMessage.Text = "Verification failed. Please check your details.";
             }
-        }
-        else
-        {
-            NotificationHelper.ShowNotification(this, "No student found with the provided details.", "info", "info");
         }
     }
 
-    private bool ValidateStudent()
+    protected bool VerifyAlumni()
     {
-        string query = @"SELECT StudentID FROM Student WHERE RegNo = @RegNo AND RegYear = @RegYear 
-                         AND RollNo = @RollNo AND DOB = @DOB AND Session = @Session";
-
-        using (SqlConnection conn = new SqlConnection(_connectionString))
-        using (SqlCommand cmd = new SqlCommand(query, conn))
+        using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            cmd.Parameters.AddWithValue("@RegNo", txtRegistrationNo.Text.Trim());
-            cmd.Parameters.AddWithValue("@RegYear", txtRegistrationYear.Text.Trim());
-            cmd.Parameters.AddWithValue("@RollNo", txtRollNo.Text.Trim());
-            cmd.Parameters.AddWithValue("@DOB", DateTime.Parse(txtDOB.Text.Trim()));
-            cmd.Parameters.AddWithValue("@Session", ddlSession.SelectedValue);
-
-            try
+            string query = "SELECT * FROM [Alumni] WHERE [StudentID] = @StudentID";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@StudentID", Convert.ToInt32(ViewState["StudentID"]));
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
             {
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    _studentID = reader["StudentID"].ToString();
-                    return true;
-                }
+                return false;
             }
-            catch (Exception ex)
+            else
             {
-                NotificationHelper.ShowNotification(this, "Database error: " + ex.Message, "error", "Error");
-                ShowErrorMessage("Database error: " + ex.Message);
-            }
-        }
-
-        return false;
-    }
-
-    private bool CheckIfAlumniExists()
-    {
-        string query = "SELECT 1 FROM Alumni WHERE StudentID = @StudentID";
-
-        using (SqlConnection conn = new SqlConnection(_connectionString))
-        using (SqlCommand cmd = new SqlCommand(query, conn))
-        {
-            cmd.Parameters.AddWithValue("@StudentID", _studentID);
-
-            try
-            {
-                conn.Open();
-                return cmd.ExecuteReader().HasRows;
-            }
-            catch (Exception ex)
-            {
-                NotificationHelper.ShowNotification(this, "Error checking alumni status: " + ex.Message, "error", "Error");
-                ShowErrorMessage("Error checking alumni status: " + ex.Message);
                 return true;
-            }
-        }
-    }
-
-    private void LoadStudentDetails()
-    {
-        string query = "SELECT FirstName, MidName, LastName FROM Student WHERE StudentID = @StudentID";
-
-        using (SqlConnection conn = new SqlConnection(_connectionString))
-        using (SqlCommand cmd = new SqlCommand(query, conn))
-        {
-            cmd.Parameters.AddWithValue("@StudentID", _studentID);
-
-            try
-            {
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    txtFirstName.Text = reader["FirstName"].ToString();
-                    txtMidName.Text = reader["MidName"].ToString();
-                    txtLastName.Text = reader["LastName"].ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                NotificationHelper.ShowNotification(this, "Error loading student details: " + ex.Message, "error", "Error");
-                ShowErrorMessage("Error loading student details: " + ex.Message);
             }
         }
     }
 
     protected void btnSave_Click(object sender, EventArgs e)
     {
-        if (!Page.IsValid) return;
+        string filePath = SaveFile();
 
-        string FilePath = ProcessImageUpload() ?? "Image/default/default.jpg";
-        txtPhone.Text = "+91 " + txtPhone.Text.Trim();
-
-        string query = @"INSERT INTO Alumni 
-                         (Session, StudentID, FirstName, MidName, LastName, Qualification, Phone, Email, Occupation, Company, LinkedIn, Facebook, Instagram, Twitter, FilePath, EntryDate) 
-                         VALUES 
-                         (@Session, @StudentID, @FirstName, @MidName, @LastName, @Qualification, @Phone, @Email, @Occupation, @Company, @LinkedIn, @Facebook, @Instagram, @Twitter, @FilePath, @EntryDate)";
-
-        using (SqlConnection conn = new SqlConnection(_connectionString))
-        using (SqlCommand cmd = new SqlCommand(query, conn))
+        using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            cmd.Parameters.AddWithValue("@Session", ddlSession.SelectedItem.Text);
-            cmd.Parameters.AddWithValue("@StudentID", Convert.ToInt32(_studentID));
-            cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text.Trim());
-            cmd.Parameters.AddWithValue("@MidName", txtMidName.Text.Trim());
-            cmd.Parameters.AddWithValue("@LastName", txtLastName.Text.Trim());
-            cmd.Parameters.AddWithValue("@Qualification", txtQualification.Text.Trim());
-            cmd.Parameters.AddWithValue("@Phone", txtPhone.Text.Trim());
-            cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+            string query = @"INSERT INTO [Alumni] ([StudentID], [Session], [FirstName], [MidName], [LastName], [Qualification], [Occupation], [Company], [Phone], [Email], [LinkedIn], [Facebook], [Instagram], [Twitter], [FilePath], [EntryDate]) 
+                             VALUES (@StudentID, @Session, @FirstName, @MidName, @LastName, @Qualification, @Occupation, @Company, @Phone, @Email, @LinkedIn, @Facebook, @Instagram, @Twitter, @FilePath, @EntryDate)";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@StudentID", Convert.ToInt32(ViewState["StudentID"]));
+            cmd.Parameters.AddWithValue("@Session", ddlSession.SelectedValue);
+            cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
+            cmd.Parameters.AddWithValue("@MidName", txtMidName.Text);
+            cmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
+            cmd.Parameters.AddWithValue("@Qualification", txtQualification.Text);
             cmd.Parameters.AddWithValue("@Occupation", txtOccupation.Text);
             cmd.Parameters.AddWithValue("@Company", txtCompany.Text);
+            cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
+            cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
             cmd.Parameters.AddWithValue("@LinkedIn", txtLinkedIn.Text);
             cmd.Parameters.AddWithValue("@Facebook", txtFacebook.Text);
             cmd.Parameters.AddWithValue("@Instagram", txtInstagram.Text);
             cmd.Parameters.AddWithValue("@Twitter", txtTwitter.Text);
-            cmd.Parameters.AddWithValue("@FilePath", FilePath);
+            cmd.Parameters.AddWithValue("@FilePath", filePath);
             cmd.Parameters.AddWithValue("@EntryDate", DateTime.Now);
 
-            try
-            {
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                ClearForm();
-                NotificationHelper.ShowNotification(this, "Alumni details saved successfully.", "success", "Success");
-            }
-            catch (Exception ex)
-            {
-                NotificationHelper.ShowNotification(this, "Error loading alumni details: " + ex.Message, "error", "Error");
-                ShowErrorMessage("Error saving alumni details: " + ex.Message);
-            }
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            lblMessage.Text = "Alumni details saved successfully!";
+            NotificationHelper.ShowNotification(this, "Alumni details saved successfully!", "success", "success");
         }
     }
 
-    private string ProcessImageUpload()
+    private string SaveFile()
     {
         if (fileUpload.HasFile)
         {
-            string fileExtension = Path.GetExtension(fileUpload.FileName).ToLower();
+            string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
+            string fileExtension = Path.GetExtension(fileName);
+            string[] allowedExtensions = { ".jpg", ".jpeg", ".png" };
 
-            if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
+            if (Array.Exists(allowedExtensions, ext => ext.Equals(fileExtension, StringComparison.OrdinalIgnoreCase)))
             {
-                string fileName = Path.GetFileName(fileUpload.FileName);
-                string folderPath = Server.MapPath("~/Image/alumni/");
-
-                if (!Directory.Exists(folderPath))
-                    Directory.CreateDirectory(folderPath);
-
-                string fullPath = Path.Combine(folderPath, fileName);
-
                 try
                 {
-                    string base64String = imagePreviewBase64.Value.Replace("data:image/png;base64,", "").Replace("data:image/jpeg;base64,", "");
-                    byte[] imageBytes = Convert.FromBase64String(base64String);
+                    string uniqueFileName = Guid.NewGuid().ToString() + fileExtension;
+                    string filePath = "Uploads/alumni/" + uniqueFileName;
+                    string serverPath = Server.MapPath(filePath);
 
-                    using (MemoryStream ms = new MemoryStream(imageBytes))
-                    using (Bitmap bmp = new Bitmap(ms))
+                    // Compress and save the image
+                    using (System.Drawing.Image originalImage = System.Drawing.Image.FromStream(fileUpload.PostedFile.InputStream))
                     {
-                        bmp.Save(fullPath, ImageFormat.Png);
+                        int maxWidth = 300; // Set your desired maximum width
+                        int maxHeight = 300; // Set your desired maximum height
+
+                        int newWidth, newHeight;
+                        CalculateNewDimensions(originalImage.Width, originalImage.Height, maxWidth, maxHeight, out newWidth, out newHeight);
+
+                        using (System.Drawing.Bitmap compressedImage = new System.Drawing.Bitmap(originalImage, newWidth, newHeight))
+                        {
+                            // Save with compression
+                            System.Drawing.Imaging.ImageCodecInfo jpegCodec = GetEncoder(System.Drawing.Imaging.ImageFormat.Jpeg);
+                            if (jpegCodec != null)
+                            {
+                                var encoderParams = new System.Drawing.Imaging.EncoderParameters(1);
+                                encoderParams.Param[0] = new System.Drawing.Imaging.EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 75L); // Set quality to 75
+                                compressedImage.Save(serverPath, jpegCodec, encoderParams);
+                            }
+                            else
+                            {
+                                // Fallback to saving without explicit compression
+                                compressedImage.Save(serverPath);
+                            }
+                        }
                     }
 
-                    return "Image/alumni/" + fileName;
+                    return filePath;
                 }
                 catch (Exception ex)
                 {
-                    NotificationHelper.ShowNotification(this, "Error processing image: " + ex.Message, "error", "Error");
-                    ShowErrorMessage("Error processing image: " + ex.Message);
+                    // Log the exception or display a user-friendly message
+                    NotificationHelper.ShowNotification(this, "An error occurred while processing the file.", "error", "error");
+                    lblFileTypeError.Text = "An error occurred while processing the file.";
+                    lblFileTypeError.Visible = true;
                 }
             }
             else
             {
-                NotificationHelper.ShowNotification(this, "Invalid file type. Only .jpg, .jpeg, and .png files are allowed.", "warning", "warning");
+                NotificationHelper.ShowNotification(this, "Only JPG, JPEG, and PNG files are allowed.", "error", "error");
+                lblFileTypeError.Text = "Only JPG, JPEG, and PNG files are allowed.";
+                lblFileTypeError.Visible = true;
             }
         }
-
         return null;
     }
 
-    private void ClearForm()
+    // Helper to calculate new dimensions while maintaining aspect ratio
+    private void CalculateNewDimensions(int originalWidth, int originalHeight, int maxWidth, int maxHeight, out int newWidth, out int newHeight)
     {
-        txtQualification.Text = txtPhone.Text = txtEmail.Text = txtRegistrationNo.Text = txtRegistrationYear.Text =
-        txtRollNo.Text = txtCompany.Text = txtOccupation.Text = txtLinkedIn.Text = txtFacebook.Text = txtInstagram.Text =
-        txtTwitter.Text = lblMessage.Text = txtFirstName.Text = txtMidName.Text = txtLastName.Text = txtDOB.Text = string.Empty;
-        ddlSession.SelectedIndex = 0;
-        VerifyStudentPanel.Visible = true;
-        RegisterAlumniPanel.Visible = false;
-        fileUpload.Attributes.Clear();
+        double aspectRatio = (double)originalWidth / originalHeight;
+
+        if (originalWidth > maxWidth || originalHeight > maxHeight)
+        {
+            if (aspectRatio > 1) // Landscape
+            {
+                newWidth = maxWidth;
+                newHeight = (int)(maxWidth / aspectRatio);
+            }
+            else // Portrait or square
+            {
+                newHeight = maxHeight;
+                newWidth = (int)(maxHeight * aspectRatio);
+            }
+        }
+        else
+        {
+            // Use original dimensions if within limits
+            newWidth = originalWidth;
+            newHeight = originalHeight;
+        }
     }
 
-    private void ShowErrorMessage(string message)
+    // Helper to get encoder for a specific image format
+    private System.Drawing.Imaging.ImageCodecInfo GetEncoder(System.Drawing.Imaging.ImageFormat format)
     {
-        lblMessage.Text = message;
-        lblMessage.ForeColor = Color.Red;
-    }
-
-    protected void btnReset_Click(object sender, EventArgs e)
-    {
-        _studentID = string.Empty;
-        ClearForm();
+        foreach (var codec in System.Drawing.Imaging.ImageCodecInfo.GetImageDecoders())
+        {
+            if (codec.FormatID == format.Guid)
+            {
+                return codec;
+            }
+        }
+        return null;
     }
 }

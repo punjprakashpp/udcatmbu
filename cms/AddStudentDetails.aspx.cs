@@ -53,8 +53,8 @@ public partial class AddStudent : System.Web.UI.Page
 
             // Define the connection string and insert command
             string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
-            string query = "INSERT INTO Student (Session, RollNo, RegNo, RegYear, FirstName, MidName, LastName, Gender, DOB) " +
-                           "VALUES (@Session, @RollNo, @RegNo, @RegYear, @FirstName, @MidName, @LastName, @Gender, @DOB)";
+            string query = "INSERT INTO Student (Session, RollNo, RegNo, RegYear, FirstName, MidName, LastName, Gender, DOB, EntryDate) " +
+                           "VALUES (@Session, @RollNo, @RegNo, @RegYear, @FirstName, @MidName, @LastName, @Gender, @DOB, @EntryDate)";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -70,6 +70,7 @@ public partial class AddStudent : System.Web.UI.Page
                     cmd.Parameters.AddWithValue("@LastName", lastName);
                     cmd.Parameters.AddWithValue("@Gender", gender);
                     cmd.Parameters.AddWithValue("@DOB", dob);
+                    cmd.Parameters.AddWithValue("@EntryDate", DateTime.Now);
 
                     try
                     {
