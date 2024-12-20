@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Add Staffs" Language="C#" MasterPageFile="cms.master" AutoEventWireup="true" CodeFile="AddOfficeStaff.aspx.cs" Inherits="Admin_pages_AddFaculty" %>
+﻿<%@ Page Title="Add Staffs" Language="C#" MasterPageFile="cms.master" AutoEventWireup="true" CodeFile="AddOfficeStaff.aspx.cs" Inherits="AddOfficeStaff" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link rel="stylesheet" href="../Content/Cropper.min.css">
     <script type="text/javascript" src="../Scripts/cropper.js"></script>
     <script type="text/javascript" src="../Scripts/jquery-3.7.1.min.js"></script>
@@ -13,9 +13,9 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <section class="py-4 bg-light">
-        <div style="max-width:720px" class="container bg-white rounded shadow-sm p-5">
+        <div class="container bg-white rounded shadow-sm p-5" style="max-width: 720px;">
             <h2 class="text-center text-primary mb-4">Add Office & Supporting Staffs</h2>
             <asp:Label ID="lblMessage" runat="server" ForeColor="Red" CssClass="form-text text-danger"></asp:Label>
             <div class="row g-3">
@@ -66,9 +66,9 @@
                     <div class="mt-3">
                         <asp:HiddenField ID="imagePreviewBase64" runat="server" />
                         <div id="cropperContainer" class="cropper-container" style="display: none;">
-                            <img id="cropperImage" src="#" alt="Image for cropping" />
+                            <img id="cropperImage" src="#" alt="Image for cropping" class="img-fluid" />
                         </div>
-                        <asp:Button ID="btnCrop" runat="server" Text="Crop" OnClientClick="return cropImage();" CssClass="btn btn-primary mt-2" style="display: none;" />
+                        <asp:Button ID="btnCrop" runat="server" Text="Crop" OnClientClick="return cropImage();" CssClass="btn btn-primary mt-2" Style="display: none;" />
                     </div>
                 </div>
 

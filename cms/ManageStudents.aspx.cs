@@ -4,15 +4,60 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.WebControls;
 
-public partial class Studenteport : System.Web.UI.Page
+public partial class ManageStudents : System.Web.UI.Page
 {
+    private string connectionString = ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
+            LoadSessionDropdown();
             MultiView1.ActiveViewIndex = -1;
         }
         ClearMessage();
+    }
+
+    private void LoadSessionDropdown()
+    {
+        ddlSession.Items.Clear();
+        ddlSessionDelete.Items.Clear();
+        ddlSession.Items.Add(new ListItem("--- Select Session ---", string.Empty));
+        ddlSessionDelete.Items.Add(new ListItem("--- Select Session ---", string.Empty));
+
+        using (SqlConnection con = new SqlConnection(connectionString))
+        {
+            string query = "SELECT DISTINCT Session FROM Student ORDER BY Session";
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ddlSession.Items.Add(new ListItem(reader["Session"].ToString(), reader["Session"].ToString()));
+                    ddlSessionDelete.Items.Add(new ListItem(reader["Session"].ToString(), reader["Session"].ToString()));
+                }
+            }
+        }
+    }
+
+    protected void btnDeleteSession_Click(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrEmpty(ddlSessionDelete.SelectedValue))
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Student WHERE Session = @Session";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Session", ddlSessionDelete.SelectedValue);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    lblMessage.Text = "Session deleted successfully.";
+                }
+            }
+            LoadSessionDropdown();
+        }
     }
 
     private string GetConnectionString()
@@ -20,15 +65,15 @@ public partial class Studenteport : System.Web.UI.Page
         return ConfigurationManager.ConnectionStrings["WebsiteConnectionString"].ConnectionString;
     }
 
-    private void ShowMessage(string message, bool isError = false)
+    private void ShowMessage(string message, bool isError)
     {
-        lblmsg.Text = message;
-        lblmsg.ForeColor = isError ? System.Drawing.Color.Red : System.Drawing.Color.Green;
+        lblMessage.Text = message;
+        lblMessage.ForeColor = isError ? System.Drawing.Color.Red : System.Drawing.Color.Green;
     }
 
     private void ClearMessage()
     {
-        lblmsg.Text = string.Empty;
+        lblMessage.Text = string.Empty;
     }
 
     protected void btnSearch_Click(object sender, EventArgs e)
@@ -87,7 +132,7 @@ public partial class Studenteport : System.Web.UI.Page
         if (studentTable.Rows.Count > 0)
         {
             MultiView1.ActiveViewIndex = 0;
-            ShowMessage(studentTable.Rows.Count + " Student(s) Found.");
+            ShowMessage(studentTable.Rows.Count + " Student(s) Found.", false);
         }
         else
         {
@@ -112,6 +157,19 @@ public partial class Studenteport : System.Web.UI.Page
             if (int.TryParse(e.CommandArgument.ToString(), out studentId))
             {
                 ShowStudentDetails(studentId);
+            }
+            else
+            {
+                ShowMessage("Invalid Student ID.", true);
+            }
+        }
+
+        if (e.CommandName == "Remove")
+        {
+            int studentId;
+            if (int.TryParse(e.CommandArgument.ToString(), out studentId))
+            {
+                RemoveStudent(studentId);
             }
             else
             {
@@ -156,14 +214,21 @@ public partial class Studenteport : System.Web.UI.Page
         lblRegNo.Text = reader["RegNo"] != DBNull.Value ? reader["RegNo"].ToString() : "N/A";
         lblRegYear.Text = reader["RegYear"] != DBNull.Value ? reader["RegYear"].ToString() : "N/A";
         lblFirstName.Text = reader["FirstName"] != DBNull.Value ? reader["FirstName"].ToString() : "N/A";
-        lblMidName.Text = reader["MidName"] != DBNull.Value ? reader["MidName"].ToString() : "";
+        lblMidName.Text = reader["MidName"] != DBNull.Value ? reader["MidName"].ToString() : string.Empty;
         lblLastName.Text = reader["LastName"] != DBNull.Value ? reader["LastName"].ToString() : "N/A";
         lblGen.Text = reader["Gender"] != DBNull.Value ? reader["Gender"].ToString() : "N/A";
 
         if (reader["dob"] != DBNull.Value)
         {
-            DateTime dob = Convert.ToDateTime(reader["dob"]);
-            lbldob.Text = dob.ToString("dd MMM yyyy");
+            DateTime dob;
+            if (DateTime.TryParse(reader["dob"].ToString(), out dob))
+            {
+                lbldob.Text = dob.ToString("dd MMM yyyy");
+            }
+            else
+            {
+                lbldob.Text = "N/A";
+            }
         }
         else
         {
@@ -171,9 +236,31 @@ public partial class Studenteport : System.Web.UI.Page
         }
     }
 
+    private void RemoveStudent(int studentId)
+    {
+        using (SqlConnection con = new SqlConnection(connectionString))
+        {
+            string query = "DELETE FROM Student WHERE StudentID = @StudentID";
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@StudentID", studentId);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+        ShowMessage("Student removed successfully.", false);
+    }
+
     protected void btnBack_Click(object sender, EventArgs e)
     {
         MultiView1.ActiveViewIndex = 0;
         ClearMessage();
+    }
+
+    protected void btnReset_Click(object sender, EventArgs e)
+    {
+        ddlSession.SelectedIndex = 0;
+        rdRoll.Checked = true;
+        txtsearch.Text = string.Empty;
     }
 }

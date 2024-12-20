@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 
-public partial class Admin_pages_AddFaculty : System.Web.UI.Page
+public partial class AddOfficeStaff : System.Web.UI.Page
 {
     protected void btnEdit_Click(object sender, EventArgs e)
     {

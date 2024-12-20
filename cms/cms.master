@@ -125,6 +125,8 @@
                         </a>
                         <div class="collapse" id="addMenu">
                             <ul class="nav flex-column ps-4">
+                                <li><a href="AddAchiver.aspx" class="nav-link"><i class="fa-solid fa-award me-2"></i>Achiver</a></li>
+                                <li><a href="AddStudent.aspx" class="nav-link"><i class="fa-solid fa-user me-2"></i>Student</a></li>
                                 <li><a href="AddVideoLink.aspx" class="nav-link"><i class="fa-solid fa-video me-2"></i>Video Link</a></li>
                                 <li><a href="AddHighlightLink.aspx" class="nav-link"><i class="fa-solid fa-highlighter me-2"></i>Highlight Link</a></li>
                                 <li><a href="AddQuickLink.aspx" class="nav-link"><i class="fa-solid fa-highlighter me-2"></i>Quick Link Button</a></li>
@@ -154,6 +156,9 @@
                         </a>
                         <div class="collapse" id="manageMenu">
                             <ul class="nav flex-column ps-4">
+                                <li><a href="ManageAlumni.aspx" class="nav-link"><i class="fa-solid fa-user me-2"></i>Alumni</a></li>
+                                <li><a href="ManageAchiver.aspx" class="nav-link"><i class="fa-solid fa-award me-2"></i>Achiver</a></li>
+                                <li><a href="ManageStudents.aspx" class="nav-link"><i class="fa-solid fa-users me-2"></i>Students</a></li>
                                 <li><a href="ManageEvents.aspx" class="nav-link"><i class="fa-solid fa-calendar-days me-2"></i>Events</a></li>
                                 <li><a href="ManageNotices.aspx" class="nav-link"><i class="fa-solid fa-bell me-2"></i>Notices</a></li>
                                 <li><a href="ManageReports.aspx" class="nav-link"><i class="fa-solid fa-file-archive me-2"></i>Reports</a></li>
@@ -170,6 +175,9 @@
                         </a>
                         <div class="collapse" id="deleteMenu">
                             <ul class="nav flex-column ps-4">
+                                <li><a href="DeleteAlumni.aspx" class="nav-link"><i class="fa-solid fa-user me-2"></i>Alumni</a></li>
+                                <li><a href="DeleteAchivers.aspx" class="nav-link"><i class="fa-solid fa-award me-2"></i>Achiver</a></li>
+                                <li><a href="DeleteStudents.aspx" class="nav-link"><i class="fa-solid fa-users me-2"></i>Students</a></li>
                                 <li><a href="DeleteNewsImages.aspx" class="nav-link"><i class="fa-solid fa-newspaper me-2"></i>News Image</a></li>
                                 <li><a href="DeleteSliderImages.aspx" class="nav-link"><i class="fa-solid fa-sliders me-2"></i>Slider Image</a></li>
                                 <li><a href="DeleteGalleryImages.aspx" class="nav-link"><i class="fa-solid fa-images me-2"></i>Gallery Image</a></li>
