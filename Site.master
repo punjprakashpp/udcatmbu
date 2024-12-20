@@ -92,6 +92,28 @@
                         </ul>
                     </li>
 
+                    <!-- Amenities Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="amenitiesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-building"></i>&nbsp;Amenities
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="amenitiesDropdown">
+                            <li>
+                                <a class="dropdown-item" href="CentralLibrary.aspx"><i class="fa-solid fa-book"></i>&nbsp;Central Library</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="HealthCentre.aspx"><i class="fa-solid fa-kit-medical"></i>&nbsp;Health Centre</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="ComputerCentre.aspx"><i class="fa-solid fa-desktop"></i>&nbsp;Computer Centre</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="UniversityHostel.aspx"><i class="fa-solid fa-bed"></i>&nbsp;University Hostel</a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <!-- Admission Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="admissionDropdown" role="button"
@@ -132,28 +154,6 @@
                         </ul>
                     </li>
 
-                    <!-- Amenities Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="amenitiesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-building"></i>&nbsp;Amenities
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="amenitiesDropdown">
-                            <li>
-                                <a class="dropdown-item" href="CentralLibrary.aspx"><i class="fa-solid fa-book"></i>&nbsp;Central Library</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="HealthCentre.aspx"><i class="fa-solid fa-kit-medical"></i>&nbsp;Health Centre</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="ComputerCentre.aspx"><i class="fa-solid fa-desktop"></i>&nbsp;Computer Centre</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="UniversityHostel.aspx"><i class="fa-solid fa-bed"></i>&nbsp;University Hostel</a>
-                            </li>
-                        </ul>
-                    </li>
-
                     <!-- Campus Rules Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="campusRulesDropdown" role="button"
@@ -183,6 +183,22 @@
                                 class="fa-solid fa-user-graduate"></i>&nbsp;Teaching Staffs</a></li>
                             <li><a class="dropdown-item" href="OfficeStaff.aspx"><i class="fa-solid fa-briefcase"></i>
                                 &nbsp;Non-Teaching Staffs</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Alumni Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="alumniDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-users"></i>&nbsp;Alumni
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="alumniDropdown">
+                            <li><a class="dropdown-item" href="OurAlumni.aspx"><i class="fa-solid fa-user"></i>&nbsp;Our
+                                    Alumni</a></li>
+                            <li><a class="dropdown-item" href="OurAchivers.aspx"><i class="fa-solid fa-award"></i>&nbsp;Our
+                                    Achievers</a></li>
+                            <li><a class="dropdown-item" href="AlumniRegistration.aspx"><i
+                                class="fa-solid fa-sign-in"></i>&nbsp;Alumni Registration</a></li>
                         </ul>
                     </li>
 
@@ -241,22 +257,6 @@
                                 class="fa-solid fa-file-circle-plus"></i>&nbsp;Internal Questions</a></li>
                             <li><a class="dropdown-item" href="DownloadOthers.aspx"><i
                                 class="fa-solid fa-file"></i>&nbsp;Other Files</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Alumni Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="alumniDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-users"></i>&nbsp;Alumni
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="alumniDropdown">
-                            <li><a class="dropdown-item" href="OurAlumni.aspx"><i class="fa-solid fa-user"></i>&nbsp;Our
-                                    Alumni</a></li>
-                            <li><a class="dropdown-item" href="OurAchivers.aspx"><i class="fa-solid fa-award"></i>&nbsp;Our
-                                    Achievers</a></li>
-                            <li><a class="dropdown-item" href="AlumniRegistration.aspx"><i
-                                class="fa-solid fa-sign-in"></i>&nbsp;Alumni Registration</a></li>
                         </ul>
                     </li>
 
